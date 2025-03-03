@@ -1,10 +1,9 @@
-from darelabdb.nlp_value_linking.value_index.value_index_abc import (
+from value_index.value_index_abc import (
     ValueIndexABC,
     FormattedValuesMixin,
 )
-from darelabdb.utils_database_connector.core import Database
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
-from darelabdb.nlp_value_linking.filtering.filtering_abc import FilterABC
+from utils.sqlite_db import DatabaseSqlite
+from filtering.filtering_abc import FilterABC
 from pathlib import Path
 import os
 import json
@@ -12,7 +11,6 @@ import torch
 from transformers import AutoModel, AutoTokenizer
 import faiss
 import numpy as np
-
 
 INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/darelabdb/db_value_indexes/"
 
@@ -22,8 +20,8 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         self,
         model_used="BAAI/bge-large-en-v1.5",
         delimeter=".",
-        per_value=False,
-        skip_non_text=True,
+        per_value=True,
+        skip_non_text=False,
     ):
         """
         Initialize FAISS indexer.
@@ -47,7 +45,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         self.faiss_flat_mappings = {}
 
     def create_index(
-        self, database: Database | DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+        self, database: DatabaseSqlite, output_path=INDEXES_CACHE_PATH
     ):
         """
         Create FAISS flat index from database embeddings.
@@ -212,7 +210,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         index_path=INDEXES_CACHE_PATH,
         top_k=5,
         filter_instance: FilterABC = None,
-        database: Database | DatabaseSqlite = None,
+        database: DatabaseSqlite = None,
     ):
         """
         Query FAISS index using vector similarity.

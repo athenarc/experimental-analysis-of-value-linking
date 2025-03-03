@@ -2,14 +2,13 @@ from abc import ABC, abstractmethod
 import os
 import time
 from pathlib import Path
-from darelabdb.utils_database_connector.core import Database
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
+from utils.sqlite_db import DatabaseSqlite
 from typing import List
-from darelabdb.nlp_value_linking.filtering.filtering_abc import FilterABC
-from darelabdb.nlp_value_linking.cvr_extractor.cvr_extractor_abc import CVRExtractorABC
+from filtering.filtering_abc import FilterABC
+from cvr_extractor.cvr_extractor_abc import CVRExtractorABC
 
 
-INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/darelabdb/db_value_indexes/"
+INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/value_linking/db_value_indexes/"
 
 
 class ValueIndexABC(ABC):
@@ -17,7 +16,7 @@ class ValueIndexABC(ABC):
 
     @abstractmethod
     def create_index(
-        self, database: Database | DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+        self, database: DatabaseSqlite, output_path=INDEXES_CACHE_PATH
     ):
         """
         Create an index from database values.
@@ -35,7 +34,7 @@ class ValueIndexABC(ABC):
         index_path=INDEXES_CACHE_PATH,
         top_k=5,
         filter_instance: FilterABC = None,
-        database: Database | DatabaseSqlite = None,
+        database: DatabaseSqlite = None,
     ):
         """
         Query the index for similar values.
@@ -57,7 +56,7 @@ class FormattedValuesMixin:
     """Mixin class providing methods for extracting structured values from databases."""
 
     def get_formatted_values(
-        self, database: Database | DatabaseSqlite, table, skip_non_text_bruteforce=False
+        self, database: DatabaseSqlite, table, skip_non_text_bruteforce=False
     ):
         """
         Extract and format values from a database table.
@@ -74,24 +73,11 @@ class FormattedValuesMixin:
         skip_non_text = self.skip_non_text or skip_non_text_bruteforce
 
         try:
-            if (
-                hasattr(database, "config")
-                and hasattr(database.config, "type")
-                and database.config.type == "postgresql"
-            ):
-                query = f"""
-                    SELECT column_name AS name, data_type, is_nullable, column_default
-                    FROM information_schema.columns
-                    WHERE table_name = '{table}'
-                    AND table_schema = '{database.specific_schema or 'public'}';
-                """
-                columns_info = database.execute(query, limit=-1)
-                columns = columns_info.to_dict("records")
-            else:
-                columns_info = database.execute(
-                    f'PRAGMA table_info("{table}");', limit=-1
-                )
-                columns = columns_info.to_dict("records")
+
+            columns_info = database.execute(
+                f'PRAGMA table_info("{table}");', limit=-1
+            )
+            columns = columns_info.to_dict("records")
 
             # Standardize column type key for consistency
             for col in columns:
@@ -108,15 +94,7 @@ class FormattedValuesMixin:
             for col in columns:
                 col_name = col["name"]
                 print(f"Processing column {col_name} in table {table}")
-                # Use proper quoting for PostgreSQL
-                if (
-                    hasattr(database, "config")
-                    and hasattr(database.config, "type")
-                    and database.config.type == "postgresql"
-                ):
-                    query = f'SELECT DISTINCT "{col_name}" FROM "{table}" WHERE "{col_name}" IS NOT NULL;'
-                else:
-                    query = f"SELECT DISTINCT `{col_name}` FROM `{table}` WHERE `{col_name}` IS NOT NULL;"
+                query = f"SELECT DISTINCT `{col_name}` FROM `{table}` WHERE `{col_name}` IS NOT NULL;"
 
                 try:
                     values_df = database.execute(query, limit=-1)
@@ -162,7 +140,7 @@ class ValueLinker:
             self.query_timers[index_creator.__class__.__name__] = 0
 
     def create_indexes(
-        self, database: Database | DatabaseSqlite, output_path: str = INDEXES_CACHE_PATH
+        self, database: DatabaseSqlite, output_path: str = INDEXES_CACHE_PATH
     ):
         """
         Create all configured indexes.
@@ -183,7 +161,7 @@ class ValueLinker:
         index_path: str = INDEXES_CACHE_PATH,
         top_k: int = 5,
         filter_instance: FilterABC = None,
-        database: Database | DatabaseSqlite = None,
+        database: DatabaseSqlite = None,
     ) -> List[str]:
         """
         Query all indexes and aggregate results.
@@ -201,7 +179,8 @@ class ValueLinker:
         # Extract keywords from the input text
         if self.keyword_extractor is not None:
             keywords = self.keyword_extractor.extract_keywords(input_text)
-
+        else:
+            keywords = [input_text]     # if no keyword extractor is provided, use the input text as the keyword
         # Aggregate results from all indexes
         all_results = []
         for index_creator in self.index_creators:

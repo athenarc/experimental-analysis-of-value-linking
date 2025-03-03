@@ -1,4 +1,4 @@
-from darelabdb.nlp_value_linking.cvr_extractor.cvr_extractor_abc import CVRExtractorABC
+from cvr_extractor.cvr_extractor_abc import CVRExtractorABC
 import json
 import requests
 from typing import List
@@ -92,3 +92,16 @@ class LLMExtractor(CVRExtractorABC):
                 print(f"Failed to parse response for question: {input_text}")
                 result_list = []
         return result_list
+
+
+class DictionaryExtractor(CVRExtractorABC):
+    def __init__(self, path_to_dictionary: str):
+        self.path_to_dictionary = path_to_dictionary
+        with open(path_to_dictionary, "r") as file:
+            self.dictionary = json.load(file)
+    def extract_keywords(self, input_text: str) -> List[str]:
+        for entry in self.dictionary:
+            if entry["question"] == input_text:
+                return entry["response"]
+        return []  
+         

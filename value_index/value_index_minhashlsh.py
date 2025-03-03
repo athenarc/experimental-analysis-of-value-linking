@@ -1,10 +1,9 @@
-from darelabdb.nlp_value_linking.value_index.value_index_abc import (
+from value_index.value_index_abc import (
     ValueIndexABC,
     FormattedValuesMixin,
 )
-from darelabdb.utils_database_connector.core import Database
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
-from darelabdb.nlp_value_linking.filtering.filtering_abc import FilterABC
+from utils.sqlite_db import DatabaseSqlite
+from filtering.filtering_abc import FilterABC
 from datasketch import MinHash, MinHashLSHForest
 import pickle
 from pathlib import Path
@@ -40,7 +39,7 @@ class MinHashForestIndex(ValueIndexABC, FormattedValuesMixin):
         self.min_hash_indexes = {}
 
     def create_index(
-        self, database: Database | DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+        self, database: DatabaseSqlite, output_path=INDEXES_CACHE_PATH
     ):
         """
         Create MinHash LSH Forest index from database values.
@@ -112,7 +111,7 @@ class MinHashForestIndex(ValueIndexABC, FormattedValuesMixin):
         index_path=INDEXES_CACHE_PATH,
         top_k=5,
         filter_instance: FilterABC = None,
-        database: Database | DatabaseSqlite = None,
+        database: DatabaseSqlite = None,
     ):
         """
         Query MinHash Forest for similar values.

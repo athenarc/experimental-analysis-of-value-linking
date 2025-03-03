@@ -1,4 +1,4 @@
-from darelabdb.nlp_value_linking.filtering.filtering_abc import FilterABC
+from filtering.filtering_abc import FilterABC
 import torch
 from sentence_transformers import SentenceTransformer
 import torch.nn.functional as F

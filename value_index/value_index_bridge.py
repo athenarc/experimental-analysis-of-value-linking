@@ -1,8 +1,12 @@
-from filtering.filtering_abc import FilterABC
+from typing import List, Tuple
+from utils.sqlite_db import DatabaseSqlite
 import difflib
-from rapidfuzz import fuzz
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Any
+from value_index.value_index_abc import ValueIndexABC
 
+from filtering.filtering_abc import FilterABC
+from pathlib import Path
+INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/value_linking/"
 
 class Match(object):
     def __init__(self, start: int, size: int) -> None:
@@ -10,30 +14,10 @@ class Match(object):
         self.size = size
 
 
-class BridgeFilter(FilterABC):
-    """
-    Filter implementation based on string matching and similarity metrics.
-
-    This filter uses a combination of difflib and rapidfuzz to match keywords against field values,
-    applying thresholds to decide if a match is acceptable, following BRIDGE system
-    """
-
-    def __init__(
-        self,
-        m_theta: float = 0.85,
-        s_theta: float = 0.85,
-        filter_threshold: float = 0.85,
-    ):
-        """
-        Initialize the BridgeFilter.
-
-        Parameters:
-            m_theta (float): The matching threshold for the primary match.
-            s_theta (float): The matching threshold for the secondary match.
-            filter_threshold (float): The overall threshold to filter matches.
-        """
-        self.m_theta = m_theta
-        self.s_theta = s_theta
+class BRIDGEIndex(ValueIndexABC):
+    def __init__(self, top_k=1, threshold=0.85):
+        self.picklist_indexes = dict()
+        self.match_threshold = threshold
         self.stopwords = {
             "who",
             "ourselves",
@@ -215,8 +199,8 @@ class BridgeFilter(FilterABC):
             "aren't",
         }
         self.commonwords = {"no", "yes", "many"}
-        self.queries_per_keyword = {}
-        self.filter_threshold = filter_threshold
+        self.m_theta = threshold
+        self.s_theta = threshold
 
     def is_number(self, s: str) -> bool:
         try:
@@ -367,21 +351,62 @@ class BridgeFilter(FilterABC):
                 reverse=True,
             )
 
-    def add_pair(self, keyword: str, value_pair: tuple):
-        if keyword not in self.queries_per_keyword:
-            self.queries_per_keyword[keyword] = []
-        self.queries_per_keyword[keyword].append(value_pair)
+    def create_index(
+        self, database: DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+    ):
+        pass
 
-    def filter(self) -> List[str]:
-        filtered_values = []
-        for keyword, value_pairs in self.queries_per_keyword.items():
-            for value_pair in value_pairs:
-                matched_entries = self.get_matched_entries(keyword, [value_pair[0]])
-                if not matched_entries:
+    def query_index(
+        self,
+        keywords: str,
+        index_path=INDEXES_CACHE_PATH,
+        top_k=1,
+        filter_instance: FilterABC = None,
+        database: DatabaseSqlite = None,
+    ):
+        nl_query = keywords[0]
+        matched_values = []
+        schema = database.get_tables_and_columns()
+        tables = [table for table in schema["tables"] if table != "sqlite_sequence"]
+
+        for table in tables:
+            # Get columns for current table
+            columns_info = database.execute(f'PRAGMA table_info("{table}");', limit=-1)
+            columns = columns_info.to_dict("records")
+
+            for column in columns:
+                # Check cache first
+                col_name = column["name"]
+                cache_key = (table, col_name)
+
+                # Build picklist if not cached
+                if cache_key not in self.picklist_indexes:
+                    # Get value counts from database
+                    print(f"Creating picklist for {table}.{col_name}")
+                    try:
+                        query = f"SELECT DISTINCT `{col_name}` FROM `{table}` WHERE `{col_name}` IS NOT NULL;"
+
+                        values_df = database.execute(query, limit=-1)
+                        values = values_df[col_name].dropna().tolist()
+
+                        self.picklist_indexes[cache_key] = values
+                    except Exception as e:
+                        print(f"Error processing {table}.{col_name}: {e}")
+                        continue
+
+                # Get matches for current picklist
+                picklist = self.picklist_indexes.get(cache_key, [])
+                if not picklist:
                     continue
-                _, (field_value, _, match_score, _, _) = matched_entries[0]
-                if match_score < self.filter_threshold:  # Threshold for valid match
-                    continue
-                filtered_values.append(value_pair[1])
-        self.queries_per_keyword = {}
-        return filtered_values
+                matches = self.get_matched_entries(nl_query, picklist)
+                if matches:
+                    added = 0
+                    for match in matches:
+                        if added >= top_k:
+                            break
+
+                        value = match[0]  # Adjust based on match structure
+                        matched_values.append(f"{table}.{col_name}.{value}")
+                        added += 1
+
+        return list(set(matched_values))

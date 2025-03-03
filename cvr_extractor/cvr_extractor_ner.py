@@ -1,4 +1,4 @@
-from darelabdb.nlp_value_linking.cvr_extractor.cvr_extractor_abc import CVRExtractorABC
+from cvr_extractor.cvr_extractor_abc import CVRExtractorABC
 import spacy
 import string
 from nltk.corpus import stopwords

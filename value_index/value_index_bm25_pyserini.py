@@ -1,7 +1,6 @@
-from darelabdb.nlp_value_linking.value_index.value_index_abc import ValueIndexABC
-from darelabdb.utils_database_connector.core import Database
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
-from darelabdb.nlp_value_linking.filtering.filtering_abc import FilterABC
+from value_index.value_index_abc import ValueIndexABC
+from utils.sqlite_db import DatabaseSqlite
+from filtering.filtering_abc import FilterABC
 import os
 import shutil
 from pathlib import Path
@@ -14,7 +13,7 @@ INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/darelabdb/db_value_indexes/"
 class BM25Index(ValueIndexABC):
     """BM25 indexing implementation using Pyserini/Lucene."""
 
-    def __init__(self, per_value=False, delimeter="."):
+    def __init__(self, per_value=True, delimeter="."):
         """
         Initialize BM25 indexer.
 
@@ -27,7 +26,7 @@ class BM25Index(ValueIndexABC):
         self.bm25_indexes = {}
 
     def create_index(
-        self, database: Database | DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+        self, database:  DatabaseSqlite, output_path=INDEXES_CACHE_PATH
     ):
         """
         Create BM25 index from database values. Generates JSON documents and builds
@@ -105,7 +104,7 @@ class BM25Index(ValueIndexABC):
         index_path=INDEXES_CACHE_PATH,
         top_k=5,
         filter_instance: FilterABC = None,
-        database: Database | DatabaseSqlite = None,
+        database: DatabaseSqlite = None,
     ):
         """
         Query BM25 index using keyword search.
