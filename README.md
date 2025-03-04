@@ -9,6 +9,12 @@
 This repository contains the code and resources associated with the paper **"Comparison and Analysis of Value Linking in Text-to-SQL Systems"**. Here, you will find everything needed to reproduce the experiments, analysis, and benchmarks presented in the paper.
 
 ---
+## Repo-setup
+Clone the repo and download the dev set of BIRD :
+
+    git clone https://github.com/apostolhskouk/experimental-analysis-of-value-inking.git
+    cd experimental-analysis-of-value-inking/
+    wget https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
 
 ## Environment Setup
 
@@ -18,7 +24,12 @@ Create and activate a new Conda environment with Python 3.10:
 
     conda create -n value_linking python=3.10 -y
     conda activate value_linking
-
+    unzip dev.zip
+    rm dev.zip
+    cd dev_20240627/
+    unzip dev_databases.zip
+    rm dev_databases.zip 
+    cd ..
 ### 2. Install JDK and Maven Dependencies
 
 Install the required JDK and Maven dependencies using Conda:
