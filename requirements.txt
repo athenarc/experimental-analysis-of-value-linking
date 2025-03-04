@@ -13,7 +13,6 @@ sentence_transformers==2.7.0
 spacy==3.7.5
 SQLAlchemy==2.0.36
 sqlglot==20.11.0
-torch==2.5.0+cpu
 torch==2.5.1
 tqdm==4.66.5
 transformers==4.48.3
