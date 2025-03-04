@@ -1,10 +1,10 @@
-datasketch==1.6.5
+datasketch
 faiss_gpu==1.7.2
 func_timeout==4.3.5
-gensim==4.3.3
+gensim
 loguru==0.7.2
 nltk==3.9.1
-numpy==2.2.3
+numpy
 pandas==2.2.3
 pyserini==0.44.0
 rapidfuzz==3.12.2
