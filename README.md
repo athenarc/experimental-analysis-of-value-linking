@@ -52,8 +52,12 @@ You can safely ignore this step since the dataset already exist in the assets fo
 
 
 ---
+## Value Reference Detection with LLM
+
+In order to run value reference detection locally with an LLM, you would typically need to configure Ollama. However, this repository already includes a precomputed file (stored in the `assets` directory) containing value references for each NLQ, generated using **Llama:3.1 70B**. Consequently, you do **not** need to perform any LLM inference when running the experiments. A dedicated class has been implemented and is utilized by the scripts to automatically handle the stored value references.
 
 ## Running the Experiments
+
 
 This repository includes several scripts to run the experiments described in the paper. Use the following commands to execute each experiment:
 
