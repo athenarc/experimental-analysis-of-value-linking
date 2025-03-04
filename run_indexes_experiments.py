@@ -1,36 +1,34 @@
 import os
-from cvr_extractor.cvr_extractor_llm import LLMExtractor, DictionaryExtractor
 from cvr_extractor.cvr_extractor_ngrams import (
     NGramsExtractor,
 )
-from filtering.filtering_bridge import BridgeFilter
 from value_index.value_index_abc import ValueLinker
 from value_index.value_index_bm25_pyserini import BM25Index
-from value_index.value_index_bridge import BRIDGEIndex
-from value_index.value_index_chess import CHESSIndex
-from value_index.value_index_dart import DartSQLIndex
 from utils.value_linking_performance import ValueLinkingPerformance
+from value_index.value_index_minhashlsh import MinHashForestIndex
+from value_index.value_index_faiss_flat import FaissFlatIndex
 import json
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
+from utils.sqlite_db import DatabaseSqlite
 import time
 import logging
 from tqdm import tqdm
 
 def main():
-
-    #dictionary_of_trials = {
-    #    "codes" : ["bm25", "ngrams", "lexical"],
-    #    "chess" : ["chess", "dict", "none"],
-    #    "bridge" : ["bridge", "none", "none"],
-    #    "dart" : ["dart", "none", "none"]
-    #}
     dictionary_of_trials = {
-        "chess" : ["chess", "dict", "none"]
-
+        "bm25" : ["bm25", "ngrams", "none"],
+        "minhash" : ["minhash", "ngrams", "none"],
+        "faiss" : ["faiss", "ngrams", "none"],
+        "bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
+        "bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
+        "minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
+        "bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"]
+    }
+    dictionary_of_trials = {
+        "minhash" : ["minhash", "ngrams", "bridge"],
     }
     os.makedirs('logs', exist_ok=True)
     logging.basicConfig(
-        filename='logs/baseline.log',  
+        filename='logs/index_experiments.log',  
         level=logging.INFO,     
         format='%(asctime)s - %(levelname)s - %(message)s'  
     )
@@ -39,59 +37,46 @@ def main():
         keywords_method = dictionary_of_trials[trial][1]
         filter_instance = dictionary_of_trials[trial][2]
         print(f"Running trial: {trial}")
-        top_k = 10      #only used in codes for this scenario
+        top_k = 10      
         if index_type == "bm25":
             index = [BM25Index()]
-        elif index_type == "chess":
-            index = [CHESSIndex()]
-        elif index_type == "bridge":
-            index = [BRIDGEIndex()]
-        elif index_type == "dart":
-            index = [DartSQLIndex()]
-
+        elif index_type == "minhash":
+            index = [MinHashForestIndex()]
+        elif index_type == "faiss":
+            index = [FaissFlatIndex()]
+        elif index_type == "bm25_faiss":
+            index = [BM25Index(), FaissFlatIndex()]
+        elif index_type == "bm25_minhash":
+            index = [BM25Index(), MinHashForestIndex()]
+        elif index_type == "minhash_faiss":
+            index = [MinHashForestIndex(), FaissFlatIndex()]
+        elif index_type == "bm25_minhash_faiss":
+            index = [BM25Index(), MinHashForestIndex(), FaissFlatIndex()]
+            
         if keywords_method == "ngrams":
             keyword_extractor = NGramsExtractor()
-        elif keywords_method == "none":
-            keyword_extractor = None
-        elif keywords_method == "dict":
-            keyword_extractor = DictionaryExtractor(
-                "assets/bird_value_references_llm.json"
-            )
-        elif keywords_method == "llm":
-            keyword_extractor = LLMExtractor(
-                "assets/bird_value_references_llm.json"
-            )
-        if filter_instance == "lexical":
-            filter = BridgeFilter()
-        elif filter_instance == "none":
+
+        if filter_instance == "none":
             filter = None
+        elif filter_instance == "bridge":
+            from filtering.filtering_bridge import BridgeFilter
+            filter = BridgeFilter()
         databases_folder = (
             "dev_20240627/dev_databases"
         )
-        base_path = ""
-        if index_type == "bm25":
-            base_path = "assets/bm25_indexes_bird"
-        elif index_type == "chess":
-            base_path = "assets/chess_indexes_bird"
-        elif index_type == "bridge":
-            base_path = "assets/bridge_indexes_bird"
-        elif index_type == "dart":
-            base_path = "assets/dart_indexes_bird"
-            
-        output_folder = base_path
+        output_folder = "assets/mix_indexes_bird"
 
 
         linker = ValueLinker(index, keyword_extractor=keyword_extractor)
-        if index != "bridge":
-            for db_folder in os.listdir(databases_folder):
-                if db_folder.startswith("."):
-                    continue
-                db_path = os.path.join(databases_folder, db_folder, f"{db_folder}.sqlite")
-                output_folder_temp = os.path.join(output_folder, db_folder)
-                if not os.path.exists(output_folder_temp):
-                    os.makedirs(output_folder_temp)
-                    db = DatabaseSqlite(db_path)
-                    linker.create_indexes(db, output_folder_temp)
+        for db_folder in os.listdir(databases_folder):
+            if db_folder.startswith("."):
+                continue
+            db_path = os.path.join(databases_folder, db_folder, f"{db_folder}.sqlite")
+            output_folder_temp = os.path.join(output_folder, db_folder)
+            if not os.path.exists(output_folder_temp):
+                os.makedirs(output_folder_temp)
+                db = DatabaseSqlite(db_path)
+                linker.create_indexes(db, output_folder_temp)
 
         query_path = "dev_20240627/dev.json"
         input_folder = output_folder
@@ -104,29 +89,13 @@ def main():
             for record in tqdm(json_data, desc="Processing queries"):
                 db_id = record.get("db_id")
                 query = record.get("question")
-                if index_type != "bridge":
-                    index_path = os.path.join(input_folder, db_id)
-                else:
-                    index_path = None
-                if index_type == "chess" or index_type == "bridge":
-                    if db_id != previous_db_id:
-                        db_path = os.path.join(databases_folder, db_id, f"{db_id}.sqlite")
-                        db = DatabaseSqlite(db_path)
-                        previous_db_id = db_id
-                    results = linker.query_indexes(
-                        input_text=query,
-                        index_path=index_path,
-                        top_k=top_k,
-                        filter_instance=filter,
-                        database=db,
-                    )
-                else:
-                    results = linker.query_indexes(
-                        input_text=query,
-                        index_path=index_path,
-                        top_k=top_k,
-                        filter_instance=filter,
-                    )
+                index_path = os.path.join(input_folder, db_id)
+                results = linker.query_indexes(
+                    input_text=query,
+                    index_path=index_path,
+                    top_k=top_k,
+                    filter_instance=filter,
+                )
                 all_results.append(results)
         query_time = time.time() - start
         linker.print_timers()
