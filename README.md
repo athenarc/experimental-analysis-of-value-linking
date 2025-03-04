@@ -46,9 +46,10 @@ Install the necessary Python packages by running:
 
 ## Dataset Preparation
 
-Before running the experiments, prepare the dataset for value linking by executing:
+You can safely ignore this step since the dataset already exist in the assets folder. However you can try creating the datasets on tour own by executing:
 
     python create_value_linking_dataset.py
+
 
 ---
 
