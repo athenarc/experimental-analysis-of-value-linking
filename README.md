@@ -15,7 +15,12 @@ Clone the repo and download the dev set of BIRD :
     git clone https://github.com/apostolhskouk/experimental-analysis-of-value-inking.git
     cd experimental-analysis-of-value-inking/
     wget https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
-
+    unzip dev.zip
+    rm dev.zip
+    cd dev_20240627/
+    unzip dev_databases.zip
+    rm dev_databases.zip 
+    cd ..
 ## Environment Setup
 
 ### 1. Create a Conda Environment
@@ -24,12 +29,7 @@ Create and activate a new Conda environment with Python 3.10:
 
     conda create -n value_linking python=3.10 -y
     conda activate value_linking
-    unzip dev.zip
-    rm dev.zip
-    cd dev_20240627/
-    unzip dev_databases.zip
-    rm dev_databases.zip 
-    cd ..
+    
 ### 2. Install JDK and Maven Dependencies
 
 Install the required JDK and Maven dependencies using Conda:
