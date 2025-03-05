@@ -12,19 +12,18 @@ from utils.sqlite_db import DatabaseSqlite
 import time
 import logging
 from tqdm import tqdm
+from cvr_extractor.cvr_extractor_llm import DictionaryExtractor
 
 def main():
     dictionary_of_trials = {
         "bm25" : ["bm25", "ngrams", "none"],
         "minhash" : ["minhash", "ngrams", "none"],
         "faiss" : ["faiss", "ngrams", "none"],
+        "bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"],
         "bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
         "bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
         "minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
-        "bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"]
-    }
-    dictionary_of_trials = {
-        "minhash" : ["minhash", "ngrams", "bridge"],
+        
     }
     os.makedirs('logs', exist_ok=True)
     logging.basicConfig(
@@ -55,7 +54,10 @@ def main():
             
         if keywords_method == "ngrams":
             keyword_extractor = NGramsExtractor()
-
+        elif keywords_method == "dict":
+            keyword_extractor = DictionaryExtractor(
+                "assets/bird_value_references_llm.json"
+            )
         if filter_instance == "none":
             filter = None
         elif filter_instance == "bridge":
@@ -64,9 +66,15 @@ def main():
         databases_folder = (
             "dev_20240627/dev_databases"
         )
-        output_folder = "assets/mix_indexes_bird"
-
-
+        if index_type == "bm25":
+            output_folder = "assets/bm25_indexes_bird"
+        elif index_type == "minhash":
+            output_folder = "assets/minhash_indexes_bird"
+        elif index_type == "faiss":
+            output_folder = "assets/faiss_indexes_bird"
+        else:
+            output_folder = "assets/mix_indexes_bird"
+        
         linker = ValueLinker(index, keyword_extractor=keyword_extractor)
         for db_folder in os.listdir(databases_folder):
             if db_folder.startswith("."):
@@ -81,7 +89,6 @@ def main():
         query_path = "dev_20240627/dev.json"
         input_folder = output_folder
         all_results = []
-        previous_db_id = None
         db = None
         start = time.time()
         with open(query_path, "r") as f:
