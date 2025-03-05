@@ -229,7 +229,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
             return []
         if index_path not in self.faiss_flat_indexes:
             index = faiss.read_index(index_path)
-            if self.device.type == "cuda" and not 1:
+            if self.device.type == "cuda":
                 res = faiss.StandardGpuResources()
                 index = faiss.index_cpu_to_gpu(res, 0, index)
             self.faiss_flat_indexes[index_path] = index
