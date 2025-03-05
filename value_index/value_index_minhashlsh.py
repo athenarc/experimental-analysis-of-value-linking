@@ -19,7 +19,7 @@ class MinHashForestIndex(ValueIndexABC, FormattedValuesMixin):
     def __init__(
         self,
         minhash_signature_size=128,
-        per_value=False,
+        per_value=True,
         skip_non_text=True,
         delimeter=".",
     ):
@@ -68,7 +68,7 @@ class MinHashForestIndex(ValueIndexABC, FormattedValuesMixin):
                 # if cell_value is integer, skip
                 if isinstance(cell_value, int):
                     continue
-                if isinstance(cell_value, bytes):  # <--- FIX ADDED HERE
+                if isinstance(cell_value, bytes):  
                     continue
                 if isinstance(cell_value, float):
                     continue
