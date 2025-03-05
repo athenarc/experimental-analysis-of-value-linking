@@ -1,4 +1,6 @@
 import os
+#set only gpu 1 visible
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from cvr_extractor.cvr_extractor_llm import LLMExtractor, DictionaryExtractor
 from cvr_extractor.cvr_extractor_ngrams import (
     NGramsExtractor,
@@ -7,33 +9,28 @@ from filtering.filtering_bridge import BridgeFilter
 from value_index.value_index_abc import ValueLinker
 from value_index.value_index_bm25_pyserini import BM25Index
 from value_index.value_index_bridge import BRIDGEIndex
-from value_index.value_index_chess import CHESSIndex
+from value_index.value_index_chess_2 import CHESSIndex
 from value_index.value_index_dart import DartSQLIndex
 from utils.value_linking_performance import ValueLinkingPerformance
 import json
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
+from utils.sqlite_db import DatabaseSqlite
 import time
 import logging
 from tqdm import tqdm
+from cvr_extractor.cvr_extractor_ner import NERExtractor
+from pathlib import Path
+os.makedirs('logs', exist_ok=True)
 
 def main():
 
-    #dictionary_of_trials = {
-    #    "codes" : ["bm25", "ngrams", "lexical"],
-    #    "chess" : ["chess", "dict", "none"],
-    #    "bridge" : ["bridge", "none", "none"],
-    #    "dart" : ["dart", "none", "none"]
-    #}
     dictionary_of_trials = {
-        "chess" : ["chess", "dict", "none"]
-
+        "codes" : ["bm25", "ngrams", "lexical"],
+        "chess" : ["chess", "dict", "none"],
+        "bridge" : ["bridge", "none", "none"],
+        "dart" : ["dart", "none", "none"]
     }
-    os.makedirs('logs', exist_ok=True)
-    logging.basicConfig(
-        filename='logs/baseline.log',  
-        level=logging.INFO,     
-        format='%(asctime)s - %(levelname)s - %(message)s'  
-    )
+
+    
     for trial in dictionary_of_trials:
         index_type = dictionary_of_trials[trial][0]
         keywords_method = dictionary_of_trials[trial][1]
@@ -43,7 +40,7 @@ def main():
         if index_type == "bm25":
             index = [BM25Index()]
         elif index_type == "chess":
-            index = [CHESSIndex()]
+            index_chess = CHESSIndex()
         elif index_type == "bridge":
             index = [BRIDGEIndex()]
         elif index_type == "dart":
@@ -80,19 +77,22 @@ def main():
             
         output_folder = base_path
 
-
-        linker = ValueLinker(index, keyword_extractor=keyword_extractor)
-        if index != "bridge":
-            for db_folder in os.listdir(databases_folder):
-                if db_folder.startswith("."):
-                    continue
-                db_path = os.path.join(databases_folder, db_folder, f"{db_folder}.sqlite")
-                output_folder_temp = os.path.join(output_folder, db_folder)
-                if not os.path.exists(output_folder_temp):
-                    os.makedirs(output_folder_temp)
-                    db = DatabaseSqlite(db_path)
-                    linker.create_indexes(db, output_folder_temp)
-
+        if index_type == "chess":
+            for db in Path(databases_folder).iterdir():
+                index_chess.create_index(db)
+        else:
+            linker = ValueLinker(index, keyword_extractor=keyword_extractor)
+            if index_type != "bridge":
+                for db_folder in os.listdir(databases_folder):
+                    if db_folder.startswith("."):
+                        continue
+                    db_path = os.path.join(databases_folder, db_folder, f"{db_folder}.sqlite")
+                    db_folder_path = os.path.join(databases_folder, db_folder)
+                    output_folder_temp = os.path.join(output_folder, db_folder)
+                    if not os.path.exists(output_folder_temp):
+                        os.makedirs(output_folder_temp)
+                        db = DatabaseSqlite(db_path)
+                        linker.create_indexes(db, output_folder_temp)
         query_path = "dev_20240627/dev.json"
         input_folder = output_folder
         all_results = []
@@ -104,11 +104,22 @@ def main():
             for record in tqdm(json_data, desc="Processing queries"):
                 db_id = record.get("db_id")
                 query = record.get("question")
+                if index_type == "chess":
+                    keywords = keyword_extractor.extract_keywords(query)
+                    db_path = os.path.join(databases_folder, db_id)
+                    results = index_chess.query_index(keywords=keywords,index_path=db_path)
+                    temp_results = set()
+                    for table_name, columns in results.items():
+                        for column_name, values in columns.items():
+                            for value in values:
+                                temp_results.add(f"{table_name}.{column_name}.{value}".lower())
+                    all_results.append(temp_results)
+                    continue
                 if index_type != "bridge":
                     index_path = os.path.join(input_folder, db_id)
                 else:
                     index_path = None
-                if index_type == "chess" or index_type == "bridge":
+                if index_type == "bridge":
                     if db_id != previous_db_id:
                         db_path = os.path.join(databases_folder, db_id, f"{db_id}.sqlite")
                         db = DatabaseSqlite(db_path)
@@ -129,7 +140,8 @@ def main():
                     )
                 all_results.append(results)
         query_time = time.time() - start
-        linker.print_timers()
+        if index_type != "chess":
+            linker.print_timers()
 
         ground_truth_strings = (
             "assets/value_linking_dataset_list.json"
@@ -138,9 +150,7 @@ def main():
             "assets/results_bird"
         )
         calculator = ValueLinkingPerformance(ground_truth_strings, results_folder)
-
-        temp_path = "assets/temp.json"
-        # Lowercase all the results
+        temp_path = f"logs/{trial}.json"
         all_results = [[x.lower() for x in result] for result in all_results]
         with open(temp_path, "w") as f:
             json.dump(all_results, f, indent=4)
@@ -182,4 +192,11 @@ def main():
         logging.info(f"\n\n############################################\n\n")
         
 if __name__ == "__main__":
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    logging.basicConfig(
+        filename='logs/baseline.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     main()
