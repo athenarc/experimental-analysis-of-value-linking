@@ -3,7 +3,7 @@ from utils.sqlite_db import DatabaseSqlite
 import difflib
 from typing import List, Optional, Tuple, Any
 from value_index.value_index_abc import ValueIndexABC
-
+from rapidfuzz import fuzz
 from filtering.filtering_abc import FilterABC
 from pathlib import Path
 INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/value_linking/"
