@@ -63,7 +63,14 @@ def main():
         databases_folder = (
             "dev_20240627/dev_databases"
         )
-        output_folder = "assets/mix_indexes_bird"
+        if index_type == "bm25":
+            output_folder = "assets/bm25_indexes_bird"
+        elif index_type == "minhash":
+            output_folder = "assets/minhash_indexes_bird"
+        elif index_type == "faiss":
+            output_folder = "assets/faiss_indexes_bird"
+        else:
+            output_folder = "assets/mix_indexes_bird"
 
 
         linker = ValueLinker(index, keyword_extractor=keyword_extractor)
