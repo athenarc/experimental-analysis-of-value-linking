@@ -41,6 +41,8 @@ Install the required JDK and Maven dependencies using Conda:
 Install the necessary Python packages by running:
 
     pip install -r requirements.txt
+    python -m spacy download en_core_web_sm
+
 
 ---
 
