@@ -41,6 +41,8 @@ Install the required JDK and Maven dependencies using Conda:
 Install the necessary Python packages by running:
 
     pip install -r requirements.txt
+    python -m spacy download en_core_web_sm
+
 
 ---
 
@@ -50,6 +52,7 @@ You can safely ignore this step since the dataset already exist in the assets fo
 
     python create_value_linking_dataset.py
 
+The assets folder also contains JSON files with golden value links, both with and without injected false positives, named accordingly. It also includes files with predicted value links for CodeS and CHESS. These files are used for text-to-SQL experiments.
 
 ---
 ## Value Reference Detection with LLM
@@ -82,6 +85,7 @@ This repository includes several scripts to run the experiments described in the
 
 ## Additional Information
 
+- Each experiment script generates console logs and a log file in the logs folder, recording key metrics for each run.
 - Each script is annotated with comments explaining its function and how it contributes to the overall analysis.
 - For detailed explanations of the experiments, please refer to the paper and the inline comments within the code.
 
