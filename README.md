@@ -52,6 +52,7 @@ You can safely ignore this step since the dataset already exist in the assets fo
 
     python create_value_linking_dataset.py
 
+Assets folder also contains the json files with golden value links with and without injected false positives with proper names. These files are used to run the text-to-SQL experiments.
 
 ---
 ## Value Reference Detection with LLM
