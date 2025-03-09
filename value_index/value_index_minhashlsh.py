@@ -49,6 +49,9 @@ class MinHashForestIndex(ValueIndexABC, FormattedValuesMixin):
             output_path: Output directory for index files
         """
         minhash_folder = os.path.join(output_path, "MinHashLSH")
+        if os.path.exists(minhash_folder):
+            print(f"MinHashLSH index already exists at {minhash_folder}. Skipping.")
+            return
         os.makedirs(minhash_folder, exist_ok=True)
         print(f"Creating MinHashLSH index in {minhash_folder}")
         schema = database.get_tables_and_columns()  # get the schema of the database

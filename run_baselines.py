@@ -1,6 +1,4 @@
 import os
-#set only gpu 1 visible
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from cvr_extractor.cvr_extractor_llm import LLMExtractor, DictionaryExtractor
 from cvr_extractor.cvr_extractor_ngrams import (
     NGramsExtractor,
@@ -9,7 +7,7 @@ from filtering.filtering_bridge import BridgeFilter
 from value_index.value_index_abc import ValueLinker
 from value_index.value_index_bm25_pyserini import BM25Index
 from value_index.value_index_bridge import BRIDGEIndex
-from value_index.value_index_chess_2 import CHESSIndex
+from value_index.value_index_chess import CHESSIndex
 from value_index.value_index_dart import DartSQLIndex
 from utils.value_linking_performance import ValueLinkingPerformance
 import json
@@ -17,7 +15,6 @@ from utils.sqlite_db import DatabaseSqlite
 import time
 import logging
 from tqdm import tqdm
-from cvr_extractor.cvr_extractor_ner import NERExtractor
 from pathlib import Path
 os.makedirs('logs', exist_ok=True)
 
@@ -150,7 +147,7 @@ def main():
             "assets/results_bird"
         )
         calculator = ValueLinkingPerformance(ground_truth_strings, results_folder)
-        temp_path = f"logs/{trial}.json"
+        temp_path = f"assets/{trial}.json"
         all_results = [[x.lower() for x in result] for result in all_results]
         with open(temp_path, "w") as f:
             json.dump(all_results, f, indent=4)

@@ -78,6 +78,7 @@
     ],
     [],
     [
+        "schools.fundingtype.locally funded",
         "schools.fundingtype.locally funded"
     ],
     [],
@@ -106,7 +107,8 @@
         "schools.district.fresno unified"
     ],
     [
-        "schools.virtual.f"
+        "schools.virtual.f",
+        ".rnk.5"
     ],
     [],
     [],
@@ -129,6 +131,7 @@
         "schools.doc.54"
     ],
     [
+        "schools.statustype.closed",
         "schools.statustype.closed"
     ],
     [],
@@ -188,6 +191,7 @@
     [
         "schools.county.santa clara",
         "schools.charter.1",
+        "schools.fundingtype.locally funded",
         "schools.fundingtype.locally funded"
     ],
     [
@@ -270,6 +274,7 @@
     [
         "schools.soc.62",
         "schools.doc.54",
+        "schools.county.san bernardino",
         "schools.city.san bernardino"
     ],
     [],
@@ -359,7 +364,8 @@
     [
         "loan.date.1993-07-05",
         "trans.date.1993-03-22",
-        "trans.date.1998-12-27"
+        "trans.date.1998-12-27",
+        "trans.date.1993-03-22"
     ],
     [
         "loan.status.a"
@@ -547,7 +553,8 @@
         "disp.type.disponent"
     ],
     [
-        "account.account_id.3"
+        "account.account_id.3",
+        "t2.total_amount.3539"
     ],
     [
         "account.account_id.130"
@@ -683,8 +690,10 @@
         "molecule.label.-"
     ],
     [
+        "connected.atom_id.tr004_20",
         "connected.atom_id2.tr004_8",
-        "connected.atom_id.tr004_20"
+        "connected.atom_id.tr004_8",
+        "connected.atom_id2.tr004_20"
     ],
     [
         "atom.element.sn"
@@ -749,6 +758,7 @@
         "bond.molecule_id.tr010"
     ],
     [
+        "bond.bond_type.-",
         "molecule.label.-"
     ],
     [
@@ -840,11 +850,12 @@
         "molecule.label.+"
     ],
     [
+        "molecule.label.-",
         "bond.bond_type.-"
     ],
     [
         "bond.bond_type.-",
-        "atom.element.cl"
+        "t.element.cl"
     ],
     [
         "molecule.molecule_id.tr000",
@@ -894,6 +905,7 @@
         "connected.bond_id.tr000_1_2"
     ],
     [
+        "molecule.label.-",
         "bond.bond_type.-"
     ],
     [
@@ -907,7 +919,7 @@
     ],
     [
         "molecule.molecule_id.tr006",
-        "atom.element.h"
+        "subquery.element.h"
     ],
     [
         "atom.element.ca"
@@ -1137,6 +1149,8 @@
         "cards.number.74s"
     ],
     [
+        "cards.ispromo.1",
+        "cards.ispromo.1",
         "cards.ispromo.1"
     ],
     [
@@ -1165,13 +1179,13 @@
         "cards.name.duress"
     ],
     [
-        "cards.name.ancestor's chosen"
+        "cards.name.ancestor''s chosen"
     ],
     [
-        "cards.name.ancestor's chosen"
+        "cards.name.ancestor''s chosen"
     ],
     [
-        "cards.name.angel of mercy"
+        ".name.angel of mercy"
     ],
     [
         "legalities.status.restricted",
@@ -1259,10 +1273,11 @@
         "cards.frameversion.future"
     ],
     [
-        "set_translations.setcode.ogw"
+        ".setcode.ogw"
     ],
     [
-        "cards.convertedmanacost.5"
+        "cards.convertedmanacost.5",
+        "set_translations.setcode.10e"
     ],
     [
         "cards.originaltype.creature - elf"
@@ -1315,6 +1330,7 @@
         "cards.istextless.0"
     ],
     [
+        "foreign_data.language.spanish",
         "foreign_data.language.spanish"
     ],
     [
@@ -1348,10 +1364,11 @@
         "foreign_data.flavortext.%das perfekte gegenmittel zu einer dichten formation%"
     ],
     [
-        "cards.artist.matthew d. wilson",
-        "cards.types.creature",
-        "cards.layout.normal",
-        "cards.bordercolor.black"
+        ".language.french",
+        ".artist.matthew d. wilson",
+        ".bordercolor.black",
+        ".types.creature",
+        ".layout.normal"
     ],
     [
         "cards.rarity.rare",
@@ -1382,6 +1399,8 @@
         "cards.bordercolor.borderless"
     ],
     [
+        "cards.ispromo.1",
+        "cards.isoversized.1",
         "cards.isreprint.1"
     ],
     [
@@ -1489,7 +1508,7 @@
         "cards.istextless.0"
     ],
     [
-        "cards.name.ancestor's chosen"
+        "cards.name.ancestor''s chosen"
     ],
     [
         "cards.bordercolor.white",
@@ -1519,16 +1538,17 @@
         "cards.frameversion.2003"
     ],
     [
-        "cards.name.ancestor's chosen"
+        ".language.italian",
+        ".name.ancestor''s chosen"
     ],
     [
-        "cards.name.angel of mercy"
+        ".name.angel of mercy"
     ],
     [
         "set_translations.translation.hauptset zehnte edition"
     ],
     [
-        "cards.name.ancestor's chosen",
+        "cards.name.ancestor''s chosen",
         "set_translations.language.korean"
     ],
     [
@@ -1546,7 +1566,7 @@
         "cards.name.angel of mercy"
     ],
     [
-        "cards.name.ancestor's chosen"
+        "cards.name.ancestor''s chosen"
     ],
     [
         "set_translations.translation.hauptset zehnte edition"
@@ -1556,6 +1576,7 @@
         "set_translations.language.italian"
     ],
     [
+        ".isforeignonly.1",
         "cards.name.adarkar valkyrie"
     ],
     [
@@ -1572,7 +1593,9 @@
     [
         "sets.name.coldsnap",
         "cards.artist.jeremy jarvis",
+        "sets.name.coldsnap",
         "cards.artist.chippy",
+        "sets.name.coldsnap",
         "cards.artist.aaron miller"
     ],
     [
@@ -1585,14 +1608,14 @@
         "cards.power.*"
     ],
     [
-        "cards.name.ancestor's chosen",
+        "cards.name.ancestor''s chosen",
         "foreign_data.language.italian"
     ],
     [
-        "cards.name.ancestor's chosen"
+        "cards.name.ancestor''s chosen"
     ],
     [
-        "cards.name.ancestor's chosen",
+        "cards.name.ancestor''s chosen",
         "foreign_data.language.german"
     ],
     [
@@ -1642,7 +1665,7 @@
         "set_translations.translation.rinascita di alara"
     ],
     [
-        "set_translations.translation.huiti\u00e8me \u00e9dition"
+        ".translation.huiti\u00e8me \u00e9dition"
     ],
     [
         "cards.name.tendo ice bridge",
@@ -1656,25 +1679,29 @@
         "set_translations.language.japanese"
     ],
     [
-        "sets.name.journey into nyx hero's path"
+        "sets.name.journey into nyx hero''s path"
     ],
     [
         "set_translations.translation.ola de fr\u00edo"
     ],
     [
-        "cards.name.samite pilgrim"
+        ".name.samite pilgrim"
     ],
     [
-        "sets.name.world championship decks 2004"
+        ".convertedmanacost.3",
+        ".name.world championship decks 2004"
     ],
     [
-        "sets.name.mirrodin"
+        ".language.chinese simplified",
+        ".name.mirrodin"
     ],
     [
-        "set_translations.language.japanese"
+        ".language.japanese",
+        ".isnonfoilonly.1"
     ],
     [
-        "set_translations.language.portuguese (brazil)"
+        ".language.portuguese (brazil)",
+        ".isonlineonly.1"
     ],
     [
         "cards.artist.aleksi briclot",
@@ -1692,7 +1719,7 @@
         "sets.type.commander"
     ],
     [
-        "legalities.format.duel"
+        ".format.duel"
     ],
     [
         "legalities.status.legal",
@@ -1709,10 +1736,11 @@
         "cards.types.enchantment"
     ],
     [
+        "legalities.status.banned",
         "legalities.status.banned"
     ],
     [
-        "sets.name.battlebond"
+        ".name.battlebond"
     ],
     [],
     [
@@ -1744,17 +1772,19 @@
     ],
     [
         "legalities.status.legal",
-        "sets.name.hour of devastation"
+        ".name.hour of devastation"
     ],
     [
-        "set_translations.language.korean",
-        "set_translations.language.%japanese%"
+        ".language.korean",
+        ".language.%japanese%"
     ],
     [
         "legalities.status.banned",
         "cards.artist.allen williams"
     ],
     [
+        "users.displayname.harlan",
+        "users.displayname.jarrod dixon",
         "users.displayname.harlan",
         "users.displayname.jarrod dixon"
     ],
@@ -1925,7 +1955,7 @@
         "badges.name.supporter"
     ],
     [
-        "badges.num.5"
+        "t.num.5"
     ],
     [
         "badges.name.supporter",
@@ -1947,7 +1977,8 @@
         "badges.name.student"
     ],
     [
-        "comments.postid.3720"
+        "comments.postid.3720",
+        "posthistory.postid.3720"
     ],
     [
         "postlinks.postid.61217"
@@ -1956,10 +1987,10 @@
         "postlinks.postid.395"
     ],
     [
-        "posts.score.60"
+        ".score.60"
     ],
     [
-        "posthistory.userid.686"
+        ".userid.686"
     ],
     [
         "posts.post_count.10"
@@ -2479,8 +2510,8 @@
         "race.race.alien"
     ],
     [
-        "superhero.full_name.emil blonsky",
-        "superhero.full_name.charles chandler"
+        "superhero.full_name.charles chandler",
+        "superhero.full_name.emil blonsky"
     ],
     [],
     [
@@ -2790,6 +2821,7 @@
         "drivers.forename.paul",
         "drivers.surname.di resta",
         "results.raceid.853",
+        "results.raceid.853",
         "results.raceid.854"
     ],
     [
@@ -2807,8 +2839,8 @@
     ],
     [],
     [
-        "races.year.2017",
-        "races.year.2000"
+        ".year.2017",
+        ".year.2000"
     ],
     [
         "races.name.european grand prix"
@@ -2951,9 +2983,9 @@
         "drivers.surname.hamilton"
     ],
     [
-        "results.rank.1",
         "drivers.forename.lewis",
-        "drivers.surname.hamilton"
+        "drivers.surname.hamilton",
+        ".rank.1"
     ],
     [
         "races.name.spanish grand prix",
@@ -3016,6 +3048,7 @@
         "races.year.2008"
     ],
     [
+        ".positionorder.1",
         "races.year.2008",
         "results.positionorder.1",
         "races.name.australian grand prix"
@@ -3053,8 +3086,9 @@
         "drivers.nationality.japanese"
     ],
     [
-        "races.year.1975",
-        "results.positionorder.1"
+        ".positionorder.1",
+        "results.positionorder.1",
+        ".year.1975"
     ],
     [
         "results.rank.2"
@@ -3088,7 +3122,7 @@
         "driverstandings.raceid.18"
     ],
     [
-        "drivers.nationality.dutch"
+        "t3.nationality.dutch"
     ],
     [
         "drivers.forename.robert",
@@ -3184,7 +3218,7 @@
     [],
     [
         "races.year.2008",
-        "circuits.name.marina bay street circuit"
+        ".name.marina bay street circuit"
     ],
     [],
     [
@@ -3224,9 +3258,11 @@
         "circuits.country.italy"
     ],
     [
+        "races.name.austrian grand prix",
         "races.name.austrian grand prix"
     ],
     [
+        "races.name.austrian grand prix",
         "races.name.austrian grand prix"
     ],
     [
@@ -3261,7 +3297,9 @@
     [
         "match.season.2015/2016"
     ],
-    [],
+    [
+        "player_attributes.sprint_speed.97"
+    ],
     [],
     [],
     [],
@@ -3281,6 +3319,7 @@
         "player.height.180"
     ],
     [
+        "team_attributes.buildupplaydribblingclass.normal",
         "team_attributes.buildupplaydribblingclass.normal"
     ],
     [
@@ -3379,6 +3418,8 @@
     ],
     [
         "player.player_name.abdou diallo",
+        "player.player_name.aaron appindangoye",
+        "player.player_name.abdou diallo",
         "player.player_name.aaron appindangoye"
     ],
     [
@@ -3416,6 +3457,7 @@
         "player_attributes.volleys.70"
     ],
     [
+        "player_attributes.volleys.70",
         "player_attributes.dribbling.70"
     ],
     [
@@ -3427,10 +3469,12 @@
         "league.name.belgium jupiler league"
     ],
     [
+        "match.season.2008/2009",
         "match.season.2008/2009"
     ],
     [],
     [
+        "player.player_name.paulin puel",
         "player.player_name.paulin puel",
         "player.player_name.ariel borysiuk"
     ],
@@ -3500,10 +3544,11 @@
     ],
     [
         "player.player_name.landon donovan",
-        "player.player_name.jordan bowery"
+        "player.player_name.jordan bowery",
+        "player.player_name.landon donovan"
     ],
     [
-        "player.rank.1"
+        ".rank.1"
     ],
     [],
     [],
@@ -3557,17 +3602,18 @@
         "player_attributes.preferred_foot.left"
     ],
     [
+        "player_attributes.strength.80",
         "player_attributes.stamina.80"
     ],
     [
-        "league.name.poland ekstraklasa"
+        ".name.poland ekstraklasa"
     ],
     [
         "league.name.belgium jupiler league",
         "match.date.2008-09-24%"
     ],
     [
-        "player.player_name.alexis blin"
+        ".player_name.alexis blin"
     ],
     [
         "team.team_long_name.ksv cercle brugge"
@@ -3628,6 +3674,7 @@
     ],
     [
         "patient.sex.f",
+        "patient.sex.f",
         "laboratory.tp.6.0",
         "laboratory.tp.8.5"
     ],
@@ -3683,9 +3730,9 @@
         "patient.diagnosis.aortitis"
     ],
     [
-        "examination.examination date.1993-11-12",
-        "patient.diagnosis.sle",
-        "patient.description.1994-02-19"
+        ".examination date.1993-11-12",
+        ".diagnosis.sle",
+        ".description.1994-02-19"
     ],
     [
         "laboratory.gpt.9.0",
@@ -3710,7 +3757,8 @@
     [
         "patient.birthday.1959-02-18",
         "laboratory.date.1981-12-%",
-        "laboratory.date.1981-11-%"
+        "laboratory.date.1981-11-%",
+        "laboratory.date.1981-12-%"
     ],
     [
         "examination.diagnosis.behcet"
@@ -3724,6 +3772,8 @@
         "patient.sex.f"
     ],
     [
+        "examination.thrombosis.2",
+        "examination.ana pattern.s",
         "examination.thrombosis.2",
         "examination.ana pattern.s"
     ],
@@ -3919,7 +3969,7 @@
         "laboratory.hgb.10"
     ],
     [
-        "laboratory.hct.52"
+        ".hct.52"
     ],
     [
         "laboratory.hct.29"
@@ -3945,16 +3995,16 @@
         "laboratory.aptt.45"
     ],
     [
-        "laboratory.fg.150",
         "patient.sex.m",
         "laboratory.wbc.9.0",
-        "laboratory.fg.450",
-        "laboratory.wbc.3.5"
+        "laboratory.wbc.3.5",
+        "laboratory.fg.150",
+        "laboratory.fg.450"
     ],
     [
+        "patient.birthday.1980-01-01",
         "laboratory.fg.150",
-        "laboratory.fg.450",
-        "patient.birthday.1980-01-01"
+        "laboratory.fg.450"
     ],
     [
         "laboratory.u-pro.30"
@@ -4007,15 +4057,16 @@
         "patient.diagnosis.aps"
     ],
     [
+        "patient.admission.+",
         "laboratory.rnp.negative",
-        "laboratory.rnp.0",
-        "patient.admission.+"
+        "laboratory.rnp.0"
     ],
     [
         "laboratory.rnp.-"
     ],
     [
         "laboratory.sm.negative",
+        "laboratory.sm.0",
         "examination.thrombosis.0"
     ],
     [
@@ -4040,14 +4091,16 @@
         "laboratory.ssa.0"
     ],
     [
-        "laboratory.ssb.negative",
-        "patient.diagnosis.sle"
+        "patient.diagnosis.sle",
+        "laboratory.ssb.negative"
     ],
     [
         "laboratory.ssb.negative"
     ],
     [
         "patient.sex.m",
+        "laboratory.centromea.negative",
+        "laboratory.centromea.0",
         "laboratory.ssb.negative",
         "laboratory.ssb.0"
     ],
@@ -4148,6 +4201,8 @@
     ],
     [
         "laboratory.cpk.250",
+        "examination.lac.+",
+        "examination.kct.+",
         "examination.rvvt.+"
     ],
     [
@@ -4195,13 +4250,13 @@
         "major.department.art and design department"
     ],
     [
-        "event.event_name.women's soccer"
+        "event.event_name.women''s soccer"
     ],
     [
-        "event.event_name.women's soccer"
+        "event.event_name.women''s soccer"
     ],
     [
-        "event.event_name.women's soccer",
+        "event.event_name.women''s soccer",
         "member.t_shirt_size.medium"
     ],
     [],
@@ -4284,6 +4339,7 @@
         "expense.expense_date.2019-09-04"
     ],
     [
+        "budget.category.food",
         "budget.category.food"
     ],
     [
@@ -4299,7 +4355,7 @@
     ],
     [
         "member.first_name.adela",
-        "member.last_name.o'gallagher"
+        "member.last_name.o''gallagher"
     ],
     [
         "event.event_name.november meeting",
@@ -4379,7 +4435,7 @@
         "member.position.vice president"
     ],
     [
-        "event.event_name.women's soccer"
+        "event.event_name.women''s soccer"
     ],
     [
         "member.first_name.casey",
@@ -4462,7 +4518,7 @@
     [
         "member.first_name.maya",
         "member.last_name.mclean",
-        "event.event_name.women's soccer"
+        "event.event_name.women''s soccer"
     ],
     [
         "event.type.community service"
@@ -4558,8 +4614,8 @@
         "budget.spent.0"
     ],
     [
-        "major.department.electrical and computer engineering department",
-        "member.position.member"
+        ".department.electrical and computer engineering department",
+        ".position.member"
     ],
     [
         "event.type.social",
@@ -4571,7 +4627,7 @@
         "expense.expense_description.pizza"
     ],
     [
-        "event.event_name.women's soccer",
+        "event.event_name.women''s soccer",
         "member.position.member"
     ],
     [
@@ -4732,14 +4788,30 @@
         "customers.currency.czk",
         "customers.segment.sme",
         "customers.segment.lam",
-        "customers.segment.kam"
+        "customers.segment.lam",
+        "customers.segment.kam",
+        "customers.segment.kam",
+        "customers.segment.sme"
     ],
     [
         "customers.segment.sme",
         "yearmonth.date.2012%",
         "customers.segment.lam",
+        "yearmonth.date.2012%",
         "customers.segment.kam",
-        "yearmonth.date.2013%"
+        "yearmonth.date.2012%",
+        "customers.segment.lam",
+        "yearmonth.date.2013%",
+        "customers.segment.lam",
+        "yearmonth.date.2012%",
+        "customers.segment.kam",
+        "yearmonth.date.2013%",
+        "customers.segment.kam",
+        "yearmonth.date.2012%",
+        "customers.segment.sme",
+        "yearmonth.date.2013%",
+        "customers.segment.sme",
+        "yearmonth.date.2012%"
     ],
     [
         "yearmonth.customerid.6"
@@ -4776,6 +4848,7 @@
         "yearmonth.consumption.46.73"
     ],
     [
+        "gasstations.segment.value for money",
         "gasstations.segment.value for money"
     ],
     [
@@ -4900,6 +4973,7 @@
     ],
     [],
     [
+        "gasstations.country.svk",
         "gasstations.country.svk",
         "gasstations.segment.premium"
     ],

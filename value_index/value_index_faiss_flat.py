@@ -12,6 +12,7 @@ from transformers import AutoModel, AutoTokenizer
 import faiss
 import numpy as np
 
+
 INDEXES_CACHE_PATH = str(Path.home()) + "/.cache/darelabdb/db_value_indexes/"
 
 
@@ -20,8 +21,8 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         self,
         model_used="BAAI/bge-large-en-v1.5",
         delimeter=".",
-        per_value=True,
-        skip_non_text=False,
+        per_value=False,
+        skip_non_text=True,
     ):
         """
         Initialize FAISS indexer.
@@ -45,7 +46,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         self.faiss_flat_mappings = {}
 
     def create_index(
-        self, database: DatabaseSqlite, output_path=INDEXES_CACHE_PATH
+        self, database:  DatabaseSqlite, output_path=INDEXES_CACHE_PATH
     ):
         """
         Create FAISS flat index from database embeddings.
@@ -64,6 +65,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
         device_id = 0 if torch.cuda.is_available() else -1
         if device_id != -1:
             # if gpu is available, move the index to the gpu
+            torch.cuda.empty_cache()
             index = faiss.index_cpu_to_gpu(
                 gpu_resources, device_id, faiss.IndexFlatL2(dimension)
             )  # move the index to the gpu if available
@@ -121,6 +123,7 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
                         if (
                             len(batch_texts) >= 512
                         ):  # if the batch size is larger than 512, then we process the batch
+                            torch.cuda.empty_cache()
                             inputs = self.tokenizer(
                                 batch_texts,
                                 padding=True,

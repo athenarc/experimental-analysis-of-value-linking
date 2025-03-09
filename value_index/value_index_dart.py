@@ -54,7 +54,7 @@ class DartSQLIndex(ValueIndexABC):
         schema = database.get_tables_and_columns()
 
         for table in schema["tables"]:
-            if table == "sqlite_sequence":
+            if table.startswith("sqlite_autoindex") or table == "sqlite_sequence" :
                 continue
 
             try:

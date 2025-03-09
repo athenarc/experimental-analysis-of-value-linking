@@ -73,11 +73,24 @@ class FormattedValuesMixin:
         skip_non_text = self.skip_non_text or skip_non_text_bruteforce
 
         try:
-
-            columns_info = database.execute(
-                f'PRAGMA table_info("{table}");', limit=-1
-            )
-            columns = columns_info.to_dict("records")
+            if (
+                hasattr(database, "config")
+                and hasattr(database.config, "type")
+                and database.config.type == "postgresql"
+            ):
+                query = f"""
+                    SELECT column_name AS name, data_type, is_nullable, column_default
+                    FROM information_schema.columns
+                    WHERE table_name = '{table}'
+                    AND table_schema = '{database.specific_schema or 'public'}';
+                """
+                columns_info = database.execute(query, limit=-1)
+                columns = columns_info.to_dict("records")
+            else:
+                columns_info = database.execute(
+                    f'PRAGMA table_info("{table}");', limit=-1
+                )
+                columns = columns_info.to_dict("records")
 
             # Standardize column type key for consistency
             for col in columns:
@@ -94,7 +107,15 @@ class FormattedValuesMixin:
             for col in columns:
                 col_name = col["name"]
                 print(f"Processing column {col_name} in table {table}")
-                query = f"SELECT DISTINCT `{col_name}` FROM `{table}` WHERE `{col_name}` IS NOT NULL;"
+                # Use proper quoting for PostgreSQL
+                if (
+                    hasattr(database, "config")
+                    and hasattr(database.config, "type")
+                    and database.config.type == "postgresql"
+                ):
+                    query = f'SELECT DISTINCT "{col_name}" FROM "{table}" WHERE "{col_name}" IS NOT NULL;'
+                else:
+                    query = f"SELECT DISTINCT `{col_name}` FROM `{table}` WHERE `{col_name}` IS NOT NULL;"
 
                 try:
                     values_df = database.execute(query, limit=-1)
@@ -113,7 +134,6 @@ class FormattedValuesMixin:
             print(f"Error processing table {table}: {e}")
 
         return formatted_values
-
 
 class ValueLinker:
     """Orchestrates multiple indexing strategies for comprehensive value matching."""

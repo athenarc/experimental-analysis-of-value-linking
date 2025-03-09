@@ -38,6 +38,10 @@ class BM25Index(ValueIndexABC):
         """
         temp_json_dir = os.path.join(output_path, "temp_db_index")
         index_path = os.path.join(output_path, "bm25_index")
+        #if index path exists, skip the creation
+        if os.path.exists(index_path):
+            print(f"BM25 index already exists at {index_path}. Skipping.")
+            return
         os.makedirs(temp_json_dir, exist_ok=True)
         print(f"Creating BM25 index at {index_path}")
         schema = database.get_tables_and_columns()  # get the schema of the database
