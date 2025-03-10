@@ -1,4 +1,6 @@
 import os
+#set only one gpu
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from cvr_extractor.cvr_extractor_ngrams import (
     NGramsExtractor,
 )
@@ -16,18 +18,18 @@ from tqdm import tqdm
 
 def main():
     dictionary_of_trials = {
-        "faiss" : ["faiss", "ngrams", "lexical","0.50"],
-        "faiss" : ["faiss", "ngrams", "lexical","0.85"],
-        "faiss" : ["faiss", "ngrams", "lexical","0.99"],
-        "faiss" : ["faiss", "ngrams", "semantic","0.70"],
-        "faiss" : ["faiss", "ngrams", "semantic","0.75"],
-        "faiss" : ["faiss", "ngrams", "semantic","0.80"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "lexical","0.50"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "lexical","0.85"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "lexical","0.99"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "semantic","0.70"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "semantic","0.75"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "semantic","0.80"],
+        "faiss_lexical_50": ["faiss", "ngrams", "lexical", "0.50"],
+        "faiss_lexical_85": ["faiss", "ngrams", "lexical", "0.85"],
+        "faiss_lexical_99": ["faiss", "ngrams", "lexical", "0.99"],
+        "faiss_semantic_70": ["faiss", "ngrams", "semantic", "0.70"],
+        "faiss_semantic_75": ["faiss", "ngrams", "semantic", "0.75"],
+        "faiss_semantic_80": ["faiss", "ngrams", "semantic", "0.80"],
+        "bm25_faiss_lexical_50": ["bm25_faiss", "ngrams", "lexical", "0.50"],
+        "bm25_faiss_lexical_85": ["bm25_faiss", "ngrams", "lexical", "0.85"],
+        "bm25_faiss_lexical_99": ["bm25_faiss", "ngrams", "lexical", "0.99"],
+        "bm25_faiss_semantic_70": ["bm25_faiss", "ngrams", "semantic", "0.70"],
+        "bm25_faiss_semantic_75": ["bm25_faiss", "ngrams", "semantic", "0.75"],
+        "bm25_faiss_semantic_80": ["bm25_faiss", "ngrams", "semantic", "0.80"],
     }
 
     os.makedirs('logs', exist_ok=True)
@@ -146,4 +148,11 @@ def main():
         logging.info(f"\n\n############################################\n\n")
         
 if __name__ == "__main__":
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    logging.basicConfig(
+        filename='logs/filtering.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     main()

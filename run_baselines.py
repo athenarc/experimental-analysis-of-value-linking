@@ -22,9 +22,9 @@ def main():
 
     dictionary_of_trials = {
         "codes" : ["bm25", "ngrams", "lexical"],
-        "chess" : ["chess", "dict", "none"],
-        "bridge" : ["bridge", "none", "none"],
-        "dart" : ["dart", "none", "none"]
+        #"chess" : ["chess", "dict", "none"],
+        #"bridge" : ["bridge", "none", "none"],
+        #"dart" : ["dart", "none", "none"]
     }
 
     
@@ -64,7 +64,7 @@ def main():
         )
         base_path = ""
         if index_type == "bm25":
-            base_path = "assets/bm25_indexes_bird"
+            base_path = "assets/mix_indexes_bird"
         elif index_type == "chess":
             base_path = "assets/chess_indexes_bird"
         elif index_type == "bridge":

@@ -447,7 +447,6 @@ def handle_text_to_sql(
     db_representation_config = config["prompt"]["database_representation"]
 
     prompt_arguments = {
-        "prompt_version": config["prompt"]["version"],
         "schema_type": db_representation_config["format"],
         "include_pk": db_representation_config["include_primary_keys"],
         "include_fk": db_representation_config["include_foreign_keys"],
@@ -1617,6 +1616,8 @@ class Bird():
             Dict[str, List[SqlQueryDatapoint]]: A dictionary with keys "train" and "dev",
                 and the corresponding lists of SqlQueryDatapoint.
         """
+        if self.data is None:
+            self._init_data()
         return {
             "train": [
                 self._row_to_datapoint(row) for _, row in self.data["train"].iterrows()
@@ -1814,19 +1815,7 @@ def _calculate_total_statistics(results: pd.DataFrame) -> pd.DataFrame:
         [
             {
                 "AVG exec": results["exec"].mean(),
-                "AVG exec-only_common_result_columns": results[
-                    "exec-only_common_result_columns"
-                ].mean(),
-                "AVG exec-target_result_columns_subset": results[
-                    "exec-target_result_columns_subset"
-                ].mean(),
-                "AVG exec-target_result_columns_superset": results[
-                    "exec-target_result_columns_superset"
-                ].mean(),
-                "Total exec errors": results["exec_error"].count(),
-                "AVG structural_match": results["structural_match"].mean(),
-                "AVG operator_match": results["operator_match"].mean(),
-                "AVG variable_match": results["variable_match"].mean(),
+
             }
         ]
     )

@@ -48,9 +48,9 @@ def main():
         elif index_type == "minhash":
             index = [MinHashForestIndex()]
         elif index_type == "faiss":
-            index = [FaissFlatIndex()]
+            index = [FaissFlatIndex(per_value=True,skip_non_text=False)]
         elif index_type == "bm25_minhash_faiss":
-            index = [BM25Index(), MinHashForestIndex(), FaissFlatIndex()]
+            index = [BM25Index(), MinHashForestIndex(), FaissFlatIndex(per_value=True,skip_non_text=False)]
             
         if keywords_method == "ngrams":
             keyword_extractor = NGramsExtractor()
@@ -63,14 +63,7 @@ def main():
         databases_folder = (
             "dev_20240627/dev_databases"
         )
-        if index_type == "bm25":
-            output_folder = "assets/bm25_indexes_bird"
-        elif index_type == "minhash":
-            output_folder = "assets/minhash_indexes_bird"
-        elif index_type == "faiss":
-            output_folder = "assets/faiss_indexes_bird"
-        else:
-            output_folder = "assets/mix_indexes_bird"
+        output_folder = "assets/mix_indexes_bird"
 
 
         linker = ValueLinker(index, keyword_extractor=keyword_extractor)
@@ -157,4 +150,11 @@ def main():
         logging.info(f"\n\n############################################\n\n")
         
 if __name__ == "__main__":
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    logging.basicConfig(
+        filename='logs/value_reference.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     main()

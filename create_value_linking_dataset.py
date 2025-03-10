@@ -15,7 +15,10 @@ nltk.download("wordnet", quiet=True)
 
 class ValueLinkingDatasetProcessor:
     """Processes dataset for value linking tasks including formatting, typos, synonyms, and predictions."""
-
+    def __init__(self, schema_data: List[Dict]):
+        # Initialize schema mapping from schema data
+        self.schema_mapping = self._build_schema_mapping(schema_data)
+        
     def format_value_strings(self, input_path, output_path):
         """Formats values into 'table.column.value' strings and saves them.
 
@@ -37,153 +40,7 @@ class ValueLinkingDatasetProcessor:
         with open(output_path, "w") as output_file:
             json.dump(results, output_file, indent=4)
 
-    def filter_records(self, input_path, output_path):
-        """Filters records not containin values in WHERE clauses.
-
-        Args:
-            input_path (str): Path to input JSON file
-            output_path (str): Path to save filtered JSON
-        """
-        with open(input_path, "r") as f:
-            data = json.load(f)
-
-        filtered = []
-        for record in data:
-            if record.get("values"):
-                all_strings = all(
-                    isinstance(v.get("value"), str)
-                    and re.search(r"[a-zA-Z]", v.get("value"))
-                    for v in record["values"]
-                )
-                if all_strings:
-                    filtered.append(
-                        {
-                            "values": record.get("values"),
-                            "question": record.get("question"),
-                            "db_id": record.get("schema", {}).get("db_id"),
-                        }
-                    )
-
-        with open(output_path, "w") as f:
-            json.dump(filtered, f, indent=4)
-
-    def _introduce_spelling_error(self, word):
-        """Randomly adds or removes a character from a word."""
-        if len(word) < 1:
-            return word
-
-        if random.choice([True, False]):
-            pos = random.randint(0, len(word))
-            return word[:pos] + random.choice(string.ascii_letters) + word[pos:]
-        return (
-            word[: random.randint(0, len(word) - 1)]
-            + word[random.randint(0, len(word) - 1) + 1 :]
-        )
-
-    def introduce_typos(self, input_path, output_path):
-        """Introduces spelling errors to value tokens in questions.
-
-        Args:
-            input_path (str): Path to input JSON file
-            output_path (str): Path to save modified JSON
-        """
-        with open(input_path, "r") as f:
-            data = json.load(f)
-
-        output = []
-        for record in data:
-            tokens = {
-                token.lower()
-                for value in record["values"]
-                for token in value["value"].split()
-            }
-            modified_words = []
-            changed = False
-
-            for word in record["question"].split():
-                lower_word = word.lower()
-                if lower_word in tokens:
-                    modified = self._introduce_spelling_error(word)
-                    changed |= modified != word
-                    modified_words.append(modified)
-                else:
-                    modified_words.append(word)
-
-            if changed:
-                output.append(
-                    {
-                        "question": " ".join(modified_words),
-                        "values": record["values"],
-                        "db_id": record["db_id"],
-                    }
-                )
-
-        with open(output_path, "w") as f:
-            json.dump(output, f, indent=4)
-
-    def _get_most_relevant_synonym(self, word):
-        """Finds most semantically relevant synonym using WordNet."""
-        synsets = wordnet.synsets(word)
-        if not synsets:
-            return word
-
-        primary = synsets[0]
-        candidates = []
-
-        for syn in synsets:
-            for lemma in syn.lemmas():
-                synonym = lemma.name().replace("_", " ")
-                if synonym.lower() != word:
-                    if synset := wordnet.synsets(synonym):
-                        similarity = primary.path_similarity(synset[0])
-                        if similarity:
-                            candidates.append((synonym, similarity))
-
-        return max(candidates, key=lambda x: x[1], default=(word, 0))[0]
-
-    def introduce_synonyms(self, input_path, output_path):
-        """Replaces value tokens with synonyms in questions.
-
-        Args:
-            input_path (str): Path to input JSON file
-            output_path (str): Path to save modified JSON
-        """
-        with open(input_path, "r") as f:
-            data = json.load(f)
-
-        output = []
-        for record in data:
-            tokens = {
-                token.lower(): token
-                for value in record["values"]
-                for token in value["value"].split()
-            }
-            modified_words = []
-            changed = False
-
-            for word in record["question"].split():
-                stripped = word.strip(",.!?;:")
-                if stripped.lower() in tokens:
-                    synonym = self._get_most_relevant_synonym(stripped.lower())
-                    formatted = (
-                        synonym.lower() if word.islower() else synonym.capitalize()
-                    )
-                    changed |= formatted != stripped
-                    modified_words.append(formatted)
-                else:
-                    modified_words.append(word)
-
-            if changed:
-                output.append(
-                    {
-                        "question": " ".join(modified_words),
-                        "values": record["values"],
-                        "db_id": record["db_id"],
-                    }
-                )
-
-        with open(output_path, "w") as f:
-            json.dump(output, f, indent=4)
+    
 
     def generate_predictions_with_precision(
         self, pred_path, gt_path, precision, output_path
@@ -222,236 +79,168 @@ class ValueLinkingDatasetProcessor:
         with open(output_path, "w") as f:
             json.dump(results, f, indent=4)
 
-    def build_schema_mapping(self, raw_schemas: List[Dict]) -> Dict[str, Dict]:
-        """Convert raw schema data into a standardized format for query processing.
-
-        Args:
-            raw_schemas: List of schema definitions from different databases
-
-        Returns:
-            Dictionary mapping database IDs to their normalized schemas
-        """
-        schema_map = {}
-        for schema in raw_schemas:
-            db_id = schema["db_id"]
-            tables = {}
-
-            # Process columns into table-based structure
-            for col_info in schema["column_names"]:
-                table_idx = col_info[0]
-                if table_idx == -1:  # Skip special columns
-                    continue
-
-                table_name = schema["table_names"][table_idx].lower()
-                column_name = col_info[1].lower()
-
-                if table_name not in tables:
-                    tables[table_name] = []
-                tables[table_name].append(column_name)
-
-            # Convert to final schema format
-            schema_items = [
-                {"table_name": table, "column_names": columns}
-                for table, columns in tables.items()
-            ]
-
-            schema_map[db_id] = {"schema_items": schema_items}
-
-        return schema_map
-
-    def process_sql_query(
-        self,
-        sql_query: str,  # First parameter after self
-        schema: Dict,  # Second parameter
-        dialect: str = "sqlite",  # Should come last
-    ) -> Tuple[List[str], List[str], List[Dict]]:
-        """Extract tables, columns, and values from a SQL query using database schema.
-
-        Args:
-            sql_query: Input SQL query string
-            schema: Preprocessed schema for the target database
-            dialect: SQL dialect for parsing
-
-        Returns:
-            Tuple containing:
-            - List of table names
-            - List of column names (with table prefixes)
-            - List of value conditions
-        """
-
-        def resolve_table_for_column(
-            column_name: str, base_tables: List[str], schema_items: List[Dict]
-        ) -> Optional[str]:
-            """Resolve table name for columns without explicit table references."""
-            if len(base_tables) == 1:
-                return base_tables[0]
-
-            for table in schema_items:
-                if (
-                    column_name in table["column_names"]
-                    and table["table_name"] in base_tables
-                ):
-                    return table["table_name"]
-            return None
-
-        def resolve_table_name(
-            table_alias: str, table_map: Dict[str, str], tables: List[str]
-        ) -> Optional[str]:
-            """Resolve table aliases to real names using context."""
-            if table_alias in table_map:
-                return table_map[table_alias]
-            return table_alias if table_alias in tables else None
-
-        def extract_from_expression(
-            expression: exp.Expression, schema_items: List[Dict], cte_aliases: List[str]
-        ) -> Tuple[List[str], List[str], List[Dict]]:
-            """Recursively process SQL expressions."""
-            tables = []
-            columns = []
-            values = []
-            operator_map = {
-                "eq": "=",
-                "neq": "!=",
-                "gt": ">",
-                "lt": "<",
-                "gte": ">=",
-                "lte": "<=",
-                "like": "LIKE",
-                "in": "IN",
+    @staticmethod
+    def _build_schema_mapping(schema_data: List[Dict]) -> Dict[str, Dict]:
+        # Build a mapping of database IDs to their schema details
+        schema_mapping = {}
+        for schema in schema_data:
+            schema_mapping[schema["db_id"]] = {
+                "schema_items": [
+                    {
+                        "table_name": schema["table_names"][col[0]],
+                        "column_names": [
+                            schema["column_names"][idx][1].lower()
+                            for idx in range(len(schema["column_names"]))
+                            if schema["column_names"][idx][0] == col[0]
+                        ],
+                    }
+                    for col in schema["column_names"]
+                    if col[0] != -1
+                ]
             }
+        return schema_mapping
 
-            # Extract base tables
-            base_tables = [
+    def extract_tables_columns_and_values(
+        self, sql_query: str, db_id: str, dialect: str = "sqlite"
+    ) -> Tuple[List[str], List[str], List[Dict[str, str]]]:
+        # Retrieve schema for the given database ID
+        schema = self.schema_mapping.get(db_id, None)
+        if not schema:
+            return [], [], []
+
+        def get_subquery_tables_columns_and_values(expression, cte_aliases):
+            # Extract table names from the query, excluding CTE aliases
+            tables = [
                 t.name.lower()
                 for t in expression.find_all(exp.Table)
                 if t.name.lower() not in cte_aliases
             ]
 
-            # Build alias mapping
+            # Map table aliases to their original table names
             table_aliases = {
                 t.alias.lower(): t.name.lower()
                 for t in expression.find_all(exp.Table)
-                if t.alias
+                if t.alias != ""
             }
 
-            # Process columns
-            for col in expression.find_all(exp.Column):
-                col_table = col.table.lower() if col.table else ""
-                col_name = col.name.lower()
+            columns = []
+            values = []
+            # Extract columns from the query
+            for c in expression.find_all(exp.Column):
+                column_name = c.name.lower()
+                table_name_or_alias = c.table.lower()
 
-                # Resolve table name
-                resolved_table = resolve_table_name(
-                    col_table, table_aliases, base_tables
-                )
-                if not resolved_table:
-                    # Try column-based disambiguation
-                    for table in schema_items:
-                        if (
-                            col_name in table["column_names"]
-                            and table["table_name"] in base_tables
-                        ):
-                            resolved_table = table["table_name"]
-                            break
+                if table_name_or_alias == "":
+                    # Disambiguate columns when table name is not provided
+                    if len(tables) == 1:
+                        table_name = tables[0]
+                    else:
+                        table_name = ""
+                        for table in schema["schema_items"]:
+                            if (
+                                column_name in table["column_names"]
+                                and table["table_name"] in tables
+                            ):
+                                table_name = table["table_name"]
+                                break
+                        if table_name == "":
+                            continue
+                elif table_name_or_alias in table_aliases:
+                    table_name = table_aliases[table_name_or_alias]
+                elif table_name_or_alias in tables:
+                    table_name = table_name_or_alias
+                else:
+                    continue
 
-                if resolved_table:
-                    columns.append(f"{resolved_table}.{col_name}")
+                columns.append(f"{table_name}.{column_name}")
 
-            # Process conditions
-            condition_types = (
-                exp.EQ,
-                exp.NEQ,
-                exp.GT,
-                exp.LT,
-                exp.GTE,
-                exp.LTE,
-                exp.Like,
-                exp.In,
-            )
+            # Extract values from conditions in the query
             for condition in expression.find_all(exp.Condition):
-                if isinstance(condition, condition_types):
+                if isinstance(
+                    condition,
+                    (exp.EQ, exp.NEQ, exp.GT, exp.LT, exp.GTE, exp.LTE, exp.Like, exp.In),
+                ):
+                    operator_map = {
+                        "eq": "=",
+                        "neq": "!=",
+                        "gt": ">",
+                        "lt": "<",
+                        "gte": ">=",
+                        "lte": "<=",
+                        "like": "LIKE",
+                        "in": "IN",
+                    }
                     operator = operator_map.get(
                         condition.__class__.__name__.lower(),
-                        condition.key,  # fallback to SQLGlot's built-in key
-                    )
-                    left = (
-                        condition.left if hasattr(condition, "left") else condition.this
-                    )
-                    right = (
-                        condition.right
-                        if hasattr(condition, "right")
-                        else condition.expressions
+                        condition.__class__.__name__.lower(),
                     )
 
-                    if isinstance(left, exp.Column):
-                        # Handle both explicit and implicit table references
-                        col_table = left.table.lower() if left.table else ""
-                        col_name = left.name.lower()
+                    if isinstance(condition, exp.In):
+                        left = condition.this
+                        right = condition.expressions
 
-                        # First try explicit table resolution
-                        table_name = resolve_table_name(
-                            col_table, table_aliases, base_tables
-                        )
+                        if isinstance(left, exp.Column):
+                            column_name = left.name.lower()
+                            table_name = left.table.lower()
 
-                        # If that fails, try schema-based resolution
-                        if not table_name:
-                            table_name = resolve_table_for_column(
-                                col_name, base_tables, schema_items
-                            )
+                            if table_name == "" and len(tables) == 1:
+                                table_name = tables[0]
+                            elif table_name in table_aliases:
+                                table_name = table_aliases[table_name]
 
-                        # Process value if we resolved the table
-                        if table_name:
-                            if isinstance(condition, exp.In):
-                                left = condition.this
-                                right = condition.expressions
-                                for expr in right:
-                                    if isinstance(expr, exp.Literal):
-                                        values.append(
-                                            {
-                                                "table": table_name,
-                                                "column": col_name,
-                                                "value": expr.this.strip("'\""),
-                                                "condition": operator,
-                                            }
-                                        )
-                            elif isinstance(right, exp.Literal):
-                                values.append(
-                                    {
+                            for literal in right:
+                                if isinstance(literal, exp.Literal):
+                                    values.append({
                                         "table": table_name,
-                                        "column": col_name,
-                                        "value": right.this.strip("'\""),
-                                        "condition": operator,
-                                    }
-                                )
+                                        "column": column_name,
+                                        "value": str(literal).strip("'\""),
+                                    })
+                    else:
+                        left = condition.left
+                        right = condition.right
 
-            # Recursively process subqueries
-            for subquery in expression.find_all((exp.Subquery, exp.CTE)):
-                sub_tables, sub_columns, sub_values = extract_from_expression(
-                    subquery.this, schema_items, cte_aliases
-                )
-                tables += sub_tables
-                columns += sub_columns
-                values += sub_values
+                        if isinstance(left, exp.Column) and isinstance(right, exp.Literal):
+                            column_name = left.name.lower()
+                            table_name = left.table.lower()
 
-            return base_tables, columns, values
+                            if table_name == "" and len(tables) == 1:
+                                table_name = tables[0]
+                            elif table_name in table_aliases:
+                                table_name = table_aliases[table_name]
 
-        # Main processing logic
-        if not schema or "schema_items" not in schema:
-            return [], [], []
+                            values.append({
+                                "table": table_name,
+                                "column": column_name,
+                                "value": str(right).strip("'\""),
+                                "condition": operator,
+                            })
 
-        try:
-            parsed = sqlglot.parse_one(sql_query, read=dialect)
-            cte_aliases = [cte.alias.lower() for cte in parsed.find_all(exp.CTE)]
-            tables, columns, values = extract_from_expression(
-                parsed, schema["schema_items"], cte_aliases
+            return tables, columns, values
+
+        # Parse the SQL query
+        expression = sqlglot.parse_one(sql_query, read=dialect)
+        # Collect CTE aliases to distinguish them from actual tables
+        cte_aliases = [cte.alias for cte in expression.find_all(exp.CTE)]
+
+        # Collect sub-queries and process them in reverse order
+        sub_queries = list(expression.find_all((exp.Subquery, exp.CTE), bfs=False))
+        sub_queries.reverse()
+        sub_queries.append(expression)
+
+        tables = []
+        columns = []
+        values = []
+
+        for sub_query in sub_queries:
+            sub_tables, sub_columns, sub_values = get_subquery_tables_columns_and_values(
+                sub_query, cte_aliases
             )
-            return (
-                list(set(tables)),
-                list(set(columns)),
-                list({v["value"]: v for v in values}.values()),  # Deduplicate
-            )
-        except sqlglot.errors.ParseError:
-            return [], [], []
+            sub_query.pop()
+            tables.extend(sub_tables)
+            columns.extend(sub_columns)
+            values.extend(sub_values)
 
+        return list(set(tables)), list(set(columns)), values
 
 
 # Load JSON files
@@ -460,36 +249,29 @@ with open("dev_20240627/dev.json", "r") as f:
 with open("dev_20240627/dev_tables.json", "r") as f:
     schema_data = json.load(f)
 # Initialize the SQLQueryProcessor with schema data
-processor = ValueLinkingDatasetProcessor()
-schema_mapping = processor.build_schema_mapping(schema_data)
+processor = ValueLinkingDatasetProcessor(schema_data)
 
 
-def process_queries(queries: List[Dict], output_path: str):
-    results = []
-    for query in queries:
-        db_id = query["db_id"]
-        schema = schema_mapping.get(db_id, {})
-        tables, columns, values = processor.process_sql_query(
-            sql_query=query["SQL"],
-            schema=schema_mapping[db_id],  # Schema passed as positional argument
-            dialect="mysql"                # Dialect as explicit keyword
-        )
-        
-        results.append({
-            "question": query["question"],
-            "SQL": query["SQL"],
-            "tables": tables,
-            "columns": columns,
-            "values": values
-        })
-    
-    with open(output_path, "w") as f:
-        json.dump(results, f, indent=2)
+results = []
+for query in train_data:
+    sql_query = query["SQL"]
+    db_id = query["db_id"]
+    # Extract tables, columns, and values for the SQL query
+    tables, columns, values = processor.extract_tables_columns_and_values(sql_query, db_id)
+    results.append({
+        "question": query["question"],
+        "SQL": sql_query,
+        "tables": tables,
+        "columns": columns,
+        "values": values,
+    })
 
+# Save results to a JSON file
 output_file_path = "assets/value_linking_dataset.json"
-
-process_queries(train_data, output_file_path)
-print(f"Results have been saved to {output_file_path}")
+with open(output_file_path, "w") as outfile:
+    json.dump(results, outfile, indent=4)
+    
+print(f"Value linkning dataset has been saved to {output_file_path}")
 
 output_file_path_list = "assets/value_linking_dataset_list.json"
 processor.format_value_strings(output_file_path, output_file_path_list)

@@ -1,4 +1,6 @@
 import os
+#set only one gpu
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from cvr_extractor.cvr_extractor_ngrams import (
     NGramsExtractor,
 )
@@ -17,20 +19,15 @@ from cvr_extractor.cvr_extractor_llm import DictionaryExtractor
 def main():
     dictionary_of_trials = {
         "bm25" : ["bm25", "ngrams", "none"],
-        "minhash" : ["minhash", "ngrams", "none"],
-        "faiss" : ["faiss", "ngrams", "none"],
-        "bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"],
-        "bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
-        "bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
-        "minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
+        #"minhash" : ["minhash", "ngrams", "none"],
+        #"faiss" : ["faiss", "ngrams", "none"],
+        #"bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"],
+        #"bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
+        #"bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
+        #"minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
         
     }
     os.makedirs('logs', exist_ok=True)
-    logging.basicConfig(
-        filename='logs/index_experiments.log',  
-        level=logging.INFO,     
-        format='%(asctime)s - %(levelname)s - %(message)s'  
-    )
     for trial in dictionary_of_trials:
         index_type = dictionary_of_trials[trial][0]
         keywords_method = dictionary_of_trials[trial][1]
@@ -42,15 +39,15 @@ def main():
         elif index_type == "minhash":
             index = [MinHashForestIndex()]
         elif index_type == "faiss":
-            index = [FaissFlatIndex()]
+            index = [FaissFlatIndex(per_value=True,skip_non_text=False)]
         elif index_type == "bm25_faiss":
-            index = [BM25Index(), FaissFlatIndex()]
+            index = [BM25Index(), FaissFlatIndex(per_value=True,skip_non_text=False)]
         elif index_type == "bm25_minhash":
             index = [BM25Index(), MinHashForestIndex()]
         elif index_type == "minhash_faiss":
-            index = [MinHashForestIndex(), FaissFlatIndex()]
+            index = [MinHashForestIndex(), FaissFlatIndex(per_value=True,skip_non_text=False)]
         elif index_type == "bm25_minhash_faiss":
-            index = [BM25Index(), MinHashForestIndex(), FaissFlatIndex()]
+            index = [BM25Index(), MinHashForestIndex(), FaissFlatIndex(per_value=True,skip_non_text=False)]
             
         if keywords_method == "ngrams":
             keyword_extractor = NGramsExtractor()
@@ -64,16 +61,10 @@ def main():
             from filtering.filtering_bridge import BridgeFilter
             filter = BridgeFilter()
         databases_folder = (
-            "dev_20240627/dev_databases"
+            "/data/hdd1/users/akouk/BIRD-dev/dev_20240627/dev_databases/dev_databases"
         )
-        if index_type == "bm25":
-            output_folder = "assets/bm25_indexes_bird"
-        elif index_type == "minhash":
-            output_folder = "assets/minhash_indexes_bird"
-        elif index_type == "faiss":
-            output_folder = "assets/faiss_indexes_bird"
-        else:
-            output_folder = "assets/mix_indexes_bird"
+
+        output_folder = "assets/mix_indexes_bird"
         
         linker = ValueLinker(index, keyword_extractor=keyword_extractor)
         for db_folder in os.listdir(databases_folder):
@@ -81,10 +72,9 @@ def main():
                 continue
             db_path = os.path.join(databases_folder, db_folder, f"{db_folder}.sqlite")
             output_folder_temp = os.path.join(output_folder, db_folder)
-            if not os.path.exists(output_folder_temp):
-                os.makedirs(output_folder_temp)
-                db = DatabaseSqlite(db_path)
-                linker.create_indexes(db, output_folder_temp)
+            os.makedirs(output_folder_temp, exist_ok=True)
+            db = DatabaseSqlite(db_path)
+            linker.create_indexes(db, output_folder_temp)
 
         query_path = "dev_20240627/dev.json"
         input_folder = output_folder
@@ -158,4 +148,11 @@ def main():
         logging.info(f"\n\n############################################\n\n")
         
 if __name__ == "__main__":
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    logging.basicConfig(
+        filename='logs/index_experiments.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     main()
