@@ -22,7 +22,6 @@ Clone the repo and download the dev set of BIRD :
     rm dev_databases.zip 
     cd ..
 
-## Repo-setup
 Download the pre-computed indexes for the BIRD dataset and configure the folder: 
 
     cd assets 
