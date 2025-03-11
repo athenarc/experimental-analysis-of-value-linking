@@ -21,6 +21,18 @@ Clone the repo and download the dev set of BIRD :
     unzip dev_databases.zip
     rm dev_databases.zip 
     cd ..
+
+## Repo-setup
+Download the pre-computed indexes for the BIRD dataset and configure the folder: 
+
+    cd assets 
+    wget https://huggingface.co/datasets/ApostolosK/value_linking_indexes/resolve/main/indexes.zip
+    unzip indexes.zip
+    rm indexes.zip 
+    cd ..
+    
+The experiment scripts will locate and use the indexes. If you skip this step, the scripts will first create the indexes before initiating the query process, which may take some time.
+
 ## Environment Setup
 
 ### 1. Create a Conda Environment
@@ -48,7 +60,7 @@ Install the necessary Python packages by running:
 
 ## Dataset Preparation
 
-You can safely ignore this step since the dataset already exist in the assets folder. However you can try creating the datasets on tour own by executing:
+ can safely ignore this step since the dataset already exist in the assets folder. However you can try creating the datasets on tour own by executing:
 
     python create_value_linking_dataset.py
 
