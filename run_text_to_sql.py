@@ -1,16 +1,13 @@
 import os
 import time
 import yaml
-from loguru import logger
 from tqdm import tqdm
 import pandas as pd
 import string
 import itertools
 from sqlglot import parse_one
-
 from pydantic import BaseModel, ConfigDict, Field
 
-from loguru import logger
 from tqdm import tqdm
 import json
 from typing import Any, Callable, List, Optional, Tuple, Dict, Union, Literal
@@ -411,16 +408,15 @@ def generate(prompt: str, config: Dict) -> Optional[str]:
         response.raise_for_status()
         generated_text = response.json().get("response")  # Avoid KeyError with .get()
     except requests.exceptions.HTTPError as e:
-        logger.error(f"HTTP error: {e}")
         generated_text = None
     except requests.exceptions.Timeout:
-        logger.error("Request timed out after 5 minutes")
+        print("Request timed out after 5 minutes")
         generated_text = None
     except requests.exceptions.RequestException as e:
-        logger.error(f"Request error: {e}")
+        print(f"Request error: {e}")
         generated_text = None
     except ValueError as e:  # Handle invalid JSON
-        logger.error(f"JSON decode error: {e}")
+        print(f"JSON decode error: {e}")
         generated_text = None
 
     return generated_text
@@ -494,7 +490,7 @@ class ExperimentDbRepresentationExampleValues(BaseModel):
             self.categorical_threshold is not None
             and self.categorical_threshold < self.num
         ):
-            logger.warning(
+            print(
                 "The categorical threshold for the values of a column has been set to "
                 "less that the number of example values"
             )
@@ -545,7 +541,7 @@ CACHE_DIR = "assets/query_results_cache/"
 class QueryCache:
     def __init__(self, cache_dir: str = CACHE_DIR):
         if not os.path.exists(cache_dir):
-            logger.info(f"Cache directory does not exist. Creating at {cache_dir}")
+            print(f"Cache directory does not exist. Creating at {cache_dir}")
             os.makedirs(cache_dir)
 
         if not os.path.exists(cache_dir + MAPPING_FILE):
@@ -802,14 +798,14 @@ def _results_comparison(
 def cache_query_results(query_execution_func):
     def wrapper(*args, **kwargs):
         if "sql" not in kwargs:
-            logger.error(
+            print(
                 'To enable caching, the "sql" parameter must be passed as a keyword argument.'
             )
         query = kwargs["sql"]
 
         cache = QueryCache(CACHE_DIR)
         if cache.exists(query):
-            logger.info("Query results found in cache. Returning cached results.")
+            print("Query results found in cache. Returning cached results.")
             return cache.get(query)
 
         results = query_execution_func(*args, **kwargs)
@@ -845,7 +841,7 @@ def exponential_backoff_query_execution(sql: str, db: DatabaseSqlite) -> pd.Data
             "error" in result
             and "the database system is in recovery mode" in result["error"]
         ):
-            logger.warning(
+            print(
                 f"The database is in recovery mode. Waiting {wait_interval} seconds before trying again."
             )
             time.sleep(wait_interval)
@@ -874,7 +870,7 @@ def _get_results(
     exec_time = time.time() - start_time
 
     if "error" in result:
-        logger.warning(
+        print(
             f"There was an error while executing the {query_type} query {sql}! The execution accuracy will be set "
             f"to 0."
         )
@@ -1016,7 +1012,7 @@ class ExecutionAccuracy(Metric):
                         }
                     )
                 except Exception as e:
-                    logger.warning(f"Error in execution accuracy calculation: {e}")
+                    print(f"Error in execution accuracy calculation: {e}")
                     # TODO get the values dynamically
                     self.execution_accuracy_results_per_pair.append(
                         {
@@ -1787,7 +1783,7 @@ class Bird():
                         ):
                             column["note"] = column_description
             except (KeyError, UnicodeError, FileNotFoundError) as e:
-                logger.warning(
+                print(
                     f"While adding notes for table {table['table_name']}, the following error occurred: {e}"
                 )
                 table["note"] = None
@@ -1796,7 +1792,7 @@ class Bird():
 
 
 def _add_execution_accuracy_metric(results: pd.DataFrame) -> None:
-    logger.info(f"Calculating execution accuracy...")
+    print(f"Calculating execution accuracy...")
     exec_acc = ExecutionAccuracy()
     exec_acc.update(
         preds=results["predicted_sql_query"].values.tolist(),
@@ -1875,7 +1871,7 @@ def ollama_experiment_runner(config: ExperimentConfig) -> None:
                 "sql_query": datapoint.sql_query,
                 "db_path": datapoint.db_path,
                 "predicted_sql_query": datapoint.prediction,
-                "model_input": datapoint.model_input,
+                "model_input": datapoint.model_input,   
                 "generated_text": datapoint.model_output,
             }
         )
@@ -1886,11 +1882,10 @@ def ollama_experiment_runner(config: ExperimentConfig) -> None:
 
     total_statistics = _calculate_total_statistics(results)
 
-    # SAVE RESULTS
-    #displat the total statistics dataframe
     print(total_statistics)
-
-    logger.info(f">>> Experiment finished in {time.time() - start} seconds.")
+    #log the total_statistics
+    logging.info(f"Accuracy: {total_statistics} \n\n####################\n\n")
+    logging.info(f">>> Experiment finished in {time.time() - start} seconds.")
     
 if __name__ == "__main__":
     for handler in logging.root.handlers[:]:
@@ -1904,6 +1899,8 @@ if __name__ == "__main__":
     value_links_files = ["none","assets/precision_1_per_query.json","assets/precision_0_5_per_query.json","assets/precision_0_3_per_query.json"
                          ,"assets/precision_0_2_per_query.json","assets/precision_0_1_per_query.json","assets/chess.json","assets/codes.json"]
     for model_name in model_names:
+        #log the model name
+        logging.info(f"Model: {model_name} baseline with no example values")
         experiment_config = ExperimentConfig(
             model=ExperimentConfigModel(
                 name=model_name,
@@ -1933,6 +1930,17 @@ if __name__ == "__main__":
         ollama_experiment_runner(experiment_config)
     for model_name in model_names:
         for value_links_file in value_links_files:
+            if value_links_file == "none":
+                logging.info(f"Model: {model_name} baseline with example values")
+            elif "precision" in value_links_file:
+                start = value_links_file.find("precision_") + len("precision_")
+                end = value_links_file.find("_per_query")
+                precision = value_links_file[start:end].replace("_", ".")
+                logging.info(f"Model: {model_name} with example values and precision {precision}")
+            elif "chess" in value_links_file:
+                logging.info(f"Model: {model_name} with example values and chess value links")
+            elif "codes" in value_links_file:
+                logging.info(f"Model: {model_name} with example values and codes value links")
             experiment_config = ExperimentConfig(
                 model=ExperimentConfigModel(
                     name=model_name,

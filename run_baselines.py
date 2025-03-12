@@ -22,9 +22,9 @@ def main():
 
     dictionary_of_trials = {
         "codes" : ["bm25", "ngrams", "lexical"],
-        #"chess" : ["chess", "dict", "none"],
-        #"bridge" : ["bridge", "none", "none"],
-        #"dart" : ["dart", "none", "none"]
+        "chess" : ["chess", "dict", "none"],
+        "bridge" : ["bridge", "none", "none"],
+        "dart" : ["dart", "none", "none"]
     }
 
     

@@ -56,6 +56,9 @@ class FaissFlatIndex(ValueIndexABC, FormattedValuesMixin):
             output_path: Output directory for index files
         """
         flat_faiss_folder = os.path.join(output_path, "FlatFaiss")
+        if os.path.exists(flat_faiss_folder):
+            print(f"Flat FAISS index already exists in {flat_faiss_folder}. Skipping.")
+            return
         os.makedirs(flat_faiss_folder, exist_ok=True)
         print(f"Creating Flat FAISS index in {flat_faiss_folder}")
         dimension = (

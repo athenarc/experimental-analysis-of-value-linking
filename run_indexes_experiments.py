@@ -19,12 +19,12 @@ from cvr_extractor.cvr_extractor_llm import DictionaryExtractor
 def main():
     dictionary_of_trials = {
         "bm25" : ["bm25", "ngrams", "none"],
-        #"minhash" : ["minhash", "ngrams", "none"],
-        #"faiss" : ["faiss", "ngrams", "none"],
-        #"bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"],
-        #"bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
-        #"bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
-        #"minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
+        "minhash" : ["minhash", "ngrams", "none"],
+        "faiss" : ["faiss", "ngrams", "none"],
+        "bm25_minhash_faiss" : ["bm25_minhash_faiss", "ngrams", "none"],
+        "bm25_faiss" : ["bm25_faiss", "ngrams", "none"],
+        "bm25_minhash" : ["bm25_minhash", "ngrams", "none"],
+        "minhash_faiss" : ["minhash_faiss", "ngrams", "none"],
         
     }
     os.makedirs('logs', exist_ok=True)
