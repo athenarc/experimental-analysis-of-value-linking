@@ -91,7 +91,10 @@ This repository includes several scripts to run the experiments described in the
 - **Filtering Experiments**  
       
       python run_filtering_experiments.py
-
+  
+- **Text-to-SQL experiments**
+  
+    python run_text_to_sql.py 
 ---
 
 ## Additional Information
