@@ -653,7 +653,61 @@ class ValueLinkingDatasetProcessor:
 
         with open(output_json_path, 'w', encoding='utf-8') as outfile:
             json.dump(output_data, outfile, indent=4)
+    @staticmethod
+    def filter_json_file_for_digit_only(input_json_path, output_json_path):
+        """
+        Filters records from a JSON file.
+        A record is kept if at least one of its 'value' strings within the 'values' list
+        contains at least one digit.
+        """
+        filtered_records = []
+        try:
+            with open(input_json_path, 'r', encoding='utf-8') as infile:
+                data = json.load(infile)
+        except FileNotFoundError:
+            print(f"Error: Input file not found at {input_json_path}")
+            return
+        except json.JSONDecodeError:
+            print(f"Error: Could not decode JSON from {input_json_path}")
+            return
 
+        if not isinstance(data, list):
+            print(f"Error: Expected a list of records in {input_json_path}, but got {type(data)}")
+            return
+
+        for record in data:
+            # Ensure record is a dictionary
+            if not isinstance(record, dict):
+                # print(f"Warning: Skipping non-dictionary record: {record}")
+                continue
+
+            values_list = record.get("values") 
+            
+            # Ensure values_list is a list and is not empty
+            if isinstance(values_list, list) and values_list: 
+                contains_value_with_digit = False
+                for value_item in values_list:
+                    # Ensure value_item is a dictionary
+                    if not isinstance(value_item, dict):
+                        # print(f"Warning: Skipping non-dictionary value_item in record: {record.get('id', 'N/A')}")
+                        continue
+                    
+                    actual_value_str = value_item.get("value")
+                    
+                    # Ensure actual_value_str is a string
+                    if isinstance(actual_value_str, str):
+                        # Check if the string contains at least one digit
+                        if any(char.isdigit() for char in actual_value_str):
+                            contains_value_with_digit = True
+                            break  # Found a value with a digit, no need to check further in this record
+                
+                if contains_value_with_digit:
+                    filtered_records.append(record)
+                    
+        with open(output_json_path, 'w', encoding='utf-8') as outfile:
+            json.dump(filtered_records, outfile, indent=None)
+            
+            
     @staticmethod
     def copy_databases(json_path: str, output_folder: str):
         source_map = {

@@ -6,7 +6,7 @@ import string
 import re
 LLM_MODEL_NAME_DEFAULT = "Qwen/Qwen3-32B" 
 LLM_CACHE_DIR_DEFAULT = "/data/hdd1/vllm_models/"
-LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 2 
+LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 1
 LLM_QUANTIZATION_DEFAULT = "fp8" 
 LLM_GPU_MEM_UTIL_DEFAULT = 0.85
 
@@ -2173,7 +2173,344 @@ Converted Word:"""
               f"Output file: {output_json_path}\n"
               f"Total new records generated: {len(all_new_records)}")
     
-    
+    @staticmethod
+    def _build_entity_clarification_prompt_messages(question: str, keyword: str) -> list:
+        prompt_template = f"""You are an expert in natural language understanding and entity recognition.
+Your task is to clarify or augment a given keyword from a question by adding a common entity designator (e.g., "Inc.", "City", "County", "State") or making its type more explicit, if doing so adds necessary clarity or specificity that might be missing.
+If the keyword is already specific, universally understood in context, or if no clarification is applicable or helpful, output the special token: [NO_CHANGE].
+Output only the clarified/augmented entity or [NO_CHANGE]. Do not output explanations.
+
+Here are some examples:
+
+Question: "Show me employees of Google."
+Keyword: "Google"
+Output: Google Inc.
+
+Question: "In Los Angeles how many schools have more than 500 free meals?"
+Keyword: "Los Angeles"
+Output: Los Angeles city
+
+Question: "What are the services offered by Amazon?"
+Keyword: "Amazon"
+Output: Amazon Inc.
+
+Question: "What's the name of customer with id x_123"
+Keyword: "x_123"
+Output: [NO_CHANGE]
+
+Question: "How many people live in Texas?"
+Keyword: "Texas"
+Output: Texas State
+
+
+ing:
+
+Question: "{question}"
+Keyword: "{keyword}"
+Output:"""
+        return [{"role": "user", "content": prompt_template}]
+
+    @staticmethod
+    def augment_entities_with_vllm(input_json_path: str, output_json_path: str,
+                                   model_name: str = LLM_MODEL_NAME_DEFAULT,
+                                   cache_dir: str = LLM_CACHE_DIR_DEFAULT,
+                                   tensor_parallel_size: int = LLM_TENSOR_PARALLEL_SIZE_DEFAULT,
+                                   quantization: str = LLM_QUANTIZATION_DEFAULT,
+                                   gpu_memory_utilization: float = LLM_GPU_MEM_UTIL_DEFAULT
+                                  ):
+        start_time = time.time()
+        
+        try:
+            from vllm import LLM, SamplingParams
+            from transformers import AutoTokenizer
+        except ImportError:
+            print("vLLM or Transformers is not installed. Please install them to use this feature.")
+            print(f"Processing completed in {time.time() - start_time:.2f} seconds.\n"
+                  f"Output file: {output_json_path} (not created due to missing dependencies)\n"
+                  f"Total new records generated: 0")
+            return
+
+        sampling_params = SamplingParams(
+            temperature=0.0, 
+            top_p=1.0,       
+            max_tokens=70 # Slightly more tokens for potentially longer clarifications like "County" or "State"
+        )
+
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+
+        llm = LLM(
+            model=model_name,
+            tokenizer=tokenizer.name_or_path,
+            tensor_parallel_size=tensor_parallel_size,
+            trust_remote_code=True,
+            download_dir=cache_dir,
+            quantization=quantization if quantization else None,
+            gpu_memory_utilization=gpu_memory_utilization,
+        )
+
+        prompts_for_vllm_generation = []
+        batch_processing_info = [] # (record_idx, value_entry_idx, original_value_from_meta)
+        
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            original_data = json.load(f)
+
+        for record_idx, record in enumerate(original_data):
+            original_question_text = record.get('question', "")
+            if not original_question_text:
+                continue
+
+            for value_entry_idx, value_entry in enumerate(record.get('values', [])):
+                original_value_from_meta = str(value_entry.get('value', ''))
+
+                if not original_value_from_meta or \
+                   not BenchmarkVariator._is_eligible_text_value(original_value_from_meta):
+                    continue
+                
+                if original_value_from_meta in original_question_text:
+                    messages = BenchmarkVariator._build_entity_clarification_prompt_messages(
+                        original_question_text, original_value_from_meta
+                    )
+                    try:
+                        prompt_text = tokenizer.apply_chat_template(
+                            messages,
+                            tokenize=False,
+                            add_generation_prompt=True,
+                            enable_thinking=True 
+                        )
+                        prompts_for_vllm_generation.append(prompt_text)
+                        batch_processing_info.append(
+                            (record_idx, value_entry_idx, original_value_from_meta)
+                        )
+                    except Exception:
+                        pass
+        
+        llm_raw_responses = []
+        if prompts_for_vllm_generation:
+            vllm_outputs = llm.generate(prompts_for_vllm_generation, sampling_params)
+            for output in vllm_outputs:
+                llm_raw_responses.append(output.outputs[0].text)
+        
+        llm_clarifications_map = {} # (record_idx, value_entry_idx) -> "clarified_entity_text"
+        for i, raw_response in enumerate(llm_raw_responses):
+            record_idx, value_entry_idx, keyword_sent_to_llm = batch_processing_info[i]
+            
+            parsed_clarification = BenchmarkVariator.parse_qwen3_output(raw_response)
+
+            if not parsed_clarification or \
+               parsed_clarification == "[NO_CHANGE]" or \
+               parsed_clarification.lower() == keyword_sent_to_llm.lower(): # No actual change
+                continue 
+            
+            llm_clarifications_map[(record_idx, value_entry_idx)] = parsed_clarification
+
+        all_new_records = []
+        for record_idx, original_record_instance in enumerate(original_data):
+            current_question_state = original_record_instance['question']
+            modifications_applied_to_this_record = []
+            change_occurred_in_record = False
+
+            for value_entry_idx, value_entry_data in enumerate(original_record_instance.get('values', [])):
+                original_value_str_for_this_entry = str(value_entry_data.get('value', ''))
+                
+                clarification_for_this_entry = llm_clarifications_map.get((record_idx, value_entry_idx))
+                
+                if not clarification_for_this_entry:
+                    continue
+
+                if original_value_str_for_this_entry in current_question_state:
+                    temp_question_state = current_question_state.replace(
+                        original_value_str_for_this_entry, clarification_for_this_entry, 1
+                    )
+                    
+                    if temp_question_state != current_question_state:
+                        current_question_state = temp_question_state
+                        modifications_applied_to_this_record.append({
+                            "value_source_table": value_entry_data['table'],
+                            "value_source_column": value_entry_data['column'],
+                            "original_value_segment": original_value_str_for_this_entry,
+                            "altered_value_segment": clarification_for_this_entry,
+                            "alteration_type": "entity_clarification" # Changed type
+                        })
+                        change_occurred_in_record = True
+            
+            if change_occurred_in_record:
+                new_record = copy.deepcopy(original_record_instance)
+                new_record['question'] = current_question_state
+                new_record['changes_information'] = {
+                    "original_nlq": original_record_instance['question'],
+                    "modifications": modifications_applied_to_this_record
+                }
+                all_new_records.append(new_record)
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(all_new_records, f, indent=2)
+
+        end_time = time.time()
+        print(f"Processing completed in {end_time - start_time:.2f} seconds.\n"
+              f"Output file: {output_json_path}\n"
+              f"Total new records generated: {len(all_new_records)}")
+        
+    @staticmethod
+    def _build_number_to_word_prompt_messages(question: str) -> list:
+        prompt_template = f"""You are an expert in natural language processing.
+Your task is to rewrite the given question by converting standalone numerical digits into their word representations (e.g., "5" to "five", "250" to "two hundred fifty").
+Only convert numbers that represent quantities, counts, or ordinal numbers where the word form is natural.
+Do NOT convert numbers that are part of identifiers, codes, version numbers, or alphanumeric strings (e.g., "x_123", "version 2.0", "room 101B").
+If no such convertible numbers are present, or if all numbers are part of identifiers/codes, output the special token: [NO_CHANGE].
+If changes are made, output the entire rewritten question.
+
+Here are some examples:
+
+Original Question: "Give me 5 star hotels."
+Rewritten Question: Give me five star hotels.
+
+Original Question: "How many schools have more than 250 students?"
+Rewritten Question: How many schools have more than two hundred fifty students?
+
+Original Question: "Show me customer with id x_123."
+Rewritten Question: [NO_CHANGE]
+
+Original Question: "List the top 3 products."
+Rewritten Question: List the top three products.
+
+Original Question: "What is the price of item #A-456?"
+Rewritten Question: [NO_CHANGE]
+
+Original Question: "Find orders placed after 2023-01-15."
+Rewritten Question: [NO_CHANGE]
+
+Original Question: "Are there any rooms available on the 2nd floor?"
+Rewritten Question: Are there any rooms available on the second floor?
+
+Original Question: "The event is on May 1st."
+Rewritten Question: The event is on May first.
+
+Original Question: "We need 10 apples and 2 bananas."
+Rewritten Question: We need ten apples and two bananas.
+
+Now, process the following:
+
+Original Question: "{question}"
+Rewritten Question:"""
+        return [{"role": "user", "content": prompt_template}]
+
+    @staticmethod
+    def convert_numbers_to_words_in_nlq_with_vllm(input_json_path: str, output_json_path: str,
+                                                 model_name: str = LLM_MODEL_NAME_DEFAULT,
+                                                 cache_dir: str = LLM_CACHE_DIR_DEFAULT,
+                                                 tensor_parallel_size: int = LLM_TENSOR_PARALLEL_SIZE_DEFAULT,
+                                                 quantization: str = LLM_QUANTIZATION_DEFAULT,
+                                                 gpu_memory_utilization: float = LLM_GPU_MEM_UTIL_DEFAULT
+                                                ):
+        start_time = time.time()
+        
+        try:
+            from vllm import LLM, SamplingParams
+            from transformers import AutoTokenizer
+        except ImportError:
+            print("vLLM or Transformers is not installed. Please install them to use this feature.")
+            print(f"Processing completed in {time.time() - start_time:.2f} seconds.\n"
+                  f"Output file: {output_json_path} (not created due to missing dependencies)\n"
+                  f"Total new records generated: 0")
+            return
+
+        sampling_params = SamplingParams(
+            temperature=0.0, 
+            top_p=1.0,       
+            max_tokens=512 # Allow ample space for the rewritten question
+        )
+
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+
+        llm = LLM(
+            model=model_name,
+            tokenizer=tokenizer.name_or_path,
+            tensor_parallel_size=tensor_parallel_size,
+            trust_remote_code=True,
+            download_dir=cache_dir,
+            quantization=quantization if quantization else None,
+            gpu_memory_utilization=gpu_memory_utilization,
+        )
+
+        prompts_for_vllm_generation = []
+        # Stores info to map LLM outputs back: (record_idx, original_question_text)
+        batch_processing_info = []
+        
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            original_data = json.load(f)
+
+        for record_idx, record in enumerate(original_data):
+            original_question_text = record.get('question', "")
+            if not original_question_text:
+                continue
+
+            # Heuristic: Check if there's at least one digit that's likely standalone or part of a simple number
+            # This is a pre-filter to avoid sending questions with no numbers to the LLM.
+            # It looks for digits that are not immediately preceded or followed by an alphanumeric character (common in IDs).
+            if not re.search(r'(?<![a-zA-Z0-9_])\d+(?![a-zA-Z0-9_])', original_question_text) and \
+               not re.search(r'\b\d+\b', original_question_text): # Simpler check for whole numbers
+                continue
+
+
+            messages = BenchmarkVariator._build_number_to_word_prompt_messages(original_question_text)
+            try:
+                prompt_text = tokenizer.apply_chat_template(
+                    messages,
+                    tokenize=False,
+                    add_generation_prompt=True,
+                    enable_thinking=True 
+                )
+                prompts_for_vllm_generation.append(prompt_text)
+                batch_processing_info.append(
+                    (record_idx, original_question_text)
+                )
+            except Exception:
+                pass
+        
+        llm_raw_responses = []
+        if prompts_for_vllm_generation:
+            vllm_outputs = llm.generate(prompts_for_vllm_generation, sampling_params)
+            for output in vllm_outputs:
+                llm_raw_responses.append(output.outputs[0].text)
+        
+        all_new_records = []
+        for i, raw_response in enumerate(llm_raw_responses):
+            record_idx, original_nlq_for_this_prompt = batch_processing_info[i]
+            
+            rewritten_nlq = BenchmarkVariator.parse_qwen3_output(raw_response)
+
+            if not rewritten_nlq or \
+               rewritten_nlq == "[NO_CHANGE]" or \
+               rewritten_nlq.strip().lower() == original_nlq_for_this_prompt.strip().lower(): # No actual change
+                continue 
+            
+            original_record_instance = original_data[record_idx]
+            new_record = copy.deepcopy(original_record_instance)
+            new_record['question'] = rewritten_nlq.strip() # Ensure clean output
+            
+            # For this transformation, the "modifications" list might be harder to populate
+            # We'll store the original and new NLQ.
+            new_record['changes_information'] = {
+                "original_nlq": original_nlq_for_this_prompt,
+                "altered_nlq_by_number_conversion": rewritten_nlq.strip(),
+                "alteration_type": "number_to_word_conversion"
+            }
+            all_new_records.append(new_record)
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(all_new_records, f, indent=2)
+
+        end_time = time.time()
+        print(f"Processing completed in {end_time - start_time:.2f} seconds.\n"
+              f"Output file: {output_json_path}\n"
+              f"Total new records generated: {len(all_new_records)}")
+        
+        
+        
 if __name__ == "__main__":
     input_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
     output_folder = "assets/all_benchmarks"
