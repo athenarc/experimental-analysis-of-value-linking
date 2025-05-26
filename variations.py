@@ -6,9 +6,9 @@ import string
 import re
 LLM_MODEL_NAME_DEFAULT = "Qwen/Qwen3-32B" 
 LLM_CACHE_DIR_DEFAULT = "/data/hdd1/vllm_models/"
-LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 1
+LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 2
 LLM_QUANTIZATION_DEFAULT = "fp8" 
-LLM_GPU_MEM_UTIL_DEFAULT = 0.85
+LLM_GPU_MEM_UTIL_DEFAULT = 0.80
 
 
 class BenchmarkVariator:
@@ -2509,8 +2509,215 @@ Rewritten Question:"""
               f"Output file: {output_json_path}\n"
               f"Total new records generated: {len(all_new_records)}")
         
+
+    @staticmethod
+    def _format_changes_made(modifications: list) -> str:
+        changes_made_string_parts = []
+        if not modifications:
+            return "No specific value modifications listed."
+        for mod in modifications:
+            part = (
+                f"- Original Value Segment: \"{mod.get('original_value_segment', 'N/A')}\"\n"
+                f"  Altered Value Segment: \"{mod.get('altered_value_segment', 'N/A')}\"\n"
+                f"  Alteration Type: \"{mod.get('alteration_type', 'N/A')}\"\n"
+            )
+            changes_made_string_parts.append(part)
+        return "\n".join(changes_made_string_parts)
+
+    @staticmethod
+    def _build_verification_prompt_messages(original_nlq: str, altered_nlq: str, changes_made_list: list) -> list:
+        VERIFICATION_PROMPT_SYSTEM_MESSAGE = """
+You are an expert linguistic and database query assistant.
+Your task is to determine if an altered Natural Language Question (NLQ) retains the semantic meaning of the original NLQ, specifically concerning values that would be used in a SQL query's WHERE clause.
+The core question is: **Could a reasonably sophisticated value retrieval component in a text-to-SQL system still identify the *original, correct* database value(s) based on the *altered* NLQ?**
+
+Consider the following:
+- The alteration might be a typo, an abbreviation, a synonym, punctuation change, minor or whatever else that a user that had no knowledge of the underlying data might make.
+- If the alteration makes the value unrecognizable, too ambiguous, or fundamentally changes what is being asked for, then the meaning is not preserved for retrieval.
+- The goal is to simulate if a user, despite making such a mistake in their query, could still be understood by a system designed to be robust to common errors.
+
+You will be given:
+1.  `Original NLQ`: The initial, correct natural language question.
+2.  `Altered NLQ`: The modified natural language question.
+3.  `Changes Made`: A list describing each modification from an original value segment to an altered value segment, including the type of alteration.
+
+Respond with only 'YES' or 'NO'.
+"""
+
+        VERIFICATION_PROMPT_USER_TEMPLATE = """
+--- EXAMPLES ---
+
+**Example 1:**
+Original NLQ: "What type of bond is there between the atoms TR004_8 and TR004_20?"
+Altered NLQ: "What type of bond is there between the atoms TR0048 and TR00420?"
+Changes Made:
+- Original Value Segment: "TR004_20"
+  Altered Value Segment: "TR00420"
+  Alteration Type: "punctuation_removal"
+- Original Value Segment: "TR004_8"
+  Altered Value Segment: "TR0048"
+  Alteration Type: "punctuation_removal"
+Expected Output: YES
+Reasoning: Removing an underscore is a common variation. A good retriever could easily map "TR0048" back to "TR004_8" (or vice-versa if the database stores it without underscores and the original NLQ had it). The core identifiers are intact.
+
+**Example 2:**
+Original NLQ: "What is the highest eligible free rate for K-12 students in the schools in Alameda County?"
+Altered NLQ: "What is the highest eligible free rate for K-12 students in the schools in Alaemda County?"
+Changes Made:
+- Original Value Segment: "Alameda"
+  Altered Value Segment: "Alaemda"
+  Alteration Type: "transpose_char_typo"
+Expected Output: YES
+Reasoning: "Alaemda" is a clear typographical error for "Alameda". A fuzzy matching or spell-checking component in a value retriever should handle this.
+
+**Example 3:**
+Original NLQ: "What is the total amount of money spent for food?"
+Altered NLQ: "What is the total amount of money spent for aood?"
+Changes Made:
+- Original Value Segment: "food"
+  Altered Value Segment: "aood"
+  Alteration Type: "substitute_char_typo"
+Expected Output: NO
+Reasoning: While "aood" is a single character substitution from "food", it is also a single character substitution from other plausible words like "hood", "wood", or "good". A value retriever might not be able to confidently determine that "food" was the original intended value without further context or a very sophisticated disambiguation mechanism. The alteration introduces significant ambiguity, potentially changing the query's target.
+
+
+--- TASK ---
+
+Original NLQ: "{original_nlq}"
+Altered NLQ: "{altered_nlq}"
+Changes Made:
+{changes_made_string}
+
+Expected Output:
+"""
+
+        changes_made_string = BenchmarkVariator._format_changes_made(changes_made_list)
         
+        user_content = VERIFICATION_PROMPT_USER_TEMPLATE.format(
+            original_nlq=original_nlq,
+            altered_nlq=altered_nlq,
+            changes_made_string=changes_made_string
+        )
         
+        messages = [
+            {"role": "system", "content": VERIFICATION_PROMPT_SYSTEM_MESSAGE},
+            {"role": "user", "content": user_content}
+        ]
+        return messages
+
+    @staticmethod
+    def _parse_qwen_output_for_verification(raw_output_text: str) -> str:
+        cleaned_text = re.sub(
+            r"<think>.*?</think>",
+            "",
+            raw_output_text,
+            flags=re.DOTALL | re.IGNORECASE
+        ).strip()
+
+        if re.search(r"<think>|</think>", cleaned_text, re.IGNORECASE):
+            return "" 
+
+        cleaned_text = re.sub(r"^(<\|im_start\|>assistant\s*)+", "", cleaned_text, flags=re.IGNORECASE).strip()
+        cleaned_text = re.sub(r"(<\|im_end\|>\s*)+$", "", cleaned_text, flags=re.IGNORECASE).strip()
+        
+        if not cleaned_text:
+            return ""
+
+        match = re.search(r"^\s*(YES|NO)\b", cleaned_text, re.IGNORECASE)
+        if match:
+            return match.group(1).upper()
+        
+        return ""
+
+    @staticmethod
+    def verify_nlq_alterations_with_vllm(input_json_path: str, output_json_path: str,
+                                         model_name: str = LLM_MODEL_NAME_DEFAULT,
+                                         cache_dir: str = LLM_CACHE_DIR_DEFAULT,
+                                         tensor_parallel_size: int = LLM_TENSOR_PARALLEL_SIZE_DEFAULT,
+                                         quantization: str = LLM_QUANTIZATION_DEFAULT,
+                                         gpu_memory_utilization: float = LLM_GPU_MEM_UTIL_DEFAULT
+                                        ):
+        start_time = time.time()
+        
+        from vllm import LLM, SamplingParams
+        from transformers import AutoTokenizer
+        
+        sampling_params = SamplingParams(
+            temperature=0.0, 
+            top_p=1.0,       
+            max_tokens=2048 
+        )
+
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+
+        llm = LLM(
+            model=model_name,
+            tokenizer=tokenizer.name_or_path,
+            tensor_parallel_size=tensor_parallel_size,
+            trust_remote_code=True,
+            download_dir=cache_dir,
+            quantization=quantization if quantization else None,
+            gpu_memory_utilization=gpu_memory_utilization,
+            max_model_len=8192
+        )
+
+        prompts_for_vllm_generation = []
+        batch_processing_info = [] 
+        
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            original_data = json.load(f)
+
+        for record in original_data:
+            altered_nlq = record.get('question')
+            changes_info = record.get('changes_information')
+
+            if not altered_nlq or not changes_info:
+                continue
+
+            original_nlq_from_info = changes_info.get('original_nlq')
+            modifications = changes_info.get('modifications')
+
+            if not original_nlq_from_info or modifications is None: # Ensure modifications list exists, even if empty
+                continue
+            
+            messages = BenchmarkVariator._build_verification_prompt_messages(original_nlq_from_info, altered_nlq, modifications)
+            
+            prompt_text = tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True, 
+                enable_thinking=True 
+            )
+            prompts_for_vllm_generation.append(prompt_text)
+            batch_processing_info.append(record)
+        
+        llm_raw_responses = []
+        if prompts_for_vllm_generation:
+            vllm_outputs = llm.generate(prompts_for_vllm_generation, sampling_params)
+            for output in vllm_outputs:
+                llm_raw_responses.append(output.outputs[0].text)
+        
+        verified_records = []
+        for i, raw_response in enumerate(llm_raw_responses):
+            original_record_instance = batch_processing_info[i]
+            llm_decision = BenchmarkVariator._parse_qwen_output_for_verification(raw_response)
+            
+            if llm_decision == "YES":
+                verified_records.append(original_record_instance)
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(verified_records, f, indent=2)
+
+        end_time = time.time()
+        print(f"Processing completed in {end_time - start_time:.2f} seconds.")
+        print(f"Input records: {len(original_data)}")
+        print(f"Prompts sent to LLM: {len(prompts_for_vllm_generation)}")
+        print(f"Output file: {output_json_path}")
+        print(f"Total records verified as YES: {len(verified_records)}")
+        
+    
 if __name__ == "__main__":
     input_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
     output_folder = "assets/all_benchmarks"
@@ -2528,7 +2735,7 @@ if __name__ == "__main__":
     BenchmarkVariator.delete_char_typo(input_path, output_path)
     output_filename = "typo_transposition.json"
     output_path = f"{output_folder}/{output_filename}"
-    BenchmarkVariator.transpose_char_typo(input_path, output_path)"""
+    BenchmarkVariator.transpose_char_typo(input_path, output_path)
 
     output_filename = "synonyms.json"
     output_path = f"{output_folder}/{output_filename}"
@@ -2561,3 +2768,9 @@ if __name__ == "__main__":
     output_filename = "singular_plural_toggle.json"
     output_path = f"{output_folder}/{output_filename}"
     BenchmarkVariator.toggle_singular_plural_vllm(input_path, output_path)
+    """
+    
+    input_filename = "assets/all_benchmarks/all_benchmarks_combined.json"
+    output_filename = "assets/all_benchmarks/all_benchmarks_combined_verified.json"
+
+    BenchmarkVariator.verify_nlq_alterations_with_vllm(input_filename, output_filename)
