@@ -4,12 +4,18 @@ import copy
 import random
 import string
 import re
+import sqlite3
+import os
+from tqdm import tqdm
+from collections import defaultdict
+import itertools
 LLM_MODEL_NAME_DEFAULT = "Qwen/Qwen3-32B" 
 LLM_CACHE_DIR_DEFAULT = "/data/hdd1/vllm_models/"
 LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 2
 LLM_QUANTIZATION_DEFAULT = "fp8" 
 LLM_GPU_MEM_UTIL_DEFAULT = 0.80
 
+NO_SYNONYM_TOKEN = "[NO_SYNONYM]"
 
 class BenchmarkVariator:
 
@@ -2716,8 +2722,275 @@ Expected Output:
         print(f"Prompts sent to LLM: {len(prompts_for_vllm_generation)}")
         print(f"Output file: {output_json_path}")
         print(f"Total records verified as YES: {len(verified_records)}")
-        
     
+    @staticmethod
+    def _execute_sql_query(db_path: str, query: str, params: tuple = None):
+        """Helper function to execute a SQL query and fetch results."""
+        conn = None
+        try:
+            if not os.path.exists(db_path):
+                # print(f"Database file not found: {db_path}") # Optional: more verbose logging
+                return None
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+            cursor.execute(query, params or ())
+            results = cursor.fetchall()
+            return results
+        except sqlite3.Error as e:
+            print(f"SQLite error executing query '{query}' with params {params} on db {db_path}: {e}")
+            return None
+        finally:
+            if conn:
+                conn.close()
+
+    @staticmethod
+    def remove_word_from_value(input_json_path: str, output_json_path: str, db_base_path: str):
+        start_time = time.time()
+        all_new_records = []
+
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        for original_record in tqdm(data, desc="Processing records"):
+            db_id = original_record.get('db_id')
+            if not db_id:
+                # print(f"Skipping record due to missing db_id: {original_record.get('question', 'N/A')}")
+                continue
+            
+            db_path = os.path.join(db_base_path, db_id, f"{db_id}.sqlite")
+
+            for value_entry in original_record.get('values', []):
+                original_value_from_meta = str(value_entry.get('value', ''))
+                condition = value_entry.get('condition', '')
+                table_name = value_entry.get('table')
+                column_name = value_entry.get('column')
+
+                # 1. Check eligibility: string, condition is '=', at least two words
+                if not BenchmarkVariator._is_eligible_text_value(original_value_from_meta) or \
+                   condition != '=' or \
+                   len(original_value_from_meta.split()) < 2 or \
+                   not table_name or not column_name:
+                    continue
+
+                words_in_original_value = original_value_from_meta.split()
+                
+                for i in range(len(words_in_original_value)):
+                    # Create altered value by removing one word
+                    temp_words = words_in_original_value[:i] + words_in_original_value[i+1:]
+                    altered_value_text = " ".join(temp_words)
+
+                    if not altered_value_text:  # Skip if removing the word results in an empty string
+                        continue
+                    
+                    # 2. SQL Validation
+                    # Ensure column_name and table_name are quoted to handle spaces or keywords
+                    # For SQLite, double quotes are standard for identifiers.
+                    safe_column_name = f'"{column_name}"'
+                    safe_table_name = f'"{table_name}"'
+
+                    # Query 1: Count distinct matching values
+                    count_query = f"SELECT COUNT(DISTINCT {safe_column_name}) FROM {safe_table_name} WHERE {safe_column_name} LIKE ?"
+                    count_results = BenchmarkVariator._execute_sql_query(db_path, count_query, (f"%{altered_value_text}%",))
+
+                    if count_results is None or not count_results or count_results[0][0] != 1:
+                        continue # Not a unique match or error
+
+                    # Query 2: Fetch the distinct matching value
+                    fetch_query = f"SELECT DISTINCT {safe_column_name} FROM {safe_table_name} WHERE {safe_column_name} LIKE ?"
+                    fetch_results = BenchmarkVariator._execute_sql_query(db_path, fetch_query, (f"%{altered_value_text}%",))
+
+                    if fetch_results is None or not fetch_results or len(fetch_results) != 1:
+                        continue # Should not happen if count was 1, but good to be safe
+
+                    matched_db_value = fetch_results[0][0]
+
+                    # 3. Check if the unique match is the original value
+                    if str(matched_db_value) != original_value_from_meta:
+                        continue
+                    
+                    # If all checks pass, this alteration is valid.
+                    # Now, modify the question.
+                    # We need to use the original question from the input record for each modification,
+                    # not a cumulatively modified one.
+                    current_q_being_modified = original_record['question']
+                    
+                    # Case-insensitive search for original_value_from_meta in current_q_being_modified
+                    # We need to be careful: re.escape escapes special characters in original_value_from_meta
+                    try:
+                        match = re.search(re.escape(original_value_from_meta), current_q_being_modified, re.IGNORECASE)
+                    except re.error as e:
+                        # print(f"Regex error for value '{original_value_from_meta}': {e}")
+                        continue # Skip if the value creates a bad regex pattern
+
+                    if match:
+                        matched_segment_in_question = match.group(0) # The actual text matched in the question
+                        start_index = match.start()
+                        end_index = match.end()
+                        
+                        # Construct next_q_state by replacing the actual matched segment
+                        next_q_state = current_q_being_modified[:start_index] + \
+                                       altered_value_text + \
+                                       current_q_being_modified[end_index:]
+                        
+                        if next_q_state != current_q_being_modified:
+                            new_record_item = copy.deepcopy(original_record)
+                            new_record_item['question'] = next_q_state
+                            new_record_item['changes_information'] = {
+                                "original_nlq": original_record['question'],
+                                "modifications": [{
+                                    "value_source_table": table_name,
+                                    "value_source_column": column_name,
+                                    "original_value_segment": matched_segment_in_question,
+                                    "altered_value_segment": altered_value_text,
+                                    "alteration_type": "word_removal"
+                                }]
+                            }
+                            all_new_records.append(new_record_item)
+        
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(all_new_records, f, indent=2)
+
+        end_time = time.time()
+        print(f"Processing 'remove_word_from_value' completed in {end_time - start_time:.2f} seconds.\n"
+              f"Output file: {output_json_path}\n"
+              f"Total new records generated: {len(all_new_records)}")
+
+    @staticmethod
+    def _get_table_names(db_path: str):
+        query = "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';"
+        results = BenchmarkVariator._execute_sql_query(db_path, query)
+        return [row[0] for row in results] if results else []
+
+    @staticmethod
+    def _get_column_names(db_path: str, table_name: str):
+        query = f"PRAGMA table_info(\"{table_name}\");"
+        results = BenchmarkVariator._execute_sql_query(db_path, query)
+        return [row[1] for row in results] if results else []
+
+    @staticmethod
+    def find_intra_table_cross_column_eligible_text_value_occurrences(databases_base_path: str, output_json_path: str):
+        start_time = time.time()
+        all_databases_occurrences = {}
+        processed_db_count = 0
+        found_occurrences_total = 0
+
+        db_ids = [d for d in os.listdir(databases_base_path) if os.path.isdir(os.path.join(databases_base_path, d))]
+
+        for db_id in db_ids:
+            db_path = os.path.join(databases_base_path, db_id, f"{db_id}.sqlite")
+            if not os.path.exists(db_path):
+                continue
+            
+            processed_db_count += 1
+            db_specific_occurrences = []
+            table_names = BenchmarkVariator._get_table_names(db_path)
+
+            if not table_names:
+                continue
+
+            for table_name in table_names:
+                table_value_to_columns_map = defaultdict(list)
+                column_names = BenchmarkVariator._get_column_names(db_path, table_name)
+                
+                if not column_names or len(column_names) < 2: # Need at least two columns to compare
+                    continue
+                
+                for column_name in column_names:
+                    safe_column_name = f'"{column_name}"'
+                    safe_table_name = f'"{table_name}"'
+                    
+                    distinct_values_query = f"SELECT DISTINCT {safe_column_name} FROM {safe_table_name};"
+                    distinct_values_results = BenchmarkVariator._execute_sql_query(db_path, distinct_values_query)
+
+                    if distinct_values_results:
+                        for row in distinct_values_results:
+                            value = row[0]
+                            # Use the provided eligibility check
+                            if BenchmarkVariator._is_eligible_text_value(value):
+                                # value is confirmed to be an eligible string
+                                table_value_to_columns_map[value].append(column_name)
+            
+                for value, appearing_columns in table_value_to_columns_map.items():
+                    unique_appearing_columns = sorted(list(set(appearing_columns)))
+                    if len(unique_appearing_columns) > 1:
+                        for col1, col2 in itertools.combinations(unique_appearing_columns, 2):
+                            db_specific_occurrences.append({
+                                "value": value,
+                                "table_name": table_name,
+                                "column1": col1,
+                                "column2": col2
+                            })
+                            found_occurrences_total +=1
+            
+            if db_specific_occurrences:
+                all_databases_occurrences[db_id] = db_specific_occurrences
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(all_databases_occurrences, f, indent=2)
+
+    @staticmethod
+    def filter_nlqs_by_intra_table_value_occurrences(
+        occurrences_json_path: str, 
+        nlq_json_path: str, 
+        output_json_path: str
+    ):
+        
+        try:
+            with open(occurrences_json_path, 'r', encoding='utf-8') as f:
+                occurrences_data = json.load(f)
+        except FileNotFoundError:
+            # print(f"Error: Occurrences JSON file not found at {occurrences_json_path}")
+            # If occurrences file is missing, we might assume no values are problematic,
+            # or handle as an error. Let's assume it means no problematic values.
+            occurrences_data = {}
+        except json.JSONDecodeError:
+            # print(f"Error: Could not decode Occurrences JSON from {occurrences_json_path}")
+            return
+
+        problematic_values_map = defaultdict(lambda: defaultdict(set))
+        for db_id, db_occurrences_list in occurrences_data.items():
+            for occurrence in db_occurrences_list:
+                problematic_values_map[db_id][occurrence['table_name']].add(occurrence['value'])
+
+        try:
+            with open(nlq_json_path, 'r', encoding='utf-8') as f:
+                nlq_data = json.load(f)
+        except FileNotFoundError:
+            # print(f"Error: NLQ JSON file not found at {nlq_json_path}")
+            return
+        except json.JSONDecodeError:
+            # print(f"Error: Could not decode NLQ JSON from {nlq_json_path}")
+            return
+
+        kept_nlq_records = []
+
+        for nlq_record in nlq_data:
+            is_problematic_record = False
+            current_db_id = nlq_record.get('db_id')
+
+            if not current_db_id:
+                kept_nlq_records.append(nlq_record) # Keep if no db_id to check against
+                continue
+
+            if current_db_id in problematic_values_map:
+                for value_entry in nlq_record.get('values', []):
+                    nlq_value_str = str(value_entry.get('value'))
+                    nlq_table_name = value_entry.get('table')
+
+                    if not nlq_table_name:
+                        continue
+
+                    if nlq_table_name in problematic_values_map[current_db_id]:
+                        if nlq_value_str in problematic_values_map[current_db_id][nlq_table_name]:
+                            is_problematic_record = True
+                            break 
+            
+            if not is_problematic_record:
+                kept_nlq_records.append(nlq_record)
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(kept_nlq_records, f, indent=2)
+        
 if __name__ == "__main__":
     input_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
     output_folder = "assets/all_benchmarks"
@@ -2770,7 +3043,22 @@ if __name__ == "__main__":
     BenchmarkVariator.toggle_singular_plural_vllm(input_path, output_path)
     """
     
-    input_filename = "assets/all_benchmarks/all_benchmarks_combined.json"
-    output_filename = "assets/all_benchmarks/all_benchmarks_combined_verified.json"
+    #input_filename = "assets/all_benchmarks/all_benchmarks_combined.json"
+    #output_filename = "assets/all_benchmarks/all_benchmarks_combined_verified.json"
 
-    BenchmarkVariator.verify_nlq_alterations_with_vllm(input_filename, output_filename)
+    #BenchmarkVariator.verify_nlq_alterations_with_vllm(input_filename, output_filename)
+    
+    output_filename = "cross_column_occurances_dataset_existing.json"
+    output_path = f"{output_folder}/{output_filename}"
+    
+    #BenchmarkVariator.remove_word_from_value(
+    #    input_json_path=input_path, 
+    #    output_json_path=output_path, 
+    #    db_base_path="/data/hdd1/users/akouk/value_linking/fresh_value_linking/experimental-analysis-of-value-inking/CHESS/data/value_linking/dev_databases"
+    #)
+    
+    BenchmarkVariator.filter_nlqs_by_intra_table_value_occurrences(
+        occurrences_json_path = "assets/all_benchmarks/cross_column_occurances.json", 
+        nlq_json_path = "assets/value_linking_valid_values_exact_no_bird_train.json", 
+        output_json_path = output_path
+    )

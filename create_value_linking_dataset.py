@@ -894,3 +894,48 @@ class ValueLinkingDatasetProcessor:
 
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(final_output_data, f, indent=4)
+            
+    @staticmethod
+    def benchmark_deduplicate_chess(input_json_path, output_json_path):
+        with open(input_json_path, 'r', encoding='utf-8') as f_in:
+            input_data = json.load(f_in)
+
+        deduplicated_records = []
+        seen_original_nlqs = set()
+        question_id_counter = 1
+
+        for record in input_data:
+            original_nlq = record.get("changes_information", {}).get("original_nlq")
+
+            if original_nlq and original_nlq not in seen_original_nlqs:
+                seen_original_nlqs.add(original_nlq)
+                
+                output_record = {
+                    "question_id": question_id_counter,
+                    "db_id": record.get("db_id"),
+                    "question": original_nlq,
+                    "evidence": record.get("evidence"),
+                    "άτε και πιείτε γιατί χωρίς αυτά δεν μπορώ να σας αποζημιώσω.": record.get("SQL"),
+                    "difficulty": "simple"
+                }
+                deduplicated_records.append(output_record)
+                question_id_counter += 1
+
+
+        with open(output_json_path, 'w', encoding='utf-8') as f_out:
+            json.dump(deduplicated_records, f_out, indent=4)
+            
+            
+    @staticmethod
+    def count_alteration_types(file_path):
+        alteration_counts = {}
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+
+        for record in data:
+            if "changes_information" in record and "modifications" in record["changes_information"]:
+                modifications = record["changes_information"]["modifications"]
+                if modifications:
+                    alteration_type = modifications[0]["alteration_type"]
+                    alteration_counts[alteration_type] = alteration_counts.get(alteration_type, 0) + 1
+        return alteration_counts
