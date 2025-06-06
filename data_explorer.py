@@ -126,6 +126,39 @@ class DataExplorer:
             return False
         return True   
     
+    
+    @staticmethod
+    def _is_eligible_english_value_maximum_one_space(value: str, spell_checker) -> bool:
+        if not isinstance(value, str) or not value.strip():
+            return False
+        words = value.split()
+        if not words:
+            return False
+        for word in words:
+            if not word.isalpha():
+                return False
+            if not spell_checker.known([word.lower()]):
+                return False
+        if value.count(' ') > 1:
+            return False
+        return True
+
+    @staticmethod
+    def _is_eligible_english_value_maximum_three_spaces(value: str, spell_checker) -> bool:
+        if not isinstance(value, str) or not value.strip():
+            return False
+        words = value.split()
+        if not words:
+            return False
+        for word in words:
+            if not word.isalpha():
+                return False
+            if not spell_checker.known([word.lower()]):
+                return False
+        if value.count(' ') > 1:
+            return False
+        return True
+    
     @staticmethod
     def _build_synonym_prompt_messages(value_to_find_synonym_for: str,
                                        database_name: str,
@@ -1120,15 +1153,462 @@ class DataExplorer:
             post_filtering_fn=DataExplorer.pass_check,
 
         )
+    
+    
+    @staticmethod
+    def _build_abbreviation_acronym_prompt_messages(value: str,
+                                        database_name: str,
+                                        table_name: str,
+                                        column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in common abbreviations, acronyms, and database value analysis. Your task is to generate a realistic abbreviation or acronym for a given database value.
+
+        An abbreviation/acronym involves replacing a word or phrase in the value with its commonly recognized abbreviated form or acronym. This creates a realistic scenario where someone might use a shorter form instead of typing out the full name or phrase.
+
+        The values are actual cell values from a database, so along with the values, the database name, table and column will be given. Make sure that the abbreviation/acronym replacement is realistic for the context of the database.
+        
+        Requirements:
+        - Replace one value with its widely recognized abbreviation or acronym
+        - Only use abbreviations/acronyms that are commonly known and used
+        - The replacement should be realistic - something a human would naturally use as a shortcut
+        - Abbreviations should be well-established, not made-up shortenings
+        - If no word/phrase in the value has a recognized abbreviation/acronym, return: [NOT_VALID]
+        - If the value is too simple or already abbreviated, return: [NOT_VALID]
+        - Only provide one variant
+        - You should minimize false positives: the abbreviation/acronym should be genuinely likely to occur in real typing
+    
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: locations_db, Table: cities, Column: name
+        Value: Los Angeles California
+        LA California
+
+        Database: organizations_db, Table: agencies, Column: name
+        Value: National Aeronautics and Space Administration
+        NASA
+
+        Database: contacts_db, Table: people, Column: title
+        Value: Doctor Smith
+        Dr Smith
+        
+        Database: simple_db, Table: data, Column: word
+        Value: hello
+        [NOT_VALID]
+
+        Database: tech_db, Table: software, Column: type
+        Value: database application
+        DB application
+        
+        Database: zoo, Table: animals, Column: species
+        Value: Elephant
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+        
+    @staticmethod
+    def find_abbreviation_acronym_change(
+            input_json_path: str,
+            sqlite_folders_path: str,
+            output_json_path: str
+        ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value,
+            DataExplorer._build_abbreviation_acronym_prompt_messages,
+            "abbreviation_acronym",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+    
+    @staticmethod
+    def _build_clipping_prompt_messages(value: str,
+                                        database_name: str,
+                                        table_name: str,
+                                        column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in linguistics, common word shortenings (clippings), and database value analysis. Your task is to generate a realistic shortened form for a given database value.
+
+        A shortened form, or "clipping," involves shortening a longer word by dropping the end part, while keeping the beginning. This is a common linguistic process used for informal or efficient communication (e.g., 'administrator' -> 'admin', 'information' -> 'info'). This is DIFFERENT from an acronym (NASA) or an initialism (LA).
+
+        The values are actual cell values from a database, so along with the values, the database name, table and column will be given. Make sure that the shortened form is realistic for the context of the database.
+        
+        Requirements:
+        - Replace one word with its commonly recognized shortened form (clipping).
+        - Only use shortened forms that are commonly known and used (e.g., 'admin', 'prof', 'doc', 'info').
+        - The replacement should be realistic - something a human would naturally use as a shortcut.
+        - Shortened forms should be well-established, not just arbitrarily truncated words (e.g., 'administrator' -> 'admin' is good, but 'administrator' -> 'administ' is bad).
+        - If no word in the value has a common clipped form, return: [NOT_VALID]
+        - If the value is too simple or already a shortened form, return: [NOT_VALID]
+        - Only provide one variant.
+        - You should minimize false positives: the shortened form should be genuinely likely to occur in real typing.
+
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: user_accounts, Table: users, Column: role
+        Value: system administrator
+        system admin
+
+        Database: university_db, Table: faculty, Column: title
+        Value: Professor Plum
+        Prof Plum
+
+        Database: project_management, Table: tasks, Column: details
+        Value: See document for more information
+        See document for more info
+
+        Database: files_db, Table: records, Column: type
+        Value: Scanned Document
+        Scanned Doc
+
+        Database: simple_db, Table: data, Column: word
+        Value: hello
+        [NOT_VALID]
+
+        Database: zoo, Table: animals, Column: species
+        Value: Giraffe
+        [NOT_VALID]
+        
+        Database: locations_db, Table: cities, Column: name
+        Value: Los Angeles California
+        [NOT_VALID]
+
+        Database: user_accounts, Table: users, Column: role
+        Value: admin
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+        
+    @staticmethod
+    def find_clipping_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_maximum_one_space,
+            DataExplorer._build_clipping_prompt_messages,
+            "clipping",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+
+    @staticmethod
+    def _build_paraphrasing_prompt_messages(value: str,
+                                            database_name: str,
+                                            table_name: str,
+                                            column_name: str) -> list:
+        """
+        Builds a prompt to generate a paraphrased version of a database value.
+        """
+        SYSTEM_PROMPT = """You are an expert in natural language understanding, semantics, and database value analysis. Your task is to paraphrase a given database value.
+
+        Paraphrasing means rephrasing the value to express the same meaning using different words or sentence structure. This is DIFFERENT from simply replacing a word with a synonym or using an abbreviation. The goal is to create a variant that a different human might have typed to convey the exact same information.
+
+        The values are actual cell values from a database, so along with the values, the database name, table and column will be given. Make sure the paraphrase is realistic for the context of the database.
+        
+        Requirements:
+        - Rephrase the value, potentially by changing word order, adding/removing function words (like 'a', 'the', 'for'), or using different phrasing.
+        - The core meaning must be strictly preserved.
+        - The paraphrase should be a natural and common way of expressing the same information.
+        - Avoid simple, single-word synonym swaps (e.g., 'Car' -> 'Automobile' is not a good paraphrase). The change should be more structural.
+        - If the value is too simple (e.g., a single word, a proper name) or cannot be naturally paraphrased, return: [NOT_VALID]
+        - Only provide one variant.
+        - You should minimize false positives: the paraphrase should be genuinely plausible as a human-entered alternative.
+
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: Smith, John
+        John Smith
+
+        Database: reports_db, Table: quarterly_reports, Column: title
+        Value: Report for the Third Quarter
+        Third Quarter Report
+
+        Database: inventory_db, Table: products, Column: status
+        Value: Item is currently out of stock
+        Currently out of stock
+
+        Database: ecommerce_db, Table: orders, Column: payment_terms
+        Value: Payment required upon delivery
+        Payment due on delivery
+
+        Database: tasks_db, Table: todos, Column: status
+        Value: Complete
+        [NOT_VALID]
+
+        Database: locations_db, Table: cities, Column: name
+        Value: New York
+        [NOT_VALID]
+
+        Database: planning_db, Table: milestones, Column: deadline
+        Value: To be determined
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+        
+    @staticmethod
+    def find_paraphrases_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_maximum_three_spaces,
+            DataExplorer._build_paraphrasing_prompt_messages,
+            "paraphrasing",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+
+    @staticmethod
+    def _build_negated_antonym_prompt_messages(value: str,
+                                            database_name: str,
+                                            table_name: str,
+                                            column_name: str) -> list:
+        """
+        Builds a prompt to generate a negated antonym for a database value.
+        """
+        SYSTEM_PROMPT = """You are an expert in semantics, logic, and linguistic transformations. Your task is to generate a specific type of paraphrase for a given database value: a negated antonym.
+
+        This transformation involves replacing a value with the negation of its opposite (its antonym). The transformation follows the pattern: `[value]` -> `not [antonym of value]`. This creates a phrase that is semantically equivalent to the original value. For example, the value 'active' would be transformed into 'not inactive'.
+
+        This is DIFFERENT from a simple antonym ('active' -> 'inactive') or a simple negation ('active' -> 'not active'). The meaning must be preserved.
+
+        The values are actual cell values from a database, so the database name, table, and column will be given. The transformation should only be applied if it results in a natural-sounding phrase. This is most common for adjectives and status words.
+        
+        Requirements:
+        - Replace the value with 'not' followed by its direct, common antonym.
+        - The resulting phrase must be semantically equivalent to the original value.
+        - The antonym used must be a common and natural opposite (e.g., the antonym of 'possible' is 'impossible').
+        - If the value has no clear, common antonym, or if the transformation would be awkward, return: [NOT_VALID]
+        - If the value is a complex phrase, a proper name, or is already in a negative form, return: [NOT_VALID]
+        - Only provide one variant.
+
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: user_accounts, Table: users, Column: status
+        Value: active
+        not inactive
+
+        Database: forms_db, Table: fields, Column: validation
+        Value: required
+        not optional
+
+        Database: compliance_db, Table: actions, Column: status
+        Value: legal
+        not illegal
+
+        Database: security_db, Table: permissions, Column: access_level
+        Value: allowed
+        not forbidden
+
+        Database: contacts_db, Table: people, Column: name
+        Value: John Smith
+        [NOT_VALID]
+
+        Database: inventory_db, Table: products, Column: color
+        Value: blue
+        [NOT_VALID]
+
+        Database: reports_db, Table: quarterly_reports, Column: title
+        Value: Report for the Third Quarter
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    
+    @staticmethod
+    def find_negated_antonyms_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_over_without_space,
+            DataExplorer._build_negated_antonym_prompt_messages,
+            "negated_antonym",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+    
+    @staticmethod
+    def _build_word_removal_prompt_messages(value: str,
+                                            database_name: str,
+                                            table_name: str,
+                                            column_name: str) -> list:
+        """
+        Builds a prompt to generate a variant of a value by removing one non-essential word.
+        """
+        SYSTEM_PROMPT = """You are an expert in semantics, linguistics, and data conciseness. Your task is to identify and remove a single, non-essential word from a given database value.
+
+        The goal is to create a more concise version of the value that preserves the original's core meaning and identity. This often involves removing words that are optional or redundant, such as middle initials, titles, or certain qualifiers.
+
+        The values are actual cell values from a database. The database name, table, and column are provided for context. The resulting value must be a natural and common way of representing the same information.
+        
+        What to look for and remove:
+        - Middle initials (e.g., 'John F. Kennedy' -> 'John Kennedy')
+        - Titles or honorifics (e.g., 'Dr. Jane Smith' -> 'Jane Smith')
+        - Redundant words (e.g., 'final conclusion' -> 'conclusion')
+        - Non-essential adverbs or adjectives (e.g., 'currently unavailable' -> 'unavailable')
+
+        What NOT to remove:
+        - Words that are part of a proper name (e.g., 'New York', 'Los Angeles').
+        - Words that specify a key attribute (e.g., 'Senior' in 'Senior Developer').
+        - Any word whose removal would significantly change the meaning.
+
+        Requirements:
+        - You must remove exactly one word.
+        - The core meaning must be strictly preserved.
+        - If no single word can be removed without changing the meaning, return: [NOT_VALID]
+        - Only provide one variant.
+
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: John D Smith
+        John Smith
+
+        Database: user_accounts, Table: users, Column: full_name
+        Value: Mister Adam Jones
+        Adam Jones
+
+        Database: inventory_db, Table: products, Column: status
+        Value: Currently unavailable
+        Unavailable
+
+        Database: reports_db, Table: documents, Column: type
+        Value: Final Conclusion
+        Conclusion
+
+        Database: roles_db, Table: job_titles, Column: title
+        Value: Senior Developer
+        [NOT_VALID]
+
+        Database: locations_db, Table: cities, Column: name
+        Value: New York
+        [NOT_VALID]
+
+        Database: reports_db, Table: quarterly_reports, Column: title
+        Value: Quarterly Report
+        [NOT_VALID]
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: Jane Doe
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+        
+    @staticmethod
+    def find_word_removal_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_over_with_space,
+            DataExplorer._build_word_removal_prompt_messages,
+            "word_removal",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+        
         
 if __name__ == "__main__":
     output_dir = "assets/data_exploration"
     sqlite_folders_path = "CHESS/data/value_linking/dev_databases"
     input_json_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
 
-    output_filename = "synonym_changes.json"
+    output_filename = "word_removal.json"
     output_json_path = os.path.join(output_dir, output_filename)
-    DataExplorer.find_synonym_change(
+    DataExplorer.find_word_removal_change(
         input_json_path=input_json_path,
         sqlite_folders_path=sqlite_folders_path,
         output_json_path=output_json_path
