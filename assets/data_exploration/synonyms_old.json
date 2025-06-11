@@ -1,0 +1,4860 @@
+[
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "City Of Commerce",
+    "synonym": "Commerce"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "t_shirt_size",
+    "original_value": "Medium",
+    "synonym": "Average"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "t_shirt_size",
+    "original_value": "Large",
+    "synonym": "Big"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "t_shirt_size",
+    "original_value": "Small",
+    "synonym": "Little"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Captured",
+    "synonym": "Seized"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Wrecked",
+    "synonym": "Destroyed"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Scuttled",
+    "synonym": "Sunk"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Sank",
+    "synonym": "Submerged"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "language",
+    "original_value": "Spanish",
+    "synonym": "Castilian"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "language",
+    "original_value": "Chinese Simplified",
+    "synonym": "Simplified Chinese"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "British",
+    "synonym": "English"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "German",
+    "synonym": "Germanic"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Finnish",
+    "synonym": "Finnishian"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "French",
+    "synonym": "France"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "American",
+    "synonym": "United States citizen"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Dutch",
+    "synonym": "Netherlands"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Czech",
+    "synonym": "Czech Republic"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Swedish",
+    "synonym": "Scandinavian"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Blond",
+    "synonym": "Yellow"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Blue",
+    "synonym": "Azure"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Brown",
+    "synonym": "Tan"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Grey",
+    "synonym": "Gray"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Green",
+    "synonym": "Emerald"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Purple",
+    "synonym": "Violet"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Red",
+    "synonym": "Crimson"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Violet",
+    "synonym": "Purple"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "White",
+    "synonym": "Pale"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Yellow",
+    "synonym": "Golden"
+  },
+  {
+    "database_id": "boat_1",
+    "table": "boats",
+    "column": "color",
+    "original_value": "red",
+    "synonym": "crimson"
+  },
+  {
+    "database_id": "boat_1",
+    "table": "boats",
+    "column": "color",
+    "original_value": "blue",
+    "synonym": "azure"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "position",
+    "original_value": "Member",
+    "synonym": "Participant"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "position",
+    "original_value": "Inactive",
+    "synonym": "Dormant"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Teacher",
+    "synonym": "Instructor"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Student",
+    "synonym": "Learner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Organizer",
+    "synonym": "Coordinator"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Supporter",
+    "synonym": "Advocate"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Scholar",
+    "synonym": "Academic"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Good Answer",
+    "synonym": "Positive Response"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Cleanup",
+    "synonym": "rectification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Promoter",
+    "synonym": "Advocate"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Disciplined",
+    "synonym": "orderly"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Popular Question",
+    "synonym": "Well-liked Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Sportsmanship",
+    "synonym": "Fair play"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Talkative",
+    "synonym": "Loquacious"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Notable Question",
+    "synonym": "Remarkable Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "distributions",
+    "synonym": "deployments"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Favorite Question",
+    "synonym": "Most Popular Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "probability",
+    "synonym": "likelihood"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "correlation",
+    "synonym": "relationship"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Famous Question",
+    "synonym": "Well-known Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "estimation",
+    "synonym": "assessment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Reviewer",
+    "synonym": "Examiner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "classification",
+    "synonym": "categorization"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "forecasting",
+    "synonym": "prediction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Great Answer",
+    "synonym": "Excellent Response"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Informed",
+    "synonym": "knowledgeable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "interaction",
+    "synonym": "communication"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "robust",
+    "synonym": "strong"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "mean",
+    "synonym": "average"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "interpretation",
+    "synonym": "understanding"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "survival",
+    "synonym": "endurance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "simulation",
+    "synonym": "modeling"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player_attributes",
+    "column": "preferred_foot",
+    "original_value": "right",
+    "synonym": "left"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player_attributes",
+    "column": "preferred_foot",
+    "original_value": "left",
+    "synonym": "sinister"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass",
+    "original_value": "Normal",
+    "synonym": "Average"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass",
+    "original_value": "Risky",
+    "synonym": "Hazardous"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass",
+    "original_value": "Safe",
+    "synonym": "Cautious"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Autumn",
+    "synonym": "Fall"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "August",
+    "synonym": "Augusta"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Jack",
+    "synonym": "John"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Forest",
+    "synonym": "Woodland"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Confidence",
+    "synonym": "assurance"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Other",
+    "synonym": "Miscellaneous"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Long",
+    "synonym": "Extended"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "fundingtype",
+    "original_value": "Directly funded",
+    "synonym": "Publicly funded"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "fundingtype",
+    "original_value": "Locally funded",
+    "synonym": "Publicly funded"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "Developer",
+    "synonym": "Programmer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "stalemate",
+    "synonym": "impasse"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "response",
+    "synonym": "reply"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "student",
+    "synonym": "learner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "helper",
+    "synonym": "assistant"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass",
+    "original_value": "Little",
+    "synonym": "Small"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass",
+    "original_value": "Normal",
+    "synonym": "Average"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass",
+    "original_value": "Lots",
+    "synonym": "Many"
+  },
+  {
+    "database_id": "debit_card_specializing",
+    "table": "gasstations",
+    "column": "segment",
+    "original_value": "Value for money",
+    "synonym": "Cost effective"
+  },
+  {
+    "database_id": "debit_card_specializing",
+    "table": "gasstations",
+    "column": "segment",
+    "original_value": "Premium",
+    "synonym": "Top-tier"
+  },
+  {
+    "database_id": "debit_card_specializing",
+    "table": "gasstations",
+    "column": "segment",
+    "original_value": "Other",
+    "synonym": "Miscellaneous"
+  },
+  {
+    "database_id": "debit_card_specializing",
+    "table": "gasstations",
+    "column": "segment",
+    "original_value": "Discount",
+    "synonym": "Allowance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the links",
+    "synonym": "gratitude for the links"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for the answer",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for helping me",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thank you",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Tank you for this answer",
+    "synonym": "Thank you for this answer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for the help",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "good point",
+    "synonym": "valid point"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I need it on paper",
+    "synonym": "in writing"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the answer",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks that helps",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for your help",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for the suggestion",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "you need to use a reproducible set of data",
+    "synonym": "reproducible dataset"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "give an example",
+    "synonym": "provide an illustration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the link",
+    "synonym": "gratitude for the link"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "You can bound the probability",
+    "synonym": "limit"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I will edit the answer",
+    "synonym": "I plan to modify the answer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the hint",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for this",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "exactly what I was after",
+    "synonym": "precisely what I wanted"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I agree with you",
+    "synonym": "I concur"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "That is correct",
+    "synonym": "Accurate"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "correction made",
+    "synonym": "amendment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "they are the same",
+    "synonym": "identical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the clear answer",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for your answer",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "fixed the question",
+    "synonym": "resolved the issue"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Seems sensible to me",
+    "synonym": "Sounds reasonable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Citations would be of great help for this issue",
+    "synonym": "References"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I have made the distinction between the population means and the resulting sample means more clear",
+    "synonym": "clarification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I am confused as to how to calculate the standard deviation",
+    "synonym": "puzzled"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "remove the column",
+    "synonym": "delete the column"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "More details added",
+    "synonym": "Further information added"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Added more information",
+    "synonym": "Expanded"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Question edited",
+    "synonym": "Revised"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "references added",
+    "synonym": "additions included"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "updated my answer",
+    "synonym": "revised my answer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "edited to be clearer",
+    "synonym": "revised for clarity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "It has to decrease otherwise it would have memory",
+    "synonym": "lessen"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for your clear answers",
+    "synonym": "gratitude for your lucid responses"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for answering",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Thanks for your help",
+    "synonym": "Appreciation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "it is only one direction",
+    "synonym": "unilateral"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "provide your code and output",
+    "synonym": "share your code and results"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "You should show your working of an example",
+    "synonym": "demonstration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I will edit my answer",
+    "synonym": "I plan to modify my answer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "thanks for the input",
+    "synonym": "gratitude"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "I will edit the question",
+    "synonym": "I plan to modify the question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "A standard error",
+    "synonym": "typical error"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Edited response",
+    "synonym": "Modified response"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Advertisement",
+    "synonym": "Promotion"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Food",
+    "synonym": "Nutrition"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Speaker Gifts",
+    "synonym": "Presentation Expenses"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "prior",
+    "synonym": "previous"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "sample",
+    "synonym": "example"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "population",
+    "synonym": "community"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "measurement",
+    "synonym": "assessment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "census",
+    "synonym": "enumeration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "correlation",
+    "synonym": "relationship"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "teaching",
+    "synonym": "instruction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "transportation",
+    "synonym": "travel"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "clustering",
+    "synonym": "grouping"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "error",
+    "synonym": "mistake"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "forecasting",
+    "synonym": "prediction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "power",
+    "synonym": "strength"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "methodology",
+    "synonym": "approach"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "theory",
+    "synonym": "principle"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "definition",
+    "synonym": "description"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "classification",
+    "synonym": "categorization"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "library",
+    "synonym": "collection"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "scores",
+    "synonym": "tallies"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "polling",
+    "synonym": "surveying"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "minimum",
+    "synonym": "lowest"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "maximum",
+    "synonym": "largest"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "finance",
+    "synonym": "financial matters"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "application",
+    "synonym": "program"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "estimation",
+    "synonym": "assessment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "homogeneity",
+    "synonym": "uniformity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "disease",
+    "synonym": "illness"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "median",
+    "synonym": "middle"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "probability",
+    "synonym": "likelihood"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "proof",
+    "synonym": "evidence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "monitoring",
+    "synonym": "supervision"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "mean",
+    "synonym": "average"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "uncertainty",
+    "synonym": "ambiguity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "humor",
+    "synonym": "comedy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "robust",
+    "synonym": "sturdy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "equivalence",
+    "synonym": "equality"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "software",
+    "synonym": "program"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "censoring",
+    "synonym": "redaction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "uniform",
+    "synonym": "consistent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "reliability",
+    "synonym": "dependability"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "efficiency",
+    "synonym": "effectiveness"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "combination",
+    "synonym": "mixture"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "careers",
+    "synonym": "professions"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "variability",
+    "synonym": "diversity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "validation",
+    "synonym": "verification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "compression",
+    "synonym": "condensation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "terminology",
+    "synonym": "vocabulary"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "interpretation",
+    "synonym": "explanation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "computing",
+    "synonym": "calculation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "hazard",
+    "synonym": "danger"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "learning",
+    "synonym": "education"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "conferences",
+    "synonym": "gatherings"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "proportion",
+    "synonym": "ratio"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "journals",
+    "synonym": "diaries"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "fraud",
+    "synonym": "deception"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "rating",
+    "synonym": "evaluation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "job",
+    "synonym": "occupation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "survey",
+    "synonym": "poll"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "independence",
+    "synonym": "autonomy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "mode",
+    "synonym": "manner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "failure",
+    "synonym": "malfunction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "optimization",
+    "synonym": "improvement"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "resources",
+    "synonym": "materials"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "simulation",
+    "synonym": "modeling"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "bugs",
+    "synonym": "errors"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "interaction",
+    "synonym": "communication"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ranks",
+    "synonym": "grades"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "bounds",
+    "synonym": "limits"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "shrinkage",
+    "synonym": "reduction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "threshold",
+    "synonym": "limit"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ranking",
+    "synonym": "ordering"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "odds",
+    "synonym": "chances"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "trend",
+    "synonym": "fashion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "mediation",
+    "synonym": "arbitration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "moderator",
+    "synonym": "administrator"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "units",
+    "synonym": "components"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "average",
+    "synonym": "mean"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "bias",
+    "synonym": "prejudice"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "mixture",
+    "synonym": "combination"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "information",
+    "synonym": "data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "function",
+    "synonym": "method"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "matching",
+    "synonym": "corresponding"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "importance",
+    "synonym": "significance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "education",
+    "synonym": "learning"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "checking",
+    "synonym": "verification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "distance",
+    "synonym": "separation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "metric",
+    "synonym": "measurement"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "repeatability",
+    "synonym": "reproducibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "blocking",
+    "synonym": "impeding"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "sources",
+    "synonym": "origins"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "scoring",
+    "synonym": "rating"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "untagged",
+    "synonym": "unlabeled"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "standardization",
+    "synonym": "uniformity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "validity",
+    "synonym": "legitimacy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "reporting",
+    "synonym": "documentation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "references",
+    "synonym": "citations"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "presentation",
+    "synonym": "demonstration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "consistency",
+    "synonym": "uniformity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "elections",
+    "synonym": "polls"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ensemble",
+    "synonym": "collection"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "package",
+    "synonym": "bundle"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "demography",
+    "synonym": "population"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "marketing",
+    "synonym": "promotion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "performance",
+    "synonym": "execution"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "forecast",
+    "synonym": "prediction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "prediction",
+    "synonym": "forecast"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ecology",
+    "synonym": "environment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "segmentation",
+    "synonym": "division"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "frequency",
+    "synonym": "occurrence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "conditioning",
+    "synonym": "preparation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "similarities",
+    "synonym": "resemblances"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "risk",
+    "synonym": "hazard"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "communication",
+    "synonym": "correspondence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "likelihood",
+    "synonym": "probability"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "courses",
+    "synonym": "classes"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "representative",
+    "synonym": "typical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "mad",
+    "synonym": "angry"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "climate",
+    "synonym": "weather"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "adjustment",
+    "synonym": "modification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "arithmetic",
+    "synonym": "calculation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "discussion",
+    "synonym": "conversation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "consulting",
+    "synonym": "advising"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "blue",
+    "synonym": "azure"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "confidence",
+    "synonym": "assurance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "dependence",
+    "synonym": "reliance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "programming",
+    "synonym": "coding"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "effects",
+    "synonym": "impacts"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "valuation",
+    "synonym": "assessment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "penalized",
+    "synonym": "punished"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "benchmark",
+    "synonym": "standard"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "sensitivity",
+    "synonym": "sensibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "subset",
+    "synonym": "portion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "optimal",
+    "synonym": "best"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "control",
+    "synonym": "regulation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "continuous",
+    "synonym": "uninterrupted"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "missing",
+    "synonym": "absent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ratio",
+    "synonym": "proportion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "systematic",
+    "synonym": "methodical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "percentage",
+    "synonym": "proportion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "explanatory",
+    "synonym": "descriptive"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "choice",
+    "synonym": "option"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "accuracy",
+    "synonym": "precision"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "gambling",
+    "synonym": "wagering"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "contrast",
+    "synonym": "difference"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "image",
+    "synonym": "picture"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "range",
+    "synonym": "span"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "standard",
+    "synonym": "typical"
+  },
+  {
+    "database_id": "student_club",
+    "table": "income",
+    "column": "source",
+    "original_value": "Dues",
+    "synonym": "Membership fees"
+  },
+  {
+    "database_id": "student_club",
+    "table": "income",
+    "column": "source",
+    "original_value": "Fundraising",
+    "synonym": "Donations"
+  },
+  {
+    "database_id": "student_club",
+    "table": "income",
+    "column": "source",
+    "original_value": "Sponsorship",
+    "synonym": "Funding"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "documents",
+    "column": "document_name",
+    "original_value": "Customer reviews",
+    "synonym": "Client feedback"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "United States",
+    "synonym": "USA"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "United Kingdom",
+    "synonym": "Great Britain"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Netherlands",
+    "synonym": "Holland"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "All over the world",
+    "synonym": "Worldwide"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Bombay",
+    "synonym": "Mumbai"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "America",
+    "synonym": "United States"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "The Netherlands",
+    "synonym": "Holland"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Brasil",
+    "synonym": "Brazil"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "East Coast",
+    "synonym": "Atlantic Coast"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Peking",
+    "synonym": "Beijing"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Great Britain",
+    "synonym": "United Kingdom"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "north",
+    "synonym": "northern"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Czech republic",
+    "synonym": "Czechia"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "United States of America",
+    "synonym": "USA"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Italia",
+    "synonym": "Italy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "germany",
+    "synonym": "Federal Republic of Germany"
+  },
+  {
+    "database_id": "superhero",
+    "table": "gender",
+    "column": "gender",
+    "original_value": "Male",
+    "synonym": "Masculine"
+  },
+  {
+    "database_id": "superhero",
+    "table": "gender",
+    "column": "gender",
+    "original_value": "Female",
+    "synonym": "Woman"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "courses",
+    "column": "course_name",
+    "original_value": "math",
+    "synonym": "mathematics"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Falls",
+    "synonym": "Waterfalls"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Wood",
+    "synonym": "forest"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Costa",
+    "synonym": "Mesa"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Reconnaissance",
+    "synonym": "Scouting"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Repercussion",
+    "synonym": "consequence"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Regeneration",
+    "synonym": "renewal"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Acquisition",
+    "synonym": "takeover"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Complication",
+    "synonym": "difficulty"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Balance",
+    "synonym": "Equilibrium"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Incorporation",
+    "synonym": "Establishment"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Justification",
+    "synonym": "explanation"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Bandage",
+    "synonym": "dressing"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Charge",
+    "synonym": "levy"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Morale",
+    "synonym": "Spirit"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Conversion",
+    "synonym": "Transformation"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Expiration",
+    "synonym": "Expiry"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Annulation",
+    "synonym": "Revocation"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Irritation",
+    "synonym": "annoyance"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Fabrication",
+    "synonym": "manufacture"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Desertion",
+    "synonym": "abandonment"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Donation",
+    "synonym": "Contribution"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Exploration",
+    "synonym": "discovery"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Armure de puissance",
+    "synonym": "Power armor"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Catalogue",
+    "synonym": "Index"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Surcharge",
+    "synonym": "Additional charge"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Dominance",
+    "synonym": "Supremacy"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Intelligence",
+    "synonym": "Intellect"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Strength",
+    "synonym": "Power"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Speed",
+    "synonym": "Velocity"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Durability",
+    "synonym": "Resilience"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Power",
+    "synonym": "Strength"
+  },
+  {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Combat",
+    "synonym": "Battle"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "degree_programs",
+    "column": "degree_summary_name",
+    "original_value": "Bachelor",
+    "synonym": "Undergraduate"
+  },
+  {
+    "database_id": "financial",
+    "table": "disp",
+    "column": "type",
+    "original_value": "OWNER",
+    "synonym": "proprietor"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Estimating the number of birds in a specific area",
+    "synonym": "Calculating the number of birds in a specific area"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Removing labelling noise",
+    "synonym": "Eliminating labeling noise"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Selecting the best indicator of disease progression",
+    "synonym": "Choosing the optimal metric of disease progression"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Trying to understand Gaussian Process",
+    "synonym": "attempting"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Correcting sample bias",
+    "synonym": "Fixing sample bias"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Calculate number of needed simulations",
+    "synonym": "Compute number of needed simulations"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Question on terminology",
+    "synonym": "Inquiry on terminology"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Famous statistician quotes",
+    "synonym": "Well-known statistician quotes"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Getting rid of a huge categorical factor in multiple regression",
+    "synonym": "Eliminating a large categorical variable in multiple regression"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Validate a medical test",
+    "synonym": "Confirm a medical test"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "How do I measure how well my data fits a prediction",
+    "synonym": "assessment"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Evaluate improvement in questionnaire questions",
+    "synonym": "Assess enhancement of survey questions"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Distribution of Data",
+    "synonym": "Spread of Data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Expected waiting time",
+    "synonym": "Anticipated wait time"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Advantages of ROC curves",
+    "synonym": "Benefits of ROC curves"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Calculating Probability",
+    "synonym": "Determining Probability"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Need help comparing graphs",
+    "synonym": "assistance comparing graphs"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Procedure to devise Questionnaire",
+    "synonym": "Methodology"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Benefits of using genetic algorithm",
+    "synonym": "Advantages of using genetic algorithm"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Difference in predicted value using two different methods",
+    "synonym": "Disparity in predicted value using two different methods"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "How to control for a variable",
+    "synonym": "How to account for a variable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Interpretation of Spearman correlation for small sample",
+    "synonym": "Understanding of Spearman correlation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "How to standardize data",
+    "synonym": "How to normalize data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Determining the significance of a set ordering",
+    "synonym": "Identifying the importance of a set ordering"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Evaluating a logistic regression",
+    "synonym": "Assessing a logistic regression"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Variable Selection",
+    "synonym": "Choice"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Detect changes in time series",
+    "synonym": "Identify modifications"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Converting binary data to percentage",
+    "synonym": "Transforming binary data to percentage"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Conditions for conclusion",
+    "synonym": "Requirements for completion"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Estimating the mean prediction",
+    "synonym": "Calculating the average prediction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Segmentation of employees",
+    "synonym": "Division of employees"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Differences in coefficients",
+    "synonym": "Discrepancies in coefficients"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "price prediction",
+    "synonym": "cost forecasting"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Estimating prices",
+    "synonym": "Calculating costs"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Ideas for Segmenting Audio Data",
+    "synonym": "Suggestions for Audio Data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Issues with neural network",
+    "synonym": "Problems with neural network"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Predicting data based on two data sets",
+    "synonym": "Forecasting data based on two data sets"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Regarding transformation of a variable to follow normality",
+    "synonym": "Concerning transformation of a variable to follow normality"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Incorporating a treatment into a classification scheme",
+    "synonym": "Integrating a treatment into a classification scheme"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Correction for multiple comparisons",
+    "synonym": "Fix for multiple comparisons"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Evaluating a clinical test",
+    "synonym": "Assessing a clinical test"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Comparing two models",
+    "synonym": "Contrasting two models"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Assessing quality of similarity measure",
+    "synonym": "Evaluating quality of similarity measure"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Determine if a person differs from typical performance",
+    "synonym": "Identify if a person deviates from normal performance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Determining the correct sample size",
+    "synonym": "Identifying the appropriate sample size"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "Registration",
+    "synonym": "Enrollment"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Meeting",
+    "synonym": "Gathering"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Game",
+    "synonym": "contest"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Guest Speaker",
+    "synonym": "Visiting Lecturer"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Social",
+    "synonym": "Communal"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Registration",
+    "synonym": "Enrollment"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Community Service",
+    "synonym": "Public Service"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Budget",
+    "synonym": "Financial plan"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Long",
+    "synonym": "Extended"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Black",
+    "synonym": "Dark"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Price",
+    "synonym": "cost"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Main",
+    "synonym": "Primary"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "White",
+    "synonym": "Caucasian"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "North",
+    "synonym": "Northern"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Best",
+    "synonym": "Finest"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Short",
+    "synonym": "Brief"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Silver",
+    "synonym": "metallic"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Early",
+    "synonym": "Premature"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Prior",
+    "synonym": "Previous"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Means",
+    "synonym": "average"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Good",
+    "synonym": "Excellent"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Equipment",
+    "synonym": "Gear"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Vehicle",
+    "synonym": "Transport"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Food",
+    "synonym": "Nourishment"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "brain infarction",
+    "synonym": "stroke"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Normal",
+    "synonym": "Typical"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "collagen disease",
+    "synonym": "connective tissue disease"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Agricultural Science",
+    "synonym": "Agronomy"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "International Business",
+    "synonym": "Global Commerce"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Management",
+    "synonym": "Administration"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Business",
+    "synonym": "Commerce"
+  },
+  {
+    "database_id": "sing_contest",
+    "table": "songs",
+    "column": "english_translation",
+    "original_value": "My dear",
+    "synonym": "Beloved"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "bordercolor",
+    "original_value": "black",
+    "synonym": "dark"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "bordercolor",
+    "original_value": "white",
+    "synonym": "pale"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "bordercolor",
+    "original_value": "silver",
+    "synonym": "metallic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "bordercolor",
+    "original_value": "gold",
+    "synonym": "golden"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "educational option type",
+    "original_value": "Traditional",
+    "synonym": "Conventional"
+  },
+  {
+    "database_id": "card_games",
+    "table": "set_translations",
+    "column": "language",
+    "original_value": "Chinese Simplified",
+    "synonym": "Simplified Chinese"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Active",
+    "synonym": "Operational"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Closed",
+    "synonym": "Shut down"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Merged",
+    "synonym": "Combined"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Pending",
+    "synonym": "Awaiting"
+  },
+  {
+    "database_id": "warehouse_1",
+    "table": "boxes",
+    "column": "contents",
+    "original_value": "Papers",
+    "synonym": "Documents"
+  },
+  {
+    "database_id": "superhero",
+    "table": "race",
+    "column": "race",
+    "original_value": "Human",
+    "synonym": "Person"
+  },
+  {
+    "database_id": "financial",
+    "table": "card",
+    "column": "type",
+    "original_value": "classic",
+    "synonym": "traditional"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "country",
+    "column": "name",
+    "original_value": "Netherlands",
+    "synonym": "Holland"
+  },
+  {
+    "database_id": "sing_contest",
+    "table": "songs",
+    "column": "name",
+    "original_value": " Love ",
+    "synonym": "Affection"
+  },
+  {
+    "database_id": "card_games",
+    "table": "set_translations",
+    "column": "translation",
+    "original_value": "Insurrection",
+    "synonym": "rebellion"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "Creature",
+    "synonym": "Being"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "Instant",
+    "synonym": "Immediate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "Scheme",
+    "synonym": "Plan"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "instant",
+    "synonym": "immediate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Anthologies",
+    "synonym": "collections"
+  },
+  {
+    "database_id": "pets_1",
+    "table": "pets",
+    "column": "pettype",
+    "original_value": "cat",
+    "synonym": "feline"
+  },
+  {
+    "database_id": "superhero",
+    "table": "alignment",
+    "column": "alignment",
+    "original_value": "Good",
+    "synonym": "Positive"
+  },
+  {
+    "database_id": "superhero",
+    "table": "alignment",
+    "column": "alignment",
+    "original_value": "Bad",
+    "synonym": "Evil"
+  },
+  {
+    "database_id": "superhero",
+    "table": "alignment",
+    "column": "alignment",
+    "original_value": "Neutral",
+    "synonym": "Impartial"
+  },
+  {
+    "database_id": "orchestra",
+    "table": "conductor",
+    "column": "nationality",
+    "original_value": "France",
+    "synonym": "French"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Agility",
+    "synonym": "Nimbleness"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Accelerated Healing",
+    "synonym": "Rapid Recovery"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Durability",
+    "synonym": "Resilience"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Stealth",
+    "synonym": "Concealment"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Longevity",
+    "synonym": "Durability"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Duplication",
+    "synonym": "Replication"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Stamina",
+    "synonym": "Endurance"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Dexterity",
+    "synonym": "Agility"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Possession",
+    "synonym": "Control"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Jump",
+    "synonym": "Leap"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Enhanced Memory",
+    "synonym": "Improved Memory"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Force Fields",
+    "synonym": "Protective Barriers"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Fire Resistance",
+    "synonym": "Heat Resistance"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Enhanced Hearing",
+    "synonym": "Improved Hearing"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Enhanced Sight",
+    "synonym": "Improved Vision"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Heat Generation",
+    "synonym": "Thermal Emission"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Regeneration",
+    "synonym": "Renewal"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Banish",
+    "synonym": "exile"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Heat Resistance",
+    "synonym": "Thermal Endurance"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Enhanced Smell",
+    "synonym": "Heightened Olfaction"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "charter funding type",
+    "original_value": "Directly funded",
+    "synonym": "Directly financed"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "charter funding type",
+    "original_value": "Locally funded",
+    "synonym": "Publicly funded"
+  },
+  {
+    "database_id": "concert_singer",
+    "table": "singer",
+    "column": "country",
+    "original_value": "Netherlands",
+    "synonym": "Holland"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Open",
+    "synonym": "Available"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Planning",
+    "synonym": "Organizing"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Closed",
+    "synonym": "Finished"
+  },
+  {
+    "database_id": "book_press",
+    "table": "press",
+    "column": "name",
+    "original_value": "Total",
+    "synonym": "Complete"
+  },
+  {
+    "database_id": "conference",
+    "table": "conference_participation",
+    "column": "role",
+    "original_value": "Speaker",
+    "synonym": "Presenter"
+  },
+  {
+    "database_id": "conference",
+    "table": "conference_participation",
+    "column": "role",
+    "original_value": "Sponsor",
+    "synonym": "Backer"
+  },
+  {
+    "database_id": "conference",
+    "table": "conference_participation",
+    "column": "role",
+    "original_value": "Participant",
+    "synonym": "Attendee"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Instant",
+    "synonym": "Immediate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Creature",
+    "synonym": "Being"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Scheme",
+    "synonym": "Plan"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "instant",
+    "synonym": "immediate"
+  },
+  {
+    "database_id": "student_club",
+    "table": "expense",
+    "column": "expense_description",
+    "original_value": "Posters",
+    "synonym": "Advertisements"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "uncommon",
+    "synonym": "rare"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "common",
+    "synonym": "prevalent"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "rare",
+    "synonym": "uncommon"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "users",
+    "column": "user_category_code",
+    "original_value": "Senior Citizen",
+    "synonym": "Elderly Person"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Instant",
+    "synonym": "Immediate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Artifact",
+    "synonym": "Relic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Interrupt",
+    "synonym": "disruption"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Scheme",
+    "synonym": "Plan"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "instant",
+    "synonym": "immediate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "format",
+    "original_value": "historic",
+    "synonym": "archaic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "bundle",
+    "synonym": "package"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "convention",
+    "synonym": "agreement"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "event",
+    "synonym": "occurrence"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "release",
+    "synonym": "publication"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplayspeedclass",
+    "original_value": "Balanced",
+    "synonym": "Moderate"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplayspeedclass",
+    "original_value": "Fast",
+    "synonym": "Quick"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplayspeedclass",
+    "original_value": "Slow",
+    "synonym": "Leisurely"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Color",
+    "synonym": "Hue"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "sign",
+    "synonym": "symbol"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Poll",
+    "synonym": "survey"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Programmer",
+    "synonym": "Developer"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Hide",
+    "synonym": "Conceal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Scientist",
+    "synonym": "Researcher"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "hit",
+    "synonym": "impact"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "dry",
+    "synonym": "arid"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "sad",
+    "synonym": "unhappy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "precision",
+    "synonym": "accuracy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "fire",
+    "synonym": "blaze"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Learner",
+    "synonym": "Student"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Person",
+    "synonym": "Individual"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "blunders",
+    "synonym": "mistakes"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Denial",
+    "synonym": "refusal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "altruist",
+    "synonym": "benefactor"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Finished",
+    "synonym": "Completed"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Disqualified",
+    "synonym": "Ineligible"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Accident",
+    "synonym": "collision"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Collision",
+    "synonym": "crash"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Mechanical",
+    "synonym": "Technical"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Tyre",
+    "synonym": "Tire"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Retired",
+    "synonym": "Withdrawn"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Steering",
+    "synonym": "direction"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Withdrew",
+    "synonym": "Pulled out"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Not classified",
+    "synonym": "Uncategorized"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Physical",
+    "synonym": "Tangible"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Injured",
+    "synonym": "Wounded"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Safety",
+    "synonym": "Security"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Injury",
+    "synonym": "ailment"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Underweight",
+    "synonym": "Lightweight"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Excluded",
+    "synonym": "Removed"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "linguistic",
+    "synonym": "language"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "management",
+    "synonym": "administration"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "math",
+    "synonym": "mathematics"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "statistics",
+    "synonym": "data science"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "law",
+    "synonym": "jurisprudence"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "medical",
+    "synonym": "health"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "drama",
+    "synonym": "theatre"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "availability",
+    "original_value": "paper",
+    "synonym": "physical"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "type",
+    "original_value": "Unique",
+    "synonym": "Distinct"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "type",
+    "original_value": "Standard",
+    "synonym": "Common"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "high grade",
+    "original_value": "Post Secondary",
+    "synonym": "Further Education"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "patient",
+    "column": "diagnosis",
+    "original_value": "relapsing",
+    "synonym": "recurring"
+  },
+  {
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "nation",
+    "original_value": "United States",
+    "synonym": "USA"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Threaten",
+    "synonym": "intimidate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Prohibit",
+    "synonym": "ban"
+  },
+  {
+    "database_id": "financial",
+    "table": "district",
+    "column": "a2",
+    "original_value": "Most",
+    "synonym": "Greatest"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "core",
+    "synonym": "basic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "expansion",
+    "synonym": "addition"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "starter",
+    "synonym": "beginner"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "memorabilia",
+    "synonym": "collectables"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "box",
+    "synonym": "container"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "funny",
+    "synonym": "humorous"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Dealing with guessing multiple choice",
+    "synonym": "Handling multiple choice questions"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "A problem on correlation and independence",
+    "synonym": "issue"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Transformation of the data",
+    "synonym": "Modification of the data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Assessing linearity",
+    "synonym": "Evaluating linearity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Reproduce a confidence interval of linear regression in Excel",
+    "synonym": "Recreate a confidence interval of linear regression in Excel"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Indicators of disease",
+    "synonym": "Signs of illness"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Goals for students in an introductory course",
+    "synonym": "Objectives for students in an introductory course"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Problems running a Factor Analysis",
+    "synonym": "Issues running a Factor Analysis"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Calculate effect of independent variable",
+    "synonym": "Determine impact of independent variable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Looking for agreement amongst respondents",
+    "synonym": "Seeking consensus"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Type of Sampling",
+    "synonym": "Kind of Sampling"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Issues with using neural network",
+    "synonym": "Problems with using neural network"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Removal of outliers",
+    "synonym": "Elimination of anomalies"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Tricky Question",
+    "synonym": "Difficult Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Account for group age differences",
+    "synonym": "Consider group age differences"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Power of a hypothesis test",
+    "synonym": "Strength of a hypothesis test"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Average waiting time",
+    "synonym": "Mean waiting time"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "combining two categorical variables",
+    "synonym": "integrating two categorical variables"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Error on extrapolated values from a fitted function",
+    "synonym": "mistake"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Choosing the best time series for forecasting",
+    "synonym": "Selecting the optimal time series for prediction"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Proof of this statement",
+    "synonym": "Evidence of this statement"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Guidelines for calculating sample size",
+    "synonym": "Rules for computing sample size"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "All significant findings",
+    "synonym": "Important results"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Comparing two sets of data",
+    "synonym": "Comparing datasets"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Design of experiment",
+    "synonym": "Experimental design"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Problem when including code in a macro",
+    "synonym": "Issue when including code in a macro"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Classify unlabeled data",
+    "synonym": "Categorize unlabelled data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "How to standardize data",
+    "synonym": "How to normalize data"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Help interpreting R linear model fit",
+    "synonym": "assistance understanding R linear model fit"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Means of different populations",
+    "synonym": "Methods of different populations"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Calculate number of needed simulations",
+    "synonym": "Compute number of needed simulations"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Evaluating a regression model",
+    "synonym": "Assessing a regression model"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Correlation between variables and outcome",
+    "synonym": "Relationship between variables and outcome"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Correlation between one variable and few others",
+    "synonym": "Relationship between one variable and few others"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Estimating the difference between two functions",
+    "synonym": "Calculating the difference between two functions"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Procedure for finding boundaries",
+    "synonym": "Method for finding boundaries"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Choosing variables for Discriminant Analysis",
+    "synonym": "Selecting variables for Discriminant Analysis"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Rodger",
+    "synonym": "Roger"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "citizenship",
+    "original_value": "United States",
+    "synonym": "USA"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "isofficial",
+    "original_value": "F",
+    "synonym": "False"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "charter",
+    "original_value": null,
+    "synonym": "Null"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Reach",
+    "synonym": "Extent"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Fabricate",
+    "synonym": "Create"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Investigate",
+    "synonym": "Examine"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Improvise",
+    "synonym": "Adapt"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Ferocious",
+    "synonym": "Fierce"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Imprint",
+    "synonym": "Marking"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Indestructible",
+    "synonym": "Unbreakable"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Protection",
+    "synonym": "Defense"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Fight",
+    "synonym": "Combat"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Exert",
+    "synonym": "Strain"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Prowess",
+    "synonym": "Skill"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Afflict",
+    "synonym": "harm"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Domain",
+    "synonym": "Realm"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Threshold",
+    "synonym": "Limit"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Assist",
+    "synonym": "Help"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Support",
+    "synonym": "Assist"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Bestow",
+    "synonym": "Grant"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Heroic",
+    "synonym": "Courageous"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Inspired",
+    "synonym": "Motivated"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Tribute",
+    "synonym": "Homage"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Tempting offer",
+    "synonym": "Alluring proposition"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Forecast",
+    "synonym": "Prediction"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Reinforce",
+    "synonym": "strengthen"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Partner",
+    "synonym": "Associate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Bolster",
+    "synonym": "Strengthen"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Join forces",
+    "synonym": "Collaborate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Recover",
+    "synonym": "Regain"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Replicate",
+    "synonym": "Duplicate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Detain",
+    "synonym": "Restrain"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Transform",
+    "synonym": "convert"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Exploit",
+    "synonym": "abuse"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Assemble",
+    "synonym": "Gather"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Mutate",
+    "synonym": "transform"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Foretell",
+    "synonym": "Predict"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Amplify",
+    "synonym": "increase"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Provoke",
+    "synonym": "Instigate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Kinship",
+    "synonym": "Relationship"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Fading",
+    "synonym": "Diminishing"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Spectacle",
+    "synonym": "Show"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Explore",
+    "synonym": "Discover"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Augment",
+    "synonym": "Enhance"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Spanish",
+    "synonym": "Castilian"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Persian",
+    "synonym": "Farsi"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "hand",
+    "original_value": null,
+    "synonym": "Null"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Leader",
+    "synonym": "Head"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "features",
+    "column": "feature_name",
+    "original_value": "garden",
+    "synonym": "yard"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "features",
+    "column": "feature_name",
+    "original_value": "swimming pool",
+    "synonym": "pool"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "features",
+    "column": "feature_name",
+    "original_value": "high building",
+    "synonym": "tall structure"
+  },
+  {
+    "database_id": "e_commerce",
+    "table": "customers",
+    "column": "gender_code",
+    "original_value": "Female",
+    "synonym": "Woman"
+  },
+  {
+    "database_id": "e_commerce",
+    "table": "customers",
+    "column": "gender_code",
+    "original_value": "Male",
+    "synonym": "Man"
+  },
+  {
+    "database_id": "e_commerce",
+    "table": "customers",
+    "column": "gender_code",
+    "original_value": "Unknown",
+    "synonym": "Unspecified"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "nationality",
+    "original_value": "British",
+    "synonym": "English"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "nationality",
+    "original_value": "French",
+    "synonym": "Gallia"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "nationality",
+    "original_value": "Dutch",
+    "synonym": "Netherlands"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "nationality",
+    "original_value": "American",
+    "synonym": "United States"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "nationality",
+    "original_value": "Spanish",
+    "synonym": "Iberian"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": null,
+    "synonym": "Null"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "set",
+    "synonym": "collection"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "foretell",
+    "synonym": "predict"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "flavor",
+    "synonym": "text"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "brain infarction",
+    "synonym": "stroke"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "leg ulcer",
+    "synonym": "skin sore"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Working",
+    "synonym": "Active"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Starting",
+    "synonym": "Beginning"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Finish",
+    "synonym": "Complete"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "country",
+    "original_value": "Netherlands",
+    "synonym": "Holland"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Legal",
+    "synonym": "Permitted"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Banned",
+    "synonym": "Prohibited"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Restricted",
+    "synonym": "Limited"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Somerset County",
+    "synonym": "Somerset"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Sussex County",
+    "synonym": "Sussex"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Pike County",
+    "synonym": "Pike"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Burlington County",
+    "synonym": "Burlington"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Clay County",
+    "synonym": "Clay"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Bartholomew County",
+    "synonym": "Bartholomew"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Denton County",
+    "synonym": "Denton"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Craven County",
+    "synonym": "Craven"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Lancaster County",
+    "synonym": "Lancaster"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Seneca County",
+    "synonym": "Seneca"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Benton County",
+    "synonym": "Benton"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Frederick County",
+    "synonym": "Frederick"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Forsyth County",
+    "synonym": "Forsyth"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Morris County",
+    "synonym": "Morris"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Mendocino County",
+    "synonym": "Mendocino"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Sarasota County",
+    "synonym": "Sarasota"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Williamson County",
+    "synonym": "Williamson"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Northumberland County",
+    "synonym": "Northumberland"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Hocking County",
+    "synonym": "Hocking"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Whitley County",
+    "synonym": "Whitley"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Durham County",
+    "synonym": "Durham"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Ventura County",
+    "synonym": "Ventura"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "York County",
+    "synonym": "York"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Randolph County",
+    "synonym": "Randolph"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Medina County",
+    "synonym": "Medina"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Essex County",
+    "synonym": "Essex"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Gloucester County",
+    "synonym": "Gloucestershire County"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Stafford County",
+    "synonym": "Stafford"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "legendary",
+    "synonym": "famous"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "devoid",
+    "synonym": "empty"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "showcase",
+    "synonym": "display"
+  }
+]

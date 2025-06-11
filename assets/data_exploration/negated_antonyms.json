@@ -1,0 +1,1836 @@
+[
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Strong",
+    "negated_antonym": "not weak"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Distant",
+    "negated_antonym": "not near"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Lively",
+    "negated_antonym": "not dull"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Premium",
+    "negated_antonym": "not standard"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Standard",
+    "negated_antonym": "not nonstandard"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Success",
+    "negated_antonym": "not failure"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Novice",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Interminable",
+    "negated_antonym": "not terminable"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Exclusion",
+    "negated_antonym": "not inclusion"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Option",
+    "negated_antonym": "not disadvantage"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Suspension",
+    "negated_antonym": "not active"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Banned",
+    "negated_antonym": "not permitted"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Restricted",
+    "negated_antonym": "not unrestricted"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Finished",
+    "negated_antonym": "not unfinished"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Disqualified",
+    "negated_antonym": "not qualified"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Retired",
+    "negated_antonym": "not active"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Withdrew",
+    "negated_antonym": "not continued"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Physical",
+    "negated_antonym": "not nonphysical"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Injured",
+    "negated_antonym": "not uninjured"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Stalled",
+    "negated_antonym": "not running"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Underweight",
+    "negated_antonym": "not overweight"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Excluded",
+    "negated_antonym": "not included"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Working",
+    "negated_antonym": "not completed"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Starting",
+    "negated_antonym": "not finished"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "invoices",
+    "column": "invoice_status",
+    "original_value": "Finish",
+    "negated_antonym": "not unfinished"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Unstable",
+    "negated_antonym": "not stable"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Confidence",
+    "negated_antonym": "not doubt"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "normality",
+    "negated_antonym": "not abnormality"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "nonparametric",
+    "negated_antonym": "not parametric"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "ordinal",
+    "negated_antonym": "not nominal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "fitting",
+    "negated_antonym": "not unfitting"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "minimum",
+    "negated_antonym": "not maximum"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "online",
+    "negated_antonym": "not offline"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "maximum",
+    "negated_antonym": "not minimum"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "spatial",
+    "negated_antonym": "not atemporal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "homogeneity",
+    "negated_antonym": "not heterogeneity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "probability",
+    "negated_antonym": "not impossibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "monitoring",
+    "negated_antonym": "not unmonitored"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "uncertainty",
+    "negated_antonym": "not certainty"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "robust",
+    "negated_antonym": "not fragile"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "equivalence",
+    "negated_antonym": "not inequivalence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "censoring",
+    "negated_antonym": "not uncensoring"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "uniform",
+    "negated_antonym": "not nonuniform"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "reliability",
+    "negated_antonym": "not unreliability"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "efficiency",
+    "negated_antonym": "not inefficiency"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "parametric",
+    "negated_antonym": "not non-parametric"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "variability",
+    "negated_antonym": "not invariability"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "validation",
+    "negated_antonym": "not invalid"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "hazard",
+    "negated_antonym": "not safe"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "learning",
+    "negated_antonym": "not unlearning"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "exponential",
+    "negated_antonym": "not linear"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "approximation",
+    "negated_antonym": "not exact"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "independence",
+    "negated_antonym": "not dependence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "contrasts",
+    "negated_antonym": "not similarities"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "empirical",
+    "negated_antonym": "not theoretical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "failure",
+    "negated_antonym": "not success"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "marginal",
+    "negated_antonym": "not central"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "optimization",
+    "negated_antonym": "not deterioration"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "diagnostic",
+    "negated_antonym": "not non-diagnostic"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "deviance",
+    "negated_antonym": "not compliance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "integral",
+    "negated_antonym": "not nonintegral"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "moderator",
+    "negated_antonym": "not nonmoderator"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "confounding",
+    "negated_antonym": "not unconfounding"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "average",
+    "negated_antonym": "not exceptional"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "composite",
+    "negated_antonym": "not simple"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "information",
+    "negated_antonym": "not misinformation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "matching",
+    "negated_antonym": "not non-matching"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "checking",
+    "negated_antonym": "not unchecked"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "repeatability",
+    "negated_antonym": "not irreproducibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "blocking",
+    "negated_antonym": "not non-blocking"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "validity",
+    "negated_antonym": "not invalidity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "nominal",
+    "negated_antonym": "not abnormal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "partial",
+    "negated_antonym": "not complete"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "consistency",
+    "negated_antonym": "not inconsistency"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "performance",
+    "negated_antonym": "not underperformance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "conditioning",
+    "negated_antonym": "not unconditioning"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "sparse",
+    "negated_antonym": "not dense"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "likelihood",
+    "negated_antonym": "not implausibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "representative",
+    "negated_antonym": "not unrepresentative"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "nonlinear",
+    "negated_antonym": "not linear"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "confidence",
+    "negated_antonym": "not doubt"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "dependence",
+    "negated_antonym": "not independence"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "heuristic",
+    "negated_antonym": "not systematic"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "penalized",
+    "negated_antonym": "not unpenalized"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "qualitative",
+    "negated_antonym": "not quantitative"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "specificity",
+    "negated_antonym": "not generality"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "sensitivity",
+    "negated_antonym": "not insensitivity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "subset",
+    "negated_antonym": "not superset"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "optimal",
+    "negated_antonym": "not suboptimal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "singular",
+    "negated_antonym": "not plural"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "hierarchical",
+    "negated_antonym": "not flat"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "control",
+    "negated_antonym": "not uncontrolled"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "continuous",
+    "negated_antonym": "not discontinuous"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "missing",
+    "negated_antonym": "not present"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "systematic",
+    "negated_antonym": "not unsystematic"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "explanatory",
+    "negated_antonym": "not unexplanatory"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "choice",
+    "negated_antonym": "not forced"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "accuracy",
+    "negated_antonym": "not inaccuracy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "superiority",
+    "negated_antonym": "not inferiority"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "canonical",
+    "negated_antonym": "not non-canonical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "contrast",
+    "negated_antonym": "not similarity"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "standard",
+    "negated_antonym": "not nonstandard"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "type",
+    "original_value": "Unique",
+    "negated_antonym": "not common"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "type",
+    "original_value": "Standard",
+    "negated_antonym": "not nonstandard"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "starter",
+    "negated_antonym": "not non-starter"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Hibernating",
+    "negated_antonym": "not active"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Precipitous",
+    "negated_antonym": "not gradual"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Unknown",
+    "negated_antonym": "not known"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "editor",
+    "negated_antonym": "not noneditor"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "learner",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Learner",
+    "negated_antonym": "not nonlearner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Anonymous",
+    "negated_antonym": "not known"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "amateur",
+    "negated_antonym": "not professional"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Curious",
+    "negated_antonym": "not uncurious"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "confused",
+    "negated_antonym": "not unconfused"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "decomposable",
+    "negated_antonym": "not non-decomposable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "beginner",
+    "negated_antonym": "not advanced"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "anonymous",
+    "negated_antonym": "not identifiable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Amateur",
+    "negated_antonym": "not professional"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "curious",
+    "negated_antonym": "not unconcerned"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "silent",
+    "negated_antonym": "not noisy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "unknown",
+    "negated_antonym": "not known"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "exception",
+    "negated_antonym": "not normal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Seldom",
+    "negated_antonym": "not frequent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "encoded",
+    "negated_antonym": "not decoded"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "clueless",
+    "negated_antonym": "not informed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "unthought",
+    "negated_antonym": "not thought"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "neophyte",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Confused",
+    "negated_antonym": "not unconfused"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "student",
+    "negated_antonym": "not nonstudent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "saccharine",
+    "negated_antonym": "not unsweet"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Nameless",
+    "negated_antonym": "not named"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Outlier",
+    "negated_antonym": "not typical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Irreducible",
+    "negated_antonym": "not reducible"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Robust",
+    "negated_antonym": "not fragile"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Unsigned",
+    "negated_antonym": "not signed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Novice",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "optional",
+    "negated_antonym": "not required"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "intermediary",
+    "negated_antonym": "not nonintermediary"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "learning",
+    "negated_antonym": "not unlearning"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Rookie",
+    "negated_antonym": "not veteran"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "process",
+    "negated_antonym": "not unprocessed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "ignorant",
+    "negated_antonym": "not knowledgeable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "newbie",
+    "negated_antonym": "not experienced"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Beginner",
+    "negated_antonym": "not advanced"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "altruist",
+    "negated_antonym": "not selfish"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "wondering",
+    "negated_antonym": "not unwondering"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "novice",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Denial",
+    "negated_antonym": "not acceptance"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "consumer",
+    "negated_antonym": "not professional"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "courteous",
+    "negated_antonym": "not discourteous"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "droopy",
+    "negated_antonym": "not perky"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "baffled",
+    "negated_antonym": "not unbaffled"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Doubting",
+    "negated_antonym": "not trusting"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "gloomy",
+    "negated_antonym": "not cheerful"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Newbie",
+    "negated_antonym": "not veteran"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "rookie",
+    "negated_antonym": "not veteran"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "unsorted",
+    "negated_antonym": "not sorted"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "interested",
+    "negated_antonym": "not uninterested"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "citizen",
+    "negated_antonym": "not noncitizen"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "undefined",
+    "negated_antonym": "not defined"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Classified",
+    "negated_antonym": "not unclassified"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "inclement",
+    "negated_antonym": "not clement"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Concerned",
+    "negated_antonym": "not unconcerned"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "overwhelmed",
+    "negated_antonym": "not underwhelmed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Masked",
+    "negated_antonym": "not unmasked"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "integral",
+    "negated_antonym": "not nonintegral"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "anonym",
+    "negated_antonym": "not known"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Helpless",
+    "negated_antonym": "not helpful"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Helpful",
+    "negated_antonym": "not unhelpful"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "random",
+    "negated_antonym": "not systematic"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "cryptic",
+    "negated_antonym": "not clear"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "sturdy",
+    "negated_antonym": "not flimsy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Associative",
+    "negated_antonym": "not nonassociative"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Optional",
+    "negated_antonym": "not required"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "dextrous",
+    "negated_antonym": "not clumsy"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Thinkable",
+    "negated_antonym": "not unthinkable"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "precision",
+    "negated_antonym": "not imprecision"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameversion",
+    "original_value": "future",
+    "negated_antonym": "not past"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Ferocious",
+    "negated_antonym": "not tame"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Indestructible",
+    "negated_antonym": "not destructible"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Protection",
+    "negated_antonym": "not vulnerability"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Support",
+    "negated_antonym": "not hindrance"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Devoid",
+    "negated_antonym": "not non-devoid"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Heroic",
+    "negated_antonym": "not unheroic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Suspend",
+    "negated_antonym": "not unsuspended"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Recover",
+    "negated_antonym": "not lose"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Detain",
+    "negated_antonym": "not release"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Formidable",
+    "negated_antonym": "not weak"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Adamant",
+    "negated_antonym": "not yielding"
+  },
+  {
+    "database_id": "conference",
+    "table": "conference_participation",
+    "column": "role",
+    "original_value": "Participant",
+    "negated_antonym": "not non-participant"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass",
+    "original_value": "Normal",
+    "negated_antonym": "not abnormal"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "differentiation",
+    "negated_antonym": "not undifferentiated"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Disciplined",
+    "negated_antonym": "not undisciplined"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Talkative",
+    "negated_antonym": "not quiet"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "probability",
+    "negated_antonym": "not impossibility"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Analytical",
+    "negated_antonym": "not unanalytical"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Informed",
+    "negated_antonym": "not uninformed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Outspoken",
+    "negated_antonym": "not silent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "robust",
+    "negated_antonym": "not fragile"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "nonparametric",
+    "negated_antonym": "not parametric"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Curious",
+    "negated_antonym": "not uncurious"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Inquisitive",
+    "negated_antonym": "not uncurious"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "normality",
+    "negated_antonym": "not abnormality"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Unsanctioned",
+    "negated_antonym": "not sanctioned"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Unstable",
+    "negated_antonym": "not stable"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Strong",
+    "negated_antonym": "not weak"
+  },
+  {
+    "database_id": "financial",
+    "table": "card",
+    "column": "type",
+    "original_value": "junior",
+    "negated_antonym": "not senior"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Agility",
+    "negated_antonym": "not clumsiness"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Durability",
+    "negated_antonym": "not fragility"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Intelligence",
+    "negated_antonym": "not unintelligent"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Stamina",
+    "negated_antonym": "not lacking stamina"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Adaptation",
+    "negated_antonym": "not maladaptation"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Banish",
+    "negated_antonym": "not allow"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass",
+    "original_value": "Little",
+    "negated_antonym": "not much"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass",
+    "original_value": "Normal",
+    "negated_antonym": "not abnormal"
+  },
+  {
+    "database_id": "superhero",
+    "table": "alignment",
+    "column": "alignment",
+    "original_value": "Neutral",
+    "negated_antonym": "not biased"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "anemia",
+    "negated_antonym": "not healthy"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Normal",
+    "negated_antonym": "not abnormal"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Recover",
+    "negated_antonym": "not lose"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Weakness",
+    "negated_antonym": "not strength"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Corrupt",
+    "negated_antonym": "not uncorrupted"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Exclude",
+    "negated_antonym": "not include"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Decommission",
+    "negated_antonym": "not commissioned"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Suppress",
+    "negated_antonym": "not promote"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Terminate",
+    "negated_antonym": "not continue"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Neutralize",
+    "negated_antonym": "not un-Neutralize"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Liability",
+    "negated_antonym": "not asset"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Planning",
+    "negated_antonym": "not completed"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Closed",
+    "negated_antonym": "not open"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "patient",
+    "column": "diagnosis",
+    "original_value": "relapsing",
+    "negated_antonym": "not stable"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Social",
+    "negated_antonym": "not antisocial"
+  },
+  {
+    "database_id": "superhero",
+    "table": "gender",
+    "column": "gender",
+    "original_value": "Female",
+    "negated_antonym": "not male"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "educational option type",
+    "original_value": "Traditional",
+    "negated_antonym": "not non-traditional"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "release",
+    "negated_antonym": "not retention"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "anonymous",
+    "negated_antonym": "not identified"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "puzzled",
+    "negated_antonym": "not unpuzzled"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "serene",
+    "negated_antonym": "not turbulent"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "learner",
+    "negated_antonym": "not expert"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "legendary",
+    "negated_antonym": "not uncommons"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "devoid",
+    "negated_antonym": "not full"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "inverted",
+    "negated_antonym": "not upright"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Active",
+    "negated_antonym": "not inactive"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Closed",
+    "negated_antonym": "not open"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Merged",
+    "negated_antonym": "not unmerged"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Pending",
+    "negated_antonym": "not completed"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "uncommon",
+    "negated_antonym": "not common"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "common",
+    "negated_antonym": "not rare"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "mythic",
+    "negated_antonym": "not common"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "Instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "instant",
+    "negated_antonym": "not delayed"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Captured",
+    "negated_antonym": "not released"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Wrecked",
+    "negated_antonym": "not intact"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Scuttled",
+    "negated_antonym": "not afloat"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "junior",
+    "negated_antonym": "not senior"
+  }
+]
