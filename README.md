@@ -103,4 +103,66 @@ This repository includes several scripts to run the experiments described in the
 - Each script is annotated with comments explaining its function and how it contributes to the overall analysis.
 - For detailed explanations of the experiments, please refer to the paper and the inline comments within the code.
 
+# How to Create a New Benchmark
+
+### 1. Initial Setup
+
+First, you need to clone the repository and download the necessary datasets.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/apostolhskouk/experimental-analysis-of-value-inking.git
+
+# 2. Navigate into the project directory
+cd experimental-analysis-of-value-inking
+
+# 3. Download the databases used for value variations
+huggingface-cli download ApostolosK/value_linking_databases --repo-type dataset --local-dir assets/all_databases
+```
+
+### 2. Selecting Values for the Benchmark
+
+The next step is to manually select the values that will form the basis of your new benchmark.
+
+1.  **Navigate to the Source Data**
+    Go to the `assets/data_exploration` directory. This folder contains JSON files filled with potential values.
+
+2.  **Understand the JSON Structure**
+    Open any JSON file. The first few records list the distinct **table-column** pairs available in that file. This is a helpful index for finding specific data using a search (`Ctrl+F`).
+
+3.  **Select and Copy Values**
+    Your goal is to select **30-50 representative values** to create the benchmark. Aim to include values from as many different columns as possible. Copy the desired value entries from the JSON file.
+
+4.  **Create Your "Human-Selected" File**
+    - Create a new, corresponding JSON file inside the `assets/data_exploration_human` directory.
+    - For example, if you are working with `some_data.json`, you could name your new file `some_data_human_selection.json`.
+    - Paste the values you copied in the previous step into this new file and save it.
+
+### 3. Generating the Final Benchmark File
+
+After creating your file with the selected values, you need to run a script to process it into the final benchmark format.
+
+1.  **Configure the Script**
+    Open the `alter_execute_verify.py` script in a text editor. You must manually change two variables:
+
+    - **`variations_json_path`**: Update this path to point to the new JSON file you just created in `assets/data_exploration_human`.
+      ```python
+      # Example:
+      variations_json_path = 'assets/data_exploration_human/some_data_human_selection.json'
+      ```
+
+    - **`output_json_path`**: Set this to the desired output path for your final benchmark. It should be placed in `assets/all_benchmarks_human`.
+      ```python
+      # Example:
+      output_json_path = 'assets/all_benchmarks_human/my_new_benchmark.json'
+      ```
+
+2.  **Run the Script**
+    Execute the script from your terminal:
+    ```bash
+    python alter_execute_verify.py
+    ```
+
+Once the script finishes, your new benchmark will be available at the output path you specified.
+
 ---
