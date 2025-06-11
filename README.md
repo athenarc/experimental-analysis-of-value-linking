@@ -118,23 +118,23 @@ huggingface-cli download ApostolosK/value_linking_databases --repo-type dataset 
 
 The next step is to manually select the values that will form the basis of your new benchmark.
 
-    - Go to the `assets/data_exploration` directory. This folder contains JSON files filled with potential values.
-    - Open any JSON file. The first few records list the distinct **table-column** pairs available in that file. This is a helpful index for finding specific data using a search (`Ctrl+F`).
-    - The goal is to select **30-50 representative values** to create the benchmark. Aim to include values from as many different columns as possible. Copy the desired value entries from the JSON file.
-    - Create a new, corresponding JSON file inside the `assets/data_exploration_human` directory.
-    - Paste the values into this new file .
+- Go to the `assets/data_exploration` directory. This folder contains JSON files filled with potential values.
+- Open any JSON file. The first few records list the distinct **table-column** pairs available in that file. This is a helpful index for finding specific data using a search (`Ctrl+F`).
+- The goal is to select **30-50 representative values** to create the benchmark. Aim to include values from as many different columns as possible. Copy the desired value entries from the JSON file.
+- Create a new, corresponding JSON file inside the `assets/data_exploration_human` directory.
+- Paste the values into this new file .
 
 ### 3. Generating the Final Benchmark File
 
 After creating your file with the selected values, you need to run a script to process it into the final benchmark format.
 
-    - Open the `alter_execute_verify.py` script in a text editor. You must manually change two variables:
-    - **`variations_json_path`**: Update this path to point to the new JSON file you just created in `assets/data_exploration_human`.
-    - **`output_json_path`**: Set this to the desired output path for your final benchmark. It should be placed in `assets/all_benchmarks_human`.
-    
-    Execute:
-    ```bash
-    python alter_execute_verify.py
-    ```
+- Open the `alter_execute_verify.py` script in a text editor. You must manually change two variables:
+- **`variations_json_path`**: Update this path to point to the new JSON file you just created in `assets/data_exploration_human`.
+- **`output_json_path`**: Set this to the desired output path for your final benchmark. It should be placed in `assets/all_benchmarks_human`.
+
+Execute:
+```bash
+python alter_execute_verify.py
+```
 
 ---
