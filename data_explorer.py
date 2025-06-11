@@ -2036,9 +2036,9 @@ if __name__ == "__main__":
     sqlite_folders_path = "CHESS/data/value_linking/dev_databases"
     input_json_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
 
-    output_filename = "singular_plural.json"
+    output_filename = "word_order_change.json"
     output_json_path = os.path.join(output_dir, output_filename)
-    DataExplorer.find_singular_plural_change(
+    DataExplorer.find_word_order_change(
         input_json_path=input_json_path,
         sqlite_folders_path=sqlite_folders_path,
         output_json_path=output_json_path

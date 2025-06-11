@@ -1,5 +1,413 @@
 [
   {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "member",
+    "column": "position"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "publisher",
+    "column": "publisher_name"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "fundingtype"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "university",
+    "column": "university_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "member",
+    "column": "position"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "publisher",
+    "column": "publisher_name"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "fundingtype"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "university",
+    "column": "university_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
     "database_id": "student_club",
     "table": "budget",
     "column": "category",

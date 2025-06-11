@@ -1,5 +1,677 @@
 [
   {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "addresses",
+    "column": "country"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "bike",
+    "column": "material"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "colour",
+    "column": "colour"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "continents",
+    "column": "continent"
+  },
+  {
+    "table": "countries",
+    "column": "countryname"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "district",
+    "column": "a3"
+  },
+  {
+    "table": "document_objects",
+    "column": "description"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "location"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "charter funding type"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "frpm",
+    "column": "low grade"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "matches",
+    "column": "winner_hand"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "player_attributes",
+    "column": "preferred_foot"
+  },
+  {
+    "table": "players",
+    "column": "country_code"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "county"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "fundingtype"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "ship",
+    "column": "location"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "team",
+    "column": "team_long_name"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "addresses",
+    "column": "country"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "bike",
+    "column": "material"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "colour",
+    "column": "colour"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "continents",
+    "column": "continent"
+  },
+  {
+    "table": "countries",
+    "column": "countryname"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "district",
+    "column": "a3"
+  },
+  {
+    "table": "document_objects",
+    "column": "description"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "location"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "charter funding type"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "frpm",
+    "column": "low grade"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "matches",
+    "column": "winner_hand"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "player_attributes",
+    "column": "preferred_foot"
+  },
+  {
+    "table": "players",
+    "column": "country_code"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "county"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "fundingtype"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "ship",
+    "column": "location"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "team",
+    "column": "team_long_name"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
     "database_id": "codebase_community",
     "table": "posthistory",
     "column": "userdisplayname",

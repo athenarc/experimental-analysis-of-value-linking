@@ -1,5 +1,341 @@
 [
   {
+    "table": "alignment",
+    "column": "alignment"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "card",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "frameeffects"
+  },
+  {
+    "table": "cards",
+    "column": "frameversion"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "rarity"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "types"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "conference_participation",
+    "column": "role"
+  },
+  {
+    "table": "event",
+    "column": "status"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "gender",
+    "column": "gender"
+  },
+  {
+    "table": "invoices",
+    "column": "invoice_status"
+  },
+  {
+    "table": "legalities",
+    "column": "status"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "schools",
+    "column": "statustype"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "sets",
+    "column": "type"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "type"
+  },
+  {
+    "table": "alignment",
+    "column": "alignment"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "card",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "frameeffects"
+  },
+  {
+    "table": "cards",
+    "column": "frameversion"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "rarity"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "types"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "conference_participation",
+    "column": "role"
+  },
+  {
+    "table": "event",
+    "column": "status"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "gender",
+    "column": "gender"
+  },
+  {
+    "table": "invoices",
+    "column": "invoice_status"
+  },
+  {
+    "table": "legalities",
+    "column": "status"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "schools",
+    "column": "statustype"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "sets",
+    "column": "type"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "type"
+  },
+  {
     "database_id": "card_games",
     "table": "cards",
     "column": "type",

@@ -1,5 +1,301 @@
 [
   {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "subtypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "driver",
+    "column": "name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "model_list",
+    "column": "model"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "subtypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "driver",
+    "column": "name"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "model_list",
+    "column": "model"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",

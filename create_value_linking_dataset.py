@@ -939,3 +939,4 @@ class ValueLinkingDatasetProcessor:
                     alteration_type = modifications[0]["alteration_type"]
                     alteration_counts[alteration_type] = alteration_counts.get(alteration_type, 0) + 1
         return alteration_counts
+    

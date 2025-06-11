@@ -1,5 +1,853 @@
 [
   {
+    "table": "alignment",
+    "column": "alignment"
+  },
+  {
+    "table": "attribute",
+    "column": "attribute_name"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "boats",
+    "column": "color"
+  },
+  {
+    "table": "boats",
+    "column": "name"
+  },
+  {
+    "table": "boxes",
+    "column": "contents"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "card",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "availability"
+  },
+  {
+    "table": "cards",
+    "column": "bordercolor"
+  },
+  {
+    "table": "cards",
+    "column": "frameeffects"
+  },
+  {
+    "table": "cards",
+    "column": "frameversion"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "rarity"
+  },
+  {
+    "table": "cards",
+    "column": "subtypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "types"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "country"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "colour",
+    "column": "colour"
+  },
+  {
+    "table": "conference_participation",
+    "column": "role"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "continents",
+    "column": "continent"
+  },
+  {
+    "table": "country",
+    "column": "name"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "customers",
+    "column": "gender_code"
+  },
+  {
+    "table": "degree_programs",
+    "column": "degree_summary_name"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "disp",
+    "column": "type"
+  },
+  {
+    "table": "district",
+    "column": "a2"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "status"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "county name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "frpm",
+    "column": "low grade"
+  },
+  {
+    "table": "gasstations",
+    "column": "segment"
+  },
+  {
+    "table": "gender",
+    "column": "gender"
+  },
+  {
+    "table": "goods",
+    "column": "food"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "invoices",
+    "column": "invoice_status"
+  },
+  {
+    "table": "legalities",
+    "column": "format"
+  },
+  {
+    "table": "legalities",
+    "column": "status"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "member",
+    "column": "first_name"
+  },
+  {
+    "table": "member",
+    "column": "position"
+  },
+  {
+    "table": "member",
+    "column": "t_shirt_size"
+  },
+  {
+    "table": "model_list",
+    "column": "model"
+  },
+  {
+    "table": "movietheaters",
+    "column": "name"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "pets",
+    "column": "pettype"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "player_attributes",
+    "column": "preferred_foot"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "press",
+    "column": "name"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "race",
+    "column": "race"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "county"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "schools",
+    "column": "statustype"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "set_translations",
+    "column": "translation"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "sets",
+    "column": "type"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "student",
+    "column": "lname"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplayspeedclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass"
+  },
+  {
+    "table": "tv_channel",
+    "column": "language"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "state"
+  },
+  {
+    "table": "zip_code",
+    "column": "type"
+  },
+  {
+    "table": "alignment",
+    "column": "alignment"
+  },
+  {
+    "table": "attribute",
+    "column": "attribute_name"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "boats",
+    "column": "color"
+  },
+  {
+    "table": "boats",
+    "column": "name"
+  },
+  {
+    "table": "boxes",
+    "column": "contents"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "card",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "availability"
+  },
+  {
+    "table": "cards",
+    "column": "bordercolor"
+  },
+  {
+    "table": "cards",
+    "column": "frameeffects"
+  },
+  {
+    "table": "cards",
+    "column": "frameversion"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "promotypes"
+  },
+  {
+    "table": "cards",
+    "column": "rarity"
+  },
+  {
+    "table": "cards",
+    "column": "subtypes"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "types"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "country"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "colour",
+    "column": "colour"
+  },
+  {
+    "table": "conference_participation",
+    "column": "role"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "continents",
+    "column": "continent"
+  },
+  {
+    "table": "country",
+    "column": "name"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "customers",
+    "column": "gender_code"
+  },
+  {
+    "table": "degree_programs",
+    "column": "degree_summary_name"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "disp",
+    "column": "type"
+  },
+  {
+    "table": "district",
+    "column": "a2"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "status"
+  },
+  {
+    "table": "event",
+    "column": "type"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "county name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "frpm",
+    "column": "high grade"
+  },
+  {
+    "table": "frpm",
+    "column": "low grade"
+  },
+  {
+    "table": "gasstations",
+    "column": "segment"
+  },
+  {
+    "table": "gender",
+    "column": "gender"
+  },
+  {
+    "table": "goods",
+    "column": "food"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "invoices",
+    "column": "invoice_status"
+  },
+  {
+    "table": "legalities",
+    "column": "format"
+  },
+  {
+    "table": "legalities",
+    "column": "status"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "member",
+    "column": "first_name"
+  },
+  {
+    "table": "member",
+    "column": "position"
+  },
+  {
+    "table": "member",
+    "column": "t_shirt_size"
+  },
+  {
+    "table": "model_list",
+    "column": "model"
+  },
+  {
+    "table": "movietheaters",
+    "column": "name"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "pets",
+    "column": "pettype"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "player_attributes",
+    "column": "preferred_foot"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "press",
+    "column": "name"
+  },
+  {
+    "table": "program",
+    "column": "title"
+  },
+  {
+    "table": "race",
+    "column": "race"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "county"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "schools",
+    "column": "statustype"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "set_translations",
+    "column": "translation"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "sets",
+    "column": "type"
+  },
+  {
+    "table": "ship",
+    "column": "disposition_of_ship"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "student",
+    "column": "lname"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "tags",
+    "column": "tagname"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplaydribblingclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "buildupplayspeedclass"
+  },
+  {
+    "table": "team_attributes",
+    "column": "chancecreationpassingclass"
+  },
+  {
+    "table": "tv_channel",
+    "column": "language"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "state"
+  },
+  {
+    "table": "zip_code",
+    "column": "type"
+  },
+  {
     "database_id": "pets_1",
     "table": "student",
     "column": "lname",

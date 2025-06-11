@@ -1,5 +1,269 @@
 [
   {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "gasstations",
+    "column": "segment"
+  },
+  {
+    "table": "major",
+    "column": "college"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "museum",
+    "column": "name"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "songs",
+    "column": "name"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "gasstations",
+    "column": "segment"
+  },
+  {
+    "table": "major",
+    "column": "college"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "museum",
+    "column": "name"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "songs",
+    "column": "name"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",

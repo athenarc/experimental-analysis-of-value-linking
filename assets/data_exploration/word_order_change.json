@@ -1,5 +1,709 @@
 [
   {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "addresses",
+    "column": "country"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "bike",
+    "column": "material"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "country"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "contestants",
+    "column": "contestant_name"
+  },
+  {
+    "table": "countries",
+    "column": "countryname"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "district",
+    "column": "a3"
+  },
+  {
+    "table": "document_objects",
+    "column": "description"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "driver",
+    "column": "racing_series"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "location"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "county name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "goods",
+    "column": "food"
+  },
+  {
+    "table": "hangar",
+    "column": "plane_name"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "league",
+    "column": "name"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "museum",
+    "column": "name"
+  },
+  {
+    "table": "paragraphs",
+    "column": "paragraph_text"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "pilotskills",
+    "column": "plane_name"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "press",
+    "column": "name"
+  },
+  {
+    "table": "publisher",
+    "column": "publisher_name"
+  },
+  {
+    "table": "race",
+    "column": "race"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "set_translations",
+    "column": "translation"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "ship",
+    "column": "name"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "store",
+    "column": "name"
+  },
+  {
+    "table": "store",
+    "column": "neighborhood"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "team",
+    "column": "team_long_name"
+  },
+  {
+    "table": "university",
+    "column": "university_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "zip_code",
+    "column": "state"
+  },
+  {
+    "table": "addresses",
+    "column": "city"
+  },
+  {
+    "table": "addresses",
+    "column": "country"
+  },
+  {
+    "table": "badges",
+    "column": "name"
+  },
+  {
+    "table": "bike",
+    "column": "material"
+  },
+  {
+    "table": "budget",
+    "column": "category"
+  },
+  {
+    "table": "car_makers",
+    "column": "fullname"
+  },
+  {
+    "table": "car_names",
+    "column": "make"
+  },
+  {
+    "table": "car_names",
+    "column": "model"
+  },
+  {
+    "table": "cards",
+    "column": "artist"
+  },
+  {
+    "table": "cards",
+    "column": "keywords"
+  },
+  {
+    "table": "cards",
+    "column": "name"
+  },
+  {
+    "table": "cards",
+    "column": "originaltype"
+  },
+  {
+    "table": "cards",
+    "column": "type"
+  },
+  {
+    "table": "cards",
+    "column": "watermark"
+  },
+  {
+    "table": "circuits",
+    "column": "country"
+  },
+  {
+    "table": "circuits",
+    "column": "location"
+  },
+  {
+    "table": "circuits",
+    "column": "name"
+  },
+  {
+    "table": "comments",
+    "column": "text"
+  },
+  {
+    "table": "constructors",
+    "column": "name"
+  },
+  {
+    "table": "constructors",
+    "column": "nationality"
+  },
+  {
+    "table": "contestants",
+    "column": "contestant_name"
+  },
+  {
+    "table": "countries",
+    "column": "countryname"
+  },
+  {
+    "table": "countrylanguage",
+    "column": "language"
+  },
+  {
+    "table": "departments",
+    "column": "department_name"
+  },
+  {
+    "table": "district",
+    "column": "a3"
+  },
+  {
+    "table": "document_objects",
+    "column": "description"
+  },
+  {
+    "table": "documents",
+    "column": "document_name"
+  },
+  {
+    "table": "driver",
+    "column": "racing_series"
+  },
+  {
+    "table": "drivers",
+    "column": "forename"
+  },
+  {
+    "table": "drivers",
+    "column": "nationality"
+  },
+  {
+    "table": "drivers",
+    "column": "surname"
+  },
+  {
+    "table": "event",
+    "column": "event_name"
+  },
+  {
+    "table": "event",
+    "column": "location"
+  },
+  {
+    "table": "examination",
+    "column": "diagnosis"
+  },
+  {
+    "table": "examination",
+    "column": "symptoms"
+  },
+  {
+    "table": "exams",
+    "column": "subject_code"
+  },
+  {
+    "table": "expense",
+    "column": "expense_description"
+  },
+  {
+    "table": "features",
+    "column": "feature_name"
+  },
+  {
+    "table": "foreign_data",
+    "column": "language"
+  },
+  {
+    "table": "foreign_data",
+    "column": "name"
+  },
+  {
+    "table": "frpm",
+    "column": "county name"
+  },
+  {
+    "table": "frpm",
+    "column": "educational option type"
+  },
+  {
+    "table": "goods",
+    "column": "food"
+  },
+  {
+    "table": "hangar",
+    "column": "plane_name"
+  },
+  {
+    "table": "income",
+    "column": "source"
+  },
+  {
+    "table": "league",
+    "column": "name"
+  },
+  {
+    "table": "major",
+    "column": "department"
+  },
+  {
+    "table": "major",
+    "column": "major_name"
+  },
+  {
+    "table": "matches",
+    "column": "tourney_name"
+  },
+  {
+    "table": "museum",
+    "column": "name"
+  },
+  {
+    "table": "paragraphs",
+    "column": "paragraph_text"
+  },
+  {
+    "table": "patient",
+    "column": "diagnosis"
+  },
+  {
+    "table": "pilotskills",
+    "column": "plane_name"
+  },
+  {
+    "table": "player",
+    "column": "player_name"
+  },
+  {
+    "table": "posthistory",
+    "column": "text"
+  },
+  {
+    "table": "posthistory",
+    "column": "userdisplayname"
+  },
+  {
+    "table": "posts",
+    "column": "title"
+  },
+  {
+    "table": "press",
+    "column": "name"
+  },
+  {
+    "table": "publisher",
+    "column": "publisher_name"
+  },
+  {
+    "table": "race",
+    "column": "race"
+  },
+  {
+    "table": "satscores",
+    "column": "cname"
+  },
+  {
+    "table": "schools",
+    "column": "admfname1"
+  },
+  {
+    "table": "schools",
+    "column": "admlname1"
+  },
+  {
+    "table": "schools",
+    "column": "city"
+  },
+  {
+    "table": "schools",
+    "column": "district"
+  },
+  {
+    "table": "schools",
+    "column": "doctype"
+  },
+  {
+    "table": "schools",
+    "column": "mailcity"
+  },
+  {
+    "table": "set_translations",
+    "column": "language"
+  },
+  {
+    "table": "set_translations",
+    "column": "translation"
+  },
+  {
+    "table": "sets",
+    "column": "block"
+  },
+  {
+    "table": "sets",
+    "column": "mcmname"
+  },
+  {
+    "table": "sets",
+    "column": "name"
+  },
+  {
+    "table": "ship",
+    "column": "name"
+  },
+  {
+    "table": "songs",
+    "column": "english_translation"
+  },
+  {
+    "table": "status",
+    "column": "status"
+  },
+  {
+    "table": "store",
+    "column": "name"
+  },
+  {
+    "table": "store",
+    "column": "neighborhood"
+  },
+  {
+    "table": "superhero",
+    "column": "full_name"
+  },
+  {
+    "table": "superhero",
+    "column": "superhero_name"
+  },
+  {
+    "table": "superpower",
+    "column": "power_name"
+  },
+  {
+    "table": "team",
+    "column": "team_long_name"
+  },
+  {
+    "table": "university",
+    "column": "university_name"
+  },
+  {
+    "table": "users",
+    "column": "displayname"
+  },
+  {
+    "table": "users",
+    "column": "location"
+  },
+  {
+    "table": "users",
+    "column": "user_category_code"
+  },
+  {
+    "table": "zip_code",
+    "column": "city"
+  },
+  {
+    "table": "zip_code",
+    "column": "county"
+  },
+  {
+    "table": "zip_code",
+    "column": "state"
+  },
+  {
     "database_id": "california_schools",
     "table": "schools",
     "column": "doctype",
