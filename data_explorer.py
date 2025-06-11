@@ -9,19 +9,22 @@ import re
 from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
 from spellchecker import SpellChecker
+import string 
 
-LLM_MODEL_NAME_DEFAULT = "google/gemma-3-27b-it"
+LLM_MODEL_NAME_DEFAULT = "gaunernst/gemma-3-27b-it-int4-awq"
 LLM_CACHE_DIR_DEFAULT = "/data/hdd1/vllm_models/"
 LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 2
-LLM_QUANTIZATION_DEFAULT = "fp8"
+LLM_QUANTIZATION_DEFAULT = None
 LLM_GPU_MEM_UTIL_DEFAULT = 0.85
-MAX_MODEL_LEN_DEFAULT = 8192
+MAX_MODEL_LEN_DEFAULT = 2048
 NOT_VALID_TOKEN = "[NOT_VALID]"
 class DataExplorer:
     
     @staticmethod
     def pass_check(original_value: str, altered_value: str) -> bool:
         # check if not valid token is in the altered value
+        if altered_value is None or not isinstance(altered_value, str):
+            return False
         if NOT_VALID_TOKEN in altered_value:
             return False
         return True
@@ -29,116 +32,95 @@ class DataExplorer:
     def _is_eligible_english_value(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         return True
+    
+    @staticmethod
+    def _is_eligible_english_value_with_punctuation(value: str, spell_checker) -> bool:
+        if not isinstance(value, str) or not value.strip():
+            return False
+        if any(char in string.digits for char in value):
+            return False
+        if not any(char in string.punctuation for char in value):
+            return False
+        return True
+    
     @staticmethod
     def _is_eligible_english_value_over(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if len(value) < 6:
             return False
         return True
-    
+
     @staticmethod
     def _is_eligible_english_value_without_space(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if ' ' in value:
             return False
         return True
-    
+
     @staticmethod
     def _is_eligible_english_value_over_without_space(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if len(value) < 6:
             return False
         if ' ' in value:
             return False
         return True
-    
+
     @staticmethod
     def _is_eligible_english_value_over_with_space(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if len(value) < 6:
             return False
-        #check if only one space exists
-        if value.count(' ') != 1:
+        if value.count(' ') == 0:
             return False
-        return True    
-    
+        return True
+
     @staticmethod
     def _is_eligible_english_value_over_with_space_more_than_one(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if len(value) < 6:
             return False
-        #check if no space exists
         if ' ' not in value:
             return False
-        return True   
-    
-    
+        return True
+
     @staticmethod
+    def _is_eligible_english_value_over_with_exactly_one_space(value: str, spell_checker) -> bool:
+        if not isinstance(value, str) or not value.strip():
+            return False
+        if any(char.isdigit() for char in value):
+            return False
+        if len(value) < 6:
+            return False
+        if value.count(' ') != 1:
+            return False
+        return True
+
+    @staticmethod
+    
     def _is_eligible_english_value_maximum_one_space(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if value.count(' ') > 1:
             return False
         return True
@@ -147,18 +129,14 @@ class DataExplorer:
     def _is_eligible_english_value_maximum_three_spaces(value: str, spell_checker) -> bool:
         if not isinstance(value, str) or not value.strip():
             return False
-        words = value.split()
-        if not words:
+        if any(char.isdigit() for char in value):
             return False
-        for word in words:
-            if not word.isalpha():
-                return False
-            if not spell_checker.known([word.lower()]):
-                return False
         if value.count(' ') > 1:
             return False
         return True
     
+        return True
+
     @staticmethod
     def _build_synonym_prompt_messages(value_to_find_synonym_for: str,
                                        database_name: str,
@@ -391,7 +369,6 @@ class DataExplorer:
             
         )
 
-    
     @staticmethod
     def _build_typo_substitution_prompt_messages(value_to_generate_typo_for: str,
                                     database_name: str,
@@ -881,7 +858,7 @@ class DataExplorer:
             input_json_path,
             sqlite_folders_path,
             output_json_path,
-            DataExplorer._is_eligible_english_value_over_without_space,
+            DataExplorer._is_eligible_english_value_without_space,
             DataExplorer._build_typo_space_addition_prompt_messages,
             "typo_space_addition",
             post_filtering_fn=DataExplorer.pass_check,
@@ -911,6 +888,7 @@ class DataExplorer:
         - If removing any space would create an obviously invalid result, return: [NOT_VALID]
         - Do not return the original value
         - Only provide one typo variant
+        - Focus on values like entities, names or technical terms
         
         CRITICAL: Your response must contain ONLY the typo variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
 
@@ -976,7 +954,7 @@ class DataExplorer:
             input_json_path,
             sqlite_folders_path,
             output_json_path,
-            DataExplorer._is_eligible_english_value_over_with_space,
+            DataExplorer._is_eligible_english_value_over_with_exactly_one_space,
             DataExplorer._build_typo_space_removal_prompt_messages,
             "typo_space_removal",
             post_filtering_fn=DataExplorer.pass_check,
@@ -1600,15 +1578,467 @@ class DataExplorer:
 
         )
         
+    @staticmethod
+    def _build_word_addition_prompt_messages(value: str,
+                                            database_name: str,
+                                            table_name: str,
+                                            column_name: str) -> list:
+        """
+        Builds a prompt to generate a variant of a value by adding one contextually appropriate word.
+        """
+        SYSTEM_PROMPT = """You are an expert in natural language generation, semantics, and common phrasing. Your task is to add a single, contextually appropriate word to a given database value.
+
+        The goal is to create a slightly more descriptive or formal version of the value that a human might naturally use, without changing its core meaning. This often involves adding common but technically optional words like titles, qualifiers, or articles.
+
+        The values are actual cell values from a database. The database name, table, and column are provided for context. The resulting value must be a natural and common way of representing the same information.
+        
+        What to look for and add:
+        - Titles or honorifics (e.g., 'John Smith' -> 'Mr. John Smith').
+        - Common descriptive nouns or adjectives (e.g., 'Report' -> 'Status Report').
+        - Articles or determiners where appropriate (e.g., 'User Guide' -> 'The User Guide').
+
+        What NOT to add:
+        - Words that significantly change the meaning (e.g., adding 'Senior' to 'Developer' changes the role's seniority).
+        - Words that make the phrase sound unnatural or awkward.
+        - Any word if the value is already specific, formal, or verbose.
+
+        Requirements:
+        - You must add exactly one word.
+        - The core meaning must be strictly preserved.
+        - If no single word can be naturally added, return: [NOT_VALID]
+        - Only provide one variant.
+
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: Jane Doe
+        Ms. Jane Doe
+
+        Database: tasks_db, Table: todos, Column: status
+        Value: Complete
+        Task Complete
+
+        Database: documentation_db, Table: guides, Column: title
+        Value: User Manual
+        The User Manual
+
+        Database: roles_db, Table: job_titles, Column: title
+        Value: Senior Developer
+        [NOT_VALID]
+
+        Database: locations_db, Table: cities, Column: name
+        Value: Los Angeles
+        [NOT_VALID]
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: Mr. John Smith
+        [NOT_VALID]
+
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    @staticmethod
+    def find_word_addition_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_maximum_three_spaces,
+            DataExplorer._build_word_addition_prompt_messages,
+            "word_addition",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+        
+    @staticmethod
+    def _build_typo_punctuation_removal_prompt_messages(value: str,
+                                        database_name: str,
+                                        table_name: str,
+                                        column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in punctuation usage and database value analysis. Your task is to generate a realistic punctuation removal for a given database value.
+
+        A punctuation removal typo involves removing one piece of punctuation from the value where the meaning remains clear and unchanged. This creates a realistic scenario where someone might omit punctuation for brevity or due to casual typing habits.
+
+        The values are actual cell values from a database containing only text (no digits) and are maximum 3 words long. Along with the values, the database name, table and column will be given. Make sure that the punctuation removal is realistic for the context of the database.
+        
+        Requirements:
+        - Remove exactly one punctuation mark that doesn't change the semantic meaning
+        - The removal should be realistic - something a human might skip while typing quickly
+        - Focus on optional punctuation that is commonly omitted in informal contexts
+        - Maintain all other formatting, spacing, and capitalization
+        - Only remove punctuation where the meaning remains completely clear
+        - Avoid removing punctuation that would create ambiguity or grammatical errors
+        - If no punctuation can be safely removed without changing meaning, return: [NOT_VALID]
+        - If the value has no punctuation, return: [NOT_VALID]
+        - Do not return the original value
+        - Only provide one variant
+        
+        CRITICAL: Your response must contain ONLY the variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: title
+        Value: Dr. Peter
+        Dr Peter
+
+        Database: business_db, Table: companies, Column: suffix
+        Value: Smith Inc.
+        Smith Inc
+
+        Database: names_db, Table: people, Column: full_name
+        Value: Smith, Jr
+        Smith Jr
+
+        Database: adjectives_db, Table: descriptions, Column: quality
+        Value: well-known brand
+        well known brand
+        
+        Database: contractions_db, Table: phrases, Column: text
+        Value: it's working
+        its working
+
+        Database: simple_db, Table: data, Column: word
+        Value: hello
+        [NOT_VALID]
+
+        Database: expressions_db, Table: phrases, Column: saying
+        Value: don't worry
+        dont worry
+        
+        Database: titles_db, Table: people, Column: name
+        Value: Prof. Johnson
+        Prof Johnson
+        
+        Database: compound_db, Table: words, Column: term
+        Value: twenty-one
+        twenty one
+        
+        Database: text_db, Table: messages, Column: content
+        Value: we're ready
+        were ready
+        
+        Remember: Output ONLY the variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    @staticmethod
+    def find_punct_removal_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_with_punctuation,
+            DataExplorer._build_typo_punctuation_removal_prompt_messages,
+            "punct_removal",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+    
+    
+    @staticmethod
+    def _build_typo_punctuation_change_prompt_messages(value: str,
+                                    database_name: str,
+                                    table_name: str,
+                                    column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in punctuation variations and database value analysis. Your task is to generate a realistic punctuation change typo for a given database value.
+
+        A punctuation change typo involves replacing one piece of punctuation with a different punctuation mark. This creates a realistic scenario where someone might use an alternative punctuation mark due to typing habits, keyboard layout differences, or stylistic preferences.
+
+        The values are actual cell values from a database containing only text (no digits) and are maximum 3 words long. Along with the values, the database name, table and column will be given. Make sure that the punctuation change is realistic for the context of the database.
+        
+        Requirements:
+        - Replace exactly one punctuation mark with a different punctuation mark
+        - The change should be realistic - something a human might naturally substitute
+        - Focus on common punctuation substitutions that maintain readability
+        - Maintain all other formatting, spacing, and capitalization
+        - The meaning should remain reasonably clear with the new punctuation
+        - Only make changes that are contextually appropriate
+        - If no punctuation can be realistically changed, return: [NOT_VALID]
+        - If the value has no punctuation, return: [NOT_VALID]
+        - Do not return the original value
+        - Only provide one typo variant
+        
+        CRITICAL: Your response must contain ONLY the typo variant OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: title
+        Value: Dr. Smith
+        Dr, Smith
+
+        Database: expressions_db, Table: phrases, Column: text
+        Value: don't go
+        don"t go
+
+        Database: compound_db, Table: words, Column: term
+        Value: well-known
+        well_known
+
+        Database: names_db, Table: people, Column: suffix
+        Value: Smith, Jr
+        Smith. Jr
+        
+        Database: simple_db, Table: data, Column: word
+        Value: hello
+        [NOT_VALID]
+
+        Database: contractions_db, Table: phrases, Column: text
+        Value: it's working
+        it"s working
+        
+        Database: movies, Table: actors, Column: name
+        Value: John Doe
+        [NOT_VALID]
+
+        Remember: Output ONLY the typo variant or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    @staticmethod
+    def find_punct_change_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_with_punctuation,
+            DataExplorer._build_typo_punctuation_change_prompt_messages,
+            "punct_change",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+    
+    @staticmethod
+    def _build_typo_word_order_variation_prompt_messages(value: str,
+                                        database_name: str,
+                                        table_name: str,
+                                        column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in data entry variations and database value analysis. Your task is to generate a realistic word order variation for a given database value.
+
+        A word order variation involves swapping the order of two words while maintaining the same semantic meaning. This creates a realistic scenario where someone might reverse the word order due to different data entry conventions, form field expectations, cultural naming practices, or alternative formatting standards.
+
+        The values are actual cell values from a database containing exactly two words. Along with the values, the database name, table and column will be given. Make sure that the word order change is realistic for the context of the database.
+        
+        Requirements:
+        - Swap the order of the two words (first word becomes second, second becomes first)
+        - The reversal should be realistic and contextually appropriate
+        - Maintain all original capitalization, punctuation, and formatting of each word
+        - The semantic meaning should remain essentially the same
+        - Focus on cases where word order reversal is natural (names, titles, locations)
+        - Only swap if the reversal makes contextual sense
+        - If word order reversal would be unnatural or incorrect, return: [NOT_VALID]
+        - If the value doesn't have exactly two words, return: [NOT_VALID]
+        - Do not return the original value
+        - Only provide one variation
+        
+        Common word order variations include:
+        - Names: John Smith → Smith John, Mary Johnson → Johnson Mary
+        - Titles: Doctor Smith → Smith Doctor, Professor Lee → Lee Professor
+        - Descriptive pairs: Blue Sky → Sky Blue, Big House → House Big
+        
+        CRITICAL: Your response must contain ONLY the variation OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: contacts_db, Table: people, Column: full_name
+        Value: John Smith
+        Smith John
+
+        Database: academic_db, Table: faculty, Column: title_name
+        Value: Professor Lee
+        Lee Professor
+
+        Database: colors_db, Table: descriptions, Column: color_object
+        Value: Blue Sky
+        Sky Blue
+
+        Database: articles_db, Table: words, Column: phrase
+        Value: the cat
+        [NOT_VALID]
+
+        Database: medical_db, Table: staff, Column: title_name
+        Value: Doctor Wilson
+        Wilson Doctor
+        
+        Database: properties_db, Table: descriptions, Column: size_type
+        Value: Los Angeles
+        [NOT_VALID]
+        
+        Remember: Output ONLY the variation or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    @staticmethod
+    def find_word_order_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_over_with_exactly_one_space,
+            DataExplorer._build_typo_word_order_variation_prompt_messages,
+            "word_order_change",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+    
+    @staticmethod
+    def _build_singular_plural_variation_prompt_messages(value: str,
+                                    database_name: str,
+                                    table_name: str,
+                                    column_name: str) -> list:
+        SYSTEM_PROMPT = """You are an expert in English grammar variations and database value analysis. Your task is to generate a realistic singular/plural variation for a given database value.
+
+        A singular/plural variation involves changing one word in the value between its singular and plural form while maintaining essentially the same semantic meaning in a database context. This creates a realistic scenario where someone might use either form due to different perspectives on categorization, data entry habits, or grammatical preferences.
+
+        The values are actual cell values from a database containing up to two words. Along with the values, the database name, table and column will be given. Make sure that the singular/plural change is realistic for the context of the database.
+        
+        Requirements:
+        - Change exactly one word from singular to plural OR plural to singular
+        - The change should maintain the same essential meaning in a database context
+        - Focus on nouns that can naturally exist in both forms in database contexts
+        - Maintain all original capitalization, punctuation, and formatting
+        - The semantic meaning should remain essentially equivalent for database purposes
+        - Only make changes where both forms would be contextually valid
+        - If no word can be realistically changed between singular/plural, return: [NOT_VALID]
+        - If the change would significantly alter the meaning, return: [NOT_VALID]
+        - Do not return the original value
+        - Only provide one variation
+        
+        Common singular/plural variations include:
+        - Categories: kid → kids, product → products, item → items
+        - Objects: book → books, car → cars, house → houses
+        - Groups: team → teams, company → companies, user → users
+        - Descriptive terms: red car → red cars, big house → big houses
+        - Technical terms: file → files, record → records, database → databases
+        
+        CRITICAL: Your response must contain ONLY the variation OR the token [NOT_VALID]. Do not include quotes, explanations, or any other text."""
+
+        USER_PROMPT = """Here are examples of the expected input and output format:
+
+        Database: products_db, Table: categories, Column: type
+        Value: kid
+        kids
+
+        Database: inventory_db, Table: items, Column: category
+        Value: books
+        book
+
+        Database: retail_db, Table: products, Column: description
+        Value: red car
+        red cars
+
+        Database: grammar_db, Table: words, Column: example
+        Value: running
+        [NOT_VALID]
+
+        Database: movies, Table: authors, Column: name
+        Value: John Doe
+        [NOT_VALID]
+        
+        Remember: Output ONLY the variation or [NOT_VALID] with no quotes, punctuation, or additional text.
+
+        Database: {database_name}, Table: {table_name}, Column: {column_name}
+        Value: {VALUE_PLACEHOLDER}"""
+        
+        return [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": USER_PROMPT.format(
+                VALUE_PLACEHOLDER=value,
+                database_name=database_name,
+                table_name=table_name,
+                column_name=column_name
+            )}
+        ]
+    
+    @staticmethod
+    def find_singular_plural_change(
+        input_json_path: str,
+        sqlite_folders_path: str,
+        output_json_path: str
+    ):
+        DataExplorer._run_llm_pipeline(
+            input_json_path,
+            sqlite_folders_path,
+            output_json_path,
+            DataExplorer._is_eligible_english_value_maximum_one_space,
+            DataExplorer._build_singular_plural_variation_prompt_messages,
+            "singular_plural_change",
+            post_filtering_fn=DataExplorer.pass_check,
+
+        )
+        
+    
         
 if __name__ == "__main__":
     output_dir = "assets/data_exploration"
     sqlite_folders_path = "CHESS/data/value_linking/dev_databases"
     input_json_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
 
-    output_filename = "word_removal.json"
+    output_filename = "singular_plural.json"
     output_json_path = os.path.join(output_dir, output_filename)
-    DataExplorer.find_word_removal_change(
+    DataExplorer.find_singular_plural_change(
         input_json_path=input_json_path,
         sqlite_folders_path=sqlite_folders_path,
         output_json_path=output_json_path
