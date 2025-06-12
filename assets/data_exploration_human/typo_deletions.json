@@ -1,1 +1,205 @@
-[]
+[
+ {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "nonparametric",
+    "typo_insertion": "noparametric"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Advertisement",
+    "typo_insertion": "Advertisment"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "make",
+    "original_value": "ford thunderbird",
+    "typo_insertion": "ford thundebird"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Paul Bonner",
+    "typo_deletion": "Paul Boner"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Horsemanship",
+    "typo_deletion": "Horsemansip"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Blazing Hellhound",
+    "typo_deletion": "Blazing Helhound"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Charade Circuit",
+    "typo_deletion": "Charde Circuit"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Sutton",
+    "typo_deletion": "Suton"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Richardson",
+    "typo_deletion": "Richarson"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "Football game",
+    "typo_deletion": "Footbal game"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "location",
+    "original_value": "Campus Football stadium",
+    "typo_deletion": "Campus Footbal stadium"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Rite de duplication",
+    "typo_deletion": "Rit de duplication"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Angel Rodriguez",
+    "typo_deletion": "Anel Rodriguez"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Chi Squared Distribution Question",
+    "typo_deletion": "Ch Squared Distribution Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Problem on interpretation of data",
+    "typo_deletion": "Problem o interpretation of data"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Cunningham",
+    "typo_deletion": "Cunnigham"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Princeton",
+    "typo_deletion": "Princton"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "East Whittier City Elementary",
+    "typo_deletion": "East Whitter City Elementary"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Walnut Valley",
+    "typo_deletion": "Walut Valley"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "block",
+    "original_value": "Commander",
+    "typo_deletion": "Commader"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Portal Three Kingdoms",
+    "typo_deletion": "Portal Thre Kingdoms"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Moses Magnum",
+    "typo_deletion": "Moses Magum"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Super Breath",
+    "typo_deletion": "Super Breth"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "discriminant",
+    "typo_deletion": "discrimiant"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Sam Saffron",
+    "typo_deletion": "Sam Safron"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Saint Moscow",
+    "typo_deletion": "Saint Mscow"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Hyderabad India",
+    "typo_deletion": "Hyderbad India"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Brownsville",
+    "typo_deletion": "Brownsvile"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "St Lawrence County",
+    "typo_deletion": "St Lawrece County"
+  }
+]

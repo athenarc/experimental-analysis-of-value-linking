@@ -1,1 +1,520 @@
-[]
+[
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "city",
+    "original_value": "North Omer",
+    "typo_substitution": "North Oner"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Caucus",
+    "typo_substitution": "Causus"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "battle",
+    "column": "latin_commander",
+    "original_value": "Baldwin I",
+    "typo_substitution": "Baldwin l"
+  },
+  {
+    "database_id": "warehouse_1",
+    "table": "boxes",
+    "column": "contents",
+    "original_value": "Scissors",
+    "typo_substitution": "Scissorz"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_makers",
+    "column": "fullname",
+    "original_value": "Daimler Benz",
+    "typo_substitution": "Daimler Benx"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "make",
+    "original_value": "toyota carina",
+    "typo_substitution": "toyota cariba"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Greg Staples",
+    "typo_substitution": "Greg Stables"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Landfall",
+    "typo_substitution": "Landfoll"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Maddening Wind",
+    "typo_substitution": "Maddening Wond"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Enchant Swamp",
+    "typo_substitution": "Enchant Swamo"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "tourney",
+    "typo_substitution": "tournry"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Gremlin",
+    "typo_substitution": "Gremlen"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Legendary Enchantment",
+    "typo_substitution": "Legendaru Enchantment"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "directed_by",
+    "original_value": "Ben Jones",
+    "typo_substitution": "Ben Jomes"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "written_by",
+    "original_value": "Adam Beechen",
+    "typo_substitution": "Adam Beechem"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "location",
+    "original_value": "Adelaide",
+    "typo_substitution": "Adelaode"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Circuit de Monaco",
+    "typo_substitution": "Circuit de Monsco"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "clients",
+    "column": "client_details",
+    "original_value": "Vincent",
+    "typo_substitution": "Vincenr"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Indigo",
+    "typo_substitution": "Indifo"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Ferguson",
+    "typo_substitution": "Fergusen"
+  },
+  {
+    "database_id": "voter_1",
+    "table": "contestants",
+    "column": "contestant_name",
+    "original_value": "Jessie Alloway",
+    "typo_substitution": "Jessie Allaway"
+  },
+  {
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "name",
+    "original_value": "Steven Burke",
+    "typo_substitution": "Stefen Burke"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "documents",
+    "column": "document_name",
+    "original_value": "Palm reading",
+    "typo_substitution": "Paln reading"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "name",
+    "original_value": "Tony Stewart",
+    "typo_substitution": "Tony Stevart"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Nelson",
+    "typo_substitution": "Nelsom"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Wilson",
+    "typo_substitution": "Wilsom"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "Fall Budget Review",
+    "typo_substitution": "Fall Budgef Review"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Bleeding Colitis",
+    "typo_substitution": "Bleeding Colitus"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "retina artery occlusion",
+    "typo_substitution": "retina artery occlution"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Remover a Alma",
+    "typo_substitution": "Remover a Alna"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "county name",
+    "original_value": "Orange",
+    "typo_substitution": "Oranze"
+  },
+  {
+    "database_id": "video_game",
+    "table": "game",
+    "column": "developers",
+    "original_value": "Polyphony Digital",
+    "typo_substitution": "Polyphomy Digital"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "college",
+    "original_value": "College of Science",
+    "typo_substitution": "Collefe of Science"
+  },
+  {
+    "database_id": "wta_1",
+    "table": "matches",
+    "column": "tourney_name",
+    "original_value": "Katowice",
+    "typo_substitution": "Katowica"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "first_name",
+    "original_value": "Madelyn",
+    "typo_substitution": "Madelym"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "last_name",
+    "original_value": "Mclean",
+    "typo_substitution": "Mcleen"
+  },
+  {
+    "database_id": "car_1",
+    "table": "model_list",
+    "column": "model",
+    "original_value": "subaru",
+    "typo_substitution": "subary"
+  },
+  {
+    "database_id": "movie_2",
+    "table": "movietheaters",
+    "column": "name",
+    "original_value": "Majestic",
+    "typo_substitution": "Majestix"
+  },
+  {
+    "database_id": "museum_visit",
+    "table": "museum",
+    "column": "name",
+    "original_value": "Capital Plaza Museum",
+    "typo_substitution": "Capitel Plaza Museum"
+  },
+  {
+    "database_id": "dog_kennels",
+    "table": "owners",
+    "column": "state",
+    "original_value": "Wisconsin",
+    "typo_substitution": "Wiscansin"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "paragraphs",
+    "column": "paragraph_text",
+    "original_value": "Somalia",
+    "typo_substitution": "Sonalia"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Abraham Gonzalez",
+    "typo_substitution": "Abrahim Gonzalez"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "Patrick Burns",
+    "typo_substitution": "Patrick Burms"
+  },
+  {
+    "database_id": "dog_kennels",
+    "table": "professionals",
+    "column": "state",
+    "original_value": "Montana",
+    "typo_substitution": "Montena"
+  },
+  {
+    "database_id": "bbc_channels",
+    "table": "program",
+    "column": "title",
+    "original_value": "Cyrano de Bergerac",
+    "typo_substitution": "Cyrano de Bergerad"
+  },
+  {
+    "database_id": "superhero",
+    "table": "publisher",
+    "column": "publisher_name",
+    "original_value": "Titan Books",
+    "typo_substitution": "Titen Books"
+  },
+  {
+    "database_id": "superhero",
+    "table": "race",
+    "column": "race",
+    "original_value": "Flora Colossus",
+    "typo_substitution": "Flora Colussus"
+  },
+  {
+    "database_id": "boat_1",
+    "table": "sailors",
+    "column": "name",
+    "original_value": "Eugene",
+    "typo_substitution": "Eugena"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "satscores",
+    "column": "cname",
+    "original_value": "Santa Cruz",
+    "typo_substitution": "Senta Cruz"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Douglas",
+    "typo_substitution": "Dougles"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Petersen",
+    "typo_substitution": "Peterson"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Valley Springs",
+    "typo_substitution": "Vallet Springs"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "county",
+    "original_value": "Alameda",
+    "typo_substitution": "Alaneda"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "Fremont Unified",
+    "typo_substitution": "Fremant Unifued"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "San Pablo",
+    "typo_substitution": "San Pable"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "name",
+    "original_value": "Bacchus",
+    "typo_substitution": "Baccnus"
+  },
+  {
+    "database_id": "sing_contest",
+    "table": "songs",
+    "column": "english_translation",
+    "original_value": "Dance from Moldova",
+    "typo_substitution": "Dance from Moldava"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Fuel pump",
+    "typo_substitution": "Fuel pumo"
+  },
+  {
+    "database_id": "headphone_store",
+    "table": "store",
+    "column": "name",
+    "original_value": "Pierce College",
+    "typo_substitution": "Plerce College"
+  },
+  {
+    "database_id": "headphone_store",
+    "table": "store",
+    "column": "neighborhood",
+    "original_value": "Valley Village",
+    "typo_substitution": "Vallet Village"
+  },
+  {
+    "database_id": "pets_1",
+    "table": "student",
+    "column": "lname",
+    "original_value": "Wilson",
+    "typo_substitution": "Wilsom"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "students",
+    "column": "first_name",
+    "original_value": "Stanford",
+    "typo_substitution": "Stenford"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Bernhard Baker",
+    "typo_substitution": "Bernhard Bazer"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Azazel",
+    "typo_substitution": "Azazei"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Elemental Transmogrification",
+    "typo_substitution": "Elementel Transmogrification"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "independence",
+    "typo_substitution": "independance"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team",
+    "column": "team_long_name",
+    "original_value": "AC Ajaccio",
+    "typo_substitution": "AC Ajacclo"
+  },
+  {
+    "database_id": "university_rank",
+    "table": "university",
+    "column": "university_name",
+    "original_value": "Aurora University",
+    "typo_substitution": "Auroro University"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Bernie Perez",
+    "typo_substitution": "Bernie Perex"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "users",
+    "column": "first_name",
+    "original_value": "Antonio",
+    "typo_substitution": "Antinio"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "nanjing CHINA",
+    "typo_substitution": "nanjong CHINA"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Wrangall",
+    "typo_substitution": "Wranggll"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Wichita County",
+    "typo_substitution": "Wichica Counry"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "state",
+    "original_value": "Vermont",
+    "typo_substitution": "Verront"
+  }
+]

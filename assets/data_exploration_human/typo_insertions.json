@@ -1,1 +1,205 @@
-[]
+[
+{
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "city",
+    "original_value": "South Palma",
+    "typo_insertion": "South Palama"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Constituent",
+    "typo_insertion": "Constitutent"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_makers",
+    "column": "fullname",
+    "original_value": "Renault",
+    "typo_insertion": "Renaualt"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Stephanie Mitchell",
+    "typo_insertion": "Stephanine Mitchell"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Faceless Devourer",
+    "typo_insertion": "Faceless Dervourer"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Snow Sorcery",
+    "typo_insertion": "Snow Sorycery"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Forest",
+    "typo_insertion": "Foreest"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Snow Sorcery",
+    "typo_insertion": "Snow Sorycery"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Indianapolis Motor Speedway",
+    "typo_insertion": "Indianapolois Motor Speedway"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "comments",
+    "column": "text",
+    "original_value": "Excel but I can switch to R if needed",
+    "typo_insertion": "Excell but I can switch to R if neeeded"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Mandarin Chinese",
+    "typo_insertion": "Mandarin Chineese"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "name",
+    "original_value": "Jimmie Johnson",
+    "typo_insertion": "Jimmiee Johnson"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Felipe",
+    "typo_insertion": "Felippe"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Alberto Rodriguez",
+    "typo_insertion": "Albertro Rodriguez"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Remover a Alma",
+    "typo_insertion": "Remover a Alama"
+  },
+  {
+    "database_id": "car_1",
+    "table": "model_list",
+    "column": "model",
+    "original_value": "mercury",
+    "typo_insertion": "mercurry"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Claudio",
+    "typo_insertion": "Claudrio"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "Felipe",
+    "typo_insertion": "Felippe"
+  },
+  {
+    "database_id": "bbc_channels",
+    "table": "program",
+    "column": "title",
+    "original_value": "The Leopard",
+    "typo_insertion": "Them Leopaard"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Stephanie",
+    "typo_insertion": "Stephanine"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Lafayette",
+    "typo_insertion": "Layfayette"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "El Segundo Unified",
+    "typo_insertion": "El Seguondo Unified"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Lake Forest",
+    "typo_insertion": "Lake Foreest"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Mick Rory",
+    "typo_insertion": "Mick Rorry"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Triton",
+    "typo_insertion": "Trition"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "truncation",
+    "typo_insertion": "trunctation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Anthony",
+    "typo_insertion": "Anthonny"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Brentwood",
+    "typo_insertion": "Brentdwood"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Greene County",
+    "typo_insertion": "Greenee County"
+  }
+]
