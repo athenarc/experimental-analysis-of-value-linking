@@ -4,21 +4,21 @@
     "table": "badges",
     "column": "name",
     "original_value": "nonparametric",
-    "typo_insertion": "noparametric"
+    "typo_deletion": "noparametric"
   },
   {
     "database_id": "student_club",
     "table": "budget",
     "column": "category",
     "original_value": "Advertisement",
-    "typo_insertion": "Advertisment"
+    "typo_deletion": "Advertisment"
   },
   {
     "database_id": "car_1",
     "table": "car_names",
     "column": "make",
     "original_value": "ford thunderbird",
-    "typo_insertion": "ford thundebird"
+    "typo_deletion": "ford thundebird"
   },
   {
     "database_id": "card_games",

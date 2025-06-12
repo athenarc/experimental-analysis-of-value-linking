@@ -1,1 +1,353 @@
-[]
+[
+{
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "city",
+    "original_value": "North Omer",
+    "typo_transposition": "North Oemr"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "country",
+    "original_value": "Norfolk Island",
+    "typo_transposition": "Norflok Island"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Tumbleweed",
+    "typo_transposition": "Tumbelweed"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "battle",
+    "column": "latin_commander",
+    "original_value": "Henry I",
+    "typo_transposition": "Hnery I"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_makers",
+    "column": "fullname",
+    "original_value": "Chrysler",
+    "typo_transposition": "Chyrsler"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "make",
+    "original_value": "ford pinto",
+    "typo_transposition": "ford pitno"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "model",
+    "original_value": "cadillac",
+    "typo_transposition": "cadillca"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Greg Staples",
+    "typo_transposition": "Gerg Staples"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Morbid",
+    "typo_transposition": "Morbdi"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Celestial Messenger",
+    "typo_transposition": "Celestail Messenger"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Mana Source",
+    "typo_transposition": "Mnaa Source"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Juggernaut",
+    "typo_transposition": "Juggeranut"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Summon Wolf",
+    "typo_transposition": "Summon Wlof"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "directed_by",
+    "original_value": "Michael Chang",
+    "typo_transposition": "Michale Chang"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "written_by",
+    "original_value": "Adam Beechen",
+    "typo_transposition": "Adam Beecehn"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Marina Bay Street Circuit",
+    "typo_transposition": "Mraina Bay Street Circuit"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "clients",
+    "column": "client_details",
+    "original_value": "Eloise",
+    "typo_transposition": "Eloies"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Indigo",
+    "typo_transposition": "Indiog"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Connaught",
+    "typo_transposition": "Connuaght"
+  },
+  {
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "name",
+    "original_value": "Steven Burke",
+    "typo_transposition": "Steven Bruke"
+  },
+  {
+    "database_id": "financial",
+    "table": "district",
+    "column": "a2",
+    "original_value": "Liberec",
+    "typo_transposition": "Libeerc"
+  },
+  {
+    "database_id": "cre_Doc_and_collections",
+    "table": "document_objects",
+    "column": "owner",
+    "original_value": "Ransom",
+    "typo_transposition": "Ransmo"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "racing_series",
+    "original_value": "NASCAR",
+    "typo_transposition": "NASACR"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Rubens",
+    "typo_transposition": "Rubnes"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Bernard",
+    "typo_transposition": "Bernadr"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "collagen disease",
+    "typo_transposition": "colalgen disease"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Avatar de la puissance",
+    "typo_transposition": "Avatra de la puissance"
+  },
+  {
+    "database_id": "bakery_1",
+    "table": "goods",
+    "column": "food",
+    "original_value": "Meringue",
+    "typo_transposition": "Mreingue"
+  },
+  {
+    "database_id": "wta_1",
+    "table": "matches",
+    "column": "tourney_name",
+    "original_value": "Kaohsiung",
+    "typo_transposition": "Kaohsiugn"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "last_name",
+    "original_value": "Cullen",
+    "typo_transposition": "Culeln"
+  },
+  {
+    "database_id": "museum_visit",
+    "table": "museum",
+    "column": "name",
+    "original_value": "Capital Plaza Museum",
+    "typo_transposition": "Capitla Plaza Museum"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "patient",
+    "column": "diagnosis",
+    "original_value": "seronegative RA",
+    "typo_transposition": "seroneagtive RA"
+  },
+  {
+    "database_id": "pilot_1",
+    "table": "pilotskills",
+    "column": "pilot_name",
+    "original_value": "Wilson",
+    "typo_transposition": "Wilsno"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Abraham Gonzalez",
+    "typo_transposition": "Abrahma Gonzalez"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "Alfred",
+    "typo_transposition": "Alferd"
+  },
+  {
+    "database_id": "dog_kennels",
+    "table": "professionals",
+    "column": "state",
+    "original_value": "Montana",
+    "typo_transposition": "Mnotana"
+  },
+  {
+    "database_id": "superhero",
+    "table": "publisher",
+    "column": "publisher_name",
+    "original_value": "Rebellion",
+    "typo_transposition": "Rebellino"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Patricia",
+    "typo_transposition": "Patriica"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Schmidt",
+    "typo_transposition": "Schimdt"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Castro Valley",
+    "typo_transposition": "Castor Valley"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Albany",
+    "typo_transposition": "Albnay"
+  },
+  {
+    "database_id": "card_games",
+    "table": "set_translations",
+    "column": "translation",
+    "original_value": "Carnage",
+    "typo_transposition": "Cranage"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Alliances",
+    "typo_transposition": "Allainces"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Arena Beginner Set",
+    "typo_transposition": "Aerna Beginner Set"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "name",
+    "original_value": "Bon Accord",
+    "typo_transposition": "Bno Accord"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Puncture",
+    "typo_transposition": "Punctrue"
+  },
+  {
+    "database_id": "headphone_store",
+    "table": "store",
+    "column": "name",
+    "original_value": "Pierce College",
+    "typo_transposition": "Peirce College"
+  },
+  {
+    "database_id": "pets_1",
+    "table": "student",
+    "column": "lname",
+    "original_value": "Gompers",
+    "typo_transposition": "Gompres"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "students",
+    "column": "first_name",
+    "original_value": "Jarvis",
+    "typo_transposition": "Javris"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Barbara Gordon",
+    "typo_transposition": "Barabra Gordon"
+  }
+
+]
