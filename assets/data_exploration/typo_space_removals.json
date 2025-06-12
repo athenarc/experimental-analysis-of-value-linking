@@ -420,426 +420,6 @@
     "column": "type"
   },
   {
-    "table": "addresses",
-    "column": "city"
-  },
-  {
-    "table": "addresses",
-    "column": "country"
-  },
-  {
-    "table": "badges",
-    "column": "name"
-  },
-  {
-    "table": "battle",
-    "column": "latin_commander"
-  },
-  {
-    "table": "bike",
-    "column": "material"
-  },
-  {
-    "table": "budget",
-    "column": "category"
-  },
-  {
-    "table": "car_makers",
-    "column": "fullname"
-  },
-  {
-    "table": "car_names",
-    "column": "make"
-  },
-  {
-    "table": "car_names",
-    "column": "model"
-  },
-  {
-    "table": "cards",
-    "column": "artist"
-  },
-  {
-    "table": "cards",
-    "column": "keywords"
-  },
-  {
-    "table": "cards",
-    "column": "name"
-  },
-  {
-    "table": "cards",
-    "column": "originaltype"
-  },
-  {
-    "table": "cards",
-    "column": "type"
-  },
-  {
-    "table": "cartoon",
-    "column": "directed_by"
-  },
-  {
-    "table": "cartoon",
-    "column": "written_by"
-  },
-  {
-    "table": "circuits",
-    "column": "country"
-  },
-  {
-    "table": "circuits",
-    "column": "location"
-  },
-  {
-    "table": "circuits",
-    "column": "name"
-  },
-  {
-    "table": "colour",
-    "column": "colour"
-  },
-  {
-    "table": "comments",
-    "column": "text"
-  },
-  {
-    "table": "constructors",
-    "column": "name"
-  },
-  {
-    "table": "constructors",
-    "column": "nationality"
-  },
-  {
-    "table": "contestants",
-    "column": "contestant_name"
-  },
-  {
-    "table": "countries",
-    "column": "countryname"
-  },
-  {
-    "table": "country",
-    "column": "continent"
-  },
-  {
-    "table": "countrylanguage",
-    "column": "language"
-  },
-  {
-    "table": "cyclist",
-    "column": "name"
-  },
-  {
-    "table": "cyclist",
-    "column": "nation"
-  },
-  {
-    "table": "departments",
-    "column": "department_name"
-  },
-  {
-    "table": "district",
-    "column": "a3"
-  },
-  {
-    "table": "document_objects",
-    "column": "description"
-  },
-  {
-    "table": "documents",
-    "column": "document_name"
-  },
-  {
-    "table": "driver",
-    "column": "citizenship"
-  },
-  {
-    "table": "driver",
-    "column": "name"
-  },
-  {
-    "table": "drivers",
-    "column": "forename"
-  },
-  {
-    "table": "drivers",
-    "column": "nationality"
-  },
-  {
-    "table": "drivers",
-    "column": "surname"
-  },
-  {
-    "table": "event",
-    "column": "event_name"
-  },
-  {
-    "table": "event",
-    "column": "location"
-  },
-  {
-    "table": "event",
-    "column": "type"
-  },
-  {
-    "table": "examination",
-    "column": "diagnosis"
-  },
-  {
-    "table": "examination",
-    "column": "symptoms"
-  },
-  {
-    "table": "exams",
-    "column": "subject_code"
-  },
-  {
-    "table": "expense",
-    "column": "expense_description"
-  },
-  {
-    "table": "features",
-    "column": "feature_name"
-  },
-  {
-    "table": "foreign_data",
-    "column": "language"
-  },
-  {
-    "table": "foreign_data",
-    "column": "name"
-  },
-  {
-    "table": "frpm",
-    "column": "charter funding type"
-  },
-  {
-    "table": "frpm",
-    "column": "county name"
-  },
-  {
-    "table": "frpm",
-    "column": "educational option type"
-  },
-  {
-    "table": "frpm",
-    "column": "high grade"
-  },
-  {
-    "table": "game",
-    "column": "developers"
-  },
-  {
-    "table": "goods",
-    "column": "food"
-  },
-  {
-    "table": "hangar",
-    "column": "plane_name"
-  },
-  {
-    "table": "major",
-    "column": "department"
-  },
-  {
-    "table": "major",
-    "column": "major_name"
-  },
-  {
-    "table": "matches",
-    "column": "tourney_name"
-  },
-  {
-    "table": "member",
-    "column": "position"
-  },
-  {
-    "table": "museum",
-    "column": "name"
-  },
-  {
-    "table": "paragraphs",
-    "column": "paragraph_text"
-  },
-  {
-    "table": "patient",
-    "column": "diagnosis"
-  },
-  {
-    "table": "pilotskills",
-    "column": "plane_name"
-  },
-  {
-    "table": "player",
-    "column": "player_name"
-  },
-  {
-    "table": "posthistory",
-    "column": "text"
-  },
-  {
-    "table": "posthistory",
-    "column": "userdisplayname"
-  },
-  {
-    "table": "posts",
-    "column": "title"
-  },
-  {
-    "table": "program",
-    "column": "title"
-  },
-  {
-    "table": "publisher",
-    "column": "publisher_name"
-  },
-  {
-    "table": "race",
-    "column": "pole_position"
-  },
-  {
-    "table": "race",
-    "column": "race"
-  },
-  {
-    "table": "satscores",
-    "column": "cname"
-  },
-  {
-    "table": "schools",
-    "column": "admfname1"
-  },
-  {
-    "table": "schools",
-    "column": "admlname1"
-  },
-  {
-    "table": "schools",
-    "column": "city"
-  },
-  {
-    "table": "schools",
-    "column": "county"
-  },
-  {
-    "table": "schools",
-    "column": "district"
-  },
-  {
-    "table": "schools",
-    "column": "doctype"
-  },
-  {
-    "table": "schools",
-    "column": "fundingtype"
-  },
-  {
-    "table": "schools",
-    "column": "mailcity"
-  },
-  {
-    "table": "set_translations",
-    "column": "language"
-  },
-  {
-    "table": "set_translations",
-    "column": "translation"
-  },
-  {
-    "table": "sets",
-    "column": "block"
-  },
-  {
-    "table": "sets",
-    "column": "mcmname"
-  },
-  {
-    "table": "sets",
-    "column": "name"
-  },
-  {
-    "table": "ship",
-    "column": "location"
-  },
-  {
-    "table": "ship",
-    "column": "name"
-  },
-  {
-    "table": "singer",
-    "column": "country"
-  },
-  {
-    "table": "songs",
-    "column": "english_translation"
-  },
-  {
-    "table": "status",
-    "column": "status"
-  },
-  {
-    "table": "store",
-    "column": "name"
-  },
-  {
-    "table": "store",
-    "column": "neighborhood"
-  },
-  {
-    "table": "superhero",
-    "column": "full_name"
-  },
-  {
-    "table": "superhero",
-    "column": "superhero_name"
-  },
-  {
-    "table": "superpower",
-    "column": "power_name"
-  },
-  {
-    "table": "team",
-    "column": "team_long_name"
-  },
-  {
-    "table": "university",
-    "column": "university_name"
-  },
-  {
-    "table": "users",
-    "column": "displayname"
-  },
-  {
-    "table": "users",
-    "column": "location"
-  },
-  {
-    "table": "users",
-    "column": "user_category_code"
-  },
-  {
-    "table": "warehouses",
-    "column": "location"
-  },
-  {
-    "table": "zip_code",
-    "column": "city"
-  },
-  {
-    "table": "zip_code",
-    "column": "county"
-  },
-  {
-    "table": "zip_code",
-    "column": "state"
-  },
-  {
-    "table": "zip_code",
-    "column": "type"
-  },
-  {
     "database_id": "formula_1",
     "table": "drivers",
     "column": "surname",
@@ -6485,8 +6065,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Fortuna D\u00fcsseldorf",
-    "typo_space_removal": "FortunaD\u00fcsseldorf"
+    "original_value": "Fortuna Düsseldorf",
+    "typo_space_removal": "FortunaDüsseldorf"
   },
   {
     "database_id": "european_football_2",
@@ -6576,8 +6156,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "C\u00f3rdoba CF",
-    "typo_space_removal": "C\u00f3rdobaCF"
+    "original_value": "Córdoba CF",
+    "typo_space_removal": "CórdobaCF"
   },
   {
     "database_id": "european_football_2",
@@ -6681,8 +6261,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ch\u00e2teau fort",
-    "typo_space_removal": "Ch\u00e2teaufort"
+    "original_value": "Château fort",
+    "typo_space_removal": "Châteaufort"
   },
   {
     "database_id": "card_games",
@@ -6982,8 +6562,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chasseur chass\u00e9",
-    "typo_space_removal": "Chasseurchass\u00e9"
+    "original_value": "Chasseur chassé",
+    "typo_space_removal": "Chasseurchassé"
   },
   {
     "database_id": "card_games",
@@ -7122,8 +6702,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lumi\u00e8re divine",
-    "typo_space_removal": "Lumi\u00e8redivine"
+    "original_value": "Lumière divine",
+    "typo_space_removal": "Lumièredivine"
   },
   {
     "database_id": "card_games",
@@ -7731,8 +7311,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lotus dor\u00e9",
-    "typo_space_removal": "Lotusdor\u00e9"
+    "original_value": "Lotus doré",
+    "typo_space_removal": "Lotusdoré"
   },
   {
     "database_id": "card_games",
@@ -7920,8 +7500,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lumi\u00e8re primitive",
-    "typo_space_removal": "Lumi\u00e8reprimitive"
+    "original_value": "Lumière primitive",
+    "typo_space_removal": "Lumièreprimitive"
   },
   {
     "database_id": "card_games",
@@ -8270,8 +7850,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Passage prot\u00e9g\u00e9",
-    "typo_space_removal": "Passageprot\u00e9g\u00e9"
+    "original_value": "Passage protégé",
+    "typo_space_removal": "Passageprotégé"
   },
   {
     "database_id": "card_games",
@@ -8753,8 +8333,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lumi\u00e8re corrosive",
-    "typo_space_removal": "Lumi\u00e8recorrosive"
+    "original_value": "Lumière corrosive",
+    "typo_space_removal": "Lumièrecorrosive"
   },
   {
     "database_id": "card_games",
@@ -88441,8 +88021,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jorge C\u00f3rdoba",
-    "typo_space_removal": "JorgeC\u00f3rdoba"
+    "original_value": "Jorge Córdoba",
+    "typo_space_removal": "JorgeCórdoba"
   },
   {
     "database_id": "codebase_community",
@@ -92117,7 +91697,7 @@
     "table": "users",
     "column": "displayname",
     "original_value": "Osman Darin",
-    "typo_space_removal": "Osmandar\u0131n"
+    "typo_space_removal": "Osmandarın"
   },
   {
     "database_id": "codebase_community",
@@ -95414,7 +94994,7 @@
     "table": "users",
     "column": "displayname",
     "original_value": "Martin Velez",
-    "typo_space_removal": "Mart\u00ednVelez"
+    "typo_space_removal": "MartínVelez"
   },
   {
     "database_id": "codebase_community",

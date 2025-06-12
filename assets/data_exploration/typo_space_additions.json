@@ -504,510 +504,6 @@
     "column": "type"
   },
   {
-    "table": "addresses",
-    "column": "country"
-  },
-  {
-    "table": "attribute",
-    "column": "attribute_name"
-  },
-  {
-    "table": "badges",
-    "column": "name"
-  },
-  {
-    "table": "boats",
-    "column": "name"
-  },
-  {
-    "table": "boxes",
-    "column": "contents"
-  },
-  {
-    "table": "budget",
-    "column": "category"
-  },
-  {
-    "table": "car_makers",
-    "column": "fullname"
-  },
-  {
-    "table": "car_names",
-    "column": "make"
-  },
-  {
-    "table": "car_names",
-    "column": "model"
-  },
-  {
-    "table": "card",
-    "column": "type"
-  },
-  {
-    "table": "cards",
-    "column": "artist"
-  },
-  {
-    "table": "cards",
-    "column": "bordercolor"
-  },
-  {
-    "table": "cards",
-    "column": "frameeffects"
-  },
-  {
-    "table": "cards",
-    "column": "frameversion"
-  },
-  {
-    "table": "cards",
-    "column": "keywords"
-  },
-  {
-    "table": "cards",
-    "column": "name"
-  },
-  {
-    "table": "cards",
-    "column": "originaltype"
-  },
-  {
-    "table": "cards",
-    "column": "promotypes"
-  },
-  {
-    "table": "cards",
-    "column": "rarity"
-  },
-  {
-    "table": "cards",
-    "column": "subtypes"
-  },
-  {
-    "table": "cards",
-    "column": "type"
-  },
-  {
-    "table": "cards",
-    "column": "types"
-  },
-  {
-    "table": "cards",
-    "column": "watermark"
-  },
-  {
-    "table": "circuits",
-    "column": "country"
-  },
-  {
-    "table": "circuits",
-    "column": "location"
-  },
-  {
-    "table": "clients",
-    "column": "client_details"
-  },
-  {
-    "table": "colour",
-    "column": "colour"
-  },
-  {
-    "table": "conference_participation",
-    "column": "role"
-  },
-  {
-    "table": "constructors",
-    "column": "name"
-  },
-  {
-    "table": "constructors",
-    "column": "nationality"
-  },
-  {
-    "table": "continents",
-    "column": "continent"
-  },
-  {
-    "table": "countries",
-    "column": "countryname"
-  },
-  {
-    "table": "country",
-    "column": "continent"
-  },
-  {
-    "table": "country",
-    "column": "name"
-  },
-  {
-    "table": "countrylanguage",
-    "column": "language"
-  },
-  {
-    "table": "customers",
-    "column": "gender_code"
-  },
-  {
-    "table": "cyclist",
-    "column": "nation"
-  },
-  {
-    "table": "degree_programs",
-    "column": "degree_summary_name"
-  },
-  {
-    "table": "departments",
-    "column": "department_name"
-  },
-  {
-    "table": "district",
-    "column": "a2"
-  },
-  {
-    "table": "district",
-    "column": "a3"
-  },
-  {
-    "table": "document_objects",
-    "column": "owner"
-  },
-  {
-    "table": "driver",
-    "column": "racing_series"
-  },
-  {
-    "table": "drivers",
-    "column": "forename"
-  },
-  {
-    "table": "drivers",
-    "column": "nationality"
-  },
-  {
-    "table": "drivers",
-    "column": "surname"
-  },
-  {
-    "table": "event",
-    "column": "event_name"
-  },
-  {
-    "table": "event",
-    "column": "status"
-  },
-  {
-    "table": "event",
-    "column": "type"
-  },
-  {
-    "table": "examination",
-    "column": "diagnosis"
-  },
-  {
-    "table": "examination",
-    "column": "symptoms"
-  },
-  {
-    "table": "exams",
-    "column": "subject_code"
-  },
-  {
-    "table": "expense",
-    "column": "expense_description"
-  },
-  {
-    "table": "features",
-    "column": "feature_name"
-  },
-  {
-    "table": "foreign_data",
-    "column": "language"
-  },
-  {
-    "table": "foreign_data",
-    "column": "name"
-  },
-  {
-    "table": "frpm",
-    "column": "county name"
-  },
-  {
-    "table": "frpm",
-    "column": "educational option type"
-  },
-  {
-    "table": "game",
-    "column": "developers"
-  },
-  {
-    "table": "gasstations",
-    "column": "segment"
-  },
-  {
-    "table": "goods",
-    "column": "food"
-  },
-  {
-    "table": "hangar",
-    "column": "location"
-  },
-  {
-    "table": "income",
-    "column": "source"
-  },
-  {
-    "table": "invoices",
-    "column": "invoice_status"
-  },
-  {
-    "table": "legalities",
-    "column": "format"
-  },
-  {
-    "table": "major",
-    "column": "major_name"
-  },
-  {
-    "table": "matches",
-    "column": "tourney_name"
-  },
-  {
-    "table": "member",
-    "column": "first_name"
-  },
-  {
-    "table": "member",
-    "column": "last_name"
-  },
-  {
-    "table": "member",
-    "column": "position"
-  },
-  {
-    "table": "model_list",
-    "column": "model"
-  },
-  {
-    "table": "movietheaters",
-    "column": "name"
-  },
-  {
-    "table": "owners",
-    "column": "state"
-  },
-  {
-    "table": "paragraphs",
-    "column": "paragraph_text"
-  },
-  {
-    "table": "participants",
-    "column": "name"
-  },
-  {
-    "table": "patient",
-    "column": "diagnosis"
-  },
-  {
-    "table": "player",
-    "column": "player_name"
-  },
-  {
-    "table": "posthistory",
-    "column": "text"
-  },
-  {
-    "table": "posthistory",
-    "column": "userdisplayname"
-  },
-  {
-    "table": "professionals",
-    "column": "state"
-  },
-  {
-    "table": "program",
-    "column": "title"
-  },
-  {
-    "table": "publisher",
-    "column": "publisher_name"
-  },
-  {
-    "table": "race",
-    "column": "race"
-  },
-  {
-    "table": "sailors",
-    "column": "name"
-  },
-  {
-    "table": "satscores",
-    "column": "cname"
-  },
-  {
-    "table": "schools",
-    "column": "admfname1"
-  },
-  {
-    "table": "schools",
-    "column": "admlname1"
-  },
-  {
-    "table": "schools",
-    "column": "city"
-  },
-  {
-    "table": "schools",
-    "column": "county"
-  },
-  {
-    "table": "schools",
-    "column": "district"
-  },
-  {
-    "table": "schools",
-    "column": "mailcity"
-  },
-  {
-    "table": "schools",
-    "column": "statustype"
-  },
-  {
-    "table": "set_translations",
-    "column": "language"
-  },
-  {
-    "table": "set_translations",
-    "column": "translation"
-  },
-  {
-    "table": "sets",
-    "column": "block"
-  },
-  {
-    "table": "sets",
-    "column": "mcmname"
-  },
-  {
-    "table": "sets",
-    "column": "name"
-  },
-  {
-    "table": "sets",
-    "column": "type"
-  },
-  {
-    "table": "ship",
-    "column": "disposition_of_ship"
-  },
-  {
-    "table": "ship",
-    "column": "name"
-  },
-  {
-    "table": "singer",
-    "column": "country"
-  },
-  {
-    "table": "songs",
-    "column": "english_translation"
-  },
-  {
-    "table": "songs",
-    "column": "language"
-  },
-  {
-    "table": "status",
-    "column": "status"
-  },
-  {
-    "table": "store",
-    "column": "name"
-  },
-  {
-    "table": "student",
-    "column": "lname"
-  },
-  {
-    "table": "students",
-    "column": "first_name"
-  },
-  {
-    "table": "students",
-    "column": "last_name"
-  },
-  {
-    "table": "superhero",
-    "column": "full_name"
-  },
-  {
-    "table": "superhero",
-    "column": "superhero_name"
-  },
-  {
-    "table": "superpower",
-    "column": "power_name"
-  },
-  {
-    "table": "tags",
-    "column": "tagname"
-  },
-  {
-    "table": "team",
-    "column": "team_long_name"
-  },
-  {
-    "table": "team_attributes",
-    "column": "buildupplaydribblingclass"
-  },
-  {
-    "table": "team_attributes",
-    "column": "buildupplayspeedclass"
-  },
-  {
-    "table": "tv_channel",
-    "column": "language"
-  },
-  {
-    "table": "university",
-    "column": "state"
-  },
-  {
-    "table": "users",
-    "column": "displayname"
-  },
-  {
-    "table": "users",
-    "column": "first_name"
-  },
-  {
-    "table": "users",
-    "column": "location"
-  },
-  {
-    "table": "users",
-    "column": "user_category_code"
-  },
-  {
-    "table": "warehouses",
-    "column": "location"
-  },
-  {
-    "table": "zip_code",
-    "column": "city"
-  },
-  {
-    "table": "zip_code",
-    "column": "county"
-  },
-  {
-    "table": "zip_code",
-    "column": "state"
-  },
-  {
-    "table": "zip_code",
-    "column": "type"
-  },
-  {
     "database_id": "student_club",
     "table": "zip_code",
     "column": "state",
@@ -10301,7 +9797,7 @@
     "table": "zip_code",
     "column": "city",
     "original_value": "Plains",
-    "typo_space_addition": "Plains \u0442\u043e"
+    "typo_space_addition": "Plains то"
   },
   {
     "database_id": "student_club",
@@ -20556,7 +20052,7 @@
     "table": "zip_code",
     "column": "city",
     "original_value": "Tanana",
-    "typo_space_addition": "Tan a\u00f1a"
+    "typo_space_addition": "Tan aña"
   },
   {
     "database_id": "student_club",
@@ -21928,7 +21424,7 @@
     "table": "users",
     "column": "location",
     "original_value": "Portugal",
-    "typo_space_addition": "Portugal \ud83c\uddf5\ud83c\uddf9"
+    "typo_space_addition": "Portugal 🇵🇹"
   },
   {
     "database_id": "codebase_community",
@@ -22648,8 +22144,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "g\u00f6teborg",
-    "typo_space_addition": "g\u00f6 teborg"
+    "original_value": "göteborg",
+    "typo_space_addition": "gö teborg"
   },
   {
     "database_id": "codebase_community",
@@ -22705,7 +22201,7 @@
     "table": "users",
     "column": "location",
     "original_value": "Budapest",
-    "typo_space_addition": "Bud ape\u0161t"
+    "typo_space_addition": "Bud apešt"
   },
   {
     "database_id": "codebase_community",
@@ -23257,8 +22753,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Z\u00fcrich",
-    "typo_space_addition": "Z\u00fc rich"
+    "original_value": "Zürich",
+    "typo_space_addition": "Zü rich"
   },
   {
     "database_id": "codebase_community",
@@ -23356,7 +22852,7 @@
     "table": "circuits",
     "column": "location",
     "original_value": "Budapest",
-    "typo_space_addition": "Bud ape\u0161t"
+    "typo_space_addition": "Bud apešt"
   },
   {
     "database_id": "formula_1",
@@ -28409,8 +27905,8 @@
     "database_id": "card_games",
     "table": "cards",
     "column": "name",
-    "original_value": "S\u00e9ance",
-    "typo_space_addition": "S\u00e9 ance"
+    "original_value": "Séance",
+    "typo_space_addition": "Sé ance"
   },
   {
     "database_id": "card_games",
@@ -33904,8 +33400,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "M\u00fcnchhausen",
-    "typo_space_addition": "M\u00fcnch hausen"
+    "original_value": "Münchhausen",
+    "typo_space_addition": "Münch hausen"
   },
   {
     "database_id": "codebase_community",
@@ -47862,8 +47358,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "S\u00e9ance",
-    "typo_space_addition": "S\u00e9 ance"
+    "original_value": "Séance",
+    "typo_space_addition": "Sé ance"
   },
   {
     "database_id": "card_games",
@@ -59735,7 +59231,7 @@
     "table": "schools",
     "column": "admlname1",
     "original_value": "Ingram",
-    "typo_space_addition": "Ingram \u05dd"
+    "typo_space_addition": "Ingram ם"
   },
   {
     "database_id": "california_schools",
@@ -62528,7 +62024,7 @@
     "table": "schools",
     "column": "admlname1",
     "original_value": "Hospodar",
-    "typo_space_addition": "Hosp o\u0434\u0430\u0440"
+    "typo_space_addition": "Hosp oдар"
   },
   {
     "database_id": "california_schools",

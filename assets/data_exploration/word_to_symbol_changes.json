@@ -132,138 +132,6 @@
     "column": "county"
   },
   {
-    "table": "car_makers",
-    "column": "fullname"
-  },
-  {
-    "table": "car_names",
-    "column": "make"
-  },
-  {
-    "table": "cards",
-    "column": "artist"
-  },
-  {
-    "table": "cards",
-    "column": "name"
-  },
-  {
-    "table": "cards",
-    "column": "originaltype"
-  },
-  {
-    "table": "circuits",
-    "column": "name"
-  },
-  {
-    "table": "comments",
-    "column": "text"
-  },
-  {
-    "table": "countrylanguage",
-    "column": "language"
-  },
-  {
-    "table": "documents",
-    "column": "document_name"
-  },
-  {
-    "table": "examination",
-    "column": "symptoms"
-  },
-  {
-    "table": "foreign_data",
-    "column": "name"
-  },
-  {
-    "table": "frpm",
-    "column": "educational option type"
-  },
-  {
-    "table": "gasstations",
-    "column": "segment"
-  },
-  {
-    "table": "major",
-    "column": "college"
-  },
-  {
-    "table": "major",
-    "column": "department"
-  },
-  {
-    "table": "major",
-    "column": "major_name"
-  },
-  {
-    "table": "museum",
-    "column": "name"
-  },
-  {
-    "table": "player",
-    "column": "player_name"
-  },
-  {
-    "table": "posthistory",
-    "column": "text"
-  },
-  {
-    "table": "posthistory",
-    "column": "userdisplayname"
-  },
-  {
-    "table": "posts",
-    "column": "title"
-  },
-  {
-    "table": "schools",
-    "column": "admlname1"
-  },
-  {
-    "table": "schools",
-    "column": "district"
-  },
-  {
-    "table": "sets",
-    "column": "name"
-  },
-  {
-    "table": "songs",
-    "column": "english_translation"
-  },
-  {
-    "table": "songs",
-    "column": "name"
-  },
-  {
-    "table": "superhero",
-    "column": "full_name"
-  },
-  {
-    "table": "superhero",
-    "column": "superhero_name"
-  },
-  {
-    "table": "superpower",
-    "column": "power_name"
-  },
-  {
-    "table": "users",
-    "column": "displayname"
-  },
-  {
-    "table": "users",
-    "column": "location"
-  },
-  {
-    "table": "zip_code",
-    "column": "city"
-  },
-  {
-    "table": "zip_code",
-    "column": "county"
-  },
-  {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
@@ -10754,7 +10622,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Deriving the change in a Poisson lambda over time",
-    "word_to_symbol_change": "Deriving the change in a Poisson \u03bb over time"
+    "word_to_symbol_change": "Deriving the change in a Poisson λ over time"
   },
   {
     "database_id": "codebase_community",
@@ -12630,7 +12498,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "a guide to using the phi coefficient",
-    "word_to_symbol_change": "a guide to using the \u03c6 coefficient"
+    "word_to_symbol_change": "a guide to using the φ coefficient"
   },
   {
     "database_id": "codebase_community",
@@ -14037,7 +13905,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Good Adjusted r square",
-    "word_to_symbol_change": "Good Adjusted r\u00b2"
+    "word_to_symbol_change": "Good Adjusted r²"
   },
   {
     "database_id": "codebase_community",
@@ -22703,7 +22571,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Survey design chi square",
-    "word_to_symbol_change": "Survey design \u03c7\u00b2"
+    "word_to_symbol_change": "Survey design χ²"
   },
   {
     "database_id": "codebase_community",
@@ -32328,7 +32196,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Beta function approximation of delta function",
-    "word_to_symbol_change": "Beta function approximation of \u0394 function"
+    "word_to_symbol_change": "Beta function approximation of Δ function"
   },
   {
     "database_id": "codebase_community",
@@ -33896,7 +33764,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "How to adjust the shape of a gamma distribution",
-    "word_to_symbol_change": "How to adjust the shape of a \u03b3 distribution"
+    "word_to_symbol_change": "How to adjust the shape of a γ distribution"
   },
   {
     "database_id": "codebase_community",
@@ -35128,7 +34996,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Standard deviation for a measurement that has two causes of uncertainty",
-    "word_to_symbol_change": "Standard deviation for a measurement that has two causes of uncertainty \u00b1"
+    "word_to_symbol_change": "Standard deviation for a measurement that has two causes of uncertainty ±"
   },
   {
     "database_id": "codebase_community",
@@ -41519,7 +41387,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Monte Carlo computation of expectation when there is dirac delta",
-    "word_to_symbol_change": "Monte Carlo computation of expectation when there is dirac \u03b4"
+    "word_to_symbol_change": "Monte Carlo computation of expectation when there is dirac δ"
   },
   {
     "database_id": "codebase_community",
@@ -45600,7 +45468,7 @@
     "table": "posts",
     "column": "title",
     "original_value": "Confidence interval for measured value with error",
-    "word_to_symbol_change": "Confidence interval for measured value with error \u00b1"
+    "word_to_symbol_change": "Confidence interval for measured value with error ±"
   },
   {
     "database_id": "codebase_community",
@@ -60916,7 +60784,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Confusion related to calculation of pi",
-    "word_to_symbol_change": "Confusion related to calculation of \u03c0"
+    "word_to_symbol_change": "Confusion related to calculation of π"
   },
   {
     "database_id": "codebase_community",
@@ -63282,7 +63150,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Monte Carlo computation of expectation when there is dirac delta",
-    "word_to_symbol_change": "Monte Carlo computation of expectation when there is dirac \u03b4"
+    "word_to_symbol_change": "Monte Carlo computation of expectation when there is dirac δ"
   },
   {
     "database_id": "codebase_community",
@@ -66264,7 +66132,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Standard deviation biased estimator of sigma",
-    "word_to_symbol_change": "Standard deviation biased estimator of \u03c3"
+    "word_to_symbol_change": "Standard deviation biased estimator of σ"
   },
   {
     "database_id": "codebase_community",
@@ -76554,7 +76422,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Good Adjusted r square",
-    "word_to_symbol_change": "Good Adjusted r\u00b2"
+    "word_to_symbol_change": "Good Adjusted r²"
   },
   {
     "database_id": "codebase_community",
@@ -88083,7 +87951,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Standard Error of the quotient of two estimates using the Delta method",
-    "word_to_symbol_change": "Standard Error of the quotient of two estimates using the \u0394 method"
+    "word_to_symbol_change": "Standard Error of the quotient of two estimates using the Δ method"
   },
   {
     "database_id": "codebase_community",
@@ -89672,7 +89540,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Standard deviation for a measurement that has two causes of uncertainty",
-    "word_to_symbol_change": "Standard deviation for a measurement that has two causes of uncertainty \u00b1"
+    "word_to_symbol_change": "Standard deviation for a measurement that has two causes of uncertainty ±"
   },
   {
     "database_id": "codebase_community",
@@ -95251,7 +95119,7 @@
     "table": "posthistory",
     "column": "text",
     "original_value": "Maximum likelihood equivalent to maximum a posterior estimation",
-    "word_to_symbol_change": "Maximum likelihood equivalent to maximum \u00e0 posteriori estimation"
+    "word_to_symbol_change": "Maximum likelihood equivalent to maximum à posteriori estimation"
   },
   {
     "database_id": "codebase_community",

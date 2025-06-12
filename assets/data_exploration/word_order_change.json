@@ -352,358 +352,6 @@
     "column": "state"
   },
   {
-    "table": "addresses",
-    "column": "city"
-  },
-  {
-    "table": "addresses",
-    "column": "country"
-  },
-  {
-    "table": "badges",
-    "column": "name"
-  },
-  {
-    "table": "bike",
-    "column": "material"
-  },
-  {
-    "table": "budget",
-    "column": "category"
-  },
-  {
-    "table": "car_makers",
-    "column": "fullname"
-  },
-  {
-    "table": "car_names",
-    "column": "make"
-  },
-  {
-    "table": "car_names",
-    "column": "model"
-  },
-  {
-    "table": "cards",
-    "column": "artist"
-  },
-  {
-    "table": "cards",
-    "column": "keywords"
-  },
-  {
-    "table": "cards",
-    "column": "name"
-  },
-  {
-    "table": "cards",
-    "column": "originaltype"
-  },
-  {
-    "table": "cards",
-    "column": "type"
-  },
-  {
-    "table": "cards",
-    "column": "watermark"
-  },
-  {
-    "table": "circuits",
-    "column": "country"
-  },
-  {
-    "table": "circuits",
-    "column": "location"
-  },
-  {
-    "table": "circuits",
-    "column": "name"
-  },
-  {
-    "table": "comments",
-    "column": "text"
-  },
-  {
-    "table": "constructors",
-    "column": "name"
-  },
-  {
-    "table": "constructors",
-    "column": "nationality"
-  },
-  {
-    "table": "contestants",
-    "column": "contestant_name"
-  },
-  {
-    "table": "countries",
-    "column": "countryname"
-  },
-  {
-    "table": "countrylanguage",
-    "column": "language"
-  },
-  {
-    "table": "departments",
-    "column": "department_name"
-  },
-  {
-    "table": "district",
-    "column": "a3"
-  },
-  {
-    "table": "document_objects",
-    "column": "description"
-  },
-  {
-    "table": "documents",
-    "column": "document_name"
-  },
-  {
-    "table": "driver",
-    "column": "racing_series"
-  },
-  {
-    "table": "drivers",
-    "column": "forename"
-  },
-  {
-    "table": "drivers",
-    "column": "nationality"
-  },
-  {
-    "table": "drivers",
-    "column": "surname"
-  },
-  {
-    "table": "event",
-    "column": "event_name"
-  },
-  {
-    "table": "event",
-    "column": "location"
-  },
-  {
-    "table": "examination",
-    "column": "diagnosis"
-  },
-  {
-    "table": "examination",
-    "column": "symptoms"
-  },
-  {
-    "table": "exams",
-    "column": "subject_code"
-  },
-  {
-    "table": "expense",
-    "column": "expense_description"
-  },
-  {
-    "table": "features",
-    "column": "feature_name"
-  },
-  {
-    "table": "foreign_data",
-    "column": "language"
-  },
-  {
-    "table": "foreign_data",
-    "column": "name"
-  },
-  {
-    "table": "frpm",
-    "column": "county name"
-  },
-  {
-    "table": "frpm",
-    "column": "educational option type"
-  },
-  {
-    "table": "goods",
-    "column": "food"
-  },
-  {
-    "table": "hangar",
-    "column": "plane_name"
-  },
-  {
-    "table": "income",
-    "column": "source"
-  },
-  {
-    "table": "league",
-    "column": "name"
-  },
-  {
-    "table": "major",
-    "column": "department"
-  },
-  {
-    "table": "major",
-    "column": "major_name"
-  },
-  {
-    "table": "matches",
-    "column": "tourney_name"
-  },
-  {
-    "table": "museum",
-    "column": "name"
-  },
-  {
-    "table": "paragraphs",
-    "column": "paragraph_text"
-  },
-  {
-    "table": "patient",
-    "column": "diagnosis"
-  },
-  {
-    "table": "pilotskills",
-    "column": "plane_name"
-  },
-  {
-    "table": "player",
-    "column": "player_name"
-  },
-  {
-    "table": "posthistory",
-    "column": "text"
-  },
-  {
-    "table": "posthistory",
-    "column": "userdisplayname"
-  },
-  {
-    "table": "posts",
-    "column": "title"
-  },
-  {
-    "table": "press",
-    "column": "name"
-  },
-  {
-    "table": "publisher",
-    "column": "publisher_name"
-  },
-  {
-    "table": "race",
-    "column": "race"
-  },
-  {
-    "table": "satscores",
-    "column": "cname"
-  },
-  {
-    "table": "schools",
-    "column": "admfname1"
-  },
-  {
-    "table": "schools",
-    "column": "admlname1"
-  },
-  {
-    "table": "schools",
-    "column": "city"
-  },
-  {
-    "table": "schools",
-    "column": "district"
-  },
-  {
-    "table": "schools",
-    "column": "doctype"
-  },
-  {
-    "table": "schools",
-    "column": "mailcity"
-  },
-  {
-    "table": "set_translations",
-    "column": "language"
-  },
-  {
-    "table": "set_translations",
-    "column": "translation"
-  },
-  {
-    "table": "sets",
-    "column": "block"
-  },
-  {
-    "table": "sets",
-    "column": "mcmname"
-  },
-  {
-    "table": "sets",
-    "column": "name"
-  },
-  {
-    "table": "ship",
-    "column": "name"
-  },
-  {
-    "table": "songs",
-    "column": "english_translation"
-  },
-  {
-    "table": "status",
-    "column": "status"
-  },
-  {
-    "table": "store",
-    "column": "name"
-  },
-  {
-    "table": "store",
-    "column": "neighborhood"
-  },
-  {
-    "table": "superhero",
-    "column": "full_name"
-  },
-  {
-    "table": "superhero",
-    "column": "superhero_name"
-  },
-  {
-    "table": "superpower",
-    "column": "power_name"
-  },
-  {
-    "table": "team",
-    "column": "team_long_name"
-  },
-  {
-    "table": "university",
-    "column": "university_name"
-  },
-  {
-    "table": "users",
-    "column": "displayname"
-  },
-  {
-    "table": "users",
-    "column": "location"
-  },
-  {
-    "table": "users",
-    "column": "user_category_code"
-  },
-  {
-    "table": "zip_code",
-    "column": "city"
-  },
-  {
-    "table": "zip_code",
-    "column": "county"
-  },
-  {
-    "table": "zip_code",
-    "column": "state"
-  },
-  {
     "database_id": "california_schools",
     "table": "schools",
     "column": "doctype",
@@ -2177,8 +1825,8 @@
     "database_id": "codebase_community",
     "table": "comments",
     "column": "text",
-    "original_value": "@Ga\u00eblLaurans Ok.",
-    "singular_plural_change": "@Ga\u00eblLauranses Ok."
+    "original_value": "@GaëlLaurans Ok.",
+    "singular_plural_change": "@GaëlLauranses Ok."
   },
   {
     "database_id": "codebase_community",
@@ -2800,8 +2448,8 @@
     "database_id": "codebase_community",
     "table": "comments",
     "column": "text",
-    "original_value": "Yes @St\u00e9phaneLaurent",
-    "singular_plural_change": "Yes @St\u00e9phanesLaurent"
+    "original_value": "Yes @StéphaneLaurent",
+    "singular_plural_change": "Yes @StéphanesLaurent"
   },
   {
     "database_id": "codebase_community",
@@ -6538,8 +6186,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Manuel Ram\u00f3n",
-    "singular_plural_change": "Manuel Ram\u00f3ns"
+    "original_value": "Manuel Ramón",
+    "singular_plural_change": "Manuel Ramóns"
   },
   {
     "database_id": "codebase_community",
@@ -6811,7 +6459,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Bartosz Radaczy\u0144ski",
+    "original_value": "Bartosz Radaczyński",
     "singular_plural_change": "users"
   },
   {
@@ -7133,7 +6781,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin T\u00f3th",
+    "original_value": "Martin Tóth",
     "singular_plural_change": "users"
   },
   {
@@ -7392,8 +7040,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Christoph R\u00fcegg",
-    "singular_plural_change": "Christoph R\u00fceggs"
+    "original_value": "Christoph Rüegg",
+    "singular_plural_change": "Christoph Rüeggs"
   },
   {
     "database_id": "codebase_community",
@@ -7644,7 +7292,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mihai Limb\u0103\u0219an",
+    "original_value": "Mihai Limbășan",
     "singular_plural_change": "users"
   },
   {
@@ -7903,7 +7551,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin B\u00f8gelund",
+    "original_value": "Martin Bøgelund",
     "singular_plural_change": "users"
   },
   {
@@ -8967,8 +8615,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Yusuf G\u00fczel",
-    "singular_plural_change": "Yusufs G\u00fczel"
+    "original_value": "Yusuf Güzel",
+    "singular_plural_change": "Yusufs Güzel"
   },
   {
     "database_id": "codebase_community",
@@ -9121,7 +8769,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jan Kr\u00fcger",
+    "original_value": "Jan Krüger",
     "singular_plural_change": "users"
   },
   {
@@ -9275,8 +8923,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Lu\u00eds Marques",
-    "singular_plural_change": "Lu\u00eds Marquess"
+    "original_value": "Luís Marques",
+    "singular_plural_change": "Luís Marquess"
   },
   {
     "database_id": "codebase_community",
@@ -9485,7 +9133,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Eduardo Le\u00f3n",
+    "original_value": "Eduardo León",
     "singular_plural_change": "users"
   },
   {
@@ -9527,7 +9175,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "John Sj\u00f6lander",
+    "original_value": "John Sjölander",
     "singular_plural_change": "users"
   },
   {
@@ -9709,8 +9357,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jo\u00e3o Ramos",
-    "singular_plural_change": "Jo\u00e3o Ramoses"
+    "original_value": "João Ramos",
+    "singular_plural_change": "João Ramoses"
   },
   {
     "database_id": "codebase_community",
@@ -9779,7 +9427,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jorge C\u00f3rdoba",
+    "original_value": "Jorge Córdoba",
     "singular_plural_change": "users"
   },
   {
@@ -10059,7 +9707,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Soner G\u00f6n\u00fcl",
+    "original_value": "Soner Gönül",
     "singular_plural_change": "users"
   },
   {
@@ -10304,8 +9952,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Micha\u0142 Gancarski",
-    "singular_plural_change": "Micha\u0142 Gancarskis"
+    "original_value": "Michał Gancarski",
+    "singular_plural_change": "Michał Gancarskis"
   },
   {
     "database_id": "codebase_community",
@@ -10409,8 +10057,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Luk\u00e1\u0161 Nalezenec",
-    "singular_plural_change": "Luk\u00e1\u0161 Nalezenecs"
+    "original_value": "Lukáš Nalezenec",
+    "singular_plural_change": "Lukáš Nalezenecs"
   },
   {
     "database_id": "codebase_community",
@@ -10591,7 +10239,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Stefan Hen\u00df",
+    "original_value": "Stefan Henß",
     "singular_plural_change": "users"
   },
   {
@@ -10766,8 +10414,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Junior Mayh\u00e9",
-    "singular_plural_change": "Juniors Mayh\u00e9"
+    "original_value": "Junior Mayhé",
+    "singular_plural_change": "Juniors Mayhé"
   },
   {
     "database_id": "codebase_community",
@@ -11137,7 +10785,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Etienne Low-D\u00e9carie",
+    "original_value": "Etienne Low-Décarie",
     "singular_plural_change": "users"
   },
   {
@@ -11620,7 +11268,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Andr\u00e9 Laszlo",
+    "original_value": "André Laszlo",
     "singular_plural_change": "users"
   },
   {
@@ -11669,7 +11317,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Rafael Magalh\u00e3es",
+    "original_value": "Rafael Magalhães",
     "singular_plural_change": "users"
   },
   {
@@ -12110,8 +11758,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Micka\u00ebl S",
-    "singular_plural_change": "Micka\u00ebls"
+    "original_value": "Mickaël S",
+    "singular_plural_change": "Mickaëls"
   },
   {
     "database_id": "codebase_community",
@@ -13545,7 +13193,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Yadira Gonz\u00e1lez",
+    "original_value": "Yadira González",
     "singular_plural_change": "users"
   },
   {
@@ -13972,7 +13620,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mihai Capot\u0103",
+    "original_value": "Mihai Capotă",
     "singular_plural_change": "users"
   },
   {
@@ -14217,7 +13865,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "\u0418\u0432\u0430\u043d \u0411\u0438\u0448\u0435\u0432\u0430\u0446",
+    "original_value": "Иван Бишевац",
     "singular_plural_change": "Ivan Bishevats"
   },
   {
@@ -14812,7 +14460,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Bal\u00e1zs B\u00e1r\u00e1ny",
+    "original_value": "Balázs Bárány",
     "singular_plural_change": "users"
   },
   {
@@ -14945,8 +14593,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mario Mar\u00edn",
-    "singular_plural_change": "Mario Mar\u00edns"
+    "original_value": "Mario Marín",
+    "singular_plural_change": "Mario Maríns"
   },
   {
     "database_id": "codebase_community",
@@ -15085,8 +14733,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Adam Kami\u0144ski",
-    "singular_plural_change": "Adams Kami\u0144ski"
+    "original_value": "Adam Kamiński",
+    "singular_plural_change": "Adams Kamiński"
   },
   {
     "database_id": "codebase_community",
@@ -15211,7 +14859,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jean-Victor C\u00f4t\u00e9",
+    "original_value": "Jean-Victor Côté",
     "singular_plural_change": "users"
   },
   {
@@ -15701,7 +15349,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "onur g\u00fcng\u00f6r",
+    "original_value": "onur güngör",
     "singular_plural_change": "users"
   },
   {
@@ -15799,8 +15447,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ren\u00e9 R",
-    "singular_plural_change": "Ren\u00e9s"
+    "original_value": "René R",
+    "singular_plural_change": "Renés"
   },
   {
     "database_id": "codebase_community",
@@ -15848,7 +15496,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Marc-Andr\u00e9 Lafortune",
+    "original_value": "Marc-André Lafortune",
     "singular_plural_change": "users"
   },
   {
@@ -16415,8 +16063,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Erika Hern\u00e1ndez",
-    "singular_plural_change": "Erika Hern\u00e1ndezs"
+    "original_value": "Erika Hernández",
+    "singular_plural_change": "Erika Hernándezs"
   },
   {
     "database_id": "codebase_community",
@@ -16632,8 +16280,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Alexis L\u00ea-Qu\u00f4c",
-    "singular_plural_change": "Alexis L\u00ea-Qu\u00f4cs"
+    "original_value": "Alexis Lê-Quôc",
+    "singular_plural_change": "Alexis Lê-Quôcs"
   },
   {
     "database_id": "codebase_community",
@@ -16716,7 +16364,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jonas Elfstr\u00f6m",
+    "original_value": "Jonas Elfström",
     "singular_plural_change": "users"
   },
   {
@@ -16786,8 +16434,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Garuda Ik\u00ebtum",
-    "singular_plural_change": "Garuda Ik\u00ebtums"
+    "original_value": "Garuda Ikëtum",
+    "singular_plural_change": "Garuda Ikëtums"
   },
   {
     "database_id": "codebase_community",
@@ -17199,7 +16847,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ahmet Y\u0131lmaz",
+    "original_value": "Ahmet Yılmaz",
     "singular_plural_change": "users"
   },
   {
@@ -17689,8 +17337,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ahmet Kak\u0131c\u0131",
-    "singular_plural_change": "Ahmet Kak\u0131c\u0131s"
+    "original_value": "Ahmet Kakıcı",
+    "singular_plural_change": "Ahmet Kakıcıs"
   },
   {
     "database_id": "codebase_community",
@@ -18571,7 +18219,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin Sj\u00f6berg",
+    "original_value": "Martin Sjöberg",
     "singular_plural_change": "users"
   },
   {
@@ -19075,8 +18723,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Fredy Mu\u00f1oz",
-    "singular_plural_change": "Fredys Mu\u00f1oz"
+    "original_value": "Fredy Muñoz",
+    "singular_plural_change": "Fredys Muñoz"
   },
   {
     "database_id": "codebase_community",
@@ -19257,8 +18905,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jonas M\u00fcller",
-    "singular_plural_change": "Jonas M\u00fcllers"
+    "original_value": "Jonas Müller",
+    "singular_plural_change": "Jonas Müllers"
   },
   {
     "database_id": "codebase_community",
@@ -19467,8 +19115,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Marcos Abra\u00e3o",
-    "singular_plural_change": "Marcos Abra\u00e3os"
+    "original_value": "Marcos Abraão",
+    "singular_plural_change": "Marcos Abraãos"
   },
   {
     "database_id": "codebase_community",
@@ -19600,7 +19248,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Simon Dugr\u00e9",
+    "original_value": "Simon Dugré",
     "singular_plural_change": "users"
   },
   {
@@ -19712,7 +19360,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mathieu Pag\u00e9",
+    "original_value": "Mathieu Pagé",
     "singular_plural_change": "users"
   },
   {
@@ -20125,7 +19773,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ricardo Gonz\u00e1lez-Gil",
+    "original_value": "Ricardo González-Gil",
     "singular_plural_change": "users"
   },
   {
@@ -20223,7 +19871,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Guillermo M\u00e9ndez",
+    "original_value": "Guillermo Méndez",
     "singular_plural_change": "users"
   },
   {
@@ -20251,8 +19899,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Timoth\u00e9e Poisot",
-    "singular_plural_change": "Timoth\u00e9e Poisots"
+    "original_value": "Timothée Poisot",
+    "singular_plural_change": "Timothée Poisots"
   },
   {
     "database_id": "codebase_community",
@@ -20279,7 +19927,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mattias Fr\u00e5nberg",
+    "original_value": "Mattias Frånberg",
     "singular_plural_change": "users"
   },
   {
@@ -20363,8 +20011,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Simon M\u00fcller",
-    "singular_plural_change": "Simon M\u00fcllers"
+    "original_value": "Simon Müller",
+    "singular_plural_change": "Simon Müllers"
   },
   {
     "database_id": "codebase_community",
@@ -20426,7 +20074,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Chris Gagn\u00e9",
+    "original_value": "Chris Gagné",
     "singular_plural_change": "users"
   },
   {
@@ -21007,7 +20655,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Francisco Rold\u00e1n",
+    "original_value": "Francisco Roldán",
     "singular_plural_change": "users"
   },
   {
@@ -22043,7 +21691,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "\u039f\u03c5\u03b9\u03bb\u03b9\u03b1\u03bc \u0391\u03c1\u03ba\u03b5\u03c5\u03b1",
+    "original_value": "Ουιλιαμ Αρκευα",
     "singular_plural_change": "users"
   },
   {
@@ -22799,7 +22447,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Fr\u00e9d\u00e9ric Grosshans",
+    "original_value": "Frédéric Grosshans",
     "singular_plural_change": "users"
   },
   {
@@ -22876,8 +22524,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jill-J\u00eann Vie",
-    "singular_plural_change": "Jill-J\u00eann Vies"
+    "original_value": "Jill-Jênn Vie",
+    "singular_plural_change": "Jill-Jênn Vies"
   },
   {
     "database_id": "codebase_community",
@@ -22911,7 +22559,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ren\u00e9e Damstra",
+    "original_value": "Renée Damstra",
     "singular_plural_change": "users"
   },
   {
@@ -22960,7 +22608,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "S\u00f6ren Kuklau",
+    "original_value": "Sören Kuklau",
     "singular_plural_change": "users"
   },
   {
@@ -23030,7 +22678,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin Schr\u00f6der",
+    "original_value": "Martin Schröder",
     "singular_plural_change": "users"
   },
   {
@@ -23100,7 +22748,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jan Had\u00e1\u010dek",
+    "original_value": "Jan Hadáček",
     "singular_plural_change": "users"
   },
   {
@@ -23226,7 +22874,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "V\u00edt Tu\u010dek",
+    "original_value": "Vít Tuček",
     "singular_plural_change": "users"
   },
   {
@@ -23478,8 +23126,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Marek St\u00f3j",
-    "singular_plural_change": "Marek St\u00f3js"
+    "original_value": "Marek Stój",
+    "singular_plural_change": "Marek Stójs"
   },
   {
     "database_id": "codebase_community",
@@ -23555,8 +23203,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jakub Nar\u0119bski",
-    "singular_plural_change": "Jakub Nar\u0119bskis"
+    "original_value": "Jakub Narębski",
+    "singular_plural_change": "Jakub Narębskis"
   },
   {
     "database_id": "codebase_community",
@@ -23688,7 +23336,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jonas Lindel\u00f8v",
+    "original_value": "Jonas Lindeløv",
     "singular_plural_change": "users"
   },
   {
@@ -23737,8 +23385,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Rui Gon\u00e7alves",
-    "singular_plural_change": "Rui Gon\u00e7alveses"
+    "original_value": "Rui Gonçalves",
+    "singular_plural_change": "Rui Gonçalveses"
   },
   {
     "database_id": "codebase_community",
@@ -23828,7 +23476,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Emil Vikstr\u00f6m",
+    "original_value": "Emil Vikström",
     "singular_plural_change": "users"
   },
   {
@@ -24276,8 +23924,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Se\u00f1or O",
-    "singular_plural_change": "Se\u00f1ores"
+    "original_value": "Señor O",
+    "singular_plural_change": "Señores"
   },
   {
     "database_id": "codebase_community",
@@ -24458,7 +24106,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mateusz Czerwi\u0144ski",
+    "original_value": "Mateusz Czerwiński",
     "singular_plural_change": "users"
   },
   {
@@ -24570,7 +24218,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Philipp Cla\u00dfen",
+    "original_value": "Philipp Claßen",
     "singular_plural_change": "users"
   },
   {
@@ -24822,7 +24470,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Karolis Koncevi\u010dius",
+    "original_value": "Karolis Koncevičius",
     "singular_plural_change": "users"
   },
   {
@@ -24941,8 +24589,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ben Pich\u00e9",
-    "singular_plural_change": "Ben Pich\u00e9s"
+    "original_value": "Ben Piché",
+    "singular_plural_change": "Ben Pichés"
   },
   {
     "database_id": "codebase_community",
@@ -25508,8 +25156,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "John Bar\u00e7a",
-    "singular_plural_change": "John Bar\u00e7as"
+    "original_value": "John Barça",
+    "singular_plural_change": "John Barças"
   },
   {
     "database_id": "codebase_community",
@@ -26054,8 +25702,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Rub\u00e9n Rufo",
-    "singular_plural_change": "Rub\u00e9n Rufos"
+    "original_value": "Rubén Rufo",
+    "singular_plural_change": "Rubén Rufos"
   },
   {
     "database_id": "codebase_community",
@@ -26166,8 +25814,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Filip Popovi\u0107",
-    "singular_plural_change": "Filip Popovi\u0107i"
+    "original_value": "Filip Popović",
+    "singular_plural_change": "Filip Popovići"
   },
   {
     "database_id": "codebase_community",
@@ -26530,8 +26178,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Nicol\u00e1s Kim",
-    "singular_plural_change": "Nicol\u00e1s Kims"
+    "original_value": "Nicolás Kim",
+    "singular_plural_change": "Nicolás Kims"
   },
   {
     "database_id": "codebase_community",
@@ -26880,7 +26528,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Bj\u00f6rn Fleischer",
+    "original_value": "Björn Fleischer",
     "singular_plural_change": "users"
   },
   {
@@ -26943,7 +26591,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Carlos br\u00e1s",
+    "original_value": "Carlos brás",
     "singular_plural_change": "Carlos brases"
   },
   {
@@ -27062,8 +26710,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Zo\u00eb Clark",
-    "singular_plural_change": "Zo\u00ebs Clark"
+    "original_value": "Zoë Clark",
+    "singular_plural_change": "Zoës Clark"
   },
   {
     "database_id": "codebase_community",
@@ -27146,7 +26794,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Stipe Gali\u0107",
+    "original_value": "Stipe Galić",
     "singular_plural_change": "users"
   },
   {
@@ -28210,7 +27858,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jarom\u00edr \u0160etek",
+    "original_value": "Jaromír Šetek",
     "singular_plural_change": "users"
   },
   {
@@ -28420,7 +28068,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin M\u00e4chler",
+    "original_value": "Martin Mächler",
     "singular_plural_change": "users"
   },
   {
@@ -28518,7 +28166,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ege \u00d6zcan",
+    "original_value": "Ege Özcan",
     "singular_plural_change": "users"
   },
   {
@@ -28847,7 +28495,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Emrah G\u00fcler",
+    "original_value": "Emrah Güler",
     "singular_plural_change": "users"
   },
   {
@@ -29029,8 +28677,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Antoine Liz\u00e9e",
-    "singular_plural_change": "Antoine Liz\u00e9es"
+    "original_value": "Antoine Lizée",
+    "singular_plural_change": "Antoine Lizées"
   },
   {
     "database_id": "codebase_community",
@@ -29449,7 +29097,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "\u00d6mer Alt\u0131nda\u011f",
+    "original_value": "Ömer Altındağ",
     "singular_plural_change": "users"
   },
   {
@@ -29946,7 +29594,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Sz\u00e1sz Szil\u00e1rd",
+    "original_value": "Szász Szilárd",
     "singular_plural_change": "users"
   },
   {
@@ -30052,7 +29700,7 @@
     "table": "users",
     "column": "displayname",
     "original_value": "Bogdan Verbenets",
-    "singular_plural_change": "Bogdan Verbene\u021b"
+    "singular_plural_change": "Bogdan Verbeneț"
   },
   {
     "database_id": "codebase_community",
@@ -30688,7 +30336,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "xiao \u5578",
+    "original_value": "xiao 啸",
     "singular_plural_change": "users"
   },
   {
@@ -30702,7 +30350,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Emre Sevin\u00e7",
+    "original_value": "Emre Sevinç",
     "singular_plural_change": "users"
   },
   {
@@ -30716,7 +30364,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Konrad H\u00f6ffner",
+    "original_value": "Konrad Höffner",
     "singular_plural_change": "users"
   },
   {
@@ -30871,7 +30519,7 @@
     "table": "users",
     "column": "displayname",
     "original_value": "Wuschelbeutel Kartoffelhuhn",
-    "singular_plural_change": "Wuschelbeutel Kartoffelh\u00fchner"
+    "singular_plural_change": "Wuschelbeutel Kartoffelhühner"
   },
   {
     "database_id": "codebase_community",
@@ -31290,8 +30938,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "R\u00e9mi M",
-    "singular_plural_change": "R\u00e9mi Ms"
+    "original_value": "Rémi M",
+    "singular_plural_change": "Rémi Ms"
   },
   {
     "database_id": "codebase_community",
@@ -31311,7 +30959,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Aur\u00e9lien Ooms",
+    "original_value": "Aurélien Ooms",
     "singular_plural_change": "users"
   },
   {
@@ -31479,8 +31127,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Maciej Trybi\u0142o",
-    "singular_plural_change": "Macieje Trybi\u0142o"
+    "original_value": "Maciej Trybiło",
+    "singular_plural_change": "Macieje Trybiło"
   },
   {
     "database_id": "codebase_community",
@@ -31493,7 +31141,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "David M\u00e5rtensson",
+    "original_value": "David Mårtensson",
     "singular_plural_change": "users"
   },
   {
@@ -31822,8 +31470,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mart\u00edn Bel",
-    "singular_plural_change": "Mart\u00edns Bel"
+    "original_value": "Martín Bel",
+    "singular_plural_change": "Martíns Bel"
   },
   {
     "database_id": "codebase_community",
@@ -32235,8 +31883,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jo\u00e3o Melo",
-    "singular_plural_change": "Jo\u00e3o Melos"
+    "original_value": "João Melo",
+    "singular_plural_change": "João Melos"
   },
   {
     "database_id": "codebase_community",
@@ -32459,14 +32107,14 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "M\u00e1rcia Baptista",
-    "singular_plural_change": "M\u00e1rcia Baptistas"
+    "original_value": "Márcia Baptista",
+    "singular_plural_change": "Márcia Baptistas"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Karel B\u00edlek",
+    "original_value": "Karel Bílek",
     "singular_plural_change": "users"
   },
   {
@@ -32697,7 +32345,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Horst Gr\u00fcnbusch",
+    "original_value": "Horst Grünbusch",
     "singular_plural_change": "users"
   },
   {
@@ -32844,8 +32492,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Johan Tid\u00e9n",
-    "singular_plural_change": "Johan Tid\u00e9ns"
+    "original_value": "Johan Tidén",
+    "singular_plural_change": "Johan Tidéns"
   },
   {
     "database_id": "codebase_community",
@@ -32977,7 +32625,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mert Yaz\u0131c\u0131o\u011flu",
+    "original_value": "Mert Yazıcıoğlu",
     "singular_plural_change": "users"
   },
   {
@@ -33110,7 +32758,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Zolt\u00e1n Schmidt",
+    "original_value": "Zoltán Schmidt",
     "singular_plural_change": "users"
   },
   {
@@ -34293,8 +33941,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mart\u00edn Fixman",
-    "singular_plural_change": "Mart\u00edn Fixmans"
+    "original_value": "Martín Fixman",
+    "singular_plural_change": "Martín Fixmans"
   },
   {
     "database_id": "codebase_community",
@@ -34356,7 +34004,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Z\u00e9 Ricardo",
+    "original_value": "Zé Ricardo",
     "singular_plural_change": "users"
   },
   {
@@ -34818,8 +34466,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "M\u00e1rcio Diniz",
-    "singular_plural_change": "M\u00e1rcio Dinizes"
+    "original_value": "Márcio Diniz",
+    "singular_plural_change": "Márcio Dinizes"
   },
   {
     "database_id": "codebase_community",
@@ -35007,8 +34655,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Krist\u00f3f Marussy",
-    "singular_plural_change": "Krist\u00f3f Marussys"
+    "original_value": "Kristóf Marussy",
+    "singular_plural_change": "Kristóf Marussys"
   },
   {
     "database_id": "codebase_community",
@@ -35714,7 +35362,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Nacho Albor\u00e9s",
+    "original_value": "Nacho Alborés",
     "singular_plural_change": "users"
   },
   {
@@ -35770,8 +35418,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Alberto Fern\u00e1ndez",
-    "singular_plural_change": "Alberto Fern\u00e1ndezes"
+    "original_value": "Alberto Fernández",
+    "singular_plural_change": "Alberto Fernándezes"
   },
   {
     "database_id": "codebase_community",
@@ -36582,7 +36230,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin B\u00f6schen",
+    "original_value": "Martin Böschen",
     "singular_plural_change": "users"
   },
   {
@@ -37121,7 +36769,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Micha\u00ebl Witrant",
+    "original_value": "Michaël Witrant",
     "singular_plural_change": "users"
   },
   {
@@ -37401,8 +37049,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "thorsten m\u00fcller",
-    "singular_plural_change": "thorsten m\u00fcllers"
+    "original_value": "thorsten müller",
+    "singular_plural_change": "thorsten müllers"
   },
   {
     "database_id": "codebase_community",
@@ -37639,8 +37287,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Michael Kj\u00f6rling",
-    "singular_plural_change": "Michael Kj\u00f6rlings"
+    "original_value": "Michael Kjörling",
+    "singular_plural_change": "Michael Kjörlings"
   },
   {
     "database_id": "codebase_community",
@@ -37688,8 +37336,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Christopher Schr\u00f6der",
-    "singular_plural_change": "Christopher Schr\u00f6ders"
+    "original_value": "Christopher Schröder",
+    "singular_plural_change": "Christopher Schröders"
   },
   {
     "database_id": "codebase_community",
@@ -38234,7 +37882,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "G\u00f6khan \u00c7oban",
+    "original_value": "Gökhan Çoban",
     "singular_plural_change": "users"
   },
   {
@@ -38542,7 +38190,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Adri\u00e1n Deccico",
+    "original_value": "Adrián Deccico",
     "singular_plural_change": "users"
   },
   {
@@ -39060,7 +38708,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "\u0141 \u0141aniewski-Wo\u0142\u0142k",
+    "original_value": "Ł Łaniewski-Wołłk",
     "singular_plural_change": "users"
   },
   {
@@ -39109,8 +38757,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Joel Sj\u00f6strand",
-    "singular_plural_change": "Joel Sj\u00f6strands"
+    "original_value": "Joel Sjöstrand",
+    "singular_plural_change": "Joel Sjöstrands"
   },
   {
     "database_id": "codebase_community",
@@ -40180,8 +39828,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Charles Barth\u00e9lemy",
-    "singular_plural_change": "Charles Barth\u00e9lemys"
+    "original_value": "Charles Barthélemy",
+    "singular_plural_change": "Charles Barthélemys"
   },
   {
     "database_id": "codebase_community",
@@ -40404,8 +40052,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Michael Schmei\u00dfer",
-    "singular_plural_change": "Michael Schmei\u00dfers"
+    "original_value": "Michael Schmeißer",
+    "singular_plural_change": "Michael Schmeißers"
   },
   {
     "database_id": "codebase_community",
@@ -40439,8 +40087,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mika\u00ebl Mayer",
-    "singular_plural_change": "Mika\u00ebls Mayer"
+    "original_value": "Mikaël Mayer",
+    "singular_plural_change": "Mikaëls Mayer"
   },
   {
     "database_id": "codebase_community",
@@ -40614,7 +40262,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Mariano Su\u00e1rez-Alvarez",
+    "original_value": "Mariano Suárez-Alvarez",
     "singular_plural_change": "users"
   },
   {
@@ -40817,8 +40465,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jes\u00fas Hurtado",
-    "singular_plural_change": "Jes\u00fas Hurtados"
+    "original_value": "Jesús Hurtado",
+    "singular_plural_change": "Jesús Hurtados"
   },
   {
     "database_id": "codebase_community",
@@ -40866,8 +40514,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jo\u00e3o Portela",
-    "singular_plural_change": "Jo\u00e3o Portelas"
+    "original_value": "João Portela",
+    "singular_plural_change": "João Portelas"
   },
   {
     "database_id": "codebase_community",
@@ -41167,8 +40815,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Simon M\u1d9cKenzie",
-    "singular_plural_change": "Simon M\u1d9cKenzies"
+    "original_value": "Simon MᶜKenzie",
+    "singular_plural_change": "Simon MᶜKenzies"
   },
   {
     "database_id": "codebase_community",
@@ -41482,7 +41130,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Thiago Marzag\u00e3o",
+    "original_value": "Thiago Marzagão",
     "singular_plural_change": "users"
   },
   {
@@ -41538,8 +41186,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Micha\u0142 Politowski",
-    "singular_plural_change": "Micha\u0142 Politowskis"
+    "original_value": "Michał Politowski",
+    "singular_plural_change": "Michał Politowskis"
   },
   {
     "database_id": "codebase_community",
@@ -41818,7 +41466,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "SparKot \u0950",
+    "original_value": "SparKot ॐ",
     "singular_plural_change": "users"
   },
   {
@@ -41888,7 +41536,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Vincent Barnab\u00e9-Lortie",
+    "original_value": "Vincent Barnabé-Lortie",
     "singular_plural_change": "users"
   },
   {
@@ -41993,7 +41641,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Andre\u00ef Kostyrka",
+    "original_value": "Andreï Kostyrka",
     "singular_plural_change": "users"
   },
   {
@@ -42308,7 +41956,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Alper Tokg\u00f6z",
+    "original_value": "Alper Tokgöz",
     "singular_plural_change": "users"
   },
   {
@@ -42343,7 +41991,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Krist\u00f3f Szalay",
+    "original_value": "Kristóf Szalay",
     "singular_plural_change": "users"
   },
   {
@@ -42420,8 +42068,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Alicia Vald\u00e9s",
-    "singular_plural_change": "Alicias Vald\u00e9s"
+    "original_value": "Alicia Valdés",
+    "singular_plural_change": "Alicias Valdés"
   },
   {
     "database_id": "codebase_community",
@@ -42658,7 +42306,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Eszter Tak\u00e1cs",
+    "original_value": "Eszter Takács",
     "singular_plural_change": "users"
   },
   {
@@ -43330,7 +42978,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Andr\u00e9 Casimiro",
+    "original_value": "André Casimiro",
     "singular_plural_change": "users"
   },
   {
@@ -43351,8 +42999,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ant\u00f3nio Mendes",
-    "singular_plural_change": "Ant\u00f3nio Mendeses"
+    "original_value": "António Mendes",
+    "singular_plural_change": "António Mendeses"
   },
   {
     "database_id": "codebase_community",
@@ -43631,8 +43279,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Julien Fouilh\u00e9",
-    "singular_plural_change": "Julien Fouilh\u00e9s"
+    "original_value": "Julien Fouilhé",
+    "singular_plural_change": "Julien Fouilhés"
   },
   {
     "database_id": "codebase_community",
@@ -44142,8 +43790,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jos\u00e9 Jim\u00e9nez",
-    "singular_plural_change": "Jos\u00e9 Jim\u00e9nezes"
+    "original_value": "José Jiménez",
+    "singular_plural_change": "José Jiménezes"
   },
   {
     "database_id": "codebase_community",
@@ -44163,7 +43811,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Muntag M\u00e1rton",
+    "original_value": "Muntag Márton",
     "singular_plural_change": "users"
   },
   {
@@ -44632,7 +44280,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Edgar Gri\u00f1ant",
+    "original_value": "Edgar Griñant",
     "singular_plural_change": "users"
   },
   {
@@ -44681,7 +44329,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Daniel Mili\u0144ski",
+    "original_value": "Daniel Miliński",
     "singular_plural_change": "users"
   },
   {
@@ -44954,7 +44602,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Muss\u00e9 Redi",
+    "original_value": "Mussé Redi",
     "singular_plural_change": "users"
   },
   {
@@ -44982,8 +44630,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "\u0141ukasz Kidzi\u0144ski",
-    "singular_plural_change": "\u0141ukasz Kidski\u0144ski"
+    "original_value": "Łukasz Kidziński",
+    "singular_plural_change": "Łukasz Kidskiński"
   },
   {
     "database_id": "codebase_community",
@@ -45003,8 +44651,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ivan Zandon\u00e0",
-    "singular_plural_change": "Ivan Zandon\u00e0s"
+    "original_value": "Ivan Zandonà",
+    "singular_plural_change": "Ivan Zandonàs"
   },
   {
     "database_id": "codebase_community",
@@ -45045,8 +44693,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Lucas Vin\u00edcius",
-    "singular_plural_change": "Lucas Vin\u00edciuses"
+    "original_value": "Lucas Vinícius",
+    "singular_plural_change": "Lucas Viníciuses"
   },
   {
     "database_id": "codebase_community",
@@ -45066,7 +44714,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Emrah Dolguns\u00f6z",
+    "original_value": "Emrah Dolgunsöz",
     "singular_plural_change": "users"
   },
   {
@@ -45598,8 +45246,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Daniel Lidstr\u00f6m",
-    "singular_plural_change": "Daniels Lidstr\u00f6m"
+    "original_value": "Daniel Lidström",
+    "singular_plural_change": "Daniels Lidström"
   },
   {
     "database_id": "codebase_community",
@@ -46200,7 +45848,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Christopher K\u00e4ck",
+    "original_value": "Christopher Käck",
     "singular_plural_change": "users"
   },
   {
@@ -46480,7 +46128,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Albert Koz\u0142owski",
+    "original_value": "Albert Kozłowski",
     "singular_plural_change": "users"
   },
   {
@@ -46732,7 +46380,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Aljoscha Fern\u00e1ndez",
+    "original_value": "Aljoscha Fernández",
     "singular_plural_change": "users"
   },
   {
@@ -47348,7 +46996,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Martin B\u00fcttner",
+    "original_value": "Martin Büttner",
     "singular_plural_change": "users"
   },
   {
@@ -47460,7 +47108,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Petr Pudl\u00e1k",
+    "original_value": "Petr Pudlák",
     "singular_plural_change": "users"
   },
   {
@@ -47691,8 +47339,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Cl\u00e9ment F",
-    "singular_plural_change": "Cl\u00e9ments"
+    "original_value": "Clément F",
+    "singular_plural_change": "Cléments"
   },
   {
     "database_id": "codebase_community",
@@ -47747,7 +47395,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Samuel Leli\u00e8vre",
+    "original_value": "Samuel Lelièvre",
     "singular_plural_change": "users"
   },
   {
@@ -47894,8 +47542,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Andrew Br\u0113za",
-    "singular_plural_change": "Andrews Br\u0113za"
+    "original_value": "Andrew Brēza",
+    "singular_plural_change": "Andrews Brēza"
   },
   {
     "database_id": "codebase_community",
@@ -47936,7 +47584,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Jorge C\u00e1rcamo",
+    "original_value": "Jorge Cárcamo",
     "singular_plural_change": "users"
   },
   {
@@ -47957,8 +47605,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Johan Wikstr\u00f6m",
-    "singular_plural_change": "Johan Wikstr\u00f6ms"
+    "original_value": "Johan Wikström",
+    "singular_plural_change": "Johan Wikströms"
   },
   {
     "database_id": "codebase_community",
@@ -48006,8 +47654,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Andr\u00e9 Siqueira",
-    "singular_plural_change": "Andr\u00e9 Siqueiras"
+    "original_value": "André Siqueira",
+    "singular_plural_change": "André Siqueiras"
   },
   {
     "database_id": "codebase_community",
@@ -48356,7 +48004,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ren\u00e9 Nyffenegger",
+    "original_value": "René Nyffenegger",
     "singular_plural_change": "users"
   },
   {
@@ -49175,8 +48823,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Th\u00e9o T",
-    "singular_plural_change": "Th\u00e9os"
+    "original_value": "Théo T",
+    "singular_plural_change": "Théos"
   },
   {
     "database_id": "codebase_community",
@@ -49245,7 +48893,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Zo\u00eb Seager",
+    "original_value": "Zoë Seager",
     "singular_plural_change": "users"
   },
   {
@@ -49882,8 +49530,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Ren\u00e9 Moreno",
-    "singular_plural_change": "Ren\u00e9 Morenos"
+    "original_value": "René Moreno",
+    "singular_plural_change": "René Morenos"
   },
   {
     "database_id": "codebase_community",
@@ -50302,7 +49950,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Daniel L\u00fcdecke",
+    "original_value": "Daniel Lüdecke",
     "singular_plural_change": "users"
   },
   {
@@ -50477,8 +50125,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Kim Gr\u00e4sman",
-    "singular_plural_change": "Kim Gr\u00e4smans"
+    "original_value": "Kim Gräsman",
+    "singular_plural_change": "Kim Gräsmans"
   },
   {
     "database_id": "codebase_community",
@@ -50582,8 +50230,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Fabiola Fern\u00e1ndez",
-    "singular_plural_change": "Fabiola Fern\u00e1ndezes"
+    "original_value": "Fabiola Fernández",
+    "singular_plural_change": "Fabiola Fernándezes"
   },
   {
     "database_id": "codebase_community",
@@ -50617,8 +50265,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "V\u00edtor Baptista",
-    "singular_plural_change": "V\u00edtors Baptista"
+    "original_value": "Vítor Baptista",
+    "singular_plural_change": "Vítors Baptista"
   },
   {
     "database_id": "codebase_community",
@@ -50708,7 +50356,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "MUrat AKbal\u0131k",
+    "original_value": "MUrat AKbalık",
     "singular_plural_change": "murat akbalik"
   },
   {
@@ -51058,7 +50706,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "displayname",
-    "original_value": "Klas Lindb\u00e4ck",
+    "original_value": "Klas Lindbäck",
     "singular_plural_change": "users"
   },
   {
@@ -53109,8 +52757,8 @@
     "database_id": "student_club",
     "table": "zip_code",
     "column": "county",
-    "original_value": "Co\u00f6s County",
-    "singular_plural_change": "Co\u00f6s Counties"
+    "original_value": "Coös County",
+    "singular_plural_change": "Coös Counties"
   },
   {
     "database_id": "student_club",
@@ -66508,7 +66156,7 @@
     "table": "player",
     "column": "player_name",
     "original_value": "Joao Guilherme",
-    "singular_plural_change": "Joao Guilh\u00e8mes"
+    "singular_plural_change": "Joao Guilhèmes"
   },
   {
     "database_id": "european_football_2",
@@ -67733,7 +67381,7 @@
     "table": "player",
     "column": "player_name",
     "original_value": "Mohamed Diame",
-    "singular_plural_change": "Mohamed Diam\u00e9s"
+    "singular_plural_change": "Mohamed Diamés"
   },
   {
     "database_id": "european_football_2",
@@ -68342,7 +67990,7 @@
     "table": "player",
     "column": "player_name",
     "original_value": "Sami Hyypiae",
-    "singular_plural_change": "Sami Hyypi\u00e4"
+    "singular_plural_change": "Sami Hyypiä"
   },
   {
     "database_id": "european_football_2",
@@ -69217,7 +68865,7 @@
     "table": "users",
     "column": "location",
     "original_value": "Madrid, Spain",
-    "singular_plural_change": "Madrid, Espa\u00f1as"
+    "singular_plural_change": "Madrid, Españas"
   },
   {
     "database_id": "codebase_community",
@@ -69594,14 +69242,14 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "\u0141\u00f3d\u017a, Poland",
+    "original_value": "Łódź, Poland",
     "singular_plural_change": "users"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "V\u00e4xj\u00f6, Sweden",
+    "original_value": "Växjö, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -69860,7 +69508,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Ko\u0161ice, Slovakia",
+    "original_value": "Košice, Slovakia",
     "singular_plural_change": "users"
   },
   {
@@ -70735,7 +70383,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Troms\u00f8, Norway",
+    "original_value": "Tromsø, Norway",
     "singular_plural_change": "users"
   },
   {
@@ -70756,8 +70404,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Osnabr\u00fcck, Germany",
-    "singular_plural_change": "Osnabr\u00fcck, Germans"
+    "original_value": "Osnabrück, Germany",
+    "singular_plural_change": "Osnabrück, Germans"
   },
   {
     "database_id": "codebase_community",
@@ -70777,7 +70425,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "R\u00e5walpindi, Pakistan",
+    "original_value": "Råwalpindi, Pakistan",
     "singular_plural_change": "users"
   },
   {
@@ -70805,8 +70453,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "G\u00f6ppingen, Germany",
-    "singular_plural_change": "G\u00f6ppingens, Germany"
+    "original_value": "Göppingen, Germany",
+    "singular_plural_change": "Göppingens, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -71197,7 +70845,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Malm\u00f6, Sweden",
+    "original_value": "Malmö, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -71407,8 +71055,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Saarbr\u00fccken, Germany",
-    "singular_plural_change": "Saarbr\u00fcckens, Germany"
+    "original_value": "Saarbrücken, Germany",
+    "singular_plural_change": "Saarbrückens, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -71617,8 +71265,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "\u0130stanbul, Turkey",
-    "singular_plural_change": "\u0130stanbuls, Turkey"
+    "original_value": "İstanbul, Turkey",
+    "singular_plural_change": "İstanbuls, Turkey"
   },
   {
     "database_id": "codebase_community",
@@ -71708,8 +71356,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Nev\u015fehir, Turkey",
-    "singular_plural_change": "Nev\u015fehir, Turkeys"
+    "original_value": "Nevşehir, Turkey",
+    "singular_plural_change": "Nevşehir, Turkeys"
   },
   {
     "database_id": "codebase_community",
@@ -71736,8 +71384,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Li\u00e8ge, Belgium",
-    "singular_plural_change": "Li\u00e8ges, Belgium"
+    "original_value": "Liège, Belgium",
+    "singular_plural_change": "Lièges, Belgium"
   },
   {
     "database_id": "codebase_community",
@@ -71953,7 +71601,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "H\u00e4rn\u00f6sand, Sweden",
+    "original_value": "Härnösand, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -72086,7 +71734,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "C\u00e1ceres, Spain",
+    "original_value": "Cáceres, Spain",
     "singular_plural_change": "users"
   },
   {
@@ -72100,7 +71748,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Ume\u00e5, Sweden",
+    "original_value": "Umeå, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -72212,8 +71860,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Florian\u00f3polis, Brazil",
-    "singular_plural_change": "Florian\u00f3polises, Brazil"
+    "original_value": "Florianópolis, Brazil",
+    "singular_plural_change": "Florianópolises, Brazil"
   },
   {
     "database_id": "codebase_community",
@@ -72394,8 +72042,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Compi\u00e8gne, France",
-    "singular_plural_change": "Compi\u00e8gnes, France"
+    "original_value": "Compiègne, France",
+    "singular_plural_change": "Compiègnes, France"
   },
   {
     "database_id": "codebase_community",
@@ -72471,8 +72119,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Altst\u00e4tten, Switzerland",
-    "singular_plural_change": "Altst\u00e4tten, Swiss"
+    "original_value": "Altstätten, Switzerland",
+    "singular_plural_change": "Altstätten, Swiss"
   },
   {
     "database_id": "codebase_community",
@@ -72527,8 +72175,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "D\u00fcsseldorf, Germany",
-    "singular_plural_change": "D\u00fcsseldorfs, Germany"
+    "original_value": "Düsseldorf, Germany",
+    "singular_plural_change": "Düsseldorfs, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -72625,7 +72273,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "T\u00f8nsberg, Norway",
+    "original_value": "Tønsberg, Norway",
     "singular_plural_change": "users"
   },
   {
@@ -72786,8 +72434,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "T\u00fcbingen, Germany",
-    "singular_plural_change": "T\u00fcbingen, Germans"
+    "original_value": "Tübingen, Germany",
+    "singular_plural_change": "Tübingen, Germans"
   },
   {
     "database_id": "codebase_community",
@@ -73185,7 +72833,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Chalon-sur-Sa\u00f4ne, France",
+    "original_value": "Chalon-sur-Saône, France",
     "singular_plural_change": "users"
   },
   {
@@ -73612,7 +73260,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Norrt\u00e4lje, Sweden",
+    "original_value": "Norrtälje, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -73857,14 +73505,14 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Grims\u00f6, Sweden",
+    "original_value": "Grimsö, Sweden",
     "singular_plural_change": "users"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "G\u00f6ttingen, Germany",
+    "original_value": "Göttingen, Germany",
     "singular_plural_change": "Germany"
   },
   {
@@ -73990,14 +73638,14 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Leicule\u015fti, Romania",
+    "original_value": "Leiculeşti, Romania",
     "singular_plural_change": "users"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Aller\u00f8d, Denmark",
+    "original_value": "Allerød, Denmark",
     "singular_plural_change": "users"
   },
   {
@@ -74018,14 +73666,14 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "G\u00f6teborg, Sweden",
-    "singular_plural_change": "G\u00f6teborgs, Sweden"
+    "original_value": "Göteborg, Sweden",
+    "singular_plural_change": "Göteborgs, Sweden"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "\u00c5rhus, Denmark",
+    "original_value": "Århus, Denmark",
     "singular_plural_change": "users"
   },
   {
@@ -74249,7 +73897,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "\u00d6stersund, Sweden",
+    "original_value": "Östersund, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -74417,7 +74065,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Besan\u00e7on, France",
+    "original_value": "Besançon, France",
     "singular_plural_change": "users"
   },
   {
@@ -74487,7 +74135,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "J\u00f6nk\u00f6ping, Sweden",
+    "original_value": "Jönköping, Sweden",
     "singular_plural_change": "users"
   },
   {
@@ -75124,8 +74772,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Montr\u00e9al, Qu\u00e9bec",
-    "singular_plural_change": "Montr\u00e9al, Qu\u00e9becs"
+    "original_value": "Montréal, Québec",
+    "singular_plural_change": "Montréal, Québecs"
   },
   {
     "database_id": "codebase_community",
@@ -75180,7 +74828,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Krak\u00f3w, Poland",
+    "original_value": "Kraków, Poland",
     "singular_plural_change": "users"
   },
   {
@@ -75222,7 +74870,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "P\u00e9cs, Hungary",
+    "original_value": "Pécs, Hungary",
     "singular_plural_change": "users"
   },
   {
@@ -75362,7 +75010,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Jyv\u00e4skyl\u00e4, Finland",
+    "original_value": "Jyväskylä, Finland",
     "singular_plural_change": "users"
   },
   {
@@ -75670,7 +75318,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "St-J\u00e9r\u00f4me, Canada",
+    "original_value": "St-Jérôme, Canada",
     "singular_plural_change": "users"
   },
   {
@@ -75712,8 +75360,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "M\u00e9xico, D.F.",
-    "singular_plural_change": "M\u00e9xicoes, D.F."
+    "original_value": "México, D.F.",
+    "singular_plural_change": "Méxicoes, D.F."
   },
   {
     "database_id": "codebase_community",
@@ -75817,8 +75465,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Wroc\u0142aw, Poland",
-    "singular_plural_change": "Wroc\u0142awes, Poland"
+    "original_value": "Wrocław, Poland",
+    "singular_plural_change": "Wrocławes, Poland"
   },
   {
     "database_id": "codebase_community",
@@ -75936,15 +75584,15 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Bogot\u00e1, Colombia",
-    "singular_plural_change": "Bogot\u00e1s, Colombia"
+    "original_value": "Bogotá, Colombia",
+    "singular_plural_change": "Bogotás, Colombia"
   },
   {
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Puebla, M\u00e9xico",
-    "singular_plural_change": "Pueblas, M\u00e9xico"
+    "original_value": "Puebla, México",
+    "singular_plural_change": "Pueblas, México"
   },
   {
     "database_id": "codebase_community",
@@ -76503,8 +76151,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "C\u00f3rdoba, Argentina",
-    "singular_plural_change": "C\u00f3rdobas, Argentina"
+    "original_value": "Córdoba, Argentina",
+    "singular_plural_change": "Córdobas, Argentina"
   },
   {
     "database_id": "codebase_community",
@@ -76615,8 +76263,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Val\u00e8ncia, Spain",
-    "singular_plural_change": "Val\u00e8nciaes, Spain"
+    "original_value": "València, Spain",
+    "singular_plural_change": "Valènciaes, Spain"
   },
   {
     "database_id": "codebase_community",
@@ -76762,8 +76410,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Montr\u00e9al, Canada",
-    "singular_plural_change": "Montr\u00e9al, Canadians"
+    "original_value": "Montréal, Canada",
+    "singular_plural_change": "Montréal, Canadians"
   },
   {
     "database_id": "codebase_community",
@@ -76853,8 +76501,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "D\u00fcsseldorf/K\u00f6ln, Germany",
-    "singular_plural_change": "D\u00fcsseldorf/K\u00f6lns, Germany"
+    "original_value": "Düsseldorf/Köln, Germany",
+    "singular_plural_change": "Düsseldorf/Kölns, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -76902,8 +76550,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "M\u00fcnster, Germany",
-    "singular_plural_change": "M\u00fcnsteres, Germany"
+    "original_value": "Münster, Germany",
+    "singular_plural_change": "Münsteres, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -76923,7 +76571,7 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Gda\u0144sk, Poland",
+    "original_value": "Gdańsk, Poland",
     "singular_plural_change": "users"
   },
   {
@@ -77175,8 +76823,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "W\u00fcrzburg, Germany",
-    "singular_plural_change": "W\u00fcrzburgs, Germany"
+    "original_value": "Würzburg, Germany",
+    "singular_plural_change": "Würzburgs, Germany"
   },
   {
     "database_id": "codebase_community",
@@ -77301,8 +76949,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Macei\u00f3, Brazil",
-    "singular_plural_change": "Macei\u00f3, Brazils"
+    "original_value": "Maceió, Brazil",
+    "singular_plural_change": "Maceió, Brazils"
   },
   {
     "database_id": "codebase_community",
@@ -77357,8 +77005,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Z\u00fcrich, Switzerland",
-    "singular_plural_change": "Z\u00fcrichs, Switzerland"
+    "original_value": "Zürich, Switzerland",
+    "singular_plural_change": "Zürichs, Switzerland"
   },
   {
     "database_id": "codebase_community",
@@ -77406,8 +77054,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Finland, Jyv\u00e4skyl\u00e4",
-    "singular_plural_change": "Finland, Jyv\u00e4skyl\u00e4s"
+    "original_value": "Finland, Jyväskylä",
+    "singular_plural_change": "Finland, Jyväskyläs"
   },
   {
     "database_id": "codebase_community",
@@ -77455,8 +77103,8 @@
     "database_id": "codebase_community",
     "table": "users",
     "column": "location",
-    "original_value": "Pozna\u0144, Poland",
-    "singular_plural_change": "Pozna\u00f1s, Poland"
+    "original_value": "Poznań, Poland",
+    "singular_plural_change": "Poznañs, Poland"
   },
   {
     "database_id": "codebase_community",
@@ -95172,8 +94820,8 @@
     "database_id": "codebase_community",
     "table": "posthistory",
     "column": "text",
-    "original_value": "Cronbach\u00b4s alpha",
-    "singular_plural_change": "Cronbach\u00b4s alphas"
+    "original_value": "Cronbach´s alpha",
+    "singular_plural_change": "Cronbach´s alphas"
   },
   {
     "database_id": "codebase_community",
@@ -96131,8 +95779,8 @@
     "database_id": "codebase_community",
     "table": "posthistory",
     "column": "text",
-    "original_value": "Package \u2018\ufb01tdistrplus\u2019",
-    "singular_plural_change": "Packages \u2018\ufb01tdistrplus\u2019"
+    "original_value": "Package ‘ﬁtdistrplus’",
+    "singular_plural_change": "Packages ‘ﬁtdistrplus’"
   },
   {
     "database_id": "codebase_community",
@@ -100051,8 +99699,8 @@
     "database_id": "card_games",
     "table": "set_translations",
     "column": "translation",
-    "original_value": "Magic Or\u00edgenes",
-    "singular_plural_change": "Magic Or\u00edgeneses"
+    "original_value": "Magic Orígenes",
+    "singular_plural_change": "Magic Orígeneses"
   },
   {
     "database_id": "card_games",
@@ -101948,15 +101596,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Aberration d\u00e9vorante",
-    "singular_plural_change": "Aberrations d\u00e9vorantes"
+    "original_value": "Aberration dévorante",
+    "singular_plural_change": "Aberrations dévorantes"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Myr Quadr\u00f3pode",
-    "singular_plural_change": "Myr Quadr\u00f3podes"
+    "original_value": "Myr Quadrópode",
+    "singular_plural_change": "Myr Quadrópodes"
   },
   {
     "database_id": "card_games",
@@ -101969,8 +101617,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ara\u00f1a mamut",
-    "singular_plural_change": "Ara\u00f1as mamut"
+    "original_value": "Araña mamut",
+    "singular_plural_change": "Arañas mamut"
   },
   {
     "database_id": "card_games",
@@ -101983,8 +101631,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ciempi\u00e9s vertebral",
-    "singular_plural_change": "Ciempi\u00e9s vertebrales"
+    "original_value": "Ciempiés vertebral",
+    "singular_plural_change": "Ciempiés vertebrales"
   },
   {
     "database_id": "card_games",
@@ -102004,8 +101652,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Necr\u00f3fago carnicero",
-    "singular_plural_change": "Necr\u00f3fagos carniceros"
+    "original_value": "Necrófago carnicero",
+    "singular_plural_change": "Necrófagos carniceros"
   },
   {
     "database_id": "card_games",
@@ -102018,22 +101666,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Glot\u00f3n karplusano",
-    "singular_plural_change": "Glot\u00f3n karplusanos"
+    "original_value": "Glotón karplusano",
+    "singular_plural_change": "Glotón karplusanos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Buscacaminos trit\u00f3n",
+    "original_value": "Buscacaminos tritón",
     "singular_plural_change": "Buscacaminos tritones"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n depredador",
-    "singular_plural_change": "drag\u00f3n depredadores"
+    "original_value": "Dragón depredador",
+    "singular_plural_change": "dragón depredadores"
   },
   {
     "database_id": "card_games",
@@ -102046,8 +101694,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "M\u00e1scara peregrina",
-    "singular_plural_change": "M\u00e1scaras peregrinas"
+    "original_value": "Máscara peregrina",
+    "singular_plural_change": "Máscaras peregrinas"
   },
   {
     "database_id": "card_games",
@@ -102060,8 +101708,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Temple d\u00e9sert\u00e9",
-    "singular_plural_change": "Temple d\u00e9sert\u00e9es"
+    "original_value": "Temple déserté",
+    "singular_plural_change": "Temple désertées"
   },
   {
     "database_id": "card_games",
@@ -102095,8 +101743,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Larves prosp\u00e8res",
-    "singular_plural_change": "Larve prosp\u00e8re"
+    "original_value": "Larves prospères",
+    "singular_plural_change": "Larve prospère"
   },
   {
     "database_id": "card_games",
@@ -102116,8 +101764,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mangual G\u00f3rgona",
-    "singular_plural_change": "Mangual G\u00f3rgonas"
+    "original_value": "Mangual Górgona",
+    "singular_plural_change": "Mangual Górgonas"
   },
   {
     "database_id": "card_games",
@@ -102137,8 +101785,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Jungle \u00e9paisse",
-    "singular_plural_change": "Jungle \u00e9paisses"
+    "original_value": "Jungle épaisse",
+    "singular_plural_change": "Jungle épaisses"
   },
   {
     "database_id": "card_games",
@@ -102158,14 +101806,14 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\u00c1spid nessiano",
-    "singular_plural_change": "\u00c1spid nessianos"
+    "original_value": "Áspid nessiano",
+    "singular_plural_change": "Áspid nessianos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Congregaci\u00f3n divina",
+    "original_value": "Congregación divina",
     "singular_plural_change": "congregaciones divinas"
   },
   {
@@ -102179,8 +101827,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ressources limit\u00e9es",
-    "singular_plural_change": "Ressource limit\u00e9es"
+    "original_value": "Ressources limitées",
+    "singular_plural_change": "Ressource limitées"
   },
   {
     "database_id": "card_games",
@@ -102193,8 +101841,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Archers mont\u00e9s",
-    "singular_plural_change": "Archers mont\u00e9"
+    "original_value": "Archers montés",
+    "singular_plural_change": "Archers monté"
   },
   {
     "database_id": "card_games",
@@ -102207,15 +101855,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Marcha For\u00e7ada",
-    "singular_plural_change": "Marchas For\u00e7adas"
+    "original_value": "Marcha Forçada",
+    "singular_plural_change": "Marchas Forçadas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sylves gangren\u00e9es",
-    "singular_plural_change": "Sylves gangr\u00e8ne"
+    "original_value": "Sylves gangrenées",
+    "singular_plural_change": "Sylves gangrène"
   },
   {
     "database_id": "card_games",
@@ -102228,8 +101876,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Varina, Lichk\u00f6nigin",
-    "singular_plural_change": "Varina, Lichk\u00f6nige"
+    "original_value": "Varina, Lichkönigin",
+    "singular_plural_change": "Varina, Lichkönige"
   },
   {
     "database_id": "card_games",
@@ -102298,8 +101946,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ambassadeur ch\u00eane",
-    "singular_plural_change": "Ambassadeurs ch\u00eane"
+    "original_value": "Ambassadeur chêne",
+    "singular_plural_change": "Ambassadeurs chêne"
   },
   {
     "database_id": "card_games",
@@ -102340,8 +101988,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Micodermo p\u00e1lido",
-    "singular_plural_change": "Micodermo p\u00e1lidos"
+    "original_value": "Micodermo pálido",
+    "singular_plural_change": "Micodermo pálidos"
   },
   {
     "database_id": "card_games",
@@ -102396,8 +102044,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Scarab\u00e9es Balises",
-    "singular_plural_change": "Scarab\u00e9e Balises"
+    "original_value": "Scarabées Balises",
+    "singular_plural_change": "Scarabée Balises"
   },
   {
     "database_id": "card_games",
@@ -102410,8 +102058,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ubc14\ub78c \ubcf4\ud589\uc790",
-    "singular_plural_change": "\ubc14\ub78c \ubcf4\ud589\uc790\ub4e4"
+    "original_value": "바람 보행자",
+    "singular_plural_change": "바람 보행자들"
   },
   {
     "database_id": "card_games",
@@ -102431,29 +102079,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Zang\u00e3o Incubador",
-    "singular_plural_change": "Zang\u00f5es Incubadores"
+    "original_value": "Zangão Incubador",
+    "singular_plural_change": "Zangões Incubadores"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Arque\u00f3loga Audaz",
-    "singular_plural_change": "arque\u00f3loga audaces"
+    "original_value": "Arqueóloga Audaz",
+    "singular_plural_change": "arqueóloga audaces"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Murci\u00e9lagos vampiro",
-    "singular_plural_change": "Murci\u00e9lagos vampiros"
+    "original_value": "Murciélagos vampiro",
+    "singular_plural_change": "Murciélagos vampiros"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Guivre segment\u00e9e",
-    "singular_plural_change": "Guivre segment\u00e9es"
+    "original_value": "Guivre segmentée",
+    "singular_plural_change": "Guivre segmentées"
   },
   {
     "database_id": "card_games",
@@ -102473,8 +102121,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Horror F\u00e9tido",
-    "singular_plural_change": "Horrors F\u00e9tidos"
+    "original_value": "Horror Fétido",
+    "singular_plural_change": "Horrors Fétidos"
   },
   {
     "database_id": "card_games",
@@ -102508,8 +102156,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Erupci\u00f3n volc\u00e1nica",
-    "singular_plural_change": "Erupciones volc\u00e1nicas"
+    "original_value": "Erupción volcánica",
+    "singular_plural_change": "Erupciones volcánicas"
   },
   {
     "database_id": "card_games",
@@ -102564,8 +102212,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chasseur chass\u00e9",
-    "singular_plural_change": "Chasseurs chass\u00e9s"
+    "original_value": "Chasseur chassé",
+    "singular_plural_change": "Chasseurs chassés"
   },
   {
     "database_id": "card_games",
@@ -102592,8 +102240,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Krasis hydro\u00efde",
-    "singular_plural_change": "Krasis hydro\u00efdes"
+    "original_value": "Krasis hydroïde",
+    "singular_plural_change": "Krasis hydroïdes"
   },
   {
     "database_id": "card_games",
@@ -102606,15 +102254,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Territ\u00f3rios Ilimitados",
-    "singular_plural_change": "Territ\u00f3rio Ilimitados"
+    "original_value": "Territórios Ilimitados",
+    "singular_plural_change": "Território Ilimitados"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Rakdos' R\u00fcckkehr",
-    "singular_plural_change": "Rakdos' R\u00fcckkehre"
+    "original_value": "Rakdos' Rückkehr",
+    "singular_plural_change": "Rakdos' Rückkehre"
   },
   {
     "database_id": "card_games",
@@ -102627,8 +102275,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hystrix putr\u00e9fi\u00e9",
-    "singular_plural_change": "hystrixes putr\u00e9fi\u00e9"
+    "original_value": "Hystrix putréfié",
+    "singular_plural_change": "hystrixes putréfié"
   },
   {
     "database_id": "card_games",
@@ -102669,8 +102317,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ascendance sulta\u00ef",
-    "singular_plural_change": "Ascendance sulta\u00efs"
+    "original_value": "Ascendance sultaï",
+    "singular_plural_change": "Ascendance sultaïs"
   },
   {
     "database_id": "card_games",
@@ -102683,8 +102331,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Arm\u00e9e sibsig",
-    "singular_plural_change": "Arm\u00e9es sibsig"
+    "original_value": "Armée sibsig",
+    "singular_plural_change": "Armées sibsig"
   },
   {
     "database_id": "card_games",
@@ -102704,8 +102352,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ucc2c\ub4dc\ub77c\uc758 \ubd88\uaf43\uc18c\uc6a9\ub3cc\uc774",
-    "singular_plural_change": "\ucc2c\ub4dc\ub77c\uc758 \ubd88\uaf43\uc18c\uc6a9\ub3cc\uc774\ub4e4"
+    "original_value": "찬드라의 불꽃소용돌이",
+    "singular_plural_change": "찬드라의 불꽃소용돌이들"
   },
   {
     "database_id": "card_games",
@@ -102718,8 +102366,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Minotaure karplus\u00e9an",
-    "singular_plural_change": "Minotaure karplus\u00e9ans"
+    "original_value": "Minotaure karpluséan",
+    "singular_plural_change": "Minotaure karpluséans"
   },
   {
     "database_id": "card_games",
@@ -102746,8 +102394,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ouf\u00e9 pardo",
-    "singular_plural_change": "Ouf\u00e9s pardo"
+    "original_value": "Oufé pardo",
+    "singular_plural_change": "Oufés pardo"
   },
   {
     "database_id": "card_games",
@@ -102809,8 +102457,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Pilote v\u00e9t\u00e9ran",
-    "singular_plural_change": "Pilotes v\u00e9t\u00e9rans"
+    "original_value": "Pilote vétéran",
+    "singular_plural_change": "Pilotes vétérans"
   },
   {
     "database_id": "card_games",
@@ -102823,8 +102471,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Slivo\u00efde d\u00e9ment",
-    "singular_plural_change": "Slivo\u00efdes d\u00e9ment"
+    "original_value": "Slivoïde dément",
+    "singular_plural_change": "Slivoïdes dément"
   },
   {
     "database_id": "card_games",
@@ -102837,8 +102485,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sarkhan, almadrag\u00f3n",
-    "singular_plural_change": "Sarkhanes, almadrag\u00f3n"
+    "original_value": "Sarkhan, almadragón",
+    "singular_plural_change": "Sarkhanes, almadragón"
   },
   {
     "database_id": "card_games",
@@ -102865,8 +102513,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Griffon pris\u00e9",
-    "singular_plural_change": "Griffons pris\u00e9s"
+    "original_value": "Griffon prisé",
+    "singular_plural_change": "Griffons prisés"
   },
   {
     "database_id": "card_games",
@@ -102879,8 +102527,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Araign\u00e9e lance-dard",
-    "singular_plural_change": "Araign\u00e9es lance-dard"
+    "original_value": "Araignée lance-dard",
+    "singular_plural_change": "Araignées lance-dard"
   },
   {
     "database_id": "card_games",
@@ -102893,8 +102541,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Monta\u00f1\u00e9s trasgo",
-    "singular_plural_change": "Monta\u00f1\u00e9s trasgos"
+    "original_value": "Montañés trasgo",
+    "singular_plural_change": "Montañés trasgos"
   },
   {
     "database_id": "card_games",
@@ -102921,15 +102569,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00e3o Tirano",
-    "singular_plural_change": "Drag\u00f5es Tirano"
+    "original_value": "Dragão Tirano",
+    "singular_plural_change": "Dragões Tirano"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Graznasil chill\u00f3n",
-    "singular_plural_change": "Graznasiles chill\u00f3n"
+    "original_value": "Graznasil chillón",
+    "singular_plural_change": "Graznasiles chillón"
   },
   {
     "database_id": "card_games",
@@ -103033,8 +102681,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Competidor R\u00fanico",
-    "singular_plural_change": "Competidores R\u00fanicos"
+    "original_value": "Competidor Rúnico",
+    "singular_plural_change": "Competidores Rúnicos"
   },
   {
     "database_id": "card_games",
@@ -103075,15 +102723,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Brigadi\u00e8re ang\u00e9lique",
-    "singular_plural_change": "Brigadi\u00e8res ang\u00e9liques"
+    "original_value": "Brigadière angélique",
+    "singular_plural_change": "Brigadières angéliques"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Bastion bois\u00e9",
-    "singular_plural_change": "Bastion bois\u00e9s"
+    "original_value": "Bastion boisé",
+    "singular_plural_change": "Bastion boisés"
   },
   {
     "database_id": "card_games",
@@ -103131,22 +102779,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Determinaci\u00f3n corrompida",
+    "original_value": "Determinación corrompida",
     "singular_plural_change": "Determinaciones corrompidas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gorila tit\u00e1n",
-    "singular_plural_change": "Gorilas tit\u00e1n"
+    "original_value": "Gorila titán",
+    "singular_plural_change": "Gorilas titán"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Slivo\u00efde fongo\u00efde",
-    "singular_plural_change": "Slivo\u00efdes fongo\u00efde"
+    "original_value": "Slivoïde fongoïde",
+    "singular_plural_change": "Slivoïdes fongoïde"
   },
   {
     "database_id": "card_games",
@@ -103215,22 +102863,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "An\u00f5es Guerreiros",
-    "singular_plural_change": "An\u00e3o Guerreiros"
+    "original_value": "Anões Guerreiros",
+    "singular_plural_change": "Anão Guerreiros"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e1n primigenio",
+    "original_value": "Titán primigenio",
     "singular_plural_change": "Titanes primigenios"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Jabal\u00ed nessiano",
-    "singular_plural_change": "jabal\u00edes nessiano"
+    "original_value": "Jabalí nessiano",
+    "singular_plural_change": "jabalíes nessiano"
   },
   {
     "database_id": "card_games",
@@ -103257,22 +102905,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "R\u00e9cup\u00e9rateur myr",
-    "singular_plural_change": "R\u00e9cup\u00e9rateurs myr"
+    "original_value": "Récupérateur myr",
+    "singular_plural_change": "Récupérateurs myr"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Taigams R\u00e4nkespiel",
-    "singular_plural_change": "Taigams R\u00e4nkespiele"
+    "original_value": "Taigams Ränkespiel",
+    "singular_plural_change": "Taigams Ränkespiele"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Germina\u00e7\u00e3o Golgari",
-    "singular_plural_change": "Germina\u00e7\u00f5es Golgari"
+    "original_value": "Germinação Golgari",
+    "singular_plural_change": "Germinações Golgari"
   },
   {
     "database_id": "card_games",
@@ -103299,15 +102947,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cohorte irr\u00e9guli\u00e8re",
-    "singular_plural_change": "cohortes irr\u00e9guli\u00e8res"
+    "original_value": "Cohorte irrégulière",
+    "singular_plural_change": "cohortes irrégulières"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Desd\u00e9n r\u00e1ksasa",
-    "singular_plural_change": "Desd\u00e9n r\u00e1ksasas"
+    "original_value": "Desdén ráksasa",
+    "singular_plural_change": "Desdén ráksasas"
   },
   {
     "database_id": "card_games",
@@ -103355,8 +103003,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Skaab poss\u00e9d\u00e9",
-    "singular_plural_change": "Skaab poss\u00e9d\u00e9s"
+    "original_value": "Skaab possédé",
+    "singular_plural_change": "Skaab possédés"
   },
   {
     "database_id": "card_games",
@@ -103397,8 +103045,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ant\u00edlope gr\u00e1cil",
-    "singular_plural_change": "Ant\u00edlopes gr\u00e1cil"
+    "original_value": "Antílope grácil",
+    "singular_plural_change": "Antílopes grácil"
   },
   {
     "database_id": "card_games",
@@ -103425,8 +103073,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Capit\u00e1n Drogskol",
-    "singular_plural_change": "Capit\u00e1n Drogskols"
+    "original_value": "Capitán Drogskol",
+    "singular_plural_change": "Capitán Drogskols"
   },
   {
     "database_id": "card_games",
@@ -103453,8 +103101,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Schl\u00e4ngelnde Schlange",
-    "singular_plural_change": "Schl\u00e4ngelnde Schlangen"
+    "original_value": "Schlängelnde Schlange",
+    "singular_plural_change": "Schlängelnde Schlangen"
   },
   {
     "database_id": "card_games",
@@ -103488,8 +103136,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Assassin renomm\u00e9",
-    "singular_plural_change": "Assassin renomm\u00e9es"
+    "original_value": "Assassin renommé",
+    "singular_plural_change": "Assassin renommées"
   },
   {
     "database_id": "card_games",
@@ -103523,8 +103171,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc7a5\ud2f0\ud478\uc2a4 \uc950\ub5bc",
-    "singular_plural_change": "\uc7a5\ud2f0\ud478\uc2a4 \uc950\ub4e4"
+    "original_value": "장티푸스 쥐떼",
+    "singular_plural_change": "장티푸스 쥐들"
   },
   {
     "database_id": "card_games",
@@ -103544,8 +103192,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Frenes\u00ed experimental",
-    "singular_plural_change": "Frenes\u00eds experimental"
+    "original_value": "Frenesí experimental",
+    "singular_plural_change": "Frenesís experimental"
   },
   {
     "database_id": "card_games",
@@ -103558,8 +103206,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Yeti karplus\u00e9an",
-    "singular_plural_change": "Yeti karplus\u00e9s"
+    "original_value": "Yeti karpluséan",
+    "singular_plural_change": "Yeti karplusés"
   },
   {
     "database_id": "card_games",
@@ -103586,8 +103234,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Adaptaci\u00f3n arcana",
-    "singular_plural_change": "Adaptaci\u00f3n arcanas"
+    "original_value": "Adaptación arcana",
+    "singular_plural_change": "Adaptación arcanas"
   },
   {
     "database_id": "card_games",
@@ -103628,8 +103276,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Garza colam\u00edstica",
-    "singular_plural_change": "Garza colam\u00edsticas"
+    "original_value": "Garza colamística",
+    "singular_plural_change": "Garza colamísticas"
   },
   {
     "database_id": "card_games",
@@ -103663,8 +103311,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gambit d\u00e9sesp\u00e9r\u00e9",
-    "singular_plural_change": "Gambit d\u00e9sesp\u00e9r\u00e9s"
+    "original_value": "Gambit désespéré",
+    "singular_plural_change": "Gambit désespérés"
   },
   {
     "database_id": "card_games",
@@ -103754,15 +103402,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Absorber man\u00e1",
+    "original_value": "Absorber maná",
     "singular_plural_change": "Absorber men"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc410\uae30\ud480 \ub3fc\uc9c0",
-    "singular_plural_change": "\uc410\uae30\ud480 \ub3fc\uc9c0\ub4e4"
+    "original_value": "쐐기풀 돼지",
+    "singular_plural_change": "쐐기풀 돼지들"
   },
   {
     "database_id": "card_games",
@@ -103775,8 +103423,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Bendici\u00f3n ben\u00e9vola",
-    "singular_plural_change": "Bendiciones ben\u00e9volas"
+    "original_value": "Bendición benévola",
+    "singular_plural_change": "Bendiciones benévolas"
   },
   {
     "database_id": "card_games",
@@ -103810,8 +103458,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Intelligence irr\u00e9sistible",
-    "singular_plural_change": "Intelligences irr\u00e9sistible"
+    "original_value": "Intelligence irrésistible",
+    "singular_plural_change": "Intelligences irrésistible"
   },
   {
     "database_id": "card_games",
@@ -103824,15 +103472,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Guivre carnassi\u00e8re",
-    "singular_plural_change": "Guivre carnassi\u00e8res"
+    "original_value": "Guivre carnassière",
+    "singular_plural_change": "Guivre carnassières"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Polukranos, lib\u00e9r\u00e9",
-    "singular_plural_change": "Polukranos, lib\u00e9r\u00e9s"
+    "original_value": "Polukranos, libéré",
+    "singular_plural_change": "Polukranos, libérés"
   },
   {
     "database_id": "card_games",
@@ -103901,15 +103549,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Campe\u00f3n ledev",
+    "original_value": "Campeón ledev",
     "singular_plural_change": "campeones ledev"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Pr\u00e9dateur slith",
-    "singular_plural_change": "Pr\u00e9dateurs slith"
+    "original_value": "Prédateur slith",
+    "singular_plural_change": "Prédateurs slith"
   },
   {
     "database_id": "card_games",
@@ -103950,8 +103598,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cyclope folh\u00e2te",
-    "singular_plural_change": "Cyclope folh\u00e2tes"
+    "original_value": "Cyclope folhâte",
+    "singular_plural_change": "Cyclope folhâtes"
   },
   {
     "database_id": "card_games",
@@ -103992,15 +103640,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Unic\u00f3rnio Opalino",
-    "singular_plural_change": "Unic\u00f3rnios Opalinos"
+    "original_value": "Unicórnio Opalino",
+    "singular_plural_change": "Unicórnios Opalinos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Montagne enneig\u00e9e",
-    "singular_plural_change": "Montagne enneig\u00e9es"
+    "original_value": "Montagne enneigée",
+    "singular_plural_change": "Montagne enneigées"
   },
   {
     "database_id": "card_games",
@@ -104020,8 +103668,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Noble mal\u00e9fique",
-    "singular_plural_change": "Noble mal\u00e9fiques"
+    "original_value": "Noble maléfique",
+    "singular_plural_change": "Noble maléfiques"
   },
   {
     "database_id": "card_games",
@@ -104041,8 +103689,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chim\u00e8re r\u00e9pugnante",
-    "singular_plural_change": "Chim\u00e8res r\u00e9pugnantes"
+    "original_value": "Chimère répugnante",
+    "singular_plural_change": "Chimères répugnantes"
   },
   {
     "database_id": "card_games",
@@ -104062,8 +103710,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Z\u00e9lateurs en-Dal",
-    "singular_plural_change": "Z\u00e9lateur en-Dal"
+    "original_value": "Zélateurs en-Dal",
+    "singular_plural_change": "Zélateur en-Dal"
   },
   {
     "database_id": "card_games",
@@ -104090,8 +103738,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Carcasse prot\u00e9enne",
-    "singular_plural_change": "carcasses prot\u00e9ennes"
+    "original_value": "Carcasse protéenne",
+    "singular_plural_change": "carcasses protéennes"
   },
   {
     "database_id": "card_games",
@@ -104104,8 +103752,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Fan\u00e1tica quijadasangrienta",
-    "singular_plural_change": "Fan\u00e1tica quijadasangrientas"
+    "original_value": "Fanática quijadasangrienta",
+    "singular_plural_change": "Fanática quijadasangrientas"
   },
   {
     "database_id": "card_games",
@@ -104125,8 +103773,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Crocodile voil\u00e9",
-    "singular_plural_change": "Crocodiles voil\u00e9s"
+    "original_value": "Crocodile voilé",
+    "singular_plural_change": "Crocodiles voilés"
   },
   {
     "database_id": "card_games",
@@ -104174,15 +103822,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ud314\ucf04\ub77c\uc2a4\uac00\uc758 \uc2b5\uaca9\uc790\ub4e4",
-    "singular_plural_change": "\ud314\ucf04\ub77c\uc2a4\uac00\uc758 \uc2b5\uaca9\uc790"
+    "original_value": "팔켄라스가의 습격자들",
+    "singular_plural_change": "팔켄라스가의 습격자"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Enchev\u00eatreurs kor",
-    "singular_plural_change": "Enchev\u00eatreurs kors"
+    "original_value": "Enchevêtreurs kor",
+    "singular_plural_change": "Enchevêtreurs kors"
   },
   {
     "database_id": "card_games",
@@ -104195,22 +103843,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Iniciado Botic\u00e1rio",
-    "singular_plural_change": "Iniciado Botic\u00e1rios"
+    "original_value": "Iniciado Boticário",
+    "singular_plural_change": "Iniciado Boticários"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Crat\u00e9rier gobelin",
-    "singular_plural_change": "Crat\u00e9riers gobelin"
+    "original_value": "Cratérier gobelin",
+    "singular_plural_change": "Cratériers gobelin"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ud3d0\ud5c8\ub4f1 \ucf54\ubfd4\uc18c",
-    "singular_plural_change": "\ud3d0\ud5c8\ub4f1 \ucf54\ubfd4\uc18c\ub4e4"
+    "original_value": "폐허등 코뿔소",
+    "singular_plural_change": "폐허등 코뿔소들"
   },
   {
     "database_id": "card_games",
@@ -104244,8 +103892,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Arn\u00e9s mental",
-    "singular_plural_change": "Arn\u00e9s mentals"
+    "original_value": "Arnés mental",
+    "singular_plural_change": "Arnés mentals"
   },
   {
     "database_id": "card_games",
@@ -104279,8 +103927,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Z\u00e9phyrnaute sangami",
-    "singular_plural_change": "Z\u00e9phyrnaute sangamis"
+    "original_value": "Zéphyrnaute sangami",
+    "singular_plural_change": "Zéphyrnaute sangamis"
   },
   {
     "database_id": "card_games",
@@ -104293,22 +103941,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Naga pers\u00e9cutrice",
-    "singular_plural_change": "Naga pers\u00e9cuteurs"
+    "original_value": "Naga persécutrice",
+    "singular_plural_change": "Naga persécuteurs"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ultim\u00e1tum tit\u00e1nico",
-    "singular_plural_change": "Ultim\u00e1tums tit\u00e1nicos"
+    "original_value": "Ultimátum titánico",
+    "singular_plural_change": "Ultimátums titánicos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Erfahrener Fu\u00dfsoldat",
-    "singular_plural_change": "Erfahrene Fu\u00dfsoldaten"
+    "original_value": "Erfahrener Fußsoldat",
+    "singular_plural_change": "Erfahrene Fußsoldaten"
   },
   {
     "database_id": "card_games",
@@ -104349,8 +103997,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lynx affam\u00e9",
-    "singular_plural_change": "Lynx affam\u00e9s"
+    "original_value": "Lynx affamé",
+    "singular_plural_change": "Lynx affamés"
   },
   {
     "database_id": "card_games",
@@ -104384,8 +104032,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chirurgien sr\u00e2ne",
-    "singular_plural_change": "chirurgiens sr\u00e2ne"
+    "original_value": "Chirurgien srâne",
+    "singular_plural_change": "chirurgiens srâne"
   },
   {
     "database_id": "card_games",
@@ -104419,8 +104067,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Geist ferr\u00e9",
-    "singular_plural_change": "Geist ferr\u00e9s"
+    "original_value": "Geist ferré",
+    "singular_plural_change": "Geist ferrés"
   },
   {
     "database_id": "card_games",
@@ -104454,8 +104102,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Agger renforc\u00e9",
-    "singular_plural_change": "Agger renforc\u00e9s"
+    "original_value": "Agger renforcé",
+    "singular_plural_change": "Agger renforcés"
   },
   {
     "database_id": "card_games",
@@ -104468,29 +104116,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "S\u00e9journeurs d'Esper",
-    "singular_plural_change": "S\u00e9journeur d'Esper"
+    "original_value": "Séjourneurs d'Esper",
+    "singular_plural_change": "Séjourneur d'Esper"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Combusti\u00f3n espont\u00e1nea",
-    "singular_plural_change": "Combustiones espont\u00e1neas"
+    "original_value": "Combustión espontánea",
+    "singular_plural_change": "Combustiones espontáneas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Krasis ren\u00e9gat",
-    "singular_plural_change": "Krasis ren\u00e9gats"
+    "original_value": "Krasis renégat",
+    "singular_plural_change": "Krasis renégats"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Produ\u00e7\u00e3o Mecanizada",
-    "singular_plural_change": "Produ\u00e7\u00f5es Mecanizadas"
+    "original_value": "Produção Mecanizada",
+    "singular_plural_change": "Produções Mecanizadas"
   },
   {
     "database_id": "card_games",
@@ -104503,8 +104151,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Voil\u00e9chine happeur",
-    "singular_plural_change": "Voil\u00e9chine happeurs"
+    "original_value": "Voiléchine happeur",
+    "singular_plural_change": "Voiléchine happeurs"
   },
   {
     "database_id": "card_games",
@@ -104538,8 +104186,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Felidar guardi\u00e1n",
-    "singular_plural_change": "Felidar guardi\u00e1ns"
+    "original_value": "Felidar guardián",
+    "singular_plural_change": "Felidar guardiáns"
   },
   {
     "database_id": "card_games",
@@ -104559,8 +104207,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Legion\u00e1rio Goblin",
-    "singular_plural_change": "Legion\u00e1rios Goblin"
+    "original_value": "Legionário Goblin",
+    "singular_plural_change": "Legionários Goblin"
   },
   {
     "database_id": "card_games",
@@ -104588,7 +104236,7 @@
     "table": "foreign_data",
     "column": "name",
     "original_value": "Riskanter Zug",
-    "singular_plural_change": "Riskanter Z\u00fcge"
+    "singular_plural_change": "Riskanter Züge"
   },
   {
     "database_id": "card_games",
@@ -104601,8 +104249,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Maritimer W\u00e4chter",
-    "singular_plural_change": "Maritimer W\u00e4chters"
+    "original_value": "Maritimer Wächter",
+    "singular_plural_change": "Maritimer Wächters"
   },
   {
     "database_id": "card_games",
@@ -104615,8 +104263,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00ed espinoso",
-    "singular_plural_change": "Tit\u00edes espinosos"
+    "original_value": "Tití espinoso",
+    "singular_plural_change": "Titíes espinosos"
   },
   {
     "database_id": "card_games",
@@ -104706,15 +104354,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ascension ang\u00e9lique",
-    "singular_plural_change": "Ascension ang\u00e9liques"
+    "original_value": "Ascension angélique",
+    "singular_plural_change": "Ascension angéliques"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Angraths Pl\u00fcnderer",
-    "singular_plural_change": "Angraths Pl\u00fcnderers"
+    "original_value": "Angraths Plünderer",
+    "singular_plural_change": "Angraths Plünderers"
   },
   {
     "database_id": "card_games",
@@ -104839,8 +104487,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Recrue r\u00e9calcitrante",
-    "singular_plural_change": "Recrues r\u00e9calcitrantes"
+    "original_value": "Recrue récalcitrante",
+    "singular_plural_change": "Recrues récalcitrantes"
   },
   {
     "database_id": "card_games",
@@ -104853,8 +104501,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ultim\u00e1tum emergente",
-    "singular_plural_change": "Ultim\u00e1tums emergentes"
+    "original_value": "Ultimátum emergente",
+    "singular_plural_change": "Ultimátums emergentes"
   },
   {
     "database_id": "card_games",
@@ -104881,15 +104529,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gr\u00fcne Manabatterie",
-    "singular_plural_change": "Gr\u00fcne Manabatterien"
+    "original_value": "Grüne Manabatterie",
+    "singular_plural_change": "Grüne Manabatterien"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lithoforce us\u00e9e",
-    "singular_plural_change": "Lithoforce us\u00e9es"
+    "original_value": "Lithoforce usée",
+    "singular_plural_change": "Lithoforce usées"
   },
   {
     "database_id": "card_games",
@@ -104902,8 +104550,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Slivo\u00efde g\u00e9niteur",
-    "singular_plural_change": "Slivo\u00efdes g\u00e9niteur"
+    "original_value": "Slivoïde géniteur",
+    "singular_plural_change": "Slivoïdes géniteur"
   },
   {
     "database_id": "card_games",
@@ -104944,8 +104592,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Superi\u00f3n myr",
-    "singular_plural_change": "superi\u00f3n myrs"
+    "original_value": "Superión myr",
+    "singular_plural_change": "superión myrs"
   },
   {
     "database_id": "card_games",
@@ -105007,15 +104655,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chauffec\u0153ur vulshok",
-    "singular_plural_change": "chauffec\u0153urs vulshok"
+    "original_value": "Chauffecœur vulshok",
+    "singular_plural_change": "chauffecœurs vulshok"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Carni\u00e7al Carniceiro",
-    "singular_plural_change": "carni\u00e7ais carniceiro"
+    "original_value": "Carniçal Carniceiro",
+    "singular_plural_change": "carniçais carniceiro"
   },
   {
     "database_id": "card_games",
@@ -105042,8 +104690,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Charge inspir\u00e9e",
-    "singular_plural_change": "charges inspir\u00e9es"
+    "original_value": "Charge inspirée",
+    "singular_plural_change": "charges inspirées"
   },
   {
     "database_id": "card_games",
@@ -105070,8 +104718,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Unic\u00f3rnio Capasheno",
-    "singular_plural_change": "Unic\u00f3rnios Capasheno"
+    "original_value": "Unicórnio Capasheno",
+    "singular_plural_change": "Unicórnios Capasheno"
   },
   {
     "database_id": "card_games",
@@ -105084,8 +104732,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Murmelndes Geh\u00f6lz",
-    "singular_plural_change": "Murmelnde Geh\u00f6lze"
+    "original_value": "Murmelndes Gehölz",
+    "singular_plural_change": "Murmelnde Gehölze"
   },
   {
     "database_id": "card_games",
@@ -105112,8 +104760,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Focus pr\u00e9datoire",
-    "singular_plural_change": "Focus pr\u00e9dateurs"
+    "original_value": "Focus prédatoire",
+    "singular_plural_change": "Focus prédateurs"
   },
   {
     "database_id": "card_games",
@@ -105133,7 +104781,7 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Asesino trit\u00f3n",
+    "original_value": "Asesino tritón",
     "singular_plural_change": "asesino tritones"
   },
   {
@@ -105168,8 +104816,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc601\ud63c \uc810\uc7c1\uc774",
-    "singular_plural_change": "\uc601\ud63c \uc810\uc7c1\uc774\ub4e4"
+    "original_value": "영혼 점쟁이",
+    "singular_plural_change": "영혼 점쟁이들"
   },
   {
     "database_id": "card_games",
@@ -105190,7 +104838,7 @@
     "table": "foreign_data",
     "column": "name",
     "original_value": "Perros guardianes",
-    "singular_plural_change": "perro guardi\u00e1n"
+    "singular_plural_change": "perro guardián"
   },
   {
     "database_id": "card_games",
@@ -105210,7 +104858,7 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Depredaci\u00f3n innatural",
+    "original_value": "Depredación innatural",
     "singular_plural_change": "Depredaciones innaturales"
   },
   {
@@ -105231,8 +104879,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Capit\u00e3 Sisay",
-    "singular_plural_change": "Capit\u00e3es Sisay"
+    "original_value": "Capitã Sisay",
+    "singular_plural_change": "Capitães Sisay"
   },
   {
     "database_id": "card_games",
@@ -105252,7 +104900,7 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Fylgja ursid\u00e9",
+    "original_value": "Fylgja ursidé",
     "singular_plural_change": "Fylgja ursidar"
   },
   {
@@ -105329,14 +104977,14 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Her\u00f3is Colossais",
-    "singular_plural_change": "Her\u00f3i Colossais"
+    "original_value": "Heróis Colossais",
+    "singular_plural_change": "Herói Colossais"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n voraz",
+    "original_value": "Dragón voraz",
     "singular_plural_change": "dragons voraz"
   },
   {
@@ -105357,8 +105005,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Surcaolas trit\u00f3nido",
-    "singular_plural_change": "Surcaolas trit\u00f3nidos"
+    "original_value": "Surcaolas tritónido",
+    "singular_plural_change": "Surcaolas tritónidos"
   },
   {
     "database_id": "card_games",
@@ -105392,8 +105040,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gu\u00e9rillero gobelin",
-    "singular_plural_change": "Gu\u00e9rillero goblins"
+    "original_value": "Guérillero gobelin",
+    "singular_plural_change": "Guérillero goblins"
   },
   {
     "database_id": "card_games",
@@ -105441,8 +105089,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ira fren\u00e9tica",
-    "singular_plural_change": "Ira fren\u00e9ticas"
+    "original_value": "Ira frenética",
+    "singular_plural_change": "Ira frenéticas"
   },
   {
     "database_id": "card_games",
@@ -105455,8 +105103,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "El\u00e8ve chahuteur",
-    "singular_plural_change": "\u00e9l\u00e8ve chahuteurs"
+    "original_value": "Elève chahuteur",
+    "singular_plural_change": "élève chahuteurs"
   },
   {
     "database_id": "card_games",
@@ -105484,7 +105132,7 @@
     "table": "foreign_data",
     "column": "name",
     "original_value": "Selektive Falle",
-    "singular_plural_change": "Selektive F\u00e4lle"
+    "singular_plural_change": "Selektive Fälle"
   },
   {
     "database_id": "card_games",
@@ -105511,8 +105159,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Infanter\u00eda pesada",
-    "singular_plural_change": "Infanter\u00edas pesadas"
+    "original_value": "Infantería pesada",
+    "singular_plural_change": "Infanterías pesadas"
   },
   {
     "database_id": "card_games",
@@ -105532,15 +105180,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mysteri\u00f6ses Ei",
-    "singular_plural_change": "Mysteri\u00f6se Eier"
+    "original_value": "Mysteriöses Ei",
+    "singular_plural_change": "Mysteriöse Eier"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Peticion\u00e1rios Persistentes",
-    "singular_plural_change": "Peticion\u00e1rios Persistente"
+    "original_value": "Peticionários Persistentes",
+    "singular_plural_change": "Peticionários Persistente"
   },
   {
     "database_id": "card_games",
@@ -105560,8 +105208,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Wilder T\u00e4uscher",
-    "singular_plural_change": "Wilder T\u00e4uschers"
+    "original_value": "Wilder Täuscher",
+    "singular_plural_change": "Wilder Täuschers"
   },
   {
     "database_id": "card_games",
@@ -105574,8 +105222,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00e3o Exaltado",
-    "singular_plural_change": "Drag\u00f5es Exaltados"
+    "original_value": "Dragão Exaltado",
+    "singular_plural_change": "Dragões Exaltados"
   },
   {
     "database_id": "card_games",
@@ -105588,8 +105236,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Dragon d\u00e9l\u00e9t\u00e8re",
-    "singular_plural_change": "dragons d\u00e9l\u00e9t\u00e8re"
+    "original_value": "Dragon délétère",
+    "singular_plural_change": "dragons délétère"
   },
   {
     "database_id": "card_games",
@@ -105609,15 +105257,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Conflagration annonc\u00e9e",
-    "singular_plural_change": "Conflagrations annonc\u00e9e"
+    "original_value": "Conflagration annoncée",
+    "singular_plural_change": "Conflagrations annoncée"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Triton cr\u00e9pitant",
-    "singular_plural_change": "Triton cr\u00e9pitants"
+    "original_value": "Triton crépitant",
+    "singular_plural_change": "Triton crépitants"
   },
   {
     "database_id": "card_games",
@@ -105630,8 +105278,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "M\u00edmico progenitor",
-    "singular_plural_change": "M\u00edmicos progenitor"
+    "original_value": "Mímico progenitor",
+    "singular_plural_change": "Mímicos progenitor"
   },
   {
     "database_id": "card_games",
@@ -105644,15 +105292,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc0ac\uc6d0\uc758 \uc0c8\ub5bc",
-    "singular_plural_change": "\uc0ac\uc6d0\uc758 \uc0c8\ub4e4"
+    "original_value": "사원의 새떼",
+    "singular_plural_change": "사원의 새들"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Simulacro soldev\u00ed",
-    "singular_plural_change": "Simulacros soldev\u00ed"
+    "original_value": "Simulacro soldeví",
+    "singular_plural_change": "Simulacros soldeví"
   },
   {
     "database_id": "card_games",
@@ -105672,8 +105320,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Germinador t\u00e1lido",
-    "singular_plural_change": "Germinador t\u00e1licos"
+    "original_value": "Germinador tálido",
+    "singular_plural_change": "Germinador tálicos"
   },
   {
     "database_id": "card_games",
@@ -105686,8 +105334,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Berserker v\u00falshok",
-    "singular_plural_change": "Berserker v\u00falshoks"
+    "original_value": "Berserker vúlshok",
+    "singular_plural_change": "Berserker vúlshoks"
   },
   {
     "database_id": "card_games",
@@ -105700,8 +105348,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "V\u00e9n\u00e9rable kumo",
-    "singular_plural_change": "V\u00e9n\u00e9rables kumo"
+    "original_value": "Vénérable kumo",
+    "singular_plural_change": "Vénérables kumo"
   },
   {
     "database_id": "card_games",
@@ -105721,15 +105369,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Kurkesh, Onakke-\u00c4ltester",
-    "singular_plural_change": "Kurkesh, Onakke-\u00c4ltesters"
+    "original_value": "Kurkesh, Onakke-Ältester",
+    "singular_plural_change": "Kurkesh, Onakke-Ältesters"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Zancudo l\u00f3brego",
-    "singular_plural_change": "Zancudos l\u00f3bregos"
+    "original_value": "Zancudo lóbrego",
+    "singular_plural_change": "Zancudos lóbregos"
   },
   {
     "database_id": "card_games",
@@ -105784,8 +105432,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Baku crinecr\u00e2ne",
-    "singular_plural_change": "Baku crinecr\u00e2nes"
+    "original_value": "Baku crinecrâne",
+    "singular_plural_change": "Baku crinecrânes"
   },
   {
     "database_id": "card_games",
@@ -105798,8 +105446,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Oracle grav\u00e9",
-    "singular_plural_change": "Oracle grav\u00e9s"
+    "original_value": "Oracle gravé",
+    "singular_plural_change": "Oracle gravés"
   },
   {
     "database_id": "card_games",
@@ -105812,15 +105460,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ara\u00f1a Penumbra",
-    "singular_plural_change": "Ara\u00f1as Penumbra"
+    "original_value": "Araña Penumbra",
+    "singular_plural_change": "Arañas Penumbra"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Purificaci\u00f3n fren\u00e9tica",
-    "singular_plural_change": "Purificaci\u00f3n fren\u00e9ticas"
+    "original_value": "Purificación frenética",
+    "singular_plural_change": "Purificación frenéticas"
   },
   {
     "database_id": "card_games",
@@ -105910,14 +105558,14 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\u0410\u0440\u043a\u0430\u0434\u0435\u0441, \u0421\u0442\u0440\u0430\u0442\u0435\u0433",
-    "singular_plural_change": "\u0410\u0440\u043a\u0430\u0434\u0435\u0441, \u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438"
+    "original_value": "Аркадес, Стратег",
+    "singular_plural_change": "Аркадес, Стратеги"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\u041a\u043d\u0438\u0433\u0430 \u0437\u0430\u043a\u043b\u0438\u043d\u0430\u043d\u0438\u0439",
+    "original_value": "Книга заклинаний",
     "singular_plural_change": "books"
   },
   {
@@ -105931,8 +105579,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tutora m\u00edstica",
-    "singular_plural_change": "Tutora m\u00edsticas"
+    "original_value": "Tutora mística",
+    "singular_plural_change": "Tutora místicas"
   },
   {
     "database_id": "card_games",
@@ -105966,15 +105614,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Spores \u00e9trangleuses",
-    "singular_plural_change": "Spores \u00e9trangleuse"
+    "original_value": "Spores étrangleuses",
+    "singular_plural_change": "Spores étrangleuse"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Artesanato Dur\u00e1vel",
-    "singular_plural_change": "Artesanato Dur\u00e1veis"
+    "original_value": "Artesanato Durável",
+    "singular_plural_change": "Artesanato Duráveis"
   },
   {
     "database_id": "card_games",
@@ -105994,8 +105642,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Familiar n\u00e9urok",
-    "singular_plural_change": "familiar n\u00e9uroks"
+    "original_value": "Familiar néurok",
+    "singular_plural_change": "familiar néuroks"
   },
   {
     "database_id": "card_games",
@@ -106029,8 +105677,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Camelo Solit\u00e1rio",
-    "singular_plural_change": "Camelo Solit\u00e1rios"
+    "original_value": "Camelo Solitário",
+    "singular_plural_change": "Camelo Solitários"
   },
   {
     "database_id": "card_games",
@@ -106071,22 +105719,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cortezap\u00e1lida anciano",
+    "original_value": "Cortezapálida anciano",
     "singular_plural_change": "anciano"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hipop\u00f3tamo Pigmeu",
-    "singular_plural_change": "Hipop\u00f3tamos Pigmeus"
+    "original_value": "Hipopótamo Pigmeu",
+    "singular_plural_change": "Hipopótamos Pigmeus"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ca\u00f1oneo orco",
-    "singular_plural_change": "Ca\u00f1oneos orco"
+    "original_value": "Cañoneo orco",
+    "singular_plural_change": "Cañoneos orco"
   },
   {
     "database_id": "card_games",
@@ -106099,15 +105747,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Lobo Solit\u00e1rio",
-    "singular_plural_change": "Lobos Solit\u00e1rios"
+    "original_value": "Lobo Solitário",
+    "singular_plural_change": "Lobos Solitários"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Brisants shiv\u00e2ns",
-    "singular_plural_change": "Brisants shiv\u00e2n"
+    "original_value": "Brisants shivâns",
+    "singular_plural_change": "Brisants shivân"
   },
   {
     "database_id": "card_games",
@@ -106120,8 +105768,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ud559\uc608\uc0ac\uc758 \ubcf4\ud638",
-    "singular_plural_change": "\ud559\uc608\uc0ac\ub4e4\uc758 \ubcf4\ud638"
+    "original_value": "학예사의 보호",
+    "singular_plural_change": "학예사들의 보호"
   },
   {
     "database_id": "card_games",
@@ -106141,8 +105789,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Golem Rel\u00edquia",
-    "singular_plural_change": "Golem Rel\u00edquias"
+    "original_value": "Golem Relíquia",
+    "singular_plural_change": "Golem Relíquias"
   },
   {
     "database_id": "card_games",
@@ -106155,8 +105803,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\u00c9claireur kavru",
-    "singular_plural_change": "\u00c9claireurs kavru"
+    "original_value": "Éclaireur kavru",
+    "singular_plural_change": "Éclaireurs kavru"
   },
   {
     "database_id": "card_games",
@@ -106176,8 +105824,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Behemoth B\u00eantico",
-    "singular_plural_change": "Behemoth B\u00eanticos"
+    "original_value": "Behemoth Bêntico",
+    "singular_plural_change": "Behemoth Bênticos"
   },
   {
     "database_id": "card_games",
@@ -106218,14 +105866,14 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ubd80\uc801\ud30c\uad34 \uc545\ub839\ub4e4",
-    "singular_plural_change": "\ubd80\uc801\ud30c\uad34 \uc545\ub839"
+    "original_value": "부적파괴 악령들",
+    "singular_plural_change": "부적파괴 악령"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Caparaz\u00f3n clon",
+    "original_value": "Caparazón clon",
     "singular_plural_change": "Caparazones clon"
   },
   {
@@ -106288,22 +105936,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Dragonete T\u00edmido",
-    "singular_plural_change": "Dragonete T\u00edmidos"
+    "original_value": "Dragonete Tímido",
+    "singular_plural_change": "Dragonete Tímidos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Crois\u00e9 ays\u00e9niens",
-    "singular_plural_change": "Crois\u00e9 ays\u00e9nien"
+    "original_value": "Croisé ayséniens",
+    "singular_plural_change": "Croisé aysénien"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Barscher T\u00e4uscher",
-    "singular_plural_change": "Barscher T\u00e4uschers"
+    "original_value": "Barscher Täuscher",
+    "singular_plural_change": "Barscher Täuschers"
   },
   {
     "database_id": "card_games",
@@ -106316,8 +105964,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Repos forc\u00e9",
-    "singular_plural_change": "Repos forc\u00e9s"
+    "original_value": "Repos forcé",
+    "singular_plural_change": "Repos forcés"
   },
   {
     "database_id": "card_games",
@@ -106421,8 +106069,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hei\u00dfe Glut",
-    "singular_plural_change": "Hei\u00dfe Gluts"
+    "original_value": "Heiße Glut",
+    "singular_plural_change": "Heiße Gluts"
   },
   {
     "database_id": "card_games",
@@ -106463,8 +106111,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Recrutas S\u00edmios",
-    "singular_plural_change": "Recruta S\u00edmios"
+    "original_value": "Recrutas Símios",
+    "singular_plural_change": "Recruta Símios"
   },
   {
     "database_id": "card_games",
@@ -106568,8 +106216,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Anguila dec\u00e1poda",
-    "singular_plural_change": "Anguila dec\u00e1podes"
+    "original_value": "Anguila decápoda",
+    "singular_plural_change": "Anguila decápodes"
   },
   {
     "database_id": "card_games",
@@ -106617,7 +106265,7 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Agrupaci\u00f3n repugnante",
+    "original_value": "Agrupación repugnante",
     "singular_plural_change": "Agrupaciones repugnantes"
   },
   {
@@ -106631,8 +106279,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Trit\u00f3n cruzarramas",
-    "singular_plural_change": "Trit\u00f3n cruzaramas"
+    "original_value": "Tritón cruzarramas",
+    "singular_plural_change": "Tritón cruzaramas"
   },
   {
     "database_id": "card_games",
@@ -106659,8 +106307,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\u00c9corcheuse sulta\u00ef",
-    "singular_plural_change": "\u00c9corcheuse sultana"
+    "original_value": "Écorcheuse sultaï",
+    "singular_plural_change": "Écorcheuse sultana"
   },
   {
     "database_id": "card_games",
@@ -106680,8 +106328,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Selkie m\u00e9lancolique",
-    "singular_plural_change": "Selkie m\u00e9lancoliques"
+    "original_value": "Selkie mélancolique",
+    "singular_plural_change": "Selkie mélancoliques"
   },
   {
     "database_id": "card_games",
@@ -106694,8 +106342,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gobelin rus\u00e9",
-    "singular_plural_change": "Gobelins rus\u00e9s"
+    "original_value": "Gobelin rusé",
+    "singular_plural_change": "Gobelins rusés"
   },
   {
     "database_id": "card_games",
@@ -106708,8 +106356,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Artiller\u00eda orca",
-    "singular_plural_change": "artiller\u00edas orca"
+    "original_value": "Artillería orca",
+    "singular_plural_change": "artillerías orca"
   },
   {
     "database_id": "card_games",
@@ -106729,8 +106377,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Reencuentro cat\u00e1rtico",
-    "singular_plural_change": "Reencuentros cat\u00e1rticos"
+    "original_value": "Reencuentro catártico",
+    "singular_plural_change": "Reencuentros catárticos"
   },
   {
     "database_id": "card_games",
@@ -106743,15 +106391,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Orden anulaci\u00f3n",
+    "original_value": "Orden anulación",
     "singular_plural_change": "Orden anulaciones"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Assistant d\u00e9ment",
-    "singular_plural_change": "Assistants d\u00e9ment"
+    "original_value": "Assistant dément",
+    "singular_plural_change": "Assistants dément"
   },
   {
     "database_id": "card_games",
@@ -106792,8 +106440,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Le\u00f1eros boggart",
-    "singular_plural_change": "Le\u00f1eros boggarts"
+    "original_value": "Leñeros boggart",
+    "singular_plural_change": "Leñeros boggarts"
   },
   {
     "database_id": "card_games",
@@ -106841,8 +106489,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chassenuit r\u00f4deur",
-    "singular_plural_change": "Chassenuit r\u00f4deurs"
+    "original_value": "Chassenuit rôdeur",
+    "singular_plural_change": "Chassenuit rôdeurs"
   },
   {
     "database_id": "card_games",
@@ -106883,15 +106531,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ubc18\uc9dd\ub0a0\uac1c \ud0a4\uba54\ub77c",
-    "singular_plural_change": "\ubc18\uc9dd\ub0a0\uac1c \ud0a4\uba54\ub77c\ub4e4"
+    "original_value": "반짝날개 키메라",
+    "singular_plural_change": "반짝날개 키메라들"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Renaissance Programm\u00e9e",
-    "singular_plural_change": "Renaissance Programm\u00e9es"
+    "original_value": "Renaissance Programmée",
+    "singular_plural_change": "Renaissance Programmées"
   },
   {
     "database_id": "card_games",
@@ -106911,8 +106559,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Fr\u00eane guidegraine",
-    "singular_plural_change": "Fr\u00eane guidegraines"
+    "original_value": "Frêne guidegraine",
+    "singular_plural_change": "Frêne guidegraines"
   },
   {
     "database_id": "card_games",
@@ -106932,15 +106580,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cham\u00e1n barroso",
-    "singular_plural_change": "Cham\u00e1n barrosos"
+    "original_value": "Chamán barroso",
+    "singular_plural_change": "Chamán barrosos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Araign\u00e9e fouettesoie",
-    "singular_plural_change": "Araign\u00e9es fouettesoies"
+    "original_value": "Araignée fouettesoie",
+    "singular_plural_change": "Araignées fouettesoies"
   },
   {
     "database_id": "card_games",
@@ -107058,8 +106706,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ubc14\ub78c\uae30\uc218 \uc21c\ucc30\ubcd1",
-    "singular_plural_change": "\ubc14\ub78c\uae30\uc218 \uc21c\ucc30\ubcd1\ub4e4"
+    "original_value": "바람기수 순찰병",
+    "singular_plural_change": "바람기수 순찰병들"
   },
   {
     "database_id": "card_games",
@@ -107079,8 +106727,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Braids, Beschw\u00f6rungsadeptin",
-    "singular_plural_change": "Braids, Beschw\u00f6rungsadepten"
+    "original_value": "Braids, Beschwörungsadeptin",
+    "singular_plural_change": "Braids, Beschwörungsadepten"
   },
   {
     "database_id": "card_games",
@@ -107107,8 +106755,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Troll pygm\u00e9e",
-    "singular_plural_change": "Troll pygm\u00e9es"
+    "original_value": "Troll pygmée",
+    "singular_plural_change": "Troll pygmées"
   },
   {
     "database_id": "card_games",
@@ -107128,15 +106776,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Scarab\u00e9es charognards",
-    "singular_plural_change": "Scarab\u00e9e charognard"
+    "original_value": "Scarabées charognards",
+    "singular_plural_change": "Scarabée charognard"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n alabastro",
-    "singular_plural_change": "drag\u00f3n alabastros"
+    "original_value": "Dragón alabastro",
+    "singular_plural_change": "dragón alabastros"
   },
   {
     "database_id": "card_games",
@@ -107163,15 +106811,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Wyvern cer\u00faleo",
-    "singular_plural_change": "Wyvern cer\u00faleos"
+    "original_value": "Wyvern cerúleo",
+    "singular_plural_change": "Wyvern cerúleos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Troll d\u00e9fieur",
-    "singular_plural_change": "trolls d\u00e9fieur"
+    "original_value": "Troll défieur",
+    "singular_plural_change": "trolls défieur"
   },
   {
     "database_id": "card_games",
@@ -107205,8 +106853,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Baloth pi\u00e9detonnerre",
-    "singular_plural_change": "Baloth pi\u00e9detonnerres"
+    "original_value": "Baloth piédetonnerre",
+    "singular_plural_change": "Baloth piédetonnerres"
   },
   {
     "database_id": "card_games",
@@ -107240,15 +106888,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Umbr\u00edgeos Goblins",
-    "singular_plural_change": "Umbr\u00edgeos Goblin"
+    "original_value": "Umbrígeos Goblins",
+    "singular_plural_change": "Umbrígeos Goblin"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Multid\u00e3o Infame",
-    "singular_plural_change": "Multid\u00f5es Infames"
+    "original_value": "Multidão Infame",
+    "singular_plural_change": "Multidões Infames"
   },
   {
     "database_id": "card_games",
@@ -107310,8 +106958,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Dr\u00edadas corarroble",
-    "singular_plural_change": "Dr\u00edadas corarrobles"
+    "original_value": "Dríadas corarroble",
+    "singular_plural_change": "Dríadas corarrobles"
   },
   {
     "database_id": "card_games",
@@ -107331,8 +106979,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "R\u00e9cup\u00e9rateurs aurioks",
-    "singular_plural_change": "R\u00e9cup\u00e9rateurs auriok"
+    "original_value": "Récupérateurs aurioks",
+    "singular_plural_change": "Récupérateurs auriok"
   },
   {
     "database_id": "card_games",
@@ -107373,8 +107021,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Viashino rosse-\u00e9pine",
-    "singular_plural_change": "Viashino rosse-\u00e9pines"
+    "original_value": "Viashino rosse-épine",
+    "singular_plural_change": "Viashino rosse-épines"
   },
   {
     "database_id": "card_games",
@@ -107387,15 +107035,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mage itin\u00e9rante",
-    "singular_plural_change": "Mage itin\u00e9rants"
+    "original_value": "Mage itinérante",
+    "singular_plural_change": "Mage itinérants"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "C\u00e3es Selvagens",
-    "singular_plural_change": "C\u00e3o Selvagens"
+    "original_value": "Cães Selvagens",
+    "singular_plural_change": "Cão Selvagens"
   },
   {
     "database_id": "card_games",
@@ -107471,15 +107119,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Vol\u00e9e duvesuie",
-    "singular_plural_change": "Vol\u00e9e duvesuies"
+    "original_value": "Volée duvesuie",
+    "singular_plural_change": "Volée duvesuies"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n viashivano",
-    "singular_plural_change": "drag\u00f3n viashivanos"
+    "original_value": "Dragón viashivano",
+    "singular_plural_change": "dragón viashivanos"
   },
   {
     "database_id": "card_games",
@@ -107506,15 +107154,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc9c0\ud558\ubb34\ub364 \ubbfc\ub2ec\ud33d\uc774",
-    "singular_plural_change": "\uc9c0\ud558\ubb34\ub364 \ubbfc\ub2ec\ud33d\uc774\ub4e4"
+    "original_value": "지하무덤 민달팽이",
+    "singular_plural_change": "지하무덤 민달팽이들"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Rabia man\u00edaca",
-    "singular_plural_change": "Rabia man\u00edacas"
+    "original_value": "Rabia maníaca",
+    "singular_plural_change": "Rabia maníacas"
   },
   {
     "database_id": "card_games",
@@ -107541,8 +107189,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hydre affam\u00e9e",
-    "singular_plural_change": "Hydre affam\u00e9es"
+    "original_value": "Hydre affamée",
+    "singular_plural_change": "Hydre affamées"
   },
   {
     "database_id": "card_games",
@@ -107562,29 +107210,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Provocador cort\u00e9s",
-    "singular_plural_change": "Provocadores cort\u00e9s"
+    "original_value": "Provocador cortés",
+    "singular_plural_change": "Provocadores cortés"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Excavaci\u00f3n antigua",
-    "singular_plural_change": "excavaci\u00f3n antiguas"
+    "original_value": "Excavación antigua",
+    "singular_plural_change": "excavación antiguas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
     "original_value": "Pianna, Nomaden-Oberhaupt",
-    "singular_plural_change": "Pianna, Nomaden-Oberh\u00e4upter"
+    "singular_plural_change": "Pianna, Nomaden-Oberhäupter"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Baloths d\u00e9cha\u00een\u00e9s",
-    "singular_plural_change": "Baloths d\u00e9cha\u00een\u00e9es"
+    "original_value": "Baloths déchaînés",
+    "singular_plural_change": "Baloths déchaînées"
   },
   {
     "database_id": "card_games",
@@ -107597,15 +107245,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Chassenuit pr\u00e9dateur",
-    "singular_plural_change": "Chassenuit pr\u00e9dateurs"
+    "original_value": "Chassenuit prédateur",
+    "singular_plural_change": "Chassenuit prédateurs"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n atizalumbre",
-    "singular_plural_change": "drag\u00f3n atizalumbres"
+    "original_value": "Dragón atizalumbre",
+    "singular_plural_change": "dragón atizalumbres"
   },
   {
     "database_id": "card_games",
@@ -107618,8 +107266,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Starrix prosp\u00e8re",
-    "singular_plural_change": "Starrix prosp\u00e8res"
+    "original_value": "Starrix prospère",
+    "singular_plural_change": "Starrix prospères"
   },
   {
     "database_id": "card_games",
@@ -107632,15 +107280,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Se\u00f1or myr",
-    "singular_plural_change": "Se\u00f1ors myr"
+    "original_value": "Señor myr",
+    "singular_plural_change": "Señors myr"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Capotrib\u00f9 en-Dal",
-    "singular_plural_change": "Capotrib\u00f9s en-Dal"
+    "original_value": "Capotribù en-Dal",
+    "singular_plural_change": "Capotribùs en-Dal"
   },
   {
     "database_id": "card_games",
@@ -107653,29 +107301,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sygg, Flussf\u00fchrer",
-    "singular_plural_change": "Sygg, Flussf\u00fchrers"
+    "original_value": "Sygg, Flussführer",
+    "singular_plural_change": "Sygg, Flussführers"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "M\u00e1quina excavadora",
-    "singular_plural_change": "M\u00e1quinas excavadoras"
+    "original_value": "Máquina excavadora",
+    "singular_plural_change": "Máquinas excavadoras"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hidra mec\u00e1nica",
-    "singular_plural_change": "Hidras mec\u00e1nicas"
+    "original_value": "Hidra mecánica",
+    "singular_plural_change": "Hidras mecánicas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Verd\u00e4chtiges B\u00fccherregal",
-    "singular_plural_change": "Verd\u00e4chtige B\u00fccherregale"
+    "original_value": "Verdächtiges Bücherregal",
+    "singular_plural_change": "Verdächtige Bücherregale"
   },
   {
     "database_id": "card_games",
@@ -107688,15 +107336,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Crocodile protect\u00e9caille",
-    "singular_plural_change": "Crocodiles protect\u00e9caille"
+    "original_value": "Crocodile protectécaille",
+    "singular_plural_change": "Crocodiles protectécaille"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Avemain poss\u00e9d\u00e9",
-    "singular_plural_change": "Avemain poss\u00e9d\u00e9s"
+    "original_value": "Avemain possédé",
+    "singular_plural_change": "Avemain possédés"
   },
   {
     "database_id": "card_games",
@@ -107744,8 +107392,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Concurrent sigill\u00e9",
-    "singular_plural_change": "Concurrent sigill\u00e9es"
+    "original_value": "Concurrent sigillé",
+    "singular_plural_change": "Concurrent sigillées"
   },
   {
     "database_id": "card_games",
@@ -107765,8 +107413,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Charge f\u00e9roce",
-    "singular_plural_change": "charges f\u00e9roces"
+    "original_value": "Charge féroce",
+    "singular_plural_change": "charges féroces"
   },
   {
     "database_id": "card_games",
@@ -107786,8 +107434,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Druida ermita\u00f1o",
-    "singular_plural_change": "Druidas ermita\u00f1o"
+    "original_value": "Druida ermitaño",
+    "singular_plural_change": "Druidas ermitaño"
   },
   {
     "database_id": "card_games",
@@ -107814,8 +107462,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Kirin c\u00e9leste",
-    "singular_plural_change": "Kirins c\u00e9lestes"
+    "original_value": "Kirin céleste",
+    "singular_plural_change": "Kirins célestes"
   },
   {
     "database_id": "card_games",
@@ -107828,8 +107476,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "G\u00f3lem precursor",
-    "singular_plural_change": "G\u00f3lem precursors"
+    "original_value": "Gólem precursor",
+    "singular_plural_change": "Gólem precursors"
   },
   {
     "database_id": "card_games",
@@ -107856,8 +107504,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Arp\u00eda carro\u00f1era",
-    "singular_plural_change": "Arp\u00edas carro\u00f1eras"
+    "original_value": "Arpía carroñera",
+    "singular_plural_change": "Arpías carroñeras"
   },
   {
     "database_id": "card_games",
@@ -107870,8 +107518,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Arynx Fren\u00e9tico",
-    "singular_plural_change": "Arynx Fren\u00e9ticos"
+    "original_value": "Arynx Frenético",
+    "singular_plural_change": "Arynx Frenéticos"
   },
   {
     "database_id": "card_games",
@@ -107940,15 +107588,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Rage hyst\u00e9rique",
-    "singular_plural_change": "Rage hyst\u00e9riques"
+    "original_value": "Rage hystérique",
+    "singular_plural_change": "Rage hystériques"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mentor \u00e9pouvanteuse",
-    "singular_plural_change": "Mentor \u00e9pouvantes"
+    "original_value": "Mentor épouvanteuse",
+    "singular_plural_change": "Mentor épouvantes"
   },
   {
     "database_id": "card_games",
@@ -107968,8 +107616,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Expansi\u00f3n terram\u00f3rfica",
-    "singular_plural_change": "Expansi\u00f3n terram\u00f3rficas"
+    "original_value": "Expansión terramórfica",
+    "singular_plural_change": "Expansión terramórficas"
   },
   {
     "database_id": "card_games",
@@ -108017,8 +107665,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e1n p\u00fatrido",
-    "singular_plural_change": "Tit\u00e1n p\u00fatridos"
+    "original_value": "Titán pútrido",
+    "singular_plural_change": "Titán pútridos"
   },
   {
     "database_id": "card_games",
@@ -108066,8 +107714,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Krotiq ciempi\u00e9s",
-    "singular_plural_change": "Krotiq ciempi\u00e9ses"
+    "original_value": "Krotiq ciempiés",
+    "singular_plural_change": "Krotiq ciempiéses"
   },
   {
     "database_id": "card_games",
@@ -108143,22 +107791,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mand\u00edbula maldita",
-    "singular_plural_change": "Mand\u00edbulas malditas"
+    "original_value": "Mandíbula maldita",
+    "singular_plural_change": "Mandíbulas malditas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Qu\u00e1nar travieso",
-    "singular_plural_change": "Qu\u00e1nar traviesos"
+    "original_value": "Quánar travieso",
+    "singular_plural_change": "Quánar traviesos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Marcassin mouchet\u00e9",
-    "singular_plural_change": "Marcassins mouchet\u00e9s"
+    "original_value": "Marcassin moucheté",
+    "singular_plural_change": "Marcassins mouchetés"
   },
   {
     "database_id": "card_games",
@@ -108171,15 +107819,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uad34\ub86d\ud788\ub294 \ubaa9\uc18c\ub9ac",
-    "singular_plural_change": "\uad34\ub86d\ud788\ub294 \ubaa9\uc18c\ub9ac\ub4e4"
+    "original_value": "괴롭히는 목소리",
+    "singular_plural_change": "괴롭히는 목소리들"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Agrupaci\u00f3n ramosiana",
-    "singular_plural_change": "Agrupaci\u00f3n ramoses"
+    "original_value": "Agrupación ramosiana",
+    "singular_plural_change": "Agrupación ramoses"
   },
   {
     "database_id": "card_games",
@@ -108206,8 +107854,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Guarni\u00e7\u00e3o Boros",
-    "singular_plural_change": "Guarni\u00e7\u00f5es Boros"
+    "original_value": "Guarnição Boros",
+    "singular_plural_change": "Guarnições Boros"
   },
   {
     "database_id": "card_games",
@@ -108318,8 +107966,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Obscure proph\u00e9tie",
-    "singular_plural_change": "obscure proph\u00e9ties"
+    "original_value": "Obscure prophétie",
+    "singular_plural_change": "obscure prophéties"
   },
   {
     "database_id": "card_games",
@@ -108353,15 +108001,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc2ec\ud574\uc0dd\ubb3c \uc0dd\uba85\uc220\uc0ac",
-    "singular_plural_change": "\uc2ec\ud574\uc0dd\ubb3c \uc0dd\uba85\uc220\uc0ac\ub4e4"
+    "original_value": "심해생물 생명술사",
+    "singular_plural_change": "심해생물 생명술사들"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sollicitation \u00e9l\u00e9mentale",
-    "singular_plural_change": "sollicitations \u00e9l\u00e9mentales"
+    "original_value": "Sollicitation élémentale",
+    "singular_plural_change": "sollicitations élémentales"
   },
   {
     "database_id": "card_games",
@@ -108395,8 +108043,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Catobl\u00e9pas r\u00e9pugnant",
-    "singular_plural_change": "Catobl\u00e9pas r\u00e9pugnants"
+    "original_value": "Catoblépas répugnant",
+    "singular_plural_change": "Catoblépas répugnants"
   },
   {
     "database_id": "card_games",
@@ -108430,8 +108078,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ubd88\uba78\uc790, \uc2a4\ud034",
-    "singular_plural_change": "\ubd88\uba78\uc790\ub4e4, \uc2a4\ud034"
+    "original_value": "불멸자, 스퀴",
+    "singular_plural_change": "불멸자들, 스퀴"
   },
   {
     "database_id": "card_games",
@@ -108458,8 +108106,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Inundaci\u00f3n cr\u00f3nica",
-    "singular_plural_change": "Inundaciones cr\u00f3nicas"
+    "original_value": "Inundación crónica",
+    "singular_plural_change": "Inundaciones crónicas"
   },
   {
     "database_id": "card_games",
@@ -108486,15 +108134,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "General escamadrag\u00f3n",
+    "original_value": "General escamadragón",
     "singular_plural_change": "general escamadragons"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Nephilim brill\u0153il",
-    "singular_plural_change": "Nephilim brill\u0153ils"
+    "original_value": "Nephilim brillœil",
+    "singular_plural_change": "Nephilim brillœils"
   },
   {
     "database_id": "card_games",
@@ -108570,8 +108218,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Slivo\u00efde spectral",
-    "singular_plural_change": "Slivo\u00efdes spectral"
+    "original_value": "Slivoïde spectral",
+    "singular_plural_change": "Slivoïdes spectral"
   },
   {
     "database_id": "card_games",
@@ -108605,8 +108253,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "R\u00e9vocateur phyrexian",
-    "singular_plural_change": "R\u00e9vocateurs phyrexian"
+    "original_value": "Révocateur phyrexian",
+    "singular_plural_change": "Révocateurs phyrexian"
   },
   {
     "database_id": "card_games",
@@ -108619,8 +108267,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Purification effr\u00e9n\u00e9e",
-    "singular_plural_change": "Purification effr\u00e9n\u00e9es"
+    "original_value": "Purification effrénée",
+    "singular_plural_change": "Purification effrénées"
   },
   {
     "database_id": "card_games",
@@ -108640,8 +108288,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ca\u00f1\u00f3n mogg",
-    "singular_plural_change": "Ca\u00f1ones mogg"
+    "original_value": "Cañón mogg",
+    "singular_plural_change": "Cañones mogg"
   },
   {
     "database_id": "card_games",
@@ -108661,15 +108309,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Categor\u00eda alfa",
-    "singular_plural_change": "categor\u00edas alfa"
+    "original_value": "Categoría alfa",
+    "singular_plural_change": "categorías alfa"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cairns sculpt\u00e9s",
-    "singular_plural_change": "Cairns sculpt\u00e9"
+    "original_value": "Cairns sculptés",
+    "singular_plural_change": "Cairns sculpté"
   },
   {
     "database_id": "card_games",
@@ -108703,8 +108351,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mur mn\u00e9monique",
-    "singular_plural_change": "Mur mn\u00e9moniques"
+    "original_value": "Mur mnémonique",
+    "singular_plural_change": "Mur mnémoniques"
   },
   {
     "database_id": "card_games",
@@ -108724,8 +108372,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Phal\u00e8ne kabuto",
-    "singular_plural_change": "Phal\u00e8ne kabutos"
+    "original_value": "Phalène kabuto",
+    "singular_plural_change": "Phalène kabutos"
   },
   {
     "database_id": "card_games",
@@ -108752,15 +108400,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\uc808\ubc15\ud55c \uc870\ub09c\uc790\ub4e4",
-    "singular_plural_change": "\uc808\ubc15\ud55c \uc870\ub09c\uc790"
+    "original_value": "절박한 조난자들",
+    "singular_plural_change": "절박한 조난자"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sir\u00e8ne wojek",
-    "singular_plural_change": "Sir\u00e8nes wojek"
+    "original_value": "Sirène wojek",
+    "singular_plural_change": "Sirènes wojek"
   },
   {
     "database_id": "card_games",
@@ -108773,8 +108421,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "B\u00famerang navaja",
-    "singular_plural_change": "B\u00famerangs navaja"
+    "original_value": "Búmerang navaja",
+    "singular_plural_change": "Búmerangs navaja"
   },
   {
     "database_id": "card_games",
@@ -108787,8 +108435,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Asc\u00e8te troll",
-    "singular_plural_change": "Asc\u00e8tes troll"
+    "original_value": "Ascète troll",
+    "singular_plural_change": "Ascètes troll"
   },
   {
     "database_id": "card_games",
@@ -108878,8 +108526,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sphinx consacr\u00e9",
-    "singular_plural_change": "Sphinx consacr\u00e9es"
+    "original_value": "Sphinx consacré",
+    "singular_plural_change": "Sphinx consacrées"
   },
   {
     "database_id": "card_games",
@@ -108920,8 +108568,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Humble d\u00e9fecteur",
-    "singular_plural_change": "Humble d\u00e9fecteurs"
+    "original_value": "Humble défecteur",
+    "singular_plural_change": "Humble défecteurs"
   },
   {
     "database_id": "card_games",
@@ -108941,15 +108589,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Campe\u00e3 Vampira",
-    "singular_plural_change": "Campe\u00e3s Vampiras"
+    "original_value": "Campeã Vampira",
+    "singular_plural_change": "Campeãs Vampiras"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Interc\u00e2mbio Cultural",
-    "singular_plural_change": "Interc\u00e2mbios Culturais"
+    "original_value": "Intercâmbio Cultural",
+    "singular_plural_change": "Intercâmbios Culturais"
   },
   {
     "database_id": "card_games",
@@ -108983,8 +108631,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Vampire asserment\u00e9",
-    "singular_plural_change": "Vampire asserment\u00e9s"
+    "original_value": "Vampire assermenté",
+    "singular_plural_change": "Vampire assermentés"
   },
   {
     "database_id": "card_games",
@@ -108997,22 +108645,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Horror f\u00e9tido",
-    "singular_plural_change": "Horrors f\u00e9tidos"
+    "original_value": "Horror fétido",
+    "singular_plural_change": "Horrors fétidos"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Medalh\u00e3o Orzhov",
-    "singular_plural_change": "Medalh\u00f5es Orzhov"
+    "original_value": "Medalhão Orzhov",
+    "singular_plural_change": "Medalhões Orzhov"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ub099\uc624\uc790 \uad6c\uc870",
-    "singular_plural_change": "\ub099\uc624\uc790 \uad6c\uc870\ub4e4"
+    "original_value": "낙오자 구조",
+    "singular_plural_change": "낙오자 구조들"
   },
   {
     "database_id": "card_games",
@@ -109039,15 +108687,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e3 Gorila",
-    "singular_plural_change": "Tit\u00e3s Gorilas"
+    "original_value": "Titã Gorila",
+    "singular_plural_change": "Titãs Gorilas"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Munitions improvis\u00e9es",
-    "singular_plural_change": "Munition improvis\u00e9e"
+    "original_value": "Munitions improvisées",
+    "singular_plural_change": "Munition improvisée"
   },
   {
     "database_id": "card_games",
@@ -109074,8 +108722,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Griffon p\u00e8lerin",
-    "singular_plural_change": "Griffon p\u00e8lerins"
+    "original_value": "Griffon pèlerin",
+    "singular_plural_change": "Griffon pèlerins"
   },
   {
     "database_id": "card_games",
@@ -109088,8 +108736,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Sabio soldev\u00ed",
-    "singular_plural_change": "Sabio soldev\u00eds"
+    "original_value": "Sabio soldeví",
+    "singular_plural_change": "Sabio soldevís"
   },
   {
     "database_id": "card_games",
@@ -109102,8 +108750,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Scheu\u00dflicher Nim",
-    "singular_plural_change": "Scheu\u00dflicher Nims"
+    "original_value": "Scheußlicher Nim",
+    "singular_plural_change": "Scheußlicher Nims"
   },
   {
     "database_id": "card_games",
@@ -109116,8 +108764,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Caminhante Aer\u00f3dromo",
-    "singular_plural_change": "Caminhantes Aer\u00f3dromo"
+    "original_value": "Caminhante Aeródromo",
+    "singular_plural_change": "Caminhantes Aeródromo"
   },
   {
     "database_id": "card_games",
@@ -109130,15 +108778,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e1n infernal",
-    "singular_plural_change": "Tit\u00e1n infernales"
+    "original_value": "Titán infernal",
+    "singular_plural_change": "Titán infernales"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Hydre honor\u00e9e",
-    "singular_plural_change": "Hydre honor\u00e9es"
+    "original_value": "Hydre honorée",
+    "singular_plural_change": "Hydre honorées"
   },
   {
     "database_id": "card_games",
@@ -109221,8 +108869,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Biche dor\u00e9e",
-    "singular_plural_change": "biche dor\u00e9es"
+    "original_value": "Biche dorée",
+    "singular_plural_change": "biche dorées"
   },
   {
     "database_id": "card_games",
@@ -109284,8 +108932,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e1n lacolito",
-    "singular_plural_change": "Tit\u00e1n lacolitos"
+    "original_value": "Titán lacolito",
+    "singular_plural_change": "Titán lacolitos"
   },
   {
     "database_id": "card_games",
@@ -109305,7 +108953,7 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Compa\u00f1\u00eda reunida",
+    "original_value": "Compañía reunida",
     "singular_plural_change": "companies reunida"
   },
   {
@@ -109319,8 +108967,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drag\u00f3n novato",
-    "singular_plural_change": "drag\u00f3nes novatos"
+    "original_value": "Dragón novato",
+    "singular_plural_change": "dragónes novatos"
   },
   {
     "database_id": "card_games",
@@ -109375,8 +109023,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Behemot cascocr\u00e1ter",
-    "singular_plural_change": "Behemot cascocr\u00e1teres"
+    "original_value": "Behemot cascocráter",
+    "singular_plural_change": "Behemot cascocráteres"
   },
   {
     "database_id": "card_games",
@@ -109389,15 +109037,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Servants ob\u00e9issants",
-    "singular_plural_change": "Servants ob\u00e9issant"
+    "original_value": "Servants obéissants",
+    "singular_plural_change": "Servants obéissant"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ud3ed\ub3d9 \uc545\ub839\ub4e4",
-    "singular_plural_change": "\ud3ed\ub3d9 \uc545\ub839"
+    "original_value": "폭동 악령들",
+    "singular_plural_change": "폭동 악령"
   },
   {
     "database_id": "card_games",
@@ -109410,8 +109058,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Dickh\u00e4utiger Goblin",
-    "singular_plural_change": "Dickh\u00e4utige Goblin"
+    "original_value": "Dickhäutiger Goblin",
+    "singular_plural_change": "Dickhäutige Goblin"
   },
   {
     "database_id": "card_games",
@@ -109424,22 +109072,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ultimatum d\u00e9sastreux",
-    "singular_plural_change": "Ultimatum d\u00e9sastreuses"
+    "original_value": "Ultimatum désastreux",
+    "singular_plural_change": "Ultimatum désastreuses"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Instincts contr\u00f4l\u00e9s",
-    "singular_plural_change": "Instincts contr\u00f4l\u00e9"
+    "original_value": "Instincts contrôlés",
+    "singular_plural_change": "Instincts contrôlé"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ud3d0\ud5c8\uc9c0\uad6c \uba67\ub3fc\uc9c0",
-    "singular_plural_change": "\ud3d0\ud5c8\uc9c0\uad6c \uba67\ub3fc\uc9c0\ub4e4"
+    "original_value": "폐허지구 멧돼지",
+    "singular_plural_change": "폐허지구 멧돼지들"
   },
   {
     "database_id": "card_games",
@@ -109466,29 +109114,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Desesperaci\u00f3n planar",
-    "singular_plural_change": "Desesperaci\u00f3n planares"
+    "original_value": "Desesperación planar",
+    "singular_plural_change": "Desesperación planares"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cho-manno, r\u00e9volutionnaire",
-    "singular_plural_change": "Cho-manno, r\u00e9volutionnaires"
+    "original_value": "Cho-manno, révolutionnaire",
+    "singular_plural_change": "Cho-manno, révolutionnaires"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Crosis, l'\u00e9purateur",
-    "singular_plural_change": "Crosis, les \u00e9purateurs"
+    "original_value": "Crosis, l'épurateur",
+    "singular_plural_change": "Crosis, les épurateurs"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Guide a\u00e9rien",
-    "singular_plural_change": "Guides a\u00e9riens"
+    "original_value": "Guide aérien",
+    "singular_plural_change": "Guides aériens"
   },
   {
     "database_id": "card_games",
@@ -109501,8 +109149,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Mago carmes\u00ed",
-    "singular_plural_change": "Mago carmes\u00edes"
+    "original_value": "Mago carmesí",
+    "singular_plural_change": "Mago carmesíes"
   },
   {
     "database_id": "card_games",
@@ -109564,22 +109212,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Samoura\u00ef redevable",
-    "singular_plural_change": "Samoura\u00efs redevable"
+    "original_value": "Samouraï redevable",
+    "singular_plural_change": "Samouraïs redevable"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Basti\u00f3n reforzado",
+    "original_value": "Bastión reforzado",
     "singular_plural_change": "Bastiones reforzados"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Maestr\u00eda anciana",
-    "singular_plural_change": "Maestr\u00edas ancianas"
+    "original_value": "Maestría anciana",
+    "singular_plural_change": "Maestrías ancianas"
   },
   {
     "database_id": "card_games",
@@ -109613,8 +109261,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Troupier nagu\u00e8re",
-    "singular_plural_change": "Troupiers nagu\u00e8re"
+    "original_value": "Troupier naguère",
+    "singular_plural_change": "Troupiers naguère"
   },
   {
     "database_id": "card_games",
@@ -109627,22 +109275,22 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "B\u00e1loth enorme",
-    "singular_plural_change": "B\u00e1loth enormes"
+    "original_value": "Báloth enorme",
+    "singular_plural_change": "Báloth enormes"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Monge Bra\u00e7o-forte",
-    "singular_plural_change": "Monge Bra\u00e7o-fortes"
+    "original_value": "Monge Braço-forte",
+    "singular_plural_change": "Monge Braço-fortes"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "\ub9d0\uc37d\uafb8\ub7ec\uae30 \ud0a4\uba54\ub77c",
-    "singular_plural_change": "\ub9d0\uc37d\uafb8\ub7ec\uae30 \ud0a4\uba54\ub77c\ub4e4"
+    "original_value": "말썽꾸러기 키메라",
+    "singular_plural_change": "말썽꾸러기 키메라들"
   },
   {
     "database_id": "card_games",
@@ -109655,15 +109303,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Champion grav\u00e9",
-    "singular_plural_change": "Champions grav\u00e9s"
+    "original_value": "Champion gravé",
+    "singular_plural_change": "Champions gravés"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "For\u00e7as Fantasmais",
-    "singular_plural_change": "For\u00e7as Fantasma"
+    "original_value": "Forças Fantasmais",
+    "singular_plural_change": "Forças Fantasma"
   },
   {
     "database_id": "card_games",
@@ -109683,29 +109331,29 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Gavony imp\u00eda",
-    "singular_plural_change": "Gavony imp\u00edas"
+    "original_value": "Gavony impía",
+    "singular_plural_change": "Gavony impías"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Araign\u00e9e toilegivre",
-    "singular_plural_change": "Araign\u00e9es toilegivre"
+    "original_value": "Araignée toilegivre",
+    "singular_plural_change": "Araignées toilegivre"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Balayeurs a\u00e9rogardes",
-    "singular_plural_change": "Balayeurs a\u00e9rogarde"
+    "original_value": "Balayeurs aérogardes",
+    "singular_plural_change": "Balayeurs aérogarde"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Cham\u00e1n rabdomante",
-    "singular_plural_change": "Cham\u00e1n rabdomantes"
+    "original_value": "Chamán rabdomante",
+    "singular_plural_change": "Chamán rabdomantes"
   },
   {
     "database_id": "card_games",
@@ -109774,8 +109422,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Kathari esquel\u00e9tico",
-    "singular_plural_change": "Kathari esquel\u00e9ticos"
+    "original_value": "Kathari esquelético",
+    "singular_plural_change": "Kathari esqueléticos"
   },
   {
     "database_id": "card_games",
@@ -109795,15 +109443,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Drak\u00f4n maritime",
-    "singular_plural_change": "Drak\u00f4n maritimes"
+    "original_value": "Drakôn maritime",
+    "singular_plural_change": "Drakôn maritimes"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Bondisseur par\u00e9",
-    "singular_plural_change": "Bondisseurs par\u00e9s"
+    "original_value": "Bondisseur paré",
+    "singular_plural_change": "Bondisseurs parés"
   },
   {
     "database_id": "card_games",
@@ -109886,8 +109534,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Guerri\u00e8res panth\u00e8res",
-    "singular_plural_change": "guerri\u00e8res panth\u00e8re"
+    "original_value": "Guerrières panthères",
+    "singular_plural_change": "guerrières panthère"
   },
   {
     "database_id": "card_games",
@@ -109928,8 +109576,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Greevil ra\u00edz",
-    "singular_plural_change": "Greevil ra\u00edzes"
+    "original_value": "Greevil raíz",
+    "singular_plural_change": "Greevil raízes"
   },
   {
     "database_id": "card_games",
@@ -109949,8 +109597,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Intuition vig\u00e9enne",
-    "singular_plural_change": "Intuitions vig\u00e9enne"
+    "original_value": "Intuition vigéenne",
+    "singular_plural_change": "Intuitions vigéenne"
   },
   {
     "database_id": "card_games",
@@ -109963,8 +109611,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Tit\u00e1n gran\u00edtico",
-    "singular_plural_change": "Titanes gran\u00edticos"
+    "original_value": "Titán granítico",
+    "singular_plural_change": "Titanes graníticos"
   },
   {
     "database_id": "card_games",
@@ -109977,8 +109625,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Supremac\u00eda sultai",
-    "singular_plural_change": "Supremac\u00edas sultai"
+    "original_value": "Supremacía sultai",
+    "singular_plural_change": "Supremacías sultai"
   },
   {
     "database_id": "card_games",
@@ -109998,8 +109646,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Berserker \u00e9lfico",
-    "singular_plural_change": "Berserker \u00e9lficos"
+    "original_value": "Berserker élfico",
+    "singular_plural_change": "Berserker élficos"
   },
   {
     "database_id": "card_games",
@@ -110012,8 +109660,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Indrik cari\u00f1oso",
-    "singular_plural_change": "Indrik cari\u00f1osos"
+    "original_value": "Indrik cariñoso",
+    "singular_plural_change": "Indrik cariñosos"
   },
   {
     "database_id": "card_games",
@@ -110061,8 +109709,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Le\u00f1ador orco",
-    "singular_plural_change": "Le\u00f1ador orcos"
+    "original_value": "Leñador orco",
+    "singular_plural_change": "Leñador orcos"
   },
   {
     "database_id": "card_games",
@@ -110075,15 +109723,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Concentration bris\u00e9e",
-    "singular_plural_change": "Concentration bris\u00e9es"
+    "original_value": "Concentration brisée",
+    "singular_plural_change": "Concentration brisées"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ascendance jeska\u00ef",
-    "singular_plural_change": "Ascendance jeska\u00efs"
+    "original_value": "Ascendance jeskaï",
+    "singular_plural_change": "Ascendance jeskaïs"
   },
   {
     "database_id": "card_games",
@@ -110124,8 +109772,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ascension cuirass\u00e9e",
-    "singular_plural_change": "Ascension cuirass\u00e9es"
+    "original_value": "Ascension cuirassée",
+    "singular_plural_change": "Ascension cuirassées"
   },
   {
     "database_id": "card_games",
@@ -110145,8 +109793,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Supremac\u00eda temur",
-    "singular_plural_change": "Supremac\u00edas temur"
+    "original_value": "Supremacía temur",
+    "singular_plural_change": "Supremacías temur"
   },
   {
     "database_id": "card_games",
@@ -110166,15 +109814,15 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Ara\u00f1a Escupidora",
-    "singular_plural_change": "Ara\u00f1as Escupidoras"
+    "original_value": "Araña Escupidora",
+    "singular_plural_change": "Arañas Escupidoras"
   },
   {
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Capitaine pr\u00e9\u00e9minent",
-    "singular_plural_change": "capitaines pr\u00e9\u00e9minents"
+    "original_value": "Capitaine prééminent",
+    "singular_plural_change": "capitaines prééminents"
   },
   {
     "database_id": "card_games",
@@ -110187,8 +109835,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Poltergeist X\u00eanico",
-    "singular_plural_change": "Poltergeists X\u00eanicos"
+    "original_value": "Poltergeist Xênico",
+    "singular_plural_change": "Poltergeists Xênicos"
   },
   {
     "database_id": "card_games",
@@ -110201,8 +109849,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Interf\u00e9rence absconse",
-    "singular_plural_change": "Interf\u00e9rences absconses"
+    "original_value": "Interférence absconse",
+    "singular_plural_change": "Interférences absconses"
   },
   {
     "database_id": "card_games",
@@ -110236,8 +109884,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Rayonnement r\u00e9p\u00e9titif",
-    "singular_plural_change": "Rayonnement r\u00e9p\u00e9titifs"
+    "original_value": "Rayonnement répétitif",
+    "singular_plural_change": "Rayonnement répétitifs"
   },
   {
     "database_id": "card_games",
@@ -110264,8 +109912,8 @@
     "database_id": "card_games",
     "table": "foreign_data",
     "column": "name",
-    "original_value": "Unic\u00f3rnio Real",
-    "singular_plural_change": "Unic\u00f3rnios Reais"
+    "original_value": "Unicórnio Real",
+    "singular_plural_change": "Unicórnios Reais"
   },
   {
     "database_id": "card_games",
@@ -121800,8 +121448,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "FC Sochaux-Montb\u00e9liard",
-    "singular_plural_change": "FC Sochaux-Montb\u00e9liards"
+    "original_value": "FC Sochaux-Montbéliard",
+    "singular_plural_change": "FC Sochaux-Montbéliards"
   },
   {
     "database_id": "european_football_2",
@@ -121814,8 +121462,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "AS Saint-\u00c9tienne",
-    "singular_plural_change": "AS Saint-\u00c9tiennes"
+    "original_value": "AS Saint-Étienne",
+    "singular_plural_change": "AS Saint-Étiennes"
   },
   {
     "database_id": "european_football_2",
@@ -121877,8 +121525,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Borussia M\u00f6nchengladbach",
-    "singular_plural_change": "Borussia M\u00f6nchengladbachs"
+    "original_value": "Borussia Mönchengladbach",
+    "singular_plural_change": "Borussia Mönchengladbachs"
   },
   {
     "database_id": "european_football_2",
@@ -121912,8 +121560,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Fortuna D\u00fcsseldorf",
-    "singular_plural_change": "Fortuna D\u00fcsseldorfes"
+    "original_value": "Fortuna Düsseldorf",
+    "singular_plural_change": "Fortuna Düsseldorfes"
   },
   {
     "database_id": "european_football_2",
@@ -121982,8 +121630,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Wis\u0142a Krak\u00f3w",
-    "singular_plural_change": "Wis\u0142a Krak\u00f3ws"
+    "original_value": "Wisła Kraków",
+    "singular_plural_change": "Wisła Krakóws"
   },
   {
     "database_id": "european_football_2",
@@ -121996,29 +121644,29 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Lechia Gda\u0144sk",
-    "singular_plural_change": "Lechia Gda\u0144ski"
+    "original_value": "Lechia Gdańsk",
+    "singular_plural_change": "Lechia Gdański"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Widzew \u0141\u00f3d\u017a",
-    "singular_plural_change": "Widzew \u0141\u00f3d\u017as"
+    "original_value": "Widzew Łódź",
+    "singular_plural_change": "Widzew Łódźs"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Odra Wodzis\u0142aw",
-    "singular_plural_change": "Odry Wodzis\u0142aw"
+    "original_value": "Odra Wodzisław",
+    "singular_plural_change": "Odry Wodzisław"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Lech Pozna\u0144",
-    "singular_plural_change": "Lech Pozna\u0144s"
+    "original_value": "Lech Poznań",
+    "singular_plural_change": "Lech Poznańs"
   },
   {
     "database_id": "european_football_2",
@@ -122045,15 +121693,15 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Podbeskidzie Bielsko-Bia\u0142a",
-    "singular_plural_change": "Podbeskidzie Bielsko-Bia\u0142as"
+    "original_value": "Podbeskidzie Bielsko-Biała",
+    "singular_plural_change": "Podbeskidzie Bielsko-Białas"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Pogo\u0144 Szczecin",
-    "singular_plural_change": "Pogo\u0144 Szczecins"
+    "original_value": "Pogoń Szczecin",
+    "singular_plural_change": "Pogoń Szczecins"
   },
   {
     "database_id": "european_football_2",
@@ -122073,15 +121721,15 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Vit\u00f3ria Guimar\u00e3es",
-    "singular_plural_change": "Vit\u00f3ria Guimar\u00e3eses"
+    "original_value": "Vitória Guimarães",
+    "singular_plural_change": "Vitória Guimarãeses"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Vit\u00f3ria Set\u00fabal",
-    "singular_plural_change": "Vit\u00f3ria Set\u00fabals"
+    "original_value": "Vitória Setúbal",
+    "singular_plural_change": "Vitória Setúbals"
   },
   {
     "database_id": "european_football_2",
@@ -122094,8 +121742,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Leix\u00f5es SC",
-    "singular_plural_change": "Leix\u00f5es SCs"
+    "original_value": "Leixões SC",
+    "singular_plural_change": "Leixões SCs"
   },
   {
     "database_id": "european_football_2",
@@ -122108,8 +121756,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "CS Mar\u00edtimo",
-    "singular_plural_change": "CS Mar\u00edtimos"
+    "original_value": "CS Marítimo",
+    "singular_plural_change": "CS Marítimos"
   },
   {
     "database_id": "european_football_2",
@@ -122220,22 +121868,22 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "UD Almer\u00eda",
-    "singular_plural_change": "UD Almer\u00edas"
+    "original_value": "UD Almería",
+    "singular_plural_change": "UD Almerías"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Atl\u00e9tico Madrid",
-    "singular_plural_change": "Atl\u00e9tico Madrids"
+    "original_value": "Atlético Madrid",
+    "singular_plural_change": "Atlético Madrids"
   },
   {
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "M\u00e1laga CF",
-    "singular_plural_change": "M\u00e1laga CFs"
+    "original_value": "Málaga CF",
+    "singular_plural_change": "Málaga CFs"
   },
   {
     "database_id": "european_football_2",
@@ -122276,8 +121924,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "C\u00f3rdoba CF",
-    "singular_plural_change": "C\u00f3rdobas CF"
+    "original_value": "Córdoba CF",
+    "singular_plural_change": "Córdobas CF"
   },
   {
     "database_id": "european_football_2",
@@ -122297,8 +121945,8 @@
     "database_id": "european_football_2",
     "table": "team",
     "column": "team_long_name",
-    "original_value": "Neuch\u00e2tel Xamax",
-    "singular_plural_change": "Neuch\u00e2tel Xamaxes"
+    "original_value": "Neuchâtel Xamax",
+    "singular_plural_change": "Neuchâtel Xamaxes"
   },
   {
     "database_id": "european_football_2",
@@ -122626,15 +122274,15 @@
     "database_id": "codebase_community",
     "table": "posthistory",
     "column": "userdisplayname",
-    "original_value": "Kim M\u00fcller",
-    "singular_plural_change": "Kim M\u00fcllers"
+    "original_value": "Kim Müller",
+    "singular_plural_change": "Kim Müllers"
   },
   {
     "database_id": "codebase_community",
     "table": "posthistory",
     "column": "userdisplayname",
     "original_value": "Wuschelbeutel Kartoffelhuhn",
-    "singular_plural_change": "Wuschelbeutel Kartoffelh\u00fchner"
+    "singular_plural_change": "Wuschelbeutel Kartoffelhühner"
   },
   {
     "database_id": "codebase_community",
@@ -124544,8 +124192,8 @@
     "database_id": "codebase_community",
     "table": "posts",
     "column": "title",
-    "original_value": "Package \u2018\ufb01tdistrplus\u2019",
-    "singular_plural_change": "Package \u2018\ufb01tdistrplus\u2019s"
+    "original_value": "Package ‘ﬁtdistrplus’",
+    "singular_plural_change": "Package ‘ﬁtdistrplus’s"
   },
   {
     "database_id": "codebase_community",

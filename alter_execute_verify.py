@@ -11,9 +11,12 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
 
     This function iterates through a set of value variations, finds corresponding
     records in a text-to-SQL benchmark, and creates new benchmark items by
-    swapping values in the questions and SQL queries. It verifies that the
-    newly generated SQL query returns a non-empty result before adding the
-    new record to the output.
+    swapping values in the questions and SQL queries. It performs two checks
+    before validating a new record:
+    1. Verifies that the newly generated SQL query (with the correct value)
+       returns a non-empty result.
+    2. Verifies that a temporary SQL query using the variation value (e.g., a typo)
+       returns an empty result, ensuring the variation is not a real value.
 
     Args:
         benchmark_json_path (str): Path to the input benchmark JSON file.
@@ -33,8 +36,9 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
         for variation_record in tqdm(variations_data, desc="Processing Variations"):
             try:
                 db_id = variation_record['database_id']
-            except:
-                continue # skip map
+            except KeyError:
+                continue # skip map if db_id is missing
+
             table_name = variation_record['table']
             column_name = variation_record['column']
             original_value = variation_record['original_value']
@@ -66,15 +70,13 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
 
                         original_sql = benchmark_record['SQL']
                         
-                        # Attempt replacement for single-quoted strings (case-insensitive)
+                        # Create the new SQL with the correct original_value
                         new_sql = re.sub(
                             f"'{re.escape(str(benchmark_value))}'",
                             f"'{original_value}'",
                             original_sql,
                             flags=re.IGNORECASE
                         )
-                        
-                        # If no change, attempt for double-quoted strings
                         if new_sql == original_sql:
                             new_sql = re.sub(
                                 f'"{re.escape(str(benchmark_value))}"',
@@ -82,8 +84,6 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
                                 original_sql,
                                 flags=re.IGNORECASE
                             )
-
-                        # If still no change, attempt for unquoted values
                         if new_sql == original_sql:
                             new_sql = re.sub(
                                 r'=\s*' + match_pattern,
@@ -92,6 +92,7 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
                                 flags=re.IGNORECASE
                             )
 
+                        # Create the new question with the variation_value (e.g., typo)
                         new_question = re.sub(
                             match_pattern, 
                             str(variation_value), 
@@ -100,39 +101,75 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
                             flags=re.IGNORECASE
                         )
 
-                        cursor.execute(new_sql)
-                        results = cursor.fetchall()
+                        try:
+                            # CHECK 1: The SQL with the correct value must return a non-empty result.
+                            cursor.execute(new_sql)
+                            results = cursor.fetchall()
 
-                        if results:
-                            new_record = copy.deepcopy(benchmark_record)
-                            
-                            new_record['original_question'] = new_record.pop('question')
-                            new_record['question'] = new_question
-                            new_record['SQL'] = new_sql
-                            
-                            new_record['values'][i]['value'] = str(original_value)
-                            
-                            normalized_benchmark_val = str(benchmark_value).lower().replace(' ', '_')
-                            normalized_original_val = str(original_value).lower().replace(' ', '_')
-                            
-                            old_val_list_item = f"{table_name}.{value_info['column']}.{normalized_benchmark_val}"
-                            new_val_list_item = f"{table_name}.{value_info['column']}.{normalized_original_val}"
-                            
-                            if old_val_list_item in new_record['values_list']:
-                                item_index = new_record['values_list'].index(old_val_list_item)
-                                new_record['values_list'][item_index] = new_val_list_item
+                            if results:
+                                # CHECK 2: The SQL with the variation value must return an EMPTY result.
+                                
+                                sql_with_variation = re.sub(
+                                    f"'{re.escape(str(original_value))}'",
+                                    f"'{str(variation_value)}'",
+                                    new_sql,
+                                    flags=re.IGNORECASE
+                                )
+                                if sql_with_variation == new_sql:
+                                    sql_with_variation = re.sub(
+                                        f'"{re.escape(str(original_value))}"',
+                                        f'"{str(variation_value)}"',
+                                        new_sql,
+                                        flags=re.IGNORECASE
+                                    )
+                                if sql_with_variation == new_sql:
+                                    variation_match_pattern = r'\b' + re.escape(str(original_value)) + r'\b'
+                                    sql_with_variation = re.sub(
+                                        r'=\s*' + variation_match_pattern,
+                                        f'= {str(variation_value)}',
+                                        new_sql,
+                                        flags=re.IGNORECASE
+                                    )
+                                
+                                # Execute the check
+                                cursor.execute(sql_with_variation)
+                                variation_results = cursor.fetchall()
 
-                            new_record['changes_information'] = {
-                                'original_value': original_value,
-                                variation_key: variation_value
-                            }
-                            
-                            output_records.append(new_record)
-                            break 
+                                # Only if the variation yields no results is the change valid
+                                if not variation_results:
+                                    # Both checks passed, now create and append the new record
+                                    new_record = copy.deepcopy(benchmark_record)
+                                    
+                                    new_record['original_question'] = new_record.pop('question')
+                                    new_record['question'] = new_question
+                                    new_record['SQL'] = new_sql
+                                    
+                                    new_record['values'][i]['value'] = str(original_value)
+                                    
+                                    normalized_benchmark_val = str(benchmark_value).lower().replace(' ', '_')
+                                    normalized_original_val = str(original_value).lower().replace(' ', '_')
+                                    
+                                    old_val_list_item = f"{table_name}.{value_info['column']}.{normalized_benchmark_val}"
+                                    new_val_list_item = f"{table_name}.{value_info['column']}.{normalized_original_val}"
+                                    
+                                    if old_val_list_item in new_record['values_list']:
+                                        item_index = new_record['values_list'].index(old_val_list_item)
+                                        new_record['values_list'][item_index] = new_val_list_item
+
+                                    new_record['changes_information'] = {
+                                        'original_value': original_value,
+                                        variation_key: variation_value
+                                    }
+                                    
+                                    output_records.append(new_record)
+                                    break # Move to the next variation record
+
+                        except sqlite3.Error as e:
+                            continue
     finally:
         for db_id, conn in db_connections.items():
             conn.close()
-
+    print(f)
     with open(output_json_path, 'w', encoding='utf-8') as f:
         json.dump(output_records, f, indent=4)
         
