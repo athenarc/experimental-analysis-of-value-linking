@@ -143,7 +143,7 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
                                     new_record['original_question'] = new_record.pop('question')
                                     new_record['question'] = new_question
                                     new_record['SQL'] = new_sql
-                                    
+                                    new_record['original_SQL'] = original_sql
                                     new_record['values'][i]['value'] = str(original_value)
                                     
                                     normalized_benchmark_val = str(benchmark_value).lower().replace(' ', '_')
@@ -169,16 +169,16 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
     finally:
         for db_id, conn in db_connections.items():
             conn.close()
-    print(f)
+    print(f"Generated {len(output_records)} variations.")
     with open(output_json_path, 'w', encoding='utf-8') as f:
         json.dump(output_records, f, indent=4)
         
         
 if __name__ == "__main__":
     benchmark_json_path = 'assets/value_linking_valid_values_exact_no_bird_train.json'
-    variations_json_path = 'assets/data_exploration/typo_deletions.json'
+    variations_json_path = 'assets/data_exploration_human/typo_substitutions.json'
     db_folder_path = 'assets/all_databases'
-    output_json_path = 'assets/all_benchmarks_human/test.json'
+    output_json_path = 'assets/all_benchmarks_human/typo_substitutions.json'
 
     generate_benchmark_variations(benchmark_json_path, variations_json_path, db_folder_path, output_json_path)
     print(f"Output written to {output_json_path}")
