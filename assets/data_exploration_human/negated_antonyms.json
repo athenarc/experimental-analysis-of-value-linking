@@ -1,1 +1,191 @@
-[]
+[
+{
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Disciplined",
+    "negated_antonym": "not undisciplined"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Informed",
+    "negated_antonym": "not uninformed"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Curious",
+    "negated_antonym": "not uncurious"
+  },
+  {
+    "database_id": "financial",
+    "table": "card",
+    "column": "type",
+    "original_value": "junior",
+    "negated_antonym": "not senior"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Indestructible",
+    "negated_antonym": "not destructible"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Decommission",
+    "negated_antonym": "not commissioned"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "uncommon",
+    "negated_antonym": "not common"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "common",
+    "negated_antonym": "not rare"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "status",
+    "original_value": "Closed",
+    "negated_antonym": "not open"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Normal",
+    "negated_antonym": "not abnormal"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Banned",
+    "negated_antonym": "not permitted"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "differentiation",
+    "negated_antonym": "not undifferentiated"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Active",
+    "negated_antonym": "not inactive"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "statustype",
+    "original_value": "Closed",
+    "negated_antonym": "not open"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Unsanctioned",
+    "negated_antonym": "not sanctioned"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Unstable",
+    "negated_antonym": "not stable"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Unstable",
+    "negated_antonym": "not stable"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Disqualified",
+    "negated_antonym": "not qualified"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Retired",
+    "negated_antonym": "not active"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Excluded",
+    "negated_antonym": "not included"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "nonparametric",
+    "negated_antonym": "not parametric"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "online",
+    "negated_antonym": "not offline"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "nonlinear",
+    "negated_antonym": "not linear"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "control",
+    "negated_antonym": "not uncontrolled"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Likely",
+    "negated_antonym": "not unlikely"
+  }
+]
