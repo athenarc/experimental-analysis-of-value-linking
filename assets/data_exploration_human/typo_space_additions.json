@@ -1,1 +1,373 @@
-[]
+[
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "country",
+    "original_value": "Iceland",
+    "typo_space_addition": "Ice land"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Autobiographer",
+    "typo_space_addition": "Auto biographer"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Parking",
+    "typo_space_addition": "Park ing"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "model",
+    "original_value": "plymouth",
+    "typo_space_addition": "ply mouth"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Chippy",
+    "typo_space_addition": "Chip py"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "devoid",
+    "typo_space_addition": "de void"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Menace",
+    "typo_space_addition": "Men ace"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Discombobulate",
+    "typo_space_addition": "Discom bobulate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Sorcery",
+    "typo_space_addition": "Sor cerry"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "prerelease",
+    "typo_space_addition": "pre release"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Juggernaut",
+    "typo_space_addition": "Jug gernaut"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "foretell",
+    "typo_space_addition": "fore tell"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "location",
+    "original_value": "Indianapolis",
+    "typo_space_addition": "Indiana polis"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "clients",
+    "column": "client_details",
+    "original_value": "Eloise",
+    "typo_space_addition": "Eloi se"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Footwork",
+    "typo_space_addition": "Foot work"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "country",
+    "column": "name",
+    "original_value": "Scotland",
+    "typo_space_addition": "Scot land"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Azerbaijani",
+    "typo_space_addition": "Azer baijani"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "biology",
+    "typo_space_addition": "bio logy"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "racing_series",
+    "original_value": "NASCAR",
+    "typo_space_addition": "NA SCAR"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Alfredo",
+    "typo_space_addition": "Alf redo"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Salazar",
+    "typo_space_addition": "Sal azar"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Photosensitivities",
+    "typo_space_addition": "Photo sensitivities"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "thrombophlebitis",
+    "typo_space_addition": "thrombo phlebitis"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Database",
+    "typo_space_addition": "Data base"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "features",
+    "column": "feature_name",
+    "original_value": "rooftop",
+    "typo_space_addition": "roof top"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "language",
+    "original_value": "Hebrew",
+    "typo_space_addition": "He brew"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Solfatara",
+    "typo_space_addition": "Solfa tara"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "format",
+    "original_value": "premodern",
+    "typo_space_addition": "pre modern"
+  },
+  {
+    "database_id": "wta_1",
+    "table": "matches",
+    "column": "tourney_name",
+    "original_value": "Kaohsiung",
+    "typo_space_addition": "Kaoh siung"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "first_name",
+    "original_value": "Keaton",
+    "typo_space_addition": "Kea ton"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "last_name",
+    "original_value": "Woodard",
+    "typo_space_addition": "Woo dard"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "position",
+    "original_value": "Inactive",
+    "typo_space_addition": "In active"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "paragraphs",
+    "column": "paragraph_text",
+    "original_value": "Jersey",
+    "typo_space_addition": "Jer sey"
+  },
+ {
+    "database_id": "sing_contest",
+    "table": "participants",
+    "column": "name",
+    "original_value": "Freeway",
+    "typo_space_addition": "Free way"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "patient",
+    "column": "diagnosis",
+    "original_value": "arthralgia",
+    "typo_space_addition": "arthr algia"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Joaquin",
+    "typo_space_addition": "Joa quin"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "AutoCorrelation",
+    "typo_space_addition": "Auto Correlation"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "somebody",
+    "typo_space_addition": "some body"
+  },
+  {
+    "database_id": "dog_kennels",
+    "table": "professionals",
+    "column": "state",
+    "original_value": "Montana",
+    "typo_space_addition": "Mont ana"
+  },
+  {
+    "database_id": "superhero",
+    "table": "publisher",
+    "column": "publisher_name",
+    "original_value": "Rebellion",
+    "typo_space_addition": "Rebel lion"
+  },
+  {
+    "database_id": "superhero",
+    "table": "race",
+    "column": "race",
+    "original_value": "Atlantean",
+    "typo_space_addition": "At lantean"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Carolyn",
+    "typo_space_addition": "Caro lyn"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Oakland",
+    "typo_space_addition": "Oak land"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Antiquities",
+    "typo_space_addition": "Anti quities"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "memorabilia",
+    "typo_space_addition": "memor abilia"
+  },
+  {
+    "database_id": "headphone_store",
+    "table": "store",
+    "column": "name",
+    "original_value": "Woodman",
+    "typo_space_addition": "Wood man"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "students",
+    "column": "first_name",
+    "original_value": "Jarvis",
+    "typo_space_addition": "Jar vis"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Abraxas",
+    "typo_space_addition": "Abra xas"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Banshee",
+    "typo_space_addition": "Ban shee"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Telepathy",
+    "typo_space_addition": "Tele pathy"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team",
+    "column": "team_long_name",
+    "original_value": "Sunderland",
+    "typo_space_addition": "Sunder land"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Kurtosis",
+    "typo_space_addition": "Kurt osis"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "users",
+    "column": "first_name",
+    "original_value": "Theresa",
+    "typo_space_addition": "Ther esa"
+  }
+]
