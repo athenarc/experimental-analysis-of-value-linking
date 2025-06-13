@@ -1,1 +1,449 @@
-[]
+[
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "hypothesis-testing",
+    "punct_change": "hypothesis_testing"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Club T-Shirts",
+    "punct_change": "Club T'Shirts"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "make",
+    "original_value": "dodge colt m/m",
+    "punct_change": "dodge colt m-m"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "model",
+    "original_value": "mercedes-benz",
+    "punct_change": "mercedes_benz"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Zoltan Boros & Gabor Szikszai",
+    "punct_change": "Zoltan Boros, Gabor Szikszai"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "availability",
+    "original_value": "arena,mtgo",
+    "punct_change": "arena;mtgo"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "colors",
+    "original_value": "W,U",
+    "punct_change": "W;U"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "flavorname",
+    "original_value": "Godzilla, King of the Monsters",
+    "punct_change": "Godzilla; King of the Monsters"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "legendary,extendedart",
+    "punct_change": "legendary;extendedart"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Flash,Reach",
+    "punct_change": "Flash;Reach"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Serra's Embrace",
+    "punct_change": "Serra’s Embrace"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Creature - Angel",
+    "punct_change": "Creature & Angel"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "tourney,fnm",
+    "punct_change": "tourney&fnm"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Sphinx,Rogue",
+    "punct_change": "Sphinx;Rogue"
+  },
+    {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "types",
+    "original_value": "Tribal,Instant",
+    "punct_change": "Tribal-Instant"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "set (HOU)",
+    "punct_change": "set [HOU]"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "location",
+    "original_value": "Monte-Carlo",
+    "punct_change": "Monte_Carlo"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Circuit de Barcelona-Catalunya",
+    "punct_change": "Circuit de Barcelona,Catalunya"
+  },
+  {
+    "database_id": "superhero",
+    "table": "colour",
+    "column": "colour",
+    "original_value": "Black/Blue",
+    "punct_change": "Black,Blue"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Arzani-Volpini",
+    "punct_change": "Arzani/Volpini"
+  },
+  {
+    "database_id": "financial",
+    "table": "district",
+    "column": "a2",
+    "original_value": "Hl.m. Praha",
+    "punct_change": "Hl,m. Praha"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "name",
+    "original_value": "Ryan Hunter-Reay",
+    "punct_change": "Ryan Hunter_Reay"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "forename",
+    "original_value": "Hans-Joachim",
+    "punct_change": "Hans_Joachim"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Argentine-Italian",
+    "punct_change": "Argentine;Italian"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Campbell-Jones",
+    "punct_change": "Campbell|Jones"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "Officers meeting - January",
+    "punct_change": "Officers meeting , January"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "location",
+    "original_value": "Campus Soccer/Lacrosse stadium",
+    "punct_change": "Campus Soccer-Lacrosse stadium"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "ana pattern",
+    "original_value": "P.S",
+    "punct_change": "P;S"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "MCTD, AMI",
+    "punct_change": "MCTD; AMI"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "abortion, epilepsy",
+    "punct_change": "abortion/ epilepsy"
+  },
+  {
+    "database_id": "student_club",
+    "table": "expense",
+    "column": "expense_description",
+    "original_value": "Post Cards, Posters",
+    "punct_change": "Post Cards& Posters"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "language",
+    "original_value": "Portuguese (Brazil)",
+    "punct_change": "Portuguese [Brazil]"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Gufo Custode dell'Anello",
+    "punct_change": "Gufo Custode dell-Anello"
+  },
+  {
+    "database_id": "video_game",
+    "table": "game",
+    "column": "developers",
+    "original_value": "Nintendo/GameFreak",
+    "punct_change": "Nintendo,GameFreak"
+  },
+  {
+    "database_id": "car_1",
+    "table": "model_list",
+    "column": "model",
+    "original_value": "mercedes-benz",
+    "punct_change": "mercedes_benz"
+  },
+  {
+    "database_id": "sing_contest",
+    "table": "participants",
+    "column": "name",
+    "original_value": "Biby Michael's Friend",
+    "punct_change": "Biby Michael`s Friend"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "patient",
+    "column": "diagnosis",
+    "original_value": "RA, SLE susp",
+    "punct_change": "RA/ SLE susp"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "player",
+    "column": "player_name",
+    "original_value": "Abdul-Yakinu Iddi",
+    "punct_change": "Abdul_Yakinu Iddi"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "userdisplayname",
+    "original_value": "Catrin Campbell-Moore",
+    "punct_change": "Catrin Campbell'Moore"
+  },
+  {
+    "database_id": "book_press",
+    "table": "press",
+    "column": "name",
+    "original_value": "Unibail-Rodamco",
+    "punct_change": "Unibail_Rodamco"
+  },
+  {
+    "database_id": "bbc_channels",
+    "table": "program",
+    "column": "title",
+    "original_value": "Caesar III: An Empire Without End",
+    "punct_change": "Caesar III; An Empire Without End"
+  },
+  {
+    "database_id": "superhero",
+    "table": "publisher",
+    "column": "publisher_name",
+    "original_value": "Hanna-Barbera",
+    "punct_change": "Hanna,Barbera"
+  },{
+    "database_id": "superhero",
+    "table": "race",
+    "column": "race",
+    "original_value": "God / Eternal",
+    "punct_change": "God - Eternal"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Frank (Butch)",
+    "punct_change": "Frank [Buch]"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Torres-Fitzsimons",
+    "punct_change": "Torres_Fitzsimons"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "city",
+    "original_value": "Agua-Dulce",
+    "punct_change": "Agua_Dulce"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Agua-Dulce",
+    "punct_change": "Agua_Dulce"
+  },
+  {
+    "database_id": "card_games",
+    "table": "set_translations",
+    "column": "language",
+    "original_value": "Portuguese (Brazil)",
+    "punct_change": "Portuguese {Brasil}"
+  },
+  {
+    "database_id": "card_games",
+    "table": "set_translations",
+    "column": "translation",
+    "original_value": "From The Vault: Lore",
+    "punct_change": "From The Vault; Lore"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "Commander's Arsenal",
+    "punct_change": "Commander’s Arsenal"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Urza's Saga",
+    "punct_change": "Urza`s Saga"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "draft_innovation",
+    "punct_change": "draft-innovation"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "location",
+    "original_value": "Mid-Atlantic",
+    "punct_change": "Mid/Atlantic"
+  },
+  {
+    "database_id": "sing_contest",
+    "table": "songs",
+    "column": "language",
+    "original_value": "French , English",
+    "punct_change": "French & English"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Teth-Adam",
+    "punct_change": "Teth/Adam"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Ant-Man",
+    "punct_change": "Ant_Man"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Technopath/Cyberpath",
+    "punct_change": "Technopath;Cyberpath"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "hypothesis-testing",
+    "punct_change": "hypothesis,testing"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team",
+    "column": "team_long_name",
+    "original_value": "FC St. Gallen",
+    "punct_change": "FC St' Gallen"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "team",
+    "column": "team_short_name",
+    "original_value": "B-M",
+    "punct_change": "B;M"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "hannes.koller",
+    "punct_change": "hannes,koller"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "vehicle",
+    "column": "builder",
+    "original_value": "Zhuzhou Siemens , Germany",
+    "punct_change": "Zhuzhou Siemens | Germany"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Winston-salem",
+    "punct_change": "Winston/salem"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "St Mary's County",
+    "punct_change": "St Mary\"s County"
+  }
+]
