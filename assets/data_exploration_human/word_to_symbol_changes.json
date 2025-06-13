@@ -1,1 +1,233 @@
-[]
+[
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Toils of Night and Day",
+    "word_to_symbol_change": "Toils of Night & Day"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Sword of Truth and Justice",
+    "word_to_symbol_change": "Sword of Truth & Justice"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Burn at the Stake",
+    "word_to_symbol_change": "Burn @ the Stake"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Smart Ass",
+    "word_to_symbol_change": "Smart @ss"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Touch and Go",
+    "word_to_symbol_change": "Touch & Go"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Sword of Feast and Famine",
+    "word_to_symbol_change": "Sword of Feast & Famine"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Czech and Moravian",
+    "word_to_symbol_change": "Czech & Moravian"
+  },
+  {
+    "database_id": "world_1",
+    "table": "countrylanguage",
+    "column": "language",
+    "original_value": "Ukrainian and Russian",
+    "word_to_symbol_change": "Ukrainian & Russian"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "educational option type",
+    "original_value": "Home and Hospital",
+    "word_to_symbol_change": "Home & Hospital"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "college",
+    "original_value": "College of Agriculture and Applied Sciences",
+    "word_to_symbol_change": "College of Agriculture & Applied Sciences"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Economics and Finance Department",
+    "word_to_symbol_change": "Economics & Finance Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Mathematics and Statistics Department",
+    "word_to_symbol_change": "Mathematics & Statistics Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Environment and Society Department",
+    "word_to_symbol_change": "Environment & Society Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Chemistry and Biochemistry Department",
+    "word_to_symbol_change": "Chemistry & Biochemistry Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Fisheries and Aquatic Sciences",
+    "word_to_symbol_change": "Fisheries & Aquatic Sciences"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "IT Support and Web Development",
+    "word_to_symbol_change": "IT Support & Web Development"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posthistory",
+    "column": "text",
+    "original_value": "Selecting trustworthy rows based on minima and maxima",
+    "word_to_symbol_change": "Selecting trustworthy rows based on minima & maxima"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Predicting with both continuous and categorical features",
+    "word_to_symbol_change": "Predicting with both continuous & categorical features"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Probability of at least one unique outcome",
+    "word_to_symbol_change": "Probability of @ least one unique outcome"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "College and Career Advantage",
+    "word_to_symbol_change": "College & Career Advantage"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "Youth Training School At Chino",
+    "word_to_symbol_change": "Youth Training School @ Chino"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Champs and States",
+    "word_to_symbol_change": "Champs & States"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Toxin and Disease Control",
+    "word_to_symbol_change": "Toxin & Disease Control"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "blue and grey",
+    "word_to_symbol_change": "blue & grey"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Dazed and Confused",
+    "word_to_symbol_change": "Dazed & Confused"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "displayname",
+    "original_value": "Ben Smiley",
+    "word_to_symbol_change": "Ben & Smiley"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "probably at my laptop",
+    "word_to_symbol_change": "probably @ my laptop"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Some where between this world and the other",
+    "word_to_symbol_change": "Some where between this world & the other"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "University of Texas at Austin",
+    "word_to_symbol_change": "University of Texas @ Austin"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Bizarre and beautiful world",
+    "word_to_symbol_change": "Bizarre & beautiful world"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "King And Queen Court House",
+    "word_to_symbol_change": "King & Queen Court House"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Rough And Ready",
+    "word_to_symbol_change": "Rough & Ready"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Sitka City and Borough",
+    "word_to_symbol_change": "Sitka City & Borough"
+  }
+]
