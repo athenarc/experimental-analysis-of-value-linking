@@ -1,0 +1,4384 @@
+[
+    {
+        "SQL": "SELECT zip_postcode FROM Addresses WHERE city  =  'Port Evanston'",
+        "tables": [
+            "addresses"
+        ],
+        "columns": [
+            "addresses.zip_postcode",
+            "addresses.city"
+        ],
+        "values": [
+            {
+                "table": "addresses",
+                "column": "city",
+                "value": "Port Evanston",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_transcripts_tracking",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "addresses.city.port chelsea"
+        ],
+        "original_question": "What is the zip code of the address in the city Port Chelsea?",
+        "question": "What is the zip code of the address in the city PortEvanston?",
+        "original_SQL": "SELECT zip_postcode FROM Addresses WHERE city  =  'Port Chelsea'",
+        "changes_information": {
+            "original_value": "Port Evanston",
+            "typo_space_removal": "PortEvanston"
+        }
+    },
+    {
+        "SQL": "SELECT zip_postcode FROM Addresses WHERE city  =  'Port Evanston'",
+        "tables": [
+            "addresses"
+        ],
+        "columns": [
+            "addresses.zip_postcode",
+            "addresses.city"
+        ],
+        "values": [
+            {
+                "table": "addresses",
+                "column": "city",
+                "value": "Port Evanston",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_transcripts_tracking",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "addresses.city.port chelsea"
+        ],
+        "original_question": "What is the zip code for Port Chelsea?",
+        "question": "What is the zip code for PortEvanston?",
+        "original_SQL": "SELECT zip_postcode FROM Addresses WHERE city  =  'Port Chelsea'",
+        "changes_information": {
+            "original_value": "Port Evanston",
+            "typo_space_removal": "PortEvanston"
+        }
+    },
+    {
+        "SQL": "SELECT name FROM battle WHERE bulgarian_commander  =  'Kaloyan' AND latin_commander  =  'Baldwin I'",
+        "tables": [
+            "battle"
+        ],
+        "columns": [
+            "battle.latin_commander",
+            "battle.bulgarian_commander",
+            "battle.name"
+        ],
+        "values": [
+            {
+                "table": "battle",
+                "column": "bulgarian_commander",
+                "value": "Kaloyan",
+                "condition": "="
+            },
+            {
+                "table": "battle",
+                "column": "latin_commander",
+                "value": "Baldwin I",
+                "condition": "="
+            }
+        ],
+        "db_id": "battle_death",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "battle.bulgarian_commander.kaloyan",
+            "battle.latin_commander.baldwin i"
+        ],
+        "original_question": "What are the distinct battle names which are between bulgarian commander 'Kaloyan' and latin commander 'Baldwin I'?",
+        "question": "What are the distinct battle names which are between bulgarian commander 'Kaloyan' and latin commander 'BaldwinI'?",
+        "original_SQL": "SELECT name FROM battle WHERE bulgarian_commander  =  'Kaloyan' AND latin_commander  =  'Baldwin I'",
+        "changes_information": {
+            "original_value": "Baldwin I",
+            "typo_space_removal": "BaldwinI"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Adam Rex'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Aaron Boyd' is artist;",
+        "values_list": [
+            "cards.artist.aaron boyd"
+        ],
+        "original_question": "Name the cards that were illustrated by Aaron Boyd.",
+        "question": "Name the cards that were illustrated by Adamrex.",
+        "original_SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Aaron Boyd'",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT manaCost FROM cards WHERE artist = 'Adam Rex'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.manacost"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "unconverted mana refer to manaCost; Rob Alexander refer to artist",
+        "values_list": [
+            "cards.artist.rob alexander"
+        ],
+        "original_question": "What is the  unconverted mana do all the cards created by Rob Alexander cost in total?",
+        "question": "What is the  unconverted mana do all the cards created by Adamrex cost in total?",
+        "original_SQL": "SELECT manaCost FROM cards WHERE artist = 'Rob Alexander'",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Adam Rex' AND T2.format = 'pauper' AND T1.availability = 'paper'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.artist",
+            "legalities.format",
+            "cards.id",
+            "legalities.uuid",
+            "cards.uuid",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "availability",
+                "value": "paper",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "format",
+                "value": "pauper",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "available in paper refers to availability = 'paper'",
+        "values_list": [
+            "cards.availability.paper",
+            "cards.artist.erica yang",
+            "legalities.format.pauper"
+        ],
+        "original_question": "Is there any card from Erica Yang artist in pauper format and available in paper? If so, indicate its ID.",
+        "question": "Is there any card from Adamrex artist in pauper format and available in paper? If so, indicate its ID.",
+        "original_SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Erica Yang' AND T2.format = 'pauper' AND T1.availability = 'paper'",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Adam Rex'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "kind of printing refers to availability; Daren Bader created refers to artist = 'Daren Bader'",
+        "values_list": [
+            "cards.artist.daren bader"
+        ],
+        "original_question": "What kind of printing is on the card that Daren Bader created?",
+        "question": "What kind of printing is on the card that Adamrex created?",
+        "original_SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Daren Bader'",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.artist = 'Adam Rex' ORDER BY T2.date DESC",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "rulings.date",
+            "rulings.text",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "rulings refers to text; card named and designed by Kev Walker refers to artist = 'Kev Walker'; descending order of dates refers to MAX(date);",
+        "values_list": [
+            "cards.artist.kev walker"
+        ],
+        "original_question": "What are the rulings for the card named and designed by Kev Walker? List them in descending order of dates.",
+        "question": "What are the rulings for the card named and designed by Adamrex? List them in descending order of dates.",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.artist = 'Kev Walker' ORDER BY T2.date DESC",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Adam Rex'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.artist",
+            "legalities.status",
+            "cards.name",
+            "cards.frameversion",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Adam Rex",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "frame styles refers to frameVersion; cards Allen Williams worked on refers to artist = 'Allen Williams'; banned cards refers to status = 'Banned'",
+        "values_list": [
+            "legalities.status.banned",
+            "cards.artist.allen williams"
+        ],
+        "original_question": "List all the frame styles and cards Allen Williams worked on and find any banned cards if there are any.",
+        "question": "List all the frame styles and cards Adamrex worked on and find any banned cards if there are any.",
+        "original_SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Allen Williams'",
+        "changes_information": {
+            "original_value": "Adam Rex",
+            "typo_space_removal": "Adamrex"
+        }
+    },
+    {
+        "SQL": "SELECT layout FROM cards WHERE keywords = 'Double strike'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.keywords",
+            "cards.layout"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "keywords",
+                "value": "Double strike",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "cards.keywords.double_strike"
+        ],
+        "original_question": "What are the card layout of cards with keyword of flying?",
+        "question": "What are the card layout of cards with keyword of Doublestrike?",
+        "original_SQL": "SELECT layout FROM cards WHERE keywords = 'Flying'",
+        "changes_information": {
+            "original_value": "Double strike",
+            "typo_space_removal": "Doublestrike"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Hypnotic Specter'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.keywords"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Angel of Mercy' is the name of card;",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "What is the keyword found on card 'Angel of Mercy'?",
+        "question": "What is the keyword found on card 'HypnoticSpecter'?",
+        "original_SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT promoTypes FROM cards WHERE name = 'Hypnotic Specter' AND promoTypes IS NOT NULL",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.promotypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card Duress refers to name = 'Duress'; type of promotion refers to promoTypes;",
+        "values_list": [
+            "cards.name.hypnotic_specter"
+        ],
+        "original_question": "What type of promotion is of card 'Duress'?",
+        "question": "What type of promotion is of card 'HypnoticSpecter'?",
+        "original_SQL": "SELECT promoTypes FROM cards WHERE name = 'Duress' AND promoTypes IS NOT NULL",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Ancestor's Chosen' is the name of card; description about the ruling refers to text;",
+        "values_list": [
+            "cards.name.hypnotic_specter"
+        ],
+        "original_question": "What is the description about the ruling of card \"Condemn\"?",
+        "question": "What is the description about the ruling of card \"HypnoticSpecter\"?",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Condemn'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "legalities.status",
+            "cards.name",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Cloudchaser Eagle is the name of card;",
+        "values_list": [
+            "cards.name.cloudchaser eagle"
+        ],
+        "original_question": "What is the status of card \"Cloudchaser Eagle\"?",
+        "question": "What is the status of card \"HypnoticSpecter\"?",
+        "original_SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Cloudchaser Eagle'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "cards",
+            "foreign_data"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "foreign_data.uuid",
+            "cards.type"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the type of card \"Benalish Knight\"?",
+        "question": "What is the type of card \"HypnoticSpecter\"?",
+        "original_SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "cards.uuid",
+            "legalities.format",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card; rule of playing card refers to format;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the rule of playing card \"Benalish Knight\"?",
+        "question": "What is the rule of playing card \"HypnoticSpecter\"?",
+        "original_SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Beacon of Immortality' is the name of card;",
+        "values_list": [
+            "cards.name.beacon of immortality"
+        ],
+        "original_question": "Write down the ruling of Beacon of Immortality.",
+        "question": "Write down the ruling of HypnoticSpecter.",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Beacon of Immortality'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Hypnotic Specter'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.subtypes",
+            "cards.supertypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card \"Molimo, Maro-Sorcerer\" refers to name = 'Molimo, Maro-Sorcerer'; list of all types refers to subtypes,supertypes",
+        "values_list": [
+            "cards.name.molimo, maro-sorcerer"
+        ],
+        "original_question": "What's the list of all types for the card \"Molimo, Maro-Sorcerer\"?",
+        "question": "What's the list of all types for the card \"HypnoticSpecter\"?",
+        "original_SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Molimo, Maro-Sorcerer'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.mtgocode",
+            "cards.name",
+            "cards.setcode",
+            "sets.code"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set \"Angel of Mercy\" refers to name = 'Angel of Mercy'; appear on Magic: The Gathering Online refers to mtgoCode is NOT NULL and vice versa",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "Did the set of cards with \"Angel of Mercy\" appear on Magic: The Gathering Online?",
+        "question": "Did the set of cards with \"HypnoticSpecter\" appear on Magic: The Gathering Online?",
+        "original_SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.date",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Reminisce refers to name = 'Reminisce'; when created is the date",
+        "values_list": [
+            "cards.name.hypnotic_specter"
+        ],
+        "original_question": "When was the ruling for the card 'Reminisce' created?",
+        "question": "When was the ruling for the card 'HypnoticSpecter' created?",
+        "original_SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Reminisce'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Hypnotic Specter'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.setcode",
+            "sets.code",
+            "sets.releasedate"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\"Evacuation\" refers to name = 'Evacuation'; release date refers to releaseDate",
+        "values_list": [
+            "cards.name.hypnotic_specter"
+        ],
+        "original_question": "What was the release date for the set which card \"Evacuation\" in it?",
+        "question": "What was the release date for the set which card \"HypnoticSpecter\" in it?",
+        "original_SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Evacuation'",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Hypnotic Specter' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "French",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "French refers to language = 'French'; \"Tendo Ice Bridge\" is a translated name of a card; translated name refers to translation",
+        "values_list": [
+            "cards.name.tendo ice bridge",
+            "set_translations.language.french"
+        ],
+        "original_question": "What's the French name of the set of cards with \"Tendo Ice Bridge\" is in?",
+        "question": "What's the French name of the set of cards with \"HypnoticSpecter\" is in?",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Tendo Ice Bridge' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Hypnotic Specter' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Hypnotic Specter",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "Japanese",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Japanese name refers to language = 'Japanese'; card \"Fellwar Stone\" refers to name = 'Fellwar Stone'",
+        "values_list": [
+            "cards.name.fellwar stone",
+            "set_translations.language.japanese"
+        ],
+        "original_question": "Tell the Japanese name of the set which card \"Fellwar Stone\" is in it.",
+        "question": "Tell the Japanese name of the set which card \"HypnoticSpecter\" is in it.",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Fellwar Stone' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Hypnotic Specter",
+            "typo_space_removal": "HypnoticSpecter"
+        }
+    },
+    {
+        "SQL": "SELECT T1.id, T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.originalType = 'Enchant Wall'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.originaltype",
+            "cards.id",
+            "rulings.date",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "originaltype",
+                "value": "Enchant Wall",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Creature - Elf is the originalType;",
+        "values_list": [
+            "cards.originaltype.creature - elf"
+        ],
+        "original_question": "List down the name of cards with original types of Creature - Elf and the date of rulings for these cards.",
+        "question": "List down the name of cards with original types of EnchantWall and the date of rulings for these cards.",
+        "original_SQL": "SELECT T1.id, T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.originalType = 'Creature - Elf'",
+        "changes_information": {
+            "original_value": "Enchant Wall",
+            "typo_space_removal": "EnchantWall"
+        }
+    },
+    {
+        "SQL": "SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones' INTERSECT SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones'",
+        "tables": [
+            "tv_channel",
+            "cartoon"
+        ],
+        "columns": [
+            "cartoon.channel",
+            "tv_channel.country",
+            "tv_channel.id",
+            "tv_channel.series_name",
+            "cartoon.directed_by"
+        ],
+        "values": [
+            {
+                "table": "cartoon",
+                "column": "directed_by",
+                "value": "Ben Jones",
+                "condition": "="
+            },
+            {
+                "table": "cartoon",
+                "column": "directed_by",
+                "value": "Ben Jones",
+                "condition": "="
+            }
+        ],
+        "db_id": "tvshow",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "cartoon.directed_by.michael chang",
+            "cartoon.directed_by.ben jones"
+        ],
+        "original_question": "Find the series name and country of the tv channel that is playing some cartoons directed by Ben Jones and Michael Chang?",
+        "question": "Find the series name and country of the tv channel that is playing some cartoons directed by Ben Jones and BenJones?",
+        "original_SQL": "SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Michael Chang' INTERSECT SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones'",
+        "changes_information": {
+            "original_value": "Ben Jones",
+            "typo_space_removal": "BenJones"
+        }
+    },
+    {
+        "SQL": "SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones' INTERSECT SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones'",
+        "tables": [
+            "tv_channel",
+            "cartoon"
+        ],
+        "columns": [
+            "cartoon.channel",
+            "tv_channel.country",
+            "tv_channel.id",
+            "tv_channel.series_name",
+            "cartoon.directed_by"
+        ],
+        "values": [
+            {
+                "table": "cartoon",
+                "column": "directed_by",
+                "value": "Ben Jones",
+                "condition": "="
+            },
+            {
+                "table": "cartoon",
+                "column": "directed_by",
+                "value": "Ben Jones",
+                "condition": "="
+            }
+        ],
+        "db_id": "tvshow",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "cartoon.directed_by.michael chang",
+            "cartoon.directed_by.ben jones"
+        ],
+        "original_question": "What is the series name and country of all TV channels that are playing cartoons directed by Ben Jones and cartoons directed by Michael Chang?",
+        "question": "What is the series name and country of all TV channels that are playing cartoons directed by Ben Jones and cartoons directed by BenJones?",
+        "original_SQL": "SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Michael Chang' INTERSECT SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones'",
+        "changes_information": {
+            "original_value": "Ben Jones",
+            "typo_space_removal": "BenJones"
+        }
+    },
+    {
+        "SQL": "SELECT T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.written_by  =  'Adam Beechen'",
+        "tables": [
+            "tv_channel",
+            "cartoon"
+        ],
+        "columns": [
+            "cartoon.written_by",
+            "tv_channel.country",
+            "cartoon.channel",
+            "tv_channel.id"
+        ],
+        "values": [
+            {
+                "table": "cartoon",
+                "column": "written_by",
+                "value": "Adam Beechen",
+                "condition": "="
+            }
+        ],
+        "db_id": "tvshow",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "cartoon.written_by.todd casey"
+        ],
+        "original_question": "which countries' tv channels are playing some cartoon written by Todd Casey?",
+        "question": "which countries' tv channels are playing some cartoon written by AdamBeechen?",
+        "original_SQL": "SELECT T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.written_by  =  'Todd Casey'",
+        "changes_information": {
+            "original_value": "Adam Beechen",
+            "typo_space_removal": "AdamBeechen"
+        }
+    },
+    {
+        "SQL": "SELECT T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.written_by  =  'Adam Beechen'",
+        "tables": [
+            "tv_channel",
+            "cartoon"
+        ],
+        "columns": [
+            "cartoon.written_by",
+            "tv_channel.country",
+            "cartoon.channel",
+            "tv_channel.id"
+        ],
+        "values": [
+            {
+                "table": "cartoon",
+                "column": "written_by",
+                "value": "Adam Beechen",
+                "condition": "="
+            }
+        ],
+        "db_id": "tvshow",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "cartoon.written_by.todd casey"
+        ],
+        "original_question": "What are the countries that have cartoons on TV that were written by Todd Casey?",
+        "question": "What are the countries that have cartoons on TV that were written by AdamBeechen?",
+        "original_SQL": "SELECT T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.written_by  =  'Todd Casey'",
+        "changes_information": {
+            "original_value": "Adam Beechen",
+            "typo_space_removal": "AdamBeechen"
+        }
+    },
+    {
+        "SQL": "SELECT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.location = 'Le Mans'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.year",
+            "races.circuitid",
+            "circuits.location"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "location",
+                "value": "Le Mans",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "Shanghai is a name of location;",
+        "values_list": [
+            "circuits.location.le_mans"
+        ],
+        "original_question": "Please list the year during which the race is held on circuits in Shanghai.",
+        "question": "Please list the year during which the race is held on circuits in LeMans.",
+        "original_SQL": "SELECT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.location = 'Shanghai'",
+        "changes_information": {
+            "original_value": "Le Mans",
+            "typo_space_removal": "LeMans"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "introduction of races refers to url; Circuit de Barcelona-Catalunya is a name of circuit;",
+        "values_list": [
+            "circuits.name.circuit de barcelona-catalunya"
+        ],
+        "original_question": "Where can the introduction of the races held on Circuit de Barcelona-Catalunya be found?",
+        "question": "Where can the introduction of the races held on BrandsHatch be found?",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Circuit de Barcelona-Catalunya'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "information about races refers to url;",
+        "values_list": [
+            "circuits.name.sepang international circuit"
+        ],
+        "original_question": "Where can I find the information about the races held on Sepang International Circuit?",
+        "question": "Where can I find the information about the races held on BrandsHatch?",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Sepang International Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.time FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "circuits.name",
+            "races.time",
+            "races.circuitid"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "circuits.name.sepang international circuit"
+        ],
+        "original_question": "Please list the time of the races held on Sepang International Circuit.",
+        "question": "Please list the time of the races held on BrandsHatch.",
+        "original_SQL": "SELECT DISTINCT T2.time FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Sepang International Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT T2.date FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch' AND T2.name = 'British Grand Prix' ORDER BY T2.year DESC LIMIT 1",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "races.circuitid",
+            "races.date",
+            "races.year",
+            "races.name",
+            "circuits.circuitid",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            },
+            {
+                "table": "races",
+                "column": "name",
+                "value": "British Grand Prix",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "the last refers to max(year);",
+        "values_list": [
+            "circuits.name.brands hatch",
+            "races.name.british grand prix"
+        ],
+        "original_question": "When was the last f1 season whereby Brands Hatch hosted the British Grand Prix?",
+        "question": "When was the last f1 season whereby BrandsHatch hosted the British Grand Prix?",
+        "original_SQL": "SELECT T2.date FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch' AND T2.name = 'British Grand Prix' ORDER BY T2.year DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT lat, lng FROM circuits WHERE name = 'Brands Hatch'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.lat",
+            "circuits.lng",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "location coordinates refers to (lat, lng); Silverstone Circuit refers to circuits.name = 'Silverstone Circuit'",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "What's the location coordinates of Silverstone Circuit?",
+        "question": "What's the location coordinates of BrandsHatch?",
+        "original_SQL": "SELECT lat, lng FROM circuits WHERE name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT circuitRef FROM circuits WHERE name = 'Brands Hatch'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.circuitref",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "reference name refers to circuitRef; Marina Bay Street Circuit refers to circuits.name = 'Marina Bay Street Circuit'",
+        "values_list": [
+            "circuits.name.marina bay street circuit"
+        ],
+        "original_question": "What's the reference name of Marina Bay Street Circuit?",
+        "question": "What's the reference name of BrandsHatch?",
+        "original_SQL": "SELECT circuitRef FROM circuits WHERE name = 'Marina Bay Street Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.year",
+            "races.circuitid",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "Please list all the years that Silverstone Circuit was used in a Formula_1 race.",
+        "question": "Please list all the years that BrandsHatch was used in a Formula_1 race.",
+        "original_SQL": "SELECT DISTINCT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "more information refers to url",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "Please give more information about the Formula_1 races that used the Silverstone Circuit.",
+        "question": "Please give more information about the Formula_1 races that used the BrandsHatch.",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT country, lat, lng FROM circuits WHERE name = 'Brands Hatch'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.lat",
+            "circuits.lng",
+            "circuits.country",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Brands Hatch",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "coordinates expressed in latitude and longitude refers to (lat, lng)",
+        "values_list": [
+            "circuits.name.brands_hatch"
+        ],
+        "original_question": "In which location does the Hungaroring circuit located? Also, find the country and coordinates of this circuit?",
+        "question": "In which location does the BrandsHatch circuit located? Also, find the country and coordinates of this circuit?",
+        "original_SQL": "SELECT country, lat, lng FROM circuits WHERE name = 'Hungaroring'",
+        "changes_information": {
+            "original_value": "Brands Hatch",
+            "typo_space_removal": "BrandsHatch"
+        }
+    },
+    {
+        "SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Ransom Collection'",
+        "tables": [
+            "document_objects"
+        ],
+        "columns": [
+            "document_objects.description",
+            "document_objects.owner"
+        ],
+        "values": [
+            {
+                "table": "document_objects",
+                "column": "description",
+                "value": "Ransom Collection",
+                "condition": "="
+            }
+        ],
+        "db_id": "cre_Doc_and_collections",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "document_objects.description.braeden collection"
+        ],
+        "original_question": "What is the owner of document with the Description 'Braeden Collection'?",
+        "question": "What is the owner of document with the Description 'RansomCollection'?",
+        "original_SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Braeden Collection'",
+        "changes_information": {
+            "original_value": "Ransom Collection",
+            "typo_space_removal": "RansomCollection"
+        }
+    },
+    {
+        "SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Ransom Collection'",
+        "tables": [
+            "document_objects"
+        ],
+        "columns": [
+            "document_objects.description",
+            "document_objects.owner"
+        ],
+        "values": [
+            {
+                "table": "document_objects",
+                "column": "description",
+                "value": "Ransom Collection",
+                "condition": "="
+            }
+        ],
+        "db_id": "cre_Doc_and_collections",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "document_objects.description.braeden collection"
+        ],
+        "original_question": "What are the owners of the document objects described as the 'Braeden Collection'?",
+        "question": "What are the owners of the document objects described as the 'RansomCollection'?",
+        "original_SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Braeden Collection'",
+        "changes_information": {
+            "original_value": "Ransom Collection",
+            "typo_space_removal": "RansomCollection"
+        }
+    },
+    {
+        "SQL": "SELECT Symptoms FROM Examination WHERE Diagnosis = 'Bleeding Colitis' GROUP BY Symptoms ORDER BY COUNT(Symptoms) DESC LIMIT 1",
+        "tables": [
+            "examination"
+        ],
+        "columns": [
+            "examination.symptoms",
+            "examination.diagnosis"
+        ],
+        "values": [
+            {
+                "table": "examination",
+                "column": "diagnosis",
+                "value": "Bleeding Colitis",
+                "condition": "="
+            }
+        ],
+        "db_id": "thrombosis_prediction",
+        "source": "bird_dev",
+        "evidence": "the most common sign refers to MAX(symptoms); 'SLE' refers to diagnosis",
+        "values_list": [
+            "examination.diagnosis.bleeding_colitis"
+        ],
+        "original_question": "What is the most common sign of patients with SLE disease?",
+        "question": "What is the most common sign of patients with BleedingColitis disease?",
+        "original_SQL": "SELECT Symptoms FROM Examination WHERE Diagnosis = 'SLE' GROUP BY Symptoms ORDER BY COUNT(Symptoms) DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Bleeding Colitis",
+            "typo_space_removal": "BleedingColitis"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Club shirts'",
+        "tables": [
+            "budget",
+            "expense"
+        ],
+        "columns": [
+            "budget.budget_id",
+            "expense.link_to_budget",
+            "budget.category",
+            "expense.expense_description"
+        ],
+        "values": [
+            {
+                "table": "expense",
+                "column": "expense_description",
+                "value": "Club shirts",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Posters' refers to expense description",
+        "values_list": [
+            "expense.expense_description.club_shirts"
+        ],
+        "original_question": "Which budget category does the expense 'Posters' fall to?",
+        "question": "Which budget category does the expense 'Clubshirts' fall to?",
+        "original_SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Posters'",
+        "changes_information": {
+            "original_value": "Club shirts",
+            "typo_space_removal": "Clubshirts"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT language FROM foreign_data WHERE name = 'Guide gobelin'",
+        "tables": [
+            "foreign_data"
+        ],
+        "columns": [
+            "foreign_data.language",
+            "foreign_data.name"
+        ],
+        "values": [
+            {
+                "table": "foreign_data",
+                "column": "name",
+                "value": "Guide gobelin",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\"A Pedra Fellwar\" refers to name = 'A Pedra Fellwar'",
+        "values_list": [
+            "foreign_data.name.a pedra fellwar"
+        ],
+        "original_question": "Which foreign language used by \"A Pedra Fellwar\"?",
+        "question": "Which foreign language used by \"Guidegobelin\"?",
+        "original_SQL": "SELECT DISTINCT language FROM foreign_data WHERE name = 'A Pedra Fellwar'",
+        "changes_information": {
+            "original_value": "Guide gobelin",
+            "typo_space_removal": "Guidegobelin"
+        }
+    },
+    {
+        "SQL": "SELECT LOCATION FROM hangar WHERE plane_name  =  'Piper Cub'",
+        "tables": [
+            "hangar"
+        ],
+        "columns": [
+            "hangar.plane_name",
+            "hangar.location"
+        ],
+        "values": [
+            {
+                "table": "hangar",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "hangar.plane_name.f-14 fighter"
+        ],
+        "original_question": "Where is the plane F-14 Fighter located?",
+        "question": "Where is the plane PiperCub located?",
+        "original_SQL": "SELECT LOCATION FROM hangar WHERE plane_name  =  'F-14 Fighter'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT LOCATION FROM hangar WHERE plane_name  =  'Piper Cub'",
+        "tables": [
+            "hangar"
+        ],
+        "columns": [
+            "hangar.plane_name",
+            "hangar.location"
+        ],
+        "values": [
+            {
+                "table": "hangar",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "hangar.plane_name.f-14 fighter"
+        ],
+        "original_question": "Return the location of the hangar in which F-14 Fighter is located.",
+        "question": "Return the location of the hangar in which PiperCub is located.",
+        "original_SQL": "SELECT LOCATION FROM hangar WHERE plane_name  =  'F-14 Fighter'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'New Haven' INTERSECT SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'",
+        "tables": [
+            "matches",
+            "players"
+        ],
+        "columns": [
+            "matches.tourney_name",
+            "players.country_code",
+            "players.player_id",
+            "matches.winner_id",
+            "players.first_name"
+        ],
+        "values": [
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "New Haven",
+                "condition": "="
+            },
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "Australian Open",
+                "condition": "="
+            }
+        ],
+        "db_id": "wta_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "matches.tourney_name.wta championships",
+            "matches.tourney_name.australian open"
+        ],
+        "original_question": "What are the country code and first name of the players who won in both tourney WTA Championships and Australian Open?",
+        "question": "What are the country code and first name of the players who won in both tourney NewHaven and Australian Open?",
+        "original_SQL": "SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'WTA Championships' INTERSECT SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'",
+        "changes_information": {
+            "original_value": "New Haven",
+            "typo_space_removal": "NewHaven"
+        }
+    },
+    {
+        "SQL": "SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'New Haven' INTERSECT SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'",
+        "tables": [
+            "matches",
+            "players"
+        ],
+        "columns": [
+            "matches.tourney_name",
+            "players.country_code",
+            "players.player_id",
+            "matches.winner_id",
+            "players.first_name"
+        ],
+        "values": [
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "New Haven",
+                "condition": "="
+            },
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "Australian Open",
+                "condition": "="
+            }
+        ],
+        "db_id": "wta_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "matches.tourney_name.wta championships",
+            "matches.tourney_name.australian open"
+        ],
+        "original_question": "What are the first names and country codes for players who won both the WTA Championships and the Australian Open?",
+        "question": "What are the first names and country codes for players who won both the NewHaven and the Australian Open?",
+        "original_SQL": "SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'WTA Championships' INTERSECT SELECT T1.country_code ,  T1.first_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id WHERE T2.tourney_name  =  'Australian Open'",
+        "changes_information": {
+            "original_value": "New Haven",
+            "typo_space_removal": "NewHaven"
+        }
+    },
+    {
+        "SQL": "SELECT winner_name FROM matches WHERE tourney_name  =  'New Haven' ORDER BY winner_rank_points DESC LIMIT 1",
+        "tables": [
+            "matches"
+        ],
+        "columns": [
+            "matches.tourney_name",
+            "matches.winner_rank_points",
+            "matches.winner_name"
+        ],
+        "values": [
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "New Haven",
+                "condition": "="
+            }
+        ],
+        "db_id": "wta_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "matches.tourney_name.australian open"
+        ],
+        "original_question": "Find the name of the winner who has the highest rank points and participated in the Australian Open tourney.",
+        "question": "Find the name of the winner who has the highest rank points and participated in the NewHaven tourney.",
+        "original_SQL": "SELECT winner_name FROM matches WHERE tourney_name  =  'Australian Open' ORDER BY winner_rank_points DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "New Haven",
+            "typo_space_removal": "NewHaven"
+        }
+    },
+    {
+        "SQL": "SELECT winner_name FROM matches WHERE tourney_name  =  'New Haven' ORDER BY winner_rank_points DESC LIMIT 1",
+        "tables": [
+            "matches"
+        ],
+        "columns": [
+            "matches.tourney_name",
+            "matches.winner_rank_points",
+            "matches.winner_name"
+        ],
+        "values": [
+            {
+                "table": "matches",
+                "column": "tourney_name",
+                "value": "New Haven",
+                "condition": "="
+            }
+        ],
+        "db_id": "wta_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "matches.tourney_name.australian open"
+        ],
+        "original_question": "What is the name of the winner with the most rank points who participated in the Australian Open tournament?",
+        "question": "What is the name of the winner with the most rank points who participated in the NewHaven tournament?",
+        "original_SQL": "SELECT winner_name FROM matches WHERE tourney_name  =  'Australian Open' ORDER BY winner_rank_points DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "New Haven",
+            "typo_space_removal": "NewHaven"
+        }
+    },
+    {
+        "SQL": "SELECT T1.Date, STRFTIME('%Y', T2.`First Date`) - STRFTIME('%Y', T2.Birthday),T2.Birthday FROM Laboratory AS T1 INNER JOIN Patient AS T2 ON T1.ID = T2.ID WHERE T2.Diagnosis = 'Adult STILL' AND T2.Birthday IS NOT NULL ORDER BY T2.Birthday ASC LIMIT 1",
+        "tables": [
+            "patient",
+            "laboratory"
+        ],
+        "columns": [
+            "laboratory.date",
+            "patient.diagnosis",
+            "laboratory.id",
+            "patient.id",
+            "patient.first date",
+            "patient.birthday"
+        ],
+        "values": [
+            {
+                "table": "patient",
+                "column": "diagnosis",
+                "value": "Adult STILL",
+                "condition": "="
+            }
+        ],
+        "db_id": "thrombosis_prediction",
+        "source": "bird_dev",
+        "evidence": "The larger the birthday value, the younger the person is, and vice versa; 'SJS' refers to diagnosis; (SUBTRACT(year(`First Date`)), year(Birthday)); age of the patients when they initially arrived at the hospital refers to year(Birthday)",
+        "values_list": [
+            "patient.diagnosis.adult_still"
+        ],
+        "original_question": "The oldest SJS patient's medical laboratory work was completed on what date, and what age was the patient when they initially arrived at the hospital?",
+        "question": "The oldest AdultSTILL patient's medical laboratory work was completed on what date, and what age was the patient when they initially arrived at the hospital?",
+        "original_SQL": "SELECT T1.Date, STRFTIME('%Y', T2.`First Date`) - STRFTIME('%Y', T2.Birthday),T2.Birthday FROM Laboratory AS T1 INNER JOIN Patient AS T2 ON T1.ID = T2.ID WHERE T2.Diagnosis = 'SJS' AND T2.Birthday IS NOT NULL ORDER BY T2.Birthday ASC LIMIT 1",
+        "changes_information": {
+            "original_value": "Adult STILL",
+            "typo_space_removal": "AdultSTILL"
+        }
+    },
+    {
+        "SQL": "SELECT SEX FROM Patient WHERE Diagnosis = 'Adult STILL' AND `First Date` IS NOT NULL ORDER BY `First Date` ASC LIMIT 1",
+        "tables": [
+            "patient"
+        ],
+        "columns": [
+            "patient.first date",
+            "patient.diagnosis",
+            "patient.sex"
+        ],
+        "values": [
+            {
+                "table": "patient",
+                "column": "diagnosis",
+                "value": "Adult STILL",
+                "condition": "="
+            }
+        ],
+        "db_id": "thrombosis_prediction",
+        "source": "bird_dev",
+        "evidence": "gender means SEX; 'AORTITIS' refers to Diagnosis;",
+        "values_list": [
+            "patient.diagnosis.adult_still"
+        ],
+        "original_question": "What was the gender of the first AORTITIS diagnosed patient?",
+        "question": "What was the gender of the first AdultSTILL diagnosed patient?",
+        "original_SQL": "SELECT SEX FROM Patient WHERE Diagnosis = 'AORTITIS' AND `First Date` IS NOT NULL ORDER BY `First Date` ASC LIMIT 1",
+        "changes_information": {
+            "original_value": "Adult STILL",
+            "typo_space_removal": "AdultSTILL"
+        }
+    },
+    {
+        "SQL": "SELECT T2.PLT FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.Diagnosis = 'Adult STILL' AND T2.PLT BETWEEN 100 AND 400",
+        "tables": [
+            "patient",
+            "laboratory"
+        ],
+        "columns": [
+            "patient.diagnosis",
+            "patient.id",
+            "laboratory.plt",
+            "laboratory.id"
+        ],
+        "values": [
+            {
+                "table": "patient",
+                "column": "diagnosis",
+                "value": "Adult STILL",
+                "condition": "="
+            }
+        ],
+        "db_id": "thrombosis_prediction",
+        "source": "bird_dev",
+        "evidence": "PLT > 100 and PLT < 400 means platelet level is within the normal range; PLT < 100 and PLT > 400 means platelet level is not within the normal range; diagnosed with MCTD refers to Diagnosis = 'MCTD';",
+        "values_list": [
+            "patient.diagnosis.adult_still"
+        ],
+        "original_question": "Please list a patient's platelet level if it is within the normal range and if he or she is diagnosed with MCTD.",
+        "question": "Please list a patient's platelet level if it is within the normal range and if he or she is diagnosed with AdultSTILL.",
+        "original_SQL": "SELECT T2.PLT FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.Diagnosis = 'MCTD' AND T2.PLT BETWEEN 100 AND 400",
+        "changes_information": {
+            "original_value": "Adult STILL",
+            "typo_space_removal": "AdultSTILL"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM PilotSkills WHERE age  <  35 AND plane_name  =  'Piper Cub'",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "age",
+                "value": "35",
+                "condition": "<"
+            },
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.age.35",
+            "pilotskills.plane_name.piper cub"
+        ],
+        "original_question": "Find the names of all pilots who have a plane named Piper Cub and is under 35.",
+        "question": "Find the names of all pilots who have a plane named PiperCub and is under 35.",
+        "original_SQL": "SELECT pilot_name FROM PilotSkills WHERE age  <  35 AND plane_name  =  'Piper Cub'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM PilotSkills WHERE age  <  35 AND plane_name  =  'Piper Cub'",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "age",
+                "value": "35",
+                "condition": "<"
+            },
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.age.35",
+            "pilotskills.plane_name.piper cub"
+        ],
+        "original_question": "What are the names of pilots who are younger than 35 and have a plane named Piper Cub?",
+        "question": "What are the names of pilots who are younger than 35 and have a plane named PiperCub?",
+        "original_SQL": "SELECT pilot_name FROM PilotSkills WHERE age  <  35 AND plane_name  =  'Piper Cub'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' ORDER BY age LIMIT 1",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub"
+        ],
+        "original_question": "Who is the youngest pilot to fly the plane Piper Cub?",
+        "question": "Who is the youngest pilot to fly the plane PiperCub?",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' ORDER BY age LIMIT 1",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' ORDER BY age LIMIT 1",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub"
+        ],
+        "original_question": "Return the name of the youngest pilot to fly Piper Cub.",
+        "question": "Return the name of the youngest pilot to fly PiperCub.",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' ORDER BY age LIMIT 1",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' OR plane_name  =  'Piper Cub'",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            },
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub",
+            "pilotskills.plane_name.f-14 fighter"
+        ],
+        "original_question": "Find the pilots who have either plane Piper Cub or plane F-14 Fighter.",
+        "question": "Find the pilots who have either plane Piper Cub or plane PiperCub.",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' OR plane_name  =  'F-14 Fighter'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' OR plane_name  =  'Piper Cub'",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.pilot_name"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            },
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub",
+            "pilotskills.plane_name.f-14 fighter"
+        ],
+        "original_question": "What are the names of pilots who have either the Piper Cub or the F-14 Fighter?",
+        "question": "What are the names of pilots who have either the Piper Cub or the PiperCub?",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE plane_name  =  'Piper Cub' OR plane_name  =  'F-14 Fighter'",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE age  >  (SELECT min(age) FROM pilotskills WHERE plane_name  =  'Piper Cub') ORDER BY pilot_name",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub",
+            ".plane_name.piper cub"
+        ],
+        "original_question": "List in alphabetic order the names of pilots whose age is greater than some pilots having plane Piper Cub.",
+        "question": "List in alphabetic order the names of pilots whose age is greater than some pilots having plane PiperCub.",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE age  >  (SELECT min(age) FROM pilotskills WHERE plane_name  =  'Piper Cub') ORDER BY pilot_name",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT pilot_name FROM pilotskills WHERE age  >  (SELECT min(age) FROM pilotskills WHERE plane_name  =  'Piper Cub') ORDER BY pilot_name",
+        "tables": [
+            "pilotskills"
+        ],
+        "columns": [
+            "pilotskills.plane_name",
+            "pilotskills.age"
+        ],
+        "values": [
+            {
+                "table": "pilotskills",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "plane_name",
+                "value": "Piper Cub",
+                "condition": "="
+            }
+        ],
+        "db_id": "pilot_1",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "pilotskills.plane_name.piper cub",
+            ".plane_name.piper cub"
+        ],
+        "original_question": "Return the names of pilots who are older than any pilot who has flown Piper Cub, ordered alphabetically.",
+        "question": "Return the names of pilots who are older than any pilot who has flown PiperCub, ordered alphabetically.",
+        "original_SQL": "SELECT pilot_name FROM pilotskills WHERE age  >  (SELECT min(age) FROM pilotskills WHERE plane_name  =  'Piper Cub') ORDER BY pilot_name",
+        "changes_information": {
+            "original_value": "Piper Cub",
+            "typo_space_removal": "PiperCub"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT t2.attacking_work_rate FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.attacking_work_rate",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "player.player_name.franco zennaro"
+        ],
+        "original_question": "What is the attacking work rate of the football playerr Franco Zennaro?",
+        "question": "What is the attacking work rate of the football playerr Aaronhunt?",
+        "original_SQL": "SELECT DISTINCT t2.attacking_work_rate FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Franco Zennaro'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt' AND SUBSTR(t2.`date`, 1, 10) = '2014-09-18'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.heading_accuracy",
+            "player_attributes.date",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "header's finishing rate refers to heading_accuracy; on 18/09/2014 refers to date = '2014-09-18 00:00:00';",
+        "values_list": [
+            "player.player_name.francois affolter"
+        ],
+        "original_question": "What is the football player Francois Affolter header's finishing rate on 18/09/2014?",
+        "question": "What is the football player Aaronhunt header's finishing rate on 18/09/2014?",
+        "original_SQL": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Francois Affolter' AND SUBSTR(t2.`date`, 1, 10) = '2014-09-18'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT t2.overall_rating FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt' AND strftime('%Y', t2.date) = '2011'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.overall_rating",
+            "player_attributes.date",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "in year 2011 refers to strftime('%Y', date) = '2011';",
+        "values_list": [
+            "player.player_name.gabriel tamas"
+        ],
+        "original_question": "What is the overall rating of the football player Gabriel Tamas in year 2011?",
+        "question": "What is the overall rating of the football player Aaronhunt in year 2011?",
+        "original_SQL": "SELECT t2.overall_rating FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Gabriel Tamas' AND strftime('%Y', t2.date) = '2011'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT t2.defensive_work_rate FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.defensive_work_rate",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "player.player_name.david wilson"
+        ],
+        "original_question": "What is the defensive work rate of the football player David Wilson\n?",
+        "question": "What is the defensive work rate of the football player Aaronhunt\n?",
+        "original_SQL": "SELECT DISTINCT t2.defensive_work_rate FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'David Wilson'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.potential",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "potential score refers to potential;",
+        "values_list": [
+            "player.player_name.aaron doran"
+        ],
+        "original_question": "What is Aaron Doran's potential score?",
+        "question": "What is Aaronhunt's potential score?",
+        "original_SQL": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Doran'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player_attributes.heading_accuracy",
+            "player_attributes.player_api_id",
+            "player.player_api_id",
+            "player.player_name"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "player.player_name.ariel borysiuk"
+        ],
+        "original_question": "What's the heading accuracy of Ariel Borysiuk?",
+        "question": "What's the heading accuracy of Aaronhunt?",
+        "original_SQL": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Ariel Borysiuk'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT t2.preferred_foot FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player.player_api_id",
+            "player_attributes.preferred_foot"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "Abdou Diallo refers to player_name = 'Abdou Diallo'; foot is preferred refers to preferred_foot",
+        "values_list": [
+            "player.player_name.abdou diallo"
+        ],
+        "original_question": "Which foot is preferred by Abdou Diallo?",
+        "question": "Which foot is preferred by Aaronhunt?",
+        "original_SQL": "SELECT DISTINCT t2.preferred_foot FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Abdou Diallo'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t2.`date`, 1, 10) = '2010-08-30' AND t1.player_name = 'Aaron Hunt'",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player_attributes.player_api_id",
+            "player_attributes.potential",
+            "player_attributes.date",
+            "player.player_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "Francesco Parravicini refers to player_name = 'Francesco Parravicini'; on 2010/8/30 refers to date = '2010-08-30 00:00:00'",
+        "values_list": [
+            "player.player_name.francesco parravicini"
+        ],
+        "original_question": "What was the potiential for Francesco Parravicini on 2010/8/30?",
+        "question": "What was the potiential for Aaronhunt on 2010/8/30?",
+        "original_SQL": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t2.`date`, 1, 10) = '2010-08-30' AND t1.player_name = 'Francesco Parravicini'",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT `date` FROM ( SELECT t2.crossing, t2.`date` FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_fifa_api_id = t2.player_fifa_api_id WHERE t1.player_name = 'Aaron Hunt' ORDER BY t2.crossing DESC) ORDER BY date DESC LIMIT 1",
+        "tables": [
+            "player_attributes",
+            "player"
+        ],
+        "columns": [
+            "player.player_name",
+            "player.player_fifa_api_id",
+            "player_attributes.crossing",
+            "player_attributes.date",
+            "player_attributes.player_fifa_api_id"
+        ],
+        "values": [
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Aaron Hunt",
+                "condition": "="
+            },
+            {
+                "table": "player",
+                "column": "player_name",
+                "value": "Kevin Constant",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "Kevin Constant refers to player_name = 'Kevin Constant'; highest crossing score refers to MAX(crossing)",
+        "values_list": [
+            "player.player_name.kevin constant",
+            "player.player_name.kevin constant"
+        ],
+        "original_question": "When was the first time did Kevin Constant have his highest crossing score? Give the date.",
+        "question": "When was the first time did Aaronhunt have his highest crossing score? Give the date.",
+        "original_SQL": "SELECT `date` FROM ( SELECT t2.crossing, t2.`date` FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_fifa_api_id = t2.player_fifa_api_id WHERE t1.player_name = 'Kevin Constant' ORDER BY t2.crossing DESC) ORDER BY date DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Aaron Hunt",
+            "typo_space_removal": "Aaronhunt"
+        }
+    },
+    {
+        "SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Unknown formula'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "posts.title",
+            "users.displayname",
+            "posts.owneruserid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Eliciting priors from experts\" is the Title of post; owner refers to DisplayName",
+        "values_list": [
+            "posts.title.eliciting priors from experts"
+        ],
+        "original_question": "Who is the owner of the post \"Eliciting priors from experts\"?",
+        "question": "Who is the owner of the post \"Unknownformula\"?",
+        "original_SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Eliciting priors from experts'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.LastEditorUserId = T2.Id WHERE T1.Title = 'Unknown formula'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "posts.lasteditoruserid",
+            "posts.title",
+            "users.displayname"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Examples for teaching: Correlation does not mean causation\" is the Title of post; user who last edited refers to LastEditorUserId",
+        "values_list": [
+            "posts.title.examples for teaching: correlation does not mean causation"
+        ],
+        "original_question": "What is the display name of the user who last edited the post \"Examples for teaching: Correlation does not mean causation\"?",
+        "question": "What is the display name of the user who last edited the post \"Unknownformula\"?",
+        "original_SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.LastEditorUserId = T2.Id WHERE T1.Title = 'Examples for teaching: Correlation does not mean causation'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Location FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Unknown formula'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "users.location",
+            "posts.title",
+            "posts.owneruserid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Owner refers to OwnerUserId; 'Eliciting priors from experts' is the Title of post",
+        "values_list": [
+            "posts.title.eliciting priors from experts"
+        ],
+        "original_question": "What is the location of the owner of the post \"Eliciting priors from experts\"?",
+        "question": "What is the location of the owner of the post \"Unknownformula\"?",
+        "original_SQL": "SELECT T2.Location FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Eliciting priors from experts'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT ViewCount FROM posts WHERE Title = 'Unknown formula'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.title",
+            "posts.viewcount"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer\" is the Title of post; views refers to ViewCount",
+        "values_list": [
+            "posts.title.integration of weka and/or rapidminer into informatica powercenter/developer"
+        ],
+        "original_question": "How many views did the post titled 'Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer' get?",
+        "question": "How many views did the post titled 'Unknownformula' get?",
+        "original_SQL": "SELECT ViewCount FROM posts WHERE Title = 'Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT LastEditDate, LastEditorUserId FROM posts WHERE Title = 'Unknown formula'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.lasteditoruserid",
+            "posts.title",
+            "posts.lasteditdate"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Title = 'Detecting a given face in a database of facial images';",
+        "values_list": [
+            "posts.title.detecting a given face in a database of facial images"
+        ],
+        "original_question": "Provide the last edit date and last edit user ID for the post \"Detecting a given face in a database of facial images\".",
+        "question": "Provide the last edit date and last edit user ID for the post \"Unknownformula\".",
+        "original_SQL": "SELECT LastEditDate, LastEditorUserId FROM posts WHERE Title = 'Detecting a given face in a database of facial images'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT T3.Text, T1.DisplayName FROM users AS T1 INNER JOIN posts AS T2 ON T1.Id = T2.OwnerUserId INNER JOIN comments AS T3 ON T2.Id = T3.PostId WHERE T2.Title = 'Unknown formula' ORDER BY T1.CreationDate DESC LIMIT 10",
+        "tables": [
+            "users",
+            "posts",
+            "comments"
+        ],
+        "columns": [
+            "posts.id",
+            "posts.title",
+            "posts.owneruserid",
+            "comments.text",
+            "users.id",
+            "users.displayname",
+            "users.creationdate",
+            "comments.postid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "the latest comment refers to MAX(CreationDate);",
+        "values_list": [
+            "posts.title.analysing wind data with r"
+        ],
+        "original_question": "Provide the text of the latest 10 comments to the post with the title 'Analysing wind data with R' and the display name of the user who left it.",
+        "question": "Provide the text of the latest 10 comments to the post with the title 'Unknownformula' and the display name of the user who left it.",
+        "original_SQL": "SELECT T3.Text, T1.DisplayName FROM users AS T1 INNER JOIN posts AS T2 ON T1.Id = T2.OwnerUserId INNER JOIN comments AS T3 ON T2.Id = T3.PostId WHERE T2.Title = 'Analysing wind data with R' ORDER BY T1.CreationDate DESC LIMIT 10",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT CommentCount, AnswerCount FROM posts WHERE Title = 'Unknown formula'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.title",
+            "posts.commentcount",
+            "posts.answercount"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "posts.title.clustering 1d data"
+        ],
+        "original_question": "How many comments and answers were left by the users on the post with the title 'Clustering 1D data'?",
+        "question": "How many comments and answers were left by the users on the post with the title 'Unknownformula'?",
+        "original_SQL": "SELECT CommentCount, AnswerCount FROM posts WHERE Title = 'Clustering 1D data'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Id, T1.Text FROM comments AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id WHERE T2.Title = 'Unknown formula'",
+        "tables": [
+            "posts",
+            "comments"
+        ],
+        "columns": [
+            "posts.id",
+            "posts.title",
+            "comments.postid",
+            "comments.text"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Unknown formula",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Title = 'Group differences on a five point Likert item';",
+        "values_list": [
+            "posts.title.group differences on a five point likert item"
+        ],
+        "original_question": "What is the post ID and the comments commented in the post titled by \"Group differences on a five point Likert item\"?",
+        "question": "What is the post ID and the comments commented in the post titled by \"Unknownformula\"?",
+        "original_SQL": "SELECT T2.Id, T1.Text FROM comments AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id WHERE T2.Title = 'Group differences on a five point Likert item'",
+        "changes_information": {
+            "original_value": "Unknown formula",
+            "typo_space_removal": "Unknownformula"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name, height_cm, RANK() OVER (ORDER BY height_cm DESC) AS HeightRank FROM superhero INNER JOIN publisher ON superhero.publisher_id = publisher.id WHERE publisher.publisher_name = 'DC Comics'",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "publisher.id",
+            "superhero.publisher_id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name refers to superhero_name; the tallest hero refers to MAX(height_cm); published by Marvel Comics refers to publisher_name = 'Marvel Comics'",
+        "values_list": [
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "Rank heroes published by Marvel Comics by their height in descending order.",
+        "question": "Rank heroes published by DCComics by their height in descending order.",
+        "original_SQL": "SELECT superhero_name, height_cm, RANK() OVER (ORDER BY height_cm DESC) AS HeightRank FROM superhero INNER JOIN publisher ON superhero.publisher_id = publisher.id WHERE publisher.publisher_name = 'Marvel Comics'",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT colour.colour AS EyeColor, COUNT(superhero.id) AS Count, RANK() OVER (ORDER BY COUNT(superhero.id) DESC) AS PopularityRank FROM superhero INNER JOIN colour ON superhero.eye_colour_id = colour.id INNER JOIN publisher ON superhero.publisher_id = publisher.id WHERE publisher.publisher_name = 'DC Comics' GROUP BY colour.colour",
+        "tables": [
+            "publisher",
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "superhero.id",
+            "colour.colour",
+            "publisher.publisher_name",
+            "colour.id",
+            "publisher.id",
+            "superhero.eye_colour_id",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; most common color refers to COUNT(superhero.id) DESC;",
+        "values_list": [
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "Rank superheroes from Marvel Comics by their eye color popularity, starting with the most common color.",
+        "question": "Rank superheroes from DCComics by their eye color popularity, starting with the most common color.",
+        "original_SQL": "SELECT colour.colour AS EyeColor, COUNT(superhero.id) AS Count, RANK() OVER (ORDER BY COUNT(superhero.id) DESC) AS PopularityRank FROM superhero INNER JOIN colour ON superhero.eye_colour_id = colour.id INNER JOIN publisher ON superhero.publisher_id = publisher.id WHERE publisher.publisher_name = 'Marvel Comics' GROUP BY colour.colour",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'DC Comics' AND T1.publisher_id = T4.id)",
+        "tables": [
+            "publisher",
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "publisher.publisher_name",
+            "publisher.id",
+            "hero_power.hero_id",
+            "superpower.power_name",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Super Strength",
+                "condition": "="
+            },
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; super power of \"Super Strength\" refers to power_name = 'Super Strength';",
+        "values_list": [
+            "superpower.power_name.super strength",
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "List the superheroes from Marvel Comics who have the super power of 'Super Strength'.",
+        "question": "List the superheroes from DCComics who have the super power of 'Super Strength'.",
+        "original_SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM publisher WHERE publisher_name = 'DC Comics'",
+        "tables": [
+            "publisher"
+        ],
+        "columns": [
+            "publisher.id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Star Trek is the publisher_name;",
+        "values_list": [
+            "publisher.publisher_name.star trek"
+        ],
+        "original_question": "Give the publisher ID of Star Trek.",
+        "question": "Give the publisher ID of DCComics.",
+        "original_SQL": "SELECT id FROM publisher WHERE publisher_name = 'Star Trek'",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T3.id = T2.attribute_id INNER JOIN publisher AS T4 ON T4.id = T1.publisher_id WHERE T4.publisher_name = 'DC Comics' AND T3.attribute_name = 'Durability' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "tables": [
+            "publisher",
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "superhero.id",
+            "superhero.superhero_name",
+            "publisher.publisher_name",
+            "attribute.attribute_name",
+            "publisher.id",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.publisher_id",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            },
+            {
+                "table": "attribute",
+                "column": "attribute_name",
+                "value": "Durability",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "which superhero refers to superhero_name; most durability refers to MAX(attribute_value) WHERE attribute_name = 'durability'; published by Dark Horse Comics refers to publisher_name = 'Dark Horse Comics';",
+        "values_list": [
+            "publisher.publisher_name.dark horse comics",
+            "attribute.attribute_name.durability"
+        ],
+        "original_question": "Which superhero has the most durability published by Dark Horse Comics?",
+        "question": "Which superhero has the most durability published by DCComics?",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T3.id = T2.attribute_id INNER JOIN publisher AS T4 ON T4.id = T1.publisher_id WHERE T4.publisher_name = 'Dark Horse Comics' AND T3.attribute_name = 'Durability' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT T1.eye_colour_id, T1.hair_colour_id, T1.skin_colour_id FROM superhero AS T1 INNER JOIN publisher AS T2 ON T2.id = T1.publisher_id INNER JOIN gender AS T3 ON T3.id = T1.gender_id WHERE T2.publisher_name = 'DC Comics' AND T3.gender = 'Female'",
+        "tables": [
+            "publisher",
+            "superhero",
+            "gender"
+        ],
+        "columns": [
+            "gender.gender",
+            "superhero.hair_colour_id",
+            "gender.id",
+            "superhero.gender_id",
+            "publisher.publisher_name",
+            "publisher.id",
+            "superhero.eye_colour_id",
+            "superhero.skin_colour_id",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            },
+            {
+                "table": "gender",
+                "column": "gender",
+                "value": "Female",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eyes refers to eye_colour_id; hair refers to hair_colour_id; skin colour refers to skin_colour_id; female superheroes refers to gender = 'Female'; published by Dark Horse Comics refers to publisher_name = 'Dark Horse Comics';",
+        "values_list": [
+            "publisher.publisher_name.dark horse comics",
+            "gender.gender.female"
+        ],
+        "original_question": "List the eyes, hair and skin colour of all female superheroes published by Dark Horse Comics.",
+        "question": "List the eyes, hair and skin colour of all female superheroes published by DCComics.",
+        "original_SQL": "SELECT T1.eye_colour_id, T1.hair_colour_id, T1.skin_colour_id FROM superhero AS T1 INNER JOIN publisher AS T2 ON T2.id = T1.publisher_id INNER JOIN gender AS T3 ON T3.id = T1.gender_id WHERE T2.publisher_name = 'Dark Horse Comics' AND T3.gender = 'Female'",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'DC Comics' ORDER BY T1.weight_kg DESC LIMIT 1",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.weight_kg",
+            "superhero.superhero_name",
+            "publisher.publisher_name",
+            "publisher.id",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "DC Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "heaviest refers to MAX(weight_kg); DC Comics refers to publisher_name = 'DC Comics'; superhero refers to superhero_name;",
+        "values_list": [
+            "publisher.publisher_name.dc comics"
+        ],
+        "original_question": "Identify the heaviest superhero in DC Comics.",
+        "question": "Identify the heaviest superhero in DCComics.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'DC Comics' ORDER BY T1.weight_kg DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "DC Comics",
+            "typo_space_removal": "DCComics"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'New God'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "race.race",
+            "superhero.race_id",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "race",
+                "column": "race",
+                "value": "New God",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "alien superheroes refers to race = 'Alien'; name of superhero refers to superhero_name;",
+        "values_list": [
+            "race.race.new_god"
+        ],
+        "original_question": "Give the name of the alien superheroes.",
+        "question": "Give the name of the NewGod superheroes.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Alien'",
+        "changes_information": {
+            "original_value": "New God",
+            "typo_space_removal": "NewGod"
+        }
+    },
+    {
+        "SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'New God'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "race.race",
+            "superhero.full_name",
+            "superhero.race_id",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "race",
+                "column": "race",
+                "value": "New God",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Demi-God superheroes refers to race = 'Demi-God'",
+        "values_list": [
+            "race.race.new_god"
+        ],
+        "original_question": "List down at least five full name of Demi-God superheroes.",
+        "question": "List down at least five full name of NewGod superheroes.",
+        "original_SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Demi-God'",
+        "changes_information": {
+            "original_value": "New God",
+            "typo_space_removal": "NewGod"
+        }
+    },
+    {
+        "SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'New God'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "race.race",
+            "superhero.full_name",
+            "superhero.race_id",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "race",
+                "column": "race",
+                "value": "New God",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "vampire heroes refers to race = 'Vampire';",
+        "values_list": [
+            "race.race.new_god"
+        ],
+        "original_question": "Provide the full names of vampire heroes.",
+        "question": "Provide the full names of NewGod heroes.",
+        "original_SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Vampire'",
+        "changes_information": {
+            "original_value": "New God",
+            "typo_space_removal": "NewGod"
+        }
+    },
+    {
+        "SQL": "SELECT sname FROM satscores WHERE cname = 'San Diego' AND sname IS NOT NULL ORDER BY NumTstTakr DESC LIMIT 1",
+        "tables": [
+            "satscores"
+        ],
+        "columns": [
+            "satscores.cname",
+            "satscores.numtsttakr",
+            "satscores.sname"
+        ],
+        "values": [
+            {
+                "table": "satscores",
+                "column": "cname",
+                "value": "San Diego",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "satscores.cname.contra costa"
+        ],
+        "original_question": "Which school in Contra Costa has the highest number of test takers?",
+        "question": "Which school in Sandiego has the highest number of test takers?",
+        "original_SQL": "SELECT sname FROM satscores WHERE cname = 'Contra Costa' AND sname IS NOT NULL ORDER BY NumTstTakr DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "San Diego",
+            "typo_space_removal": "Sandiego"
+        }
+    },
+    {
+        "SQL": "SELECT T1.`Free Meal Count (K-12)` * 100 / T1.`Enrollment (K-12)`, T1.`District Code` FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.AdmFName1 = 'Ann Marie'",
+        "tables": [
+            "frpm",
+            "schools"
+        ],
+        "columns": [
+            "frpm.district code",
+            "frpm.cdscode",
+            "frpm.free meal count (k-12)",
+            "schools.admfname1",
+            "schools.cdscode",
+            "frpm.enrollment (k-12)"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "admfname1",
+                "value": "Ann Marie",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "Percent (%) Eligible Free (K-12) = `Free Meal Count (K-12)` / `Enrollment (K-12)` * 100%",
+        "values_list": [
+            "schools.admfname1.ann_marie"
+        ],
+        "original_question": "What is the Percent (%) Eligible Free (K-12) in the school administered by an administrator whose first name is Alusine. List the district code of the school.",
+        "question": "What is the Percent (%) Eligible Free (K-12) in the school administered by an administrator whose first name is AnnMarie. List the district code of the school.",
+        "original_SQL": "SELECT T1.`Free Meal Count (K-12)` * 100 / T1.`Enrollment (K-12)`, T1.`District Code` FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.AdmFName1 = 'Alusine'",
+        "changes_information": {
+            "original_value": "Ann Marie",
+            "typo_space_removal": "AnnMarie"
+        }
+    },
+    {
+        "SQL": "SELECT GSserved FROM schools WHERE City = 'San Lorenzo' GROUP BY GSserved ORDER BY COUNT(GSserved) DESC LIMIT 1",
+        "tables": [
+            "schools"
+        ],
+        "columns": [
+            "schools.city",
+            "schools.gsserved"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "city",
+                "value": "San Lorenzo",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "schools.city.san_lorenzo"
+        ],
+        "original_question": "What is the most common type of grade span served in the city of Adelanto?",
+        "question": "What is the most common type of grade span served in the city of SanLorenzo?",
+        "original_SQL": "SELECT GSserved FROM schools WHERE City = 'Adelanto' GROUP BY GSserved ORDER BY COUNT(GSserved) DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "San Lorenzo",
+            "typo_space_removal": "SanLorenzo"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name, T1.id FROM sets AS T1 INNER JOIN set_translations AS T2 ON T1.code = T2.setCode WHERE T1.block = 'Core Set' AND T2.language = 'Italian' ORDER BY T1.id LIMIT 2",
+        "tables": [
+            "sets",
+            "set_translations"
+        ],
+        "columns": [
+            "set_translations.language",
+            "sets.code",
+            "sets.id",
+            "sets.block",
+            "set_translations.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "block",
+                "value": "Core Set",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "Italian",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "sets.block.core_set",
+            "set_translations.language.italian"
+        ],
+        "original_question": "Please list top two sets of cards with their IDs that have Italian-language cards and are located in the Shadowmoor block in alphabetical order.",
+        "question": "Please list top two sets of cards with their IDs that have Italian-language cards and are located in the Coreset block in alphabetical order.",
+        "original_SQL": "SELECT T1.name, T1.id FROM sets AS T1 INNER JOIN set_translations AS T2 ON T1.code = T2.setCode WHERE T1.block = 'Shadowmoor' AND T2.language = 'Italian' ORDER BY T1.id LIMIT 2",
+        "changes_information": {
+            "original_value": "Core Set",
+            "typo_space_removal": "Coreset"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Laura Kinney'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.full_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Abraham Sapien is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.abraham sapien"
+        ],
+        "original_question": "What is the eyes colour of Abraham Sapien?",
+        "question": "What is the eyes colour of Laurakinney?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Abraham Sapien'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.full_name = 'Laura Kinney'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "race.id",
+            "superhero.superhero_name",
+            "superhero.full_name",
+            "superhero.race_id",
+            "race.race"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "hero name refers to superhero_name; Charles Chandler is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.charles chandler"
+        ],
+        "original_question": "Provide the hero name and race of Charles Chandler.",
+        "question": "Provide the hero name and race of Laurakinney.",
+        "original_SQL": "SELECT T1.superhero_name, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.full_name = 'Charles Chandler'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Laura Kinney'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.full_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Hunter Zolomon is the full name of superhero; list the powers refers to power_name;",
+        "values_list": [
+            "superhero.full_name.hunter zolomon"
+        ],
+        "original_question": "List the powers of Hunter Zolomon.",
+        "question": "List the powers of Laurakinney.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Hunter Zolomon'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Laura Kinney'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.full_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Karen Beecher-Duncan is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.karen beecher-duncan"
+        ],
+        "original_question": "Provide the eye colour of the superhero who has Karen Beecher-Duncan as their full name.",
+        "question": "Provide the eye colour of the superhero who has Laurakinney as their full name.",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Karen Beecher-Duncan'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Laura Kinney'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.full_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name; Helen Parr is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.helen parr"
+        ],
+        "original_question": "What is the superpowers of the superhero has Helen Parr as their full name?",
+        "question": "What is the superpowers of the superhero has Laurakinney as their full name?",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Helen Parr'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero WHERE full_name = 'Laura Kinney'",
+        "tables": [
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.full_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Laura Kinney",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name the superhero refers to superhero_name; Charles Chandler is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.charles chandler"
+        ],
+        "original_question": "Name the superhero, otherwise known as Charles Chandler.",
+        "question": "Name the superhero, otherwise known as Laurakinney.",
+        "original_SQL": "SELECT superhero_name FROM superhero WHERE full_name = 'Charles Chandler'",
+        "changes_information": {
+            "original_value": "Laura Kinney",
+            "typo_space_removal": "Laurakinney"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "3-D Man refers to superhero_name = '3-D Man'; superpowers refers to power_name",
+        "values_list": [
+            "superhero.superhero_name.3-d man"
+        ],
+        "original_question": "Please list all the superpowers of 3-D Man.",
+        "question": "Please list all the superpowers of AgentZero.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.superhero_name",
+            "superhero.skin_colour_id",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Apocalypse refers to superhero_name = 'Apocalypse'; colour of skin refers to colour where skin_colour_id = colour.id",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "What is the colour of Apocalypse's skin?",
+        "question": "What is the colour of AgentZero's skin?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Apocalypse'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "publisher.id",
+            "superhero.publisher_id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the publisher refers to publisher_name; Sauron refers to superhero_name = 'Sauron'",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Who is the publisher of Sauron?",
+        "question": "Who is the publisher of AgentZero?",
+        "original_SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Sauron'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "publisher.id",
+            "superhero.publisher_id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Blue Beetle II refers to superhero_name = 'Blue Beetle II'",
+        "values_list": [
+            "superhero.superhero_name.blue beetle ii"
+        ],
+        "original_question": "What is the publisher's name of Blue Beetle II?",
+        "question": "What is the publisher's name of AgentZero?",
+        "original_SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Blue Beetle II'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Copycat is the superhero_name;",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "What is Copycat's race?",
+        "question": "What is AgentZero's race?",
+        "original_SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Copycat'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name; Deathlok refers to superhero_name = 'Deathlok'",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Provide the superpowers of the superhero called Deathlok.",
+        "question": "Provide the superpowers of the superhero called AgentZero.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Deathlok'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "hero_attribute",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination';",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Indicate the attribute value of superhero Abomination.",
+        "question": "Indicate the attribute value of superhero AgentZero.",
+        "original_SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "group refers to race; A-Bomb refers to superhero_name = 'A-Bomb';",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Which group does superhero A-Bomb belong to?",
+        "question": "Which group does superhero AgentZero belong to?",
+        "original_SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'A-Bomb'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.gender FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "gender"
+        ],
+        "columns": [
+            "gender.gender",
+            "gender.id",
+            "superhero.gender_id",
+            "superhero.superhero_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Agent 13 hero refers to superhero_name = 'Agent 13';",
+        "values_list": [
+            "superhero.superhero_name.agent 13"
+        ],
+        "original_question": "What is the gender of Agent 13 hero?",
+        "question": "What is the gender of AgentZero hero?",
+        "original_SQL": "SELECT T2.gender FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T1.superhero_name = 'Agent 13'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race, T3.alignment FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN alignment AS T3 ON T1.alignment_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "race",
+            "superhero",
+            "alignment"
+        ],
+        "columns": [
+            "alignment.alignment",
+            "superhero.alignment_id",
+            "race.id",
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "alignment.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Cameron Hicks refers to superhero_name = 'Cameron Hicks';",
+        "values_list": [
+            "superhero.superhero_name.cameron hicks"
+        ],
+        "original_question": "What are the race and alignment of Cameron Hicks?",
+        "question": "What are the race and alignment of AgentZero?",
+        "original_SQL": "SELECT T2.race, T3.alignment FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN alignment AS T3 ON T1.alignment_id = T3.id WHERE T1.superhero_name = 'Cameron Hicks'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination'; superpower refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "What is Abomination's superpower?",
+        "question": "What is AgentZero's superpower?",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T3.attribute_name, T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "superhero.superhero_name",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "3-D Man is the superhero_name. attributes refers to attribute_name; values refers to attribute_value;",
+        "values_list": [
+            "superhero.superhero_name.3-d man"
+        ],
+        "original_question": "State all of 3-D Man's attributes along with their values.",
+        "question": "State all of AgentZero's attributes along with their values.",
+        "original_SQL": "SELECT T3.attribute_name, T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T4.alignment, T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id INNER JOIN alignment AS T4 ON T1.alignment_id = T4.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower",
+            "alignment"
+        ],
+        "columns": [
+            "alignment.alignment",
+            "superhero.alignment_id",
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "alignment.id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.atom iv"
+        ],
+        "original_question": "Give the alignment and superpowers of the superhero named Atom IV.",
+        "question": "Give the alignment and superpowers of the superhero named AgentZero.",
+        "original_SQL": "SELECT T4.alignment, T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id INNER JOIN alignment AS T4 ON T1.alignment_id = T4.id WHERE T1.superhero_name = 'Atom IV'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Ajax refers to superhero_name = 'Ajax'; superpowers refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "List down Ajax's superpowers.",
+        "question": "List down AgentZero's superpowers.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Ajax'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T3.attribute_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Agent Zero' ORDER BY T2.attribute_value ASC LIMIT 1",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "superhero.superhero_name",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "weakest attribute refers to attribute_name WHERE MIN(attribute_value); Black Panther refers to superhero_name = 'Black Panther';",
+        "values_list": [
+            "superhero.superhero_name.black panther"
+        ],
+        "original_question": "Identify the weakest attribute of the Black Panther.",
+        "question": "Identify the weakest attribute of the AgentZero.",
+        "original_SQL": "SELECT T3.attribute_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Black Panther' ORDER BY T2.attribute_value ASC LIMIT 1",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.superhero_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination'; eye colour refers to colour.colour where eye_colour_id = colour.id;",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "What is Abomination's eye colour?",
+        "question": "What is AgentZero's eye colour?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT full_name FROM superhero WHERE superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.full_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Provide the full name of the superhero named Alien.",
+        "question": "Provide the full name of the superhero named AgentZero.",
+        "original_SQL": "SELECT full_name FROM superhero WHERE superhero_name = 'Alien'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "hero_attribute",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "List the attribute value of the superhero named Aquababy.",
+        "question": "List the attribute value of the superhero named AgentZero.",
+        "original_SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Aquababy'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Agent Zero'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.superhero_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Agent Zero",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Blackwulf refers to superhero_name = 'Blackwulf';",
+        "values_list": [
+            "superhero.superhero_name.agent_zero"
+        ],
+        "original_question": "Give the eye colour of Blackwulf.",
+        "question": "Give the eye colour of AgentZero.",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Blackwulf'",
+        "changes_information": {
+            "original_value": "Agent Zero",
+            "typo_space_removal": "AgentZero"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Armor' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "tables": [
+            "publisher",
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "publisher.publisher_name",
+            "publisher.id",
+            "hero_power.hero_id",
+            "superpower.power_name",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            },
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "Marvel Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; super power of \"Super Strength\" refers to power_name = 'Super Strength';",
+        "values_list": [
+            "superpower.power_name.super strength",
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "List the superheroes from Marvel Comics who have the super power of 'Super Strength'.",
+        "question": "List the superheroes from Marvel Comics who have the super power of 'EnergyArmor'.",
+        "original_SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Armor'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to refers to superhero_name; the power of death touch refers to power_name = 'Death Touch'",
+        "values_list": [
+            "superpower.power_name.death touch"
+        ],
+        "original_question": "What are the names of the superheroes with the power of death touch?",
+        "question": "What are the names of the superheroes with the power of EnergyArmor?",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Death Touch'",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Armor'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to superhero_name; flight power refers to power_name = 'Flight';",
+        "values_list": [
+            "superpower.power_name.energy_armor"
+        ],
+        "original_question": "List the name of superheroes with flight power.",
+        "question": "List the name of superheroes with EnergyArmor power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Flight'",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Armor'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "adaptation power refers to power_name = 'Adaptation';",
+        "values_list": [
+            "superpower.power_name.energy_armor"
+        ],
+        "original_question": "Provide superheroes' names who have the adaptation power.",
+        "question": "Provide superheroes' names who have the EnergyArmor power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Adaptation'",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM superpower WHERE power_name = 'Energy Armor'",
+        "tables": [
+            "superpower"
+        ],
+        "columns": [
+            "superpower.power_name",
+            "superpower.id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "power ID refers to superpower.id; cryokinesis refers to power_name = 'cryokinesis';",
+        "values_list": [
+            "superpower.power_name.energy_armor"
+        ],
+        "original_question": "What is the power ID of cryokinesis?",
+        "question": "What is the power ID of EnergyArmor?",
+        "original_SQL": "SELECT id FROM superpower WHERE power_name = 'Cryokinesis'",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Energy Armor'",
+        "tables": [
+            "superhero",
+            "gender",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "gender.gender",
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "gender.id",
+            "superhero.gender_id",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Armor",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "ability of Phoenix Force refers to power_name = 'Phoenix Force';",
+        "values_list": [
+            "superpower.power_name.phoenix force"
+        ],
+        "original_question": "Identify the gender of the superhero who has the ability of Phoenix Force.",
+        "question": "Identify the gender of the superhero who has the ability of EnergyArmor.",
+        "original_SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Phoenix Force'",
+        "changes_information": {
+            "original_value": "Energy Armor",
+            "typo_space_removal": "EnergyArmor"
+        }
+    },
+    {
+        "SQL": "SELECT Reputation, Views FROM users WHERE DisplayName = 'Robert Lu'",
+        "tables": [
+            "users"
+        ],
+        "columns": [
+            "users.reputation",
+            "users.views",
+            "users.displayname"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "displayname",
+                "value": "Robert Lu",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "users.displayname.jarrod dixon"
+        ],
+        "original_question": "What is the reputation and view count of the user, who is known by his or her display name 'Jarrod Dixon'?",
+        "question": "What is the reputation and view count of the user, who is known by his or her display name 'RobertLu'?",
+        "original_SQL": "SELECT Reputation, Views FROM users WHERE DisplayName = 'Jarrod Dixon'",
+        "changes_information": {
+            "original_value": "Robert Lu",
+            "typo_space_removal": "RobertLu"
+        }
+    },
+    {
+        "SQL": "SELECT CreationDate FROM users WHERE DisplayName = 'Robert Lu'",
+        "tables": [
+            "users"
+        ],
+        "columns": [
+            "users.creationdate",
+            "users.displayname"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "displayname",
+                "value": "Robert Lu",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "DisplayName = 'IrishStat'; when create his or her account refers to CreationDate;",
+        "values_list": [
+            "users.displayname.robert_lu"
+        ],
+        "original_question": "When did the user known as 'IrishStat' create his or her account?",
+        "question": "When did the user known as 'RobertLu' create his or her account?",
+        "original_SQL": "SELECT CreationDate FROM users WHERE DisplayName = 'IrishStat'",
+        "changes_information": {
+            "original_value": "Robert Lu",
+            "typo_space_removal": "RobertLu"
+        }
+    }
+]
