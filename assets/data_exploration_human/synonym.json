@@ -1,1 +1,359 @@
-[]
+[
+    {
+        "database_id": "superhero",
+        "table": "alignment",
+        "column": "alignment",
+        "original_value": "Bad",
+        "synonym": "evil"
+    },
+    {
+        "database_id": "superhero",
+        "table": "attribute",
+        "column": "attribute_name",
+        "original_value": "Strength",
+        "synonym": "power"
+    },
+    {
+        "database_id": "superhero",
+        "table": "attribute",
+        "column": "attribute_name",
+        "original_value": "Speed",
+        "synonym": "Velocity"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "badges",
+        "column": "name",
+        "original_value": "Teacher",
+        "synonym": "Instructor"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "badges",
+        "column": "name",
+        "original_value": "Student",
+        "synonym": "Learner"
+    },
+    {
+        "database_id": "warehouse_1",
+        "table": "boxes",
+        "column": "contents",
+        "original_value": "Rocks",
+        "synonym": "stones"
+    },
+    {
+        "database_id": "student_club",
+        "table": "budget",
+        "column": "category",
+        "original_value": "Advertisement",
+        "synonym": "Promotion"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "frameeffects",
+        "original_value": "inverted",
+        "synonym": "reversed"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "keywords",
+        "original_value": "Defender",
+        "synonym": "Protector"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "originaltype",
+        "original_value": "Instant",
+        "synonym": "immediate"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "promotypes",
+        "original_value": "prerelease",
+        "synonym": "prelaunch"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "promotypes",
+        "original_value": "bundle",
+        "synonym": "package"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "circuits",
+        "column": "country",
+        "original_value": "Germany",
+        "synonym": "Deutschland"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "circuits",
+        "column": "country",
+        "original_value": "Netherlands",
+        "synonym": "Holland"
+    },
+    {
+        "database_id": "superhero",
+        "table": "colour",
+        "column": "colour",
+        "original_value": "Blue",
+        "synonym": "azure"
+    },
+    {
+        "database_id": "conference",
+        "table": "conference_participation",
+        "column": "role",
+        "original_value": "Participant",
+        "synonym": "Attendee"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "constructors",
+        "column": "nationality",
+        "original_value": "Swiss",
+        "synonym": "Helvetic"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "country",
+        "column": "name",
+        "original_value": "Netherlands",
+        "synonym": "Holland"
+    },
+    {
+        "database_id": "e_commerce",
+        "table": "customers",
+        "column": "gender_code",
+        "original_value": "Female",
+        "synonym": "woman"
+    },
+    {
+        "database_id": "e_commerce",
+        "table": "customers",
+        "column": "gender_code",
+        "original_value": "Male",
+        "synonym": "man"
+    },
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "degree_programs",
+        "column": "degree_summary_name",
+        "original_value": "Bachelor",
+        "synonym": "Undergraduate"
+    },
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "degree_programs",
+        "column": "degree_summary_name",
+        "original_value": "PHD",
+        "synonym": "Doctorate"
+    },
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "departments",
+        "column": "department_name",
+        "original_value": "linguistic",
+        "synonym": "language"
+    },
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "departments",
+        "column": "department_name",
+        "original_value": "management",
+        "synonym": "administration"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "drivers",
+        "column": "nationality",
+        "original_value": "Argentine",
+        "synonym": "Argentinian"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "event_name",
+        "original_value": "Registration",
+        "synonym": "Enrollment"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "status",
+        "original_value": "Planning",
+        "synonym": "Organizing"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "type",
+        "original_value": "Registration",
+        "synonym": "Sign-up"
+    },
+    {
+        "database_id": "thrombosis_prediction",
+        "table": "examination",
+        "column": "diagnosis",
+        "original_value": "Normal",
+        "synonym": "regular"
+    },
+    {
+        "database_id": "student_club",
+        "table": "expense",
+        "column": "expense_description",
+        "original_value": "Parking",
+        "synonym": "vehicle storage"
+    },
+    {
+        "database_id": "real_estate_rentals",
+        "table": "features",
+        "column": "feature_name",
+        "original_value": "rooftop",
+        "synonym": "roof terrace"
+    },
+    {
+        "database_id": "card_games",
+        "table": "foreign_data",
+        "column": "language",
+        "original_value": "German",
+        "synonym": "Deutsch"
+    },
+    {
+        "database_id": "bakery_1",
+        "table": "goods",
+        "column": "food",
+        "original_value": "Cookie",
+        "synonym": "Biscuit"
+    },
+    {
+        "database_id": "advertising_agencies",
+        "table": "invoices",
+        "column": "invoice_status",
+        "original_value": "Starting",
+        "synonym": "Beginning"
+    },
+    {
+        "database_id": "advertising_agencies",
+        "table": "invoices",
+        "column": "invoice_status",
+        "original_value": "Finish",
+        "synonym": "Complete"
+    },
+    {
+        "database_id": "card_games",
+        "table": "legalities",
+        "column": "format",
+        "original_value": "modern",
+        "synonym": "contemporary"
+    },
+    {
+        "database_id": "card_games",
+        "table": "legalities",
+        "column": "status",
+        "original_value": "Banned",
+        "synonym": "Prohibited"
+    },
+    {
+        "database_id": "student_club",
+        "table": "major",
+        "column": "major_name",
+        "original_value": "Management",
+        "synonym": "Administration"
+    },
+    {
+        "database_id": "student_club",
+        "table": "member",
+        "column": "t_shirt_size",
+        "original_value": "Large",
+        "synonym": "big"
+    },
+    {
+        "database_id": "thrombosis_prediction",
+        "table": "patient",
+        "column": "diagnosis",
+        "original_value": "arthralgia",
+        "synonym": "joint pain"
+    },
+    {
+        "database_id": "pets_1",
+        "table": "pets",
+        "column": "pettype",
+        "original_value": "dog",
+        "synonym": "canine"
+    },
+    {
+        "database_id": "superhero",
+        "table": "race",
+        "column": "race",
+        "original_value": "Alien",
+        "synonym": "Extraterrestrial"
+    },
+    {
+        "database_id": "california_schools",
+        "table": "schools",
+        "column": "statustype",
+        "original_value": "Merged",
+        "synonym": "Combined"
+    },
+    {
+        "database_id": "card_games",
+        "table": "sets",
+        "column": "mcmname",
+        "original_value": "Alliances",
+        "synonym": "Coalitions"
+    },
+    {
+        "database_id": "card_games",
+        "table": "sets",
+        "column": "type",
+        "original_value": "starter",
+        "synonym": "beginner"
+    },
+    {
+        "database_id": "battle_death",
+        "table": "ship",
+        "column": "disposition_of_ship",
+        "original_value": "Captured",
+        "synonym": "Seized"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "status",
+        "column": "status",
+        "original_value": "Collision",
+        "synonym": "Crash"
+    },
+    {
+        "database_id": "superhero",
+        "table": "superpower",
+        "column": "power_name",
+        "original_value": "Intelligence",
+        "synonym": "smart"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "tags",
+        "column": "tagname",
+        "original_value": "teaching",
+        "synonym": "educating"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "team_attributes",
+        "column": "buildupplaydribblingclass",
+        "original_value": "Normal",
+        "synonym": "Average"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "users",
+        "column": "location",
+        "original_value": "Hellas",
+        "synonym": "Greece"
+    }
+]
