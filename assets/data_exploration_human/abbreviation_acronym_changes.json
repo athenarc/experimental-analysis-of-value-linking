@@ -1,1 +1,422 @@
-[]
+[
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "addresses",
+        "column": "country",
+        "original_value": "Kyrgyz Republic",
+        "abbreviation_acronym": "Kyrgyz Rep"
+    },
+    {
+        "database_id": "superhero",
+        "table": "attribute",
+        "column": "attribute_name",
+        "original_value": "Intelligence",
+        "abbreviation_acronym": "Int."
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "badges",
+        "column": "name",
+        "original_value": "Favorite Question",
+        "abbreviation_acronym": "Fav Question"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "badges",
+        "column": "name",
+        "original_value": "Research Assistant",
+        "abbreviation_acronym": "RA"
+    },
+    {
+        "database_id": "student_club",
+        "table": "budget",
+        "column": "category",
+        "original_value": "Advertisement",
+        "abbreviation_acronym": "Ad"
+    },
+    {
+        "database_id": "car_1",
+        "table": "car_makers",
+        "column": "fullname",
+        "original_value": "American Motor Company",
+        "abbreviation_acronym": "AMC"
+    },
+    {
+        "database_id": "car_1",
+        "table": "car_makers",
+        "column": "fullname",
+        "original_value": "General Motors",
+        "abbreviation_acronym": "GM"
+    },
+    {
+        "database_id": "car_1",
+        "table": "car_names",
+        "column": "make",
+        "original_value": "plymouth satellite custom",
+        "abbreviation_acronym": "Plymouth Sat Custom"
+    },
+    {
+        "database_id": "car_1",
+        "table": "car_names",
+        "column": "make",
+        "original_value": "volkswagen dasher",
+        "abbreviation_acronym": "VW Dasher"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "artist",
+        "original_value": "Richard Wright",
+        "abbreviation_acronym": "R Wright"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "artist",
+        "original_value": "Monte Michael Moore",
+        "abbreviation_acronym": "Monte M. Moore"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "keywords",
+        "original_value": "Level Up",
+        "abbreviation_acronym": "LV Up"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "name",
+        "original_value": "Deal Damage",
+        "abbreviation_acronym": "Deal DMG"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "name",
+        "original_value": "Defense of the Heart",
+        "abbreviation_acronym": "Def of the Heart"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "name",
+        "original_value": "Precinct Captain",
+        "abbreviation_acronym": "Precinct Capt"
+    },
+    {
+        "database_id": "card_games",
+        "table": "cards",
+        "column": "originaltype",
+        "original_value": "Enchant Permanent",
+        "abbreviation_acronym": "Enchant Perm"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "circuits",
+        "column": "location",
+        "original_value": "New York State",
+        "abbreviation_acronym": "NY State"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "circuits",
+        "column": "name",
+        "original_value": "Bahrain International Circuit",
+        "abbreviation_acronym": "Bahrain Intl Circuit"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "circuits",
+        "column": "name",
+        "original_value": "Okayama International Circuit",
+        "abbreviation_acronym": "Okayama Intl Circuit"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "constructors",
+        "column": "nationality",
+        "original_value": "New Zealand",
+        "abbreviation_acronym": "NZ"
+    },
+    {
+        "database_id": "world_1",
+        "table": "countrylanguage",
+        "column": "language",
+        "original_value": "Maya Languages",
+        "abbreviation_acronym": "Maya Langs"
+    },
+    {
+        "database_id": "bike_racing",
+        "table": "cyclist",
+        "column": "nation",
+        "original_value": "Great Britain",
+        "abbreviation_acronym": "GB"
+    },
+    {
+        "database_id": "student_transcripts_tracking",
+        "table": "departments",
+        "column": "department_name",
+        "original_value": "computer science",
+        "abbreviation_acronym": "Comp Sci"
+    },
+    {
+        "database_id": "financial",
+        "table": "district",
+        "column": "a3",
+        "original_value": "north Bohemia",
+        "abbreviation_acronym": "N Bohemia"
+    },
+    {
+        "database_id": "cre_Doc_and_collections",
+        "table": "document_objects",
+        "column": "description",
+        "original_value": "Ransom Collection",
+        "abbreviation_acronym": "Ransom Coll"
+    },
+    {
+        "database_id": "cre_Doc_Template_Mgt",
+        "table": "documents",
+        "column": "document_name",
+        "original_value": "Introduction of OS",
+        "abbreviation_acronym": "Intro of OS"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "event_name",
+        "original_value": "March Meeting",
+        "abbreviation_acronym": "Mar Meeting"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "event_name",
+        "original_value": "Laugh Out Loud",
+        "abbreviation_acronym": "LOL"
+    },
+    {
+        "database_id": "student_club",
+        "table": "event",
+        "column": "location",
+        "original_value": "Campus Football stadium",
+        "abbreviation_acronym": "Campus FB stadium"
+    },
+    {
+        "database_id": "thrombosis_prediction",
+        "table": "examination",
+        "column": "symptoms",
+        "original_value": "multiple thrombosis",
+        "abbreviation_acronym": "mult thrombosis"
+    },
+    {
+        "database_id": "online_exams",
+        "table": "exams",
+        "column": "subject_code",
+        "original_value": "Art History",
+        "abbreviation_acronym": "Art Hist"
+    },
+    {
+        "database_id": "card_games",
+        "table": "foreign_data",
+        "column": "language",
+        "original_value": "Chinese Simplified",
+        "abbreviation_acronym": "Chinese Simp."
+    },
+    {
+        "database_id": "card_games",
+        "table": "foreign_data",
+        "column": "name",
+        "original_value": "Incorporation",
+        "abbreviation_acronym": "Inc."
+    },
+    {
+        "database_id": "card_games",
+        "table": "foreign_data",
+        "column": "name",
+        "original_value": "Lieutenant du consul",
+        "abbreviation_acronym": "Lt du consul"
+    },
+    {
+        "database_id": "california_schools",
+        "table": "frpm",
+        "column": "educational option type",
+        "original_value": "Juvenile Court School",
+        "abbreviation_acronym": "JCS"
+    },
+    {
+        "database_id": "california_schools",
+        "table": "frpm",
+        "column": "educational option type",
+        "original_value": "Youth Authority School",
+        "abbreviation_acronym": "YA School"
+    },
+    {
+        "database_id": "debit_card_specializing",
+        "table": "gasstations",
+        "column": "segment",
+        "original_value": "Value for money",
+        "abbreviation_acronym": "VFM"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "league",
+        "column": "name",
+        "original_value": "England Premier League",
+        "abbreviation_acronym": "EPL"
+    },
+    {
+        "database_id": "student_club",
+        "table": "major",
+        "column": "department",
+        "original_value": "Biological Engineering Department",
+        "abbreviation_acronym": "Bio Eng Department"
+    },
+    {
+        "database_id": "student_club",
+        "table": "major",
+        "column": "department",
+        "original_value": "Journalism and Communication Department",
+        "abbreviation_acronym": "J&C Department"
+    },
+    {
+        "database_id": "student_club",
+        "table": "major",
+        "column": "major_name",
+        "original_value": "Food Science",
+        "abbreviation_acronym": "Food Sci"
+    },
+    {
+        "database_id": "student_club",
+        "table": "major",
+        "column": "major_name",
+        "original_value": "Political Science",
+        "abbreviation_acronym": "Pol Sci"
+    },
+    {
+        "database_id": "student_club",
+        "table": "member",
+        "column": "position",
+        "original_value": "Vice President",
+        "abbreviation_acronym": "VP"
+    },
+    {
+        "database_id": "museum_visit",
+        "table": "museum",
+        "column": "name",
+        "original_value": "Central City District Residential Museum",
+        "abbreviation_acronym": "CCD Residential Museum"
+    },
+    {
+        "database_id": "dog_kennels",
+        "table": "owners",
+        "column": "state",
+        "original_value": "Vermont",
+        "abbreviation_acronym": "VT"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "player",
+        "column": "player_name",
+        "original_value": "Adrian Ricardo Centurion",
+        "abbreviation_acronym": "Adrian R. Centurion"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "posts",
+        "column": "title",
+        "original_value": "Classifier success rate and confidence intervals",
+        "abbreviation_acronym": "Classifier success rate and CI"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "posts",
+        "column": "title",
+        "original_value": "Classifier success rate and confidence intervals",
+        "abbreviation_acronym": "Classifier success rate and CI"
+    },
+    {
+        "database_id": "dog_kennels",
+        "table": "professionals",
+        "column": "state",
+        "original_value": "Connecticut",
+        "abbreviation_acronym": "CT"
+    },
+    {
+        "database_id": "superhero",
+        "table": "publisher",
+        "column": "publisher_name",
+        "original_value": "Sony Pictures",
+        "abbreviation_acronym": "Sony Pics"
+    },
+    {
+        "database_id": "card_games",
+        "table": "sets",
+        "column": "block",
+        "original_value": "Commander",
+        "abbreviation_acronym": "Cmdr"
+    },
+    {
+        "database_id": "battle_death",
+        "table": "ship",
+        "column": "location",
+        "original_value": "English Channel",
+        "abbreviation_acronym": "Eng Channel"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "status",
+        "column": "status",
+        "original_value": "Launch control",
+        "abbreviation_acronym": "Launch Ctrl"
+    },
+    {
+        "database_id": "formula_1",
+        "table": "status",
+        "column": "status",
+        "original_value": "Did not qualify",
+        "abbreviation_acronym": "DNQ"
+    },
+    {
+        "database_id": "superhero",
+        "table": "superpower",
+        "column": "power_name",
+        "original_value": "Animal Attributes",
+        "abbreviation_acronym": "Animal Atts"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "team",
+        "column": "team_long_name",
+        "original_value": "West Ham United",
+        "abbreviation_acronym": "WHU"
+    },
+    {
+        "database_id": "european_football_2",
+        "table": "team",
+        "column": "team_long_name",
+        "original_value": "Queens Park Rangers",
+        "abbreviation_acronym": "QPR"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "users",
+        "column": "location",
+        "original_value": "Massachusetts",
+        "abbreviation_acronym": "MA"
+    },
+    {
+        "database_id": "codebase_community",
+        "table": "users",
+        "column": "location",
+        "original_value": "South Africa",
+        "abbreviation_acronym": "SAfrica"
+    },
+    {
+        "database_id": "real_estate_rentals",
+        "table": "users",
+        "column": "user_category_code",
+        "original_value": "Senior Citizen",
+        "abbreviation_acronym": "Sr Citizen"
+    }
+]
