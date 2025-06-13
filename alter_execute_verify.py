@@ -176,9 +176,9 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, db_
         
 if __name__ == "__main__":
     benchmark_json_path = 'assets/value_linking_valid_values_exact_no_bird_train.json'
-    variations_json_path = 'assets/data_exploration_human/typo_substitutions.json'
+    variations_json_path = 'assets/data_exploration_human/typo_space_additions.json'
     db_folder_path = 'assets/all_databases'
-    output_json_path = 'assets/all_benchmarks_human/typo_substitutions.json'
+    output_json_path = 'assets/all_benchmarks_human/typo_space_additions.json'
 
     generate_benchmark_variations(benchmark_json_path, variations_json_path, db_folder_path, output_json_path)
     print(f"Output written to {output_json_path}")
