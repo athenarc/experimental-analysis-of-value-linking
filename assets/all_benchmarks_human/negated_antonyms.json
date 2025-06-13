@@ -1,0 +1,2007 @@
+[
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Disciplined' LIMIT 10",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Disciplined",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Necromancer\" is the Name of badge; users refers to DisplayName",
+        "values_list": [
+            "badges.name.disciplined"
+        ],
+        "original_question": "Name 10 users with the badge name 'Necromancer.'",
+        "question": "Name 10 users with the badge name 'not undisciplined.'",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Necromancer' LIMIT 10",
+        "changes_information": {
+            "original_value": "Disciplined",
+            "negated_antonym": "not undisciplined"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Disciplined'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Disciplined",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "name of users refers to DisplayName; the Organizer Badges refer to badges where Name = 'Organizer';",
+        "values_list": [
+            "badges.name.disciplined"
+        ],
+        "original_question": "List all the name of users that obtained the Organizer Badges.",
+        "question": "List all the name of users that obtained the not undisciplined Badges.",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Organizer'",
+        "changes_information": {
+            "original_value": "Disciplined",
+            "negated_antonym": "not undisciplined"
+        }
+    },
+    {
+        "SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Disciplined'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.location",
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.lastaccessdate"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Disciplined",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Outliers is the name of the badge;",
+        "values_list": [
+            "badges.name.disciplined"
+        ],
+        "original_question": "Describe the last accessed date and location of the users who received the outliers badge.",
+        "question": "Describe the last accessed date and location of the users who received the not undisciplined badge.",
+        "original_SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'outliers'",
+        "changes_information": {
+            "original_value": "Disciplined",
+            "negated_antonym": "not undisciplined"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Disciplined' ORDER BY T2.Date LIMIT 1",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.displayname",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Disciplined",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Autobiographer is the name of the badge; acquired the first refers to MIN(Date);",
+        "values_list": [
+            "badges.name.disciplined"
+        ],
+        "original_question": "What is the display name of the user who acquired the first Autobiographer badge?",
+        "question": "What is the display name of the user who acquired the first not undisciplined badge?",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Autobiographer' ORDER BY T2.Date LIMIT 1",
+        "changes_information": {
+            "original_value": "Disciplined",
+            "negated_antonym": "not undisciplined"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Informed' LIMIT 10",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Informed",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Necromancer\" is the Name of badge; users refers to DisplayName",
+        "values_list": [
+            "badges.name.informed"
+        ],
+        "original_question": "Name 10 users with the badge name 'Necromancer.'",
+        "question": "Name 10 users with the badge name 'not uninformed.'",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Necromancer' LIMIT 10",
+        "changes_information": {
+            "original_value": "Informed",
+            "negated_antonym": "not uninformed"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Informed'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Informed",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "name of users refers to DisplayName; the Organizer Badges refer to badges where Name = 'Organizer';",
+        "values_list": [
+            "badges.name.informed"
+        ],
+        "original_question": "List all the name of users that obtained the Organizer Badges.",
+        "question": "List all the name of users that obtained the not uninformed Badges.",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Organizer'",
+        "changes_information": {
+            "original_value": "Informed",
+            "negated_antonym": "not uninformed"
+        }
+    },
+    {
+        "SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Informed'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.location",
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.lastaccessdate"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Informed",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Outliers is the name of the badge;",
+        "values_list": [
+            "badges.name.informed"
+        ],
+        "original_question": "Describe the last accessed date and location of the users who received the outliers badge.",
+        "question": "Describe the last accessed date and location of the users who received the not uninformed badge.",
+        "original_SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'outliers'",
+        "changes_information": {
+            "original_value": "Informed",
+            "negated_antonym": "not uninformed"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Informed' ORDER BY T2.Date LIMIT 1",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.displayname",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Informed",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Autobiographer is the name of the badge; acquired the first refers to MIN(Date);",
+        "values_list": [
+            "badges.name.informed"
+        ],
+        "original_question": "What is the display name of the user who acquired the first Autobiographer badge?",
+        "question": "What is the display name of the user who acquired the first not uninformed badge?",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Autobiographer' ORDER BY T2.Date LIMIT 1",
+        "changes_information": {
+            "original_value": "Informed",
+            "negated_antonym": "not uninformed"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Curious' LIMIT 10",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Curious",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Necromancer\" is the Name of badge; users refers to DisplayName",
+        "values_list": [
+            "badges.name.curious"
+        ],
+        "original_question": "Name 10 users with the badge name 'Necromancer.'",
+        "question": "Name 10 users with the badge name 'not uncurious.'",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Necromancer' LIMIT 10",
+        "changes_information": {
+            "original_value": "Curious",
+            "negated_antonym": "not uncurious"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Curious'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Curious",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "name of users refers to DisplayName; the Organizer Badges refer to badges where Name = 'Organizer';",
+        "values_list": [
+            "badges.name.curious"
+        ],
+        "original_question": "List all the name of users that obtained the Organizer Badges.",
+        "question": "List all the name of users that obtained the not uncurious Badges.",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Organizer'",
+        "changes_information": {
+            "original_value": "Curious",
+            "negated_antonym": "not uncurious"
+        }
+    },
+    {
+        "SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Curious'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.location",
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.lastaccessdate"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Curious",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Outliers is the name of the badge;",
+        "values_list": [
+            "badges.name.curious"
+        ],
+        "original_question": "Describe the last accessed date and location of the users who received the outliers badge.",
+        "question": "Describe the last accessed date and location of the users who received the not uncurious badge.",
+        "original_SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'outliers'",
+        "changes_information": {
+            "original_value": "Curious",
+            "negated_antonym": "not uncurious"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Curious' ORDER BY T2.Date LIMIT 1",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.displayname",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Curious",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Autobiographer is the name of the badge; acquired the first refers to MIN(Date);",
+        "values_list": [
+            "badges.name.curious"
+        ],
+        "original_question": "What is the display name of the user who acquired the first Autobiographer badge?",
+        "question": "What is the display name of the user who acquired the first not uncurious badge?",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Autobiographer' ORDER BY T2.Date LIMIT 1",
+        "changes_information": {
+            "original_value": "Curious",
+            "negated_antonym": "not uncurious"
+        }
+    },
+    {
+        "SQL": "SELECT T2.account_id FROM disp AS T2  INNER JOIN card AS T1 ON T1.disp_id = T2.disp_id  WHERE T1.type = 'junior'",
+        "tables": [
+            "disp",
+            "card"
+        ],
+        "columns": [
+            "card.type",
+            "card.disp_id",
+            "disp.account_id",
+            "disp.disp_id"
+        ],
+        "values": [
+            {
+                "table": "card",
+                "column": "type",
+                "value": "junior",
+                "condition": "="
+            }
+        ],
+        "db_id": "financial",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "card.type.junior"
+        ],
+        "original_question": "What are the accounts that have gold credit cards?",
+        "question": "What are the accounts that have not senior credit cards?",
+        "original_SQL": "SELECT T2.account_id FROM disp AS T2  INNER JOIN card AS T1 ON T1.disp_id = T2.disp_id  WHERE T1.type = 'gold'",
+        "changes_information": {
+            "original_value": "junior",
+            "negated_antonym": "not senior"
+        }
+    },
+    {
+        "SQL": "SELECT layout FROM cards WHERE keywords = 'Indestructible'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.keywords",
+            "cards.layout"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "keywords",
+                "value": "Indestructible",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "cards.keywords.indestructible"
+        ],
+        "original_question": "What are the card layout of cards with keyword of flying?",
+        "question": "What are the card layout of cards with keyword of not destructible?",
+        "original_SQL": "SELECT layout FROM cards WHERE keywords = 'Flying'",
+        "changes_information": {
+            "original_value": "Indestructible",
+            "negated_antonym": "not destructible"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Decommission'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.keywords"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Angel of Mercy' is the name of card;",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "What is the keyword found on card 'Angel of Mercy'?",
+        "question": "What is the keyword found on card 'not commissioned'?",
+        "original_SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Ancestor's Chosen' is the name of card; description about the ruling refers to text;",
+        "values_list": [
+            "cards.name.decommission"
+        ],
+        "original_question": "What is the description about the ruling of card \"Condemn\"?",
+        "question": "What is the description about the ruling of card \"not commissioned\"?",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Condemn'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "legalities.status",
+            "cards.name",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Cloudchaser Eagle is the name of card;",
+        "values_list": [
+            "cards.name.cloudchaser eagle"
+        ],
+        "original_question": "What is the status of card \"Cloudchaser Eagle\"?",
+        "question": "What is the status of card \"not commissioned\"?",
+        "original_SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Cloudchaser Eagle'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "cards",
+            "foreign_data"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "foreign_data.uuid",
+            "cards.type"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the type of card \"Benalish Knight\"?",
+        "question": "What is the type of card \"not commissioned\"?",
+        "original_SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "cards.uuid",
+            "legalities.format",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card; rule of playing card refers to format;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the rule of playing card \"Benalish Knight\"?",
+        "question": "What is the rule of playing card \"not commissioned\"?",
+        "original_SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Beacon of Immortality' is the name of card;",
+        "values_list": [
+            "cards.name.beacon of immortality"
+        ],
+        "original_question": "Write down the ruling of Beacon of Immortality.",
+        "question": "Write down the ruling of not commissioned.",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Beacon of Immortality'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Decommission'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.subtypes",
+            "cards.supertypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card \"Molimo, Maro-Sorcerer\" refers to name = 'Molimo, Maro-Sorcerer'; list of all types refers to subtypes,supertypes",
+        "values_list": [
+            "cards.name.molimo, maro-sorcerer"
+        ],
+        "original_question": "What's the list of all types for the card \"Molimo, Maro-Sorcerer\"?",
+        "question": "What's the list of all types for the card \"not commissioned\"?",
+        "original_SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Molimo, Maro-Sorcerer'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Decommission'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.mtgocode",
+            "cards.name",
+            "cards.setcode",
+            "sets.code"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set \"Angel of Mercy\" refers to name = 'Angel of Mercy'; appear on Magic: The Gathering Online refers to mtgoCode is NOT NULL and vice versa",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "Did the set of cards with \"Angel of Mercy\" appear on Magic: The Gathering Online?",
+        "question": "Did the set of cards with \"not commissioned\" appear on Magic: The Gathering Online?",
+        "original_SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Decommission'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.date",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Reminisce refers to name = 'Reminisce'; when created is the date",
+        "values_list": [
+            "cards.name.decommission"
+        ],
+        "original_question": "When was the ruling for the card 'Reminisce' created?",
+        "question": "When was the ruling for the card 'not commissioned' created?",
+        "original_SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Reminisce'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Decommission'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.setcode",
+            "sets.code",
+            "sets.releasedate"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\"Evacuation\" refers to name = 'Evacuation'; release date refers to releaseDate",
+        "values_list": [
+            "cards.name.decommission"
+        ],
+        "original_question": "What was the release date for the set which card \"Evacuation\" in it?",
+        "question": "What was the release date for the set which card \"not commissioned\" in it?",
+        "original_SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Evacuation'",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Decommission' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "French",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "French refers to language = 'French'; \"Tendo Ice Bridge\" is a translated name of a card; translated name refers to translation",
+        "values_list": [
+            "cards.name.tendo ice bridge",
+            "set_translations.language.french"
+        ],
+        "original_question": "What's the French name of the set of cards with \"Tendo Ice Bridge\" is in?",
+        "question": "What's the French name of the set of cards with \"not commissioned\" is in?",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Tendo Ice Bridge' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Decommission' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Decommission",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "Japanese",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Japanese name refers to language = 'Japanese'; card \"Fellwar Stone\" refers to name = 'Fellwar Stone'",
+        "values_list": [
+            "cards.name.fellwar stone",
+            "set_translations.language.japanese"
+        ],
+        "original_question": "Tell the Japanese name of the set which card \"Fellwar Stone\" is in it.",
+        "question": "Tell the Japanese name of the set which card \"not commissioned\" is in it.",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Fellwar Stone' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Decommission",
+            "negated_antonym": "not commissioned"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.name FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'uncommon' ORDER BY T2.date ASC LIMIT 3",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.rarity",
+            "rulings.date",
+            "cards.name",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "uncommon",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "uncommon refers to rarity = 'uncommon';",
+        "values_list": [
+            "cards.rarity.uncommon"
+        ],
+        "original_question": "Pick 3 cards with rarity of uncommon, list down name these cards according to ascending order of it's ruling date.",
+        "question": "Pick 3 cards with rarity of not common, list down name these cards according to ascending order of it's ruling date.",
+        "original_SQL": "SELECT DISTINCT T1.name FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'uncommon' ORDER BY T2.date ASC LIMIT 3",
+        "changes_information": {
+            "original_value": "uncommon",
+            "negated_antonym": "not common"
+        }
+    },
+    {
+        "SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'uncommon' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Legal' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.rarity",
+            "legalities.format",
+            "legalities.status",
+            "cards.originalreleasedate",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Legal",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "uncommon",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the oldest card refers to MIN(originalReleaseDate); mythic card refers to rarity = 'mythic'; legal play refers to status = 'legal'; play format refers to format",
+        "values_list": [
+            "legalities.status.legal",
+            "cards.rarity.uncommon"
+        ],
+        "original_question": "When was the oldest mythic card released and what are its legal play formats?",
+        "question": "When was the oldest not common card released and what are its legal play formats?",
+        "original_SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'mythic' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Legal' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "changes_information": {
+            "original_value": "uncommon",
+            "negated_antonym": "not common"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.name FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'common' ORDER BY T2.date ASC LIMIT 3",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.rarity",
+            "rulings.date",
+            "cards.name",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "common",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "uncommon refers to rarity = 'uncommon';",
+        "values_list": [
+            "cards.rarity.common"
+        ],
+        "original_question": "Pick 3 cards with rarity of uncommon, list down name these cards according to ascending order of it's ruling date.",
+        "question": "Pick 3 cards with rarity of not rare, list down name these cards according to ascending order of it's ruling date.",
+        "original_SQL": "SELECT DISTINCT T1.name FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'uncommon' ORDER BY T2.date ASC LIMIT 3",
+        "changes_information": {
+            "original_value": "common",
+            "negated_antonym": "not rare"
+        }
+    },
+    {
+        "SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'common' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Legal' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.rarity",
+            "legalities.format",
+            "legalities.status",
+            "cards.originalreleasedate",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Legal",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "common",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the oldest card refers to MIN(originalReleaseDate); mythic card refers to rarity = 'mythic'; legal play refers to status = 'legal'; play format refers to format",
+        "values_list": [
+            "legalities.status.legal",
+            "cards.rarity.common"
+        ],
+        "original_question": "When was the oldest mythic card released and what are its legal play formats?",
+        "question": "When was the oldest not rare card released and what are its legal play formats?",
+        "original_SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'mythic' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Legal' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "changes_information": {
+            "original_value": "common",
+            "negated_antonym": "not rare"
+        }
+    },
+    {
+        "SQL": "SELECT T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T2.status = 'Closed' ORDER BY T1.spent / T1.amount DESC LIMIT 1",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_name",
+            "budget.amount",
+            "budget.link_to_event",
+            "event.status",
+            "event.event_id",
+            "budget.spent"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "status",
+                "value": "Closed",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "closed events refers to event_name where status = 'Closed'; highest spend-to budget ratio refers to MAX(DIVIDE(spent, amount))",
+        "values_list": [
+            "event.status.closed"
+        ],
+        "original_question": "Among all the closed events, which event has the highest spend-to-budget ratio?",
+        "question": "Among all the not open events, which event has the highest spend-to-budget ratio?",
+        "original_SQL": "SELECT T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T2.status = 'Closed' ORDER BY T1.spent / T1.amount DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Closed",
+            "negated_antonym": "not open"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT event_name FROM event WHERE type = 'Game' AND date(SUBSTR(event_date, 1, 10)) BETWEEN '2019-03-15' AND '2020-03-20' AND status = 'Closed'",
+        "tables": [
+            "event"
+        ],
+        "columns": [
+            "event.type",
+            "event.event_name",
+            "event.event_date",
+            "event.status"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "status",
+                "value": "Closed",
+                "condition": "="
+            },
+            {
+                "table": "event",
+                "column": "type",
+                "value": "Game",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "name of events refers event_name; game event that was closed refers to type = 'Game' where status = 'Closed'; event_date BETWEEN '2019-03-15' and '2020-03-20'; ",
+        "values_list": [
+            "event.status.closed",
+            "event.type.game"
+        ],
+        "original_question": "List the names of closed event as \"game\" that was closed from 3/15/2019 to 3/20/2020.",
+        "question": "List the names of not open event as \"game\" that was closed from 3/15/2019 to 3/20/2020.",
+        "original_SQL": "SELECT DISTINCT event_name FROM event WHERE type = 'Game' AND date(SUBSTR(event_date, 1, 10)) BETWEEN '2019-03-15' AND '2020-03-20' AND status = 'Closed'",
+        "changes_information": {
+            "original_value": "Closed",
+            "negated_antonym": "not open"
+        }
+    },
+    {
+        "SQL": "SELECT Symptoms FROM Examination WHERE Diagnosis = 'Normal' GROUP BY Symptoms ORDER BY COUNT(Symptoms) DESC LIMIT 1",
+        "tables": [
+            "examination"
+        ],
+        "columns": [
+            "examination.symptoms",
+            "examination.diagnosis"
+        ],
+        "values": [
+            {
+                "table": "examination",
+                "column": "diagnosis",
+                "value": "Normal",
+                "condition": "="
+            }
+        ],
+        "db_id": "thrombosis_prediction",
+        "source": "bird_dev",
+        "evidence": "the most common sign refers to MAX(symptoms); 'SLE' refers to diagnosis",
+        "values_list": [
+            "examination.diagnosis.normal"
+        ],
+        "original_question": "What is the most common sign of patients with SLE disease?",
+        "question": "What is the most common sign of patients with not abnormal disease?",
+        "original_SQL": "SELECT Symptoms FROM Examination WHERE Diagnosis = 'SLE' GROUP BY Symptoms ORDER BY COUNT(Symptoms) DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Normal",
+            "negated_antonym": "not abnormal"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T2.format = 'gladiator' AND T2.status = 'Banned' AND T1.rarity = 'mythic'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.rarity",
+            "legalities.format",
+            "cards.id",
+            "legalities.status",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "mythic",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "format",
+                "value": "gladiator",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "mythic rarity printing refers to rarity = 'mythic'; card banned refers to status = 'Banned'; in gladiator format refers to format = 'gladiator';",
+        "values_list": [
+            "cards.rarity.mythic",
+            "legalities.format.gladiator",
+            "legalities.status.banned"
+        ],
+        "original_question": "List all the mythic rarity print cards banned in gladiator format.",
+        "question": "List all the mythic rarity print cards not permitted in gladiator format.",
+        "original_SQL": "SELECT DISTINCT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T2.format = 'gladiator' AND T2.status = 'Banned' AND T1.rarity = 'mythic'",
+        "changes_information": {
+            "original_value": "Banned",
+            "negated_antonym": "not permitted"
+        }
+    },
+    {
+        "SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid INNER JOIN legalities AS T3 ON T1.uuid = T3.uuid WHERE T3.status = 'Banned' AND T1.types = 'Creature'",
+        "tables": [
+            "rulings",
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.types",
+            "cards.id",
+            "legalities.status",
+            "legalities.uuid",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "types",
+                "value": "Creature",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "legal status refer to status = 'legal'; Goblin-type cards refer to types = 'Creature';",
+        "values_list": [
+            "legalities.status.banned",
+            "cards.types.creature"
+        ],
+        "original_question": "Lists by ID all Creature-type cards with legal status.",
+        "question": "Lists by ID all Creature-type cards with not permitted status.",
+        "original_SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid INNER JOIN legalities AS T3 ON T1.uuid = T3.uuid WHERE T3.status = 'Legal' AND T1.types = 'Creature'",
+        "changes_information": {
+            "original_value": "Banned",
+            "negated_antonym": "not permitted"
+        }
+    },
+    {
+        "SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'mythic' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Banned' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.rarity",
+            "legalities.format",
+            "legalities.status",
+            "cards.originalreleasedate",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "rarity",
+                "value": "mythic",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the oldest card refers to MIN(originalReleaseDate); mythic card refers to rarity = 'mythic'; legal play refers to status = 'legal'; play format refers to format",
+        "values_list": [
+            "legalities.status.banned",
+            "cards.rarity.mythic"
+        ],
+        "original_question": "When was the oldest mythic card released and what are its legal play formats?",
+        "question": "When was the oldest mythic card released and what are its not permitted play formats?",
+        "original_SQL": "SELECT T1.originalReleaseDate, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.rarity = 'mythic' AND T1.originalReleaseDate IS NOT NULL AND T2.status = 'Legal' ORDER BY T1.originalReleaseDate LIMIT 1",
+        "changes_information": {
+            "original_value": "Banned",
+            "negated_antonym": "not permitted"
+        }
+    },
+    {
+        "SQL": "WITH MaxBanned AS (SELECT format, COUNT(*) AS count_banned FROM legalities WHERE status = 'Banned' GROUP BY format ORDER BY COUNT(*) DESC LIMIT 1) SELECT T2.format, T1.name FROM cards AS T1 INNER JOIN legalities AS T2 ON T2.uuid = T1.uuid INNER JOIN MaxBanned MB ON MB.format = T2.format WHERE T2.status = 'Banned'",
+        "tables": [
+            "cards",
+            "legalities",
+            "maxbanned"
+        ],
+        "columns": [
+            "maxbanned.format",
+            "legalities.format",
+            "legalities.status",
+            "cards.name",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "play format refers to format; banned status refers to status = 'Banned'; the highest number of banned status refers to MAX(COUNT(status = 'Banned'))",
+        "values_list": [
+            "legalities.status.banned",
+            "legalities.status.banned",
+            ".status.banned"
+        ],
+        "original_question": "Which of the play format has the highest number of banned status? Indicate the play format and the names of all the card meet the condition.",
+        "question": "Which of the play format has the highest number of not permitted status? Indicate the play format and the names of all the card meet the condition.",
+        "original_SQL": "WITH MaxBanned AS (SELECT format, COUNT(*) AS count_banned FROM legalities WHERE status = 'Banned' GROUP BY format ORDER BY COUNT(*) DESC LIMIT 1) SELECT T2.format, T1.name FROM cards AS T1 INNER JOIN legalities AS T2 ON T2.uuid = T1.uuid INNER JOIN MaxBanned MB ON MB.format = T2.format WHERE T2.status = 'Banned'",
+        "changes_information": {
+            "original_value": "Banned",
+            "negated_antonym": "not permitted"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T2.uuid = T1.uuid WHERE T1.edhrecRank = 1 AND T2.status = 'Banned' GROUP BY T1.name, T2.format",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.format",
+            "legalities.status",
+            "cards.name",
+            "legalities.uuid",
+            "cards.uuid",
+            "cards.edhrecrank"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "edhrecrank",
+                "value": "1",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "ranked 1st on EDHRec refers to edhrecRank = 1; banned refers to status = 'Banned'; play format refers to format; cards name refers to name",
+        "values_list": [
+            "cards.edhrecrank.1",
+            "legalities.status.banned"
+        ],
+        "original_question": "Which cards are ranked 1st on EDHRec? List all of the cards name and its banned play format.",
+        "question": "Which cards are ranked 1st on EDHRec? List all of the cards name and its not permitted play format.",
+        "original_SQL": "SELECT T1.name, T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T2.uuid = T1.uuid WHERE T1.edhrecRank = 1 AND T2.status = 'Banned' GROUP BY T1.name, T2.format",
+        "changes_information": {
+            "original_value": "Banned",
+            "negated_antonym": "not permitted"
+        }
+    },
+    {
+        "SQL": "SELECT T2.ViewCount, T3.DisplayName FROM postHistory AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id INNER JOIN users AS T3 ON T2.LastEditorUserId = T3.Id WHERE T1.Text = 'differentiation'",
+        "tables": [
+            "users",
+            "posts",
+            "posthistory"
+        ],
+        "columns": [
+            "posts.id",
+            "posthistory.text",
+            "posthistory.postid",
+            "users.id",
+            "users.displayname",
+            "posts.viewcount",
+            "posts.lasteditoruserid"
+        ],
+        "values": [
+            {
+                "table": "posthistory",
+                "column": "text",
+                "value": "differentiation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "total views refer to ViewCount; Name the user refers to DisplayName; post 'Computer Game Datasets' refers to Text = 'Computer Game Datasets';",
+        "values_list": [
+            "posthistory.text.computer game datasets"
+        ],
+        "original_question": "Identify the total views on the post 'Computer Game Datasets'. Name the user who posted it last time.",
+        "question": "Identify the total views on the post 'not undifferentiated'. Name the user who posted it last time.",
+        "original_SQL": "SELECT T2.ViewCount, T3.DisplayName FROM postHistory AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id INNER JOIN users AS T3 ON T2.LastEditorUserId = T3.Id WHERE T1.Text = 'Computer Game Datasets'",
+        "changes_information": {
+            "original_value": "differentiation",
+            "negated_antonym": "not undifferentiated"
+        }
+    },
+    {
+        "SQL": "SELECT GSserved FROM schools WHERE City = 'Likely' GROUP BY GSserved ORDER BY COUNT(GSserved) DESC LIMIT 1",
+        "tables": [
+            "schools"
+        ],
+        "columns": [
+            "schools.city",
+            "schools.gsserved"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "city",
+                "value": "Likely",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "schools.city.likely"
+        ],
+        "original_question": "What is the most common type of grade span served in the city of Adelanto?",
+        "question": "What is the most common type of grade span served in the city of not unlikely?",
+        "original_SQL": "SELECT GSserved FROM schools WHERE City = 'Adelanto' GROUP BY GSserved ORDER BY COUNT(GSserved) DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Likely",
+            "negated_antonym": "not unlikely"
+        }
+    },
+    {
+        "SQL": "SELECT T1.District FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Active' ORDER BY T2.AvgScrRead DESC LIMIT 1",
+        "tables": [
+            "satscores",
+            "schools"
+        ],
+        "columns": [
+            "satscores.avgscrread",
+            "schools.district",
+            "schools.cdscode",
+            "satscores.cds",
+            "schools.statustype"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "statustype",
+                "value": "Active",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "schools.statustype.active"
+        ],
+        "original_question": "Which active district has the highest average score in Reading?",
+        "question": "Which not inactive district has the highest average score in Reading?",
+        "original_SQL": "SELECT T1.District FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Active' ORDER BY T2.AvgScrRead DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Active",
+            "negated_antonym": "not inactive"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT County, School, ClosedDate FROM schools WHERE County = ( SELECT County FROM schools WHERE StatusType = 'Active' GROUP BY County ORDER BY COUNT(School) DESC LIMIT 1 ) AND StatusType = 'Active' AND school IS NOT NULL",
+        "tables": [
+            "schools"
+        ],
+        "columns": [
+            "schools.closeddate",
+            "schools.school",
+            "schools.county",
+            "schools.statustype"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "statustype",
+                "value": "Active",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "Closure date and closed date are synonyms; 'Closed' was mentioned in schools.StatusType.",
+        "values_list": [
+            "schools.statustype.active",
+            ".statustype.closed",
+            ".statustype.closed"
+        ],
+        "original_question": "Which different county has the most number of closed schools? Please provide the name of each school as well as the closure date.",
+        "question": "Which different county has the most number of not inactive schools? Please provide the name of each school as well as the closure date.",
+        "original_SQL": "SELECT DISTINCT County, School, ClosedDate FROM schools WHERE County = ( SELECT County FROM schools WHERE StatusType = 'Closed' GROUP BY County ORDER BY COUNT(School) DESC LIMIT 1 ) AND StatusType = 'Closed' AND school IS NOT NULL",
+        "changes_information": {
+            "original_value": "Active",
+            "negated_antonym": "not inactive"
+        }
+    },
+    {
+        "SQL": "SELECT T1.District FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Closed' ORDER BY T2.AvgScrRead DESC LIMIT 1",
+        "tables": [
+            "satscores",
+            "schools"
+        ],
+        "columns": [
+            "satscores.avgscrread",
+            "schools.district",
+            "schools.cdscode",
+            "satscores.cds",
+            "schools.statustype"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "schools.statustype.closed"
+        ],
+        "original_question": "Which active district has the highest average score in Reading?",
+        "question": "Which not open district has the highest average score in Reading?",
+        "original_SQL": "SELECT T1.District FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Active' ORDER BY T2.AvgScrRead DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Closed",
+            "negated_antonym": "not open"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT County, School, ClosedDate FROM schools WHERE County = ( SELECT County FROM schools WHERE StatusType = 'Closed' GROUP BY County ORDER BY COUNT(School) DESC LIMIT 1 ) AND StatusType = 'Closed' AND school IS NOT NULL",
+        "tables": [
+            "schools"
+        ],
+        "columns": [
+            "schools.closeddate",
+            "schools.school",
+            "schools.county",
+            "schools.statustype"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "statustype",
+                "value": "Closed",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "Closure date and closed date are synonyms; 'Closed' was mentioned in schools.StatusType.",
+        "values_list": [
+            "schools.statustype.closed",
+            ".statustype.closed",
+            ".statustype.closed"
+        ],
+        "original_question": "Which different county has the most number of closed schools? Please provide the name of each school as well as the closure date.",
+        "question": "Which different county has the most number of not open schools? Please provide the name of each school as well as the closure date.",
+        "original_SQL": "SELECT DISTINCT County, School, ClosedDate FROM schools WHERE County = ( SELECT County FROM schools WHERE StatusType = 'Closed' GROUP BY County ORDER BY COUNT(School) DESC LIMIT 1 ) AND StatusType = 'Closed' AND school IS NOT NULL",
+        "changes_information": {
+            "original_value": "Closed",
+            "negated_antonym": "not open"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Unstable' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.convertedmanacost",
+            "cards.name",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Unstable",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'",
+        "values_list": [
+            "sets.name.unstable"
+        ],
+        "original_question": "Please list the name of the cards in the set Coldsnap with the highest converted mana cost.",
+        "question": "Please list the name of the cards in the set not stable with the highest converted mana cost.",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Unstable",
+            "negated_antonym": "not stable"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Unstable' AND T1.number = 4",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.name",
+            "cards.number",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Unstable",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "number",
+                "value": "4",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'; card number 4 refers to number = 4",
+        "values_list": [
+            "sets.name.unstable",
+            "cards.number.4"
+        ],
+        "original_question": "What is card number 4 in the set Coldsnap?",
+        "question": "What is card number 4 in the set not stable?",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' AND T1.number = 4",
+        "changes_information": {
+            "original_value": "Unstable",
+            "negated_antonym": "not stable"
+        }
+    },
+    {
+        "SQL": "SELECT parentCode FROM sets WHERE name = 'Unstable'",
+        "tables": [
+            "sets"
+        ],
+        "columns": [
+            "sets.name",
+            "sets.parentcode"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Unstable",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the set \"Commander 2014 Oversized\" refers to name = 'Commander 2014 Oversized';",
+        "values_list": [
+            "sets.name.commander 2014 oversized"
+        ],
+        "original_question": "For the set \"Commander 2014 Oversized\" , give its parent code.",
+        "question": "For the set \"not stable\" , give its parent code.",
+        "original_SQL": "SELECT parentCode FROM sets WHERE name = 'Commander 2014 Oversized'",
+        "changes_information": {
+            "original_value": "Unstable",
+            "negated_antonym": "not stable"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Body FROM tags AS T1 INNER JOIN posts AS T2 ON T2.Id = T1.ExcerptPostId WHERE T1.TagName = 'nonparametric'",
+        "tables": [
+            "tags",
+            "posts"
+        ],
+        "columns": [
+            "posts.id",
+            "tags.tagname",
+            "posts.body",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "nonparametric",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"bayesian\" is the TagName; excerpt from refers to ExcerptPostId",
+        "values_list": [
+            "tags.tagname.nonparametric"
+        ],
+        "original_question": "From which post is the tag \"bayesian\" excerpted from? Please give the body of the post.",
+        "question": "From which post is the tag \"not parametric\" excerpted from? Please give the body of the post.",
+        "original_SQL": "SELECT T2.Body FROM tags AS T1 INNER JOIN posts AS T2 ON T2.Id = T1.ExcerptPostId WHERE T1.TagName = 'bayesian'",
+        "changes_information": {
+            "original_value": "nonparametric",
+            "negated_antonym": "not parametric"
+        }
+    },
+    {
+        "SQL": "SELECT T3.DisplayName, T3.Location FROM tags AS T1 INNER JOIN posts AS T2 ON T1.ExcerptPostId = T2.Id INNER JOIN users AS T3 ON T3.Id = T2.OwnerUserId WHERE T1.TagName = 'nonparametric'",
+        "tables": [
+            "tags",
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "posts.id",
+            "tags.excerptpostid",
+            "posts.owneruserid",
+            "users.location",
+            "users.id",
+            "users.displayname",
+            "tags.tagname"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "nonparametric",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "user who owned the excerpt post with hypothesis-testing tag refers to OwnerUserId WHERE TagName = 'hypothesis-testing';",
+        "values_list": [
+            "tags.tagname.nonparametric"
+        ],
+        "original_question": "Mention the display name and location of the user who owned the excerpt post with hypothesis-testing tag.",
+        "question": "Mention the display name and location of the user who owned the excerpt post with not parametric tag.",
+        "original_SQL": "SELECT T3.DisplayName, T3.Location FROM tags AS T1 INNER JOIN posts AS T2 ON T1.ExcerptPostId = T2.Id INNER JOIN users AS T3 ON T3.Id = T2.OwnerUserId WHERE T1.TagName = 'hypothesis-testing'",
+        "changes_information": {
+            "original_value": "nonparametric",
+            "negated_antonym": "not parametric"
+        }
+    },
+    {
+        "SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'nonparametric'",
+        "tables": [
+            "tags"
+        ],
+        "columns": [
+            "tags.tagname",
+            "tags.wikipostid",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "nonparametric",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "tag named sample refers to TagName = 'sample';",
+        "values_list": [
+            "tags.tagname.nonparametric"
+        ],
+        "original_question": "What is the excerpt post ID and wiki post ID of the tag named sample?",
+        "question": "What is the excerpt post ID and wiki post ID of the tag named not parametric?",
+        "original_SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'sample'",
+        "changes_information": {
+            "original_value": "nonparametric",
+            "negated_antonym": "not parametric"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Body FROM tags AS T1 INNER JOIN posts AS T2 ON T2.Id = T1.ExcerptPostId WHERE T1.TagName = 'online'",
+        "tables": [
+            "tags",
+            "posts"
+        ],
+        "columns": [
+            "posts.id",
+            "tags.tagname",
+            "posts.body",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "online",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"bayesian\" is the TagName; excerpt from refers to ExcerptPostId",
+        "values_list": [
+            "tags.tagname.online"
+        ],
+        "original_question": "From which post is the tag \"bayesian\" excerpted from? Please give the body of the post.",
+        "question": "From which post is the tag \"not offline\" excerpted from? Please give the body of the post.",
+        "original_SQL": "SELECT T2.Body FROM tags AS T1 INNER JOIN posts AS T2 ON T2.Id = T1.ExcerptPostId WHERE T1.TagName = 'bayesian'",
+        "changes_information": {
+            "original_value": "online",
+            "negated_antonym": "not offline"
+        }
+    },
+    {
+        "SQL": "SELECT T3.DisplayName, T3.Location FROM tags AS T1 INNER JOIN posts AS T2 ON T1.ExcerptPostId = T2.Id INNER JOIN users AS T3 ON T3.Id = T2.OwnerUserId WHERE T1.TagName = 'online'",
+        "tables": [
+            "tags",
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "posts.id",
+            "tags.excerptpostid",
+            "posts.owneruserid",
+            "users.location",
+            "users.id",
+            "users.displayname",
+            "tags.tagname"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "online",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "user who owned the excerpt post with hypothesis-testing tag refers to OwnerUserId WHERE TagName = 'hypothesis-testing';",
+        "values_list": [
+            "tags.tagname.online"
+        ],
+        "original_question": "Mention the display name and location of the user who owned the excerpt post with hypothesis-testing tag.",
+        "question": "Mention the display name and location of the user who owned the excerpt post with not offline tag.",
+        "original_SQL": "SELECT T3.DisplayName, T3.Location FROM tags AS T1 INNER JOIN posts AS T2 ON T1.ExcerptPostId = T2.Id INNER JOIN users AS T3 ON T3.Id = T2.OwnerUserId WHERE T1.TagName = 'hypothesis-testing'",
+        "changes_information": {
+            "original_value": "online",
+            "negated_antonym": "not offline"
+        }
+    },
+    {
+        "SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'online'",
+        "tables": [
+            "tags"
+        ],
+        "columns": [
+            "tags.tagname",
+            "tags.wikipostid",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "online",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "tag named sample refers to TagName = 'sample';",
+        "values_list": [
+            "tags.tagname.online"
+        ],
+        "original_question": "What is the excerpt post ID and wiki post ID of the tag named sample?",
+        "question": "What is the excerpt post ID and wiki post ID of the tag named not offline?",
+        "original_SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'sample'",
+        "changes_information": {
+            "original_value": "online",
+            "negated_antonym": "not offline"
+        }
+    },
+    {
+        "SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'nonlinear'",
+        "tables": [
+            "tags"
+        ],
+        "columns": [
+            "tags.tagname",
+            "tags.wikipostid",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "nonlinear",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "tag named sample refers to TagName = 'sample';",
+        "values_list": [
+            "tags.tagname.nonlinear"
+        ],
+        "original_question": "What is the excerpt post ID and wiki post ID of the tag named sample?",
+        "question": "What is the excerpt post ID and wiki post ID of the tag named not linear?",
+        "original_SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'sample'",
+        "changes_information": {
+            "original_value": "nonlinear",
+            "negated_antonym": "not linear"
+        }
+    },
+    {
+        "SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'control'",
+        "tables": [
+            "tags"
+        ],
+        "columns": [
+            "tags.tagname",
+            "tags.wikipostid",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "control",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "tag named sample refers to TagName = 'sample';",
+        "values_list": [
+            "tags.tagname.control"
+        ],
+        "original_question": "What is the excerpt post ID and wiki post ID of the tag named sample?",
+        "question": "What is the excerpt post ID and wiki post ID of the tag named not uncontrolled?",
+        "original_SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'sample'",
+        "changes_information": {
+            "original_value": "control",
+            "negated_antonym": "not uncontrolled"
+        }
+    }
+]
