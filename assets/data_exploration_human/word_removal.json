@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "database_id": "battle_death",
+    "table": "battle",
+    "column": "latin_commander",
+    "original_value": "Henry I",
+    "word_removal": "Henry"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Kipling West",
+    "word_removal": "Kipling"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Rebekah Lynn",
+    "word_removal": "Rebekah"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Tempting offer",
+    "word_removal": "Tempting"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Cornucopia astral",
+    "word_removal": "Cornucopia"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Psychology Department",
+    "word_removal": "Psychology"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Biology Department",
+    "word_removal": "Biology"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "Bakersfield City",
+    "word_removal": "Bakersfield"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Butte City",
+    "word_removal": "Butte"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "mcmname",
+    "original_value": "The List",
+    "word_removal": "List"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Mythic Edition",
+    "word_removal": "Mythic"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Redemption Program",
+    "word_removal": "Redemption"
+  },
+  {
+    "database_id": "headphone_store",
+    "table": "store",
+    "column": "name",
+    "original_value": "Sherman Way",
+    "word_removal": "Sherman"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "full_name",
+    "original_value": "Damon Macready",
+    "word_removal": "Macready"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Dr Manhattan",
+    "word_removal": "Manhattan"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "The Hague",
+    "word_removal": "Hague"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Sussex County",
+    "word_removal": "Sussex"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "county",
+    "original_value": "Winchester city",
+    "word_removal": "Winchester"
+  }
+]

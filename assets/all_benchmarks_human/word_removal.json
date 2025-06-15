@@ -1,0 +1,1488 @@
+[
+    {
+        "SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Kipling West'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Kipling West",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Aaron Boyd' is artist;",
+        "values_list": [
+            "cards.artist.aaron boyd"
+        ],
+        "original_question": "Name the cards that were illustrated by Aaron Boyd.",
+        "question": "Name the cards that were illustrated by Kipling.",
+        "original_SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Aaron Boyd'",
+        "changes_information": {
+            "original_value": "Kipling West",
+            "word_removal": "Kipling"
+        }
+    },
+    {
+        "SQL": "SELECT manaCost FROM cards WHERE artist = 'Kipling West'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.manacost"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Kipling West",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "unconverted mana refer to manaCost; Rob Alexander refer to artist",
+        "values_list": [
+            "cards.artist.rob alexander"
+        ],
+        "original_question": "What is the  unconverted mana do all the cards created by Rob Alexander cost in total?",
+        "question": "What is the  unconverted mana do all the cards created by Kipling cost in total?",
+        "original_SQL": "SELECT manaCost FROM cards WHERE artist = 'Rob Alexander'",
+        "changes_information": {
+            "original_value": "Kipling West",
+            "word_removal": "Kipling"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Kipling West'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Kipling West",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "kind of printing refers to availability; Daren Bader created refers to artist = 'Daren Bader'",
+        "values_list": [
+            "cards.artist.daren bader"
+        ],
+        "original_question": "What kind of printing is on the card that Daren Bader created?",
+        "question": "What kind of printing is on the card that Kipling created?",
+        "original_SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Daren Bader'",
+        "changes_information": {
+            "original_value": "Kipling West",
+            "word_removal": "Kipling"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Kipling West'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.artist",
+            "legalities.status",
+            "cards.name",
+            "cards.frameversion",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Kipling West",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "frame styles refers to frameVersion; cards Allen Williams worked on refers to artist = 'Allen Williams'; banned cards refers to status = 'Banned'",
+        "values_list": [
+            "legalities.status.banned",
+            "cards.artist.allen williams"
+        ],
+        "original_question": "List all the frame styles and cards Allen Williams worked on and find any banned cards if there are any.",
+        "question": "List all the frame styles and cards Kipling worked on and find any banned cards if there are any.",
+        "original_SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Allen Williams'",
+        "changes_information": {
+            "original_value": "Kipling West",
+            "word_removal": "Kipling"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Rebekah Lynn'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Rebekah Lynn",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Aaron Boyd' is artist;",
+        "values_list": [
+            "cards.artist.aaron boyd"
+        ],
+        "original_question": "Name the cards that were illustrated by Aaron Boyd.",
+        "question": "Name the cards that were illustrated by Rebekah.",
+        "original_SQL": "SELECT DISTINCT name FROM cards WHERE artist = 'Aaron Boyd'",
+        "changes_information": {
+            "original_value": "Rebekah Lynn",
+            "word_removal": "Rebekah"
+        }
+    },
+    {
+        "SQL": "SELECT manaCost FROM cards WHERE artist = 'Rebekah Lynn'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.manacost"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Rebekah Lynn",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "unconverted mana refer to manaCost; Rob Alexander refer to artist",
+        "values_list": [
+            "cards.artist.rob alexander"
+        ],
+        "original_question": "What is the  unconverted mana do all the cards created by Rob Alexander cost in total?",
+        "question": "What is the  unconverted mana do all the cards created by Rebekah cost in total?",
+        "original_SQL": "SELECT manaCost FROM cards WHERE artist = 'Rob Alexander'",
+        "changes_information": {
+            "original_value": "Rebekah Lynn",
+            "word_removal": "Rebekah"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Rebekah Lynn'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Rebekah Lynn",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "kind of printing refers to availability; Daren Bader created refers to artist = 'Daren Bader'",
+        "values_list": [
+            "cards.artist.daren bader"
+        ],
+        "original_question": "What kind of printing is on the card that Daren Bader created?",
+        "question": "What kind of printing is on the card that Rebekah created?",
+        "original_SQL": "SELECT DISTINCT availability FROM cards WHERE artist = 'Daren Bader'",
+        "changes_information": {
+            "original_value": "Rebekah Lynn",
+            "word_removal": "Rebekah"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.artist = 'Rebekah Lynn' ORDER BY T2.date DESC",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.artist",
+            "rulings.date",
+            "rulings.text",
+            "cards.uuid",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Rebekah Lynn",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "rulings refers to text; card named and designed by Kev Walker refers to artist = 'Kev Walker'; descending order of dates refers to MAX(date);",
+        "values_list": [
+            "cards.artist.kev walker"
+        ],
+        "original_question": "What are the rulings for the card named and designed by Kev Walker? List them in descending order of dates.",
+        "question": "What are the rulings for the card named and designed by Rebekah? List them in descending order of dates.",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.artist = 'Kev Walker' ORDER BY T2.date DESC",
+        "changes_information": {
+            "original_value": "Rebekah Lynn",
+            "word_removal": "Rebekah"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Rebekah Lynn'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.artist",
+            "legalities.status",
+            "cards.name",
+            "cards.frameversion",
+            "legalities.uuid",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "status",
+                "value": "Banned",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Rebekah Lynn",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "frame styles refers to frameVersion; cards Allen Williams worked on refers to artist = 'Allen Williams'; banned cards refers to status = 'Banned'",
+        "values_list": [
+            "legalities.status.banned",
+            "cards.artist.allen williams"
+        ],
+        "original_question": "List all the frame styles and cards Allen Williams worked on and find any banned cards if there are any.",
+        "question": "List all the frame styles and cards Rebekah worked on and find any banned cards if there are any.",
+        "original_SQL": "SELECT DISTINCT T1.frameVersion, T1.name , IIF(T2.status = 'Banned', T1.name, 'NO') FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Allen Williams'",
+        "changes_information": {
+            "original_value": "Rebekah Lynn",
+            "word_removal": "Rebekah"
+        }
+    },
+    {
+        "SQL": "SELECT layout FROM cards WHERE keywords = 'Tempting offer'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.keywords",
+            "cards.layout"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "keywords",
+                "value": "Tempting offer",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "cards.keywords.tempting_offer"
+        ],
+        "original_question": "What are the card layout of cards with keyword of flying?",
+        "question": "What are the card layout of cards with keyword of Tempting?",
+        "original_SQL": "SELECT layout FROM cards WHERE keywords = 'Flying'",
+        "changes_information": {
+            "original_value": "Tempting offer",
+            "word_removal": "Tempting"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT language FROM foreign_data WHERE name = 'Cornucopia astral'",
+        "tables": [
+            "foreign_data"
+        ],
+        "columns": [
+            "foreign_data.language",
+            "foreign_data.name"
+        ],
+        "values": [
+            {
+                "table": "foreign_data",
+                "column": "name",
+                "value": "Cornucopia astral",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\"A Pedra Fellwar\" refers to name = 'A Pedra Fellwar'",
+        "values_list": [
+            "foreign_data.name.a pedra fellwar"
+        ],
+        "original_question": "Which foreign language used by \"A Pedra Fellwar\"?",
+        "question": "Which foreign language used by \"Cornucopia\"?",
+        "original_SQL": "SELECT DISTINCT language FROM foreign_data WHERE name = 'A Pedra Fellwar'",
+        "changes_information": {
+            "original_value": "Cornucopia astral",
+            "word_removal": "Cornucopia"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Mythic Edition' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.convertedmanacost",
+            "cards.name",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Mythic Edition",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'",
+        "values_list": [
+            "sets.name.mythic_edition"
+        ],
+        "original_question": "Please list the name of the cards in the set Coldsnap with the highest converted mana cost.",
+        "question": "Please list the name of the cards in the set Mythic with the highest converted mana cost.",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Mythic Edition",
+            "word_removal": "Mythic"
+        }
+    },
+    {
+        "SQL": "SELECT parentCode FROM sets WHERE name = 'Mythic Edition'",
+        "tables": [
+            "sets"
+        ],
+        "columns": [
+            "sets.name",
+            "sets.parentcode"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Mythic Edition",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the set \"Commander 2014 Oversized\" refers to name = 'Commander 2014 Oversized';",
+        "values_list": [
+            "sets.name.commander 2014 oversized"
+        ],
+        "original_question": "For the set \"Commander 2014 Oversized\" , give its parent code.",
+        "question": "For the set \"Mythic\" , give its parent code.",
+        "original_SQL": "SELECT parentCode FROM sets WHERE name = 'Commander 2014 Oversized'",
+        "changes_information": {
+            "original_value": "Mythic Edition",
+            "word_removal": "Mythic"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Redemption Program' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.convertedmanacost",
+            "cards.name",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Redemption Program",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'",
+        "values_list": [
+            "sets.name.redemption_program"
+        ],
+        "original_question": "Please list the name of the cards in the set Coldsnap with the highest converted mana cost.",
+        "question": "Please list the name of the cards in the set Redemption with the highest converted mana cost.",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Redemption Program",
+            "word_removal": "Redemption"
+        }
+    },
+    {
+        "SQL": "SELECT parentCode FROM sets WHERE name = 'Redemption Program'",
+        "tables": [
+            "sets"
+        ],
+        "columns": [
+            "sets.name",
+            "sets.parentcode"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Redemption Program",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the set \"Commander 2014 Oversized\" refers to name = 'Commander 2014 Oversized';",
+        "values_list": [
+            "sets.name.commander 2014 oversized"
+        ],
+        "original_question": "For the set \"Commander 2014 Oversized\" , give its parent code.",
+        "question": "For the set \"Redemption\" , give its parent code.",
+        "original_SQL": "SELECT parentCode FROM sets WHERE name = 'Commander 2014 Oversized'",
+        "changes_information": {
+            "original_value": "Redemption Program",
+            "word_removal": "Redemption"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Damon Macready'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.full_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Abraham Sapien is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.abraham sapien"
+        ],
+        "original_question": "What is the eyes colour of Abraham Sapien?",
+        "question": "What is the eyes colour of Macready?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Abraham Sapien'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.full_name = 'Damon Macready'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "race.id",
+            "superhero.superhero_name",
+            "superhero.full_name",
+            "superhero.race_id",
+            "race.race"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "hero name refers to superhero_name; Charles Chandler is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.charles chandler"
+        ],
+        "original_question": "Provide the hero name and race of Charles Chandler.",
+        "question": "Provide the hero name and race of Macready.",
+        "original_SQL": "SELECT T1.superhero_name, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.full_name = 'Charles Chandler'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Damon Macready'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.full_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Hunter Zolomon is the full name of superhero; list the powers refers to power_name;",
+        "values_list": [
+            "superhero.full_name.hunter zolomon"
+        ],
+        "original_question": "List the powers of Hunter Zolomon.",
+        "question": "List the powers of Macready.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Hunter Zolomon'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Damon Macready'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.full_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Karen Beecher-Duncan is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.karen beecher-duncan"
+        ],
+        "original_question": "Provide the eye colour of the superhero who has Karen Beecher-Duncan as their full name.",
+        "question": "Provide the eye colour of the superhero who has Macready as their full name.",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Karen Beecher-Duncan'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Damon Macready'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.full_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name; Helen Parr is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.helen parr"
+        ],
+        "original_question": "What is the superpowers of the superhero has Helen Parr as their full name?",
+        "question": "What is the superpowers of the superhero has Macready as their full name?",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Helen Parr'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero WHERE full_name = 'Damon Macready'",
+        "tables": [
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.full_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "full_name",
+                "value": "Damon Macready",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name the superhero refers to superhero_name; Charles Chandler is the full name of superhero;",
+        "values_list": [
+            "superhero.full_name.charles chandler"
+        ],
+        "original_question": "Name the superhero, otherwise known as Charles Chandler.",
+        "question": "Name the superhero, otherwise known as Macready.",
+        "original_SQL": "SELECT superhero_name FROM superhero WHERE full_name = 'Charles Chandler'",
+        "changes_information": {
+            "original_value": "Damon Macready",
+            "word_removal": "Macready"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "3-D Man refers to superhero_name = '3-D Man'; superpowers refers to power_name",
+        "values_list": [
+            "superhero.superhero_name.3-d man"
+        ],
+        "original_question": "Please list all the superpowers of 3-D Man.",
+        "question": "Please list all the superpowers of Manhattan.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.superhero_name",
+            "superhero.skin_colour_id",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Apocalypse refers to superhero_name = 'Apocalypse'; colour of skin refers to colour where skin_colour_id = colour.id",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "What is the colour of Apocalypse's skin?",
+        "question": "What is the colour of Manhattan's skin?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Apocalypse'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "publisher.id",
+            "superhero.publisher_id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the publisher refers to publisher_name; Sauron refers to superhero_name = 'Sauron'",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Who is the publisher of Sauron?",
+        "question": "Who is the publisher of Manhattan?",
+        "original_SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Sauron'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "publisher",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "publisher.id",
+            "superhero.publisher_id",
+            "publisher.publisher_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Blue Beetle II refers to superhero_name = 'Blue Beetle II'",
+        "values_list": [
+            "superhero.superhero_name.blue beetle ii"
+        ],
+        "original_question": "What is the publisher's name of Blue Beetle II?",
+        "question": "What is the publisher's name of Manhattan?",
+        "original_SQL": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Blue Beetle II'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Copycat is the superhero_name;",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "What is Copycat's race?",
+        "question": "What is Manhattan's race?",
+        "original_SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Copycat'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name; Deathlok refers to superhero_name = 'Deathlok'",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Provide the superpowers of the superhero called Deathlok.",
+        "question": "Provide the superpowers of the superhero called Manhattan.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Deathlok'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "hero_attribute",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination';",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Indicate the attribute value of superhero Abomination.",
+        "question": "Indicate the attribute value of superhero Manhattan.",
+        "original_SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "race",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "race.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "group refers to race; A-Bomb refers to superhero_name = 'A-Bomb';",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Which group does superhero A-Bomb belong to?",
+        "question": "Which group does superhero Manhattan belong to?",
+        "original_SQL": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'A-Bomb'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.gender FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "gender"
+        ],
+        "columns": [
+            "gender.gender",
+            "gender.id",
+            "superhero.gender_id",
+            "superhero.superhero_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Agent 13 hero refers to superhero_name = 'Agent 13';",
+        "values_list": [
+            "superhero.superhero_name.agent 13"
+        ],
+        "original_question": "What is the gender of Agent 13 hero?",
+        "question": "What is the gender of Manhattan hero?",
+        "original_SQL": "SELECT T2.gender FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T1.superhero_name = 'Agent 13'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.race, T3.alignment FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN alignment AS T3 ON T1.alignment_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "race",
+            "superhero",
+            "alignment"
+        ],
+        "columns": [
+            "alignment.alignment",
+            "superhero.alignment_id",
+            "race.id",
+            "superhero.superhero_name",
+            "superhero.race_id",
+            "race.race",
+            "alignment.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Cameron Hicks refers to superhero_name = 'Cameron Hicks';",
+        "values_list": [
+            "superhero.superhero_name.cameron hicks"
+        ],
+        "original_question": "What are the race and alignment of Cameron Hicks?",
+        "question": "What are the race and alignment of Manhattan?",
+        "original_SQL": "SELECT T2.race, T3.alignment FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN alignment AS T3 ON T1.alignment_id = T3.id WHERE T1.superhero_name = 'Cameron Hicks'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination'; superpower refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "What is Abomination's superpower?",
+        "question": "What is Manhattan's superpower?",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T3.attribute_name, T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "superhero.superhero_name",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "3-D Man is the superhero_name. attributes refers to attribute_name; values refers to attribute_value;",
+        "values_list": [
+            "superhero.superhero_name.3-d man"
+        ],
+        "original_question": "State all of 3-D Man's attributes along with their values.",
+        "question": "State all of Manhattan's attributes along with their values.",
+        "original_SQL": "SELECT T3.attribute_name, T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T4.alignment, T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id INNER JOIN alignment AS T4 ON T1.alignment_id = T4.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower",
+            "alignment"
+        ],
+        "columns": [
+            "alignment.alignment",
+            "superhero.alignment_id",
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "alignment.id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "superpowers refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.atom iv"
+        ],
+        "original_question": "Give the alignment and superpowers of the superhero named Atom IV.",
+        "question": "Give the alignment and superpowers of the superhero named Manhattan.",
+        "original_SQL": "SELECT T4.alignment, T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id INNER JOIN alignment AS T4 ON T1.alignment_id = T4.id WHERE T1.superhero_name = 'Atom IV'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Ajax refers to superhero_name = 'Ajax'; superpowers refers to power_name;",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "List down Ajax's superpowers.",
+        "question": "List down Manhattan's superpowers.",
+        "original_SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Ajax'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T3.attribute_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Dr Manhattan' ORDER BY T2.attribute_value ASC LIMIT 1",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "superhero.superhero_name",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "weakest attribute refers to attribute_name WHERE MIN(attribute_value); Black Panther refers to superhero_name = 'Black Panther';",
+        "values_list": [
+            "superhero.superhero_name.black panther"
+        ],
+        "original_question": "Identify the weakest attribute of the Black Panther.",
+        "question": "Identify the weakest attribute of the Manhattan.",
+        "original_SQL": "SELECT T3.attribute_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T1.superhero_name = 'Black Panther' ORDER BY T2.attribute_value ASC LIMIT 1",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.superhero_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "Abomination refers to superhero_name = 'Abomination'; eye colour refers to colour.colour where eye_colour_id = colour.id;",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "What is Abomination's eye colour?",
+        "question": "What is Manhattan's eye colour?",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Abomination'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT full_name FROM superhero WHERE superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "superhero.full_name"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Provide the full name of the superhero named Alien.",
+        "question": "Provide the full name of the superhero named Manhattan.",
+        "original_SQL": "SELECT full_name FROM superhero WHERE superhero_name = 'Alien'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "hero_attribute",
+            "superhero"
+        ],
+        "columns": [
+            "superhero.superhero_name",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.id"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "List the attribute value of the superhero named Aquababy.",
+        "question": "List the attribute value of the superhero named Manhattan.",
+        "original_SQL": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Aquababy'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Dr Manhattan'",
+        "tables": [
+            "superhero",
+            "colour"
+        ],
+        "columns": [
+            "colour.id",
+            "superhero.eye_colour_id",
+            "superhero.superhero_name",
+            "colour.colour"
+        ],
+        "values": [
+            {
+                "table": "superhero",
+                "column": "superhero_name",
+                "value": "Dr Manhattan",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "eye colour refers to colour.colour where eye_colour_id = colour.id; Blackwulf refers to superhero_name = 'Blackwulf';",
+        "values_list": [
+            "superhero.superhero_name.dr_manhattan"
+        ],
+        "original_question": "Give the eye colour of Blackwulf.",
+        "question": "Give the eye colour of Manhattan.",
+        "original_SQL": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Blackwulf'",
+        "changes_information": {
+            "original_value": "Dr Manhattan",
+            "word_removal": "Manhattan"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Date FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T1.Location = 'The Hague'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "users.location",
+            "badges.userid",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "location",
+                "value": "The Hague",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Rochester, NY\" is the Location of user; user refers to UserId",
+        "values_list": [
+            "users.location.rochester, ny"
+        ],
+        "original_question": "List out the dates that users who are located in Rochester, NY obtained their badges?",
+        "question": "List out the dates that users who are located in Hague obtained their badges?",
+        "original_SQL": "SELECT T2.Date FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T1.Location = 'Rochester, NY'",
+        "changes_information": {
+            "original_value": "The Hague",
+            "word_removal": "Hague"
+        }
+    },
+    {
+        "SQL": "SELECT T1.Age FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T1.Location = 'The Hague'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.age",
+            "users.id",
+            "users.location",
+            "badges.userid"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "location",
+                "value": "The Hague",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Vienna, Austria\" is the Location",
+        "values_list": [
+            "users.location.vienna, austria"
+        ],
+        "original_question": "List out the age of users who located in Vienna, Austria obtained the badge?",
+        "question": "List out the age of users who located in Hague obtained the badge?",
+        "original_SQL": "SELECT T1.Age FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T1.Location = 'Vienna, Austria'",
+        "changes_information": {
+            "original_value": "The Hague",
+            "word_removal": "Hague"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Name FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE STRFTIME('%Y', T2.Date) = '2011' AND T1.Location = 'The Hague'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.location",
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "location",
+                "value": "The Hague",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "received in 2011 refers to year(Date) = 2011;",
+        "values_list": [
+            "users.location.north pole"
+        ],
+        "original_question": "Provide the badge names received in 2011 for the user whose location is in the North Pole.",
+        "question": "Provide the badge names received in 2011 for the user whose location is in the Hague.",
+        "original_SQL": "SELECT T2.Name FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE STRFTIME('%Y', T2.Date) = '2011' AND T1.Location = 'North Pole'",
+        "changes_information": {
+            "original_value": "The Hague",
+            "word_removal": "Hague"
+        }
+    }
+]
