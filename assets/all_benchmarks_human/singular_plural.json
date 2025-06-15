@@ -1,0 +1,4076 @@
+[
+    {
+        "SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_attribute AS T2 INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Durability' AND T2.attribute_value < 50 AND T1.id = T2.hero_id)",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "attribute",
+                "column": "attribute_name",
+                "value": "Durability",
+                "condition": "="
+            },
+            {
+                "table": "hero_attribute",
+                "column": "attribute_value",
+                "value": "50",
+                "condition": "<"
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "durability of less than 50 refers to attribute_name = 'Durability' AND attribute_value < 50",
+        "values_list": [
+            "attribute.attribute_name.durability",
+            "hero_attribute.attribute_value.50"
+        ],
+        "original_question": "Which superheroes have a durability attribute value of less than 50?",
+        "question": "Which superheroes have a durabilities attribute value of less than 50?",
+        "original_SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_attribute AS T2 INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Durability' AND T2.attribute_value < 50 AND T1.id = T2.hero_id)",
+        "changes_information": {
+            "original_value": "Durability",
+            "singular_plural_change": "durabilities"
+        }
+    },
+    {
+        "SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Durability' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "tables": [
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "hero_attribute.attribute_value",
+            "superhero.id",
+            "superhero.full_name",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "attribute.attribute_name",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "attribute",
+                "column": "attribute_name",
+                "value": "Durability",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "highest attribute in strength refers to MAX(attribute_value) WHERE attribute_name = 'strength';",
+        "values_list": [
+            "attribute.attribute_name.durability"
+        ],
+        "original_question": "What is the hero's full name with the highest attribute in strength?",
+        "question": "What is the hero's full name with the highest attribute in durabilities?",
+        "original_SQL": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Strength' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Durability",
+            "singular_plural_change": "durabilities"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T3.id = T2.attribute_id INNER JOIN publisher AS T4 ON T4.id = T1.publisher_id WHERE T4.publisher_name = 'Dark Horse Comics' AND T3.attribute_name = 'Durability' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "tables": [
+            "publisher",
+            "hero_attribute",
+            "superhero",
+            "attribute"
+        ],
+        "columns": [
+            "superhero.id",
+            "superhero.superhero_name",
+            "publisher.publisher_name",
+            "attribute.attribute_name",
+            "publisher.id",
+            "attribute.id",
+            "hero_attribute.hero_id",
+            "hero_attribute.attribute_value",
+            "superhero.publisher_id",
+            "hero_attribute.attribute_id"
+        ],
+        "values": [
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "Dark Horse Comics",
+                "condition": "="
+            },
+            {
+                "table": "attribute",
+                "column": "attribute_name",
+                "value": "Durability",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "which superhero refers to superhero_name; most durability refers to MAX(attribute_value) WHERE attribute_name = 'durability'; published by Dark Horse Comics refers to publisher_name = 'Dark Horse Comics';",
+        "values_list": [
+            "publisher.publisher_name.dark horse comics",
+            "attribute.attribute_name.durability"
+        ],
+        "original_question": "Which superhero has the most durability published by Dark Horse Comics?",
+        "question": "Which superhero has the most durabilities published by Dark Horse Comics?",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T3.id = T2.attribute_id INNER JOIN publisher AS T4 ON T4.id = T1.publisher_id WHERE T4.publisher_name = 'Dark Horse Comics' AND T3.attribute_name = 'Durability' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Durability",
+            "singular_plural_change": "durabilities"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Editor' LIMIT 10",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Editor",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Necromancer\" is the Name of badge; users refers to DisplayName",
+        "values_list": [
+            "badges.name.editor"
+        ],
+        "original_question": "Name 10 users with the badge name 'Necromancer.'",
+        "question": "Name 10 users with the badge name 'Editors.'",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Necromancer' LIMIT 10",
+        "changes_information": {
+            "original_value": "Editor",
+            "singular_plural_change": "Editors"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Editor'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.id",
+            "badges.userid",
+            "users.displayname",
+            "badges.name"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Editor",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "name of users refers to DisplayName; the Organizer Badges refer to badges where Name = 'Organizer';",
+        "values_list": [
+            "badges.name.editor"
+        ],
+        "original_question": "List all the name of users that obtained the Organizer Badges.",
+        "question": "List all the name of users that obtained the Editors Badges.",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Organizer'",
+        "changes_information": {
+            "original_value": "Editor",
+            "singular_plural_change": "Editors"
+        }
+    },
+    {
+        "SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'Editor'",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "users.location",
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.lastaccessdate"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Editor",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Outliers is the name of the badge;",
+        "values_list": [
+            "badges.name.editor"
+        ],
+        "original_question": "Describe the last accessed date and location of the users who received the outliers badge.",
+        "question": "Describe the last accessed date and location of the users who received the Editors badge.",
+        "original_SQL": "SELECT T1.LastAccessDate, T1.Location FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.Name = 'outliers'",
+        "changes_information": {
+            "original_value": "Editor",
+            "singular_plural_change": "Editors"
+        }
+    },
+    {
+        "SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Editor' ORDER BY T2.Date LIMIT 1",
+        "tables": [
+            "badges",
+            "users"
+        ],
+        "columns": [
+            "badges.userid",
+            "badges.name",
+            "users.id",
+            "users.displayname",
+            "badges.date"
+        ],
+        "values": [
+            {
+                "table": "badges",
+                "column": "name",
+                "value": "Editor",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Autobiographer is the name of the badge; acquired the first refers to MIN(Date);",
+        "values_list": [
+            "badges.name.editor"
+        ],
+        "original_question": "What is the display name of the user who acquired the first Autobiographer badge?",
+        "question": "What is the display name of the user who acquired the first Editors badge?",
+        "original_SQL": "SELECT T1.DisplayName FROM users AS T1 INNER JOIN badges AS T2 ON T1.Id = T2.UserId WHERE T2.`Name` = 'Autobiographer' ORDER BY T2.Date LIMIT 1",
+        "changes_information": {
+            "original_value": "Editor",
+            "singular_plural_change": "Editors"
+        }
+    },
+    {
+        "SQL": "SELECT T2.spent FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'September Meeting' AND T2.category = 'Advertisement' AND SUBSTR(T1.event_date, 6, 2) = '09'",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_date",
+            "event.event_id",
+            "budget.spent"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "September Meeting",
+                "condition": "="
+            },
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "amount spent refers to spent; spend on food in September Meeting refers to category = 'Food' where event_name = 'September Meeting'",
+        "values_list": [
+            "event.event_name.september meeting",
+            "budget.category.advertisement"
+        ],
+        "original_question": "How much did the Student_Club members spend on food in September Meeting?",
+        "question": "How much did the Student_Club members spend on Advertisements in September Meeting?",
+        "original_SQL": "SELECT T2.spent FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'September Meeting' AND T2.category = 'Food' AND SUBSTR(T1.event_date, 6, 2) = '09'",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT T2.spent FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'September Meeting' AND T2.category = 'Advertisement' AND SUBSTR(T1.event_date, 6, 2) = '09'",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_date",
+            "event.event_id",
+            "budget.spent"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "September Meeting",
+                "condition": "="
+            },
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "amount spent refers to spent; spend on food in September Meeting refers to category = 'Advertisement' where event_name = 'September Meeting'",
+        "values_list": [
+            "event.event_name.september meeting",
+            "budget.category.advertisement"
+        ],
+        "original_question": "How much did the Student_Club members spend on advertisement in September Meeting?",
+        "question": "How much did the Student_Club members spend on Advertisements in September Meeting?",
+        "original_SQL": "SELECT T2.spent FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'September Meeting' AND T2.category = 'Advertisement' AND SUBSTR(T1.event_date, 6, 2) = '09'",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT remaining FROM budget WHERE category = 'Advertisement' AND amount = ( SELECT MAX(amount) FROM budget WHERE category = 'Advertisement' )",
+        "tables": [
+            "budget"
+        ],
+        "columns": [
+            "budget.amount",
+            "budget.category"
+        ],
+        "values": [
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "category",
+                "value": "Food",
+                "condition": "="
+            },
+            {
+                "table": "",
+                "column": "category",
+                "value": "Food",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "remaining of budget refers to remaining, biggest budget for 'Food' refers to MAX(budget.amount) where category = 'Food'",
+        "values_list": [
+            "budget.category.advertisement",
+            ".category.food",
+            ".category.food"
+        ],
+        "original_question": "With the biggest budget for the \"Food\", what was the remaining of it?",
+        "question": "With the biggest budget for the \"Advertisements\", what was the remaining of it?",
+        "original_SQL": "SELECT remaining FROM budget WHERE category = 'Food' AND amount = ( SELECT MAX(amount) FROM budget WHERE category = 'Food' )",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T1.category = 'Advertisement' ORDER BY T1.spent DESC LIMIT 1",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_id",
+            "budget.spent"
+        ],
+        "values": [
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "Name of event refers to event_name; highest amount spent on advertisement refers to MAX(spent) where category = 'Advertisement'",
+        "values_list": [
+            "budget.category.advertisement"
+        ],
+        "original_question": "Name the event with the highest amount spent on advertisement.",
+        "question": "Name the event with the highest amount spent on Advertisements.",
+        "original_SQL": "SELECT T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T1.category = 'Advertisement' ORDER BY T1.spent DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT T1.event_name FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T2.category = 'Advertisement' AND T3.cost < (SELECT AVG(cost) FROM expense)",
+        "tables": [
+            "budget",
+            "event",
+            "expense"
+        ],
+        "columns": [
+            "event.event_name",
+            "expense.cost",
+            "budget.category",
+            "budget.link_to_event",
+            "budget.budget_id",
+            "expense.link_to_budget",
+            "event.event_id"
+        ],
+        "values": [
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "name of events refers to event_name; less than average parking cost refers to cost < DIVIDE(SUM(cost), COUNT(event_id)) where category = 'Parking'",
+        "values_list": [
+            "budget.category.advertisement"
+        ],
+        "original_question": "List the name of events with less than average parking cost.",
+        "question": "List the name of events with less than average Advertisements cost.",
+        "original_SQL": "SELECT T1.event_name FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T2.category = 'Parking' AND T3.cost < (SELECT AVG(cost) FROM expense)",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT T1.event_name FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T2.category = 'Advertisement'",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_id",
+            "budget.link_to_event",
+            "event.event_name",
+            "budget.category"
+        ],
+        "values": [
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "budgeted for food refers to category = 'Food'",
+        "values_list": [
+            "budget.category.advertisement"
+        ],
+        "original_question": "List the event names which were budgeted for the food.",
+        "question": "List the event names which were budgeted for the Advertisements.",
+        "original_SQL": "SELECT T1.event_name FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T2.category = 'Food'",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT SUM(T1.spent), T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T1.category = 'Advertisement' GROUP BY T2.event_name",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_id",
+            "budget.spent"
+        ],
+        "values": [
+            {
+                "table": "budget",
+                "column": "category",
+                "value": "Advertisement",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "total amount spent = SUM(spent) where category = 'Speaker Gifts'",
+        "values_list": [
+            "budget.category.speaker gifts"
+        ],
+        "original_question": "Calculate the total amount spent on speaker gifts and list the name of the event they were spent on.",
+        "question": "Calculate the total amount spent on Advertisements and list the name of the event they were spent on.",
+        "original_SQL": "SELECT SUM(T1.spent), T2.event_name FROM budget AS T1 INNER JOIN event AS T2 ON T1.link_to_event = T2.event_id WHERE T1.category = 'Speaker Gifts' GROUP BY T2.event_name",
+        "changes_information": {
+            "original_value": "Advertisement",
+            "singular_plural_change": "Advertisements"
+        }
+    },
+    {
+        "SQL": "SELECT T1.cylinders FROM CARS_DATA AS T1 JOIN CAR_NAMES AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  ' volkswagen' ORDER BY T1.accelerate ASC LIMIT 1;",
+        "tables": [
+            "car_names",
+            "cars_data"
+        ],
+        "columns": [
+            "cars_data.accelerate",
+            "cars_data.id",
+            "cars_data.cylinders",
+            "car_names.model",
+            "car_names.makeid"
+        ],
+        "values": [
+            {
+                "table": "car_names",
+                "column": "model",
+                "value": " volkswagen",
+                "condition": "="
+            }
+        ],
+        "db_id": "car_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "car_names.model._volkswagen"
+        ],
+        "original_question": "For model volvo, how many cylinders does the car with the least accelerate have?",
+        "question": "For model volkswagens, how many cylinders does the car with the least accelerate have?",
+        "original_SQL": "SELECT T1.cylinders FROM CARS_DATA AS T1 JOIN CAR_NAMES AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  'volvo' ORDER BY T1.accelerate ASC LIMIT 1;",
+        "changes_information": {
+            "original_value": " volkswagen",
+            "singular_plural_change": "volkswagens"
+        }
+    },
+    {
+        "SQL": "SELECT T1.cylinders FROM CARS_DATA AS T1 JOIN CAR_NAMES AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  ' volkswagen' ORDER BY T1.accelerate ASC LIMIT 1;",
+        "tables": [
+            "car_names",
+            "cars_data"
+        ],
+        "columns": [
+            "cars_data.accelerate",
+            "cars_data.id",
+            "cars_data.cylinders",
+            "car_names.model",
+            "car_names.makeid"
+        ],
+        "values": [
+            {
+                "table": "car_names",
+                "column": "model",
+                "value": " volkswagen",
+                "condition": "="
+            }
+        ],
+        "db_id": "car_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "car_names.model._volkswagen"
+        ],
+        "original_question": "For a volvo model, how many cylinders does the version with least accelerate have?",
+        "question": "For a volkswagens model, how many cylinders does the version with least accelerate have?",
+        "original_SQL": "SELECT T1.cylinders FROM CARS_DATA AS T1 JOIN CAR_NAMES AS T2 ON T1.Id  =  T2.MakeId WHERE T2.Model  =  'volvo' ORDER BY T1.accelerate ASC LIMIT 1;",
+        "changes_information": {
+            "original_value": " volkswagen",
+            "singular_plural_change": "volkswagens"
+        }
+    },
+    {
+        "SQL": "SELECT T2.account_id FROM disp AS T2  INNER JOIN card AS T1 ON T1.disp_id = T2.disp_id  WHERE T1.type = 'junior'",
+        "tables": [
+            "disp",
+            "card"
+        ],
+        "columns": [
+            "card.type",
+            "card.disp_id",
+            "disp.account_id",
+            "disp.disp_id"
+        ],
+        "values": [
+            {
+                "table": "card",
+                "column": "type",
+                "value": "junior",
+                "condition": "="
+            }
+        ],
+        "db_id": "financial",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "card.type.junior"
+        ],
+        "original_question": "What are the accounts that have gold credit cards?",
+        "question": "What are the accounts that have juniors credit cards?",
+        "original_SQL": "SELECT T2.account_id FROM disp AS T2  INNER JOIN card AS T1 ON T1.disp_id = T2.disp_id  WHERE T1.type = 'gold'",
+        "changes_information": {
+            "original_value": "junior",
+            "singular_plural_change": "juniors"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE availability = 'arena' AND subtypes IS NOT NULL AND supertypes IS NOT NULL",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.availability",
+            "cards.subtypes",
+            "cards.supertypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "availability",
+                "value": "arena",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "all types refer to subtypes and supertypes\n\navailble in arena refers to availability = 'arena'",
+        "values_list": [
+            "cards.availability.arena"
+        ],
+        "original_question": "Lists all types of cards available in arena.",
+        "question": "Lists all types of cards available in arenas.",
+        "original_SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE availability = 'arena' AND subtypes IS NOT NULL AND supertypes IS NOT NULL",
+        "changes_information": {
+            "original_value": "arena",
+            "singular_plural_change": "arenas"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT artist FROM cards WHERE availability = 'arena' AND BorderColor = 'black'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.bordercolor",
+            "cards.artist",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "availability",
+                "value": "arena",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "bordercolor",
+                "value": "black",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "black borders refers to BorderColor = 'black'; available only in arena refers to availability = 'arena'",
+        "values_list": [
+            "cards.availability.arena",
+            "cards.bordercolor.black"
+        ],
+        "original_question": "List the artists who illustrated cards with black borders which are available only in arena.",
+        "question": "List the artists who illustrated cards with black borders which are available only in arenas.",
+        "original_SQL": "SELECT DISTINCT artist FROM cards WHERE availability = 'arena' AND BorderColor = 'black'",
+        "changes_information": {
+            "original_value": "arena",
+            "singular_plural_change": "arenas"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM cards WHERE frameEffects = 'etched,legendary' GROUP BY id",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.id",
+            "cards.frameeffects"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "frameeffects",
+                "value": "etched,legendary",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\nframe effect as extendedart refers to frameEffects = 'extendedart'\n",
+        "values_list": [
+            "cards.frameeffects.etched,legendary"
+        ],
+        "original_question": "How many cards have frame effect as extendedart? List out the id of those cards.",
+        "question": "How many cards have frame effect as etched,legendaries? List out the id of those cards.",
+        "original_SQL": "SELECT id FROM cards WHERE frameEffects = 'extendedart' GROUP BY id",
+        "changes_information": {
+            "original_value": "etched,legendary",
+            "singular_plural_change": "etched,legendaries"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Aquamorph Entity'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.keywords"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Angel of Mercy' is the name of card;",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "What is the keyword found on card 'Angel of Mercy'?",
+        "question": "What is the keyword found on card 'Aquamorph Entities'?",
+        "original_SQL": "SELECT DISTINCT keywords FROM cards WHERE name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Ancestor's Chosen' is the name of card; description about the ruling refers to text;",
+        "values_list": [
+            "cards.name.aquamorph_entity"
+        ],
+        "original_question": "What is the description about the ruling of card \"Condemn\"?",
+        "question": "What is the description about the ruling of card \"Aquamorph Entities\"?",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Condemn'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "legalities.status",
+            "cards.name",
+            "cards.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Cloudchaser Eagle is the name of card;",
+        "values_list": [
+            "cards.name.cloudchaser eagle"
+        ],
+        "original_question": "What is the status of card \"Cloudchaser Eagle\"?",
+        "question": "What is the status of card \"Aquamorph Entities\"?",
+        "original_SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Cloudchaser Eagle'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "cards",
+            "foreign_data"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "foreign_data.uuid",
+            "cards.type"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the type of card \"Benalish Knight\"?",
+        "question": "What is the type of card \"Aquamorph Entities\"?",
+        "original_SQL": "SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "legalities.uuid",
+            "cards.uuid",
+            "legalities.format",
+            "cards.name"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Benalish Knight' is the name of card; rule of playing card refers to format;",
+        "values_list": [
+            "cards.name.benalish knight"
+        ],
+        "original_question": "What is the rule of playing card \"Benalish Knight\"?",
+        "question": "What is the rule of playing card \"Aquamorph Entities\"?",
+        "original_SQL": "SELECT T2.format FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Benalish Knight'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.text",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Beacon of Immortality' is the name of card;",
+        "values_list": [
+            "cards.name.beacon of immortality"
+        ],
+        "original_question": "Write down the ruling of Beacon of Immortality.",
+        "question": "Write down the ruling of Aquamorph Entities.",
+        "original_SQL": "SELECT T2.text FROM cards AS T1 INNER JOIN rulings AS T2 ON T1.uuid = T2.uuid WHERE T1.name = 'Beacon of Immortality'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Aquamorph Entity'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.subtypes",
+            "cards.supertypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card \"Molimo, Maro-Sorcerer\" refers to name = 'Molimo, Maro-Sorcerer'; list of all types refers to subtypes,supertypes",
+        "values_list": [
+            "cards.name.molimo, maro-sorcerer"
+        ],
+        "original_question": "What's the list of all types for the card \"Molimo, Maro-Sorcerer\"?",
+        "question": "What's the list of all types for the card \"Aquamorph Entities\"?",
+        "original_SQL": "SELECT DISTINCT subtypes, supertypes FROM cards WHERE name = 'Molimo, Maro-Sorcerer'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.mtgocode",
+            "cards.name",
+            "cards.setcode",
+            "sets.code"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set \"Angel of Mercy\" refers to name = 'Angel of Mercy'; appear on Magic: The Gathering Online refers to mtgoCode is NOT NULL and vice versa",
+        "values_list": [
+            "cards.name.angel of mercy"
+        ],
+        "original_question": "Did the set of cards with \"Angel of Mercy\" appear on Magic: The Gathering Online?",
+        "question": "Did the set of cards with \"Aquamorph Entities\" appear on Magic: The Gathering Online?",
+        "original_SQL": "SELECT IIF(T2.mtgoCode IS NOT NULL, 'YES', 'NO') FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Angel of Mercy'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "rulings",
+            "cards"
+        ],
+        "columns": [
+            "cards.uuid",
+            "cards.name",
+            "rulings.date",
+            "rulings.uuid"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Reminisce refers to name = 'Reminisce'; when created is the date",
+        "values_list": [
+            "cards.name.aquamorph_entity"
+        ],
+        "original_question": "When was the ruling for the card 'Reminisce' created?",
+        "question": "When was the ruling for the card 'Aquamorph Entities' created?",
+        "original_SQL": "SELECT T2.date FROM cards AS T1 INNER JOIN rulings AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Reminisce'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Aquamorph Entity'",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "cards.name",
+            "cards.setcode",
+            "sets.code",
+            "sets.releasedate"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "\"Evacuation\" refers to name = 'Evacuation'; release date refers to releaseDate",
+        "values_list": [
+            "cards.name.aquamorph_entity"
+        ],
+        "original_question": "What was the release date for the set which card \"Evacuation\" in it?",
+        "question": "What was the release date for the set which card \"Aquamorph Entities\" in it?",
+        "original_SQL": "SELECT T2.releaseDate FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T1.name = 'Evacuation'",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Aquamorph Entity' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "French",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "French refers to language = 'French'; \"Tendo Ice Bridge\" is a translated name of a card; translated name refers to translation",
+        "values_list": [
+            "cards.name.tendo ice bridge",
+            "set_translations.language.french"
+        ],
+        "original_question": "What's the French name of the set of cards with \"Tendo Ice Bridge\" is in?",
+        "question": "What's the French name of the set of cards with \"Aquamorph Entities\" is in?",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Tendo Ice Bridge' AND T2.language = 'French' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Aquamorph Entity' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "tables": [
+            "set_translations",
+            "cards"
+        ],
+        "columns": [
+            "set_translations.language",
+            "cards.name",
+            "set_translations.setcode",
+            "cards.setcode",
+            "set_translations.translation"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "name",
+                "value": "Aquamorph Entity",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "Japanese",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Japanese name refers to language = 'Japanese'; card \"Fellwar Stone\" refers to name = 'Fellwar Stone'",
+        "values_list": [
+            "cards.name.fellwar stone",
+            "set_translations.language.japanese"
+        ],
+        "original_question": "Tell the Japanese name of the set which card \"Fellwar Stone\" is in it.",
+        "question": "Tell the Japanese name of the set which card \"Aquamorph Entities\" is in it.",
+        "original_SQL": "SELECT T2.translation FROM cards AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.setCode WHERE T1.name = 'Fellwar Stone' AND T2.language = 'Japanese' AND T2.translation IS NOT NULL",
+        "changes_information": {
+            "original_value": "Aquamorph Entity",
+            "singular_plural_change": "Aquamorph Entities"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT purchaseUrls FROM cards WHERE promoTypes = 'bundle'",
+        "tables": [
+            "cards"
+        ],
+        "columns": [
+            "cards.purchaseurls",
+            "cards.promotypes"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "promotypes",
+                "value": "bundle",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "promotional type of \"bundle\" refers to promoTypes = 'bundle'; websites refers to purchaseUrls",
+        "values_list": [
+            "cards.promotypes.bundle"
+        ],
+        "original_question": "Please list the websites where I can purchase the cards that have the promotional type of \"bundle\".",
+        "question": "Please list the websites where I can purchase the cards that have the promotional type of \"bundles\".",
+        "original_SQL": "SELECT DISTINCT purchaseUrls FROM cards WHERE promoTypes = 'bundle'",
+        "changes_information": {
+            "original_value": "bundle",
+            "singular_plural_change": "bundles"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "introduction of races refers to url; Circuit de Barcelona-Catalunya is a name of circuit;",
+        "values_list": [
+            "circuits.name.circuit de barcelona-catalunya"
+        ],
+        "original_question": "Where can the introduction of the races held on Circuit de Barcelona-Catalunya be found?",
+        "question": "Where can the introduction of the races held on Silverstone Circuits be found?",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Circuit de Barcelona-Catalunya'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "information about races refers to url;",
+        "values_list": [
+            "circuits.name.sepang international circuit"
+        ],
+        "original_question": "Where can I find the information about the races held on Sepang International Circuit?",
+        "question": "Where can I find the information about the races held on Silverstone Circuits?",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Sepang International Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.time FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "circuits.name",
+            "races.time",
+            "races.circuitid"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "circuits.name.sepang international circuit"
+        ],
+        "original_question": "Please list the time of the races held on Sepang International Circuit.",
+        "question": "Please list the time of the races held on Silverstone Circuits.",
+        "original_SQL": "SELECT DISTINCT T2.time FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Sepang International Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT T2.date FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit' AND T2.name = 'British Grand Prix' ORDER BY T2.year DESC LIMIT 1",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "races.circuitid",
+            "races.date",
+            "races.year",
+            "races.name",
+            "circuits.circuitid",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            },
+            {
+                "table": "races",
+                "column": "name",
+                "value": "British Grand Prix",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "the last refers to max(year);",
+        "values_list": [
+            "circuits.name.brands hatch",
+            "races.name.british grand prix"
+        ],
+        "original_question": "When was the last f1 season whereby Brands Hatch hosted the British Grand Prix?",
+        "question": "When was the last f1 season whereby Silverstone Circuits hosted the British Grand Prix?",
+        "original_SQL": "SELECT T2.date FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch' AND T2.name = 'British Grand Prix' ORDER BY T2.year DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT lat, lng FROM circuits WHERE name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.lat",
+            "circuits.lng",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "location coordinates refers to (lat, lng); Silverstone Circuit refers to circuits.name = 'Silverstone Circuit'",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "What's the location coordinates of Silverstone Circuit?",
+        "question": "What's the location coordinates of Silverstone Circuits?",
+        "original_SQL": "SELECT lat, lng FROM circuits WHERE name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT circuitRef FROM circuits WHERE name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.circuitref",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "reference name refers to circuitRef; Marina Bay Street Circuit refers to circuits.name = 'Marina Bay Street Circuit'",
+        "values_list": [
+            "circuits.name.marina bay street circuit"
+        ],
+        "original_question": "What's the reference name of Marina Bay Street Circuit?",
+        "question": "What's the reference name of Silverstone Circuits?",
+        "original_SQL": "SELECT circuitRef FROM circuits WHERE name = 'Marina Bay Street Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.year",
+            "races.circuitid",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "Please list all the years that Silverstone Circuit was used in a Formula_1 race.",
+        "question": "Please list all the years that Silverstone Circuits was used in a Formula_1 race.",
+        "original_SQL": "SELECT DISTINCT T2.year FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits",
+            "races"
+        ],
+        "columns": [
+            "circuits.circuitid",
+            "races.circuitid",
+            "circuits.name",
+            "circuits.url"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "more information refers to url",
+        "values_list": [
+            "circuits.name.silverstone circuit"
+        ],
+        "original_question": "Please give more information about the Formula_1 races that used the Silverstone Circuit.",
+        "question": "Please give more information about the Formula_1 races that used the Silverstone Circuits.",
+        "original_SQL": "SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Silverstone Circuit'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT country, lat, lng FROM circuits WHERE name = 'Silverstone Circuit'",
+        "tables": [
+            "circuits"
+        ],
+        "columns": [
+            "circuits.lat",
+            "circuits.lng",
+            "circuits.country",
+            "circuits.name"
+        ],
+        "values": [
+            {
+                "table": "circuits",
+                "column": "name",
+                "value": "Silverstone Circuit",
+                "condition": "="
+            }
+        ],
+        "db_id": "formula_1",
+        "source": "bird_dev",
+        "evidence": "coordinates expressed in latitude and longitude refers to (lat, lng)",
+        "values_list": [
+            "circuits.name.silverstone_circuit"
+        ],
+        "original_question": "In which location does the Hungaroring circuit located? Also, find the country and coordinates of this circuit?",
+        "question": "In which location does the Silverstone Circuits circuit located? Also, find the country and coordinates of this circuit?",
+        "original_SQL": "SELECT country, lat, lng FROM circuits WHERE name = 'Hungaroring'",
+        "changes_information": {
+            "original_value": "Silverstone Circuit",
+            "singular_plural_change": "Silverstone Circuits"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Participant' INTERSECT SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Sponsor'",
+        "tables": [
+            "staff",
+            "conference_participation"
+        ],
+        "columns": [
+            "conference_participation.staff_id",
+            "staff.staff_id",
+            "conference_participation.role",
+            "staff.name"
+        ],
+        "values": [
+            {
+                "table": "conference_participation",
+                "column": "role",
+                "value": "Participant",
+                "condition": "="
+            },
+            {
+                "table": "conference_participation",
+                "column": "role",
+                "value": "Sponsor",
+                "condition": "="
+            }
+        ],
+        "db_id": "conference",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "conference_participation.role.participant",
+            "conference_participation.role.sponsor"
+        ],
+        "original_question": "Show all staff names who have been both speaker and sponsor in some conference.",
+        "question": "Show all staff names who have been both Participants and sponsor in some conference.",
+        "original_SQL": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Speaker' INTERSECT SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Sponsor'",
+        "changes_information": {
+            "original_value": "Participant",
+            "singular_plural_change": "Participants"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Participant' INTERSECT SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Sponsor'",
+        "tables": [
+            "staff",
+            "conference_participation"
+        ],
+        "columns": [
+            "conference_participation.staff_id",
+            "staff.staff_id",
+            "conference_participation.role",
+            "staff.name"
+        ],
+        "values": [
+            {
+                "table": "conference_participation",
+                "column": "role",
+                "value": "Participant",
+                "condition": "="
+            },
+            {
+                "table": "conference_participation",
+                "column": "role",
+                "value": "Sponsor",
+                "condition": "="
+            }
+        ],
+        "db_id": "conference",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "conference_participation.role.participant",
+            "conference_participation.role.sponsor"
+        ],
+        "original_question": "What are the names of the staff members who have been both a speaker and a sponsor at some conference?",
+        "question": "What are the names of the staff members who have been both a Participants and a sponsor at some conference?",
+        "original_SQL": "SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Speaker' INTERSECT SELECT T1.name FROM staff AS T1 JOIN conference_participation AS T2 ON T1.staff_id  =  T2.staff_id WHERE T2.role  =  'Sponsor'",
+        "changes_information": {
+            "original_value": "Participant",
+            "singular_plural_change": "Participants"
+        }
+    },
+    {
+        "SQL": "SELECT course_description FROM Courses WHERE course_name  =  'math'",
+        "tables": [
+            "courses"
+        ],
+        "columns": [
+            "courses.course_description",
+            "courses.course_name"
+        ],
+        "values": [
+            {
+                "table": "courses",
+                "column": "course_name",
+                "value": "math",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_transcripts_tracking",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "courses.course_name.math"
+        ],
+        "original_question": "How is the math course described?",
+        "question": "How is the maths course described?",
+        "original_SQL": "SELECT course_description FROM Courses WHERE course_name  =  'math'",
+        "changes_information": {
+            "original_value": "math",
+            "singular_plural_change": "maths"
+        }
+    },
+    {
+        "SQL": "SELECT course_description FROM Courses WHERE course_name  =  'math'",
+        "tables": [
+            "courses"
+        ],
+        "columns": [
+            "courses.course_description",
+            "courses.course_name"
+        ],
+        "values": [
+            {
+                "table": "courses",
+                "column": "course_name",
+                "value": "math",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_transcripts_tracking",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "courses.course_name.math"
+        ],
+        "original_question": "What are the descriptions for all the math courses?",
+        "question": "What are the descriptions for all the maths courses?",
+        "original_SQL": "SELECT course_description FROM Courses WHERE course_name  =  'math'",
+        "changes_information": {
+            "original_value": "math",
+            "singular_plural_change": "maths"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.degree_summary_name  =  'Master'",
+        "tables": [
+            "students",
+            "degree_programs",
+            "student_enrolment"
+        ],
+        "columns": [
+            "students.middle_name",
+            "students.last_name",
+            "students.student_id",
+            "students.first_name",
+            "student_enrolment.degree_program_id",
+            "student_enrolment.student_id",
+            "degree_programs.degree_summary_name",
+            "degree_programs.degree_program_id"
+        ],
+        "values": [
+            {
+                "table": "degree_programs",
+                "column": "degree_summary_name",
+                "value": "Master",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_transcripts_tracking",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "degree_programs.degree_summary_name.master"
+        ],
+        "original_question": "Who is enrolled in a Bachelor degree program? List the first name, middle name, last name.",
+        "question": "Who is enrolled in a Masters degree program? List the first name, middle name, last name.",
+        "original_SQL": "SELECT DISTINCT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.degree_summary_name  =  'Bachelor'",
+        "changes_information": {
+            "original_value": "Master",
+            "singular_plural_change": "Masters"
+        }
+    },
+    {
+        "SQL": "SELECT T1.client_id FROM disp AS T1 INNER JOIN account AS T3 ON T1.account_id = T3.account_id INNER JOIN loan AS T2 ON T3.account_id = T2.account_id WHERE T1.type = 'OWNER' ORDER BY T2.amount DESC LIMIT 1",
+        "tables": [
+            "disp",
+            "loan",
+            "account"
+        ],
+        "columns": [
+            "loan.amount",
+            "disp.account_id",
+            "loan.account_id",
+            "account.account_id",
+            "disp.client_id",
+            "disp.type"
+        ],
+        "values": [
+            {
+                "table": "disp",
+                "column": "type",
+                "value": "OWNER",
+                "condition": "="
+            }
+        ],
+        "db_id": "financial",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "disp.type.owner"
+        ],
+        "original_question": "Who is the owner of the account with the largest loan amount?",
+        "question": "Who is the owners of the account with the largest loan amount?",
+        "original_SQL": "SELECT T1.client_id FROM disp AS T1 INNER JOIN account AS T3 ON T1.account_id = T3.account_id INNER JOIN loan AS T2 ON T3.account_id = T2.account_id WHERE T1.type = 'OWNER' ORDER BY T2.amount DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "OWNER",
+            "singular_plural_change": "owners"
+        }
+    },
+    {
+        "SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Marlin Collection'",
+        "tables": [
+            "document_objects"
+        ],
+        "columns": [
+            "document_objects.description",
+            "document_objects.owner"
+        ],
+        "values": [
+            {
+                "table": "document_objects",
+                "column": "description",
+                "value": "Marlin Collection",
+                "condition": "="
+            }
+        ],
+        "db_id": "cre_Doc_and_collections",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "document_objects.description.braeden collection"
+        ],
+        "original_question": "What is the owner of document with the Description 'Braeden Collection'?",
+        "question": "What is the owner of document with the Description 'Marlin Collections'?",
+        "original_SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Braeden Collection'",
+        "changes_information": {
+            "original_value": "Marlin Collection",
+            "singular_plural_change": "Marlin Collections"
+        }
+    },
+    {
+        "SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Marlin Collection'",
+        "tables": [
+            "document_objects"
+        ],
+        "columns": [
+            "document_objects.description",
+            "document_objects.owner"
+        ],
+        "values": [
+            {
+                "table": "document_objects",
+                "column": "description",
+                "value": "Marlin Collection",
+                "condition": "="
+            }
+        ],
+        "db_id": "cre_Doc_and_collections",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "document_objects.description.braeden collection"
+        ],
+        "original_question": "What are the owners of the document objects described as the 'Braeden Collection'?",
+        "question": "What are the owners of the document objects described as the 'Marlin Collections'?",
+        "original_SQL": "SELECT OWNER FROM Document_Objects WHERE Description  =  'Braeden Collection'",
+        "changes_information": {
+            "original_value": "Marlin Collection",
+            "singular_plural_change": "Marlin Collections"
+        }
+    },
+    {
+        "SQL": "SELECT location FROM event WHERE event_name = 'February Speaker'",
+        "tables": [
+            "event"
+        ],
+        "columns": [
+            "event.location",
+            "event.event_name"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "February Speaker",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Spring Budget Review' is an event name;",
+        "values_list": [
+            "event.event_name.spring budget review"
+        ],
+        "original_question": "Give the location for \"Spring Budget Review\".",
+        "question": "Give the location for \"February Speakers\".",
+        "original_SQL": "SELECT location FROM event WHERE event_name = 'Spring Budget Review'",
+        "changes_information": {
+            "original_value": "February Speaker",
+            "singular_plural_change": "February Speakers"
+        }
+    },
+    {
+        "SQL": "SELECT T2.category, SUM(T2.amount) FROM event AS T1 JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'February Speaker' GROUP BY T2.category ORDER BY SUM(T2.amount) ASC",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "budget.amount",
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_id"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "February Speaker",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'April Speaker' is an event name; amount budgeted refers to SUM(amount); budget categories refers to category",
+        "values_list": [
+            "event.event_name.april speaker"
+        ],
+        "original_question": "Calculate the amount budgeted for 'April Speaker' event. List all the budgeted categories for said event in an ascending order based on their amount budgeted.",
+        "question": "Calculate the amount budgeted for 'February Speakers' event. List all the budgeted categories for said event in an ascending order based on their amount budgeted.",
+        "original_SQL": "SELECT T2.category, SUM(T2.amount) FROM event AS T1 JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'April Speaker' GROUP BY T2.category ORDER BY SUM(T2.amount) ASC",
+        "changes_information": {
+            "original_value": "February Speaker",
+            "singular_plural_change": "February Speakers"
+        }
+    },
+    {
+        "SQL": "SELECT T2.category, T2.amount FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'February Speaker'",
+        "tables": [
+            "budget",
+            "event"
+        ],
+        "columns": [
+            "budget.amount",
+            "event.event_name",
+            "budget.category",
+            "budget.link_to_event",
+            "event.event_id"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "February Speaker",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "amount budgeted refers to amount, 'January Speaker' is the event name;",
+        "values_list": [
+            "event.event_name.january speaker"
+        ],
+        "original_question": "What category was budgeted for the 'January Speaker' event and how much was the amount budgeted for that category?",
+        "question": "What category was budgeted for the 'February Speakers' event and how much was the amount budgeted for that category?",
+        "original_SQL": "SELECT T2.category, T2.amount FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'January Speaker'",
+        "changes_information": {
+            "original_value": "February Speaker",
+            "singular_plural_change": "February Speakers"
+        }
+    },
+    {
+        "SQL": "SELECT T3.cost FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T1.event_name = 'September Speaker' AND T3.expense_description = 'Posters'",
+        "tables": [
+            "budget",
+            "event",
+            "expense"
+        ],
+        "columns": [
+            "event.event_name",
+            "expense.cost",
+            "budget.budget_id",
+            "budget.link_to_event",
+            "expense.link_to_budget",
+            "event.event_id",
+            "expense.expense_description"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "September Speaker",
+                "condition": "="
+            },
+            {
+                "table": "expense",
+                "column": "expense_description",
+                "value": "Posters",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Posters' is the expense description; 'September Speaker' is an event name",
+        "values_list": [
+            "event.event_name.september speaker",
+            "expense.expense_description.posters"
+        ],
+        "original_question": "Indicate the cost of posters for 'September Speaker' event.",
+        "question": "Indicate the cost of Poster for 'September Speaker' event.",
+        "original_SQL": "SELECT T3.cost FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T1.event_name = 'September Speaker' AND T3.expense_description = 'Posters'",
+        "changes_information": {
+            "original_value": "Posters",
+            "singular_plural_change": "Poster"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Posters'",
+        "tables": [
+            "budget",
+            "expense"
+        ],
+        "columns": [
+            "budget.budget_id",
+            "expense.link_to_budget",
+            "budget.category",
+            "expense.expense_description"
+        ],
+        "values": [
+            {
+                "table": "expense",
+                "column": "expense_description",
+                "value": "Posters",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Posters' refers to expense description",
+        "values_list": [
+            "expense.expense_description.posters"
+        ],
+        "original_question": "Which budget category does the expense 'Posters' fall to?",
+        "question": "Which budget category does the expense 'Poster' fall to?",
+        "original_SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Posters'",
+        "changes_information": {
+            "original_value": "Posters",
+            "singular_plural_change": "Poster"
+        }
+    },
+    {
+        "SQL": "SELECT T3.cost FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T1.event_name = 'September Speaker' AND T3.expense_description = 'Pizza'",
+        "tables": [
+            "budget",
+            "event",
+            "expense"
+        ],
+        "columns": [
+            "event.event_name",
+            "expense.cost",
+            "budget.budget_id",
+            "budget.link_to_event",
+            "expense.link_to_budget",
+            "event.event_id",
+            "expense.expense_description"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "event_name",
+                "value": "September Speaker",
+                "condition": "="
+            },
+            {
+                "table": "expense",
+                "column": "expense_description",
+                "value": "Pizza",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Posters' is the expense description; 'September Speaker' is an event name",
+        "values_list": [
+            "event.event_name.september speaker",
+            "expense.expense_description.pizza"
+        ],
+        "original_question": "Indicate the cost of posters for 'September Speaker' event.",
+        "question": "Indicate the cost of pizzas for 'September Speaker' event.",
+        "original_SQL": "SELECT T3.cost FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event INNER JOIN expense AS T3 ON T2.budget_id = T3.link_to_budget WHERE T1.event_name = 'September Speaker' AND T3.expense_description = 'Posters'",
+        "changes_information": {
+            "original_value": "Pizza",
+            "singular_plural_change": "pizzas"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Pizza'",
+        "tables": [
+            "budget",
+            "expense"
+        ],
+        "columns": [
+            "budget.budget_id",
+            "expense.link_to_budget",
+            "budget.category",
+            "expense.expense_description"
+        ],
+        "values": [
+            {
+                "table": "expense",
+                "column": "expense_description",
+                "value": "Pizza",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Posters' refers to expense description",
+        "values_list": [
+            "expense.expense_description.pizza"
+        ],
+        "original_question": "Which budget category does the expense 'Posters' fall to?",
+        "question": "Which budget category does the expense 'pizzas' fall to?",
+        "original_SQL": "SELECT DISTINCT T2.category FROM expense AS T1 INNER JOIN budget AS T2 ON T1.link_to_budget = T2.budget_id WHERE T1.expense_description = 'Posters'",
+        "changes_information": {
+            "original_value": "Pizza",
+            "singular_plural_change": "pizzas"
+        }
+    },
+    {
+        "SQL": "SELECT feature_description FROM Features WHERE feature_name  =  'rooftop';",
+        "tables": [
+            "features"
+        ],
+        "columns": [
+            "features.feature_name",
+            "features.feature_description"
+        ],
+        "values": [
+            {
+                "table": "features",
+                "column": "feature_name",
+                "value": "rooftop",
+                "condition": "="
+            }
+        ],
+        "db_id": "real_estate_rentals",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "features.feature_name.rooftop"
+        ],
+        "original_question": "How is the feature rooftop described?",
+        "question": "How is the feature rooftops described?",
+        "original_SQL": "SELECT feature_description FROM Features WHERE feature_name  =  'rooftop';",
+        "changes_information": {
+            "original_value": "rooftop",
+            "singular_plural_change": "rooftops"
+        }
+    },
+    {
+        "SQL": "SELECT feature_description FROM Features WHERE feature_name  =  'rooftop';",
+        "tables": [
+            "features"
+        ],
+        "columns": [
+            "features.feature_name",
+            "features.feature_description"
+        ],
+        "values": [
+            {
+                "table": "features",
+                "column": "feature_name",
+                "value": "rooftop",
+                "condition": "="
+            }
+        ],
+        "db_id": "real_estate_rentals",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "features.feature_name.rooftop"
+        ],
+        "original_question": "Return the description of the feature 'rooftop'.",
+        "question": "Return the description of the feature 'rooftops'.",
+        "original_SQL": "SELECT feature_description FROM Features WHERE feature_name  =  'rooftop';",
+        "changes_information": {
+            "original_value": "rooftop",
+            "singular_plural_change": "rooftops"
+        }
+    },
+    {
+        "SQL": "SELECT T2.town_city FROM Properties AS T1 JOIN Addresses AS T2 ON T1.property_address_id  =  T2.address_id JOIN Property_Features AS T3 ON T1.property_id  =  T3.property_id JOIN Features AS T4 ON T4.feature_id  =  T3.feature_id WHERE T4.feature_name  =  'rooftop';",
+        "tables": [
+            "property_features",
+            "properties",
+            "features",
+            "addresses"
+        ],
+        "columns": [
+            "features.feature_id",
+            "addresses.address_id",
+            "features.feature_name",
+            "property_features.feature_id",
+            "addresses.town_city",
+            "property_features.property_id",
+            "properties.property_address_id",
+            "properties.property_id"
+        ],
+        "values": [
+            {
+                "table": "features",
+                "column": "feature_name",
+                "value": "rooftop",
+                "condition": "="
+            }
+        ],
+        "db_id": "real_estate_rentals",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "features.feature_name.swimming pool"
+        ],
+        "original_question": "In which cities are there any properties equipped with a swimming pool?",
+        "question": "In which cities are there any properties equipped with a rooftops?",
+        "original_SQL": "SELECT T2.town_city FROM Properties AS T1 JOIN Addresses AS T2 ON T1.property_address_id  =  T2.address_id JOIN Property_Features AS T3 ON T1.property_id  =  T3.property_id JOIN Features AS T4 ON T4.feature_id  =  T3.feature_id WHERE T4.feature_name  =  'swimming pool';",
+        "changes_information": {
+            "original_value": "rooftop",
+            "singular_plural_change": "rooftops"
+        }
+    },
+    {
+        "SQL": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Netherlands Eredivisie'",
+        "tables": [
+            "league",
+            "country"
+        ],
+        "columns": [
+            "country.name",
+            "league.country_id",
+            "league.name",
+            "country.id"
+        ],
+        "values": [
+            {
+                "table": "league",
+                "column": "name",
+                "value": "Netherlands Eredivisie",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "Italy Serie A from refers to League.name = 'Italy Serie A';",
+        "values_list": [
+            "league.name.italy serie a"
+        ],
+        "original_question": "Which country is the league Italy Serie A from?",
+        "question": "Which country is the league Netherland Eredivisie from?",
+        "original_SQL": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Italy Serie A'",
+        "changes_information": {
+            "original_value": "Netherlands Eredivisie",
+            "singular_plural_change": "Netherland Eredivisie"
+        }
+    },
+    {
+        "SQL": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Netherlands Eredivisie'",
+        "tables": [
+            "league",
+            "country"
+        ],
+        "columns": [
+            "country.name",
+            "league.country_id",
+            "league.name",
+            "country.id"
+        ],
+        "values": [
+            {
+                "table": "league",
+                "column": "name",
+                "value": "Netherlands Eredivisie",
+                "condition": "="
+            }
+        ],
+        "db_id": "european_football_2",
+        "source": "bird_dev",
+        "evidence": "Belgium Jupiler League refers to League.name = 'Belgium Jupiler League';",
+        "values_list": [
+            "league.name.belgium jupiler league"
+        ],
+        "original_question": "Which country is the Belgium Jupiler League from?",
+        "question": "Which country is the Netherland Eredivisie from?",
+        "original_SQL": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Belgium Jupiler League'",
+        "changes_information": {
+            "original_value": "Netherlands Eredivisie",
+            "singular_plural_change": "Netherland Eredivisie"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.type = 'Artifact' AND T2.format = 'penny' AND T1.side IS NULL",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.side",
+            "legalities.format",
+            "legalities.status",
+            "legalities.uuid",
+            "cards.uuid",
+            "cards.type"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "type",
+                "value": "Artifact",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "format",
+                "value": "penny",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "Artifact type of cards refers to types = 'Artifact'; card does not have multiple faces on the same card refers to side is NULL'; vintage play format refers to format = 'vintage';",
+        "values_list": [
+            "cards.type.artifact",
+            "legalities.format.penny"
+        ],
+        "original_question": "For artifact type of cards that do not have multiple faces on the same card, state its legalities status for vintage play format.",
+        "question": "For artifact type of cards that do not have multiple faces on the same card, state its legalities status for pennies play format.",
+        "original_SQL": "SELECT DISTINCT T2.status FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.type = 'Artifact' AND T2.format = 'vintage' AND T1.side IS NULL",
+        "changes_information": {
+            "original_value": "penny",
+            "singular_plural_change": "pennies"
+        }
+    },
+    {
+        "SQL": "SELECT T1.uuid, T3.language FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid INNER JOIN foreign_data AS T3 ON T1.uuid = T3.uuid WHERE T2.format = 'penny'",
+        "tables": [
+            "cards",
+            "legalities",
+            "foreign_data"
+        ],
+        "columns": [
+            "legalities.format",
+            "foreign_data.uuid",
+            "legalities.uuid",
+            "cards.uuid",
+            "foreign_data.language"
+        ],
+        "values": [
+            {
+                "table": "legalities",
+                "column": "format",
+                "value": "penny",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "legacy card refers to format = 'legacy'; foreign language refers to language in foreign_data",
+        "values_list": [
+            "legalities.format.penny"
+        ],
+        "original_question": "List down the uuid for legacy cards and the foreign language of these cards.",
+        "question": "List down the uuid for pennies cards and the foreign language of these cards.",
+        "original_SQL": "SELECT T1.uuid, T3.language FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid INNER JOIN foreign_data AS T3 ON T1.uuid = T3.uuid WHERE T2.format = 'legacy'",
+        "changes_information": {
+            "original_value": "penny",
+            "singular_plural_change": "pennies"
+        }
+    },
+    {
+        "SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Erica Yang' AND T2.format = 'penny' AND T1.availability = 'paper'",
+        "tables": [
+            "cards",
+            "legalities"
+        ],
+        "columns": [
+            "cards.artist",
+            "legalities.format",
+            "cards.id",
+            "legalities.uuid",
+            "cards.uuid",
+            "cards.availability"
+        ],
+        "values": [
+            {
+                "table": "cards",
+                "column": "availability",
+                "value": "paper",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "artist",
+                "value": "Erica Yang",
+                "condition": "="
+            },
+            {
+                "table": "legalities",
+                "column": "format",
+                "value": "penny",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "available in paper refers to availability = 'paper'",
+        "values_list": [
+            "cards.availability.paper",
+            "cards.artist.erica yang",
+            "legalities.format.penny"
+        ],
+        "original_question": "Is there any card from Erica Yang artist in pauper format and available in paper? If so, indicate its ID.",
+        "question": "Is there any card from Erica Yang artist in pennies format and available in paper? If so, indicate its ID.",
+        "original_SQL": "SELECT T1.id FROM cards AS T1 INNER JOIN legalities AS T2 ON T1.uuid = T2.uuid WHERE T1.artist = 'Erica Yang' AND T2.format = 'pauper' AND T1.availability = 'paper'",
+        "changes_information": {
+            "original_value": "penny",
+            "singular_plural_change": "pennies"
+        }
+    },
+    {
+        "SQL": "SELECT T1.first_name, T1.last_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T2.department = 'Physics Department'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.link_to_major",
+            "member.first_name",
+            "major.department",
+            "major.major_id",
+            "member.last_name"
+        ],
+        "values": [
+            {
+                "table": "major",
+                "column": "department",
+                "value": "Physics Department",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "full name refers to first_name, last_name;",
+        "values_list": [
+            "major.department.art and design department"
+        ],
+        "original_question": "Please list the full names of the students in the Student_Club that come from the Art and Design Department.",
+        "question": "Please list the full names of the students in the Student_Club that come from the Physic Department.",
+        "original_SQL": "SELECT T1.first_name, T1.last_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T2.department = 'Art and Design Department'",
+        "changes_information": {
+            "original_value": "Physics Department",
+            "singular_plural_change": "Physic Department"
+        }
+    },
+    {
+        "SQL": "SELECT T1.first_name, T1.last_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T2.department = 'Physics Department'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.link_to_major",
+            "member.first_name",
+            "major.department",
+            "major.major_id",
+            "member.last_name"
+        ],
+        "values": [
+            {
+                "table": "major",
+                "column": "department",
+                "value": "Physics Department",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "list all members means to list all the full name; full name refers to first_name, last_name;",
+        "values_list": [
+            "major.department.school of applied sciences, technology and education"
+        ],
+        "original_question": "List all the members of the \"School of Applied Sciences, Technology and Education\" department.",
+        "question": "List all the members of the \"Physic Department\" department.",
+        "original_SQL": "SELECT T1.first_name, T1.last_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T2.department = 'School of Applied Sciences, Technology and Education'",
+        "changes_information": {
+            "original_value": "Physics Department",
+            "singular_plural_change": "Physic Department"
+        }
+    },
+    {
+        "SQL": "SELECT T2.college FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position LIKE 'Member'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.link_to_major",
+            "major.major_id",
+            "member.position",
+            "major.college"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "LIKE"
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "Vice President is a position of the Student Club",
+        "values_list": [
+            "member.position.vice president"
+        ],
+        "original_question": "Which college is the vice president of the Student_Club from?",
+        "question": "Which college is the members of the Student_Club from?",
+        "original_SQL": "SELECT T2.college FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position LIKE 'vice president'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T2.amount FROM member AS T1 INNER JOIN income AS T2 ON T1.member_id = T2.link_to_member WHERE T1.position = 'Member'",
+        "tables": [
+            "member",
+            "income"
+        ],
+        "columns": [
+            "income.link_to_member",
+            "member.member_id",
+            "member.position",
+            "income.amount"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Vice President' is a position of Student Club; funds received refers to amount.",
+        "values_list": [
+            "member.position.vice president"
+        ],
+        "original_question": "What is the amount of the funds that the Vice President received?",
+        "question": "What is the amount of the funds that the members received?",
+        "original_SQL": "SELECT T2.amount FROM member AS T1 INNER JOIN income AS T2 ON T1.member_id = T2.link_to_member WHERE T1.position = 'Vice President'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T2.city, T2.state FROM member AS T1 INNER JOIN zip_code AS T2 ON T1.zip = T2.zip_code WHERE T1.position = 'Member'",
+        "tables": [
+            "member",
+            "zip_code"
+        ],
+        "columns": [
+            "zip_code.zip_code",
+            "zip_code.state",
+            "zip_code.city",
+            "member.position",
+            "member.zip"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'President' is a position of Student Club;",
+        "values_list": [
+            "member.position.member"
+        ],
+        "original_question": "What city and state did the President of the Student_Club grow up?",
+        "question": "What city and state did the members of the Student_Club grow up?",
+        "original_SQL": "SELECT T2.city, T2.state FROM member AS T1 INNER JOIN zip_code AS T2 ON T1.zip = T2.zip_code WHERE T1.position = 'President'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T2.major_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position = 'Member'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.position",
+            "major.major_id",
+            "major.major_name",
+            "member.link_to_major"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'Vice President' is a position of Student Club",
+        "values_list": [
+            "member.position.vice president"
+        ],
+        "original_question": "State the major name for the Vice President of the club.",
+        "question": "State the major name for the members of the club.",
+        "original_SQL": "SELECT T2.major_name FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position = 'Vice President'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T2.department FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position = 'Member'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "major.department",
+            "major.major_id",
+            "member.position",
+            "member.link_to_major"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "'President' is a position of Student Club",
+        "values_list": [
+            "member.position.member"
+        ],
+        "original_question": "Which department was the President of the club in?",
+        "question": "Which department was the members of the club in?",
+        "original_SQL": "SELECT T2.department FROM member AS T1 INNER JOIN major AS T2 ON T1.link_to_major = T2.major_id WHERE T1.position = 'President'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT first_name, last_name, email FROM member WHERE position = 'Member'",
+        "tables": [
+            "member"
+        ],
+        "columns": [
+            "member.email",
+            "member.first_name",
+            "member.position",
+            "member.last_name"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "full name refers to first_name, last_name; 'Secretary' is a position of Student Club",
+        "values_list": [
+            "member.position.member"
+        ],
+        "original_question": "Provide the full name and email address of the Student_Club's Secretary.",
+        "question": "Provide the full name and email address of the Student_Club's members.",
+        "original_SQL": "SELECT first_name, last_name, email FROM member WHERE position = 'Secretary'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T1.major_name FROM major AS T1 INNER JOIN member AS T2 ON T1.major_id = T2.link_to_major WHERE T2.position = 'Member'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.position",
+            "major.major_id",
+            "major.major_name",
+            "member.link_to_major"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "name of major refers to major_name; 'Vice President' is position of Student Club",
+        "values_list": [
+            "member.position.vice president"
+        ],
+        "original_question": "State the name of major that Vice President has joined.",
+        "question": "State the name of major that members has joined.",
+        "original_SQL": "SELECT T1.major_name FROM major AS T1 INNER JOIN member AS T2 ON T1.major_id = T2.link_to_major WHERE T2.position = 'Vice President'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T2.event_name FROM attendance AS T1 INNER JOIN event AS T2 ON T2.event_id = T1.link_to_event INNER JOIN member AS T3 ON T1.link_to_member = T3.member_id WHERE T3.position = 'Member' AND T2.location = '900 E. Washington St.' AND T2.type = 'Social'",
+        "tables": [
+            "member",
+            "event",
+            "attendance"
+        ],
+        "columns": [
+            "attendance.link_to_event",
+            "event.event_name",
+            "member.member_id",
+            "event.type",
+            "attendance.link_to_member",
+            "member.position",
+            "event.event_id",
+            "event.location"
+        ],
+        "values": [
+            {
+                "table": "event",
+                "column": "type",
+                "value": "Social",
+                "condition": "="
+            },
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            },
+            {
+                "table": "event",
+                "column": "location",
+                "value": "900 E. Washington St.",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "name of social event refers to event_name where type = 'Social'; 'Vice President' is position; located at refers to location",
+        "values_list": [
+            "event.type.social",
+            "member.position.vice president",
+            "event.location.900 e. washington st."
+        ],
+        "original_question": "What is the name of the social event that was attended by the vice president of the Student_Club located at 900 E. Washington St.?",
+        "question": "What is the name of the social event that was attended by the members of the Student_Club located at 900 E. Washington St.?",
+        "original_SQL": "SELECT T2.event_name FROM attendance AS T1 INNER JOIN event AS T2 ON T2.event_id = T1.link_to_event INNER JOIN member AS T3 ON T1.link_to_member = T3.member_id WHERE T3.position = 'Vice President' AND T2.location = '900 E. Washington St.' AND T2.type = 'Social'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT T1.first_name, T1.last_name, college FROM member AS T1 INNER JOIN major AS T2 ON T2.major_id = T1.link_to_major WHERE T1.position = 'Member'",
+        "tables": [
+            "member",
+            "major"
+        ],
+        "columns": [
+            "member.link_to_major",
+            "member.first_name",
+            "major.major_id",
+            "member.position",
+            "member.last_name"
+        ],
+        "values": [
+            {
+                "table": "member",
+                "column": "position",
+                "value": "Member",
+                "condition": "="
+            }
+        ],
+        "db_id": "student_club",
+        "source": "bird_dev",
+        "evidence": "full name refers to first_name, last name",
+        "values_list": [
+            "member.position.member"
+        ],
+        "original_question": "Write the full name of the club member with the position of 'Secretary' and list which college the club member belongs to.",
+        "question": "Write the full name of the club member with the position of 'members' and list which college the club member belongs to.",
+        "original_SQL": "SELECT T1.first_name, T1.last_name, college FROM member AS T1 INNER JOIN major AS T2 ON T2.major_id = T1.link_to_major WHERE T1.position = 'Secretary'",
+        "changes_information": {
+            "original_value": "Member",
+            "singular_plural_change": "members"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' OR T3.pettype  =  'dog'",
+        "tables": [
+            "has_pet",
+            "pets",
+            "student"
+        ],
+        "columns": [
+            "pets.petid",
+            "has_pet.petid",
+            "student.fname",
+            "has_pet.stuid",
+            "pets.pettype",
+            "student.stuid"
+        ],
+        "values": [
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            },
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            }
+        ],
+        "db_id": "pets_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "pets.pettype.dog",
+            "pets.pettype.dog"
+        ],
+        "original_question": "Find the first name of students who have cat or dog pet.",
+        "question": "Find the first name of students who have dogs or dog pet.",
+        "original_SQL": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat' OR T3.pettype  =  'dog'",
+        "changes_information": {
+            "original_value": "dog",
+            "singular_plural_change": "dogs"
+        }
+    },
+    {
+        "SQL": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' OR T3.pettype  =  'dog'",
+        "tables": [
+            "has_pet",
+            "pets",
+            "student"
+        ],
+        "columns": [
+            "pets.petid",
+            "has_pet.petid",
+            "student.fname",
+            "has_pet.stuid",
+            "pets.pettype",
+            "student.stuid"
+        ],
+        "values": [
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            },
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            }
+        ],
+        "db_id": "pets_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "pets.pettype.dog",
+            "pets.pettype.dog"
+        ],
+        "original_question": "What are the first names of every student who has a cat or dog as a pet?",
+        "question": "What are the first names of every student who has a dogs or dog as a pet?",
+        "original_SQL": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat' OR T3.pettype  =  'dog'",
+        "changes_information": {
+            "original_value": "dog",
+            "singular_plural_change": "dogs"
+        }
+    },
+    {
+        "SQL": "select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'dog' intersect select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'dog'",
+        "tables": [
+            "has_pet",
+            "pets",
+            "student"
+        ],
+        "columns": [
+            "pets.petid",
+            "has_pet.petid",
+            "student.fname",
+            "has_pet.stuid",
+            "pets.pettype",
+            "student.stuid"
+        ],
+        "values": [
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            },
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            }
+        ],
+        "db_id": "pets_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "pets.pettype.dog",
+            "pets.pettype.dog"
+        ],
+        "original_question": "Find the first name of students who have both cat and dog pets .",
+        "question": "Find the first name of students who have both dogs and dog pets .",
+        "original_SQL": "select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'cat' intersect select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'dog'",
+        "changes_information": {
+            "original_value": "dog",
+            "singular_plural_change": "dogs"
+        }
+    },
+    {
+        "SQL": "SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' AND T1.stuid NOT IN (SELECT T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat')",
+        "tables": [
+            "has_pet",
+            "pets",
+            "student"
+        ],
+        "columns": [
+            "pets.petid",
+            "has_pet.petid",
+            "student.fname",
+            "has_pet.stuid",
+            "pets.pettype",
+            "student.age",
+            "student.stuid"
+        ],
+        "values": [
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            },
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "cat",
+                "condition": "="
+            }
+        ],
+        "db_id": "pets_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "pets.pettype.dog",
+            "pets.pettype.cat"
+        ],
+        "original_question": "Find the first name and age of students who have a dog but do not have a cat as a pet.",
+        "question": "Find the first name and age of students who have a dogs but do not have a cat as a pet.",
+        "original_SQL": "SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' AND T1.stuid NOT IN (SELECT T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat')",
+        "changes_information": {
+            "original_value": "dog",
+            "singular_plural_change": "dogs"
+        }
+    },
+    {
+        "SQL": "SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' AND T1.stuid NOT IN (SELECT T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat')",
+        "tables": [
+            "has_pet",
+            "pets",
+            "student"
+        ],
+        "columns": [
+            "pets.petid",
+            "has_pet.petid",
+            "student.fname",
+            "has_pet.stuid",
+            "pets.pettype",
+            "student.age",
+            "student.stuid"
+        ],
+        "values": [
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "dog",
+                "condition": "="
+            },
+            {
+                "table": "pets",
+                "column": "pettype",
+                "value": "cat",
+                "condition": "="
+            }
+        ],
+        "db_id": "pets_1",
+        "source": "spider_dev",
+        "evidence": "",
+        "values_list": [
+            "pets.pettype.dog",
+            "pets.pettype.cat"
+        ],
+        "original_question": "What is the first name of every student who has a dog but does not have a cat?",
+        "question": "What is the first name of every student who has a dogs but does not have a cat?",
+        "original_SQL": "SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' AND T1.stuid NOT IN (SELECT T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat')",
+        "changes_information": {
+            "original_value": "dog",
+            "singular_plural_change": "dogs"
+        }
+    },
+    {
+        "SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Data transformation'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "posts.title",
+            "users.displayname",
+            "posts.owneruserid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Eliciting priors from experts\" is the Title of post; owner refers to DisplayName",
+        "values_list": [
+            "posts.title.eliciting priors from experts"
+        ],
+        "original_question": "Who is the owner of the post \"Eliciting priors from experts\"?",
+        "question": "Who is the owner of the post \"Data transformations\"?",
+        "original_SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Eliciting priors from experts'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.LastEditorUserId = T2.Id WHERE T1.Title = 'Data transformation'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "posts.lasteditoruserid",
+            "posts.title",
+            "users.displayname"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Examples for teaching: Correlation does not mean causation\" is the Title of post; user who last edited refers to LastEditorUserId",
+        "values_list": [
+            "posts.title.examples for teaching: correlation does not mean causation"
+        ],
+        "original_question": "What is the display name of the user who last edited the post \"Examples for teaching: Correlation does not mean causation\"?",
+        "question": "What is the display name of the user who last edited the post \"Data transformations\"?",
+        "original_SQL": "SELECT T2.DisplayName FROM posts AS T1 INNER JOIN users AS T2 ON T1.LastEditorUserId = T2.Id WHERE T1.Title = 'Examples for teaching: Correlation does not mean causation'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Location FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Data transformation'",
+        "tables": [
+            "users",
+            "posts"
+        ],
+        "columns": [
+            "users.id",
+            "users.location",
+            "posts.title",
+            "posts.owneruserid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Owner refers to OwnerUserId; 'Eliciting priors from experts' is the Title of post",
+        "values_list": [
+            "posts.title.eliciting priors from experts"
+        ],
+        "original_question": "What is the location of the owner of the post \"Eliciting priors from experts\"?",
+        "question": "What is the location of the owner of the post \"Data transformations\"?",
+        "original_SQL": "SELECT T2.Location FROM posts AS T1 INNER JOIN users AS T2 ON T1.OwnerUserId = T2.Id WHERE T1.Title = 'Eliciting priors from experts'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT ViewCount FROM posts WHERE Title = 'Data transformation'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.title",
+            "posts.viewcount"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "\"Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer\" is the Title of post; views refers to ViewCount",
+        "values_list": [
+            "posts.title.integration of weka and/or rapidminer into informatica powercenter/developer"
+        ],
+        "original_question": "How many views did the post titled 'Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer' get?",
+        "question": "How many views did the post titled 'Data transformations' get?",
+        "original_SQL": "SELECT ViewCount FROM posts WHERE Title = 'Integration of Weka and/or RapidMiner into Informatica PowerCenter/Developer'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT LastEditDate, LastEditorUserId FROM posts WHERE Title = 'Data transformation'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.lasteditoruserid",
+            "posts.title",
+            "posts.lasteditdate"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Title = 'Detecting a given face in a database of facial images';",
+        "values_list": [
+            "posts.title.detecting a given face in a database of facial images"
+        ],
+        "original_question": "Provide the last edit date and last edit user ID for the post \"Detecting a given face in a database of facial images\".",
+        "question": "Provide the last edit date and last edit user ID for the post \"Data transformations\".",
+        "original_SQL": "SELECT LastEditDate, LastEditorUserId FROM posts WHERE Title = 'Detecting a given face in a database of facial images'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT T3.Text, T1.DisplayName FROM users AS T1 INNER JOIN posts AS T2 ON T1.Id = T2.OwnerUserId INNER JOIN comments AS T3 ON T2.Id = T3.PostId WHERE T2.Title = 'Data transformation' ORDER BY T1.CreationDate DESC LIMIT 10",
+        "tables": [
+            "users",
+            "posts",
+            "comments"
+        ],
+        "columns": [
+            "posts.id",
+            "posts.title",
+            "posts.owneruserid",
+            "comments.text",
+            "users.id",
+            "users.displayname",
+            "users.creationdate",
+            "comments.postid"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "the latest comment refers to MAX(CreationDate);",
+        "values_list": [
+            "posts.title.analysing wind data with r"
+        ],
+        "original_question": "Provide the text of the latest 10 comments to the post with the title 'Analysing wind data with R' and the display name of the user who left it.",
+        "question": "Provide the text of the latest 10 comments to the post with the title 'Data transformations' and the display name of the user who left it.",
+        "original_SQL": "SELECT T3.Text, T1.DisplayName FROM users AS T1 INNER JOIN posts AS T2 ON T1.Id = T2.OwnerUserId INNER JOIN comments AS T3 ON T2.Id = T3.PostId WHERE T2.Title = 'Analysing wind data with R' ORDER BY T1.CreationDate DESC LIMIT 10",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT CommentCount, AnswerCount FROM posts WHERE Title = 'Data transformation'",
+        "tables": [
+            "posts"
+        ],
+        "columns": [
+            "posts.title",
+            "posts.commentcount",
+            "posts.answercount"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "posts.title.clustering 1d data"
+        ],
+        "original_question": "How many comments and answers were left by the users on the post with the title 'Clustering 1D data'?",
+        "question": "How many comments and answers were left by the users on the post with the title 'Data transformations'?",
+        "original_SQL": "SELECT CommentCount, AnswerCount FROM posts WHERE Title = 'Clustering 1D data'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT T2.Id, T1.Text FROM comments AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id WHERE T2.Title = 'Data transformation'",
+        "tables": [
+            "posts",
+            "comments"
+        ],
+        "columns": [
+            "posts.id",
+            "posts.title",
+            "comments.postid",
+            "comments.text"
+        ],
+        "values": [
+            {
+                "table": "posts",
+                "column": "title",
+                "value": "Data transformation",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "Title = 'Group differences on a five point Likert item';",
+        "values_list": [
+            "posts.title.group differences on a five point likert item"
+        ],
+        "original_question": "What is the post ID and the comments commented in the post titled by \"Group differences on a five point Likert item\"?",
+        "question": "What is the post ID and the comments commented in the post titled by \"Data transformations\"?",
+        "original_SQL": "SELECT T2.Id, T1.Text FROM comments AS T1 INNER JOIN posts AS T2 ON T1.PostId = T2.Id WHERE T2.Title = 'Group differences on a five point Likert item'",
+        "changes_information": {
+            "original_value": "Data transformation",
+            "singular_plural_change": "Data transformations"
+        }
+    },
+    {
+        "SQL": "SELECT t2.name FROM program AS t1 JOIN director AS t2 ON t1.director_id  =  t2.director_id WHERE t1.title  =  'Dracula'",
+        "tables": [
+            "program",
+            "director"
+        ],
+        "columns": [
+            "program.title",
+            "program.director_id",
+            "director.director_id",
+            "director.name"
+        ],
+        "values": [
+            {
+                "table": "program",
+                "column": "title",
+                "value": "Dracula",
+                "condition": "="
+            }
+        ],
+        "db_id": "bbc_channels",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "program.title.dracula"
+        ],
+        "original_question": "What is the name of the director who is in the \"Dracula\" program?",
+        "question": "What is the name of the director who is in the \"Draculas\" program?",
+        "original_SQL": "SELECT t2.name FROM program AS t1 JOIN director AS t2 ON t1.director_id  =  t2.director_id WHERE t1.title  =  'Dracula'",
+        "changes_information": {
+            "original_value": "Dracula",
+            "singular_plural_change": "Draculas"
+        }
+    },
+    {
+        "SQL": "SELECT T1.NumTstTakr FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.MailCity = 'Oakland'",
+        "tables": [
+            "satscores",
+            "schools"
+        ],
+        "columns": [
+            "schools.cdscode",
+            "schools.mailcity",
+            "satscores.numtsttakr",
+            "satscores.cds"
+        ],
+        "values": [
+            {
+                "table": "schools",
+                "column": "mailcity",
+                "value": "Oakland",
+                "condition": "="
+            }
+        ],
+        "db_id": "california_schools",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "schools.mailcity.oakland"
+        ],
+        "original_question": "How many test takers are there at the school/s whose mailing city address is in Fresno?",
+        "question": "How many test takers are there at the school/s whose mailing city address is in Oaklands?",
+        "original_SQL": "SELECT T1.NumTstTakr FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.MailCity = 'Fresno'",
+        "changes_information": {
+            "original_value": "Oakland",
+            "singular_plural_change": "Oaklands"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name, T1.id FROM sets AS T1 INNER JOIN set_translations AS T2 ON T1.code = T2.setCode WHERE T1.block = 'Core Set' AND T2.language = 'Italian' ORDER BY T1.id LIMIT 2",
+        "tables": [
+            "sets",
+            "set_translations"
+        ],
+        "columns": [
+            "set_translations.language",
+            "sets.code",
+            "sets.id",
+            "sets.block",
+            "set_translations.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "block",
+                "value": "Core Set",
+                "condition": "="
+            },
+            {
+                "table": "set_translations",
+                "column": "language",
+                "value": "Italian",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "",
+        "values_list": [
+            "sets.block.core_set",
+            "set_translations.language.italian"
+        ],
+        "original_question": "Please list top two sets of cards with their IDs that have Italian-language cards and are located in the Shadowmoor block in alphabetical order.",
+        "question": "Please list top two sets of cards with their IDs that have Italian-language cards and are located in the Core Sets block in alphabetical order.",
+        "original_SQL": "SELECT T1.name, T1.id FROM sets AS T1 INNER JOIN set_translations AS T2 ON T1.code = T2.setCode WHERE T1.block = 'Shadowmoor' AND T2.language = 'Italian' ORDER BY T1.id LIMIT 2",
+        "changes_information": {
+            "original_value": "Core Set",
+            "singular_plural_change": "Core Sets"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Anthologies' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.convertedmanacost",
+            "cards.name",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Anthologies",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'",
+        "values_list": [
+            "sets.name.anthologies"
+        ],
+        "original_question": "Please list the name of the cards in the set Coldsnap with the highest converted mana cost.",
+        "question": "Please list the name of the cards in the set anthology with the highest converted mana cost.",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' ORDER BY T1.convertedManaCost DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "Anthologies",
+            "singular_plural_change": "anthology"
+        }
+    },
+    {
+        "SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Anthologies' AND T1.number = 4",
+        "tables": [
+            "sets",
+            "cards"
+        ],
+        "columns": [
+            "sets.code",
+            "cards.name",
+            "cards.number",
+            "cards.setcode",
+            "sets.name"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Anthologies",
+                "condition": "="
+            },
+            {
+                "table": "cards",
+                "column": "number",
+                "value": "4",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "card set Coldsnap refers to name = 'Coldsnap'; card number 4 refers to number = 4",
+        "values_list": [
+            "sets.name.anthologies",
+            "cards.number.4"
+        ],
+        "original_question": "What is card number 4 in the set Coldsnap?",
+        "question": "What is card number 4 in the set anthology?",
+        "original_SQL": "SELECT T1.name FROM cards AS T1 INNER JOIN sets AS T2 ON T2.code = T1.setCode WHERE T2.name = 'Coldsnap' AND T1.number = 4",
+        "changes_information": {
+            "original_value": "Anthologies",
+            "singular_plural_change": "anthology"
+        }
+    },
+    {
+        "SQL": "SELECT parentCode FROM sets WHERE name = 'Anthologies'",
+        "tables": [
+            "sets"
+        ],
+        "columns": [
+            "sets.name",
+            "sets.parentcode"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "name",
+                "value": "Anthologies",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "the set \"Commander 2014 Oversized\" refers to name = 'Commander 2014 Oversized';",
+        "values_list": [
+            "sets.name.commander 2014 oversized"
+        ],
+        "original_question": "For the set \"Commander 2014 Oversized\" , give its parent code.",
+        "question": "For the set \"anthology\" , give its parent code.",
+        "original_SQL": "SELECT parentCode FROM sets WHERE name = 'Commander 2014 Oversized'",
+        "changes_information": {
+            "original_value": "Anthologies",
+            "singular_plural_change": "anthology"
+        }
+    },
+    {
+        "SQL": "SELECT T2.setCode FROM sets AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.code WHERE T1.type = 'masters' GROUP BY T2.setCode",
+        "tables": [
+            "sets",
+            "set_translations"
+        ],
+        "columns": [
+            "sets.type",
+            "set_translations.setcode",
+            "sets.code"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "type",
+                "value": "masters",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "code of sets refers to setCode",
+        "values_list": [
+            "sets.type.masters"
+        ],
+        "original_question": "Give the code of sets have expansion type of 'expansion'?",
+        "question": "Give the code of sets have master type of 'expansion'?",
+        "original_SQL": "SELECT T2.setCode FROM sets AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.code WHERE T1.type = 'expansion' GROUP BY T2.setCode",
+        "changes_information": {
+            "original_value": "masters",
+            "singular_plural_change": "master"
+        }
+    },
+    {
+        "SQL": "SELECT T2.setCode FROM sets AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.code WHERE T1.type = 'masters'",
+        "tables": [
+            "sets",
+            "set_translations"
+        ],
+        "columns": [
+            "sets.type",
+            "set_translations.setcode",
+            "sets.code"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "type",
+                "value": "masters",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "code of sets refers to setCode",
+        "values_list": [
+            "sets.type.masters"
+        ],
+        "original_question": "Give the code of sets have expansion commander type?",
+        "question": "Give the code of sets have expansion master type?",
+        "original_SQL": "SELECT T2.setCode FROM sets AS T1 INNER JOIN set_translations AS T2 ON T2.setCode = T1.code WHERE T1.type = 'commander'",
+        "changes_information": {
+            "original_value": "masters",
+            "singular_plural_change": "master"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM sets WHERE type = 'masters' ORDER BY totalSetSize DESC LIMIT 1",
+        "tables": [
+            "sets"
+        ],
+        "columns": [
+            "sets.id",
+            "sets.type",
+            "sets.totalsetsize"
+        ],
+        "values": [
+            {
+                "table": "sets",
+                "column": "type",
+                "value": "masters",
+                "condition": "="
+            }
+        ],
+        "db_id": "card_games",
+        "source": "bird_dev",
+        "evidence": "expansion type refers to type where type = 'commander'; totalSetSize: The total number of cards in the set, including promotional and related supplemental products but excluding Alchemy modifications; highest total number of cards refers to MAX(totalSetSize)",
+        "values_list": [
+            "sets.type.masters"
+        ],
+        "original_question": "Among the sets whose expansion type is Commander, which set has the highest total number of cards including promotional and related supplemental products but excluding Alchemy modifications? Indicate the id of the set.",
+        "question": "Among the sets whose expansion type is master, which set has the highest total number of cards including promotional and related supplemental products but excluding Alchemy modifications? Indicate the id of the set.",
+        "original_SQL": "SELECT id FROM sets WHERE type = 'commander' ORDER BY totalSetSize DESC LIMIT 1",
+        "changes_information": {
+            "original_value": "masters",
+            "singular_plural_change": "master"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Animal Attributes' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "tables": [
+            "publisher",
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "publisher.publisher_name",
+            "publisher.id",
+            "hero_power.hero_id",
+            "superpower.power_name",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            },
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "Marvel Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; super power of \"Super Strength\" refers to power_name = 'Super Strength';",
+        "values_list": [
+            "superpower.power_name.super strength",
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "List the superheroes from Marvel Comics who have the super power of 'Super Strength'.",
+        "question": "List the superheroes from Marvel Comics who have the super power of 'Animal Attribute'.",
+        "original_SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Animal Attributes'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to refers to superhero_name; the power of death touch refers to power_name = 'Death Touch'",
+        "values_list": [
+            "superpower.power_name.death touch"
+        ],
+        "original_question": "What are the names of the superheroes with the power of death touch?",
+        "question": "What are the names of the superheroes with the power of Animal Attribute?",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Death Touch'",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Animal Attributes'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to superhero_name; flight power refers to power_name = 'Flight';",
+        "values_list": [
+            "superpower.power_name.animal_attributes"
+        ],
+        "original_question": "List the name of superheroes with flight power.",
+        "question": "List the name of superheroes with Animal Attribute power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Flight'",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Animal Attributes'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "adaptation power refers to power_name = 'Adaptation';",
+        "values_list": [
+            "superpower.power_name.animal_attributes"
+        ],
+        "original_question": "Provide superheroes' names who have the adaptation power.",
+        "question": "Provide superheroes' names who have the Animal Attribute power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Adaptation'",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM superpower WHERE power_name = 'Animal Attributes'",
+        "tables": [
+            "superpower"
+        ],
+        "columns": [
+            "superpower.power_name",
+            "superpower.id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "power ID refers to superpower.id; cryokinesis refers to power_name = 'cryokinesis';",
+        "values_list": [
+            "superpower.power_name.animal_attributes"
+        ],
+        "original_question": "What is the power ID of cryokinesis?",
+        "question": "What is the power ID of Animal Attribute?",
+        "original_SQL": "SELECT id FROM superpower WHERE power_name = 'Cryokinesis'",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Animal Attributes'",
+        "tables": [
+            "superhero",
+            "gender",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "gender.gender",
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "gender.id",
+            "superhero.gender_id",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Animal Attributes",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "ability of Phoenix Force refers to power_name = 'Phoenix Force';",
+        "values_list": [
+            "superpower.power_name.phoenix force"
+        ],
+        "original_question": "Identify the gender of the superhero who has the ability of Phoenix Force.",
+        "question": "Identify the gender of the superhero who has the ability of Animal Attribute.",
+        "original_SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Phoenix Force'",
+        "changes_information": {
+            "original_value": "Animal Attributes",
+            "singular_plural_change": "Animal Attribute"
+        }
+    },
+    {
+        "SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Blasts' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "tables": [
+            "publisher",
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "superhero.id",
+            "hero_power.power_id",
+            "superpower.id",
+            "publisher.publisher_name",
+            "publisher.id",
+            "hero_power.hero_id",
+            "superpower.power_name",
+            "superhero.publisher_id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            },
+            {
+                "table": "publisher",
+                "column": "publisher_name",
+                "value": "Marvel Comics",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; super power of \"Super Strength\" refers to power_name = 'Super Strength';",
+        "values_list": [
+            "superpower.power_name.super strength",
+            "publisher.publisher_name.marvel comics"
+        ],
+        "original_question": "List the superheroes from Marvel Comics who have the super power of 'Super Strength'.",
+        "question": "List the superheroes from Marvel Comics who have the super power of 'Energy Blast'.",
+        "original_SQL": "SELECT superhero_name FROM superhero AS T1 WHERE EXISTS (SELECT 1 FROM hero_power AS T2 INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.id = T2.hero_id)AND EXISTS (SELECT 1 FROM publisher AS T4 WHERE T4.publisher_name = 'Marvel Comics' AND T1.publisher_id = T4.id)",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Blasts'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to refers to superhero_name; the power of death touch refers to power_name = 'Death Touch'",
+        "values_list": [
+            "superpower.power_name.death touch"
+        ],
+        "original_question": "What are the names of the superheroes with the power of death touch?",
+        "question": "What are the names of the superheroes with the power of Energy Blast?",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Death Touch'",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Blasts'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "name of superheroes refers to superhero_name; flight power refers to power_name = 'Flight';",
+        "values_list": [
+            "superpower.power_name.energy_blasts"
+        ],
+        "original_question": "List the name of superheroes with flight power.",
+        "question": "List the name of superheroes with Energy Blast power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Flight'",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Energy Blasts'",
+        "tables": [
+            "superhero",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "superhero.superhero_name",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "adaptation power refers to power_name = 'Adaptation';",
+        "values_list": [
+            "superpower.power_name.energy_blasts"
+        ],
+        "original_question": "Provide superheroes' names who have the adaptation power.",
+        "question": "Provide superheroes' names who have the Energy Blast power.",
+        "original_SQL": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Adaptation'",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT id FROM superpower WHERE power_name = 'Energy Blasts'",
+        "tables": [
+            "superpower"
+        ],
+        "columns": [
+            "superpower.power_name",
+            "superpower.id"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "power ID refers to superpower.id; cryokinesis refers to power_name = 'cryokinesis';",
+        "values_list": [
+            "superpower.power_name.energy_blasts"
+        ],
+        "original_question": "What is the power ID of cryokinesis?",
+        "question": "What is the power ID of Energy Blast?",
+        "original_SQL": "SELECT id FROM superpower WHERE power_name = 'Cryokinesis'",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Energy Blasts'",
+        "tables": [
+            "superhero",
+            "gender",
+            "hero_power",
+            "superpower"
+        ],
+        "columns": [
+            "gender.gender",
+            "hero_power.power_id",
+            "superhero.id",
+            "superpower.id",
+            "gender.id",
+            "superhero.gender_id",
+            "hero_power.hero_id",
+            "superpower.power_name"
+        ],
+        "values": [
+            {
+                "table": "superpower",
+                "column": "power_name",
+                "value": "Energy Blasts",
+                "condition": "="
+            }
+        ],
+        "db_id": "superhero",
+        "source": "bird_dev",
+        "evidence": "ability of Phoenix Force refers to power_name = 'Phoenix Force';",
+        "values_list": [
+            "superpower.power_name.phoenix force"
+        ],
+        "original_question": "Identify the gender of the superhero who has the ability of Phoenix Force.",
+        "question": "Identify the gender of the superhero who has the ability of Energy Blast.",
+        "original_SQL": "SELECT T4.gender FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN gender AS T4 ON T1.gender_id = T4.id WHERE T3.power_name = 'Phoenix Force'",
+        "changes_information": {
+            "original_value": "Energy Blasts",
+            "singular_plural_change": "Energy Blast"
+        }
+    },
+    {
+        "SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'standard'",
+        "tables": [
+            "tags"
+        ],
+        "columns": [
+            "tags.tagname",
+            "tags.wikipostid",
+            "tags.excerptpostid"
+        ],
+        "values": [
+            {
+                "table": "tags",
+                "column": "tagname",
+                "value": "standard",
+                "condition": "="
+            }
+        ],
+        "db_id": "codebase_community",
+        "source": "bird_dev",
+        "evidence": "tag named sample refers to TagName = 'sample';",
+        "values_list": [
+            "tags.tagname.standard"
+        ],
+        "original_question": "What is the excerpt post ID and wiki post ID of the tag named sample?",
+        "question": "What is the excerpt post ID and wiki post ID of the tag named standards?",
+        "original_SQL": "SELECT ExcerptPostId, WikiPostId FROM tags WHERE TagName = 'sample'",
+        "changes_information": {
+            "original_value": "standard",
+            "singular_plural_change": "standards"
+        }
+    },
+    {
+        "SQL": "SELECT login_name FROM Users WHERE user_category_code  =  'Student' ORDER BY first_name",
+        "tables": [
+            "users"
+        ],
+        "columns": [
+            "users.first_name",
+            "users.user_category_code",
+            "users.login_name"
+        ],
+        "values": [
+            {
+                "table": "users",
+                "column": "user_category_code",
+                "value": "Student",
+                "condition": "="
+            }
+        ],
+        "db_id": "real_estate_rentals",
+        "source": "spider_test",
+        "evidence": "",
+        "values_list": [
+            "users.user_category_code.senior citizen"
+        ],
+        "original_question": "Find the login names of all senior citizen users ordered by their first names.",
+        "question": "Find the login names of all Students users ordered by their first names.",
+        "original_SQL": "SELECT login_name FROM Users WHERE user_category_code  =  'Senior Citizen' ORDER BY first_name",
+        "changes_information": {
+            "original_value": "Student",
+            "singular_plural_change": "Students"
+        }
+    }
+]

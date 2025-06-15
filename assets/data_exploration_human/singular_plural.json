@@ -1,1 +1,345 @@
-[]
+[
+    {
+    "database_id": "superhero",
+    "table": "attribute",
+    "column": "attribute_name",
+    "original_value": "Durability",
+    "singular_plural_change": "durabilities"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Editor",
+    "singular_plural_change": "Editors"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Advertisement",
+    "singular_plural_change": "Advertisements"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_makers",
+    "column": "fullname",
+    "original_value": "Nissan Motors",
+    "singular_plural_change": "Nissan Motor"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "model",
+    "original_value": " volkswagen",
+    "singular_plural_change": "volkswagens"
+  },
+  {
+    "database_id": "financial",
+    "table": "card",
+    "column": "type",
+    "original_value": "junior",
+    "singular_plural_change": "juniors"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "availability",
+    "original_value": "arena",
+    "singular_plural_change": "arenas"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "frameeffects",
+    "original_value": "etched,legendary",
+    "singular_plural_change": "etched,legendaries"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Aquamorph Entity",
+    "singular_plural_change": "Aquamorph Entities"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "promotypes",
+    "original_value": "bundle",
+    "singular_plural_change": "bundles"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Bird",
+    "singular_plural_change": "Birds"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "watermark",
+    "original_value": "flavor",
+    "singular_plural_change": "flavors"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "name",
+    "original_value": "Silverstone Circuit",
+    "singular_plural_change": "Silverstone Circuits"
+  },
+  {
+    "database_id": "conference",
+    "table": "conference_participation",
+    "column": "role",
+    "original_value": "Participant",
+    "singular_plural_change": "Participants"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "courses",
+    "column": "course_name",
+    "original_value": "math",
+    "singular_plural_change": "maths"
+  },
+  {
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "nation",
+    "original_value": "United States",
+    "singular_plural_change": "United State"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "degree_programs",
+    "column": "degree_summary_name",
+    "original_value": "Master",
+    "singular_plural_change": "Masters"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "linguistic",
+    "singular_plural_change": "linguistics"
+  },
+  {
+    "database_id": "financial",
+    "table": "disp",
+    "column": "type",
+    "original_value": "OWNER",
+    "singular_plural_change": "owners"
+  },
+  {
+    "database_id": "cre_Doc_and_collections",
+    "table": "document_objects",
+    "column": "description",
+    "original_value": "Marlin Collection",
+    "singular_plural_change": "Marlin Collections"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "documents",
+    "column": "document_name",
+    "original_value": "Data base",
+    "singular_plural_change": "Data bases"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "surname",
+    "original_value": "Stevens",
+    "singular_plural_change": "Steven"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "February Speaker",
+    "singular_plural_change": "February Speakers"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Data Structure",
+    "singular_plural_change": "Data Structures"
+  },
+  {
+    "database_id": "student_club",
+    "table": "expense",
+    "column": "expense_description",
+    "original_value": "Posters",
+    "singular_plural_change": "Poster"
+  },
+  {
+    "database_id": "student_club",
+    "table": "expense",
+    "column": "expense_description",
+    "original_value": "Pizza",
+    "singular_plural_change": "pizzas"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "features",
+    "column": "feature_name",
+    "original_value": "rooftop",
+    "singular_plural_change": "rooftops"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "educational option type",
+    "original_value": "Continuation School",
+    "singular_plural_change": "Continuation Schools"
+  },
+  {
+    "database_id": "bakery_1",
+    "table": "goods",
+    "column": "food",
+    "original_value": "Cookie",
+    "singular_plural_change": "Cookies"
+  },
+  {
+    "database_id": "european_football_2",
+    "table": "league",
+    "column": "name",
+    "original_value": "Netherlands Eredivisie",
+    "singular_plural_change": "Netherland Eredivisie"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "format",
+    "original_value": "penny",
+    "singular_plural_change": "pennies"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Physics Department",
+    "singular_plural_change": "Physic Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Geosciences Department",
+    "singular_plural_change": "Geoscience Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Art History",
+    "singular_plural_change": "Arts History"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "position",
+    "original_value": "Member",
+    "singular_plural_change": "members"
+  },
+  {
+    "database_id": "pets_1",
+    "table": "pets",
+    "column": "pettype",
+    "original_value": "dog",
+    "singular_plural_change": "dogs"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Data transformation",
+    "singular_plural_change": "Data transformations"
+  },
+  {
+    "database_id": "bbc_channels",
+    "table": "program",
+    "column": "title",
+    "original_value": "Dracula",
+    "singular_plural_change": "Draculas"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "Rio Elementary",
+    "singular_plural_change": "Rio Elementaries"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "doctype",
+    "original_value": "Non-School Locations",
+    "singular_plural_change": "Non-School Location"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "mailcity",
+    "original_value": "Oakland",
+    "singular_plural_change": "Oaklands"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "block",
+    "original_value": "Core Set",
+    "singular_plural_change": "Core Sets"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "name",
+    "original_value": "Anthologies",
+    "singular_plural_change": "anthology"
+  },
+  {
+    "database_id": "card_games",
+    "table": "sets",
+    "column": "type",
+    "original_value": "masters",
+    "singular_plural_change": "master"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Tyre",
+    "singular_plural_change": "Tyres"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Animal Attributes",
+    "singular_plural_change": "Animal Attribute"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Energy Blasts",
+    "singular_plural_change": "Energy Blast"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "standard",
+    "singular_plural_change": "standards"
+  },
+  {
+    "database_id": "real_estate_rentals",
+    "table": "users",
+    "column": "user_category_code",
+    "original_value": "Student",
+    "singular_plural_change": "Students"
+  }
+]
