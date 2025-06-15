@@ -1,1 +1,360 @@
-[]
+[
+    {
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "city",
+    "original_value": "Port Chelsea",
+    "word_addition": "The Port Chelsea"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "addresses",
+    "column": "country",
+    "original_value": "Gibraltar",
+    "word_addition": "The Gibraltar"
+  },
+  {
+    "database_id": "superhero",
+    "table": "alignment",
+    "column": "alignment",
+    "original_value": "Neutral",
+    "word_addition": "Generally Neutral"
+  },
+
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Nice Answer",
+    "word_addition": "A Nice Answer"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "battle",
+    "column": "bulgarian_commander",
+    "original_value": "Unknown",
+    "word_addition": "The Unknown"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "battle",
+    "column": "latin_commander",
+    "original_value": "Henry I",
+    "word_addition": "King Henry I"
+  },
+  {
+    "database_id": "boat_1",
+    "table": "boats",
+    "column": "name",
+    "original_value": "Mars",
+    "word_addition": "The Mars"
+  },
+  {
+    "database_id": "book_press",
+    "table": "book",
+    "column": "book_series",
+    "original_value": "LT",
+    "word_addition": "The LT"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_makers",
+    "column": "fullname",
+    "original_value": "General Motors",
+    "word_addition": "The General Motors"
+  },
+  {
+    "database_id": "car_1",
+    "table": "car_names",
+    "column": "make",
+    "original_value": "subaru",
+    "word_addition": "Subaru Automobile"
+  },
+  {
+    "database_id": "financial",
+    "table": "card",
+    "column": "type",
+    "original_value": "gold",
+    "word_addition": "Gold Card"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "artist",
+    "original_value": "Pete Venters",
+    "word_addition": "Mr. Pete Venters"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "availability",
+    "original_value": "arena",
+    "word_addition": "The arena"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "First strike",
+    "word_addition": "The First strike"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Fear",
+    "word_addition": "The Fear"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Sorcery",
+    "word_addition": "The Sorcery"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "rarity",
+    "original_value": "uncommon",
+    "word_addition": "quite uncommon"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "subtypes",
+    "original_value": "Basilisk",
+    "word_addition": "The Basilisk"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Legendary Artifact",
+    "word_addition": "The Legendary Artifact"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "directed_by",
+    "original_value": "Michael Chang",
+    "word_addition": "Mr. Michael Chang"
+  },
+  {
+    "database_id": "tvshow",
+    "table": "cartoon",
+    "column": "written_by",
+    "original_value": "Todd Casey",
+    "word_addition": "Mr. Todd Casey"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "location",
+    "original_value": "Dijon",
+    "word_addition": "Dijon, France"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "circuits",
+    "column": "location",
+    "original_value": "Dallas",
+    "word_addition": "City of Dallas"
+  },
+  {
+    "database_id": "advertising_agencies",
+    "table": "clients",
+    "column": "client_details",
+    "original_value": "Kirsten",
+    "word_addition": "Ms. Kirsten"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "constructors",
+    "column": "name",
+    "original_value": "Aston Martin",
+    "word_addition": "The Aston Martin"
+  },
+  {
+    "database_id": "voter_1",
+    "table": "contestants",
+    "column": "contestant_name",
+    "original_value": "Jessie Alloway",
+    "word_addition": "Ms. Jessie Alloway"
+  },
+  {
+    "database_id": "world_1",
+    "table": "country",
+    "column": "continent",
+    "original_value": "Oceania",
+    "word_addition": "The Oceania"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "courses",
+    "column": "course_name",
+    "original_value": "math",
+    "word_addition": "Math Course"
+  },
+{
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "name",
+    "original_value": "Bradley Wiggins",
+    "word_addition": "Sir Bradley Wiggins"
+  },
+  {
+    "database_id": "bike_racing",
+    "table": "cyclist",
+    "column": "nation",
+    "original_value": "United States",
+    "word_addition": "United States of America"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "degree_programs",
+    "column": "degree_summary_name",
+    "original_value": "Bachelor",
+    "word_addition": "Bachelor level"
+  },
+  {
+    "database_id": "student_transcripts_tracking",
+    "table": "departments",
+    "column": "department_name",
+    "original_value": "history",
+    "word_addition": "History Department"
+  },
+  {
+    "database_id": "cre_Doc_and_collections",
+    "table": "document_objects",
+    "column": "owner",
+    "original_value": "Marlin",
+    "word_addition": "Mr. Marlin"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "citizenship",
+    "original_value": "United States",
+    "word_addition": "United States of America"
+  },
+  {
+    "database_id": "vehicle_driver",
+    "table": "driver",
+    "column": "name",
+    "original_value": "Tony Stewart",
+    "word_addition": "Mr. Tony Stewart"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "British",
+    "word_addition": "British England"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "April Meeting",
+    "word_addition": "The April Meeting"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "location",
+    "original_value": "Various locations",
+    "word_addition": "Various of locations"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "symptoms",
+    "original_value": "leg ulcer",
+    "word_addition": "a leg ulcer"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Database",
+    "word_addition": "Database Systems"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "charter funding type",
+    "original_value": "Locally funded",
+    "word_addition": "Locally funded schema"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "county name",
+    "original_value": "Trinity",
+    "word_addition": "Trinity County"
+  },
+  {
+    "database_id": "superhero",
+    "table": "gender",
+    "column": "gender",
+    "original_value": "Female",
+    "word_addition": "Woman Female"
+  },
+  {
+    "database_id": "pilot_1",
+    "table": "hangar",
+    "column": "plane_name",
+    "original_value": "Piper Cub",
+    "word_addition": "The Piper Cub"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "format",
+    "original_value": "gladiator",
+    "word_addition": "The Gladiator"
+  },
+  {
+    "database_id": "card_games",
+    "table": "legalities",
+    "column": "status",
+    "original_value": "Legal",
+    "word_addition": "Fully Legal"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "History Department",
+    "word_addition": "The History Department"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Art History",
+    "word_addition": "The Art History"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "position",
+    "original_value": "President",
+    "word_addition": "Club President"
+  },
+  {
+    "database_id": "student_club",
+    "table": "member",
+    "column": "t_shirt_size",
+    "original_value": "Large",
+    "word_addition": "Size Large"
+  },
+  {
+    "database_id": "movie_2",
+    "table": "movietheaters",
+    "column": "name",
+    "original_value": "Odeon",
+    "word_addition": "The Odeon"
+  }
+]
