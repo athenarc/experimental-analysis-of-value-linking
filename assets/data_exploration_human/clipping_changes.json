@@ -1,1 +1,226 @@
-[]
+[
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Popular Question",
+    "clipping": "Popular Q"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Research Assistant",
+    "clipping": "Research Asst."
+  },
+{
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Advertisement",
+    "clipping": "Advert."
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Misinformation",
+    "clipping": "Misinfo."
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Enchant Equipment",
+    "clipping": "Enchant Equip."
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Enchant Permanent",
+    "clipping": "Enchant Perm"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Database",
+    "clipping": "DB"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Data Structure",
+    "clipping": "Data Struct"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Physics Department",
+    "clipping": "Physics Dept"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Management Department",
+    "clipping": "Management Dept"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "English Department",
+    "clipping": "Engl. Department"
+  },
+  {
+    "database_id": "university_rank",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Urban Education",
+    "clipping": "Urban Educ"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Statistics collaboration",
+    "clipping": "Statistics collab."
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Test Statistics",
+    "clipping": "Test Stats"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Graphics encyclopedia",
+    "clipping": "Graphics encycl"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Welch statistic",
+    "clipping": "Welch stat"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "posts",
+    "column": "title",
+    "original_value": "Scale parameter",
+    "clipping": "Scale params"
+  },
+  {
+    "database_id": "superhero",
+    "table": "publisher",
+    "column": "publisher_name",
+    "original_value": "Sony Pictures",
+    "clipping": "Sony Pics"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admfname1",
+    "original_value": "Christopher",
+    "clipping": "Chris."
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "admlname1",
+    "original_value": "Administration",
+    "clipping": "Admin."
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "district",
+    "original_value": "Metro Education",
+    "clipping": "Metro Educ."
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "doctype",
+    "original_value": "Administration Only",
+    "clipping": "Admin Only"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "schools",
+    "column": "fundingtype",
+    "original_value": "Locally funded",
+    "clipping": "Locally fund"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Fuel system",
+    "clipping": "Fuel sys."
+  },
+  {
+    "database_id": "superhero",
+    "table": "superhero",
+    "column": "superhero_name",
+    "original_value": "Captain America",
+    "clipping": "Captain Am."
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Fire Resistance",
+    "clipping": "Fire Resist"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "moderator",
+    "clipping": "mod"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "tags",
+    "column": "tagname",
+    "original_value": "information",
+    "clipping": "info"
+  },
+  {
+    "database_id": "university_rank",
+    "table": "university",
+    "column": "university_name",
+    "original_value": "Benedictine University",
+    "clipping": "Benedictine Uni"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "Indiana University",
+    "clipping": "Indiana Uni"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Saint Ann",
+    "clipping": "St Ann"
+  },
+  {
+    "database_id": "student_club",
+    "table": "zip_code",
+    "column": "city",
+    "original_value": "Saint Ignatius",
+    "clipping": "St Ignatius"
+  }
+]   
