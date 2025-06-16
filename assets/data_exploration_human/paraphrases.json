@@ -1,1 +1,212 @@
-[]
+[
+{
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Popular Question",
+    "paraphrasing": "Frequently Asked Question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Favorite Question",
+    "paraphrasing": "Most popular question"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "badges",
+    "column": "name",
+    "original_value": "Famous Question",
+    "paraphrasing": "Well-known Question"
+  },
+  {
+    "database_id": "student_club",
+    "table": "budget",
+    "column": "category",
+    "original_value": "Speaker Gifts",
+    "paraphrasing": "Gifts for speakers"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Fateful hour",
+    "paraphrasing": "An hour of fate"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Hidden agenda",
+    "paraphrasing": "Agenda is hidden"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "keywords",
+    "original_value": "Double strike",
+    "paraphrasing": "Strike twice"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "name",
+    "original_value": "Academy Researchers",
+    "paraphrasing": "Researchers from the Academy"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "originaltype",
+    "original_value": "Ongoing Scheme",
+    "paraphrasing": "Scheme in progress"
+  },
+  {
+    "database_id": "card_games",
+    "table": "cards",
+    "column": "type",
+    "original_value": "Ongoing Scheme",
+    "paraphrasing": "Scheme in progress"
+  },
+  {
+    "database_id": "cre_Doc_Template_Mgt",
+    "table": "documents",
+    "column": "document_name",
+    "original_value": "Summer Show",
+    "paraphrasing": "Show for Summer"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Argentine",
+    "paraphrasing": "From Argentina"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "drivers",
+    "column": "nationality",
+    "original_value": "Monegasque",
+    "paraphrasing": "From Monaco"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "March Meeting",
+    "paraphrasing": "Meeting in March"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "event_name",
+    "original_value": "Spring Elections",
+    "paraphrasing": "Elections in Spring"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "location",
+    "original_value": "Various locations",
+    "paraphrasing": "At multiple locations"
+  },
+  {
+    "database_id": "student_club",
+    "table": "event",
+    "column": "type",
+    "original_value": "Community Service",
+    "paraphrasing": "Service to the community"
+  },
+  {
+    "database_id": "thrombosis_prediction",
+    "table": "examination",
+    "column": "diagnosis",
+    "original_value": "Photosensitivities",
+    "paraphrasing": "Sensitivity to photos"
+  },
+  {
+    "database_id": "online_exams",
+    "table": "exams",
+    "column": "subject_code",
+    "original_value": "Art History",
+    "paraphrasing": "History of Art"
+  },
+  {
+    "database_id": "student_club",
+    "table": "expense",
+    "column": "expense_description",
+    "original_value": "Club shirts",
+    "paraphrasing": "Shirts for the club"
+  },
+  {
+    "database_id": "card_games",
+    "table": "foreign_data",
+    "column": "name",
+    "original_value": "Loyal Retainers",
+    "paraphrasing": "Retainers who are loyal"
+  },
+  {
+    "database_id": "california_schools",
+    "table": "frpm",
+    "column": "high grade",
+    "original_value": "Post Secondary",
+    "paraphrasing": "Beyond High School"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "Physics Department",
+    "paraphrasing": "Department of Physics"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "department",
+    "original_value": "History Department",
+    "paraphrasing": "Department of History"
+  },
+  {
+    "database_id": "student_club",
+    "table": "major",
+    "column": "major_name",
+    "original_value": "Communication Studies",
+    "paraphrasing": "Studies in Communication"
+  },
+  {
+    "database_id": "battle_death",
+    "table": "ship",
+    "column": "disposition_of_ship",
+    "original_value": "Sank",
+    "paraphrasing": "Went down"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Collision damage",
+    "paraphrasing": "Damage from collision"
+  },
+  {
+    "database_id": "formula_1",
+    "table": "status",
+    "column": "status",
+    "original_value": "Eye injury",
+    "paraphrasing": "Injury to the eye"
+  },
+  {
+    "database_id": "superhero",
+    "table": "superpower",
+    "column": "power_name",
+    "original_value": "Weather Control",
+    "paraphrasing": "Control the weather"
+  },
+  {
+    "database_id": "codebase_community",
+    "table": "users",
+    "column": "location",
+    "original_value": "nanjing CHINA",
+    "paraphrasing": "Nanjing located in China"
+  }
+]
