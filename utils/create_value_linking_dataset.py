@@ -14,7 +14,74 @@ import torch
 import os
 from tqdm import tqdm
 nltk.download("wordnet", quiet=True)
+from openai import OpenAI
 
+PROMPT_TEMPLATE = """You are an expert data quality analyst for text-to-SQL datasets. Your task is to determine if a generated question is 'valid' or 'invalid' based on duplicate value detection.
+
+**Duplicate Value Check:** The question is invalid ONLY if it contains duplicate values where the same entity/item/value is mentioned multiple times as if they were different things. Look for patterns like "A and A", "between X and X", "X or X", etc.
+
+You will analyze the provided question and respond with the final answer on a new line: `1` for valid, `0` for invalid. 
+
+IMPORTANT: The questions correspond to actual SQLs that are valid, so most of the time the question is valid. Focus ONLY on cases where the exact same value/entity is duplicated inappropriately (e.g., "Scissors and Scissors", "between 2020 and 2020", "John or John").
+
+---
+### Example 1 (Good)
+
+**Input Question:**
+"What is Adrian Ricardo Centurion's potential score?"
+
+**Reasoning:**
+**Duplicate Check:** No duplicates found. Single entity mentioned once.
+
+**Final Answer:**
+1
+
+---
+### Example 2 (Good)
+
+**Input Question:**
+"Find users who are located in Vienna or Paris"
+
+**Reasoning:**
+**Duplicate Check:** No duplicates found. Two different cities mentioned.
+
+**Final Answer:**
+1
+
+---
+### Example 3 (Bad)
+
+**Input Question:**
+"Find the location of the warehouses which store contents Scissors and Scissors."
+
+**Reasoning:**
+**Duplicate Check:** DUPLICATE DETECTED. The same item "Scissors" is mentioned twice as if they were different items ("Scissors and Scissors").
+
+**Final Answer:**
+0
+
+---
+### Example 4 (Bad)
+
+**Input Question:**
+"Show me records between 2020 and 2020."
+
+**Reasoning:**
+**Duplicate Check:** DUPLICATE DETECTED. The same year "2020" is used twice in a range ("between 2020 and 2020").
+
+**Final Answer:**
+0
+
+---
+
+### Input Question to Evaluate:
+
+{question}
+
+IMPORTANT: just output 1 for a valid question (no duplicates) and 0 for an invalid question (contains duplicates). Do not output the reasoning or any other text. One token is enough.
+
+**Final Answer:**
+"""
 
 class ValueLinkingDatasetProcessor:
     """Processes dataset for value linking tasks including formatting, typos, synonyms, and predictions."""
@@ -940,3 +1007,157 @@ class ValueLinkingDatasetProcessor:
                     alteration_counts[alteration_type] = alteration_counts.get(alteration_type, 0) + 1
         return alteration_counts
     
+    @staticmethod
+    def extract_unique_questions(input_folder, output_json_path):
+        unique_questions = set()
+        for filename in os.listdir(input_folder):
+            if filename.endswith(".json"):
+                file_path = os.path.join(input_folder, filename)
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    for item in data:
+                        if 'original_question' in item:
+                            unique_questions.add(item['original_question'])
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(list(unique_questions), f, indent=4)
+
+    @staticmethod
+    def find_and_extract_matches(unique_questions_json, source_records_json, output_json_path):
+        with open(unique_questions_json, 'r', encoding='utf-8') as f1:
+            questions_to_find = json.load(f1)
+
+        with open(source_records_json, 'r', encoding='utf-8') as f2:
+            all_records = json.load(f2)
+
+        questions_set = set(questions_to_find)
+        matched_records = []
+
+        for record in all_records:
+            if 'question' in record and record['question'] in questions_set:
+                matched_records.append(record)
+                questions_set.remove(record['question'])
+
+        with open(output_json_path, 'w', encoding='utf-8') as f_out:
+            json.dump(matched_records, f_out, indent=4)
+
+        initial_count = len(json.load(open(unique_questions_json, 'r', encoding='utf-8')))
+        print(f"{len(matched_records)} records from the first json managed to match out of {initial_count}.")
+        
+        
+    
+
+    @staticmethod
+    def validate_records(input_path: str, valid_output_path: str, invalid_output_path: str):
+        
+        client = OpenAI(
+            base_url="http://gaia-gpu-2.imsi.athenarc.gr:5001/v1",
+            api_key ="unused_dummy_value"
+        )
+
+        with open(input_path, 'r') as f:
+            all_records = json.load(f)
+
+        valid_records = []
+        invalid_records = []
+
+        for record in tqdm(all_records, desc="Validating records"):
+            question = record["new_question_correct_value"]
+            
+            final_prompt = PROMPT_TEMPLATE.format(question=question)
+            
+            response = client.chat.completions.create(
+                model="Qwen/Qwen2.5-Coder-32B-Instruct",
+                messages=[{"role": "user", "content": final_prompt}],
+                temperature=0.0,
+                max_tokens=4096,
+            )
+            
+            llm_output = response.choices[0].message.content
+            
+            decision = llm_output.strip().split('\n')[-1].strip()
+            #proint decision and output
+            #print(final_prompt)
+            #print(f"Decision  {decision}")
+            #print(f"LLM Output: {llm_output}")
+            if decision == '1':
+                valid_records.append(record)
+            elif decision == '0':
+                invalid_records.append(record)
+
+
+        with open(valid_output_path, 'w') as f:
+            json.dump(valid_records, f, indent=2)
+            
+        with open(invalid_output_path, 'w') as f:
+            json.dump(invalid_records, f, indent=2)
+            
+        print("\nValidation complete.")
+        print(f"Found {len(valid_records)} valid records, saved to {valid_output_path}")
+        print(f"Found {len(invalid_records)} invalid records, saved to {invalid_output_path}")
+
+    @staticmethod
+    def add_corrected_question(input_path, output_path):
+        with open(input_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        for record in data:
+            question = record['question']
+            changes_info = record['changes_information']
+
+            original_value = changes_info['original_value']
+            
+            variation_key = [k for k in changes_info if k != 'original_value'][0]
+            variation_value = changes_info[variation_key]
+
+            # --- THIS IS THE CORRECTED LINE ---
+            match_pattern = r'\b' + re.escape(str(variation_value)) + r'(?!\w)'
+            
+            corrected_question = re.sub(
+                match_pattern,
+                str(original_value),
+                question,
+                count=1,
+                flags=re.IGNORECASE
+            )
+            
+            record['new_question_correct_value'] = corrected_question
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+            
+    @staticmethod
+    def deduplicate_and_format(input_json_path, output_json_path):
+        """
+        Reads a JSON file, deduplicates records based on the 
+        'new_question_correct_value' field, formats them, and writes 
+        to a new JSON file.
+        """
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        processed_questions = set()
+        output_records = []
+        question_id_counter = 1
+
+        for record in data:
+            unique_question = record.get("new_question_correct_value")
+
+            if unique_question and unique_question not in processed_questions:
+                processed_questions.add(unique_question)
+                
+                new_record = {
+                    "question_id": question_id_counter,
+                    "db_id": record.get("db_id"),
+                    "question": unique_question,
+                    "evidence": record.get("evidence"),
+                    "SQL": record.get("SQL"),
+                    "difficulty": "simple"
+                }
+                
+                output_records.append(new_record)
+                question_id_counter += 1
+
+        print(f"Total unique questions processed: {len(processed_questions)}")
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(output_records, f, indent=2)
