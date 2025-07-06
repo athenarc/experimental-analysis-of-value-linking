@@ -14,10 +14,13 @@ def model_chose(step,model="gpt-4 32K"):
         return qwenmax(model)
     if model.startswith("sft"):
         return sft_req()
-    if model == "kosbu/Llama-3.3-70B-Instruct-AWQ" or model == "custom_vllm": # Add your model identifier
+    if model == "kosbu/Llama-3.3-70B-Instruct-AWQ": # Add your model identifier
         return VLLM_req(step, model_name=model)
     if model == "Qwen/Qwen2.5-Coder-32B-Instruct":
         return VLLM_req(step, model_name=model)
+    if model == "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8":
+        return VLLM_req(step, model_name=model)
+
 
 class req:
 
