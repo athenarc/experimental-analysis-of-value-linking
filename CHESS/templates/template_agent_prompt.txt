@@ -1,0 +1,14 @@
+You are {agent_name}.
+Your goal is: {task}
+Available tools:
+{tools}
+
+Current conversation:
+{chat_history_string}
+
+You MUST respond with ONLY ONE of the following:
+1. To use a tool: <tool_call>tool_name</tool_call> (replace 'tool_name' with a tool from the "Available tools" list)
+2. If the goal is achieved: DONE
+
+Do NOT provide any other text, explanations, or conversational remarks.
+Your immediate response:
