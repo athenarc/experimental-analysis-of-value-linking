@@ -69,7 +69,7 @@ class OmniSQLReranker(BaseReranker):
                 new_score = self._calculate_substring_match_percentage(
                     nlq, res.item.content
                 )
-                if new_score >= self.score_threshold:
+                if new_score > self.score_threshold:
                     rescored_results.append(
                         RetrievalResult(item=res.item, score=new_score)
                     )
@@ -79,6 +79,6 @@ class OmniSQLReranker(BaseReranker):
                 key=lambda r: (r.score, len(r.item.content)),
                 reverse=True,
             )
-            final_batches.append(sorted_results)
+            final_batches.append(sorted_results[:20])
 
         return final_batches

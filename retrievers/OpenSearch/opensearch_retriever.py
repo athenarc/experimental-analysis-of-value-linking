@@ -15,7 +15,7 @@ class OpenSearchDenseValueRetriever(BaseRetriever):
     def __init__(
         self,
         model_name_or_path: str="BAAI/bge-m3",
-        embedding_backend: str = "infinity",
+        embedding_backend: str = "sentence-transformers",
         **kwargs,
     ):
         """
@@ -29,7 +29,7 @@ class OpenSearchDenseValueRetriever(BaseRetriever):
         self.internal_retriever = FaissRetriever(
             model_name_or_path=model_name_or_path,
             embedding_backend=embedding_backend,
-            batch_size=64,
+            batch_size=32,
             **kwargs
         )
         print(f"OpenSearchDenseValueRetriever initialized with model: {model_name_or_path}")

@@ -1,5 +1,3 @@
-# chess_retriever.py
-
 import os
 import pickle
 from typing import Dict, List, Set, Tuple
@@ -120,7 +118,8 @@ class ChessMinHashLshRetriever(BaseRetriever):
         final_batches = []
 
         for sub_queries in processed_queries_batch:
-            aggregated_results: Dict[str, RetrievalResult] = {}
+            aggregated_results: Dict[str, List[Tuple[float, str]]] = {}
+
             for query in sub_queries:
                 query_minhash = self._create_minhash(query)
                 retrieved_ids = lsh.query(query_minhash)
@@ -131,17 +130,30 @@ class ChessMinHashLshRetriever(BaseRetriever):
                         score = query_minhash.jaccard(item_minhash)
 
                         if score > self.threshold:
-                            item = items_map[item_id]
-                            result = RetrievalResult(item=item, score=score)
-
-                            if (
-                                item_id not in aggregated_results
-                                or result.score > aggregated_results[item_id].score
-                            ):
-                                aggregated_results[item_id] = result
+                            if item_id not in aggregated_results:
+                                aggregated_results[item_id] = []
+                            aggregated_results[item_id].append((score, query))
             
+            final_results_for_batch = []
+            for item_id, score_keyword_pairs in aggregated_results.items():
+                best_score, best_keyword = max(score_keyword_pairs, key=lambda x: x[0])
+                
+                item = items_map[item_id]
+
+                new_metadata = item.metadata.copy() if item.metadata else {}
+                new_metadata['matched_keyword'] = best_keyword
+                
+                updated_item = SearchableItem(
+                    item_id=item.item_id,
+                    content=item.content,
+                    metadata=new_metadata
+                )
+
+                result = RetrievalResult(item=updated_item, score=best_score)
+                final_results_for_batch.append(result)
+
             sorted_res = sorted(
-                aggregated_results.values(), key=lambda r: r.score, reverse=True
+                final_results_for_batch, key=lambda r: r.score, reverse=True
             )
             final_batches.append(sorted_res)
 

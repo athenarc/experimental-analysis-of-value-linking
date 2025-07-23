@@ -1,5 +1,3 @@
-# chess_db_loader.py
-
 import hashlib
 import os
 import sqlite3

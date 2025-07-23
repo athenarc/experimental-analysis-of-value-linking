@@ -24,6 +24,7 @@ class ChessQueryProcessor(BaseUserQueryProcessor):
         cache_folder: Optional[str] = None,
         tensor_parallel_size: int = 1,
         gpu_memory_utilization: float = 0.90,
+        cache_dir="/data/hdd1/vllm_models/",
         **kwargs,
     ):
         """
@@ -39,7 +40,7 @@ class ChessQueryProcessor(BaseUserQueryProcessor):
         self.model_name_or_path = model_name_or_path
         self.cache_folder = cache_folder
         self.keywords_cache: Optional[Dict[str, List[str]]] = None
-
+        self.cache_dir = cache_dir
         if self.cache_folder:
             os.makedirs(self.cache_folder, exist_ok=True)
             self.cache_file = os.path.join(
@@ -139,12 +140,14 @@ Only output the Python list. Do not include any introduction, explanation, or ma
             self.tokenizer = AutoTokenizer.from_pretrained(
                 self.model_name_or_path,
                 trust_remote_code=self.vllm_args["trust_remote_code"],
+                cache_dir=self.cache_dir,
             )
         if self.llm is None:
             self.llm = LLM(
                 model=self.model_name_or_path,
                 tensor_parallel_size=self.tensor_parallel_size,
                 gpu_memory_utilization=self.gpu_memory_utilization,
+                download_dir=self.cache_dir,
                 **self.vllm_args,
             )
         if self.sampling_params is None:

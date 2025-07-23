@@ -148,5 +148,5 @@ class OmniSQLRetriever(BaseRetriever):
         for res_dict in aggregated_results:
             sorted_res = sorted(res_dict.values(), key=lambda r: r.score, reverse=True)
             final_batches.append(sorted_res)
-
+        print(f"Sample from retriver: \n {final_batches[0]}")
         return final_batches
