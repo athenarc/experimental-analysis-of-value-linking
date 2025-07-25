@@ -47,13 +47,12 @@ SEARCHER_METHODS = [
     },
 ]
 SEARCHER_METHODS = [
-
     {
-        "name": "OpenSearch",
-        "loader_class": OpenSearchValueLoader,
-        "retriever_class": OpenSearchDenseValueRetriever,
-        "index_subdir": "opensearch",
-    },
+        "name": "CHESS",
+        "loader_class": ChessDBLoader,
+        "retriever_class": ChessMinHashLshRetriever,
+        "index_subdir": "chess",
+    }
 ]
 def main():
     """

@@ -30,7 +30,7 @@ class ChessSimilarityReranker(BaseReranker):
             edit_distance_threshold: The minimum SequenceMatcher ratio to pass the first filter.
             embedding_similarity_threshold: The minimum cosine similarity to pass the second filter.
         """
-        self.model = SentenceTransformer(model_name)
+        self.model = SentenceTransformer(model_name,device="cuda")
         self.edit_distance_threshold = edit_distance_threshold
         self.embedding_similarity_threshold = embedding_similarity_threshold
 
@@ -67,10 +67,10 @@ class ChessSimilarityReranker(BaseReranker):
 
             # Batch encode all necessary embeddings
             keyword_list = list(keywords_to_embed)
-            keyword_embeddings = self.model.encode(keyword_list)
+            keyword_embeddings = self.model.encode(keyword_list,batch_size=8)
             keyword_emb_map = {kw: emb for kw, emb in zip(keyword_list, keyword_embeddings)}
             
-            content_embeddings = self.model.encode(contents_to_embed)
+            content_embeddings = self.model.encode(contents_to_embed,batch_size=8)
             
             filtered_and_rescored = []
             for i, res in enumerate(candidate_list):

@@ -19,6 +19,7 @@ from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnis
 from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_query_processor import OmniSQLQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_reranker import OmniSQLReranker
 from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
+from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.codes_reranker import CodesReranker
 
 # --- OpenSearch (Dense) Imports ---
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
@@ -41,7 +42,7 @@ K_VALUES = [1, 5, 10, 20, 50]
 RETRIEVAL_DEPTH = 100 # Retrieve a fixed large number for full evaluation
 
 # Model Configuration
-LLM_MODEL_PATH = "mlx-community/gemma-3n-E4B-it-4bit"
+LLM_MODEL_PATH = "gaunernst/gemma-3-4b-it-int4-awq"
 EMBEDDING_MODEL_PATH = "BAAI/bge-m3"
 
 def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]]]]:
@@ -84,50 +85,56 @@ def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], 
     return grouped_data
 
 def get_system_configs():
-    """Returns a dictionary of all system configurations."""
+    """
+    Returns a dictionary of all system configurations, with expensive components
+    pre-initialized.
+    """
+    print("Initializing all system searchers. This may take a moment...")
     
-    # This is a factory function that will be called with a db_id
-    def get_chess_config(db_id):
-        db_dir_path = os.path.join(DATABASES_ROOT, db_id)
-        return {
-            "loader": ChessDBLoader(db_directory_path=db_dir_path),
-            "searcher": Searcher(
-                query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.35),
-                retrievers=[ChessMinHashLshRetriever()],
-                reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
-            ),
-            "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-        }
+    # Pre-initialize all expensive components once
+    chess_searcher = Searcher(
+        query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
+        retrievers=[ChessMinHashLshRetriever(threshold=0.4)],
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+    )
 
-    def get_omnisql_config(db_id):
-        db_file_path = os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")
-        return {
-            "loader": OmniSQLLoader(db_file_path=db_file_path),
-            "searcher": Searcher(
-                query_processor=OmniSQLQueryProcessor(n=8),
-                retrievers=[OmniSQLRetriever()],
-                reranker=OmniSQLReranker(score_threshold=0.8)
-            ),
-            "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        }
+    # omnisql_searcher = Searcher(
+    #     query_processor=OmniSQLQueryProcessor(n=8),
+    #     retrievers=[OmniSQLRetriever()],
+    #     reranker=CodesReranker()
+    # )
 
-    def get_opensearch_config(db_id):
-        db_file_path = os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")
-        return {
-            "loader": OpenSearchValueLoader(db_path=db_file_path, db_id=db_id),
-            "searcher": Searcher(
-                query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.35),
-                retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-                reranker=OpenSearchPassthroughReranker()
-            ),
-            "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-        }
+    # opensearch_searcher = Searcher(
+    #     query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.35),
+    #     retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+    #     reranker=OpenSearchPassthroughReranker()
+    # )
 
-    return {
-        "CHESS": get_chess_config,
-        "OmniSQL": get_omnisql_config,
-        "OpenSearch": get_opensearch_config,
+    configs = {
+        "CHESS": {
+            "searcher": chess_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
+            }
+        },
+        # "OmniSQL": {
+        #     "searcher": omnisql_searcher,
+        #     "get_db_specifics": lambda db_id: {
+        #         "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+        #         "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+        #     }
+        # },
+        # "OpenSearch": {
+        #     "searcher": opensearch_searcher,
+        #     "get_db_specifics": lambda db_id: {
+        #         "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+        #         "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+        #     }
+        # }
     }
+    print("All systems initialized.")
+    return configs
 
 
 def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
@@ -162,7 +169,7 @@ def main():
     evaluator = RetrievalEvaluator()
 
     # --- Outer loop: Iterate over each system ---
-    for system_name, config_factory in system_configs.items():
+    for system_name, system_config in system_configs.items():
         print(f"\n{'='*30}\nRUNNING BENCHMARK FOR SYSTEM: {system_name}\n{'='*30}")
 
         wandb.init(
@@ -174,27 +181,28 @@ def main():
 
         all_db_summaries = []
         per_db_table_data = []
+        
+        # Get the single, pre-initialized searcher for this system
+        searcher = system_config["searcher"]
 
         # --- Inner loop: Iterate over each database for the current system ---
         for db_id, (queries, gold_standard) in benchmark_data.items():
             print(f"\n--- Evaluating on DB: {db_id} for System: {system_name} ---")
 
-            # Get the specific configuration for this system and db_id
-            config = config_factory(db_id)
-            searcher = config["searcher"]
-            index_path = config["index_path"]
+            # Get the database-specific paths and loader factory
+            db_specifics = system_config["get_db_specifics"](db_id)
+            index_path = db_specifics["index_path"]
             
             if not os.path.exists(index_path) or not os.listdir(index_path):
                 print(f"Index not found for {db_id} at {index_path}. Skipping.")
-                # You might want to run indexing here if it's missing
-                # searcher.index(loader=config["loader"], output_path=index_path)
                 continue
 
-            # Run search to get predicted results
+            # Run search to get predicted results using the single searcher instance
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
             )
-
+            print(f"Retrieved result sample \n {predicted_results[0]}\n")
+            print(f"Gold standard sample \n {gold_standard[0]}\n")
             # Evaluate performance for this database on the full set of results
             summary = evaluator.evaluate(predicted_results, gold_standard)
             all_db_summaries.append(summary)
@@ -223,7 +231,7 @@ def main():
             aggregated_metrics = aggregate_summaries(all_db_summaries)
             wandb.summary.update(aggregated_metrics)
             
-            print("\n--- Aggregated Summary for System: {system_name} ---")
+            print(f"\n--- Aggregated Summary for System: {system_name} ---")
             summary_df = pd.DataFrame([aggregated_metrics])
             print(summary_df.to_markdown(index=False))
 
