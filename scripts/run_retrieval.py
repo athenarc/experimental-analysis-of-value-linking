@@ -32,6 +32,7 @@ BASE_PATH = "development/experimental_analysis_of_value_linking/assets"
 DATABASES_ROOT = os.path.join(BASE_PATH, "retrievers", "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "retrievers", "indexes")
 BENCHMARK_FILE = os.path.join(BASE_PATH, "all_benchmarks_human/all_dump_good.json")
+MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
@@ -92,11 +93,11 @@ def get_system_configs():
     print("Initializing all system searchers. This may take a moment...")
     
     # Pre-initialize all expensive components once
-    chess_searcher = Searcher(
-        query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
-        retrievers=[ChessMinHashLshRetriever(threshold=0.4)],
-        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
-    )
+    #chess_searcher = Searcher(
+    #    query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
+    #    retrievers=[ChessMinHashLshRetriever()],
+    #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+    #)
 
     # omnisql_searcher = Searcher(
     #     query_processor=OmniSQLQueryProcessor(n=8),
@@ -104,20 +105,20 @@ def get_system_configs():
     #     reranker=CodesReranker()
     # )
 
-    # opensearch_searcher = Searcher(
-    #     query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.35),
-    #     retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-    #     reranker=OpenSearchPassthroughReranker()
-    # )
+    opensearch_searcher = Searcher(
+        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.35),
+        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+        reranker=OpenSearchPassthroughReranker()
+    )
 
     configs = {
-        "CHESS": {
-            "searcher": chess_searcher,
-            "get_db_specifics": lambda db_id: {
-                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
-                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-            }
-        },
+        #"CHESS": {
+        #    "searcher": chess_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+        #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
+        #    }
+        #},
         # "OmniSQL": {
         #     "searcher": omnisql_searcher,
         #     "get_db_specifics": lambda db_id: {
@@ -125,13 +126,13 @@ def get_system_configs():
         #         "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
         #     }
         # },
-        # "OpenSearch": {
-        #     "searcher": opensearch_searcher,
-        #     "get_db_specifics": lambda db_id: {
-        #         "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
-        #         "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-        #     }
-        # }
+        "OpenSearch": {
+            "searcher": opensearch_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+                "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+            }
+        }
     }
     print("All systems initialized.")
     return configs
@@ -168,6 +169,9 @@ def main():
     system_configs = get_system_configs()
     evaluator = RetrievalEvaluator()
 
+    # List to hold all failure cases from all systems and DBs
+    all_systems_failures = []
+
     # --- Outer loop: Iterate over each system ---
     for system_name, system_config in system_configs.items():
         print(f"\n{'='*30}\nRUNNING BENCHMARK FOR SYSTEM: {system_name}\n{'='*30}")
@@ -201,11 +205,22 @@ def main():
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
             )
-            print(f"Retrieved result sample \n {predicted_results[0]}\n")
-            print(f"Gold standard sample \n {gold_standard[0]}\n")
             # Evaluate performance for this database on the full set of results
             summary = evaluator.evaluate(predicted_results, gold_standard)
             all_db_summaries.append(summary)
+
+            # Log failure cases where recall was not perfect
+            for i, query_metric in enumerate(summary.per_query_details):
+                if query_metric.perfect_recall == 0.0:
+                    failure_case = {
+                        "system": system_name,
+                        "db_id": db_id,
+                        "query_index_in_db": query_metric.query_index,
+                        "query": queries[i],
+                        "missed_gold_items": query_metric.missed_items,
+                        "retrieved_items": query_metric.retrieved_items,
+                    }
+                    all_systems_failures.append(failure_case)
 
             # Log per-DB results
             db_metrics = {
@@ -236,6 +251,16 @@ def main():
             print(summary_df.to_markdown(index=False))
 
         wandb.finish()
+
+    # Save all collected failure cases to the specified JSON file
+    if all_systems_failures:
+        output_dir = os.path.dirname(MISSED_ITEMS_FILE)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        
+        with open(MISSED_ITEMS_FILE, "w", encoding="utf-8") as f:
+            json.dump(all_systems_failures, f, indent=4, ensure_ascii=False)
+        print(f"\nSaved {len(all_systems_failures)} total failure cases to {MISSED_ITEMS_FILE}")
 
     print("\n\nBenchmarking finished for all systems.")
 

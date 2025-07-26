@@ -21,7 +21,7 @@ class ChessMinHashLshRetriever(BaseRetriever):
         self,
         num_perm: int = 100,
         n_gram: int = 3,
-        threshold: float = 0.40,
+        threshold: float = 0.20,
         enable_tqdm: bool = True,
     ):
         """
@@ -97,12 +97,10 @@ class ChessMinHashLshRetriever(BaseRetriever):
         lsh_path = os.path.join(output_path, self.LSH_INDEX_FILENAME)
         items_path = os.path.join(output_path, self.ITEMS_FILENAME)
 
-        print(f"Loading CHESS index from disk: {output_path}")
         with open(lsh_path, "rb") as f:
             lsh, minhash_map = pickle.load(f)
         with open(items_path, "rb") as f:
             items_list = pickle.load(f)
-        print("CHESS index loaded into memory.")
         
         items_map = {item.item_id: item for item in items_list}
 

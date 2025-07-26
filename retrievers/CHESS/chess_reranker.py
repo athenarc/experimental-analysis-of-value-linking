@@ -52,7 +52,6 @@ class ChessSimilarityReranker(BaseReranker):
             if not candidate_list:
                 final_batches.append([])
                 continue
-            
             # Gather all unique keywords and contents for efficient batch embedding
             keywords_to_embed = set()
             contents_to_embed = []
