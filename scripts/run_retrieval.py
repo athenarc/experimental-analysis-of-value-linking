@@ -43,7 +43,7 @@ K_VALUES = [1, 5, 10, 20, 50]
 RETRIEVAL_DEPTH = 100 # Retrieve a fixed large number for full evaluation
 
 # Model Configuration
-LLM_MODEL_PATH = "gaunernst/gemma-3-4b-it-int4-awq"
+LLM_MODEL_PATH = "gaunernst/gemma-3-12b-it-int4-awq"
 EMBEDDING_MODEL_PATH = "BAAI/bge-m3"
 
 def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]]]]:
@@ -106,7 +106,7 @@ def get_system_configs():
     # )
 
     opensearch_searcher = Searcher(
-        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.35),
+        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
         retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
         reranker=OpenSearchPassthroughReranker()
     )
@@ -148,18 +148,27 @@ def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
     total_fn = sum(q_metric.false_negatives for s in summaries for q_metric in s.per_query_details)
     
     num_queries = sum(s.num_queries for s in summaries)
+    
+    # Weighted average for recall and PRR metrics
     perfect_recall_sum = sum(s.perfect_recall_rate * s.num_queries for s in summaries)
+    recall_non_numerical_sum = sum(s.overall_recall_non_numerical * s.num_queries for s in summaries)
+    perfect_recall_non_numerical_sum = sum(s.perfect_recall_rate_non_numerical * s.num_queries for s in summaries)
 
     precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
     recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
     f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
     prr = perfect_recall_sum / num_queries if num_queries > 0 else 0.0
+    recall_non_numerical = recall_non_numerical_sum / num_queries if num_queries > 0 else 0.0
+    prr_non_numerical = perfect_recall_non_numerical_sum / num_queries if num_queries > 0 else 0.0
+
 
     return {
         "Overall Precision": precision,
         "Overall Recall": recall,
         "Overall F1 Score": f1,
         "Overall Perfect Recall Rate": prr,
+        "Overall Recall (Non-Numerical)": recall_non_numerical,
+        "Overall Perfect Recall Rate (Non-Numerical)": prr_non_numerical,
         "Total Queries": num_queries
     }
 
@@ -209,9 +218,9 @@ def main():
             summary = evaluator.evaluate(predicted_results, gold_standard)
             all_db_summaries.append(summary)
 
-            # Log failure cases where recall was not perfect
+            # Log failure cases where non-numerical recall was not perfect
             for i, query_metric in enumerate(summary.per_query_details):
-                if query_metric.perfect_recall == 0.0:
+                if query_metric.perfect_recall_non_numerical == 0.0:
                     failure_case = {
                         "system": system_name,
                         "db_id": db_id,
@@ -230,15 +239,19 @@ def main():
                 "Recall": summary.overall_recall,
                 "F1 Score": summary.overall_f1_score,
                 "Perfect Recall Rate": summary.perfect_recall_rate,
+                "Recall (Non-Numerical)": summary.overall_recall_non_numerical,
+                "Perfect Recall Rate (Non-Numerical)": summary.perfect_recall_rate_non_numerical,
             }
             per_db_table_data.append(list(db_metrics.values()))
             
             print(f"  Recall on {db_id}: {summary.overall_recall:.4f}")
+            print(f"  Recall (Non-Numerical) on {db_id}: {summary.overall_recall_non_numerical:.4f}")
+
 
         # --- After all databases are processed for the system ---
         if per_db_table_data:
             # Log the detailed per-database performance table
-            columns = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate"]
+            columns = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
             per_db_table = wandb.Table(columns=columns, data=per_db_table_data)
             wandb.log({f"performance_by_database": per_db_table})
 
@@ -263,6 +276,3 @@ def main():
         print(f"\nSaved {len(all_systems_failures)} total failure cases to {MISSED_ITEMS_FILE}")
 
     print("\n\nBenchmarking finished for all systems.")
-
-if __name__ == "__main__":
-    main()
