@@ -1,11 +1,15 @@
 import json
 import os
+from collections import defaultdict
 from typing import Dict, List, Tuple
 
 import pandas as pd
 import wandb
 from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.evaluation.eval_models import EvaluationSummary
+from darelabdb.nlp_retrieval.evaluation.eval_models import (
+    EvaluationSummary,
+    PerQueryMetrics,
+)
 from darelabdb.nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
 from darelabdb.nlp_retrieval.searcher import Searcher
 # --- CHESS Imports ---
@@ -46,9 +50,12 @@ RETRIEVAL_DEPTH = 100 # Retrieve a fixed large number for full evaluation
 LLM_MODEL_PATH = "gaunernst/gemma-3-12b-it-int4-awq"
 EMBEDDING_MODEL_PATH = "BAAI/bge-m3"
 
-def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]]]]:
+def load_and_group_benchmark_data(
+    file_path: str,
+) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]], List[str]]]:
     """
-    Loads benchmark data from the specified JSON file and groups it by db_id.
+    Loads benchmark data from the specified JSON file, groups it by db_id,
+    and extracts the perturbation category for each query.
     """
     with open(file_path, "r", encoding="utf-8") as f:
         all_tasks = json.load(f)
@@ -56,34 +63,46 @@ def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], 
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("question")
+        query = task.get("new_question_correct_value")
         gold_values = task.get("values")
+        changes_info = task.get("changes_information")
 
         if not db_id or not query or not gold_values:
             continue
 
         if db_id not in grouped_data:
-            grouped_data[db_id] = ([], [])
+            grouped_data[db_id] = ([], [], [])  # queries, gold_standards, categories
 
         # Append query
         grouped_data[db_id][0].append(query)
 
+        # Determine the category
+        category = "uncategorized"
+        if isinstance(changes_info, dict):
+            # Find the category key which is not 'original_value'
+            category_keys = [k for k in changes_info if k != "original_value"]
+            if category_keys:
+                category = category_keys[0]
+        grouped_data[db_id][2].append(category)
+
         # Create and append gold standard results
         current_gold_list = []
         for gold_meta in gold_values:
-            # We only need table, column, and value for matching
             relevant_meta = {
                 "table": gold_meta.get("table"),
                 "column": gold_meta.get("column"),
                 "value": gold_meta.get("value"),
             }
-            gold_item = SearchableItem(item_id="gold", content="gold", metadata=relevant_meta)
+            gold_item = SearchableItem(
+                item_id="gold", content="gold", metadata=relevant_meta
+            )
             current_gold_list.append(RetrievalResult(item=gold_item, score=1.0))
-        
+
         grouped_data[db_id][1].append(current_gold_list)
 
     print(f"Loaded benchmark data for {len(grouped_data)} databases from {os.path.basename(file_path)}.")
     return grouped_data
+
 
 def get_system_configs():
     """
@@ -93,46 +112,46 @@ def get_system_configs():
     print("Initializing all system searchers. This may take a moment...")
     
     # Pre-initialize all expensive components once
-    #chess_searcher = Searcher(
-    #    query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
-    #    retrievers=[ChessMinHashLshRetriever()],
-    #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+    chess_searcher = Searcher(
+        query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
+        retrievers=[ChessMinHashLshRetriever()],
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+    )
+
+    #omnisql_searcher = Searcher(
+    #    query_processor=OmniSQLQueryProcessor(n=8),
+    #    retrievers=[OmniSQLRetriever()],
+    #    reranker=CodesReranker()
     #)
 
-    omnisql_searcher = Searcher(
-        query_processor=OmniSQLQueryProcessor(n=8),
-        retrievers=[OmniSQLRetriever()],
-        reranker=CodesReranker()
-    )
-
-    opensearch_searcher = Searcher(
-        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-        reranker=OpenSearchPassthroughReranker()
-    )
+    #opensearch_searcher = Searcher(
+    #    query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+    #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+    #    reranker=OpenSearchPassthroughReranker()
+    #)
 
     configs = {
-        #"CHESS": {
-        #    "searcher": chess_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
-        #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-        #    }
-        #},
-        "OmniSQL": {
-            "searcher": omnisql_searcher,
+        "CHESS": {
+            "searcher": chess_searcher,
             "get_db_specifics": lambda db_id: {
-                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
             }
         },
-        "OpenSearch": {
-            "searcher": opensearch_searcher,
-            "get_db_specifics": lambda db_id: {
-               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
-               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-            }
-        }
+        #"OmniSQL": {
+        #    "searcher": omnisql_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+        #    }
+        #},
+        #"OpenSearch": {
+        #    "searcher": opensearch_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+        #    }
+        #}
     }
     print("All systems initialized.")
     return configs
@@ -173,6 +192,36 @@ def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
     }
 
 
+def aggregate_by_category(
+    all_category_metrics: Dict[str, List[PerQueryMetrics]]
+) -> List[List]:
+    """
+    Aggregates metrics for each category and prepares them for a W&B table.
+    """
+    results_for_table = []
+    for category, metrics_list in all_category_metrics.items():
+        if not metrics_list:
+            continue
+
+        cat_tp = sum(m.true_positives for m in metrics_list)
+        cat_fp = sum(m.false_positives for m in metrics_list)
+        cat_fn = sum(m.false_negatives for m in metrics_list)
+        
+        num_queries = len(metrics_list)
+        perfect_recall_sum = sum(m.perfect_recall for m in metrics_list)
+
+        precision = cat_tp / (cat_tp + cat_fp) if (cat_tp + cat_fp) > 0 else 0.0
+        recall = cat_tp / (cat_tp + cat_fn) if (cat_tp + cat_fn) > 0 else 0.0
+        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+        prr = perfect_recall_sum / num_queries if num_queries > 0 else 0.0
+
+        results_for_table.append([category, precision, recall, f1, prr, num_queries])
+    
+    # Sort by category name for consistent reporting
+    results_for_table.sort(key=lambda x: x[0])
+    return results_for_table
+
+
 def main():
     benchmark_data = load_and_group_benchmark_data(BENCHMARK_FILE)
     system_configs = get_system_configs()
@@ -188,18 +237,19 @@ def main():
         wandb.init(
             project=WANDB_PROJECT,
             entity=WANDB_ENTITY,
-            name=f"{system_name}-Benchmark-Report-Perturbed",
+            name=f"{system_name}-Benchmark-Report",
             reinit=True,
         )
 
         all_db_summaries = []
         per_db_table_data = []
+        category_metrics_for_system = defaultdict(list)
         
         # Get the single, pre-initialized searcher for this system
         searcher = system_config["searcher"]
 
         # --- Inner loop: Iterate over each database for the current system ---
-        for db_id, (queries, gold_standard) in benchmark_data.items():
+        for db_id, (queries, gold_standard, categories) in benchmark_data.items():
             print(f"\n--- Evaluating on DB: {db_id} for System: {system_name} ---")
 
             # Get the database-specific paths and loader factory
@@ -218,12 +268,16 @@ def main():
             summary = evaluator.evaluate(predicted_results, gold_standard)
             all_db_summaries.append(summary)
 
-            # Log failure cases where non-numerical recall was not perfect
+            # Log failure cases and aggregate metrics by category
             for i, query_metric in enumerate(summary.per_query_details):
+                category = categories[i]
+                category_metrics_for_system[category].append(query_metric)
+
                 if query_metric.perfect_recall_non_numerical == 0.0:
                     failure_case = {
                         "system": system_name,
                         "db_id": db_id,
+                        "category": category,
                         "query_index_in_db": query_metric.query_index,
                         "query": queries[i],
                         "missed_gold_items": query_metric.missed_items,
@@ -251,11 +305,17 @@ def main():
         # --- After all databases are processed for the system ---
         if per_db_table_data:
             # Log the detailed per-database performance table
-            columns = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
-            per_db_table = wandb.Table(columns=columns, data=per_db_table_data)
+            columns_db = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
+            per_db_table = wandb.Table(columns=columns_db, data=per_db_table_data)
             wandb.log({f"performance_by_database": per_db_table})
 
-            # Calculate and log the aggregated summary
+            # Calculate and log the performance by category
+            category_table_data = aggregate_by_category(category_metrics_for_system)
+            columns_cat = ["Category", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "# Queries"]
+            per_cat_table = wandb.Table(columns=columns_cat, data=category_table_data)
+            wandb.log({"performance_by_category": per_cat_table})
+
+            # Calculate and log the overall aggregated summary
             aggregated_metrics = aggregate_summaries(all_db_summaries)
             wandb.summary.update(aggregated_metrics)
             
