@@ -56,7 +56,7 @@ def load_and_group_benchmark_data(file_path: str) -> Dict[str, Tuple[List[str], 
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("new_question_correct_value")
+        query = task.get("question")
         gold_values = task.get("values")
 
         if not db_id or not query or not gold_values:
@@ -99,11 +99,11 @@ def get_system_configs():
     #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
     #)
 
-    # omnisql_searcher = Searcher(
-    #     query_processor=OmniSQLQueryProcessor(n=8),
-    #     retrievers=[OmniSQLRetriever()],
-    #     reranker=CodesReranker()
-    # )
+    omnisql_searcher = Searcher(
+        query_processor=OmniSQLQueryProcessor(n=8),
+        retrievers=[OmniSQLRetriever()],
+        reranker=CodesReranker()
+    )
 
     opensearch_searcher = Searcher(
         query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
@@ -119,18 +119,18 @@ def get_system_configs():
         #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
         #    }
         #},
-        # "OmniSQL": {
-        #     "searcher": omnisql_searcher,
-        #     "get_db_specifics": lambda db_id: {
-        #         "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #         "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        #     }
-        # },
+        "OmniSQL": {
+            "searcher": omnisql_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+            }
+        },
         "OpenSearch": {
             "searcher": opensearch_searcher,
             "get_db_specifics": lambda db_id: {
-                "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
-                "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
             }
         }
     }
@@ -188,7 +188,7 @@ def main():
         wandb.init(
             project=WANDB_PROJECT,
             entity=WANDB_ENTITY,
-            name=f"{system_name}-Benchmark-Report",
+            name=f"{system_name}-Benchmark-Report-Perturbed",
             reinit=True,
         )
 
@@ -276,3 +276,6 @@ def main():
         print(f"\nSaved {len(all_systems_failures)} total failure cases to {MISSED_ITEMS_FILE}")
 
     print("\n\nBenchmarking finished for all systems.")
+    
+if __name__ == "__main__":
+    main()

@@ -1,16 +1,30 @@
 import hashlib
 import os
 import sqlite3
-from typing import List
+from typing import Any, List
 
 from darelabdb.nlp_retrieval.core.models import SearchableItem
 from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
 from tqdm import tqdm
 
 
+def _is_number(s: Any) -> bool:
+    """Helper function to check if a value is numeric."""
+    if isinstance(s, (int, float)):
+        return True
+    if isinstance(s, str):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    return False
+
+
 class ChessDBLoader(BaseLoader):
     """
-    Loads data by extracting unique values from a CHESS-style SQLite database.
+    Loads data by extracting unique, non-numeric string values from a
+    CHESS-style SQLite database, excluding common identifier columns.
     """
 
     def __init__(self, db_directory_path: str):
@@ -38,7 +52,8 @@ class ChessDBLoader(BaseLoader):
 
     def load(self) -> List[SearchableItem]:
         """
-        Loads unique values from the database and converts them to SearchableItem objects.
+        Loads unique, non-numeric string values from the database and converts
+        them to SearchableItem objects.
         """
         items: List[SearchableItem] = []
         
@@ -54,15 +69,12 @@ class ChessDBLoader(BaseLoader):
         for table_name in tqdm(table_names, desc=pbar_desc):
             columns_info = self._execute_sql(f'PRAGMA table_info("{table_name}")')
                 
-            # Filter for text columns, excluding common ID/key columns
-            text_columns = [
-                info[1] for info in columns_info
-                if "TEXT" in info[2].upper()
-            ]
+            # Get all column names, no longer filtering for TEXT type
+            all_columns = [info[1] for info in columns_info]
 
-            # 3. For each text column, get distinct values
-            for col_name in text_columns:
-                # Skip columns that are likely identifiers or noisy
+            # For each column, get distinct values
+            for col_name in all_columns:
+                # Keep the original column name filtering logic
                 if any(
                     keyword in col_name.lower()
                     for keyword in ["_id", " id", "url", "email", "phone", "date"]
@@ -74,7 +86,12 @@ class ChessDBLoader(BaseLoader):
                 )
 
                 for row in distinct_values:
-                    value = str(row[0])
+                    value = row[0]
+
+                    # NEW: Check if the value is a non-numeric string, like in OmniSQLLoader
+                    if not isinstance(value, str) or _is_number(value):
+                        continue
+
                     if not value.strip():
                         continue
                     
