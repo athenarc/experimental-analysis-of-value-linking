@@ -52,10 +52,9 @@ EMBEDDING_MODEL_PATH = "BAAI/bge-m3"
 
 def load_and_group_benchmark_data(
     file_path: str,
-) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]], List[str]]]:
+) -> Dict[str, Tuple[List[str], List[List[RetrievalResult]], List[str], List[str]]]:
     """
-    Loads benchmark data from the specified JSON file, groups it by db_id,
-    and extracts the perturbation category for each query.
+    Loads benchmark data, groups it by db_id, and extracts categories and sources.
     """
     with open(file_path, "r", encoding="utf-8") as f:
         all_tasks = json.load(f)
@@ -63,15 +62,21 @@ def load_and_group_benchmark_data(
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("new_question_correct_value")
+        query = task.get("question")
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
+        source = task.get("source", "other")
 
         if not db_id or not query or not gold_values:
             continue
 
         if db_id not in grouped_data:
-            grouped_data[db_id] = ([], [], [])  # queries, gold_standards, categories
+            grouped_data[db_id] = (
+                [],
+                [],
+                [],
+                [],
+            )  # queries, gold, categories, sources
 
         # Append query
         grouped_data[db_id][0].append(query)
@@ -79,11 +84,18 @@ def load_and_group_benchmark_data(
         # Determine the category
         category = "uncategorized"
         if isinstance(changes_info, dict):
-            # Find the category key which is not 'original_value'
             category_keys = [k for k in changes_info if k != "original_value"]
             if category_keys:
                 category = category_keys[0]
         grouped_data[db_id][2].append(category)
+
+        # Determine the source
+        source_key = "other"
+        if "bird" in source.lower():
+            source_key = "bird"
+        elif "spider" in source.lower():
+            source_key = "spider"
+        grouped_data[db_id][3].append(source_key)
 
         # Create and append gold standard results
         current_gold_list = []
@@ -157,21 +169,21 @@ def get_system_configs():
     return configs
 
 
-def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
-    """Aggregates multiple EvaluationSummary objects into a single set of micro-averaged metrics."""
-    if not summaries:
+def aggregate_metrics_from_details(
+    query_metrics_details: List[PerQueryMetrics],
+) -> Dict:
+    """Aggregates a list of PerQueryMetrics objects into a single summary dictionary."""
+    if not query_metrics_details:
         return {}
 
-    total_tp = sum(q_metric.true_positives for s in summaries for q_metric in s.per_query_details)
-    total_fp = sum(q_metric.false_positives for s in summaries for q_metric in s.per_query_details)
-    total_fn = sum(q_metric.false_negatives for s in summaries for q_metric in s.per_query_details)
-    
-    num_queries = sum(s.num_queries for s in summaries)
-    
-    # Weighted average for recall and PRR metrics
-    perfect_recall_sum = sum(s.perfect_recall_rate * s.num_queries for s in summaries)
-    recall_non_numerical_sum = sum(s.overall_recall_non_numerical * s.num_queries for s in summaries)
-    perfect_recall_non_numerical_sum = sum(s.perfect_recall_rate_non_numerical * s.num_queries for s in summaries)
+    total_tp = sum(m.true_positives for m in query_metrics_details)
+    total_fp = sum(m.false_positives for m in query_metrics_details)
+    total_fn = sum(m.false_negatives for m in query_metrics_details)
+    num_queries = len(query_metrics_details)
+
+    perfect_recall_sum = sum(m.perfect_recall for m in query_metrics_details)
+    recall_non_numerical_sum = sum(m.recall_non_numerical for m in query_metrics_details)
+    perfect_recall_non_numerical_sum = sum(m.perfect_recall_non_numerical for m in query_metrics_details)
 
     precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
     recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
@@ -180,7 +192,6 @@ def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
     recall_non_numerical = recall_non_numerical_sum / num_queries if num_queries > 0 else 0.0
     prr_non_numerical = perfect_recall_non_numerical_sum / num_queries if num_queries > 0 else 0.0
 
-
     return {
         "Overall Precision": precision,
         "Overall Recall": recall,
@@ -188,38 +199,76 @@ def aggregate_summaries(summaries: List[EvaluationSummary]) -> Dict:
         "Overall Perfect Recall Rate": prr,
         "Overall Recall (Non-Numerical)": recall_non_numerical,
         "Overall Perfect Recall Rate (Non-Numerical)": prr_non_numerical,
-        "Total Queries": num_queries
+        "Total Queries": num_queries,
     }
 
 
 def aggregate_by_category(
-    all_category_metrics: Dict[str, List[PerQueryMetrics]]
+    all_query_details_with_cat: List[Tuple[PerQueryMetrics, str]]
 ) -> List[List]:
-    """
-    Aggregates metrics for each category and prepares them for a W&B table.
-    """
-    results_for_table = []
-    for category, metrics_list in all_category_metrics.items():
-        if not metrics_list:
-            continue
-
-        cat_tp = sum(m.true_positives for m in metrics_list)
-        cat_fp = sum(m.false_positives for m in metrics_list)
-        cat_fn = sum(m.false_negatives for m in metrics_list)
-        
-        num_queries = len(metrics_list)
-        perfect_recall_sum = sum(m.perfect_recall for m in metrics_list)
-
-        precision = cat_tp / (cat_tp + cat_fp) if (cat_tp + cat_fp) > 0 else 0.0
-        recall = cat_tp / (cat_tp + cat_fn) if (cat_tp + cat_fn) > 0 else 0.0
-        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
-        prr = perfect_recall_sum / num_queries if num_queries > 0 else 0.0
-
-        results_for_table.append([category, precision, recall, f1, prr, num_queries])
+    """Aggregates metrics for each category."""
     
-    # Sort by category name for consistent reporting
+    metrics_by_category = defaultdict(list)
+    for metric, category in all_query_details_with_cat:
+        metrics_by_category[category].append(metric)
+
+    results_for_table = []
+    for category, metrics_list in metrics_by_category.items():
+        agg_metrics = aggregate_metrics_from_details(metrics_list)
+        results_for_table.append([
+            category,
+            agg_metrics["Overall Precision"],
+            agg_metrics["Overall Recall"],
+            agg_metrics["Overall F1 Score"],
+            agg_metrics["Overall Perfect Recall Rate"],
+            agg_metrics["Total Queries"]
+        ])
+    
     results_for_table.sort(key=lambda x: x[0])
     return results_for_table
+
+
+def generate_wandb_report(
+    run_name: str,
+    all_query_details_with_cat: List[Tuple[PerQueryMetrics, str]],
+    all_db_summaries: List[EvaluationSummary],
+    per_db_table_data: List[List],
+):
+    """Initializes a W&B run and logs all aggregated tables and summaries."""
+    if not all_query_details_with_cat:
+        print(f"Skipping W&B report for {run_name} as there is no data.")
+        return
+
+    wandb.init(
+        project=WANDB_PROJECT,
+        entity=WANDB_ENTITY,
+        name=run_name,
+        reinit=True,
+    )
+
+    # Log the detailed per-database performance table
+    if per_db_table_data:
+        columns_db = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
+        per_db_table = wandb.Table(columns=columns_db, data=per_db_table_data)
+        wandb.log({f"performance_by_database": per_db_table})
+
+    # Calculate and log the performance by category
+    category_table_data = aggregate_by_category(all_query_details_with_cat)
+    if category_table_data:
+        columns_cat = ["Category", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "# Queries"]
+        per_cat_table = wandb.Table(columns=columns_cat, data=category_table_data)
+        wandb.log({"performance_by_category": per_cat_table})
+
+    # Calculate and log the overall aggregated summary for this specific run
+    all_query_metrics = [metric for metric, cat in all_query_details_with_cat]
+    aggregated_metrics = aggregate_metrics_from_details(all_query_metrics)
+    wandb.summary.update(aggregated_metrics)
+    
+    print(f"\n--- Aggregated Summary for Report: {run_name} ---")
+    summary_df = pd.DataFrame([aggregated_metrics])
+    print(summary_df.to_markdown(index=False))
+
+    wandb.finish()
 
 
 def main():
@@ -227,32 +276,23 @@ def main():
     system_configs = get_system_configs()
     evaluator = RetrievalEvaluator()
 
-    # List to hold all failure cases from all systems and DBs
     all_systems_failures = []
 
     # --- Outer loop: Iterate over each system ---
     for system_name, system_config in system_configs.items():
         print(f"\n{'='*30}\nRUNNING BENCHMARK FOR SYSTEM: {system_name}\n{'='*30}")
 
-        wandb.init(
-            project=WANDB_PROJECT,
-            entity=WANDB_ENTITY,
-            name=f"{system_name}-Benchmark-Report",
-            reinit=True,
-        )
-
-        all_db_summaries = []
-        per_db_table_data = []
-        category_metrics_for_system = defaultdict(list)
-        
-        # Get the single, pre-initialized searcher for this system
         searcher = system_config["searcher"]
+        
+        # Data structures to collect results for the entire system
+        system_all_db_summaries = []
+        system_per_db_table_data = []
+        system_all_query_details_with_cat = []
 
-        # --- Inner loop: Iterate over each database for the current system ---
-        for db_id, (queries, gold_standard, categories) in benchmark_data.items():
+        # --- Inner loop: Iterate over each database ---
+        for db_id, (queries, gold_standard, categories, sources) in benchmark_data.items():
             print(f"\n--- Evaluating on DB: {db_id} for System: {system_name} ---")
 
-            # Get the database-specific paths and loader factory
             db_specifics = system_config["get_db_specifics"](db_id)
             index_path = db_specifics["index_path"]
             
@@ -260,70 +300,59 @@ def main():
                 print(f"Index not found for {db_id} at {index_path}. Skipping.")
                 continue
 
-            # Run search to get predicted results using the single searcher instance
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
             )
-            # Evaluate performance for this database on the full set of results
             summary = evaluator.evaluate(predicted_results, gold_standard)
-            all_db_summaries.append(summary)
+            system_all_db_summaries.append(summary)
 
-            # Log failure cases and aggregate metrics by category
+            # Collect detailed results and tag with category and source
             for i, query_metric in enumerate(summary.per_query_details):
-                category = categories[i]
-                category_metrics_for_system[category].append(query_metric)
-
+                system_all_query_details_with_cat.append((query_metric, categories[i], sources[i]))
+                
                 if query_metric.perfect_recall_non_numerical == 0.0:
-                    failure_case = {
+                    all_systems_failures.append({
                         "system": system_name,
                         "db_id": db_id,
-                        "category": category,
+                        "category": categories[i],
+                        "source": sources[i],
                         "query_index_in_db": query_metric.query_index,
                         "query": queries[i],
                         "missed_gold_items": query_metric.missed_items,
                         "retrieved_items": query_metric.retrieved_items,
-                    }
-                    all_systems_failures.append(failure_case)
+                    })
 
-            # Log per-DB results
-            db_metrics = {
-                "Database ID": db_id,
-                "Num Queries": summary.num_queries,
-                "Precision": summary.overall_precision,
-                "Recall": summary.overall_recall,
-                "F1 Score": summary.overall_f1_score,
-                "Perfect Recall Rate": summary.perfect_recall_rate,
-                "Recall (Non-Numerical)": summary.overall_recall_non_numerical,
-                "Perfect Recall Rate (Non-Numerical)": summary.perfect_recall_rate_non_numerical,
-            }
-            per_db_table_data.append(list(db_metrics.values()))
+            # Prepare data for the per-DB table
+            system_per_db_table_data.append([
+                db_id, summary.num_queries, summary.overall_precision, summary.overall_recall,
+                summary.overall_f1_score, summary.perfect_recall_rate,
+                summary.overall_recall_non_numerical, summary.perfect_recall_rate_non_numerical,
+            ])
             
             print(f"  Recall on {db_id}: {summary.overall_recall:.4f}")
             print(f"  Recall (Non-Numerical) on {db_id}: {summary.overall_recall_non_numerical:.4f}")
 
-
-        # --- After all databases are processed for the system ---
-        if per_db_table_data:
-            # Log the detailed per-database performance table
-            columns_db = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
-            per_db_table = wandb.Table(columns=columns_db, data=per_db_table_data)
-            wandb.log({f"performance_by_database": per_db_table})
-
-            # Calculate and log the performance by category
-            category_table_data = aggregate_by_category(category_metrics_for_system)
-            columns_cat = ["Category", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "# Queries"]
-            per_cat_table = wandb.Table(columns=columns_cat, data=category_table_data)
-            wandb.log({"performance_by_category": per_cat_table})
-
-            # Calculate and log the overall aggregated summary
-            aggregated_metrics = aggregate_summaries(all_db_summaries)
-            wandb.summary.update(aggregated_metrics)
+        # --- After all DBs are processed, generate the W&B reports for the system ---
+        if system_all_query_details_with_cat:
+            # 1. Overall Report
+            generate_wandb_report(
+                f"{system_name}-Overall-Report-Perturbed",
+                [(m, c) for m, c, s in system_all_query_details_with_cat],
+                system_all_db_summaries,
+                system_per_db_table_data
+            )
             
-            print(f"\n--- Aggregated Summary for System: {system_name} ---")
-            summary_df = pd.DataFrame([aggregated_metrics])
-            print(summary_df.to_markdown(index=False))
+            # 2. BIRD Report
+            bird_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'bird']
+            bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
+            bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
+            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data)
 
-        wandb.finish()
+            # 3. SPIDER Report
+            spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
+            spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
+            spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
+            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:
