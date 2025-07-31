@@ -1,8 +1,8 @@
 # Define variables
 data_mode='dev' # Options: 'dev', 'train' 
 db_root_path=value_linking #root directory # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
-start=1017 #闭区间
-end=1783  #开区间
+start=55 #闭区间
+end=301  #开区间
 pipeline_nodes='generate_db_schema+extract_col_value+extract_query_noun+column_retrieve_and_other_info+candidate_generate+align_correct+vote+evaluation'
 # pipeline_nodes='column_retrieve_and_other_info'
 # pipeline指当前工作流的节点组合
@@ -20,8 +20,8 @@ pipeline_nodes='generate_db_schema+extract_col_value+extract_query_noun+column_r
     # evaluation
 
 AK='your_ak' #set your ak in src/llm/model.py
-engine1='kosbu/Llama-3.3-70B-Instruct-AWQ'
-#engine1='Qwen/Qwen2.5-Coder-32B-Instruct'
+#engine1='kosbu/Llama-3.3-70B-Instruct-AWQ'
+engine1='Qwen/Qwen2.5-Coder-32B-Instruct'
 engine2='gpt-3.5-turbo-0125'
 engine3='gpt-4-turbo'
 engine4='claude-3-opus-20240229'
@@ -79,17 +79,17 @@ pipeline_setup='{
     },
     "extract_col_value": {
         "engine": "'${engine1}'",
-        "temperature":0.0
+        "temperature":0.7
     },
     "extract_query_noun": {
         "engine": "'${engine1}'",
-        "temperature":0.0
+        "temperature":0.7
     },
     "column_retrieve_and_other_info": {
         "engine": "'${engine1}'",
         "bert_model": "BAAI/bge-m3",  
         "device":"cpu",
-        "temperature":0.3,
+        "temperature":0.7,
         "top_k":10
     },
     "candidate_generate":{
