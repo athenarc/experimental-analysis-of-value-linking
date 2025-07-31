@@ -41,9 +41,10 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
+GROUP_NAME="at_k"
 
 # Evaluation Configuration
-K_VALUES = [1, 5, 10, 20, 50]
+K_VALUES = [1, 2, 3, 5, 10, 20]
 RETRIEVAL_DEPTH = 100 # Retrieve a fixed large number for full evaluation
 
 # Model Configuration
@@ -127,20 +128,20 @@ def get_system_configs():
     chess_searcher = Searcher(
         query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
         retrievers=[ChessMinHashLshRetriever()],
-        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,edit_distance_threshold=0,embedding_similarity_threshold=0)
     )
 
-    #omnisql_searcher = Searcher(
-    #    query_processor=OmniSQLQueryProcessor(n=8),
-    #    retrievers=[OmniSQLRetriever()],
-    #    reranker=CodesReranker()
-    #)
+    omnisql_searcher = Searcher(
+        query_processor=OmniSQLQueryProcessor(n=8),
+        retrievers=[OmniSQLRetriever()],
+        reranker=OmniSQLReranker(0)
+    )
 
-    #opensearch_searcher = Searcher(
-    #    query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-    #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-    #    reranker=OpenSearchPassthroughReranker()
-    #)
+    opensearch_searcher = Searcher(
+        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+        reranker=OpenSearchPassthroughReranker()
+    )
 
     configs = {
         "CHESS": {
@@ -150,20 +151,20 @@ def get_system_configs():
                 "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
             }
         },
-        #"OmniSQL": {
-        #    "searcher": omnisql_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        #    }
-        #},
-        #"OpenSearch": {
-        #    "searcher": opensearch_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
-        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-        #    }
-        #}
+        "OmniSQL": {
+            "searcher": omnisql_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+            }
+        },
+        "OpenSearch": {
+            "searcher": opensearch_searcher,
+            "get_db_specifics": lambda db_id: {
+               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+            }
+        }
     }
     print("All systems initialized.")
     return configs
@@ -228,11 +229,38 @@ def aggregate_by_category(
     return results_for_table
 
 
+def _calculate_and_prepare_k_table(
+    metrics_at_k: Dict[int, Dict[str, float]],
+    k_values: List[int],
+    total_queries: int,
+) -> List[List]:
+    """Helper to calculate final metrics from aggregated counts for a wandb.Table."""
+    if total_queries == 0:
+        return []
+
+    table_data = []
+    for k in sorted(k_values):
+        counts = metrics_at_k[k]
+        total_tp = counts.get('tp', 0)
+        total_fp = counts.get('fp', 0)
+        total_fn = counts.get('fn', 0)
+        perfect_recalls = counts.get('perfect_recalls', 0)
+
+        precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
+        recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
+        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+        prr = perfect_recalls / total_queries if total_queries > 0 else 0.0
+        
+        table_data.append([k, precision, recall, f1, prr])
+    return table_data
+
+
 def generate_wandb_report(
     run_name: str,
     all_query_details_with_cat: List[Tuple[PerQueryMetrics, str]],
     all_db_summaries: List[EvaluationSummary],
     per_db_table_data: List[List],
+    performance_at_k_data: List[List],
 ):
     """Initializes a W&B run and logs all aggregated tables and summaries."""
     if not all_query_details_with_cat:
@@ -244,6 +272,7 @@ def generate_wandb_report(
         entity=WANDB_ENTITY,
         name=run_name,
         reinit=True,
+        group=GROUP_NAME
     )
 
     # Log the detailed per-database performance table
@@ -258,6 +287,12 @@ def generate_wandb_report(
         columns_cat = ["Category", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "# Queries"]
         per_cat_table = wandb.Table(columns=columns_cat, data=category_table_data)
         wandb.log({"performance_by_category": per_cat_table})
+
+    # Log the performance at k table
+    if performance_at_k_data:
+        columns_k = ["@k", "Precision", "Recall", "F1 Score", "Perfect Recall Rate"]
+        perf_at_k_table = wandb.Table(columns=columns_k, data=performance_at_k_data)
+        wandb.log({"performance_at_k": perf_at_k_table})
 
     # Calculate and log the overall aggregated summary for this specific run
     all_query_metrics = [metric for metric, cat in all_query_details_with_cat]
@@ -289,6 +324,12 @@ def main():
         system_per_db_table_data = []
         system_all_query_details_with_cat = []
 
+        # Data structures for metrics@k
+        metrics_at_k_overall = defaultdict(lambda: defaultdict(int))
+        metrics_at_k_bird = defaultdict(lambda: defaultdict(int))
+        metrics_at_k_spider = defaultdict(lambda: defaultdict(int))
+        num_queries_overall, num_queries_bird, num_queries_spider = 0, 0, 0
+
         # --- Inner loop: Iterate over each database ---
         for db_id, (queries, gold_standard, categories, sources) in benchmark_data.items():
             print(f"\n--- Evaluating on DB: {db_id} for System: {system_name} ---")
@@ -300,9 +341,46 @@ def main():
                 print(f"Index not found for {db_id} at {index_path}. Skipping.")
                 continue
 
+            # Update query counts
+            num_queries_overall += len(queries)
+            num_queries_bird += sum(1 for s in sources if s == 'bird')
+            num_queries_spider += sum(1 for s in sources if s == 'spider')
+
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
             )
+
+            # --- Evaluate metrics at different k values ---
+            for k in K_VALUES:
+                predictions_at_k = []
+                for i, pred_list_for_query in enumerate(predicted_results):
+                    gold_list_for_query = gold_standard[i]
+                    granularity_fields = evaluator._get_granularity_fields_for_query(gold_list_for_query)
+                    deduplicated_list = evaluator.deduplicate_by_granularity(pred_list_for_query, granularity_fields)
+                    sliced_list = deduplicated_list[:k]
+                    predictions_at_k.append(sliced_list)
+
+                summary_at_k = evaluator.evaluate(predictions_at_k, gold_standard)
+                for i, q_metric in enumerate(summary_at_k.per_query_details):
+                    source = sources[i]
+                    
+                    metrics_at_k_overall[k]['tp'] += q_metric.true_positives
+                    metrics_at_k_overall[k]['fp'] += q_metric.false_positives
+                    metrics_at_k_overall[k]['fn'] += q_metric.false_negatives
+                    metrics_at_k_overall[k]['perfect_recalls'] += q_metric.perfect_recall
+
+                    if source == 'bird':
+                        metrics_at_k_bird[k]['tp'] += q_metric.true_positives
+                        metrics_at_k_bird[k]['fp'] += q_metric.false_positives
+                        metrics_at_k_bird[k]['fn'] += q_metric.false_negatives
+                        metrics_at_k_bird[k]['perfect_recalls'] += q_metric.perfect_recall
+                    elif source == 'spider':
+                        metrics_at_k_spider[k]['tp'] += q_metric.true_positives
+                        metrics_at_k_spider[k]['fp'] += q_metric.false_positives
+                        metrics_at_k_spider[k]['fn'] += q_metric.false_negatives
+                        metrics_at_k_spider[k]['perfect_recalls'] += q_metric.perfect_recall
+
+            # --- Evaluate on full results for other metrics ---
             summary = evaluator.evaluate(predicted_results, gold_standard)
             system_all_db_summaries.append(summary)
 
@@ -335,24 +413,28 @@ def main():
         # --- After all DBs are processed, generate the W&B reports for the system ---
         if system_all_query_details_with_cat:
             # 1. Overall Report
+            overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
                 f"{system_name}-Overall-Report-Perturbed",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
-                system_per_db_table_data
+                system_per_db_table_data,
+                overall_k_table_data
             )
             
             # 2. BIRD Report
             bird_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'bird']
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
-            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data)
+            bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
+            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
-            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data)
+            spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
+            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:

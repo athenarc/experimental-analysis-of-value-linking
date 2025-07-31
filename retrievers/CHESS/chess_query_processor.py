@@ -136,20 +136,6 @@ Only output the Python list. Do not include any introduction, explanation, or ma
         """
         if not nlqs:
             return []
-        if self.tokenizer is None:
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                self.model_name_or_path,
-                trust_remote_code=self.vllm_args["trust_remote_code"],
-                cache_dir=self.cache_dir,
-            )
-        if self.llm is None:
-            self.llm = LLM(
-                model=self.model_name_or_path,
-                tensor_parallel_size=self.tensor_parallel_size,
-                gpu_memory_utilization=self.gpu_memory_utilization,
-                download_dir=self.cache_dir,
-                **self.vllm_args,
-            )
         if self.sampling_params is None:
             self.sampling_params = SamplingParams(**self.sampling_args)
             
@@ -168,6 +154,20 @@ Only output the Python list. Do not include any introduction, explanation, or ma
                 + self.formatted_examples
                 + [{"role": "user", "content": user_content}]
             )
+            if self.tokenizer is None:
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    self.model_name_or_path,
+                    trust_remote_code=self.vllm_args["trust_remote_code"],
+                    cache_dir=self.cache_dir,
+                )
+            if self.llm is None:
+                self.llm = LLM(
+                    model=self.model_name_or_path,
+                    tensor_parallel_size=self.tensor_parallel_size,
+                    gpu_memory_utilization=self.gpu_memory_utilization,
+                    download_dir=self.cache_dir,
+                    **self.vllm_args,
+                )
             prompt_text = self.tokenizer.apply_chat_template(
                 messages, tokenize=False, add_generation_prompt=True
             )
