@@ -2,7 +2,7 @@ import ast
 import json
 import os
 import re
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import (
     BaseUserQueryProcessor,
@@ -128,11 +128,47 @@ Only output the Python list. Do not include any introduction, explanation, or ma
             return []
         return []
 
+    def _expand_keywords(self, keywords: List[str]) -> List[str]:
+        """
+        Expands a list of keywords by splitting them into sub-components.
+        This adapts the logic from CHESS's `_get_to_search_values`.
+        """
+        # Use a set to automatically handle duplicates
+        expanded_set: Set[str] = set()
+
+        for keyword in keywords:
+            keyword = keyword.strip()
+            if not keyword:
+                continue
+
+            # 1. Add the original, unmodified keyword
+            expanded_set.add(keyword)
+
+            # 2. Split by space for multi-word phrases (e.g., "Ian James Thorpe")
+            if " " in keyword:
+                parts = keyword.split()
+                if len(parts) > 1:
+                    for part in parts:
+                        expanded_set.add(part.strip())
+
+            # 3. Handle 'key = value' patterns (e.g., "event_name = 'Swimming'")
+            if "=" in keyword:
+                # Split on the first '=', take the part after it
+                key_value_parts = keyword.split("=", 1)
+                if len(key_value_parts) == 2:
+                    value_part = key_value_parts[1].strip()
+                    # Also remove potential quotes around the value
+                    value_part = value_part.strip("'\"`")
+                    if value_part:
+                        expanded_set.add(value_part)
+
+        return list(expanded_set)
+
     def process(self, nlqs: List[str]) -> List[List[str]]:
         """
         Processes a batch of queries to extract keywords using VLLM.
         The final output for each query is a list containing the original query
-        plus all extracted keywords.
+        plus all extracted and expanded keywords.
         """
         if not nlqs:
             return []
@@ -183,8 +219,11 @@ Only output the Python list. Do not include any introduction, explanation, or ma
                 raw_output = output.outputs[0].text
                 extracted_keywords = self._parse_llm_output(raw_output)
 
-                # Combine original query with keywords for a richer search context
-                final_processed_list = [current_nlq] + extracted_keywords
+                expanded_keywords = self._expand_keywords(extracted_keywords)
+
+                # Combine original query with the *expanded* list of keywords
+                final_processed_list = [current_nlq] + expanded_keywords
+                
                 # Deduplicate while preserving order
                 deduplicated_list = list(dict.fromkeys(final_processed_list))
                 
