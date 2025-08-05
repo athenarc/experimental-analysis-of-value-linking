@@ -2,6 +2,7 @@ import re
 from typing import List, Dict
 from darelabdb.nlp_retrieval.core.models import RetrievalResult
 from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
+from tqdm.auto import tqdm  # <<< CHANGE: Import tqdm
 
 class OpenSearchRuleBasedReranker(BaseReranker):
     """
@@ -16,27 +17,28 @@ class OpenSearchRuleBasedReranker(BaseReranker):
         similarity_threshold: float = 0.8,
         score_proximity_filter: float = 0.3,
         max_candidates_per_group: int = 5,
-        ignore_tables: List[str] = ["sqlite_sequence"]
+        ignore_tables: List[str] = ["sqlite_sequence"],
+        enable_tqdm: bool = True  # <<< CHANGE: Add tqdm toggle
     ):
         """
         Initializes the rule-based reranker.
 
         Args:
-            similarity_threshold (float): The maximum similarity distance a result
-                can have. For cosine similarity from the retriever, this should be
-                a minimum score (e.g., 0.6). We will treat score as similarity here.
+            similarity_threshold (float): The minimum similarity score a result
+                must have to be considered. Higher is better.
             score_proximity_filter (float): The maximum allowed score difference
                 between a candidate and the best-scoring candidate for a given keyword.
             max_candidates_per_group (int): The number of top candidates to consider
                 for each keyword group after initial sorting.
             ignore_tables (List[str]): A list of table names to exclude from results.
+            enable_tqdm (bool): If True, displays a progress bar during reranking.
         """
         # FaissRetriever uses Inner Product on normalized vectors (higher is better).
-        # We will adapt the logic accordingly.
         self.similarity_threshold = similarity_threshold
         self.score_proximity_filter = score_proximity_filter
         self.max_candidates_per_group = max_candidates_per_group
         self.ignore_tables = set(ignore_tables)
+        self.enable_tqdm = enable_tqdm # <<< CHANGE: Store tqdm toggle
 
     def _is_numeric(self, s: str) -> bool:
         """Checks if a string is purely numeric (integer or float)."""
@@ -70,7 +72,7 @@ class OpenSearchRuleBasedReranker(BaseReranker):
         """
         final_batches = []
 
-        for initial_results in results_batch:
+        for initial_results in tqdm(results_batch, desc="Reranking results", disable=not self.enable_tqdm):
             # Group results by the keyword that retrieved them
             keyword_groups: Dict[str, List[RetrievalResult]] = {}
             for res in initial_results:

@@ -187,7 +187,7 @@ ENGINE_CONFIGS: Dict[str, Dict[str, Any]] = {
             "openai_api_key": "EMPTY",  # vLLM doesn't require an API key by default
             "openai_api_base": "http://localhost:5001/v1", # Default vLLM API endpoint. Adjust if your vLLM server is on a different host/port.
             "max_tokens": 2048,         # Adjust as needed for Qwen3's capability and prompt length
-            "temperature": 0.0
+            "temperature": 0.7
         }
     }
 }

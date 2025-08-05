@@ -1141,23 +1141,23 @@ class ValueLinkingDatasetProcessor:
         question_id_counter = 1
 
         for record in data:
-            unique_question = record.get("new_question_correct_value")
+            unique_question = record.get("question")
 
-            if unique_question and unique_question not in processed_questions:
-                processed_questions.add(unique_question)
-                
-                new_record = {
-                    "question_id": question_id_counter,
-                    "db_id": record.get("db_id"),
-                    "question": unique_question,
-                    "evidence": record.get("evidence"),
-                    "SQL": record.get("SQL"),
-                    "difficulty": "simple"
-                }
-                
-                output_records.append(new_record)
-                question_id_counter += 1
+            #if unique_question and unique_question not in processed_questions:
+            processed_questions.add(unique_question)
+            
+            new_record = {
+                "question_id": question_id_counter,
+                "db_id": record.get("db_id"),
+                "question": unique_question,
+                "evidence": record.get("evidence"),
+                "SQL": record.get("SQL"),
+                "difficulty": "simple"
+            }
+            
+            output_records.append(new_record)
+            question_id_counter += 1
 
-        print(f"Total unique questions processed: {len(processed_questions)}")
+        print(f"Total unique questions processed: {len(output_records)}")
         with open(output_json_path, 'w', encoding='utf-8') as f:
             json.dump(output_records, f, indent=2)

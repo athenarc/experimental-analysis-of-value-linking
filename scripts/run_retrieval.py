@@ -28,7 +28,7 @@ from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.codes
 # --- OpenSearch (Dense) Imports ---
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_query_processor import OpenSearchKeywordProcessor
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_reranker import OpenSearchPassthroughReranker
+from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
 
 # --- Configuration ---
@@ -41,7 +41,7 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
-GROUP_NAME="at_k"
+GROUP_NAME="default_parameters"
 
 # Evaluation Configuration
 K_VALUES = [1, 2, 3, 5, 10, 20]
@@ -64,6 +64,7 @@ def load_and_group_benchmark_data(
     for task in all_tasks:
         db_id = task.get("db_id")
         query = task.get("question")
+        # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
         source = task.get("source", "other")
@@ -128,19 +129,19 @@ def get_system_configs():
     chess_searcher = Searcher(
         query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
         retrievers=[ChessMinHashLshRetriever()],
-        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,edit_distance_threshold=0,embedding_similarity_threshold=0)
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
     )
 
     omnisql_searcher = Searcher(
         query_processor=OmniSQLQueryProcessor(n=8),
         retrievers=[OmniSQLRetriever()],
-        reranker=OmniSQLReranker(0)
+        reranker=OmniSQLReranker()
     )
 
     opensearch_searcher = Searcher(
         query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
         retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-        reranker=OpenSearchPassthroughReranker()
+        reranker = OpenSearchRuleBasedReranker()
     )
 
     configs = {

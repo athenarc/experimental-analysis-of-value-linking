@@ -22,12 +22,12 @@ def worker_initializer(db_id: str, args: argparse.Namespace):
         args (argparse.Namespace): The command line arguments.
     """
     db_directory_path = f"{args.db_root_directory}/{db_id}"
-    #logging.info(f"Creating LSH for {db_id}")
-    #make_db_lsh(db_directory_path, 
-    #            signature_size=args.signature_size, 
-    #            n_gram=args.n_gram, 
-    #            threshold=args.threshold,
-    #            verbose=args.verbose)
+    logging.info(f"Creating LSH for {db_id}")
+    make_db_lsh(db_directory_path, 
+                signature_size=args.signature_size, 
+                n_gram=args.n_gram, 
+                threshold=args.threshold,
+                verbose=args.verbose)
     logging.info(f"LSH for {db_id} created.")
     logging.info(f"Creating context vectors for {db_id}")
     make_db_context_vec_db(db_directory_path,
