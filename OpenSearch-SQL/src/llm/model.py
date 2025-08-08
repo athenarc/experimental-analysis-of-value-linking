@@ -7,7 +7,14 @@ from runner.logger import Logger
 from llm.prompts import prompts_fewshot_parse
 def model_chose(step,model="gpt-4 32K"):
     if model.startswith("gpt") or model.startswith("claude35_sonnet") or model.startswith("gemini"):
+        # This new condition ensures "gpt-oss" is NOT caught by the generic "gpt" check
+        if "gpt-oss" in model:
+            return VLLM_req(step, model_name=model)
         return gpt_req(step,model)
+    elif "gpt-oss" in model:
+        return VLLM_req(step, model_name=model)
+    if model == "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8":
+        return VLLM_req(step, model_name=model)
     if model == "deepseek":
         return deep_seek(model)
     if model.startswith("qwen"):

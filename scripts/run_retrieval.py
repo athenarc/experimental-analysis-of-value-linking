@@ -129,20 +129,20 @@ def get_system_configs():
     chess_searcher = Searcher(
         query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
         retrievers=[ChessMinHashLshRetriever()],
-        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH)
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0.8)
     )
 
-    omnisql_searcher = Searcher(
-        query_processor=OmniSQLQueryProcessor(n=8),
-        retrievers=[OmniSQLRetriever()],
-        reranker=OmniSQLReranker()
-    )
+    #omnisql_searcher = Searcher(
+    #    query_processor=OmniSQLQueryProcessor(n=8),
+    #    retrievers=[OmniSQLRetriever()],
+    #    reranker=OmniSQLReranker()
+    #)
 
-    opensearch_searcher = Searcher(
-        query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-        reranker = OpenSearchRuleBasedReranker()
-    )
+    #opensearch_searcher = Searcher(
+    #    query_processor=OpenSearchKeywordProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+    #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+    #    reranker = OpenSearchRuleBasedReranker()
+    #)
 
     configs = {
         "CHESS": {
@@ -152,20 +152,20 @@ def get_system_configs():
                 "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
             }
         },
-        "OmniSQL": {
-            "searcher": omnisql_searcher,
-            "get_db_specifics": lambda db_id: {
-                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-            }
-        },
-        "OpenSearch": {
-            "searcher": opensearch_searcher,
-            "get_db_specifics": lambda db_id: {
-               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
-               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-            }
-        }
+        #"OmniSQL": {
+        #    "searcher": omnisql_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+        #    }
+        #},
+        #"OpenSearch": {
+        #    "searcher": opensearch_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite"), db_id=db_id),
+        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+        #    }
+        #}
     }
     print("All systems initialized.")
     return configs

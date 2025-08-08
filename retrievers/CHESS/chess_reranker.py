@@ -30,7 +30,7 @@ class ChessSimilarityReranker(BaseReranker):
             edit_distance_threshold: The minimum SequenceMatcher ratio to pass the first filter.
             embedding_similarity_threshold: The minimum cosine similarity to pass the second filter.
         """
-        self.model = SentenceTransformer(model_name,device="cuda")
+        self.model = SentenceTransformer(model_name,device="cuda:1",cache_folder="./cache")
         self.edit_distance_threshold = edit_distance_threshold
         self.embedding_similarity_threshold = embedding_similarity_threshold
 
