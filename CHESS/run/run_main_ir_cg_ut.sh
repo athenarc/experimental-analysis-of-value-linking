@@ -4,8 +4,8 @@ data_path=$DATA_PATH # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
 
 config="./run/configs/CHESS_IR_CG_UT.yaml"
 
-num_workers=8 # Number of workers to use for parallel processing, set to 1 for no parallel processing
+num_workers=2 # Number of workers to use for parallel processing, set to 1 for no parallel processing
 
 python3 -u ./src/main.py --data_mode dev --data_path ./data/value_linking/dev.json --config ./run/configs/CHESS_IR_CG_UT.yaml \
-        --num_workers 8 --pick_final_sql true 
+        --num_workers 2 --pick_final_sql true 
 

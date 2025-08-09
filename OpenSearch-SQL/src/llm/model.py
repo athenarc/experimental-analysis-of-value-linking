@@ -13,6 +13,8 @@ def model_chose(step,model="gpt-4 32K"):
         return gpt_req(step,model)
     elif "gpt-oss" in model:
         return VLLM_req(step, model_name=model)
+    if model == "Qwen/Qwen2.5-Coder-32B-Instruct-GPTQ-Int8":
+        return VLLM_req(step, model_name=model)
     if model == "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8":
         return VLLM_req(step, model_name=model)
     if model == "deepseek":
