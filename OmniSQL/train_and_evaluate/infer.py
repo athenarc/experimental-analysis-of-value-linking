@@ -126,11 +126,12 @@ if __name__ == '__main__':
             dtype = "bfloat16", 
             tensor_parallel_size = opt.tensor_parallel_size,
             max_model_len = max_model_len,
-            gpu_memory_utilization = 0.92,
+            gpu_memory_utilization = 0.78,
             swap_space = 42,
             enforce_eager = True,
             disable_custom_all_reduce = True,
-            trust_remote_code = True
+            trust_remote_code = True,
+            download_dir="/data/hdd1/vllm_models/"
         )
         outputs = llm.generate(chat_prompts, sampling_params)
         

@@ -108,7 +108,7 @@ if __name__ == "__main__":
         #"EHRSQL_dev": {"db_path": "./data/EHRSQL/database", "index_path_prefix": "./data/EHRSQL/db_contents_index"},
         # sciencebenchmark_dev
         #"sciencebenchmark_dev": {"db_path": "./data/sciencebenchmark/databases", "index_path_prefix": "./data/sciencebenchmark/db_contents_index"},
-        "value_linking": {"db_path": "value_linking/databases", "index_path_prefix": "value_linking/db_contents_index"},
+        "value_linking": {"db_path": "./data/value_linking/databases", "index_path_prefix": "./data/value_linking/db_contents_index"},
     }
 
     for dataset_name in dataset_info:
