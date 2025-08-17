@@ -1,8 +1,8 @@
 # Define variables
 data_mode='dev' # Options: 'dev', 'train' 
 db_root_path=value_linking #root directory # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
-start=1188 #闭区间
-end=1783  #开区间
+start=1346 #闭区间
+end=2020  #开区间
 pipeline_nodes='generate_db_schema+extract_col_value+extract_query_noun+column_retrieve_and_other_info+candidate_generate+align_correct+vote+evaluation'
 # pipeline_nodes='column_retrieve_and_other_info'
 # pipeline指当前工作流的节点组合

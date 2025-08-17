@@ -3,32 +3,15 @@ set -v
 set -e
 
 DATASET_NAME="bird"
-DATASET_BASE_DIR=${HOME}/work
+DATASET_BASE_DIR="./value_linking"
 
 # for BIRD dev
 DATASET_MODE="dev"
-DATAFILE_PATH="${DATASET_BASE_DIR}/bird/dev_20240627/dev.json"
-DATASET_PATH="${DATASET_BASE_DIR}/bird/dev_20240627/dev_databases"
-TABLES_PATH="${DATASET_BASE_DIR}/bird/dev_20240627/dev_tables.json"
-SAVE_INDEX_PATH="${DATASET_BASE_DIR}/bird/dev_20240627/db_contents_index"
-PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/bird/dev_20240627/dev_bird.json"
-
-
-## for BIRD test
-#DATASET_MODE="test"
-#DATAFILE_PATH="${DATASET_BASE_DIR}/bird/test/test.json"
-#DATASET_PATH="${DATASET_BASE_DIR}/bird/test/test_databases"
-#TABLES_PATH="${DATASET_BASE_DIR}/bird/test/test_tables.json"
-#SAVE_INDEX_PATH="${DATASET_BASE_DIR}/bird/test/db_contents_index"
-#PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/bird/test/test_bird.json"
-
-## for BIRD train
-#DATASET_MODE="train"
-#DATAFILE_PATH="${DATASET_BASE_DIR}/bird/train/train.json"
-#DATASET_PATH="${DATASET_BASE_DIR}/bird/train/train_databases"
-#TABLES_PATH="${DATASET_BASE_DIR}/bird/train/train_tables.json"
-#SAVE_INDEX_PATH="${DATASET_BASE_DIR}/bird/train/db_contents_index"
-#PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/bird/train/train_bird.json"
+DATAFILE_PATH="${DATASET_BASE_DIR}/dev.json"
+DATASET_PATH="${DATASET_BASE_DIR}/databases"
+TABLES_PATH="${DATASET_BASE_DIR}/tables.json"
+SAVE_INDEX_PATH="${DATASET_BASE_DIR}/db_contents_index"
+PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
 
 
 python -m cscsql.service.process.process_dataset \
@@ -40,6 +23,3 @@ python -m cscsql.service.process.process_dataset \
 --mode $DATASET_MODE \
 --value_limit_num 2 \
 --db_content_index_path $SAVE_INDEX_PATH
-
-
-

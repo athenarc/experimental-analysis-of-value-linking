@@ -18,8 +18,7 @@ GOLD_PATH="none"
 DATASET_PATH="${DATASET_BASE_DIR}/databases"
 TABLES_PATH="${DATASET_BASE_DIR}/tables.json"
 SAVE_INDEX_PATH="${DATASET_BASE_DIR}/db_contents_index"
-PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
-ORIGINAL_DATA_JSON="${DATASET_BASE_DIR}/dev.json"
+PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev.json"
 
 
 ## Output file path
@@ -89,7 +88,6 @@ nohup   python -m cscsql.model.pipeline_infer \
 --n_sql_generate $N_SQL_GENERATE \
 --temperature_sql_generate 0.8 \
 --n_sql_merge $N_SQL_MERGE \
---original_data_json $ORIGINAL_DATA_JSON \
 --temperature_sql_merge 0.8 \
  >> ${train_log} 2>&1 &
 
