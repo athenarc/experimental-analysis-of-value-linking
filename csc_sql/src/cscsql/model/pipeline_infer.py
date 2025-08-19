@@ -65,7 +65,8 @@ def run_eval_by_cmd(opt, eval_mode="greedy_search", eval_step=None):
         --few_shot_num {opt.max_few_shot} \
         --seed {opt.seed} \
         --n {n} \
-        --temperature {temperature}"
+        --temperature {temperature} \
+        --original_data_json {opt.original_data_json}"
     os.system(greedy_search_cmd)
 
     vote_file = gs_pred_file[:-5] + "_pred_major_voting_sqls.sql"
@@ -128,6 +129,7 @@ if __name__ == "__main__":
     parser.add_argument("--gen_sqls", type=str, default="none", help="predict generate sql file")
     parser.add_argument("--selection_vote", type=str, default="none", help="selection_vote")
     parser.add_argument("--prompt_mode", type=str, default="merge", help="prompt_mode")
+    parser.add_argument("--original_data_json", type=str, default="none", help="Path to the original data JSON file (e.g., dev.json)")
 
     opt = parser.parse_args()
     if opt.run_time is None:

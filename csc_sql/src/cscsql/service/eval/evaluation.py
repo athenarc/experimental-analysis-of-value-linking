@@ -62,16 +62,18 @@ def execute_model(predicted_sql, ground_truth, db_place, idx, meta_time_out):
     return result
 
 
-def package_sqls(sql_path:str, db_root_path, mode='gpt', data_mode='dev'):
+def package_sqls(sql_path:str, db_root_path, datafile_path, mode='gpt', data_mode='dev'):
     clean_sqls = []
     db_path_list = []
-
-    raw_data = load_json(str(db_root_path).replace("_databases", ".json"))
+    raw_data = load_json(datafile_path)
     db_id_list = [item["db_id"] for item in raw_data]
 
     if sql_path.endswith(".json"):
         predict_data = load_json(sql_path)
     else:
+        if not os.path.exists(sql_path):
+            print(f"Warning: Prediction file not found at {sql_path}. Returning empty list.")
+            return [], []
         predict_data = read_to_text_list(sql_path)
 
     for idx, sql_str in enumerate(predict_data):
@@ -130,10 +132,18 @@ def compute_acc_by_diff(exec_results, diff_json_path):
 
         if content['difficulty'] == 'challenging':
             challenging_results.append(exec_results[i])
-
-    simple_acc = sum([res['res'] for res in simple_results]) / len(simple_results)
-    moderate_acc = sum([res['res'] for res in moderate_results]) / len(moderate_results)
-    challenging_acc = sum([res['res'] for res in challenging_results]) / len(challenging_results)
+    if len(simple_results) == 0:
+        simple_acc = 0
+    else:
+        simple_acc = sum([res['res'] for res in simple_results]) / len(simple_results)
+    if len(moderate_results) == 0:
+        moderate_acc = 0
+    else:
+        moderate_acc = sum([res['res'] for res in moderate_results]) / len(moderate_results)
+    if len(challenging_results) == 0:
+        challenging_acc = 0
+    else:    
+        challenging_acc = sum([res['res'] for res in challenging_results]) / len(challenging_results)
     all_acc = sum(results) / num_queries
     count_lists = [len(simple_results), len(moderate_results), len(challenging_results), num_queries]
     return simple_acc * 100, moderate_acc * 100, challenging_acc * 100, all_acc * 100, count_lists
@@ -163,10 +173,10 @@ if __name__ == '__main__':
     args = args_parser.parse_args()
     exec_result = []
 
-    pred_queries, db_paths = package_sqls(args.predicted_sql_path, args.db_root_path, mode=args.mode_predict,
+    pred_queries, db_paths = package_sqls(args.predicted_sql_path, args.db_root_path, args.diff_json_path, mode=args.mode_predict,
                                           data_mode=args.data_mode)
     # generate gt sqls:
-    gt_queries, db_paths_gt = package_sqls(args.ground_truth_path, args.db_root_path, mode='gt',
+    gt_queries, db_paths_gt = package_sqls(args.ground_truth_path, args.db_root_path, args.diff_json_path, mode='gt',
                                            data_mode=args.data_mode)
 
     query_pairs = list(zip(pred_queries, gt_queries))

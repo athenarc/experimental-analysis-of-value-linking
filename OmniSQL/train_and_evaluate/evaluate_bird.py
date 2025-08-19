@@ -206,7 +206,7 @@ def run_eval(gold_file, pred_file, db_path, mode, save_pred_sqls, num_cpus=20, t
     if "bird" in gold_file:
         ground_truth_sqls = [data["SQL"] for data in gold]
     else:
-        ground_truth_sqls = [data["query"] for data in gold]
+        ground_truth_sqls = [data["SQL"] for data in gold]
 
     if mode == "greedy_search":
         pred_sqls = [res[pred_sql_key][0] for res in pred_results]

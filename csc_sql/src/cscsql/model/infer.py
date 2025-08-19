@@ -201,7 +201,7 @@ if __name__ == '__main__':
     parser.add_argument("--max_lora_rank", type=int, default=64, help="max_lora_rank")
     parser.add_argument("--shuffle_ab", type=int, default=0, help="shuffle_ab")
     parser.add_argument("--system_prompt", type=str, default="default", help="system_prompt")
-
+    parser.add_argument("--original_data_json", type=str, default="none", help="Path to the original data JSON file (e.g., dev.json)")
     opt = parser.parse_args()
     print(opt)
     shuffle_ab = False if opt.shuffle_ab in ['0', 0] else True
@@ -242,7 +242,7 @@ if __name__ == '__main__':
         parse_mode = 'table'
 
     raw_input_dataset = FileUtils.load_json(opt.input_file)
-    raw_data = FileUtils.load_json(str(opt.db_path).replace("_databases", ".json"))
+    raw_data = FileUtils.load_json(opt.original_data_json) if opt.original_data_json != "none" else FileUtils.load_json(str(opt.db_path).replace("_databases", ".json"))
 
     link_table_results = CommonUtils.read_link_table(link_table_files=opt.link_tables,
                                                      is_train=is_train)
@@ -373,6 +373,7 @@ if __name__ == '__main__':
         run_eval_major_vote(gold_file=opt.gold_file,
                             pred_file=opt.output_file,
                             db_path=opt.db_path,
+                            original_data_json=opt.original_data_json,
                             config=opt.__dict__)
 
     if parse_mode == "table" and len(opt.gold_file) > 10:

@@ -6,9 +6,9 @@ import json
 from pathlib import Path
 from typing import Dict, List, Any
 
-from schema_engine import SchemaEngine
+from .schema_engine import SchemaEngine
 from sqlalchemy import create_engine
-from utils import write_jsonl_file
+from .utils import write_jsonl_file
 
 
 def download_with_progress(url: str, path: Path) -> None:

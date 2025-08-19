@@ -258,16 +258,21 @@ def calculate_substring_match_percentage(query, target):
 
 def retrieve_relevant_hits(searcher, queries):
     queries = list(dict.fromkeys(queries))
-    # print("len(queries):", len(queries))
     q_ids = [f"{idx}" for idx in range(len(queries))]
 
     query2hits = dict()
     search_results = searcher.batch_search(queries, q_ids, k=10, threads=60)
+    
     for query, q_id in zip(queries, q_ids):
-        hits = search_results[q_id]
-        hits = list(dict.fromkeys(([hit.raw for hit in hits])))
-        hits = [json.loads(hit) for hit in hits]
-        query2hits[query] = hits
+        hits_for_query = search_results.get(q_id, [])
+        raw_docs = []
+        if hits_for_query:
+            for hit in hits_for_query:
+                raw_docs.append(searcher.doc(hit.docid).raw())
+        
+        unique_raw_docs = list(dict.fromkeys(raw_docs))
+        parsed_hits = [json.loads(doc_str) for doc_str in unique_raw_docs]
+        query2hits[query] = parsed_hits
 
     return query2hits
 

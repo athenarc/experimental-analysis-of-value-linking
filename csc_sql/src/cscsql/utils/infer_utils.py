@@ -186,7 +186,9 @@ def major_voting2(db_files, pred_sqls, sampling_num,
     upper_correctness_list = []
     top2_correctness_list = []
     question_idx = 0
-    for result_idx in range(0, len(execution_results), sampling_num):
+    for result_idx in tqdm(range(0, len(execution_results), sampling_num),
+                       desc="Processing",
+                       total=len(execution_results)//sampling_num):
         major_voting_counting = dict()
         execution_results_of_one_sample = execution_results[result_idx: result_idx + sampling_num]
 
@@ -350,6 +352,7 @@ def calc_nl2sql_result(evaluation_scores: List, gold: List[Dict]):
 
 
 def run_eval_major_vote(gold_file, pred_file, db_path,
+                        original_data_json,
                         num_cpus=30, timeout=30, pred_sql_key="pred_sqls",
                         config: Dict = None):
     pred_results = FileUtils.load_json(pred_file)
@@ -444,8 +447,8 @@ def run_eval_major_vote_table(gold_file, pred_file, db_path,
     if len(pred_results) == 0:
         return None
 
-    dev_file = db_path.replace("_databases", ".json")
-    dev_data = FileUtils.load_json(dev_file)
+    dev_data = FileUtils.load_json(original_data_json)
+
 
     if gold_file and len(gold_file) > 10:
         ground_truth_sqls, gold_dbs = read_packed_sql(gold_file, db_root=db_path)

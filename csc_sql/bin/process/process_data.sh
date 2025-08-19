@@ -7,11 +7,11 @@ DATASET_BASE_DIR="./value_linking"
 
 # for BIRD dev
 DATASET_MODE="dev"
-DATAFILE_PATH="${DATASET_BASE_DIR}/dev.json"
+DATAFILE_PATH="${DATASET_BASE_DIR}/dev_perturbed.json"
 DATASET_PATH="${DATASET_BASE_DIR}/databases"
 TABLES_PATH="${DATASET_BASE_DIR}/tables.json"
 SAVE_INDEX_PATH="${DATASET_BASE_DIR}/db_contents_index"
-PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
+PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_perturbed_prompts.json"
 
 
 python -m cscsql.service.process.process_dataset \

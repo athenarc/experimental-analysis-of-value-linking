@@ -12,14 +12,14 @@ export VLLM_USE_MODELSCOPE=True
 DATASET_NAME="bird"
 DATASET_BASE_DIR="./value_linking"
 DATASET_MODE="dev"
-DATAFILE_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
+DATAFILE_PATH="${DATASET_BASE_DIR}/dev_perturbed_prompts.json"
 # GOLD文件路径，当无GOLD文件时，设置为none
 GOLD_PATH="none"
 DATASET_PATH="${DATASET_BASE_DIR}/databases"
 TABLES_PATH="${DATASET_BASE_DIR}/tables.json"
 SAVE_INDEX_PATH="${DATASET_BASE_DIR}/db_contents_index"
-PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
-ORIGINAL_DATA_JSON="${DATASET_BASE_DIR}/dev.json"
+PROMPT_OUTPUT_PATH="${DATASET_BASE_DIR}/dev_perturbed_prompts.json"
+ORIGINAL_DATA_JSON="${DATASET_BASE_DIR}/dev_perturbed.json"
 
 
 ## Output file path
