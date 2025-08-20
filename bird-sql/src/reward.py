@@ -73,10 +73,10 @@ def main():
     parser.add_argument("--input_file", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--model", type=str, default="models/reward", required=False)
-    parser.add_argument("--max_tokens", type=int, default=1024 * 16)
-    parser.add_argument("--batch_size", type=int, default=1024 * 16, required=False)
+    parser.add_argument("--max_tokens", type=int, default=15000)
+    parser.add_argument("--batch_size", type=int, default=2048*4, required=False)
     parser.add_argument("--output_col", type=str, default="reward")
-    parser.add_argument("--num_gpus", type=int, default=1)
+    parser.add_argument("--num_gpus", type=int, default=2)
     parser.add_argument("--partition_index", type=int, default=0)
     parser.add_argument("--num_partitions", type=int, default=1)
 
@@ -150,10 +150,15 @@ def main():
         model=args.model,
         dtype="bfloat16",
         trust_remote_code=True,
-        gpu_memory_utilization=0.95,
-        max_model_len=args.max_tokens,
+        gpu_memory_utilization=0.85,  # Slightly higher since you need the space
+        max_model_len=15000,  # Exactly 15k tokens
         tensor_parallel_size=args.num_gpus,
-        enable_prefix_caching=True,
+        enable_prefix_caching=False,
+        enable_chunked_prefill=True,
+        enforce_eager=True,  # Can save memory by avoiding CUDA graphs
+        # Add these memory-saving options:
+        quantization=None,
+        max_num_batched_tokens=2048,  # Lower batch processing
     )
     sampling_params = SamplingParams(
         temperature=0, top_p=1.0, max_tokens=1, logits_processors=[logits_processor]

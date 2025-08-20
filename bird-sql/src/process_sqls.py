@@ -87,12 +87,12 @@ def parse_args():
         "--output_dir", required=True, help="Directory to write processed results"
     )
     parser.add_argument(
-        "--num_prompts_per_query", type=int, default=32, help="Number of prompts per query"
+        "--num_prompts_per_query", type=int, default=4, help="Number of prompts per query"
     )
     parser.add_argument(
         "--sql_timeout",
         type=float,
-        default=40.0,
+        default=60.0,
         help="Timeout in seconds for each SQL query",
     )
     parser.add_argument(
