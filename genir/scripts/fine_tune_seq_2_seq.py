@@ -35,6 +35,12 @@ def main(data_path, output_path, base_model, epochs, batch_size, learning_rate):
         db_pbar.set_description(f"Processing DB: {db_id}")
         
         db_output_dir = output_path / db_id
+        final_model_path = db_output_dir / "final_model"
+
+        if final_model_path.exists():
+            print(f"Skipping {db_id}: Final model already exists.")
+            continue
+
         db_output_dir.mkdir(parents=True, exist_ok=True)
 
         raw_dataset = load_dataset('json', data_files=str(jsonl_file), split='train')
@@ -42,25 +48,31 @@ def main(data_path, output_path, base_model, epochs, batch_size, learning_rate):
         all_examples = []
         unique_canonical_values = set()
 
-        for record in tqdm(raw_dataset, desc=f"[{db_id}] Generating training examples"):
+        for record in tqdm(raw_dataset, desc=f"[{db_id}] Filtering and generating examples"):
             canonical_value = record['value']
-            table = record['table']
-            column = record['column']
-            unique_canonical_values.add(canonical_value)
             
-            all_variations = set()
-            for var_list in record['variations'].values():
-                if var_list:
-                    all_variations.update(var_list)
+            if len(canonical_value) <= 100:
+                table = record['table']
+                column = record['column']
+                unique_canonical_values.add(canonical_value)
+                
+                all_variations = set()
+                for var_list in record['variations'].values():
+                    if var_list:
+                        all_variations.update(var_list)
 
-            for variation in all_variations:
-                template = random.choice(QUERY_TEMPLATES)
-                input_text = template.format(table=table, column=column, variation=variation)
-                all_examples.append({
-                    "input_text": input_text,
-                    "target_text": canonical_value
-                })
+                for variation in all_variations:
+                    template = random.choice(QUERY_TEMPLATES)
+                    input_text = template.format(table=table, column=column, variation=variation)
+                    all_examples.append({
+                        "input_text": input_text,
+                        "target_text": canonical_value
+                    })
         
+        if not all_examples:
+            print(f"Skipping {db_id}: No values found after filtering. Nothing to train.")
+            continue
+            
         train_dataset = Dataset.from_list(all_examples)
 
         trie = marisa_trie.Trie(list(unique_canonical_values))
@@ -86,11 +98,12 @@ def main(data_path, output_path, base_model, epochs, batch_size, learning_rate):
             output_dir=str(db_output_dir / "checkpoints"),
             num_train_epochs=epochs,
             per_device_train_batch_size=batch_size,
+            gradient_accumulation_steps=4,
             learning_rate=learning_rate,
             fp16=True,
             save_strategy="epoch",
-            logging_strategy="steps",
-            logging_steps=50,
+            logging_strategy="epoch",
+            group_by_length=True,
             remove_unused_columns=False,
             report_to="none",
         )
@@ -107,7 +120,6 @@ def main(data_path, output_path, base_model, epochs, batch_size, learning_rate):
 
         trainer.train()
 
-        final_model_path = db_output_dir / "final_model"
         trainer.save_model(final_model_path)
         tokenizer.save_pretrained(final_model_path)
         
@@ -119,7 +131,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_path", type=str, required=True, help="Path to the folder where final models and tries will be saved.")
     parser.add_argument("--base_model", type=str, default="google/flan-t5-base", help="Name of the base model from Hugging Face Hub.")
     parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs.")
-    parser.add_argument("--batch_size", type=int, default=16, help="Training batch size per device.")
+    parser.add_argument("--batch_size", type=int, default=16, help="Training batch size PER DEVICE (micro-batch).")
     parser.add_argument("--learning_rate", type=float, default=5e-5, help="Learning rate for the optimizer.")
     
     args = parser.parse_args()

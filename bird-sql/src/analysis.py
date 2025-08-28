@@ -12,10 +12,11 @@ import tqdm.autonotebook as tqdm
 from func_timeout import FunctionTimedOut, func_timeout
 from tabulate import tabulate
 
-from utils import read_jsonl_file, read_tsv_file, write_jsonl_file
+from utils import read_jsonl_file, read_tsv_file, write_jsonl_file # Make sure read_json_file is imported if needed, or use read_jsonl_file for the original data
 
 
 def execute_sql(datum):
+    # This function is unchanged
     conn = sqlite3.connect(datum["db_path"])
     cursor = conn.cursor()
     cursor.execute(datum["predicted_sql"])
@@ -31,6 +32,7 @@ def execute_sql(datum):
 
 
 def execute_sql_robust(args, datum, i):
+    # This function is unchanged
     stderr = io.StringIO()
     with suppress(RuntimeError, ReferenceError), redirect_stderr(stderr):
         try:
@@ -47,6 +49,7 @@ def execute_sql_robust(args, datum, i):
 
 
 def evaluate(args, data):
+    # This function is unchanged
     exec_results = []
 
     def result_callback(result):
@@ -121,6 +124,7 @@ def evaluate(args, data):
 
 
 def select(data, logprob_alpha=0.5):
+    # This function is unchanged
     for datum in data:
         best_sql, best_score, evaluation = "dummy", float("-inf"), None
         for sql in datum["responses"]:
@@ -141,6 +145,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--rewards_dir", type=str, required=True)
     parser.add_argument("--gt_sql_file", type=str, required=True)
+    # Add an argument for the original data file to create the lookup map
+    parser.add_argument("--original_data_file", type=str, default="my_benchmark/test_all.jsonl", help="Path to the original, correctly ordered data file.")
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--num_cpus", type=int, default=1, help="Number of CPUs to use for evaluation")
     parser.add_argument("--meta_time_out", type=float, default=30.0, help="Timeout for evaluation")
@@ -148,13 +154,41 @@ def main():
 
     os.makedirs(args.output_dir, exist_ok=True)
 
+    # --- START OF NEW FIX ---
+    # 1. Load the original data to get the correct order and content
+    print(f"Loading original data from {args.original_data_file} to build ground truth map...")
+    original_data = read_jsonl_file(args.original_data_file)
+    
+    # 2. Load the ground truth SQLs
+    gt_sql_data = read_tsv_file(args.gt_sql_file)
+
+    # 3. Create a robust lookup map: (db_id, question_text) -> ground_truth_sql
+    gt_map = {}
+    if len(original_data) != len(gt_sql_data):
+        print(f"FATAL ERROR: Mismatch between original data count ({len(original_data)}) and ground truth SQL count ({len(gt_sql_data)}).")
+        sys.exit(1)
+
+    for i, item in enumerate(original_data):
+        key = (item['db_id'], item['question'])
+        gt_map[key] = gt_sql_data[i][0]
+    print(f"Ground truth map built successfully with {len(gt_map)} entries.")
+
+    # 4. Load the scrambled data from the rewards directory
     data = []
     for file in glob.glob(os.path.join(args.rewards_dir, "data_reward*.jsonl")):
         data.extend(read_jsonl_file(file))
 
-    gt_sql_data = read_tsv_file(args.gt_sql_file)
+    # 5. Use the map to correctly assign the ground truth SQL to each record
     for datum in data:
-        datum["gt_sql"] = gt_sql_data[datum['question_id']][0]
+        key = (datum['db_id'], datum['question'])
+        if key in gt_map:
+            datum['SQL'] = gt_map[key]
+        else:
+            print(f"FATAL ERROR: Could not find ground truth for a record in the map.")
+            print(f"Key not found: {key}")
+            print(f"Problematic record: {datum}")
+            sys.exit(1)
+    # --- END OF NEW FIX ---
 
     print("Selecting")
     select(data, logprob_alpha=0.4)
