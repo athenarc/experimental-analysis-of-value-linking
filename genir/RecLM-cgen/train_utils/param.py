@@ -89,13 +89,16 @@ def add_args(parse=True, **optional_kwargs):
 def get_args(add_external_args_func=None):
     parser = add_args()
     args, remain_args = parser.parse_known_args()
-    if args.train_stage in ['SFT', 'SFT_Embedding', 'SFT_Embedding_Test', 'SFT_Test', 'SFT_Merge']:
+    # --- MODIFICATION START ---
+    # Add our new stage 'ValueLinking_SFT' to the list of stages that require SFT arguments.
+    sft_stages = ['SFT', 'SFT_Embedding', 'SFT_Embedding_Test', 'SFT_Test', 'SFT_Merge', 'ValueLinking_SFT', 'ValueLinking_Test']
+    if args.train_stage in sft_stages:
         parser = add_args_SFT(parser)
+    # --- MODIFICATION END ---
     if add_external_args_func:
         parser = add_external_args_func(parser)
     args = parser.parse_args(remain_args, args)
     return args
-
 
 class Config(object):
     def __init__(self, **kwargs):

@@ -13,18 +13,19 @@ from .utils import eval_decorator
 def param_init(params):
     if isinstance(params, dict):
         for n, p in params.items():
-            # if p.ndim < 2 or "lora_B" in n:
-            if p.ndim >= 2 and 'lora' in n:
+            if p.ndim >= 2 and 'lora' in n and 'lora_A' in n:
                 try:
-                    nn.init.orthogonal_(p, gain=2 ** 0.5)
-                except RuntimeError as e:
-                    print(n)
-                    print(e)
+                    # Initialize with a standard normal distribution for LoRA A weights
+                    nn.init.normal_(p, mean=0.0, std=0.02)
+                except Exception as e:
+                    print(f"Could not initialize {n}: {e}")
             if 'lora_B' in n:
+                # Initialize LoRA B weights to zero
                 nn.init.zeros_(p)
-    else:
+    else: # This part is likely not used with LoRA, but we keep it for completeness
         for p in params:
-            nn.init.orthogonal_(p, gain=2 ** 0.5)
+             if p.ndim >= 2:
+                nn.init.normal_(p, mean=0.0, std=0.02)
 
 
 class BaseModel(nn.Module):
@@ -38,7 +39,11 @@ class BaseModel(nn.Module):
             self.resize_init_embedding(self.model, self.tokenizer)
 
         self.actor_lora_scope = actor_lora_scope
-        if self.args.train_stage in ['SFT', 'SFT_Embedding', 'SFT_Test', 'SFT_Embedding_Test', 'SFT_Merge'] and self.args.SFT_actor_lora_r > 0:
+        
+        # --- CORRECTED BLOCK ---
+        # List of all stages that should use LoRA fine-tuning
+        sft_stages = ['SFT', 'SFT_Embedding', 'SFT_Test', 'SFT_Embedding_Test', 'SFT_Merge', 'ValueLinking_SFT', 'ValueLinking_Test']
+        if self.args.train_stage in sft_stages and self.args.SFT_actor_lora_r > 0:
             self.actor_lora_config = self.create_lora_config(
                 self.actor_lora_scope,
                 False,
@@ -63,6 +68,7 @@ class BaseModel(nn.Module):
                 self.item_emb.requires_grad_(self.args.item_emb)
 
             param_init(self.actor_named_parameters)
+        # --- END OF CORRECTION ---
 
         if self.args.lm_head:
             self.model.lm_head.requires_grad_(self.args.lm_head)
@@ -154,7 +160,7 @@ class BaseModel(nn.Module):
 
     def create_model_config(self):
         config_class = AutoConfig
-        config = config_class.from_pretrained(self.args.backbone)
+        config = config_class.from_pretrained(self.args.backbone,cache_dir="/data/hdd1/vllm_models/")
         config.dropout_rate = self.args.dropout
         config.dropout = self.args.dropout
         config.attention_dropout = self.args.dropout
@@ -162,7 +168,7 @@ class BaseModel(nn.Module):
         return config
 
     def create_tokenizer(self):
-        tokenizer = AutoTokenizer.from_pretrained(self.args.backbone)
+        tokenizer = AutoTokenizer.from_pretrained(self.args.backbone,cache_dir="/data/hdd1/vllm_models/")
 
         if self.args.chat_template == 'llama-2':
             tokenizer.pad_token = tokenizer.unk_token
@@ -194,14 +200,14 @@ class BaseModel(nn.Module):
                                                 quantization_config=bnb_config,
                                                 device_map=device,
                                                 torch_dtype=torch.bfloat16,
-                                                use_flash_attention_2=self.args.FA2
+                                                cache_dir="/data/hdd1/vllm_models/"
                                                 )
         else:
             model = model_class.from_pretrained(self.args.backbone,
                                                 config=self.model_config,
                                                 device_map=device,
                                                 torch_dtype=torch.bfloat16,
-                                                use_flash_attention_2=self.args.FA2
+                                                cache_dir="/data/hdd1/vllm_models/"
                                                 )
         model.requires_grad_(False)
         return model

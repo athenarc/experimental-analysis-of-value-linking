@@ -4,7 +4,7 @@ import random
 import torch
 from torch.utils.data import Dataset
 from tqdm import tqdm
-
+from collections import defaultdict 
 from .processor import Trie_link
 from .template import *
 from .utils import get_item_list, get_output_text, get_history_text, \
@@ -447,7 +447,7 @@ class ValueLinkingDataset(Dataset):
 
         # Load our custom data files
         self.canonical_values_meta = data['values']
-        self.training_pairs = data['training_pairs']
+        self.all_training_pairs = data['training_pairs']
         
         # item_index for values is just the value string itself
         self.args.item_index = 'value_string' 
@@ -466,7 +466,45 @@ class ValueLinkingDataset(Dataset):
 
         self.datum_info = []
         self.complete_datum_info = []
-        self.compute_datum_info()
+        
+        if self.mode == 'train':
+            self.canonical_to_variations = defaultdict(list)
+            for pair in self.all_training_pairs:
+                if pair['variation'] != pair['canonical_value']:
+                    self.canonical_to_variations[pair['canonical_value']].append(pair['variation'])
+            self.unique_canonical_values = list(self.canonical_to_variations.keys())
+            self.set_epoch(1) # Initialize with data for epoch 1
+        else:
+            self.training_pairs = self.all_training_pairs
+            self.compute_datum_info()
+
+    def set_epoch(self, epoch):
+        if self.mode != 'train':
+            return
+
+        self.datum_info = []
+        task = list(self.task_num.keys())[0] # Assumes one task for value linking
+
+        if epoch <= 5:
+            # Phase 1: Identity mapping (canonical -> canonical)
+            self.training_pairs = [{'variation': v, 'canonical_value': v} for v in self.unique_canonical_values]
+        else:
+            # Phase 2: Sample one variation per canonical value
+            self.training_pairs = []
+            for canonical, variations in self.canonical_to_variations.items():
+                if variations:
+                    chosen_variation = random.choice(variations)
+                    self.training_pairs.append({
+                        'variation': chosen_variation,
+                        'canonical_value': canonical
+                    })
+        
+        # Rebuild datum_info for the new set of training pairs
+        for num in self.task_num.values():
+            for _ in range(num):
+                self.datum_info += [[task, i] for i in range(len(self.training_pairs))]
+
+        self.shuffle()
 
     def create_item_prefix_tree(self):
         # In our case, "items" are the canonical database values.
@@ -540,7 +578,8 @@ class ValueLinkingDataset(Dataset):
         
         # Pre-generate all items for val/test to avoid overhead during evaluation
         if self.mode in ['val', 'test']:
-            self.complete_datum_info = [self.__getitem__(i) for i in range(len(self.datum_info))]
+            # Call the logic method directly to build the cache
+            self.complete_datum_info = [self.getitem_logic(i) for i in tqdm(range(len(self.datum_info)), desc=f"Pre-caching {self.mode} data")]
 
         if self.mode == 'train':
             self.shuffle()
@@ -551,14 +590,26 @@ class ValueLinkingDataset(Dataset):
     def __len__(self):
         return len(self.datum_info)
 
-    def getitem(self, idx): # Renamed from __getitem__ to be called by it
+    def __getitem__(self, idx):
+        # For val/test, we check if the cache has been built.
+        # If it has, we return the cached item. Otherwise, we generate it on the fly.
+        if self.mode in ['val', 'test'] and self.complete_datum_info:
+            return self.complete_datum_info[idx]
+        
+        # This is the core data generation logic, which we'll now call 'getitem_logic'
+        # to avoid confusion with the magic method __getitem__.
+        return self.getitem_logic(idx)
+
+    def getitem_logic(self, idx):
         task, pair_index = self.datum_info[idx]
         
         # Use a deterministic template for val/test, random for train
         if self.mode == 'train':
             template_id = random.choice(list(self.task_template[task].keys()))
         else:
-            template_id = list(self.task_template[task].keys())[0]
+            # Use the index to cycle through templates deterministically for val/test
+            template_keys = list(self.task_template[task].keys())
+            template_id = template_keys[idx % len(template_keys)]
             
         template_selected = self.task_template[task][template_id]
 
@@ -570,9 +621,12 @@ class ValueLinkingDataset(Dataset):
         output_field_data = {'canonical_value': canonical_value}
         
         input_texts = template_selected.get_input_text(input_field_data)
-
-        # The output from the template is already formatted correctly with <SOI> and <EOI>
         output_texts = template_selected.get_output_text(output_field_data)
+
+        # The original code's output formatting is slightly different, let's match it.
+        # The output from the template is a list of strings for multi-turn.
+        # For our single-turn case, the list has one item.
+        output_field_data['item_title_list'] = output_texts[0]
 
         out_dict = {
             'task': task,
@@ -583,10 +637,6 @@ class ValueLinkingDataset(Dataset):
         }
         return out_dict
 
-    def __getitem__(self, idx):
-        if self.mode in ['val', 'test']:
-            return self.complete_datum_info[idx]
-        return self.getitem(idx)
 
     def collate_fn(self, batch):
         # This can be copied directly from SFTDataset as it is generic

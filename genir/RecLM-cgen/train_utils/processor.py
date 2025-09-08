@@ -144,7 +144,7 @@ if __name__ == '__main__':
         [32, 426, 356, 469, 435],
         [32, 426, 469, 435]
     ]
-    _tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct')
+    _tokenizer = AutoTokenizer.from_pretrained('meta-llama/Meta-Llama-3-8B-Instruct',cache_dir="/data/hdd1/vllm_models/")
     _tokenizer.soi_token_id = 128257
     _tokenizer.eoi_token_id = 128256
     tire = Trie_link(_item_ids, _tokenizer)

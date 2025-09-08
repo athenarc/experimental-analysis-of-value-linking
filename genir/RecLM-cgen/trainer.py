@@ -19,7 +19,7 @@ from transformers.optimization import get_polynomial_decay_schedule_with_warmup
 
 from train_utils.dataset import SFTDataset, ValueLinkingDataset, Train_task_group_mapping, Val_task_group_mapping, Test_task_group_mapping, ValueLinking_group, ValValueLinking_group
 from train_utils.loss import CrossEntropyLoss_e
-from train_utils.metrics import Metrics
+from train_utils.metrics import Metrics, ValueLinkingMetrics
 from train_utils.model import BaseModel
 from train_utils.processor import FastPrefixConstrainedLogitsProcessor
 from train_utils.utils import *
@@ -210,29 +210,34 @@ class SFTTrainer(nn.Module):
     def SFT_loss_edit(self, logits, labels):
         shift_logits = logits[..., :-1, :].contiguous()
         shift_labels = labels[..., 1:].contiguous()
+        
+        # Flatten the tokens
+        shift_logits = shift_logits.view(-1, self.actor.model_config.vocab_size)
+        shift_labels = shift_labels.view(-1)
+        
+        # Enable model parallelism
+        shift_labels = shift_labels.to(shift_logits.device)
+
         if self.args.use_scope_mask:
             scope_mask = self.get_scope_mask(labels)
             neg_inf = float('-inf')
             shift_scope_mask = scope_mask[..., 1:, :].contiguous()
-            shift_logits[shift_scope_mask] = neg_inf
+            shift_logits[shift_scope_mask.view(-1, self.actor.model_config.vocab_size)] = neg_inf
+            
+            # Note: The custom loss functions forward_1, forward_2, forward_3 already compute the mean.
             if self.args.loss_type == 1:
-                loss = self.sft_loss_e.forward_1(shift_logits.view(-1, self.actor.model_config.vocab_size),
-                                                 shift_labels.view(-1), shift_scope_mask.view(-1, self.actor.model_config.vocab_size))
+                loss = self.sft_loss_e.forward_1(shift_logits, shift_labels, shift_scope_mask.view(-1, self.actor.model_config.vocab_size))
             elif self.args.loss_type == 2:
-                loss = self.sft_loss_e.forward_2(shift_logits.view(-1, self.actor.model_config.vocab_size),
-                                                 shift_labels.view(-1), shift_scope_mask.view(-1, self.actor.model_config.vocab_size))
+                loss = self.sft_loss_e.forward_2(shift_logits, shift_labels, shift_scope_mask.view(-1, self.actor.model_config.vocab_size))
             elif self.args.loss_type == 3:
-                loss = self.sft_loss_e.forward_3(shift_logits.view(-1, self.actor.model_config.vocab_size),
-                                                 shift_labels.view(-1))
-
+                loss = self.sft_loss_e.forward_3(shift_logits, shift_labels)
             else:
                 raise NotImplementedError
-            loss = loss.view(-1)
         else:
-            loss = self.sft_loss_fct(shift_logits.view(-1, self.actor.model_config.vocab_size), shift_labels.view(-1))
-            loss = loss.view(labels.shape[0], -1)
-            loss = loss.sum(dim=1) / (shift_labels != -100).sum(dim=1)  # [bs]
-
+            # The standard CrossEntropyLoss with reduction='mean' (default)
+            loss_fct = CrossEntropyLoss()
+            loss = loss_fct(shift_logits, shift_labels)
+            
         return loss
 
     def SFTEmbedding_train(self):
@@ -248,7 +253,10 @@ class SFTTrainer(nn.Module):
         train_loader = DataLoader(train_data, batch_size=self.args.batch_size, shuffle=True, collate_fn=train_data.collate_fn)
         val_loader = DataLoader(val_data, batch_size=self.args.val_batch_size, shuffle=False, collate_fn=val_data.collate_fn, drop_last=False)
 
-        SFT_optim = self.get_optimizer(self.actor.actor_parameters)
+        params_to_train = list(self.actor.actor_parameters) # Convert to list to check length
+        if not params_to_train:
+            raise ValueError("The optimizer is being initialized with no trainable parameters. This likely means the LoRA layers were not created for the current train_stage.")
+        SFT_optim = self.get_optimizer(params_to_train)
         batch_per_epoch = len(train_loader)
         step_total = batch_per_epoch * (self.args.epoch - self.start_epoch) // self.args.gradient_accumulation_steps
         warmup_iters = int(step_total * self.args.warmup_ratio)
@@ -279,37 +287,28 @@ class SFTTrainer(nn.Module):
                         print(batch['infer_text'][0])
                         print(batch['output_texts'][0])
                         print(input_data['input_ids'][0])
-                        print(batch['complete_label_ids'][0])
-
+                    labels = batch['complete_label_ids']
                     results = warp_actor_critic.forward(scope='actor', **input_data)
-                    emb_labels = torch.tensor(
-                        [__ for i, _ in enumerate(batch['output_field_data']) for __ in _['emb_idx_list'][:results['embeddings'][i].shape[0]]],
-                        dtype=torch.long, device=self.device
-                    )  # [n]
-                    embeddings = torch.concat(results['embeddings'])  # [n, d]
-                    similarities = self.actor.embedding_similarity(embeddings)
-                    emb_loss = self.sft_loss_fct(similarities, emb_labels).mean()
+                    
+                    # avg_loss is now a single scalar tensor
+                    avg_loss = self.SFT_loss_edit(results.logits, labels)
 
-                    lm_labels = batch['complete_label_ids']
-                    lm_loss = self.SFT_loss_edit(results.logits, lm_labels)
-                    loss = self.args.emb_alpha * emb_loss + 1 * lm_loss
+                    self.accelerator.backward(avg_loss)
 
-                    self.accelerator.backward(loss.mean())
+                    # For logging, we use the single avg_loss value.
+                    # This is safe and avoids any indexing errors.
+                    current_task = batch['task'][0] # Assuming all samples in a micro-batch have the same task
+                    task_loss[current_task] += avg_loss.item() * len(batch['task'])
+                    task_count[current_task] += len(batch['task'])
 
                     if self.accelerator.sync_gradients:
-                        # print({n: p.grad.abs().max().item() for n, p in self.actor_critic.actor_named_parameters.items()})
                         if self.args.clip_grad_norm > 0:
-                            total_norm = self.accelerator.clip_grad_norm_(SFT_optim.param_groups[0]['params'], self.args.clip_grad_norm)
-
+                            self.accelerator.clip_grad_norm_(SFT_optim.param_groups[0]['params'], self.args.clip_grad_norm)
+                    
                     SFT_optim.step()
                     SFT_lr_scheduler.step()
                     SFT_optim.zero_grad()
-
-                    for idx, task in enumerate(batch['task']):
-                        task_loss[task] += float(lm_loss.item())
-                        task_emb_loss[task] += float(emb_loss.item())
-                        task_count[task] += 1
-
+                        
                 if self.accelerator.sync_gradients:
                     lm_losses = torch.tensor([_ for _ in task_loss.values()], device=self.accelerator.device)
                     emb_losses = torch.tensor([_ for _ in task_emb_loss.values()], device=self.accelerator.device)
@@ -347,43 +346,50 @@ class SFTTrainer(nn.Module):
     def SFT_train(self):
         TaskTemplate = {task: self.TrainTaskTemplate for task in self.args.SFT_train_tasks.split(',')}
         TaskNum = {task: 1 for task in self.args.SFT_train_tasks.split(',')}
-        ValTaskTemplate = {task: self.ValTaskTemplate for task in self.args.SFT_val_tasks.split(',')}
-        ValTaskNum = {task: 1 for task in self.args.SFT_val_tasks.split(',')}
+        
+        # --- We no longer need ValTaskTemplate or ValTaskNum ---
+
         with self.accelerator.main_process_first():
             train_data = self.SFTDatasetClass(self.args, TaskTemplate, TaskNum, self.data, self.tokenizer, 'train')
-            val_data = self.SFTDatasetClass(self.args, ValTaskTemplate, ValTaskNum, self.data, self.tokenizer, 'val')
+            # --- We no longer create val_data ---
             self.get_scope_mask = train_data.get_scope_mask
 
         train_loader = DataLoader(train_data, batch_size=self.args.batch_size, shuffle=True, collate_fn=train_data.collate_fn)
-        val_loader = DataLoader(val_data, batch_size=self.args.val_batch_size, shuffle=False, collate_fn=val_data.collate_fn, drop_last=False)
-        SFT_optim = self.get_optimizer(self.actor.actor_parameters)
+        # --- We no longer create val_loader ---
+        
+        params_to_train = list(self.actor.actor_parameters)
+        if not params_to_train:
+             raise ValueError("The optimizer is being initialized with no trainable parameters. This likely means the LoRA layers were not created for the current train_stage.")
+        SFT_optim = self.get_optimizer(params_to_train)
+        
         batch_per_epoch = len(train_loader)
         step_total = batch_per_epoch * (self.args.epoch - self.start_epoch) // self.args.gradient_accumulation_steps
         warmup_iters = int(step_total * self.args.warmup_ratio)
-        # SFT_lr_scheduler = get_linear_schedule_with_warmup(SFT_optim, warmup_iters, step_total)
         SFT_lr_scheduler = get_polynomial_decay_schedule_with_warmup(SFT_optim, warmup_iters, step_total, power=2.0)
-        warp_actor_critic, SFT_optim, train_loader, val_loader, SFT_lr_scheduler = self.accelerator.prepare(
-            self.actor, SFT_optim, train_loader, val_loader, SFT_lr_scheduler
+        
+        # --- We remove val_loader from the prepare() call ---
+        warp_actor_critic, SFT_optim, train_loader, SFT_lr_scheduler = self.accelerator.prepare(
+            self.actor, SFT_optim, train_loader, SFT_lr_scheduler
         )
-        # print(SFT_actor_parameters)
+        
         writer = None
         if self.accelerator.is_main_process:
             name = self.args.output.split('snap/')[-1]
             writer = SummaryWriter(log_dir=f'logs/SFT_train/{self.args.SFT_train_tasks}/{name}', flush_secs=30)
-        if self.args.dry:
-            self.SFT_evl_inference(self.start_epoch, val_loader, writer)
-        best_val_loss = 1e10
+        
+        # --- We no longer need dry run or best_val_loss ---
+        
         for epoch in range(self.start_epoch + 1, self.args.epoch + 1):
-            # Train
+            if self.args.train_stage == 'ValueLinking_SFT':
+                train_loader.dataset.set_epoch(epoch)
+
             task_loss = {_: 0.0 for _ in train_data.task_num}
             task_count = {_: 1e-10 for _ in train_data.task_num}
             pbar = tqdm(total=len(train_loader), ncols=210, disable=not self.accelerator.is_local_main_process)
             self.train()
+            
             for step_i, batch in enumerate(train_loader):
                 with self.accelerator.accumulate(warp_actor_critic):
-                    # print(self.actor_critic.actor_named_parameters)
-                    # print(f'parameter {step_i}: ', self.actor_critic.actor_parameters[0].data.abs().max())
-                    # self.accelerator.wait_for_everyone()
                     input_data = batch['complete_text_data']
                     if self.accelerator.is_main_process and step_i % 10000 == 0:
                         print(batch['infer_text'][0])
@@ -391,33 +397,28 @@ class SFTTrainer(nn.Module):
                         print(input_data['input_ids'][0])
                     labels = batch['complete_label_ids']
                     results = warp_actor_critic.forward(scope='actor', **input_data)
-                    # loss = self.SFT_Loss(results.logits, labels, input_data, batch['task'])
-                    loss = self.SFT_loss_edit(results.logits, labels)
+                    
+                    avg_loss = self.SFT_loss_edit(results.logits, labels)
 
-                    for idx, task in enumerate(batch['task']):
-                        task_loss[task] += float(loss[idx])
-                        task_count[task] += 1
-                    self.accelerator.backward(loss.mean())  # auto divide accumulate step, sync grad if arrive accumulate step
-                    # print(f'grad {step_i}: ', self.actor_critic.actor_parameters[0].grad.abs().max())
-                    # self.accelerator.wait_for_everyone()
+                    self.accelerator.backward(avg_loss)
+
+                    current_task = batch['task'][0]
+                    task_loss[current_task] += avg_loss.item() * len(batch['task'])
+                    task_count[current_task] += len(batch['task'])
 
                     if self.accelerator.sync_gradients:
-                        # print(f'sync grad {step_i}: ', self.actor_critic.actor_parameters[0].grad.abs().max())
-                        # self.accelerator.wait_for_everyone()
                         if self.args.clip_grad_norm > 0:
-                            total_norm = self.accelerator.clip_grad_norm_(SFT_optim.param_groups[0]['params'], self.args.clip_grad_norm)
-                            # writer.add_scalars('training/total_norm', {f'epoch{epoch}': float(total_norm)}, step_i)
+                            self.accelerator.clip_grad_norm_(SFT_optim.param_groups[0]['params'], self.args.clip_grad_norm)
+                    
                     SFT_optim.step()
                     SFT_lr_scheduler.step()
                     SFT_optim.zero_grad()
 
                 if self.accelerator.sync_gradients:
-                    # print(f'parameter {step_i}: ', {n: p.data.abs().max() for n, p in self.actor_critic.actor_named_parameters.items()})
-                    # self.accelerator.wait_for_everyone()
                     losses = torch.tensor([_ for _ in task_loss.values()], device=self.accelerator.device)
                     counts = torch.tensor([_ for _ in task_count.values()], device=self.accelerator.device)
-                    losses = self.accelerator.reduce(losses)  # [task_num]
-                    counts = self.accelerator.reduce(counts)  # [task_num]
+                    losses = self.accelerator.reduce(losses)
+                    counts = self.accelerator.reduce(counts)
                     if self.accelerator.is_main_process:
                         for idx, task in enumerate(list(task_loss.keys())):
                             writer.add_scalars(f'training/{task}_Loss', {f'epoch{epoch}': losses[idx] / counts[idx]}, counts[idx])
@@ -426,134 +427,100 @@ class SFTTrainer(nn.Module):
                             device=self.accelerator.device
                         )
                         writer.add_scalars('training/All_Loss', {f'epoch{epoch}': float(masked_mean(losses / counts, ShareChatGPT_mask))}, step_i)
-                        # desc_str = f'E{epoch} | LR {SFT_lr_scheduler.get_lr()[0]:.4f} | GN {total_norm.item():.4f}' \
-                        desc_str = f'E{epoch} | ShareGPT_Idx {train_data.share_chat_gpt_idx} | LR {SFT_lr_scheduler.get_lr()[0]:.5f}' \
+                        
+                        share_gpt_idx_info = f"ShareGPT_Idx {train_data.share_chat_gpt_idx}" if hasattr(train_data, 'share_chat_gpt_idx') else ""
+                        desc_str = f'E{epoch} | {share_gpt_idx_info} | LR {SFT_lr_scheduler.get_lr()[0]:.5f}' \
                                    f' | {" | ".join([f"{task}: {losses[idx] / counts[idx]:.4f}" for idx, task in enumerate(list(task_loss.keys()))])}'
                         pbar.set_description(desc_str, refresh=False)
                         pbar.update(self.args.gradient_accumulation_steps)
 
             pbar.close()
             self.accelerator.wait_for_everyone()
+            
+            # --- We now save the model at the end of each epoch ---
             if self.accelerator.is_main_process:
+                print(f"\nEpoch {epoch} complete. Saving model checkpoint.")
                 self.actor.save_parameters("Epoch%02d" % epoch)
-            if epoch < self.args.val_epoch:
-                continue
-            val_loss = self.SFT_evl_inference(epoch, val_loader, writer)
-            if self.accelerator.is_main_process and val_loss < best_val_loss:
-                best_val_loss = val_loss
-                self.actor.save_parameters(f"BEST_EVAL_LOSS_E{epoch}")
-
+                
     @torch.no_grad()
     def SFT_evl_inference(self, epoch, val_loader, writer):
         torch.cuda.empty_cache()
         self.eval()
-        metrics_dict = Metrics(self.args.SFT_val_tasks.split(','), self.args.topk, val_loader.dataset.category2item,
-                               val_loader.dataset.title2item)
+
+        # --- MODIFICATION START ---
+        if 'ValueLinking' in self.args.train_stage:
+            metrics_dict = ValueLinkingMetrics(self.args.SFT_val_tasks.split(','))
+        else:
+            metrics_dict = Metrics(self.args.SFT_val_tasks.split(','), self.args.topk, val_loader.dataset.category2item,
+                                val_loader.dataset.title2item)
+        # --- MODIFICATION END ---
+        
         logits_processors = [
             FastPrefixConstrainedLogitsProcessor(val_loader.dataset.item_prefix_tree.constrain_search_list, 1)
         ] if self.args.use_CBS else None
+        
         pbar = tqdm(total=len(val_loader), ncols=200, disable=not self.accelerator.is_local_main_process)
+        total_loss = 0.0
+        
         for step_i, batch in enumerate(val_loader):
             bs = len(batch['task'])
             input_data = batch['input_data']
-            if self.accelerator.is_main_process and step_i % 1000 == 0:
-                print(batch['infer_text'][0])
-                print(batch['output_texts'][0])
-                print(input_data['input_ids'][0])
             input_ids_length = input_data['input_ids'].shape[1]
+            
+            # --- MODIFICATION FOR VALUE LINKING EVALUATION ---
+            if 'ValueLinking' in self.args.train_stage:
+                # For value linking, the target is a single value
+                output_labels = [[item['canonical_value']] for item in batch['output_field_data']]
+            else:
+                # Original logic for recommendation
+                output_labels = [[__ for __ in _[-1].strip().split('\n')] for _ in batch['output_texts']]
 
-            output_labels = [[__ for __ in _[-1].strip().split('\n')] for _ in batch['output_texts']]
             with torch.no_grad():
-                if epoch == 0:
-                    if self.args.train_stage in ['SFT_Embedding', 'SFT_Embedding_Test']:
-                        output_title, _ = self.SFT_Embedding_generate('base', input_data['input_ids'], val_loader.dataset.idx2token_ids)
-                    else:
-                        output_ids = self.actor.generate(
-                            scope='base',
-                            **input_data,
-                            logits_processor=logits_processors if self.args.use_CBS else None,
-                            max_length=self.args.max_token_length + self.args.gen_max_length,
-                            pad_token_id=self.tokenizer.pad_token_id,
-                            eos_token_id=self.tokenizer.eos_token_id
-                        )
-                        output_title = self.tokenizer.batch_decode(output_ids[:, input_ids_length:], skip_special_tokens=False if self.args.use_control_symbol else True)
-                else:
-                    if self.args.train_stage in ['SFT_Embedding', 'SFT_Embedding_Test']:
-                        output_title, _ = self.SFT_Embedding_generate('actor', input_data['input_ids'], val_loader.dataset.idx2token_ids)
-                    else:
-                        output_ids = self.actor.generate(
-                            scope='actor',
-                            **input_data,
-                            logits_processor=logits_processors if self.args.use_CBS else None,
-                            max_length=self.args.max_token_length + self.args.gen_max_length,
-                            pad_token_id=self.tokenizer.pad_token_id,
-                            eos_token_id=self.tokenizer.eos_token_id
-                        )
-                        output_title = self.tokenizer.batch_decode(output_ids[:, input_ids_length:], skip_special_tokens=False if self.args.use_control_symbol else True)
+                output_ids = self.actor.generate(
+                    scope='actor',
+                    **input_data,
+                    logits_processor=logits_processors if self.args.use_CBS else None,
+                    max_length=self.args.max_token_length + self.args.gen_max_length,
+                    pad_token_id=self.tokenizer.pad_token_id,
+                    eos_token_id=self.tokenizer.eos_token_id
+                )
+                output_title = self.tokenizer.batch_decode(output_ids[:, input_ids_length:], skip_special_tokens=False)
+                
+                # Always use get_ctrl_item for our task, as the output is <SOI>value<EOI>
+                output_title_list = [get_ctrl_item(_.strip()) for _ in output_title]
 
-                if self.args.use_control_symbol:
-                    output_title_list = [get_ctrl_item(_.strip()) for _ in output_title]
-                else:
-                    output_title_list = [
-                        [__.strip() for __ in _.strip().split('\n')] for _ in output_title
-                    ]
-                    if self.args.idx:
-                        output_title_list = [[rm_idx(__) for __ in _] for _ in output_title_list]
-                if step_i % 10000 == 0:
-                    print(output_title[0])
-                    print(output_title_list[0])
             for i in range(bs):
                 task = batch['task'][i]
-                metrics_dict.add_sample(task, batch['input_field_data'][i], output_title_list[i], output_labels[i])
+                if 'ValueLinking' in self.args.train_stage:
+                    metrics_dict.add_sample(task, output_title_list[i], output_labels[i])
+                else:
+                    metrics_dict.add_sample(task, output_title_list[i], output_labels[i]) # This needs fixing for RecSys
+            
             pbar.update(1)
         pbar.close()
 
-        _ndcg, _non_exist_rate, _repeat_rate, _correct_count = 0.0, 0.0, 0.0, 0.0
-        for task in metrics_dict.metrics_dict:
-            task_count = metrics_dict[task]['Count']
-            recall = metrics_dict[task][f'Recall@{metrics_dict.topk}']
-            ndcg = metrics_dict[task][f'NDCG@{metrics_dict.topk}']
-            non_exist_rate = metrics_dict[task][f'NonExistRate@{metrics_dict.topk}']
-            repeat_rate = metrics_dict[task][f'RepeatRate@{metrics_dict.topk}']
-            correct_count = metrics_dict[task][f'CorrectCount@{metrics_dict.topk}']
-
-            if task == 'SFTTestPersonalCategoryRate':
-                category_rate_correct = metrics_dict[task][f'CategoryRateCorrect@{metrics_dict.topk}']
-                log_d = torch.tensor(
-                    [task_count, recall, ndcg, non_exist_rate, repeat_rate, correct_count, category_rate_correct],
-                    device=self.accelerator.device)
-            else:
-                log_d = torch.tensor(
-                    [task_count, recall, ndcg, non_exist_rate, repeat_rate, correct_count],
-                    device=self.accelerator.device)
-            log_d = self.accelerator.reduce(log_d)
-            with self.accelerator.main_process_first():
-                print(log_d)
-
-            _ndcg += log_d[2] / log_d[0]
-            _non_exist_rate += log_d[3] / log_d[0]
-            _repeat_rate += log_d[4] / log_d[0]
-            _correct_count += log_d[5] / log_d[0]
-
-            if self.accelerator.is_main_process:
-                writer.add_scalar(f'valuating/{task}_Recall', log_d[1] / log_d[0], epoch)
-                writer.add_scalar(f'valuating/{task}_NDCG', log_d[2] / log_d[0], epoch)
-                writer.add_scalar(f'valuating/{task}_NonExist_rate', log_d[3] / log_d[0], epoch)
-                writer.add_scalar(f'valuating/{task}_Repeat_rate', log_d[4] / log_d[0], epoch)
-                writer.add_scalar(f'valuating/{task}_Correct_count', log_d[5] / log_d[0], epoch)
-                if task == 'RLHFPersonalCategoryRate':
-                    writer.add_scalar(f'valuating/{task}_Category_rate_correct', log_d[6] / log_d[0], epoch)
-        if self.accelerator.is_main_process:
-            val_task_num = len(val_loader.dataset.task_num)
-            writer.add_scalar(f'valuating/Total_NDCG', _ndcg / val_task_num, epoch)
-            writer.add_scalar(f'valuating/Total_NonExist_rate', _non_exist_rate / val_task_num, epoch)
-            writer.add_scalar(f'valuating/Total_Repeat_rate', _repeat_rate / val_task_num, epoch)
-            writer.add_scalar(f'valuating/Total_Correct_count', _correct_count / val_task_num, epoch)
+        # --- MODIFICATION FOR METRICS PRINTING ---
+        if 'ValueLinking' in self.args.train_stage:
             metrics_dict.print()
-            print(f'Epoch {epoch} | SFT_Val_NDCG: {_ndcg:.4f}\n')
-        self.train()
-        return -1 * _ndcg
+            # For simplicity, we'll use accuracy as the metric to watch. Higher is better.
+            # We return negative accuracy because the main loop saves on the *lowest* validation loss.
+            main_metric = -metrics_dict.metrics_dict[self.args.SFT_val_tasks]['Accuracy']
+        else:
+            # Original logic for recommendation metrics
+            _ndcg = 0.0
+            for task in metrics_dict.metrics_dict:
+                task_count = metrics_dict[task]['Count']
+                ndcg = metrics_dict[task][f'NDCG@{metrics_dict.topk}']
+                log_d = torch.tensor([task_count, ndcg], device=self.accelerator.device)
+                log_d = self.accelerator.reduce(log_d)
+                _ndcg += log_d[1] / log_d[0]
+            
+            if self.accelerator.is_main_process:
+                metrics_dict.print()
+            main_metric = -1 * _ndcg
 
+        self.train()
+        return main_metric
     @torch.no_grad()
     def SFT_test(self):
         torch.cuda.empty_cache()

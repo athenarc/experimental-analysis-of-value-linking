@@ -92,3 +92,42 @@ class Metrics:
 -{'tasks'.center(24, '-')}-{'-'.join([_.center(len(_)+4, '-') for _ in tasks])}-
 {table_rows_str}
 -{'-' * 24}-{'-'.join(['-' * (len(_)+4) for _ in tasks])}-''')
+
+
+
+class ValueLinkingMetrics:
+    def __init__(self, tasks):
+        self.tasks = tasks
+        self.metrics_dict = {task: self.task_register(task) for task in self.tasks}
+
+    def task_register(self, task):
+        # Metrics for value linking are simpler: just accuracy.
+        metrics_dict = {
+            'Correct': 0.0,
+            'Count': 1e-24,
+            'Accuracy': 0.0,
+        }
+        return metrics_dict
+
+    def add_sample(self, task, generated_value, target_value):
+        # The generated output is a list of values. We check if the first one is correct.
+        # The target is also a list, but should only contain one value.
+        generated_value = generated_value[0] if generated_value else None
+        target_value = target_value[0] if target_value else None
+
+        if generated_value is not None and generated_value == target_value:
+            self.metrics_dict[task]['Correct'] += 1
+        
+        self.metrics_dict[task]['Count'] += 1
+
+    def calculate_metrics(self):
+        for task in self.metrics_dict:
+            self.metrics_dict[task]['Accuracy'] = self.metrics_dict[task]['Correct'] / self.metrics_dict[task]['Count']
+
+    def print(self):
+        self.calculate_metrics()
+        print("\n--- Validation Metrics ---")
+        for task, metrics in self.metrics_dict.items():
+            print(f"  Task: {task}")
+            print(f"    - Accuracy: {metrics['Accuracy']:.4f} ({int(metrics['Correct'])} / {int(metrics['Count'])})")
+        print("------------------------\n")

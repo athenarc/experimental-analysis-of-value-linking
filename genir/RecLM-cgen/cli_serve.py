@@ -63,7 +63,7 @@ if __name__ == "__main__":
     parser.add_argument("--gpu", type=str, default='cuda:0')
     args = parser.parse_args()
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name,cache_dir="/data/hdd1/vllm_models/")
     tokenizer.pad_token = '<|reserved_special_token_250|>'
     tokenizer.pad_token_id = 128255
     tokenizer.soi_token = "<SOI>"
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     tokenizer.eoi_token_id = tokenizer.convert_tokens_to_ids(tokenizer.eoi_token)
     tokenizer.eos_token = "<|eot_id|>"
     tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids("<|eot_id|>")
-    model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.bfloat16, device_map=args.gpu).eval()
+    model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.bfloat16, device_map=args.gpu,cache_dir="/data/hdd1/vllm_models/").eval()
     # model = None
 
     num_beams = 1

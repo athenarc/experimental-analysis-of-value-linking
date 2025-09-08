@@ -35,7 +35,7 @@ def process_dataset_hf(data_list):
     logits_processors = [
         FastPrefixConstrainedLogitsProcessor(test_data.item_prefix_tree.constrain_search_list, num_beams)
     ] if args.use_CBS else None
-    model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.bfloat16, device_map=args.gpu).eval()
+    model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.bfloat16, device_map=args.gpu,cache_dir="/data/hdd1/vllm_models/").eval()
     bs = args.batch_size
     for i in tqdm(range(0, len(data_list), bs)):
         input_texts = [
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     }
     TestTaskTemplate = {args.SFT_test_task: Test_task_group_mapping[args.SFT_test_task]}
     TestTaskNum = {args.SFT_test_task: 1}
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name,cache_dir="/data/hdd1/vllm_models/")
     tokenizer.pad_token = '<|reserved_special_token_250|>'
     tokenizer.pad_token_id = 128255
     tokenizer.soi_token = "<SOI>"

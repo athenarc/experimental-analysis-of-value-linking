@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import argparse
 from tqdm import tqdm
 
@@ -38,6 +39,21 @@ def process_db_file(source_file_path, output_base_dir):
             continue
 
         canonical_value = data['value']
+
+        # Filtering logic
+        if '@' in canonical_value and '.' in canonical_value:
+            continue
+        if len(canonical_value) > 25 and ' ' not in canonical_value:
+            continue
+        if re.search(r'[\u4e00-\u9fff]', canonical_value):
+            continue
+        if 'http' in canonical_value:
+            continue
+        if canonical_value.startswith('<') and canonical_value.endswith('>'):
+            continue
+        if canonical_value.startswith('{') and canonical_value.endswith('}'):
+            continue
+
         table = data['table']
         column = data['column']
 
