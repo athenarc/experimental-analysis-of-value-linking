@@ -11,13 +11,13 @@ from typing import Callable, List
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, LogitsProcessor
 from peft import LoraConfig, get_peft_model
-from keybert import KeyBERT
 from tqdm.auto import tqdm
 
 from train_utils.processor import Trie_link, FastPrefixConstrainedLogitsProcessor
 
 
 def find_best_checkpoint(model_root_path: Path, db_id: str) -> Path | None:
+    """Finds the latest epoch checkpoint file for a given db_id."""
     search_pattern = str(model_root_path / f"*-{db_id}-*")
     potential_dirs = glob.glob(search_pattern)
     if not potential_dirs:
@@ -42,12 +42,17 @@ def find_best_checkpoint(model_root_path: Path, db_id: str) -> Path | None:
     
     return best_checkpoint
 
-def main(model_root_path, data_root_path, eval_file_path, output_file_path, device):
+def main(model_root_path, data_root_path, eval_file_path, extracted_values_path, output_file_path, device):
     model_root_path = Path(model_root_path)
     data_root_path = Path(data_root_path)
     
-    print("Initializing KeyBERT for candidate extraction...")
-    kw_model = KeyBERT(model='all-MiniLM-L6-v2')
+    print(f"Loading pre-extracted value references from '{extracted_values_path}'...")
+    with open(extracted_values_path, 'r', encoding='utf-8') as f:
+        extracted_data = json.load(f)
+    
+    extracted_values_map = {item['query']: item['extracted_values'] for item in extracted_data}
+    print(f"Loaded {len(extracted_values_map)} query-to-value mappings.")
+
 
     print("\nLoading and preparing evaluation data...")
     with open(eval_file_path, 'r', encoding='utf-8') as f:
@@ -124,7 +129,9 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
             with open(values_path, 'r', encoding='utf-8') as f:
                 canonical_values_dict = json.load(f)
             
-            canonical_values = list(canonical_values_dict.keys())
+            # --- CHANGE: Convert canonical values to lowercase for case-insensitive generation/matching ---
+            # Using a set comprehension ensures uniqueness if different-cased versions of the same string exist.
+            canonical_values = list({str(k).lower() for k in canonical_values_dict.keys()})
             item_ids = tokenizer(canonical_values, add_special_tokens=False).input_ids
             
             item_prefix_tree = Trie_link(item_ids, tokenizer)
@@ -134,9 +141,12 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
             question = record['new_question_correct_value']
             ground_truth_values = {str(v['value']).lower() for v in record['values'] if re.search('[a-zA-Z]', str(v['value']))}
 
-            keybert_candidates = kw_model.extract_keywords(question, keyphrase_ngram_range=(1, 3), stop_words=None, top_n=15)
-            candidate_phrases = [phrase for phrase, score in keybert_candidates]
-            
+            # --- Use pre-extracted values instead of KeyBERT ---
+            # Get candidate phrases from the loaded map
+            candidate_phrases = extracted_values_map.get(question, [])
+            # Filter out any error messages from the previous step
+            candidate_phrases = [p for p in candidate_phrases if not p.startswith("Error:")]
+
             predicted_values = set()
             debug_records = []
             
@@ -171,7 +181,6 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
                         logits_processor=[processor] if processor else None,
                         num_beams=1,
                         pad_token_id=tokenizer.pad_token_id,
-                        # --- FIX #1: Stop generation after <EOI> or the model's natural EOS ---
                         eos_token_id=[tokenizer.eos_token_id, tokenizer.eoi_token_id]
                     )
                 
@@ -184,7 +193,7 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
                     prediction = match.group(1).strip() if match else ""
                     
                     debug_records.append({
-                        "keybert_phrase": candidate_phrases[i],
+                        "candidate_phrase": candidate_phrases[i],
                         "raw_model_output": raw_output_for_log,
                         "parsed_prediction": prediction
                     })
@@ -192,7 +201,6 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
                     if prediction:
                         predicted_values.add(prediction.lower())
 
-            # --- FIX #2: Change accuracy metric to check for any overlap ---
             is_correct = bool(ground_truth_values.intersection(predicted_values))
             if is_correct:
                 correct_predictions += 1
@@ -209,7 +217,6 @@ def main(model_root_path, data_root_path, eval_file_path, output_file_path, devi
         
         del model, base_model, tokenizer
         torch.cuda.empty_cache()
-        break
 
     accuracy = (correct_predictions / total_predictions) * 100 if total_predictions > 0 else 0
     
@@ -227,8 +234,9 @@ if __name__ == "__main__":
     parser.add_argument("--model_root_path", type=str, required=True, help="Path to the root folder where training outputs are saved (e.g., 'snap/ValueLinking/').")
     parser.add_argument("--data_root_path", type=str, required=True, help="Path to the root folder of preprocessed datasets (e.g., 'data/dataset/').")
     parser.add_argument("--eval_file_path", type=str, required=True, help="Path to the input JSON evaluation file (e.g., 'dev.json').")
+    parser.add_argument("--extracted_values_path", type=str, required=True, help="Path to the JSON file with pre-extracted value references from the previous script.")
     parser.add_argument("--output_file_path", type=str, required=True, help="Path to the output JSON file to save predictions.")
     parser.add_argument("--device", type=str, default="cuda:0", help="Device to run inference on (e.g., 'cuda:0' or 'cpu').")
     
     args = parser.parse_args()
-    main(args.model_root_path, args.data_root_path, args.eval_file_path, args.output_file_path, args.device)
+    main(args.model_root_path, args.data_root_path, args.eval_file_path, args.extracted_values_path, args.output_file_path, args.device)
