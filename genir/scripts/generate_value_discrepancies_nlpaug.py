@@ -53,7 +53,7 @@ def should_exclude_value(value):
         return True
     if not re.search('[a-zA-Z]', value):
         return True
-    if len(value.split()) > 5 or value.startswith('http') or 'www.' in value or len(value) > 128:
+    if len(value.split()) > 7 or value.startswith('http') or 'www.' in value or len(value) > 128:
         return True
     return False
 

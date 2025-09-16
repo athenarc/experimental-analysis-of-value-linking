@@ -64,6 +64,8 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
     all_results = []
     correct_predictions = 0
     total_predictions = 0
+    
+    NUM_BEAMS = 10
 
     LORA_R = 16
     LORA_ALPHA = 32
@@ -129,22 +131,17 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
             with open(values_path, 'r', encoding='utf-8') as f:
                 canonical_values_dict = json.load(f)
             
-            # --- CHANGE: Convert canonical values to lowercase for case-insensitive generation/matching ---
-            # Using a set comprehension ensures uniqueness if different-cased versions of the same string exist.
-            canonical_values = list({str(k).lower() for k in canonical_values_dict.keys()})
+            canonical_values = list(canonical_values_dict.keys())
             item_ids = tokenizer(canonical_values, add_special_tokens=False).input_ids
             
             item_prefix_tree = Trie_link(item_ids, tokenizer)
-            processor = FastPrefixConstrainedLogitsProcessor(item_prefix_tree.constrain_search_list, num_beams=1)
+            processor = FastPrefixConstrainedLogitsProcessor(item_prefix_tree.constrain_search_list, num_beams=NUM_BEAMS)
 
         for record in tqdm(records, desc=f"Evaluating '{db_id}' Questions", leave=False):
             question = record['new_question_correct_value']
             ground_truth_values = {str(v['value']).lower() for v in record['values'] if re.search('[a-zA-Z]', str(v['value']))}
 
-            # --- Use pre-extracted values instead of KeyBERT ---
-            # Get candidate phrases from the loaded map
             candidate_phrases = extracted_values_map.get(question, [])
-            # Filter out any error messages from the previous step
             candidate_phrases = [p for p in candidate_phrases if not p.startswith("Error:")]
 
             predicted_values = set()
@@ -179,7 +176,8 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
                         **inputs,
                         max_new_tokens=64,
                         logits_processor=[processor] if processor else None,
-                        num_beams=1,
+                        num_beams=NUM_BEAMS,
+                        num_return_sequences=NUM_BEAMS,
                         pad_token_id=tokenizer.pad_token_id,
                         eos_token_id=[tokenizer.eos_token_id, tokenizer.eoi_token_id]
                     )
@@ -187,19 +185,28 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
                 input_lengths = inputs['input_ids'].shape[1]
                 decoded_outputs = tokenizer.batch_decode(outputs[:, input_lengths:], skip_special_tokens=False)
                 
-                for i, decoded_output in enumerate(decoded_outputs):
-                    match = re.search(r"(.*?)<EOI>", decoded_output)
-                    raw_output_for_log = f"<SOI>{decoded_output}"
-                    prediction = match.group(1).strip() if match else ""
-                    
+                for i in range(len(candidate_phrases)):
+                    start_index = i * NUM_BEAMS
+                    end_index = (i + 1) * NUM_BEAMS
+                    prompt_beams = decoded_outputs[start_index:end_index]
+
+                    prompt_predictions = set()
+                    for beam_output in prompt_beams:
+                        match = re.search(r"(.*?)<EOI>", beam_output)
+                        raw_output_for_log = f"<SOI>{beam_output}"
+                        prediction = match.group(1).strip() if match else ""
+                        
+                        if prediction:
+                            prompt_predictions.add(prediction)
+
+                    for pred in prompt_predictions:
+                        predicted_values.add(pred.lower())
+
                     debug_records.append({
                         "candidate_phrase": candidate_phrases[i],
-                        "raw_model_output": raw_output_for_log,
-                        "parsed_prediction": prediction
+                        "raw_model_output_top_beam": f"<SOI>{prompt_beams[0]}",
+                        "parsed_predictions_from_beams": sorted(list(prompt_predictions))
                     })
-
-                    if prediction:
-                        predicted_values.add(prediction.lower())
 
             is_correct = bool(ground_truth_values.intersection(predicted_values))
             if is_correct:
@@ -227,7 +234,7 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
     print("\n--- Evaluation Complete ---")
     print(f"Total Questions Evaluated: {total_predictions}")
     print(f"Correct Predictions: {correct_predictions}")
-    print(f"Intersection Overlap Accuracy: {accuracy:.2f}%")
+    print(f"Question-Level Recall (Hit Rate): {accuracy:.2f}%")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Benchmark fine-tuned Llama-3 Value Linking models with constrained generation.")

@@ -468,20 +468,36 @@ class ValueLinkingDataset(Dataset):
         self.complete_datum_info = []
         
         if self.mode == 'train':
-            self.canonical_to_variations = defaultdict(list)
-            for pair in self.all_training_pairs:
-                if pair['variation'] != pair['canonical_value']:
-                    self.canonical_to_variations[pair['canonical_value']].append(pair['variation'])
-            self.unique_canonical_values = list(self.canonical_to_variations.keys())
-            self.set_epoch(1) # Initialize with data for epoch 1
-        else:
+            # If the new flag is set, load all data immediately.
+            if self.args.no_value_linking_curriculum:
+                print("Value linking curriculum DISABLED. Using all training pairs for all epochs.")
+                self.training_pairs = self.all_training_pairs
+                
+                # Manually build the datum_info from all pairs
+                self.datum_info = []
+                task = list(self.task_num.keys())[0]
+                for num in self.task_num.values():
+                    for _ in range(num):
+                        self.datum_info += [[task, i] for i in range(len(self.training_pairs))]
+                self.shuffle()
+            # Otherwise, use the original curriculum logic.
+            else:
+                self.canonical_to_variations = defaultdict(list)
+                for pair in self.all_training_pairs:
+                    if pair['variation'] != pair['canonical_value']:
+                        self.canonical_to_variations[pair['canonical_value']].append(pair['variation'])
+                self.unique_canonical_values = list(self.canonical_to_variations.keys())
+                self.set_epoch(1) # Initialize with data for epoch 1
+        else: # This is the original val/test logic, which is correct.
             self.training_pairs = self.all_training_pairs
             self.compute_datum_info()
 
     def set_epoch(self, epoch):
         if self.mode != 'train':
             return
-
+        if self.args.no_value_linking_curriculum:
+            self.shuffle()
+            return
         self.datum_info = []
         task = list(self.task_num.keys())[0] # Assumes one task for value linking
 
