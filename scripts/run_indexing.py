@@ -14,6 +14,9 @@ from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnis
 from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
+
 
 # --- Configuration ---
 BASE_PATH = "development/experimental_analysis_of_value_linking/assets/retrievers"
@@ -45,13 +48,25 @@ SEARCHER_METHODS = [
         "retriever_class": OpenSearchDenseValueRetriever,
         "index_subdir": "opensearch",
     },
+    {
+        "name": "ValueNet",
+        "loader_class": ValueNetLoader,
+        "retriever_class": ValueNetRetriever,
+        "index_subdir": "valuenet",
+    }
 ]
 SEARCHER_METHODS = [
+    #{
+    #    "name": "CHESS",
+    #    "loader_class": ChessDBLoader,
+    #    "retriever_class": ChessMinHashLshRetriever,
+    #    "index_subdir": "chess",
+    #}
     {
-        "name": "CHESS",
-        "loader_class": ChessDBLoader,
-        "retriever_class": ChessMinHashLshRetriever,
-        "index_subdir": "chess",
+        "name" : "ValueNet",
+        "loader_class": ValueNetLoader,
+        "retriever_class": ValueNetRetriever,
+        "index_subdir": "valuenet",
     }
 ]
 def main():
@@ -101,9 +116,10 @@ def main():
                 loader = method["loader_class"](db_directory_path=db_dir_path)
             elif method_name == "OmniSQL":
                 loader = method["loader_class"](db_file_path=db_file_path)
-            else: # OpenSearch
-                loader = method["loader_class"](db_path=db_file_path, db_id=db_id)
-
+            elif method_name == "OpenSearch":
+                loader = method["loader_class"](db_path=db_file_path)
+            elif method_name == "ValueNet":
+                loader = method["loader_class"](db_path=db_file_path)
 
             items_to_index = loader.load()
             num_items = len(items_to_index)

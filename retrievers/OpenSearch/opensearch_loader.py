@@ -9,7 +9,7 @@ class OpenSearchValueLoader(BaseLoader):
     A wrapper loader for the OpenSearch pipeline that extracts all unique,
     non-numeric string values from a specified database.
     """
-    def __init__(self, db_path: str, db_id: str):
+    def __init__(self, db_path: str):
         """
         Initializes the loader for a specific database.
 

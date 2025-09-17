@@ -2,7 +2,7 @@ import re
 from typing import List, Dict
 from darelabdb.nlp_retrieval.core.models import RetrievalResult
 from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
-from tqdm.auto import tqdm  # <<< CHANGE: Import tqdm
+from tqdm.auto import tqdm  
 
 class OpenSearchRuleBasedReranker(BaseReranker):
     """
@@ -18,7 +18,7 @@ class OpenSearchRuleBasedReranker(BaseReranker):
         score_proximity_filter: float = 0.3,
         max_candidates_per_group: int = 5,
         ignore_tables: List[str] = ["sqlite_sequence"],
-        enable_tqdm: bool = True  # <<< CHANGE: Add tqdm toggle
+        enable_tqdm: bool = True 
     ):
         """
         Initializes the rule-based reranker.
@@ -38,7 +38,7 @@ class OpenSearchRuleBasedReranker(BaseReranker):
         self.score_proximity_filter = score_proximity_filter
         self.max_candidates_per_group = max_candidates_per_group
         self.ignore_tables = set(ignore_tables)
-        self.enable_tqdm = enable_tqdm # <<< CHANGE: Store tqdm toggle
+        self.enable_tqdm = enable_tqdm
 
     def _is_numeric(self, s: str) -> bool:
         """Checks if a string is purely numeric (integer or float)."""

@@ -31,6 +31,12 @@ from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.op
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
 
+# --- ValueNet Imports ---
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever 
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
+from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
+
 # --- Configuration ---
 BASE_PATH = "development/experimental_analysis_of_value_linking/assets"
 DATABASES_ROOT = os.path.join(BASE_PATH, "retrievers", "databases")
@@ -63,7 +69,7 @@ def load_and_group_benchmark_data(
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("question")
+        query = task.get("new_question_correct_value")
         # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
@@ -126,11 +132,11 @@ def get_system_configs():
     print("Initializing all system searchers. This may take a moment...")
     
     # Pre-initialize all expensive components once
-    chess_searcher = Searcher(
-        query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
-        retrievers=[ChessMinHashLshRetriever()],
-        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0.8)
-    )
+    #chess_searcher = Searcher(
+    #    query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
+    #    retrievers=[ChessMinHashLshRetriever()],
+    #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0.8)
+    #)
 
     #omnisql_searcher = Searcher(
     #    query_processor=OmniSQLQueryProcessor(n=8),
@@ -144,14 +150,20 @@ def get_system_configs():
     #    reranker = OpenSearchRuleBasedReranker()
     #)
 
+    value_net_searcher = Searcher(
+        query_processor=ValueNetQueryProcessor(),
+        retrievers=[ValueNetRetriever()],
+        reranker=ValueNetReranker()
+    )
+    
     configs = {
-        "CHESS": {
-            "searcher": chess_searcher,
-            "get_db_specifics": lambda db_id: {
-                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
-                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-            }
-        },
+        #"CHESS": {
+        #    "searcher": chess_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+        #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
+        #    }
+        #},
         #"OmniSQL": {
         #    "searcher": omnisql_searcher,
         #    "get_db_specifics": lambda db_id: {
@@ -166,6 +178,13 @@ def get_system_configs():
         #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
         #    }
         #}
+        "ValueNet": {
+            "searcher": value_net_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": None,
+                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+            }
+        }
     }
     print("All systems initialized.")
     return configs
@@ -416,7 +435,7 @@ def main():
             # 1. Overall Report
             overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
-                f"{system_name}-Overall-Report-Perturbed",
+                f"{system_name}-Overall-Report",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
                 system_per_db_table_data,
@@ -428,14 +447,14 @@ def main():
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
-            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data)
+            generate_wandb_report(f"{system_name}-BIRD-Report", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
-            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data)
+            generate_wandb_report(f"{system_name}-SPIDER-Report", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:
