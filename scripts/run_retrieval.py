@@ -37,6 +37,10 @@ from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valu
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
 
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.brdge_retriever import BridgeRetriever
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_reranker import BridgeReranker
+
 # --- Configuration ---
 BASE_PATH = "development/experimental_analysis_of_value_linking/assets"
 DATABASES_ROOT = os.path.join(BASE_PATH, "retrievers", "databases")
@@ -150,12 +154,17 @@ def get_system_configs():
     #    reranker = OpenSearchRuleBasedReranker()
     #)
 
-    value_net_searcher = Searcher(
-        query_processor=ValueNetQueryProcessor(),
-        retrievers=[ValueNetRetriever()],
-        reranker=ValueNetReranker()
-    )
+    #value_net_searcher = Searcher(
+    #    query_processor=ValueNetQueryProcessor(),
+    #    retrievers=[ValueNetRetriever()],
+    #    reranker=ValueNetReranker()
+    #)
     
+    bridge_searcher = Searcher(
+        query_processor=BridgeQueryProcessor(),
+        retrievers=[BridgeRetriever()],
+        reranker=BridgeReranker()
+    )
     configs = {
         #"CHESS": {
         #    "searcher": chess_searcher,
@@ -178,11 +187,18 @@ def get_system_configs():
         #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
         #    }
         #}
-        "ValueNet": {
-            "searcher": value_net_searcher,
+        #"ValueNet": {
+        #    "searcher": value_net_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": None,
+        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+        #    }
+        #}
+        "BRIDGE": {
+            "searcher": bridge_searcher,
             "get_db_specifics": lambda db_id: {
-                "loader": None,
-                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+                "loader":None,
+                "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
             }
         }
     }

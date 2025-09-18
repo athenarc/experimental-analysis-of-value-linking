@@ -16,6 +16,8 @@ from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.op
 from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_loader import BridgeLoader
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.brdge_retriever import BridgeRetriever
 
 
 # --- Configuration ---
@@ -63,10 +65,10 @@ SEARCHER_METHODS = [
     #    "index_subdir": "chess",
     #}
     {
-        "name" : "ValueNet",
-        "loader_class": ValueNetLoader,
-        "retriever_class": ValueNetRetriever,
-        "index_subdir": "valuenet",
+        "name" : "BRIDGE",
+        "loader_class": BridgeLoader,
+        "retriever_class": BridgeRetriever,
+        "index_subdir": "bridge",
     }
 ]
 def main():
@@ -120,6 +122,8 @@ def main():
                 loader = method["loader_class"](db_path=db_file_path)
             elif method_name == "ValueNet":
                 loader = method["loader_class"](db_path=db_file_path)
+            elif method_name == "BRIDGE":
+                loader = method["loader_class"](db_file_path)
 
             items_to_index = loader.load()
             num_items = len(items_to_index)
