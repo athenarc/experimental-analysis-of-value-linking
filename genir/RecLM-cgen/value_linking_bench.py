@@ -75,9 +75,9 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
     system_prompt = "You are a precise database value linking tool. Your task is to take a user's mention and return the single, correct canonical database value that it maps to, wrapped in <SOI> and <EOI> tokens."
 
     for db_id, records in tqdm(grouped_data.items(), desc="Processing Databases"):
-        if db_id == 'card_games':
-            print("Skipping db_id: 'card_games'")
-            continue
+        #if db_id == 'card_games':
+        #    print("Skipping db_id: 'card_games'")
+        #    continue
 
         best_checkpoint_path = find_best_checkpoint(model_root_path, db_id)
         if not best_checkpoint_path:
@@ -138,7 +138,8 @@ def main(model_root_path, data_root_path, eval_file_path, extracted_values_path,
             processor = FastPrefixConstrainedLogitsProcessor(item_prefix_tree.constrain_search_list, num_beams=NUM_BEAMS)
 
         for record in tqdm(records, desc=f"Evaluating '{db_id}' Questions", leave=False):
-            question = record['new_question_correct_value']
+            question = record['question']
+            #new_question_correct_value
             ground_truth_values = {str(v['value']).lower() for v in record['values'] if re.search('[a-zA-Z]', str(v['value']))}
 
             candidate_phrases = extracted_values_map.get(question, [])
@@ -243,7 +244,7 @@ if __name__ == "__main__":
     parser.add_argument("--eval_file_path", type=str, required=True, help="Path to the input JSON evaluation file (e.g., 'dev.json').")
     parser.add_argument("--extracted_values_path", type=str, required=True, help="Path to the JSON file with pre-extracted value references from the previous script.")
     parser.add_argument("--output_file_path", type=str, required=True, help="Path to the output JSON file to save predictions.")
-    parser.add_argument("--device", type=str, default="cuda:0", help="Device to run inference on (e.g., 'cuda:0' or 'cpu').")
+    parser.add_argument("--device", type=str, default="cuda", help="Device to run inference on (e.g., 'cuda:0' or 'cpu').")
     
     args = parser.parse_args()
     main(args.model_root_path, args.data_root_path, args.eval_file_path, args.extracted_values_path, args.output_file_path, args.device)

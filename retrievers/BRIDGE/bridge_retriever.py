@@ -1,7 +1,7 @@
 import json
 import os
 from collections import defaultdict
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, NamedTuple
 from tqdm import tqdm
 import difflib
 from rapidfuzz import fuzz
@@ -28,7 +28,14 @@ _commonwords = {
     'no', 'yes', 'many'
 }
 
+# OPTIMIZATION: Use a set for faster lookups.
+_common_db_terms = {'id'}
+
+# OPTIMIZATION: Use a frozenset for faster lookups in _is_span_separator.
+_SPAN_SEPARATORS = frozenset('\'"()`,.?! ')
+
 string_types = (type(b''), type(u''))
+
 
 def is_number(s):
     try:
@@ -47,7 +54,7 @@ def is_commonword(s):
 
 
 def is_common_db_term(s):
-    return s.strip() in ['id']
+    return s.strip() in _common_db_terms
 
 
 class Match(object):
@@ -57,7 +64,7 @@ class Match(object):
 
 
 def _is_span_separator(c: str) -> bool:
-    return c in '\'"()`,.?! '
+    return c in _SPAN_SEPARATORS
 
 
 def _split(s: str) -> List[str]:
@@ -124,6 +131,18 @@ def _get_effective_match_source(s: str, start: int, end: int) -> Optional[Match]
     return Match(_start, end - start + 1)
 
 
+# OPTIMIZATION: Define a data structure to hold pre-computed values for each item.
+# This avoids redundant computations inside the hot loop of _get_matched_entries.
+class _PrecomputedItem(NamedTuple):
+    original_item: SearchableItem
+    field_value: str
+    fv_tokens: List[str]
+    c_field_value: str
+    is_fv_common: bool
+    is_fv_stopword: bool
+    is_fv_upper: bool
+
+
 class BridgeRetriever(BaseRetriever):
     def __init__(
         self,
@@ -134,8 +153,8 @@ class BridgeRetriever(BaseRetriever):
         self.top_k_matches_per_column = top_k_matches_per_column
         self.match_threshold = match_threshold
         self.s_match_threshold = s_match_threshold
-        # index: table -> column -> list[SearchableItem]
-        self._index_data: Dict[str, Dict[str, List[SearchableItem]]] = defaultdict(
+        # OPTIMIZATION: The index will now store pre-computed items for speed.
+        self._index_data: Dict[str, Dict[str, List[_PrecomputedItem]]] = defaultdict(
             lambda: defaultdict(list)
         )
 
@@ -147,6 +166,11 @@ class BridgeRetriever(BaseRetriever):
                 f.write(item.model_dump_json() + "\n")
 
     def _load_index(self, output_path: str) -> None:
+        """
+        OPTIMIZATION: This method is updated to pre-compute and cache values
+        (like tokenized forms, lowercase versions, etc.) for each item upon loading.
+        This prevents these expensive operations from being repeated for every query.
+        """
         index_file = os.path.join(output_path, "bridge_index.jsonl")
         self._index_data.clear()
 
@@ -156,91 +180,87 @@ class BridgeRetriever(BaseRetriever):
                 item = SearchableItem(**item_dict)
                 table = item.metadata.get("table")
                 column = item.metadata.get("column")
-                if table and column:
-                    self._index_data[table][column].append(item)
+
+                if not (table and column):
+                    continue
+
+                field_value = item.metadata.get("value")
+                # Pre-computation only applies to string values, mirroring the original logic's filter.
+                if not isinstance(field_value, string_types):
+                    continue
+
+                c_field_value = field_value.lower().strip()
+
+                precomputed = _PrecomputedItem(
+                    original_item=item,
+                    field_value=field_value,
+                    fv_tokens=_split(field_value),
+                    c_field_value=c_field_value,
+                    is_fv_common=is_commonword(c_field_value),
+                    is_fv_stopword=is_stopword(c_field_value),
+                    is_fv_upper=field_value.isupper()
+                )
+                self._index_data[table][column].append(precomputed)
 
     def _get_matched_entries(
         self,
         s: str,
-        searchable_items: List[SearchableItem],
+        precomputed_items: List[_PrecomputedItem],
         m_theta: float = 0.85,
         s_theta: float = 0.85,
     ) -> Optional[List[Tuple[str, Tuple[str, str, float, float, int, SearchableItem]]]]:
         """
-        Replicates the original get_matched_entries(s, field_values, m_theta, s_theta)
-
-        Returns:
-            Either None if no matches, or a sorted list of tuples:
-              (match_str, (field_value, source_match_str, match_score, s_match_score, match.size, item))
-            sorted by the original composite key:
-              1e16 * match_score + 1e8 * s_match_score + match.size (descending)
+        OPTIMIZATION: Replicates the original get_matched_entries logic but is significantly
+        faster because it operates on the _PrecomputedItem objects, avoiding repeated
+        string operations and function calls inside the main loop.
         """
-        if not searchable_items:
+        if not precomputed_items:
             return None
 
-        # n_grams in original is the token list (characters) for s
-        n_grams = _split(s) if isinstance(s, str) else s
+        n_grams = _split(s)
 
-        matched = dict()  # key: match_str -> value: (field_value, source_match_str, match_score, s_match_score, match.size, item)
+        matched = dict()
 
-        for item in searchable_items:
-            field_value = item.metadata.get("value")
-            if not isinstance(field_value, string_types):
-                continue
-            # tokens of field value (characters)
-            fv_tokens = _split(field_value)
-
-            sm = difflib.SequenceMatcher(None, n_grams, fv_tokens)
-            match = sm.find_longest_match(0, len(n_grams), 0, len(fv_tokens))
+        for p_item in precomputed_items:
+            # All item-specific values are now read from the precomputed p_item.
+            sm = difflib.SequenceMatcher(None, n_grams, p_item.fv_tokens)
+            match = sm.find_longest_match(0, len(n_grams), 0, len(p_item.fv_tokens))
 
             if match.size > 0:
                 source_match = _get_effective_match_source(s, match.a, match.a + match.size)
                 if source_match and source_match.size > 1:
-                    # substring from field_value corresponding to matched fv_tokens
-                    match_str = field_value[match.b: match.b + match.size]
-                    # substring from original s corresponding to source_match
+                    match_str = p_item.field_value[match.b: match.b + match.size]
                     source_match_str = s[source_match.start: source_match.start + source_match.size]
 
                     c_match_str = match_str.lower().strip()
                     c_source_match_str = source_match_str.lower().strip()
-                    c_field_value = field_value.lower().strip()
 
-                    # many early filters from original
                     if c_match_str and not is_number(c_match_str) and not is_common_db_term(c_match_str):
-                        if is_stopword(c_match_str) or is_stopword(c_source_match_str) or is_stopword(c_field_value):
+                        if is_stopword(c_match_str) or is_stopword(c_source_match_str) or p_item.is_fv_stopword:
                             continue
 
-                        # special-case possessive "'s"
                         if c_source_match_str.endswith(c_match_str + "'s"):
                             match_score = 1.0
                         else:
-                            # prefix match check: use field value and source substring as in original
-                            if _prefix_match(c_field_value, c_source_match_str):
-                                match_score = fuzz.ratio(c_field_value, c_source_match_str) / 100.0
+                            if _prefix_match(p_item.c_field_value, c_source_match_str):
+                                match_score = fuzz.ratio(p_item.c_field_value, c_source_match_str) / 100.0
                             else:
                                 match_score = 0.0
 
-                        # original sets s_match_score = match_score
                         s_match_score = match_score
 
-                        # commonword logic: if any of the three are commonwords and score < 1, skip
-                        if (is_commonword(c_match_str) or is_commonword(c_source_match_str) or is_commonword(c_field_value)) and match_score < 1:
+                        if (is_commonword(c_match_str) or is_commonword(c_source_match_str) or p_item.is_fv_common) and match_score < 1:
                             continue
 
-                        # thresholds
                         if match_score >= m_theta and s_match_score >= s_theta:
-                            # uppercase filter: if field_value is all uppercase and product < 1 skip
-                            if field_value.isupper() and (match_score * s_match_score) < 1:
+                            if p_item.is_fv_upper and (match_score * s_match_score) < 1:
                                 continue
 
-                            # store result keyed by match_str (as original)
-                            matched[match_str] = (field_value, source_match_str, match_score, s_match_score, match.size, item)
+                            matched[match_str] = (p_item.field_value, source_match_str, match_score, s_match_score, match.size, p_item.original_item)
 
         if not matched:
             return None
         else:
-            # sort by same composite key as original:
-            # key = (1e16 * match_score + 1e8 * s_match_score + match.size)
             sorted_items = sorted(
                 matched.items(),
                 key=lambda x: (1e16 * x[1][2] + 1e8 * x[1][3] + x[1][4]),
@@ -260,27 +280,25 @@ class BridgeRetriever(BaseRetriever):
         final_results_batch: List[List[RetrievalResult]] = []
 
         for nlq_queries in tqdm(processed_queries_batch, desc="Retrieving with BRIDGE"):
-            raw_nlq = nlq_queries[0]  # keep same assumption as before
+            raw_nlq = nlq_queries[0]
 
             all_nlq_matches: List[RetrievalResult] = []
 
             for table in self._index_data:
                 for column in self._index_data[table]:
-                    searchable_items = self._index_data[table][column]
+                    precomputed_items = self._index_data[table][column]
 
-                    matched_entries = self._get_matched_entries(raw_nlq, searchable_items, self.match_threshold, self.s_match_threshold)
+                    matched_entries = self._get_matched_entries(raw_nlq, precomputed_items, self.match_threshold, self.s_match_threshold)
 
                     if not matched_entries:
                         continue
 
-                    # matched_entries is list of (match_str, (field_value, source_match_str, match_score, s_match_score, match.size, item))
                     top_matches_for_column = matched_entries[: self.top_k_matches_per_column]
 
                     for match_str, (field_value, source_match_str, match_score, s_match_score, match_size, item) in top_matches_for_column:
                         composite_score = 1e16 * match_score + 1e8 * s_match_score + match_size
                         all_nlq_matches.append(RetrievalResult(item=item, score=composite_score))
 
-            # sort globally and keep top-k
             sorted_nlq_matches = sorted(all_nlq_matches, key=lambda r: r.score, reverse=True)
             final_results_batch.append(sorted_nlq_matches[:k])
 

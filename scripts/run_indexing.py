@@ -17,7 +17,7 @@ from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.op
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_loader import BridgeLoader
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.brdge_retriever import BridgeRetriever
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 
 
 # --- Configuration ---

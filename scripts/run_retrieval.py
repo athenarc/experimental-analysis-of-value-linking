@@ -37,7 +37,7 @@ from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valu
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
 
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.brdge_retriever import BridgeRetriever
+from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_reranker import BridgeReranker
 
@@ -73,7 +73,7 @@ def load_and_group_benchmark_data(
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("new_question_correct_value")
+        query = task.get("question")
         # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
@@ -451,7 +451,7 @@ def main():
             # 1. Overall Report
             overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
-                f"{system_name}-Overall-Report",
+                f"{system_name}-Overall-Report-Perturbed",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
                 system_per_db_table_data,
@@ -463,14 +463,14 @@ def main():
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
-            generate_wandb_report(f"{system_name}-BIRD-Report", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data)
+            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
-            generate_wandb_report(f"{system_name}-SPIDER-Report", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data)
+            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:
