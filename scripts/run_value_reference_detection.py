@@ -38,6 +38,7 @@ from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valu
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
 
+# --- BRIDGE Imports ---
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
 from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_reranker import BridgeReranker
@@ -52,7 +53,7 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
-GROUP_NAME="default_parameters"
+GROUP_NAME="value_reference_detection_experiments" # UPDATED GROUP NAME
 
 # Evaluation Configuration
 K_VALUES = [1, 2, 3, 5, 10, 20]
@@ -75,7 +76,6 @@ def load_and_group_benchmark_data(
     for task in all_tasks:
         db_id = task.get("db_id")
         query = task.get("question")
-        # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
         source = task.get("source", "other")
@@ -91,10 +91,8 @@ def load_and_group_benchmark_data(
                 [],
             )  # queries, gold, categories, sources
 
-        # Append query
         grouped_data[db_id][0].append(query)
 
-        # Determine the category
         category = "uncategorized"
         if isinstance(changes_info, dict):
             category_keys = [k for k in changes_info if k != "original_value"]
@@ -102,7 +100,6 @@ def load_and_group_benchmark_data(
                 category = category_keys[0]
         grouped_data[db_id][2].append(category)
 
-        # Determine the source
         source_key = "other"
         if "bird" in source.lower():
             source_key = "bird"
@@ -110,7 +107,6 @@ def load_and_group_benchmark_data(
             source_key = "spider"
         grouped_data[db_id][3].append(source_key)
 
-        # Create and append gold standard results
         current_gold_list = []
         for gold_meta in gold_values:
             relevant_meta = {
@@ -129,82 +125,114 @@ def load_and_group_benchmark_data(
     return grouped_data
 
 
-def get_system_configs():
+def get_query_processors() -> Dict[str, object]:
+    """Initializes and returns a dictionary of all query processors."""
+    print("Initializing all query processors...")
+    processors = {
+        "OmniSQL": OmniSQLQueryProcessor(n=8),
+        "Chess": ChessQueryProcessor(
+            model_name_or_path=LLM_MODEL_PATH, 
+            cache_folder="./cache/keywords_chess", 
+            tensor_parallel_size=2, 
+            gpu_memory_utilization=0.20
+        ),
+        #"OpenSearch": OpenSearchQueryProcessor(
+        #    model_name_or_path=LLM_MODEL_PATH, 
+        #    cache_folder="./cache/keywords_open_search", 
+        #    tensor_parallel_size=2, 
+        #    gpu_memory_utilization=0.65
+        #),
+        "ValueNet": ValueNetQueryProcessor(),
+        "Bridge": BridgeQueryProcessor(),
+    }
+    print("All query processors initialized.")
+    return processors
+
+
+def get_system_backends() -> Dict[str, Dict]:
     """
-    Returns a dictionary of all system configurations, with expensive components
-    pre-initialized.
+    Returns a dictionary of system backends. Each backend consists of a retriever,
+    a reranker, and a function to get database-specific paths.
     """
-    print("Initializing all system searchers. This may take a moment...")
-
-    # Pre-initialize all expensive components once
-    #chess_searcher = Searcher(
-    #    query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
-    #    retrievers=[ChessMinHashLshRetriever()],
-    #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0.8)
-    #)
-
-    #omnisql_searcher = Searcher(
-    #    query_processor=OmniSQLQueryProcessor(n=8),
-    #    retrievers=[OmniSQLRetriever()],
-    #    reranker=OmniSQLReranker()
-    #)
-
-    opensearch_searcher = Searcher(
-        query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-        reranker = OpenSearchRuleBasedReranker()
-    )
-
-    #value_net_searcher = Searcher(
-    #    query_processor=ValueNetQueryProcessor(),
-    #    retrievers=[ValueNetRetriever()],
-    #    reranker=ValueNetReranker()
-    #)
-
-    #bridge_searcher = Searcher(
-    #    query_processor=BridgeQueryProcessor(),
-    #    retrievers=[BridgeRetriever()],
-    #    reranker=BridgeReranker()
-    #)
-    configs = {
-        #"CHESS": {
-        #    "searcher": chess_searcher,
+    print("Defining all system backends (Retriever-Reranker pairs)...")
+    backends = {
+        #"Chess": {
+        #    "retriever": ChessMinHashLshRetriever(threshold=0.30),
+        #    "reranker": ChessSimilarityReranker(
+        #        model_name=EMBEDDING_MODEL_PATH,
+        #        embedding_similarity_threshold=0.8
+        #    ),
         #    "get_db_specifics": lambda db_id: {
         #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
         #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
         #    }
-        #},
+       # },
         #"OmniSQL": {
-        #    "searcher": omnisql_searcher,
+        #    "retriever": OmniSQLRetriever(),
+        #    "reranker": OmniSQLReranker(),
         #    "get_db_specifics": lambda db_id: {
         #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
         #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
         #    }
         #},
-        "OpenSearch": {
-            "searcher": opensearch_searcher,
-            "get_db_specifics": lambda db_id: {
-               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-            }
-        }
-        #"ValueNet": {
-        #    "searcher": value_net_searcher,
+        #"OpenSearch": {
+        #    "retriever": OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH),
+        #    "reranker": OpenSearchRuleBasedReranker(),
         #    "get_db_specifics": lambda db_id: {
-        #        "loader": None,
-        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
         #    }
-        #}
-        #"BRIDGE": {
-        #    "searcher": bridge_searcher,
+        #},
+        "ValueNet": {
+            "retriever": ValueNetRetriever(),
+            "reranker": ValueNetReranker(),
+            "get_db_specifics": lambda db_id: {
+                "loader": None, # ValueNet might not have a separate loader
+                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+            }
+        },
+        #"Bridge": {
+        #    "retriever": BridgeRetriever(),
+        #    "reranker": BridgeReranker(),
         #    "get_db_specifics": lambda db_id: {
-        #        "loader":None,
+        #        "loader": None, # Bridge might not have a separate loader
         #        "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
         #    }
         #}
     }
-    print("All systems initialized.")
-    return configs
+    print("All system backends defined.")
+    return backends
+
+
+def get_system_configs() -> Dict[str, Dict]:
+    """
+    Generates a dictionary of all experimental configurations by combining
+    every query processor with every system backend.
+    """
+    print("Generating all experimental configurations...")
+    query_processors = get_query_processors()
+    system_backends = get_system_backends()
+    
+    all_configs = {}
+
+    for processor_name, processor_instance in query_processors.items():
+        for backend_name, backend_components in system_backends.items():
+            config_name = f"{processor_name}ReferenceWith{backend_name}"
+            
+            searcher = Searcher(
+                query_processor=processor_instance,
+                retrievers=[backend_components["retriever"]],
+                reranker=backend_components["reranker"]
+            )
+            
+            all_configs[config_name] = {
+                "searcher": searcher,
+                "get_db_specifics": backend_components["get_db_specifics"]
+            }
+            print(f"  - Created config: {config_name}")
+
+    print(f"Total of {len(all_configs)} system configurations generated.")
+    return all_configs
 
 
 def aggregate_metrics_from_details(
@@ -313,26 +341,22 @@ def generate_wandb_report(
         group=GROUP_NAME
     )
 
-    # Log the detailed per-database performance table
     if per_db_table_data:
         columns_db = ["Database ID", "Num Queries", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "Recall (Non-Numerical)", "Perfect Recall Rate (Non-Numerical)"]
         per_db_table = wandb.Table(columns=columns_db, data=per_db_table_data)
         wandb.log({f"performance_by_database": per_db_table})
 
-    # Calculate and log the performance by category
     category_table_data = aggregate_by_category(all_query_details_with_cat)
     if category_table_data:
         columns_cat = ["Category", "Precision", "Recall", "F1 Score", "Perfect Recall Rate", "# Queries"]
         per_cat_table = wandb.Table(columns=columns_cat, data=category_table_data)
         wandb.log({"performance_by_category": per_cat_table})
 
-    # Log the performance at k table
     if performance_at_k_data:
         columns_k = ["@k", "Precision", "Recall", "F1 Score", "Perfect Recall Rate"]
         perf_at_k_table = wandb.Table(columns=columns_k, data=performance_at_k_data)
         wandb.log({"performance_at_k": perf_at_k_table})
 
-    # Calculate and log the overall aggregated summary for this specific run
     all_query_metrics = [metric for metric, cat in all_query_details_with_cat]
     aggregated_metrics = aggregate_metrics_from_details(all_query_metrics)
     aggregated_metrics["Avg Seconds per Query"] = avg_seconds_per_query
@@ -352,18 +376,15 @@ def main():
 
     all_systems_failures = []
 
-    # --- Outer loop: Iterate over each system ---
     for system_name, system_config in system_configs.items():
         print(f"\n{'='*30}\nRUNNING BENCHMARK FOR SYSTEM: {system_name}\n{'='*30}")
 
         searcher = system_config["searcher"]
 
-        # Data structures to collect results for the entire system
         system_all_db_summaries = []
         system_per_db_table_data = []
         system_all_query_details_with_cat = []
 
-        # Data structures for metrics@k
         system_total_execution_time = 0.0
         system_total_queries = 0
         metrics_at_k_overall = defaultdict(lambda: defaultdict(int))
@@ -371,7 +392,6 @@ def main():
         metrics_at_k_spider = defaultdict(lambda: defaultdict(int))
         num_queries_overall, num_queries_bird, num_queries_spider = 0, 0, 0
 
-        # --- Inner loop: Iterate over each database ---
         for db_id, (queries, gold_standard, categories, sources) in benchmark_data.items():
             print(f"\n--- Evaluating on DB: {db_id} for System: {system_name} ---")
 
@@ -382,12 +402,10 @@ def main():
                 print(f"Index not found for {db_id} at {index_path}. Skipping.")
                 continue
 
-            # Update query counts
             num_queries_overall += len(queries)
             num_queries_bird += sum(1 for s in sources if s == 'bird')
             num_queries_spider += sum(1 for s in sources if s == 'spider')
 
-            # --- Start Timing ---
             start_time = time.time()
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
@@ -397,12 +415,9 @@ def main():
             if queries:
                 system_total_queries += len(queries)
 
-            # --- End Timing & Log ---
             if len(queries) > 0:
                 print(f"  Query Speed: {total_time / len(queries):.4f} seconds/query ({len(queries)} queries in {total_time:.2f}s)")
 
-
-            # --- Evaluate metrics at different k values ---
             for k in K_VALUES:
                 predictions_at_k = []
                 for i, pred_list_for_query in enumerate(predicted_results):
@@ -432,11 +447,9 @@ def main():
                         metrics_at_k_spider[k]['fn'] += q_metric.false_negatives
                         metrics_at_k_spider[k]['perfect_recalls'] += q_metric.perfect_recall
 
-            # --- Evaluate on full results for other metrics ---
             summary = evaluator.evaluate(predicted_results, gold_standard)
             system_all_db_summaries.append(summary)
 
-            # Collect detailed results and tag with category and source
             for i, query_metric in enumerate(summary.per_query_details):
                 system_all_query_details_with_cat.append((query_metric, categories[i], sources[i]))
 
@@ -452,7 +465,6 @@ def main():
                         "retrieved_items": query_metric.retrieved_items,
                     })
 
-            # Prepare data for the per-DB table
             system_per_db_table_data.append([
                 db_id, summary.num_queries, summary.overall_precision, summary.overall_recall,
                 summary.overall_f1_score, summary.perfect_recall_rate,
@@ -462,13 +474,13 @@ def main():
             print(f"  Recall on {db_id}: {summary.overall_recall:.4f}")
             print(f"  Recall (Non-Numerical) on {db_id}: {summary.overall_recall_non_numerical:.4f}")
 
-        # --- After all DBs are processed, generate the W&B reports for the system ---
         if system_all_query_details_with_cat:
             avg_seconds_per_query = system_total_execution_time / system_total_queries if system_total_queries > 0 else 0.0
+            
             # 1. Overall Report
             overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
-                f"{system_name}-Overall-Report-Perturbed",
+                f"{system_name}-Overall",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
                 system_per_db_table_data,
@@ -481,16 +493,15 @@ def main():
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
-            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-BIRD", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data, avg_seconds_per_query)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
-            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-SPIDER", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data, avg_seconds_per_query)
 
-    # Save all collected failure cases to the specified JSON file
     if all_systems_failures:
         output_dir = os.path.dirname(MISSED_ITEMS_FILE)
         if not os.path.exists(output_dir):

@@ -2,7 +2,7 @@ from typing import List, Optional
 from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import BaseUserQueryProcessor
 from darelabdb.nlp_retrieval.user_query_processors.llm_keyword_extractor_query_processor import KeywordExtractorProcessor
 
-class OpenSearchKeywordProcessor(BaseUserQueryProcessor):
+class OpenSearchQueryProcessor(BaseUserQueryProcessor):
     """
     A wrapper query processor for the OpenSearch pipeline that uses a Large
     Language Model to extract key terms, entities, and phrases from queries.
@@ -29,7 +29,7 @@ class OpenSearchKeywordProcessor(BaseUserQueryProcessor):
             cache_folder=cache_folder,
             **kwargs
         )
-        print(f"OpenSearchKeywordProcessor initialized with model: {model_name_or_path}")
+        print(f"OpenSearcQueryProcessor initialized with model: {model_name_or_path}")
 
     def process(self, nlqs: List[str]) -> List[List[str]]:
         """
