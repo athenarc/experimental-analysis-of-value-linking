@@ -28,20 +28,18 @@ _commonwords = {
     'no', 'yes', 'many'
 }
 
-# OPTIMIZATION: Use a set for faster lookups.
 _common_db_terms = {'id'}
 
-# OPTIMIZATION: Use a frozenset for faster lookups in _is_span_separator.
 _SPAN_SEPARATORS = frozenset('\'"()`,.?! ')
 
-string_types = (type(b''), type(u''))
+string_types = (str,)
 
 
 def is_number(s):
     try:
         float(s.replace(',', ''))
         return True
-    except:
+    except ValueError:
         return False
 
 
@@ -68,39 +66,27 @@ def _is_span_separator(c: str) -> bool:
 
 
 def _split(s: str) -> List[str]:
-    # original behavior: list of chars lowercased after strip
     return [c.lower() for c in s.strip()]
 
 
 def _prefix_match(s1: str, s2: str) -> bool:
-    # reproduce original prefix_match logic
     i, j = 0, 0
-    for i in range(len(s1)):
-        if not _is_span_separator(s1[i]):
-            break
-    for j in range(len(s2)):
-        if not _is_span_separator(s2[j]):
-            break
-    if i < len(s1) and j < len(s2):
+    len_s1, len_s2 = len(s1), len(s2)
+    while i < len_s1 and _is_span_separator(s1[i]):
+        i += 1
+    while j < len_s2 and _is_span_separator(s2[j]):
+        j += 1
+    
+    if i < len_s1 and j < len_s2:
         return s1[i] == s2[j]
-    elif i >= len(s1) and j >= len(s2):
-        return True
-    else:
-        return False
+    return i >= len_s1 and j >= len_s2
 
 
 def _get_effective_match_source(s: str, start: int, end: int) -> Optional[Match]:
-    """
-    Exactly replicate original get_effecitve_match_source:
-    s: original string (not token list)
-    start, end: token indices (end is exclusive)
-    returns Match(start_index_in_s, size) or None
-    """
     _start = -1
-    # scan backward up to 2 positions
-    for i in range(start, start - 2, -1):
+    for i in range(start, start - 3, -1):
         if i < 0:
-            _start = i + 1
+            _start = 0
             break
         if _is_span_separator(s[i]):
             _start = i
@@ -109,10 +95,10 @@ def _get_effective_match_source(s: str, start: int, end: int) -> Optional[Match]
         return None
 
     _end = -1
-    # scan forwards up to 2 positions after end-1
+    len_s = len(s)
     for i in range(end - 1, end + 3):
-        if i >= len(s):
-            _end = i - 1
+        if i >= len_s:
+            _end = len_s - 1
             break
         if _is_span_separator(s[i]):
             _end = i
@@ -120,19 +106,11 @@ def _get_effective_match_source(s: str, start: int, end: int) -> Optional[Match]
     if _end < 0:
         return None
 
-    # trim leading separators
-    while (_start < len(s) and _is_span_separator(s[_start])):
+    while _start < len_s and _is_span_separator(s[_start]):
         _start += 1
-    # trim trailing separators
-    while (_end >= 0 and _is_span_separator(s[_end])):
+    while _end >= 0 and _is_span_separator(s[_end]):
         _end -= 1
-
-    # original used: Match(_start, end - start + 1)
-    return Match(_start, end - start + 1)
-
-
-# OPTIMIZATION: Define a data structure to hold pre-computed values for each item.
-# This avoids redundant computations inside the hot loop of _get_matched_entries.
+    return Match(_start, end - start)
 class _PrecomputedItem(NamedTuple):
     original_item: SearchableItem
     field_value: str
@@ -153,7 +131,6 @@ class BridgeRetriever(BaseRetriever):
         self.top_k_matches_per_column = top_k_matches_per_column
         self.match_threshold = match_threshold
         self.s_match_threshold = s_match_threshold
-        # OPTIMIZATION: The index will now store pre-computed items for speed.
         self._index_data: Dict[str, Dict[str, List[_PrecomputedItem]]] = defaultdict(
             lambda: defaultdict(list)
         )
@@ -172,8 +149,9 @@ class BridgeRetriever(BaseRetriever):
         This prevents these expensive operations from being repeated for every query.
         """
         index_file = os.path.join(output_path, "bridge_index.jsonl")
-        self._index_data.clear()
-
+        if self._index_data: # Avoid reloading if already loaded
+            return
+            
         with open(index_file, "r") as f:
             for line in f:
                 item_dict = json.loads(line)
@@ -218,13 +196,14 @@ class BridgeRetriever(BaseRetriever):
             return None
 
         n_grams = _split(s)
-
-        matched = dict()
+        len_n_grams = len(n_grams)
+        matched = {}
 
         for p_item in precomputed_items:
             # All item-specific values are now read from the precomputed p_item.
-            sm = difflib.SequenceMatcher(None, n_grams, p_item.fv_tokens)
-            match = sm.find_longest_match(0, len(n_grams), 0, len(p_item.fv_tokens))
+            len_fv_tokens = len(p_item.fv_tokens)
+            sm = difflib.SequenceMatcher(None, n_grams, p_item.fv_tokens, autojunk=False)
+            match = sm.find_longest_match(0, len_n_grams, 0, len_fv_tokens)
 
             if match.size > 0:
                 source_match = _get_effective_match_source(s, match.a, match.a + match.size)
@@ -239,7 +218,7 @@ class BridgeRetriever(BaseRetriever):
                         if is_stopword(c_match_str) or is_stopword(c_source_match_str) or p_item.is_fv_stopword:
                             continue
 
-                        if c_source_match_str.endswith(c_match_str + "'s"):
+                        if c_source_match_str.endswith(f"{c_match_str}'s"):
                             match_score = 1.0
                         else:
                             if _prefix_match(p_item.c_field_value, c_source_match_str):
@@ -255,32 +234,35 @@ class BridgeRetriever(BaseRetriever):
                         if match_score >= m_theta and s_match_score >= s_theta:
                             if p_item.is_fv_upper and (match_score * s_match_score) < 1:
                                 continue
-
-                            matched[match_str] = (p_item.field_value, source_match_str, match_score, s_match_score, match.size, p_item.original_item)
+                            match_key = (match_str, p_item.field_value)
+                            matched[match_key] = (p_item.field_value, source_match_str, match_score, s_match_score, match.size, p_item.original_item)
 
         if not matched:
             return None
         else:
+            # The original key was x[0] (match_str). We now use match_key[0] for the same effect.
             sorted_items = sorted(
                 matched.items(),
                 key=lambda x: (1e16 * x[1][2] + 1e8 * x[1][3] + x[1][4]),
                 reverse=True,
             )
-            return sorted_items
+            # Reformat the output to match the original structure
+            return [(item[0][0], item[1]) for item in sorted_items]
 
     def retrieve(
         self, processed_queries_batch: List[List[str]], output_path: str, k: int
     ) -> List[List[RetrievalResult]]:
         """
         processed_queries_batch: List of processed queries, where each entry is a list of tokens/strings.
-        For compatibility with your earlier code, we assume processed_queries_batch[i][0] is the raw NLQ string.
+        For compatibility, we assume processed_queries_batch[i][0] is the raw NLQ string.
         """
         self._load_index(output_path)
 
         final_results_batch: List[List[RetrievalResult]] = []
 
-        for nlq_queries in tqdm(processed_queries_batch, desc="Retrieving with BRIDGE"):
-            raw_nlq = nlq_queries[0]
+        for nlq_tokens in tqdm(processed_queries_batch, desc="Retrieving with BRIDGE"):
+            # The first element is assumed to be the raw, unprocessed query string.
+            raw_nlq = nlq_tokens[0] 
 
             all_nlq_matches: List[RetrievalResult] = []
 
@@ -288,7 +270,12 @@ class BridgeRetriever(BaseRetriever):
                 for column in self._index_data[table]:
                     precomputed_items = self._index_data[table][column]
 
-                    matched_entries = self._get_matched_entries(raw_nlq, precomputed_items, self.match_threshold, self.s_match_threshold)
+                    matched_entries = self._get_matched_entries(
+                        raw_nlq, 
+                        precomputed_items, 
+                        self.match_threshold, 
+                        self.s_match_threshold
+                    )
 
                     if not matched_entries:
                         continue

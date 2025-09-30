@@ -52,7 +52,7 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
-GROUP_NAME="default_parameters"
+GROUP_NAME="at_k_correct"
 
 # Evaluation Configuration
 K_VALUES = [1, 2, 3, 5, 10, 20]
@@ -74,7 +74,7 @@ def load_and_group_benchmark_data(
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("question")
+        query = task.get("new_question_correct_value")
         # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
@@ -281,16 +281,15 @@ def _calculate_and_prepare_k_table(
         total_tp = counts.get('tp', 0)
         total_fp = counts.get('fp', 0)
         total_fn = counts.get('fn', 0)
-        perfect_recalls = counts.get('perfect_recalls', 0)
+        perfect_recalls_non_numerical = counts.get('perfect_recalls_non_numerical', 0)
 
         precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
         recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
         f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
-        prr = perfect_recalls / total_queries if total_queries > 0 else 0.0
+        prr = perfect_recalls_non_numerical / total_queries if total_queries > 0 else 0.0
 
         table_data.append([k, precision, recall, f1, prr])
     return table_data
-
 
 def generate_wandb_report(
     run_name: str,
@@ -328,7 +327,7 @@ def generate_wandb_report(
 
     # Log the performance at k table
     if performance_at_k_data:
-        columns_k = ["@k", "Precision", "Recall", "F1 Score", "Perfect Recall Rate"]
+        columns_k = ["@k", "Precision", "Recall", "F1 Score", "Perfect Recall Rate (Non-Numerical)"]
         perf_at_k_table = wandb.Table(columns=columns_k, data=performance_at_k_data)
         wandb.log({"performance_at_k": perf_at_k_table})
 
@@ -419,18 +418,18 @@ def main():
                     metrics_at_k_overall[k]['tp'] += q_metric.true_positives
                     metrics_at_k_overall[k]['fp'] += q_metric.false_positives
                     metrics_at_k_overall[k]['fn'] += q_metric.false_negatives
-                    metrics_at_k_overall[k]['perfect_recalls'] += q_metric.perfect_recall
+                    metrics_at_k_overall[k]['perfect_recalls_non_numerical'] += q_metric.perfect_recall_non_numerical
 
                     if source == 'bird':
                         metrics_at_k_bird[k]['tp'] += q_metric.true_positives
                         metrics_at_k_bird[k]['fp'] += q_metric.false_positives
                         metrics_at_k_bird[k]['fn'] += q_metric.false_negatives
-                        metrics_at_k_bird[k]['perfect_recalls'] += q_metric.perfect_recall
+                        metrics_at_k_bird[k]['perfect_recalls_non_numerical'] += q_metric.perfect_recall_non_numerical
                     elif source == 'spider':
                         metrics_at_k_spider[k]['tp'] += q_metric.true_positives
                         metrics_at_k_spider[k]['fp'] += q_metric.false_positives
                         metrics_at_k_spider[k]['fn'] += q_metric.false_negatives
-                        metrics_at_k_spider[k]['perfect_recalls'] += q_metric.perfect_recall
+                        metrics_at_k_spider[k]['perfect_recalls_non_numerical'] += q_metric.perfect_recall_non_numerical
 
             # --- Evaluate on full results for other metrics ---
             summary = evaluator.evaluate(predicted_results, gold_standard)
@@ -468,7 +467,7 @@ def main():
             # 1. Overall Report
             overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
-                f"{system_name}-Overall-Report-Perturbed",
+                f"{system_name}-Overall-Report",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
                 system_per_db_table_data,
@@ -481,14 +480,14 @@ def main():
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
-            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-BIRD-Report", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data,avg_seconds_per_query)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
-            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-SPIDER-Report", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data,avg_seconds_per_query)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:
