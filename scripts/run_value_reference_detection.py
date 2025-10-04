@@ -53,7 +53,7 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
-GROUP_NAME="value_reference_detection_experiments" # UPDATED GROUP NAME
+GROUP_NAME="value_reference_detection_experiments"
 
 # Evaluation Configuration
 K_VALUES = [1, 2, 3, 5, 10, 20]
@@ -183,22 +183,22 @@ def get_system_backends() -> Dict[str, Dict]:
         #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
         #    }
         #},
-        "ValueNet": {
-            "retriever": ValueNetRetriever(),
-            "reranker": ValueNetReranker(),
-            "get_db_specifics": lambda db_id: {
-                "loader": None, # ValueNet might not have a separate loader
-                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
-            }
-        },
-        #"Bridge": {
-        #    "retriever": BridgeRetriever(),
-        #    "reranker": BridgeReranker(),
+        #"ValueNet": {
+        #    "retriever": ValueNetRetriever(max_workers=4),
+        #    "reranker": ValueNetReranker(),
         #    "get_db_specifics": lambda db_id: {
-        #        "loader": None, # Bridge might not have a separate loader
-        #        "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
+        #        "loader": None, # ValueNet might not have a separate loader
+        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
         #    }
-        #}
+        #},
+        "Bridge": {
+            "retriever": BridgeRetriever(),
+            "reranker": BridgeReranker(),
+            "get_db_specifics": lambda db_id: {
+                "loader": None, # Bridge might not have a separate loader
+                "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
+            }
+        }
     }
     print("All system backends defined.")
     return backends

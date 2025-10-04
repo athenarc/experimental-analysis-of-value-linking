@@ -74,7 +74,7 @@ def load_and_group_benchmark_data(
     grouped_data = {}
     for task in all_tasks:
         db_id = task.get("db_id")
-        query = task.get("new_question_correct_value")
+        query = task.get("question")
         # new_question_correct_value
         gold_values = task.get("values")
         changes_info = task.get("changes_information")
@@ -150,20 +150,20 @@ def get_system_configs():
     #)
 
     #opensearch_searcher = Searcher(
-    #    query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+    #    query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
     #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-    #    reranker=OpenSearchRuleBasedReranker(similarity_threshold=0,score_proximity_filter=0)
+    #    reranker=OpenSearchRuleBasedReranker(similarity_threshold=0,score_proximity_filter=1)
     #)
 
-    value_net_searcher = Searcher(
-        query_processor=ValueNetQueryProcessor(),
-        retrievers=[ValueNetRetriever(similarity_threshold=0)],
-        reranker=ValueNetReranker()
-    )
+    #value_net_searcher = Searcher(
+    #    query_processor=ValueNetQueryProcessor(),
+    #    retrievers=[ValueNetRetriever(max_workers=4,similarity_threshold=0.5)],
+    #    reranker=ValueNetReranker()
+    #)
 
     bridge_searcher = Searcher(
         query_processor=BridgeQueryProcessor(),
-        retrievers=[BridgeRetriever(match_threshold=0,s_match_threshold=0)],
+        retrievers=[BridgeRetriever(match_threshold=0.5,s_match_threshold=0)],
         reranker=BridgeReranker()
     )
     configs = {
@@ -188,13 +188,13 @@ def get_system_configs():
         #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
         #    }
         #},
-        "ValueNet": {
-            "searcher": value_net_searcher,
-            "get_db_specifics": lambda db_id: {
-                "loader": None,
-                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
-            }
-        },
+        #"ValueNet": {
+        #    "searcher": value_net_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": None,
+        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+        #    }
+        #},
         "BRIDGE": {
             "searcher": bridge_searcher,
             "get_db_specifics": lambda db_id: {
@@ -467,7 +467,7 @@ def main():
             # 1. Overall Report
             overall_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_overall, K_VALUES, num_queries_overall)
             generate_wandb_report(
-                f"{system_name}-Overall-Report",
+                f"{system_name}-Overall-Report-Perturbed",
                 [(m, c) for m, c, s in system_all_query_details_with_cat],
                 system_all_db_summaries,
                 system_per_db_table_data,
@@ -480,14 +480,14 @@ def main():
             bird_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('bird' in src for src in benchmark_data[db_id][3])]
             bird_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_bird, K_VALUES, num_queries_bird)
-            generate_wandb_report(f"{system_name}-BIRD-Report", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-BIRD-Report-Perturbed", bird_query_details, bird_db_summaries, bird_per_db_data, bird_k_table_data,avg_seconds_per_query)
 
             # 3. SPIDER Report
             spider_query_details = [(m, c) for m, c, s in system_all_query_details_with_cat if s == 'spider']
             spider_db_summaries = [s for s, db_id in zip(system_all_db_summaries, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_per_db_data = [row for row, db_id in zip(system_per_db_table_data, benchmark_data.keys()) if any('spider' in src for src in benchmark_data[db_id][3])]
             spider_k_table_data = _calculate_and_prepare_k_table(metrics_at_k_spider, K_VALUES, num_queries_spider)
-            generate_wandb_report(f"{system_name}-SPIDER-Report", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data,avg_seconds_per_query)
+            generate_wandb_report(f"{system_name}-SPIDER-Report-Perturbed", spider_query_details, spider_db_summaries, spider_per_db_data, spider_k_table_data,avg_seconds_per_query)
 
     # Save all collected failure cases to the specified JSON file
     if all_systems_failures:

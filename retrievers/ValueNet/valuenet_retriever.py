@@ -1,5 +1,6 @@
 import os
 import concurrent.futures
+import functools
 from collections import defaultdict
 from typing import List, Dict, Tuple
 
@@ -67,7 +68,7 @@ class ValueNetRetriever(BaseRetriever):
                 candidate_str, lower_content
             )
 
-            if score > similarity_threshold:
+            if score >= similarity_threshold:
                 result_item = item.model_copy()
                 result_item.metadata["retrieved_by_keyword"] = candidate_str
                 matches.append(RetrievalResult(item=result_item, score=score))
@@ -109,12 +110,17 @@ class ValueNetRetriever(BaseRetriever):
             for candidate in candidates
         )
 
+        worker_func = functools.partial(
+            self._compute_matches_for_candidate,
+            similarity_threshold=self.similarity_threshold,
+        )
+
         candidate_to_matches: Dict[str, List[RetrievalResult]] = defaultdict(list)
         with concurrent.futures.ProcessPoolExecutor(max_workers=self.max_workers) as executor:
             job_args = (
                 (candidate, preprocessed_items) for candidate in unique_candidates
             )
-            results_iterator = executor.map(self._compute_matches_for_candidate, job_args)
+            results_iterator = executor.map(worker_func, job_args)
 
             progress_bar = tqdm(
                 results_iterator,
