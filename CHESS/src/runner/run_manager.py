@@ -4,7 +4,7 @@ from pathlib import Path
 from multiprocessing import Pool
 from typing import List, Dict, Any, Tuple
 from langgraph.graph import StateGraph
-
+from llm.vllm_manager import VLLMManager
 from runner.logger import Logger
 from runner.task import Task
 from runner.database_manager import DatabaseManager
@@ -112,6 +112,10 @@ class RunManager:
         Returns:
             tuple: The state of the task processing and task identifiers.
         """
+        if self.args.use_vllm_batch:
+            # This ensures the model is loaded only once per worker process
+            if not VLLMManager.is_initialized():
+                VLLMManager.initialize_model(model_path=self.args.vllm_model_path)
         print(f"Initializing task: {task.db_id} {task.question_id}")
         DatabaseManager(db_mode=self.args.data_mode, db_id=task.db_id)
         logger = Logger(db_id=task.db_id, question_id=task.question_id, result_directory=self.result_directory)

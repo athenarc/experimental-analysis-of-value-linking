@@ -60,6 +60,7 @@ class GenerateCandidate(Tool):
                     parser=get_parser(generator_config.parser_name),
                     request_list=request_list,
                     step=f"{self.tool_name}_{generator_config.engine_config['engine_name']}",
+                    engine_config=generator_config.engine_config 
                 )
                 response = [res for sublist in response for res in sublist]
             except Exception as e:

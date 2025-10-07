@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 from llm.engine_configs import ENGINE_CONFIGS
 from runner.logger import Logger
 from threading_utils import ordered_concurrent_function_calls
+from llm.vllm_manager import VLLMManager
 import concurrent
 def get_llm_chain(engine_name: str, temperature: float = 0, base_uri: str = None) -> Any:
     """
@@ -115,16 +116,67 @@ def async_llm_chain_call(
     parser: Any, 
     request_list: List[Dict[str, Any]], 
     step: int, 
-    sampling_count: int = 1
+    sampling_count: int = 1,
+    engine_config: Dict[str, Any] = None 
 ) -> List[List[Any]]:
     logger = Logger() # Assuming Logger can be instantiated without args here for general logging
     call_list = []
     engine_id = 0
 
-    if not request_list: # ADD THIS CHECK
+    if not request_list: 
         logger.log(f"async_llm_chain_call for step {step}: received empty request_list. Returning empty results.", "warning")
         return [] # Return empty list if there are no requests to process
+    
+    if VLLMManager.is_initialized():
+        logger.log(f"Using vLLM batch generation for step: {step}", "info")
+        
+        # 1. Gather all prompts into a single list
+        all_prompts = []
+        for request_kwargs in request_list:
+            # The prompt object from langchain needs to be invoked to get the formatted string
+            formatted_prompt = prompt.invoke(request_kwargs).to_string()
+            for _ in range(sampling_count):
+                all_prompts.append(formatted_prompt)
 
+        # 2. Define sampling parameters from the engine_config
+        if not engine_config:
+            raise ValueError("engine_config must be provided when using vLLM batch mode.")
+            
+        sampling_params_dict = {
+            "temperature": engine_config.get("temperature", 0.7),
+            "max_tokens": engine_config.get("max_tokens", 2048),
+            # Add other params like top_p, top_k if needed
+        }
+
+        # 3. Call the VLLMManager to generate responses for the whole batch
+        vllm_outputs = VLLMManager.generate(all_prompts, sampling_params_dict)
+        
+        # 4. Parse each output individually
+        parsed_results = []
+        for i, output_text in enumerate(vllm_outputs):
+            try:
+                # Log conversation for each prompt/response pair
+                logger.log_conversation([
+                    {"text": all_prompts[i], "from": "Human (Batch)", "step": step},
+                    {"text": output_text, "from": "AI (Batch)", "step": step}
+                ])
+                parsed_output = parser.parse(output_text)
+                parsed_results.append(parsed_output)
+            except Exception as e:
+                logger.log(f"Failed to parse vLLM output for prompt {i} in batch: {e}", "error")
+                parsed_results.append(None) # Add a placeholder for failed parsing
+
+
+        # 5. Group results back into the expected nested list structure
+        grouped_results = []
+        for i in range(len(request_list)):
+            start_index = i * sampling_count
+            end_index = (i + 1) * sampling_count
+            group = parsed_results[start_index:end_index]
+            grouped_results.append(group)
+        
+        return grouped_results
+    
     for request_id, request_kwargs in enumerate(request_list):
         for _ in range(sampling_count):
             call_list.append({
@@ -145,13 +197,7 @@ def async_llm_chain_call(
         logger.log(f"async_llm_chain_call for step {step}: call_list became empty unexpectedly. Returning empty.", "warning")
         return [[] for _ in range(len(request_list))] # Match expected output structure for empty
 
-    # Execute the functions concurrently
-    # The original ordered_concurrent_function_calls might have its own ThreadPoolExecutor.
-    # If using that directly:
-    # results = ordered_concurrent_function_calls(call_list)
-    
-    # If implementing ThreadPoolExecutor here as implied by max_workers error:
-    results_placeholder = [None] * len(call_list)
+
     try:
         with ThreadPoolExecutor(max_workers=num_workers_for_pool) as executor:
             future_to_id = {executor.submit(call['function'], **call['kwargs']): i for i, call in enumerate(call_list)}
