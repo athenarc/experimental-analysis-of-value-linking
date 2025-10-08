@@ -6,13 +6,8 @@ from pipeline.pipeline_manager import PipelineManager
 from llm.model import model_chose
 from llm.prompts import *
 
-# +++ UPDATE THE FUNCTION SIGNATURE +++
 @node_decorator(check_schema_status=False)
-def extract_query_noun(state: Dict[str, Any]) -> Dict[str, Any]:
-# +++++++++++++++++++++++++++++++++++++
-    task = state["keys"]["task"]
-    execution_history = state["keys"]["execution_history"]
-    
+def extract_query_noun(task: Any,execution_history: Dict[str, Any]) -> Dict[str, Any]:
     config,node_name=PipelineManager().get_model_para()
 
     chat_model = model_chose(node_name,config["engine"])

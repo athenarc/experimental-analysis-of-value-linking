@@ -2,9 +2,13 @@ from typing import Dict, TypedDict, Callable
 from langgraph.graph import END, StateGraph
 
 from pipeline.generate_db_schema import generate_db_schema
-from pipeline.extract_col_value import extract_col_value
-from pipeline.extract_query_noun import extract_query_noun
-from pipeline.column_retrieve_and_other_info import column_retrieve_and_other_info
+# --- Remove unused imports ---
+# from pipeline.extract_col_value import extract_col_value
+# from pipeline.extract_query_noun import extract_query_noun
+# from pipeline.column_retrieve_and_other_info import column_retrieve_and_other_info
+# +++ Add the new import +++
+from pipeline.simplified_info_gathering import simplified_info_gathering
+# ++++++++++++++++++++++++++
 from pipeline.candidate_generate import candidate_generate
 from pipeline.align_correct import align_correct
 from pipeline.vote import vote
@@ -54,6 +58,7 @@ class WorkflowBuilder:
                 logging.info(f"Added node: {node_name}")
             else:
                 logging.error(f"Node function '{node_name}' not found in global scope")
+
 
     def _add_edges(self, edges: list) -> None:
         """

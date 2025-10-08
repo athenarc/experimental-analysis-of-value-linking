@@ -3,7 +3,8 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed, ProcessPoolExecutor, TimeoutError
 import random, time
 from func_timeout import func_timeout, FunctionTimedOut
-from typing import List
+from llm.model import VLLM_req
+
 
 
 def sql_raw_parse(sql_input_str, return_question):
@@ -18,24 +19,9 @@ def sql_raw_parse(sql_input_str, return_question):
                 actual_sql_content_str = parsed_list[0]
         except json.JSONDecodeError:
             pass
-            
-    # +++ START MODIFICATION: More aggressive cleaning +++
-    # Split on various conversational markers the model might add.
-    # The pattern now includes markdown bolding and more phrases.
-    processed_sql = re.split(
-        r'Correction:|#New SQL:|New SQL:|\*\*Final Corrected Query:\*\*|\*\*Final SQL:\*\*', 
-        actual_sql_content_str, 
-        flags=re.IGNORECASE
-    )[-1]
-    
-    # Take everything before the first semicolon as a fallback for cleanup
-    if ';' in processed_sql:
-        processed_sql = processed_sql.split(';')[0]
 
-    # Then, perform the original cleaning steps
-    processed_sql = processed_sql.split('/*')[0].strip().replace('```sql', '').replace('```', '')
-    # +++ END MODIFICATION +++
-    processed_sql = re.sub(r"```.*?", '', processed_sql)
+    processed_sql = actual_sql_content_str.split('/*')[0].strip().replace('```sql', '').replace('```', '')
+    processed_sql = re.sub("```.*?", '', processed_sql)
     
     rwq = None
     sql_query_part = ""
@@ -63,9 +49,15 @@ def sql_raw_parse(sql_input_str, return_question):
     final_sql = re.sub(r'\s+', ' ', sql_query_part).strip()
     
     if not final_sql and "#SQL:" not in actual_sql_content_str:
+        # If after all processing, final_sql is empty AND the original input didn't even have #SQL:
+        # it implies the LLM output was entirely non-SQL content or completely malformed.
+        # In this specific case for candidate_generate, this might be an issue.
+        # For now, we return the empty string, but this might need more thought
+        # if it happens often.
         pass
 
     return final_sql, rwq
+
 
 
 def get_sql(chat_model,
@@ -76,53 +68,30 @@ def get_sql(chat_model,
             n=1,
             single=True):
     llm_raw_output = chat_model.get_ans(prompt, temp, top_p=top_p, n=n, single=single)
+    #print(f"RAW LLM OUTPUT for candidate_generate: >>>{llm_raw_output}<<<")
     
     if single:
         return sql_raw_parse(llm_raw_output, return_question)
     else:
+        # This part assumes llm_raw_output is a list of strings if single is False
+        # And each string in that list might be a JSON array string if VLLM_req.get_ans
+        # was modified to return list of strings even for n>1 choices
         parsed_sqls = []
         if isinstance(llm_raw_output, list):
             for item_str in llm_raw_output:
+                # Assuming each item_str could also be a JSON list string from vLLM
+                # This logic should mirror the single=True path's input to sql_raw_parse
+                # if VLLM_req.get_ans for single=False also returns a list of list-strings
                 parsed_sql, _ = sql_raw_parse(item_str, return_question)
                 parsed_sqls.append(parsed_sql)
-            return parsed_sqls, ""
-        else:
+            return parsed_sqls, "" # rwq is "" for multiple outputs for now
+        else: # Should not happen if VLLM_req.get_ans for n>1 returns a list
             parsed_sql, _ = sql_raw_parse(llm_raw_output, return_question)
             return [parsed_sql], ""
-        
-def get_sql_batch(chat_model,
-                  prompts: List[str],
-                  temp=1.0,
-                  top_p=None,
-                  n=1):
-    """
-    Sends a batch of prompts to the LLM and parses the responses.
-    This function is now robust to n > 1, taking only the first candidate.
-    """
-    # This call might return List[str] (if n=1) or List[List[str]] (if n>1)
-    llm_raw_outputs = chat_model.get_ans(prompts, temp, top_p=top_p, n=n, single=False)
-    
-    parsed_sqls = []
-    if not isinstance(llm_raw_outputs, list):
-        # Safety fallback if the LLM returns a single non-list item
-        llm_raw_outputs = [llm_raw_outputs]
 
-    for item in llm_raw_outputs:
-        # Determine the actual string to parse.
-        # If 'item' is a list (from n>1), take the first element.
-        # If 'item' is already a string (from n=1), use it directly.
-        item_to_parse = item[0] if isinstance(item, list) else item
-        
-        # Now we are guaranteed to pass a string to sql_raw_parse
-        parsed_sql, _ = sql_raw_parse(item_to_parse, return_question=False)
-        
-        # The run_manager expects the output for each task to be a list of SQLs
-        parsed_sqls.append([parsed_sql])
-
-    return parsed_sqls
 
 def retable(sql):  # 把T1 恢复原状
-    table_as = re.findall(r' ([^ ]*) +AS +([^ ]*)', sql)
+    table_as = re.findall(' ([^ ]*) +AS +([^ ]*)', sql)
     for x in table_as:
         sql = sql.replace(f"{x[1]}.", f"{x[0]}.")
     return sql
@@ -131,39 +100,41 @@ def retable(sql):  # 把T1 恢复原状
 def max_fun_check(sql_retable):
     fun_amb = re.findall(r"= *\( *SELECT *(MAX|MIN)\((.*?)\) +FROM +(\w+)",
                          sql_retable)
+    # fun_amb=[]
     order_amb = set(re.findall(r"= (\(SELECT .* LIMIT \d\))", sql_retable))
     select_amb = set(
         re.findall(r"^SELECT[^\(\)]*? ((MIN|MAX)\([^\)]*?\)).*?LIMIT 1",
-                   sql_retable))
+                   sql_retable))  # selct 错的
     return fun_amb, order_amb, select_amb
 
 
 def foreign_pick(sql):
     matchs = re.findall(r"ON\s+(\w+\.\w+)\s*=\s*(\w+\.\w+) ", sql)
+    # print('-----------\n',matchs)
     ma_all = [x for y in matchs for x in y]
     return set(ma_all)
 
 
 def column_pick(sql, db_col, foreign_set):
     matchs = foreign_pick(sql)
-    cols = set()
+    cols = set()  ## table.`column` 所有column格式统一
     col_table = {}
     ans = set()
-    sql_select = set(re.findall(r"SELECT (.*?) FROM ", sql))
-    for x in db_col:
+    sql_select = set(re.findall("SELECT (.*?) FROM ", sql))
+    for x in db_col:  #db_col: table.`column`  同名歧义字段导入
         if sql.find(x) != -1:
             cols.add(x)
         table, col = x.split('.')
         col_table.setdefault(col, [])
         col_table[col].append(table)
-    for col in cols:
+    for col in cols:  # 对于SQL中所有存在的 table.col
         table, col_name = col.split('.')
         flag = True
         for x in sql_select:
             if x.find(col) != -1:
                 flag = False
                 break
-        if flag and (col in foreign_set or x in matchs):
+        if flag and (col in foreign_set or x in matchs):  # 在外键且select里面没有
             continue
         if col_table.get(col_name):
             Ambiguity = []
@@ -171,6 +142,8 @@ def column_pick(sql, db_col, foreign_set):
                 tbc = f"{t}.{col_name}"
                 if tbc != col:
                     Ambiguity.append(tbc)
+                # col_t=f"{t}.{col_name}"
+                # ans.append(f"{t}.{col_name}: {db_col[col_t]}")
             if len(Ambiguity):
                 amb_des = col + ": " + ", ".join(Ambiguity)
                 ans.add(amb_des)
@@ -217,9 +190,9 @@ def func_find(sql):
 
 
 t1_tabe_value = re.compile(
-    r"(\w+\.[\w]+) =\s*'([^']+(?:''[^']*)*)'")
+    r"(\w+\.[\w]+) =\s*'([^']+(?:''[^']*)*)'")  #table.column ="value"
 t2_tab_val = re.compile(
-    r"(\w+\.`[^`]*?`) =\s*'([^']+(?:''[^']*)*)'")
+    r"(\w+\.`[^`]*?`) =\s*'([^']+(?:''[^']*)*)'")  #table.`column` ="value"
 
 
 def filter_sql(b, bx, conn, SQL, chars=""):
@@ -267,6 +240,7 @@ SQL: {SQL}
 def select_check(SQL, db_col, chat_model, question):
     select = re.findall(r"^SELECT.*?\|\| ' ' \|\| .*?FROM", SQL)
     if select:
+        # print("soft change concat")
         SQL = SQL.replace("|| ' ' ||", ', ')
 
     select_amb = re.findall(r"^SELECT.*? (\w+\.\*).*?FROM", SQL)
@@ -278,6 +252,7 @@ SQL:{SQL}
 我们规定视这种不明确的查询为对应的id
 现在请你把上面SQL的{select_amb[0]}改为对应的id,请你直接给出SQL, 不要回复任何其他内容:
 #SQL:"""
+        # print(prompt)
         SQL = get_sql(chat_model, prompt, 0.0)[0].split("SQL:")[-1]
     return SQL
 
@@ -294,6 +269,7 @@ class soft_check:
         self.bert_model = bert_model
         self.chat_model = chat_model
         self.soft_prompt = soft_prompt
+        # self.logger = logger
         self.correct_dic = correct_dic
         self.correct_prompt = correct_prompt
         self.vote_prompt = vote_prompt
@@ -301,6 +277,7 @@ class soft_check:
     def vote_chose(self, SQLs, question):
         all_sql = '\n\n'.join(SQLs)
         prompt = self.vote_prompt.format(question=question, sql=all_sql)
+        # print(prompt)
         SQL_vote = get_sql(self.chat_model, prompt, 0.0)[0]
         return SQL_vote
 
@@ -308,7 +285,9 @@ class soft_check:
         soft_p = self.soft_prompt.format(SQL=SQL, question=question, hint=hint)
         soft_SQL = self.chat_model.get_ans(soft_p, 0.0)
         soft_SQL = re.sub(r"```\w*", "", soft_SQL)
+        # print(soft_SQL)
         soft_json = json.loads(soft_SQL)
+        # print(soft_json["Judgment"])
 
         if (soft_json["Judgment"] == False or soft_json["Judgment"]
                 == 'False') and soft_json["SQL"] != "":
@@ -329,17 +308,18 @@ class soft_check:
             question: str,
             new_db_info: str,
             db_col: list,
-            db: str,
+            db: str,  #db 路径
             hint="") -> str:
         SQL = re.sub(r"(COUNT)(\([^\(\)]*? THEN 1 ELSE 0.*?\))", r"SUM\2", SQL)
 
+        # SQL, judgment = self.soft_correct(SQL, question, new_prompt,hint)
         sql_retable = retable(SQL)
 
         SQL = self.values_check(sql_retable, values, values_final, SQL,
                                 question, new_db_info, db_col, hint)
         SQL = self.JOIN_error(SQL, question, db)
         SQL = self.func_check(sql_retable, SQL, question)
-        SQL = self.func_check2(question, SQL)
+        SQL = self.func_check2(question, SQL)  #ORDER BY (MIN|MAX).* LIMIT
         SQL = self.time_check(SQL)
         SQL = self.is_not_null(SQL)
         SQL = select_check(SQL, db_col, self.chat_model, question)
@@ -351,6 +331,9 @@ class soft_check:
         db_col: list,
         sql_retable:str,
         ) -> str:
+        # SQL = re.sub("(COUNT)(\([^\(\)]*? THEN 1 ELSE 0.*?\))", r"SUM\2", SQL)
+
+        # sql_retable = retable(SQL)
         SQL = self.func_check(sql_retable, SQL, question)
         SQL = self.is_not_null(SQL)
         SQL = select_check(SQL, db_col, self.chat_model, question)
@@ -360,10 +343,12 @@ class soft_check:
         self,
         SQL: str,
         question: str,
-        db: str,
+        db: str,  #db 路径
         ) -> str:
+        # SQL = re.sub("(COUNT)(\([^\(\)]*? THEN 1 ELSE 0.*?\))", r"SUM\2", SQL)
+
         SQL = self.JOIN_error(SQL, question, db)
-        SQL = self.func_check2(question, SQL)
+        SQL = self.func_check2(question, SQL)  #ORDER BY (MIN|MAX).* LIMIT
         SQL = self.time_check(SQL)
         return SQL, True
     
@@ -377,6 +362,9 @@ class soft_check:
         new_db_info: str,
         db_col: list,
         hint="") -> str:
+        # SQL = re.sub("(COUNT)(\([^\(\)]*? THEN 1 ELSE 0.*?\))", r"SUM\2", SQL)
+        # # SQL, judgment = self.soft_correct(SQL, question, new_prompt,hint)
+        # sql_retable = retable(SQL)
         SQL = self.values_check(sql_retable, values, values_final, SQL,
                                 question, new_db_info, db_col, hint)
         return SQL, True
@@ -394,11 +382,12 @@ class soft_check:
                                          join_exec,
                                          args=(db, bx, al, question, SQL,
                                                self.chat_model))
+                # print("soft change JOIN")
             except FunctionTimedOut:
                 print("time out join")
             except Exception as e:
                 print(e)
-        if not flag and join_mutil:
+        if not flag and join_mutil:  ##没改正
             SQL = gpt_join_corect(SQL, question, self.chat_model)
             print("soft change JOIN gpt")
 
@@ -406,6 +395,7 @@ class soft_check:
 
     def is_not_null(self, SQL):
         SQL = SQL.strip()
+        # print(SQL)
         inn = re.findall(r"ORDER BY .*?(?<!DESC )LIMIT +\d+;{0,1}", SQL)
         if not inn:
             return SQL
@@ -417,12 +407,15 @@ SQL:{SQL}
 
 请直接给出新的SQL, 不要回复任何其他内容:
 #SQL:"""
+        # print("soft change IS NOT NULL")
         SQL = get_sql(self.chat_model, prompt, 0.0)[0].split("SQL:")[-1]
         return SQL
 
     def time_check(self, sql):
         time_error_fix = re.sub(r"(strftime *\([^\(]*?\) *[>=<]+ *)(\d{4,})",
                                 r"\1'\2'", sql)
+        # if sql != time_error_fix:
+        #     print("soft change 3 time")
         return time_error_fix
 
     def func_check2(self, question, SQL):
@@ -435,6 +428,8 @@ SQL:{SQL}
 ERROR: {res.group()} 是一种不正确的用法, 请对SQL进行修正, 注意如果SQL中存在GROUP BY, 请判断{res.groups()[0]}的内容是否需要使用 SUM({res.groups()[2]})
 
 请直接给出新的SQL, 不要回复任何其他内容:"""
+            # print(prompt)
+            # print("soft change func 2")
             SQL = get_sql(self.chat_model, prompt, 0.1)[0]
         return SQL
 
@@ -472,7 +467,10 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
 #change ambuity: {func_amb}
 
 请直接给出新的SQL, 不要回复任何其他内容:"""
+        # print("------\nsoft change func")
+        # print(prompt)
         sql = get_sql(self.chat_model, prompt, 0.0)[0]
+        # print(sql)
         return sql
 
     def values_check(self,
@@ -484,6 +482,7 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
                      new_db_info,
                      db_col,
                      hint=""):
+        # print(sql_retable)
         dic_v = {}
         dic_c = {}
         l_v = list(set([x[1] for x in values]))
@@ -495,10 +494,10 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
             dic_c.setdefault(x[0], [])
             dic_c[x[0]].append(x[1])
         value_sql = re.findall(t1_tabe_value,
-                               sql_retable)
+                               sql_retable)  # find all = "value"
         value_sql.extend(re.findall(t2_tab_val, sql_retable))
         tabs = set(re.findall(tables, sql))
-        if len(tabs) == 1:
+        if len(tabs) == 1:  #单表
             val_single = re.findall(r"[ \(]([\w]+) =\s*'([^']+(?:''[^']*)*)'",
                                     sql)
             val_single.extend(
@@ -507,6 +506,7 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
             tab = tabs.pop()[1:-1]
             for x in val_single:
                 value_sql.append((f"{tab}.{x[0]}", x[1]))
+        # print(value_sql, dic_v)
         badval_l = []
         change_val = []
         value_sql = set(value_sql)
@@ -514,8 +514,10 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
             tab, val = tab_val
             if len(re.findall(r"\d", val)) / len(val) > 0.6:
                 continue
+            # print(val, l_v)
             tmp_col = dic_v.get(val)
-            if not tmp_col and len(l_v):
+            if not tmp_col and len(l_v):  ## 值错了但非常接近
+                # print(val, l_v)
                 val_close = self.bert_model.encode(
                     val, show_progress_bar=False) @ self.bert_model.encode(
                         l_v,
@@ -525,14 +527,16 @@ ERROR:{",".join(origin_f)} 不符合要求, 请使用 JOIN ORDER BY LIMIT 形式
                     val_new = l_v[val_close.argmax()]
                     sql = sql.replace(f"'{val}'", f"'{val_new}'")
                     val = val_new
+                    # print("soft change 1 similar values")
 
             tmp_col = dic_v.get(val)
             tmp_val = dic_c.get(tab, {})
-            if tmp_col and tab not in tmp_col:
+            if tmp_col and tab not in tmp_col:  #数据库中存在了val但table不对 以及值完全错
                 lt = [f"{x} ='{val}'" for x in tmp_col]
                 lt.extend([f"{x} ='{val}'" for x in tmp_val])
                 rep = ", ".join(lt)
                 badval_l.append(f"{tab} = '{val}'")
+                # print(rep)
                 change_val.append(f"{tab} = '{val}': {rep}")
 
         if badval_l:
@@ -547,7 +551,10 @@ ERROR: 数据库中不存在: {', '.join(badval_l)}
 
 请直接给出新的SQL,不要回复任何其他内容:
 #SQL:"""
+            # print("------\nsoft change 2 val not exists")
+            # print(prompt)
             sql = get_sql(self.chat_model, prompt, 0.0)[0]
+            # print(sql)
         return sql
 
     def correct_sql(self,
@@ -561,21 +568,27 @@ ERROR: 数据库中不存在: {', '.join(badval_l)}
                     db_col={},
                     foreign_set={},
                     L_values=[]):
+        # db = os.path.join(DB_dir, db, db + ".sqlite")
+
         conn = sqlite3.connect(db_sqlite_path, timeout=180)
         count = 0
         raw = sql
         none_case = False
         while count <= 3:
             try:
+                # def
+                # ans,time_cost=func_timeout(180,sql_exec,args=(SQL,dbt))
                 df = pd.read_sql_query(sql, conn)
                 if len(df) == 0:
                     raise ValueError("Error':Result: None")
                 else:
                     break
             except Exception as e:
-                if count >= 3:
+                if count >= 3:  #重新生成一次SQL
                     wsql = sql
                     sql = get_sql(self.chat_model, new_prompt, 0.2)[0]
+                    # self.logger.info("correct 失败:\n%s\n regen sql:%s", wsql,
+                    #                  sql)
                     none_case = True
                     break
                 count += 1
@@ -589,7 +602,8 @@ ERROR: 数据库中不存在: {', '.join(badval_l)}
                 advice = ""
 
                 for x in self.correct_dic:
-                    if tag.find(x) != -1:
+                    if tag.find(x) != -1:  #找到了错误原因就不往下找了
+                        # print(tag)
                         fewshot = self.correct_dic[x]
                         if e_s == "Result: None":
                             sql_re = retable(sql)
@@ -618,14 +632,19 @@ ERROR: 数据库中不存在: {', '.join(badval_l)}
                     hint=hint,
                     result_info=result_info,
                     advice=advice)
+                # self.logger.info("cor_prompt:\n%s", cor_prompt)
                 sql = get_sql(self.chat_model,
                               cor_prompt,
                               0.2 + count / 5,
                               top_p=0.3)[0]
+                # print(sql)
+            # self.logger.info("cor_sql:\n%s", sql)
+
             raw = sql
 
         conn.close()
         return sql, none_case
+
 
 
 def sql_exec(SQL, db):
@@ -638,18 +657,20 @@ def sql_exec(SQL, db):
 
 def get_sql_ans(SQL,db_sqlite_path):
     try:
+            # dbt = os.path.join(DB_dir, db, db + ".sqlite")
         ans, time_cost = func_timeout(180, sql_exec, args=(SQL, db_sqlite_path))
     except FunctionTimedOut:
-        ans,time_cost=set(),100000
+        ans,time_cost=[],100000
         print("time out")
     except Exception as e:
-        ans,time_cost=set(),100000
+        ans,time_cost=[],100000
         print(f"SQL execution error: {e}")
     return ans,time_cost
     
 def process_sql(Dcheck, SQL,L_values, values, question,
                 new_db_info, db_col_keys, hint,key_col_des,tmp_prompt,db_col,foreign_set,align_methods,db_sqlite_path):
     node_names=align_methods.split('+')
+    # print(node_names)
     align_functions = {
         "agent_align": Dcheck.double_check_agent_align,
         "style_align": Dcheck.double_check_style_align,
@@ -662,6 +683,7 @@ def process_sql(Dcheck, SQL,L_values, values, question,
     SQL_correct=SQL
     for node_name in node_names:
         if node_name in align_functions:
+            # 根据不同的环节调用对应的方法
             if node_name == "agent_align":
                 SQL, judgment = align_functions[node_name](sql_retable, L_values, values, SQL,
                                                            question, new_db_info, db_col_keys, hint)
@@ -675,8 +697,6 @@ def process_sql(Dcheck, SQL,L_values, values, question,
     nocse = True
     ans = set()
     time_cost = 10000000
-    align_ans = set()
-    correct_ans = set()
 
 
     try:
@@ -691,12 +711,67 @@ def process_sql(Dcheck, SQL,L_values, values, question,
 
     if can_ex:
         ans,time_cost=get_sql_ans(SQL, db_sqlite_path)
-        align_ans, _ = get_sql_ans(align_SQL, db_sqlite_path)
-        correct_ans, _ = get_sql_ans(SQL_correct, db_sqlite_path)
+        # align_ans=get_sql_ans(align_SQL, db_sqlite_path)
+        # correct_ans=get_sql_ans(SQL_correct, db_sqlite_path)
+        align_ans=None
+        correct_ans=None
     return sql_history,SQL,ans,nocse,time_cost,align_SQL,align_ans,SQL_correct,correct_ans
 
 def muti_process_sql(Dcheck, SQLs, L_values, values, question,
                      new_db_info, hint,key_col_des,tmp_prompt,db_col,foreign_set,align_methods,db_sqlite_path,n):
+    
+    # +++ Dispatch based on whether we are in offline VLLM mode +++
+    if VLLM_req._offline_vllm_instance:
+        # Use a sequential loop for offline mode to avoid threading issues
+        return muti_process_sql_offline_sequential(Dcheck, SQLs, L_values, values, question,
+                                                   new_db_info, hint, key_col_des, tmp_prompt, db_col, foreign_set,
+                                                   align_methods, db_sqlite_path)
+    else:
+        # Keep the original ThreadPoolExecutor for concurrent HTTP requests
+        return muti_process_sql_online_concurrent(Dcheck, SQLs, L_values, values, question,
+                                                  new_db_info, hint, key_col_des, tmp_prompt, db_col, foreign_set,
+                                                  align_methods, db_sqlite_path, n)
+
+def muti_process_sql_offline_sequential(Dcheck, SQLs_dic, L_values, values, question,
+                                        new_db_info, hint, key_col_des, tmp_prompt, db_col, foreign_set,
+                                        align_methods, db_sqlite_path):
+    """
+    New function to handle processing of SQL candidates sequentially for offline VLLM.
+    This avoids ThreadPoolExecutor which can cause issues with VLLM's internal state.
+    VLLM's internal scheduler will still batch the generate() calls made in quick succession.
+    """
+    vote = []
+    none_case = False
+    db_col_keys = db_col.keys()
+    time_cost = 10000000
+
+    # Use a simple for loop instead of a thread pool
+    for tmp_SQL, count in SQLs_dic.items():
+        try:
+            # Call process_sql directly
+            sql_history, SQL, ans, none_c, time_cost, align_SQL, align_ans, SQL_correct, correct_ans = \
+                process_sql(Dcheck, tmp_SQL, L_values, values, question, new_db_info, db_col_keys, hint,
+                            key_col_des, tmp_prompt, db_col, foreign_set, align_methods, db_sqlite_path)
+
+            vote.append({
+                "sql_history": sql_history, "sql": SQL, "answer": ans, "count": count, "time_cost": time_cost,
+                "align_sql": align_SQL, "align_ans": align_ans, "correct_sql": SQL_correct, "correct_ans": correct_ans
+            })
+            none_case = none_case or none_c
+        except Exception as e:
+            print(f"Error processing SQL '{tmp_SQL}' in offline sequential mode: {e}")
+            vote.append({
+                "sql_history": tmp_SQL, "sql": tmp_SQL, "answer": [], "count": count, "time_cost": time_cost,
+                "align_sql": tmp_SQL, "correct_sql": tmp_SQL, "align_ans": [], "correct_ans": [],
+            })
+            none_case = True
+            
+    return vote, none_case
+
+
+def muti_process_sql_online_concurrent(Dcheck, SQLs, L_values, values, question,
+                                       new_db_info, hint,key_col_des,tmp_prompt,db_col,foreign_set,align_methods,db_sqlite_path,n):
+    """This is the original function, renamed for clarity."""
     vote = []
     none_case = False
 
@@ -711,33 +786,24 @@ def muti_process_sql(Dcheck, SQLs, L_values, values, question,
         for future in as_completed(future_to_sql):
             count, tmp_SQL = future_to_sql[future]
             try:
-                sql_history, SQL, ans, none_c, time_cost, align_SQL, align_ans, SQL_correct, correct_ans = future.result(timeout=700)
-                
+                sql_history, SQL, ans, none_c, time_cost, align_SQL,align_ans,SQL_correct,correct_ans = future.result(timeout=700)
                 vote.append({
-                    "sql_history": sql_history,
-                    "sql": SQL,
-                    "answer": ans,
-                    "count": count,
-                    "time_cost": time_cost,
-                    "align_sql": align_SQL,
-                    "align_ans": align_ans,
-                    "correct_sql": SQL_correct,
-                    "correct_ans": correct_ans
+                    "sql_history": sql_history, "sql": SQL, "answer": ans, "count": count, "time_cost": time_cost,
+                    "align_sql":align_SQL, "align_ans":align_ans, "correct_sql":SQL_correct, "correct_ans":correct_ans
                 })
-                
                 none_case = none_case or none_c
-            except (FunctionTimedOut, Exception) as e: # Catch specific exceptions
-                print(f"Error processing SQL for count {count}: {e}")
+            except FunctionTimedOut:
+                print(f"Error: Processing SQL timeout for SQL count {count}")
                 vote.append({
-                    "sql_history": {"error": str(e)},
-                    "sql": tmp_SQL,
-                    "answer": [],
-                    "count": count,
-                    "time_cost": time_cost,
-                    "align_sql": tmp_SQL,
-                    "align_ans": [],
-                    "correct_sql": tmp_SQL,
-                    "correct_ans": [],
+                    "sql_history": tmp_SQL, "sql": tmp_SQL, "answer": [], "count": 1, "time_cost": time_cost,
+                    "align_sql":tmp_SQL, "correct_sql":tmp_SQL, "align_ans":[], "correct_ans":[],
+                })
+                none_case = True
+            except Exception as e:
+                print(f"Error processing SQL: {e}")
+                vote.append({
+                    "sql_history": tmp_SQL, "sql": tmp_SQL, "answer": [], "count": 1, "time_cost": time_cost,
+                    "align_sql":tmp_SQL, "correct_sql":tmp_SQL, "align_ans":[], "correct_ans":[],
                 })
                 none_case = True
     return vote, none_case

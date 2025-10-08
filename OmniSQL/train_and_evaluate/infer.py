@@ -127,7 +127,7 @@ if __name__ == '__main__':
             tensor_parallel_size = opt.tensor_parallel_size,
             max_model_len = max_model_len,
             gpu_memory_utilization = 0.85,
-            swap_space = 42,
+            swap_space = 0,
             enforce_eager = False,
             disable_custom_all_reduce = True,
             trust_remote_code = True,

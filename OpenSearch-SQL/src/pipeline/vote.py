@@ -51,10 +51,8 @@ def vote_single(vote_all,mod="answer",SQLs=[]):
 
 
 @node_decorator(check_schema_status=False)
-def vote(state: Dict[str, Any]) -> Dict[str, Any]:
-    task = state["keys"]["task"]
-    execution_history = state["keys"]["execution_history"]
-    paths = state["keys"]["db_manager"]
+def vote(task: Any, execution_history: Dict[str, Any]) -> Dict[str, Any]:
+
     vote = get_last_node_result(execution_history, "align_correct")["vote"]
     SQLs=get_last_node_result(execution_history, "candidate_generate")["SQL"]# 兜底
 

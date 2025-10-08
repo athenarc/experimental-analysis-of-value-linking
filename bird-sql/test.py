@@ -2,7 +2,7 @@
 import csv
 import sys
 
-gt_file = 'my_benchmark/test_gold_sqls.txt'
+gt_file = 'my_benchmark_precision_1/test_gold_sqls.txt'
 error_found = False
 
 print(f"Validating file: {gt_file}")

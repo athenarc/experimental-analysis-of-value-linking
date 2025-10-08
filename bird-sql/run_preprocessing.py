@@ -14,7 +14,7 @@ sys.path.insert(0, project_root)
 from src.prep_data import preprocess_data
 
 # Set the path to your benchmark directory
-benchmark_dir = Path("my_benchmark")
+benchmark_dir = Path("my_benchmark_precision_05")
 
 print(f"Starting preprocessing for directory: {benchmark_dir}")
 preprocess_data(benchmark_dir)

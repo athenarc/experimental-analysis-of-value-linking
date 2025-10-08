@@ -1,5 +1,6 @@
 import os
 import pickle
+from threading import Lock
 from pathlib import Path
 
 from typing import Callable, Dict, List, Any
@@ -8,35 +9,48 @@ from runner.execution import compare_sqls
 
 class DatabaseManager:
     """
-    Manages database operations including schema generation, querying, and managing column profiles.
-    This is a regular class to ensure instance-per-task state management.
+    A singleton class to manage database operations including schema generation, 
+    querying LSH and vector databases, and managing column profiles.
     """
-    
-    def __init__(self, db_mode: str, db_root_path: str, db_id: str):
+    _instance = None
+    _lock = Lock()
+
+    def __new__(cls, db_mode=None,db_root_path=None,db_id=None):
+        if (db_mode is not None) and (db_root_path is not None) and(db_id is not None):
+            with cls._lock:
+                if cls._instance is None:
+                    cls._instance = super(DatabaseManager, cls).__new__(cls)
+                    cls._instance._init(db_mode, db_root_path,db_id)
+                elif cls._instance.db_id != db_id:
+                    cls._instance._init(db_mode,db_root_path,db_id)
+                return cls._instance
+        else:
+            if cls._instance is None:
+                raise ValueError("DatabaseManager instance has not been initialized yet.")
+            return cls._instance
+
+    def _init(self, db_mode: str, db_root_path:str,db_id: str):
         """
-        Initializes the DatabaseManager instance for a specific task.
+        Initializes the DatabaseManager instance.
+
+        Args:
+            db_mode (str): The mode of the database (e.g., 'train', 'test').
+            db_id (str): The database identifier.
         """
         self.db_mode = db_mode
-        self.db_root_path = db_root_path
+        self.db_root_path=db_root_path
         self.db_id = db_id
         self._set_paths()
 
-
     def _set_paths(self):
         """Sets the paths for the database files and directories."""
-        # Ensure the root path is absolute to be thread-safe
-        root_path = Path(self.db_root_path).resolve()
-        
-        # Corrected path construction
-        self.db_path = root_path / self.db_mode / self.db_id / f"{self.db_id}.sqlite"
-        self.db_directory_path = root_path / self.db_mode / self.db_id
-
-        # Set the rest of the paths
-        self.db_json = root_path / "data_preprocess" / f"{self.db_mode}.json"
-        self.db_tables = root_path / "data_preprocess" / "tables.json"
-        self.db_fewshot_path = root_path / "fewshot" / "questions.json"
-        self.db_fewshot2_path = root_path / "correct_fewshot2.json"
-        self.emb_dir = root_path / "emb"
+        self.db_path = Path(self.db_root_path)/f"{self.db_mode}" / f"{self.db_mode}_databases" / self.db_id / f"{self.db_id}.sqlite"
+        self.db_directory_path = Path(self.db_root_path)/f"{self.db_mode}" / f"{self.db_mode}_databases" / self.db_id
+        self.db_json=Path(self.db_root_path)/"data_preprocess"/f"{self.db_mode}.json"
+        self.db_tables=Path(self.db_root_path)/"data_preprocess"/"tables.json"
+        self.db_fewshot_path=Path(self.db_root_path)/"fewshot"/"questions.json"
+        self.db_fewshot2_path=Path(self.db_root_path)/"correct_fewshot2.json"
+        self.emb_dir=Path(self.db_root_path)/"emb"
 
     @staticmethod
     def with_db_path(func: Callable):

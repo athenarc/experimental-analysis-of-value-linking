@@ -280,54 +280,44 @@ class VLLM_req(req):
         """Handles generation using the in-process VLLM model."""
         # 1. Prepare the prompt using the model's chat template
         tokenizer = self._offline_vllm_instance.get_tokenizer()
-
-        # +++ DETECT IF 'messages' IS A SINGLE PROMPT (str) OR A BATCH (list) +++
-        is_batch = isinstance(messages, list)
-        prompts_to_generate = messages if is_batch else [messages]
-        # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        full_prompts = []
-        for prompt_text in prompts_to_generate:
-            prompt_messages = [
-                {"role": "system", "content": "You are an SQL expert, skilled in handling various SQL-related issues."},
-                {"role": "user", "content": prompt_text}
-            ]
-            full_prompts.append(
-                tokenizer.apply_chat_template(prompt_messages, tokenize=False, add_generation_prompt=True)
-            )
+        prompt_messages = [
+            {"role": "system", "content": "You are an SQL expert, skilled in handling various SQL-related issues."},
+            {"role": "user", "content": messages}
+        ]
+        full_prompt = tokenizer.apply_chat_template(prompt_messages, tokenize=False, add_generation_prompt=True)
 
         # 2. Prepare sampling parameters
         sampling_params = vllm.SamplingParams(
             n=n,
-            temperature=temperature if temperature > 0 else 0.0,
+            temperature=temperature if temperature > 0 else 0.0, # VLLM requires temp > 0 for sampling
             top_p=top_p if top_p is not None else 1.0,
             max_tokens=kwargs.get("max_tokens", 800),
             stop=kwargs.get("stop", None)
         )
-        # +++ START MODIFICATION: Improve greedy decoding stability +++
         if sampling_params.temperature == 0.0:
-            # Use a very small temperature instead of top_k=1 for better stability
-            sampling_params.temperature = 1e-6 
+            # Use greedy decoding for temperature 0
+            sampling_params.temperature = 1.0
             sampling_params.top_p = 1.0
-        # +++ END MODIFICATION +++
+            sampling_params.top_k = 1
 
-        # 3. Generate the output for the entire batch
-        outputs = self._offline_vllm_instance.generate(full_prompts, sampling_params)
+
+        # 3. Generate the output
+        # vllm.generate takes a list of prompts
+        outputs = self._offline_vllm_instance.generate([full_prompt], sampling_params)
         
-        # 4. Parse the output
-        all_responses = []
-        for request_output in outputs:
-            if n == 1 and single:
-                all_responses.append(request_output.outputs[0].text)
-            else:
-                all_responses.append([output.text for output in request_output.outputs])
+        # The output is a list of RequestOutput objects. We only sent one prompt.
+        request_output = outputs[0]
+
+        # 4. Parse the output to match the expected format
+        if n == 1 and single:
+            response_clean = request_output.outputs[0].text
+        else:
+            response_clean = [output.text for output in request_output.outputs]
 
         if self.step != "prepare_train_queries":
-            # Log the entire batch interaction
-            self.log_record(prompts_to_generate, all_responses)
-        
-        # +++ RETURN A LIST FOR BATCH, OR A SINGLE ITEM FOR NON-BATCH +++
-        return all_responses if is_batch else all_responses[0]
+            self.log_record(messages, response_clean)
+            
+        return response_clean
 
     def _get_ans_online(self, messages, temperature=0.0, top_p=None, n=1, single=True, **kwargs):
         """The original method for sending HTTP requests."""

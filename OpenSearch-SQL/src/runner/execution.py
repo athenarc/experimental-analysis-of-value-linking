@@ -32,8 +32,7 @@ def execute_sql(db_path: str, sql: str, fetch: Union[str, int] = "all") -> Any:
         Exception: If an error occurs during SQL execution.
     """
     try:
-        logging.debug(f"Executing SQL on DB: {db_path}")
-        with sqlite3.connect(str(db_path)) as conn:
+        with sqlite3.connect(db_path) as conn:
             cursor = conn.cursor()
             cursor.execute(sql)
             if fetch == "all":
