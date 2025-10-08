@@ -52,11 +52,11 @@ MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 # Weights & Biases Configuration
 WANDB_ENTITY = "darelab"
 WANDB_PROJECT = "value_linking"
-GROUP_NAME="at_k_correct"
+GROUP_NAME="test_run"
 
 # Evaluation Configuration
 K_VALUES = [1, 2, 3, 5, 10, 20]
-RETRIEVAL_DEPTH = 100 # Retrieve a fixed large number for full evaluation
+RETRIEVAL_DEPTH = 10000 # Retrieve a fixed large number for full evaluation
 
 # Model Configuration
 LLM_MODEL_PATH = "gaunernst/gemma-3-12b-it-int4-awq"
@@ -143,17 +143,16 @@ def get_system_configs():
     #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0.8)
     #)
 
-    #omnisql_searcher = Searcher(
-    #    query_processor=OmniSQLQueryProcessor(n=8),
-    #    retrievers=[OmniSQLRetriever()],
-    #    reranker=OmniSQLReranker()
-    #)
-
-    opensearch_searcher = Searcher(
-        query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-        reranker = OpenSearchRuleBasedReranker()
+    omnisql_searcher = Searcher(
+        query_processor=OmniSQLQueryProcessor(n=4),
+        retrievers=[OmniSQLRetriever()]
     )
+
+    #opensearch_searcher = Searcher(
+    #    query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+    #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+    #    reranker = OpenSearchRuleBasedReranker(similarity_threshold=0,score_proximity_filter=1,max_candidates_per_group=100000)
+    #)
 
     #value_net_searcher = Searcher(
     #    query_processor=ValueNetQueryProcessor(),
@@ -174,20 +173,20 @@ def get_system_configs():
         #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
         #    }
         #},
-        #"OmniSQL": {
-        #    "searcher": omnisql_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        #    }
-        #},
-        "OpenSearch": {
-            "searcher": opensearch_searcher,
+        "OmniSQL": {
+            "searcher": omnisql_searcher,
             "get_db_specifics": lambda db_id: {
-               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
             }
-        }
+        },
+        #"OpenSearch": {
+        #    "searcher": opensearch_searcher,
+        #    "get_db_specifics": lambda db_id: {
+        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+        #    }
+        #}
         #"ValueNet": {
         #    "searcher": value_net_searcher,
         #    "get_db_specifics": lambda db_id: {
@@ -354,7 +353,7 @@ def main():
     # --- Outer loop: Iterate over each system ---
     for system_name, system_config in system_configs.items():
         print(f"\n{'='*30}\nRUNNING BENCHMARK FOR SYSTEM: {system_name}\n{'='*30}")
-
+        json_output_for_system = []
         searcher = system_config["searcher"]
 
         # Data structures to collect results for the entire system
@@ -386,11 +385,36 @@ def main():
             num_queries_bird += sum(1 for s in sources if s == 'bird')
             num_queries_spider += sum(1 for s in sources if s == 'spider')
 
-            # --- Start Timing ---
             start_time = time.time()
             predicted_results = searcher.search(
                 nlqs=queries, output_path=index_path, k=RETRIEVAL_DEPTH
             )
+            for i, nlq in enumerate(queries):
+                # Format the gold standard values into a set for easy lookup
+                gold_results = gold_standard[i]
+                gold_strings_set = {
+                    f"{res.item.metadata.get('table')}.{res.item.metadata.get('column')}.{res.item.metadata.get('value')}"
+                    for res in gold_results
+                }
+                # Use the first gold value as the representative "Correct value"
+                correct_value_str = list(gold_strings_set)[0] if gold_strings_set else "N/A"
+
+                # Format predicted values and filter out any that match the gold standard
+                predicted_for_query = predicted_results[i]
+                predicted_values_except_correct = []
+                for pred_res in predicted_for_query:
+                    pred_str = f"{pred_res.item.metadata.get('table')}.{pred_res.item.metadata.get('column')}.{pred_res.item.metadata.get('value')}"
+                    if pred_str not in gold_strings_set:
+                        predicted_values_except_correct.append(pred_str)
+                
+                # Create the record for this query
+                record = {
+                    "NLQ": nlq,
+                    "Correct value": correct_value_str,
+                    "Predicted values except correct value": predicted_values_except_correct
+                }
+                json_output_for_system.append(record)
+
             total_time = time.time() - start_time
             system_total_execution_time += total_time
             if queries:
@@ -460,7 +484,11 @@ def main():
 
             print(f"  Recall on {db_id}: {summary.overall_recall:.4f}")
             print(f"  Recall (Non-Numerical) on {db_id}: {summary.overall_recall_non_numerical:.4f}")
-
+        output_json_path = os.path.join(BASE_PATH, "predicted_values.json")
+        print(f"\nWriting predicted values analysis for {system_name} to {output_json_path}...")
+        with open(output_json_path, "w", encoding="utf-8") as f:
+            json.dump(json_output_for_system, f, indent=4, ensure_ascii=False)
+        print("Done.")
         # --- After all DBs are processed, generate the W&B reports for the system ---
         if system_all_query_details_with_cat:
             avg_seconds_per_query = system_total_execution_time / system_total_queries if system_total_queries > 0 else 0.0

@@ -1,6 +1,6 @@
 import argparse
 import json
-import re
+import re, os
 from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
 import openai # Add this import
@@ -126,9 +126,9 @@ if __name__ == '__main__':
             dtype = "bfloat16", 
             tensor_parallel_size = opt.tensor_parallel_size,
             max_model_len = max_model_len,
-            gpu_memory_utilization = 0.78,
+            gpu_memory_utilization = 0.85,
             swap_space = 42,
-            enforce_eager = True,
+            enforce_eager = False,
             disable_custom_all_reduce = True,
             trust_remote_code = True,
             download_dir="/data/hdd1/vllm_models/"
@@ -143,6 +143,9 @@ if __name__ == '__main__':
         data["responses"] = responses
         data["pred_sqls"] = sqls
         results.append(data)
+
+    output_dir = os.path.dirname(opt.output_file)
+    os.makedirs(output_dir, exist_ok=True)
 
     with open(opt.output_file, "w", encoding = "utf-8") as f:
         f.write(json.dumps(results, indent = 2, ensure_ascii = False))

@@ -10,9 +10,11 @@ from llm.prompts import *
 
 
 @node_decorator(check_schema_status=False)
-def extract_col_value(task: Any, execution_history: Dict[str, Any]) -> Dict[str, Any]:
+def extract_col_value(state: Dict[str, Any]) -> Dict[str, Any]:
+    task = state["keys"]["task"]
+    execution_history = state["keys"]["execution_history"]
+    paths = state["keys"]["db_manager"]
     config,node_name=PipelineManager().get_model_para()
-    paths=DatabaseManager()
     fewshot_path=paths.db_fewshot_path
     chat_model = model_chose(node_name,config["engine"])
 

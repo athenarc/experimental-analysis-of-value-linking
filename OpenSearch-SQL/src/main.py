@@ -7,8 +7,10 @@ from typing import Any, Dict, List
 import argparse
 from runner.run_manager import RunManager
 import os
+# +++ Add these imports for VLLM +++
 import vllm
 from llm.model import VLLM_req
+# ++++++++++++++++++++++++++++++++++
 
 def load_dataset(data_path: str) -> List[Dict[str, Any]]:
     """
@@ -47,8 +49,11 @@ def main(args):
 
     run_manager = RunManager(args)
     run_manager.initialize_tasks(args.start,args.end,dataset)
-    run_manager.run_tasks()
+    # +++ THIS NOW CALLS THE BATCHED ORCHESTRATOR +++
+    run_manager.run_tasks() 
+    # ++++++++++++++++++++++++++++++++++++++++++++++++
     run_manager.generate_sql_files()
+
 
 if __name__ == '__main__':
     args_parser = argparse.ArgumentParser()
@@ -64,7 +69,12 @@ if __name__ == '__main__':
     args_parser.add_argument('--end', type=int, default=1, help="End point")
     args_parser.add_argument('--offline_vllm_batch', action='store_true', help="Enable offline VLLM batch generation instead of sending API requests.")
     args_parser.add_argument('--vllm_model_path', type=str, help="Path to the VLLM model for offline generation (e.g., 'Qwen/Qwen2.5-Coder-32B-Instruct').")
+    args_parser.add_argument('--oracle_values_path', type=str, required=False, help="Path to a JSON file with oracle values to bypass dense search.")
+    # +++ ADD THIS LINE +++
+    args_parser.add_argument('--oracle_precision', type=float, default=1.0, help="Precision for oracle values (1.0 means only correct value, <1.0 adds distractors).")
+    # +++++++++++++++++++++
     args = args_parser.parse_args()
+    args.db_root_path = os.path.abspath(args.db_root_path)
     args.run_start_time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
     if args.use_checkpoint:

@@ -186,6 +186,7 @@ Database Schema:
 {db_details}
 This schema describes the database's structure, including tables, columns, primary keys, foreign keys, and any relevant relationships or constraints.
 
+{oracle_instruction}
 Question:
 {question}
 
@@ -378,7 +379,7 @@ def deduplicate_dicts(dict_list):
     
     return unique_dicts
 
-def prepare_input_output_pairs(data, ek_key, db_id2relevant_hits, sampled_db_values_dict, db_info, source, output_key, mode):
+def prepare_input_output_pairs(data, ek_key, db_id2relevant_hits, sampled_db_values_dict, db_info, source, output_key, mode, oracle_instruction=""):
     if data[ek_key].strip() == "":
         question = data["question"]
     else:
@@ -402,7 +403,8 @@ def prepare_input_output_pairs(data, ek_key, db_id2relevant_hits, sampled_db_val
     input_seq = input_prompt_template.format(
         db_engine = "SQLite",
         db_details = db_details,
-        question = question
+        question = question,
+        oracle_instruction = oracle_instruction
     )
 
     return {"input_seq": input_seq, "output_seq": data[output_key]}
@@ -421,6 +423,8 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type = str)
     parser.add_argument("--value_limit_num", type = int)
     parser.add_argument("--db_content_index_path", type = str)
+    parser.add_argument("--oracle_values_file", type=str, default=None, help="Path to a JSON file with oracle values for questions.")
+    parser.add_argument("--oracle_precision", type=float, default=1.0, help="Precision for oracle values (1.0 means only correct value, <1.0 adds distractors).")
 
     opt = parser.parse_args()
     print(opt)
@@ -489,43 +493,96 @@ if __name__ == "__main__":
     assert len(dataset) == sum([len(batch_dataset) for batch_dataset in sliced_datasets])
 
     new_dataset = []
-    for batch_idx, batch_dataset in enumerate(sliced_datasets):
-        print(f"Process: {batch_idx+1}/{len(sliced_datasets)}")
 
-        if opt.db_content_index_path:
-            db_id2searcher = dict()
-            batch_db_ids = list(set([data["db_id"] for data in batch_dataset]))
-            # load db context index searchers
-            for db_id in batch_db_ids:
-                db_id2searcher[db_id] = LuceneSearcher(os.path.join(opt.db_content_index_path, db_id))
+    if opt.oracle_values_file:
+        print("--- Running in Oracle Values Mode ---")
+        # Load the oracle data and create a lookup dictionary
+        with open(opt.oracle_values_file, 'r', encoding='utf-8') as f:
+            oracle_data = json.load(f)
+        question_to_oracle = {item['question']: item for item in oracle_data}
+        print(f"Loaded {len(question_to_oracle)} oracle entries.")
+
+        for data in tqdm(dataset, desc="Processing with Oracle Values"):
+            # Prepare question key (handle external knowledge)
+            external_knowledge = data.get(ek_key, "").strip()
+            if external_knowledge:
+                question_key = external_knowledge + "\n" + data["question"]
+            else:
+                question_key = data["question"]
             
-            db_id2queries = dict()
-            for data in tqdm(batch_dataset):
-                if data[ek_key].strip() == "":
-                    question = data["question"]
-                else:
-                    question = data[ek_key] + "\n" + data["question"]
+            oracle_instruction = ""
+            # Bypassing retrieval: pass an empty dictionary for relevant hits
+            relavant_db_values_dict = {}
 
-                queries = obtain_n_grams(question, 8) + [question]
-                queries = list(set(queries))
-                if data["db_id"] in db_id2queries:
-                    db_id2queries[data["db_id"]].extend(queries)
-                else:
-                    db_id2queries[data["db_id"]] = queries
-            
-            # perform db content retrieval (in a large batch)
-            db_id2relevant_hits = dict()
-            for db_id in tqdm(batch_db_ids):
-                db_id2relevant_hits[db_id] = retrieve_relevant_hits(db_id2searcher[db_id], db_id2queries[db_id])
-        else:
-            db_id2relevant_hits = None
+            if question_key in question_to_oracle:
+                oracle_entry = question_to_oracle[question_key]
+                correct_value = oracle_entry['correct_value']
+                random_values = oracle_entry.get('random_values', [])
+                
+                final_values = [correct_value]
+                
+                if opt.oracle_precision < 1.0 and opt.oracle_precision > 0:
+                    # Calculate how many distractors to add
+                    total_values_needed = int(1 / opt.oracle_precision)
+                    num_distractors = max(0, total_values_needed - 1)
+                    
+                    # Add available random values, up to the required number
+                    distractors_to_add = random.sample(random_values, min(num_distractors, len(random_values)))
+                    final_values.extend(distractors_to_add)
+                    random.shuffle(final_values)
+                    
+                    # Format values as requested (assuming they are strings)
+                    formatted_values = ", ".join([f"'{v}'" for v in final_values])
+                    oracle_instruction = f"Hint: The user's question refers to one of the following specific values: {formatted_values}. Your generated SQL query must use one of these values.\n"
+                else: # Precision is 1.0 or invalid
+                    oracle_instruction = f"Hint: The user is asking about the value '{correct_value}'. Make sure your query uses this specific value.\n"
+            else:
+                print(f"Warning: Question not found in oracle file: '{question_key}'")
 
-        for data in tqdm(batch_dataset):
+            # Call the modified preparation function
             new_dataset.append(
-                prepare_input_output_pairs(data, ek_key, db_id2relevant_hits, db_id2sampled_db_values[data["db_id"]], 
-                    db_id2db_info[data["db_id"]], opt.source, output_key, opt.mode)
+                prepare_input_output_pairs(
+                    data, ek_key, None, db_id2sampled_db_values[data["db_id"]], 
+                    db_id2db_info[data["db_id"]], opt.source, output_key, opt.mode,
+                    oracle_instruction=oracle_instruction
+                )
             )
-        del db_id2searcher, db_id2relevant_hits, 
+    else:
+        print("--- Running in Standard Retrieval Mode ---")
+        # This is the original logic, slightly refactored for clarity
+        batch_size = 20000
+        sliced_datasets = [dataset[i: i+batch_size] for i in range(0, len(dataset), batch_size)]
+        print(f"Total dataset size: {len(dataset)}, split into {len(sliced_datasets)} batches.")
+
+        for batch_idx, batch_dataset in enumerate(sliced_datasets):
+            print(f"Processing batch: {batch_idx+1}/{len(sliced_datasets)}")
+            db_id2relevant_hits = None
+            if opt.db_content_index_path:
+                db_id2searcher = dict()
+                batch_db_ids = list(set([data["db_id"] for data in batch_dataset]))
+                for db_id in batch_db_ids:
+                    db_id2searcher[db_id] = LuceneSearcher(os.path.join(opt.db_content_index_path, db_id))
+                
+                db_id2queries = dict()
+                for data in tqdm(batch_dataset, desc="Generating n-grams"):
+                    external_knowledge = data.get(ek_key, "").strip()
+                    q = external_knowledge + "\n" + data["question"] if external_knowledge else data["question"]
+                    queries = obtain_n_grams(q, 8) + [q]
+                    db_id = data["db_id"]
+                    if db_id not in db_id2queries:
+                        db_id2queries[db_id] = []
+                    db_id2queries[db_id].extend(queries)
+
+                db_id2relevant_hits = dict()
+                for db_id in tqdm(batch_db_ids, desc="Retrieving hits"):
+                    unique_queries = list(set(db_id2queries.get(db_id, [])))
+                    db_id2relevant_hits[db_id] = retrieve_relevant_hits(db_id2searcher[db_id], unique_queries)
+            
+            for data in tqdm(batch_dataset, desc="Preparing input-output pairs"):
+                new_dataset.append(
+                    prepare_input_output_pairs(data, ek_key, db_id2relevant_hits, db_id2sampled_db_values[data["db_id"]], 
+                        db_id2db_info[data["db_id"]], opt.source, output_key, opt.mode)
+                )
 
     with open(opt.output_data_file, "w", encoding = "utf-8") as f:
         f.write(json.dumps(new_dataset, indent = 2, ensure_ascii = False))

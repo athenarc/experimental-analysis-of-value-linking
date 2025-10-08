@@ -1,8 +1,8 @@
 # Define variables
 data_mode='dev' # Options: 'dev', 'train' 
 db_root_path=value_linking #root directory # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
-start=1346 #闭区间
-end=2020  #开区间
+start=0 #闭区间
+end=10  #开区间
 pipeline_nodes='generate_db_schema+extract_col_value+extract_query_noun+column_retrieve_and_other_info+candidate_generate+align_correct+vote+evaluation'
 # pipeline_nodes='column_retrieve_and_other_info'
 # pipeline指当前工作流的节点组合
@@ -109,10 +109,12 @@ pipeline_setup='{
         "device":"cpu",
         "align_methods":"style_align+function_align+agent_align"
     }
-}'  
+}'
 
 python3 -u ./src/main.py --data_mode ${data_mode} --db_root_path ${db_root_path}\
         --pipeline_nodes ${pipeline_nodes} --pipeline_setup "$pipeline_setup"\
-        --start ${start} --end ${end} \
+        --start ${start} --end ${end} --offline_vllm_batch  --vllm_model_path Qwen/Qwen2.5-Coder-32B-Instruct-GPTQ-Int8 \
+        --oracle_values_path /data/hdd1/users/akouk/darelab_clean/DarelabDB/development/experimental_analysis_of_value_linking/assets/predicted_values.json \
+        --oracle_precision 1.0 --log_level debug\
         # --use_checkpoint --checkpoint_nodes ${checkpoint_nodes} --checkpoint_dir ${checkpoint_dir}
   

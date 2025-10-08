@@ -6,40 +6,38 @@ from runner.database_manager import DatabaseManager
 def node_decorator(check_schema_status: bool = False) -> Callable:
     """
     A decorator to add logging and error handling to pipeline node functions.
-
-    Args:
-        check_schema_status (bool, optional): Whether to check the schema status. Defaults to False.
-
-    Returns:
-        Callable: The decorated function.
     """
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(state: Dict[str, Any]) -> Dict[str, Any]:
             node_name = func.__name__
+            task = state["keys"]["task"]
+            execution_history = state["keys"]["execution_history"]
+
+            # Set logger context for the current task
+            Logger(db_id=task.db_id, question_id=task.question_id)
+            
+            # Check if this node has already been run (from a checkpoint)
+            if any(x["node_type"] == node_name for x in execution_history):
+                Logger().log(f"---SKIPPING {node_name.upper()} (found in checkpoint)---")
+                return state
+
             Logger().log(f"---{node_name.upper()}---")
             result = {"node_type": node_name}
 
             try:
-                task = state["keys"]["task"]
-                execution_history = state["keys"]["execution_history"]
-                for x in execution_history:
-                    if x["node_type"]==node_name:
-                        return state
-                output = func(task,execution_history)
+                # Call the node function with the whole state
+                output = func(state)
                 result.update(output)
                 result["status"] = "success"
             except Exception as e:
                 Logger().log(f"Node '{node_name}': {task.db_id}_{task.question_id}\n{type(e)}: {e}\n", "error")
-                # Logger().log(f"Vote content: {vote}, Type: {type(vote)}", "error")  # 打印 vote 内容
                 result.update({
                     "status": "error",
                     "error": f"{type(e)}: <{e}>",
                 })
             
             execution_history.append(result)
-            # if execution_history[-1]["node_type"]=="align_correct":
-            #     print(execution_history)
             Logger().dump_history_to_file(execution_history)
             
             return state
@@ -49,13 +47,6 @@ def node_decorator(check_schema_status: bool = False) -> Callable:
 def get_last_node_result(execution_history: List[Dict[str, Any]], node_type: str) -> Dict[str, Any]:
     """
     Retrieves the last result for a specific node type from the execution history.
-
-    Args:
-        execution_history (List[Dict[str, Any]]): The execution history.
-        node_type (str): The type of node to look for.
-
-    Returns:
-        Dict[str, Any]: The result of the last node of the specified type, or None if not found.
     """
     for node in reversed(execution_history):
         if node["node_type"] == node_type:
