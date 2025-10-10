@@ -1051,7 +1051,7 @@ class ValueLinkingDatasetProcessor:
     def validate_records(input_path: str, valid_output_path: str, invalid_output_path: str):
         
         client = OpenAI(
-            base_url="http://gaia-gpu-2.imsi.athenarc.gr:5001/v1",
+            base_url="REPLACE_WITH_YOUR_BASE_URL",
             api_key ="unused_dummy_value"
         )
 

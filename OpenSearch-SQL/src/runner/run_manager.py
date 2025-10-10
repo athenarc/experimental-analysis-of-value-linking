@@ -10,7 +10,7 @@ from runner.database_manager import DatabaseManager
 from runner.statistics_manager import StatisticsManager
 from pipeline.workflow_builder import build_pipeline
 from pipeline.pipeline_manager import PipelineManager
-from tqdm import tqdm
+
 NUM_WORKERS = 3   
 
 class RunManager:
@@ -74,11 +74,9 @@ class RunManager:
         #         pool.apply_async(self.worker, args=(task,), callback=self.task_done)
         #     pool.close()
         #     pool.join()
-        with tqdm(total=self.total_number_of_tasks, desc="Processing Tasks") as pbar:
-            for task in self.tasks:
-                ans = self.worker(task)
-                self.task_done(ans)
-                pbar.update(1)
+        for task in self.tasks:
+            ans=self.worker(task)
+            self.task_done(ans)
 
     def worker(self, task: Task) -> Tuple[Any, str, int]:
         """

@@ -5,8 +5,6 @@ import json
 import re
 from runner.logger import Logger
 from llm.prompts import prompts_fewshot_parse
-import vllm
-
 def model_chose(step,model="gpt-4 32K"):
     if model.startswith("gpt") or model.startswith("claude35_sonnet") or model.startswith("gemini"):
         # This new condition ensures "gpt-oss" is NOT caught by the generic "gpt" check
@@ -253,74 +251,12 @@ class sft_req(req):
 
 
 class VLLM_req(req):
-    # +++ Add a class attribute to hold the offline instance +++
-    _offline_vllm_instance = None
-    # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
     def __init__(self, step, model_name="custom_vllm", api_url="http://localhost:5001/v1/chat/completions"):
         super().__init__(step, model_name)
         self.api_url = api_url
         # You might want to make api_url configurable via pipeline_setup if needed
 
-    # +++ Add a class method to set the instance from main.py +++
-    @classmethod
-    def set_offline_vllm_instance(cls, instance: vllm.LLM):
-        cls._offline_vllm_instance = instance
-    # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
     def get_ans(self, messages, temperature=0.0, top_p=None, n=1, single=True, **kwargs):
-        # +++ Check if we are in offline mode +++
-        if self._offline_vllm_instance:
-            return self._get_ans_offline(messages, temperature, top_p, n, single, **kwargs)
-        else:
-            return self._get_ans_online(messages, temperature, top_p, n, single, **kwargs)
-        # +++++++++++++++++++++++++++++++++++++++
-
-    def _get_ans_offline(self, messages, temperature=0.0, top_p=None, n=1, single=True, **kwargs):
-        """Handles generation using the in-process VLLM model."""
-        # 1. Prepare the prompt using the model's chat template
-        tokenizer = self._offline_vllm_instance.get_tokenizer()
-        prompt_messages = [
-            {"role": "system", "content": "You are an SQL expert, skilled in handling various SQL-related issues."},
-            {"role": "user", "content": messages}
-        ]
-        full_prompt = tokenizer.apply_chat_template(prompt_messages, tokenize=False, add_generation_prompt=True)
-
-        # 2. Prepare sampling parameters
-        sampling_params = vllm.SamplingParams(
-            n=n,
-            temperature=temperature if temperature > 0 else 0.0, # VLLM requires temp > 0 for sampling
-            top_p=top_p if top_p is not None else 1.0,
-            max_tokens=kwargs.get("max_tokens", 800),
-            stop=kwargs.get("stop", None)
-        )
-        if sampling_params.temperature == 0.0:
-            # Use greedy decoding for temperature 0
-            sampling_params.temperature = 1.0
-            sampling_params.top_p = 1.0
-            sampling_params.top_k = 1
-
-
-        # 3. Generate the output
-        # vllm.generate takes a list of prompts
-        outputs = self._offline_vllm_instance.generate([full_prompt], sampling_params)
-        
-        # The output is a list of RequestOutput objects. We only sent one prompt.
-        request_output = outputs[0]
-
-        # 4. Parse the output to match the expected format
-        if n == 1 and single:
-            response_clean = request_output.outputs[0].text
-        else:
-            response_clean = [output.text for output in request_output.outputs]
-
-        if self.step != "prepare_train_queries":
-            self.log_record(messages, response_clean)
-            
-        return response_clean
-
-    def _get_ans_online(self, messages, temperature=0.0, top_p=None, n=1, single=True, **kwargs):
-        """The original method for sending HTTP requests."""
         count = 0
         response_clean = None
         res_json = None
@@ -405,3 +341,5 @@ class VLLM_req(req):
             raise Exception(f"Failed to get a response from vLLM after multiple retries. Last response: {res_json}")
 
         return response_clean
+    
+    

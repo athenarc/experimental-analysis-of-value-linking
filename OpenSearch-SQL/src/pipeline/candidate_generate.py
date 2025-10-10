@@ -1,5 +1,3 @@
-# src/pipeline/candidate_generate.py
-
 import logging
 from typing import Any, Dict, List
 from pipeline.utils import node_decorator,get_last_node_result
@@ -22,22 +20,10 @@ def candidate_generate(task: Any, execution_history: List[Dict[str, Any]]) -> Di
         df_fewshot = json.load(f)
 
     chat_model = model_chose(node_name,config["engine"])  # deepseek qwen-max gpt qwen-max-longcontext
-    
-    # +++ FIX: Change the source node for dependencies +++
-    # Determine which info-gathering node was run
-    info_node_name = "simplified_info_gathering"
-    info_node_result = get_last_node_result(execution_history, info_node_name)
-    if info_node_result is None:
-        # Fallback to the original node if the simplified one wasn't run
-        info_node_name = "column_retrieve_and_other_info"
-        info_node_result = get_last_node_result(execution_history, info_node_name)
-
-    column = info_node_result["column"]
-    foreign_keys = info_node_result["foreign_keys"]
-    L_values = info_node_result["L_values"]
-    q_order = info_node_result["q_order"]
-    # +++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    column = get_last_node_result(execution_history, "column_retrieve_and_other_info")["column"]
+    foreign_keys= get_last_node_result(execution_history, "column_retrieve_and_other_info")["foreign_keys"]
+    L_values = get_last_node_result(execution_history, "column_retrieve_and_other_info")["L_values"]
+    q_order = get_last_node_result(execution_history, "column_retrieve_and_other_info")["q_order"]
     values = [f"{x[0]}: '{x[1]}'" for x in L_values]
     db=task.db_id
 
@@ -68,6 +54,9 @@ def candidate_generate(task: Any, execution_history: List[Dict[str, Any]]) -> Di
     }
 
     return response
+
+
+
 
 def rewrite_question(question):
     if question.find(" / ")!=-1:

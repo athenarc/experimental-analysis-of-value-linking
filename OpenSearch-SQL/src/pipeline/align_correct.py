@@ -1,5 +1,3 @@
-# src/pipeline/align_correct.py
-
 import logging
 from typing import Any, Dict, List
 from pathlib import Path
@@ -29,23 +27,11 @@ def align_correct(task: Any,  execution_history: List[Dict[str, Any]]) -> Dict[s
     with open(correct_fewshot_json) as f:
         correct_dic = json.load(f)
     all_db_col = get_last_node_result(execution_history, "generate_db_schema")["db_col_dic"]
-    
-    # +++ FIX: Change the source node for dependencies +++
-    # Determine which info-gathering node was run
-    info_node_name = "simplified_info_gathering"
-    info_node_result = get_last_node_result(execution_history, info_node_name)
-    if info_node_result is None:
-        # Fallback to the original node if the simplified one wasn't run
-        info_node_name = "column_retrieve_and_other_info"
-        info_node_result = get_last_node_result(execution_history, info_node_name)
-
-    column = info_node_result["column"]
-    foreign_keys = info_node_result["foreign_keys"]
-    foreign_set = info_node_result["foreign_set"]
-    L_values = info_node_result["L_values"]
-    q_order = info_node_result["q_order"]
-    # +++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    column = get_last_node_result(execution_history, "column_retrieve_and_other_info")["column"]
+    foreign_keys= get_last_node_result(execution_history, "column_retrieve_and_other_info")["foreign_keys"]
+    foreign_set = get_last_node_result(execution_history, "column_retrieve_and_other_info")["foreign_set"]
+    L_values = get_last_node_result(execution_history, "column_retrieve_and_other_info")["L_values"]
+    q_order = get_last_node_result(execution_history, "column_retrieve_and_other_info")["q_order"]
     question = get_last_node_result(execution_history, "candidate_generate")["rewrite_question"]# divid update question
 
     SQLs=get_last_node_result(execution_history, "candidate_generate")["SQL"]
@@ -84,3 +70,10 @@ def align_correct(task: Any,  execution_history: List[Dict[str, Any]]) -> Dict[s
     }
 
     return response
+
+
+
+
+
+
+
