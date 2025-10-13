@@ -199,5 +199,15 @@ ENGINE_CONFIGS: Dict[str, Dict[str, Any]] = {
             "max_tokens": 2048,         # Adjust as needed for Qwen3's capability and prompt length
             "temperature": 0.7
         }
+    },
+    "Qwen/Qwen2.5-Coder-32B-Instruct": {
+        "constructor": ChatOpenAI, # Use ChatOpenAI to talk to vLLM's OpenAI-compatible API
+        "params": {
+            "model": "Qwen/Qwen2.5-Coder-32B-Instruct",  # This MUST match the model name vLLM is serving
+            "openai_api_key": "EMPTY",  # vLLM doesn't require an API key
+            "openai_api_base": "http://localhost:5001/v1", # Default vLLM API endpoint
+            "max_tokens": 2048,
+            "temperature": 0.7
+        }
     }
 }

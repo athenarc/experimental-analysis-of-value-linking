@@ -10,6 +10,11 @@ from vllm import LLM, SamplingParams
 
 from utils import read_jsonl_file, write_jsonl_file
 
+# <<< CHANGE START >>>
+# Import the necessary base class for the wrapper
+from vllm.v1.sample.logits_processor import AdapterLogitsProcessor
+# <<< CHANGE END >>>
+
 
 # Configure logging
 def setup_logging(log_file):
@@ -60,11 +65,27 @@ def process_sql(sample, sql, tokenizer):
     )
 
 
+# This is your original request-level logits processor function. It remains unchanged.
 def logits_processor(_, scores):
-    index = scores[0].view(torch.uint16)
+    # Reinterpret the first bfloat16 value as a uint16, then cast to long for indexing
+    index = scores[:1].view(torch.uint16).long()
     scores = torch.full_like(scores, float("-inf"))
     scores[index] = 1
     return scores
+
+# <<< CHANGE START >>>
+# Create a wrapper class that adapts your function to the new vLLM API.
+class MyLogitsProcessorWrapper(AdapterLogitsProcessor):
+    def is_argmax_invariant(self) -> bool:
+        # Your processor definitely changes the argmax by design,
+        # so we must return False.
+        return False
+
+    def new_req_logits_processor(self, params):
+        # This method tells the vLLM engine to use your 'logits_processor'
+        # function for every new request.
+        return logits_processor
+# <<< CHANGE END >>>
 
 
 @torch.no_grad()
@@ -150,19 +171,26 @@ def main():
         model=args.model,
         dtype="bfloat16",
         trust_remote_code=True,
-        gpu_memory_utilization=0.85,  # Slightly higher since you need the space
-        max_model_len=15000,  # Exactly 15k tokens
+        gpu_memory_utilization=0.85,
+        max_model_len=15000,
         tensor_parallel_size=args.num_gpus,
-        enable_prefix_caching=False,
-        enable_chunked_prefill=True,
-        enforce_eager=True,  # Can save memory by avoiding CUDA graphs
-        # Add these memory-saving options:
+        enable_prefix_caching=True,
+        enable_chunked_prefill=False,
+        enforce_eager=True,          
         quantization=None,
-        max_num_batched_tokens=2048,  # Lower batch processing
+        #max_num_batched_tokens=2048,
+        # <<< CHANGE START >>>
+        # Register the logits processor wrapper with the LLM engine at initialization.
+        logits_processors=[MyLogitsProcessorWrapper],
+        # <<< CHANGE END >>>
     )
+    
+    # <<< CHANGE START >>>
+    # Remove `logits_processors` from SamplingParams. The engine will now handle it.
     sampling_params = SamplingParams(
-        temperature=0, top_p=1.0, max_tokens=1, logits_processors=[logits_processor]
+        temperature=0, top_p=1.0, max_tokens=1
     )
+    # <<< CHANGE END >>>
 
     for batch_start in tqdm.tqdm(
         range(0, len(prompts), args.batch_size), desc="Generating responses"

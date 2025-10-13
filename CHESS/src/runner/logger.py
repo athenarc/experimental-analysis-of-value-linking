@@ -63,24 +63,23 @@ class Logger:
             raise ValueError(f"Invalid log level: {log_level}")
         logging.basicConfig(level=log_level_attr, format='%(levelname)s: %(message)s')
 
-    def log(self, message: str, log_level: str = "info", task: Task = None):
+    def log(self, message: str, log_level: str = "info", task: Task = None, **kwargs):
         """
         Logs a message at the specified log level.
 
         Args:
             message (str): The message to log.
             log_level (str): The log level to use.
-
-        Raises:
-            ValueError: If the log level is invalid.
+            **kwargs: Additional arguments for the logging function (e.g., exc_info=True).
         """
         log_method = getattr(logging, log_level, None)
         if log_method is None:
             raise ValueError(f"Invalid log level: {log_level}")
-        if task is not None:
-            log_method(f"({task.db_id}, {task.question_id}) {message}")
-        else:
-            log_method(message)
+        
+        log_message = f"({task.db_id}, {task.question_id}) {message}" if task is not None else message
+        
+        # Pass the extra kwargs to the actual logging call
+        log_method(log_message, **kwargs)
 
     def log_conversation(self, conversations: List[Dict[str, Any]]):
         """

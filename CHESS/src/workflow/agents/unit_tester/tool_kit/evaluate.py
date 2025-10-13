@@ -29,34 +29,51 @@ class Evaluate(Tool):
         Args:
             state (SystemState): The current system state.
         """
+        # --- CORRECTED LOGIC ---
+
+        # 1. Initialize variables to safe default values BEFORE the try block.
+        target_SQL_meta_infos = []
+        key_to_evaluate = ""
+
+        # 2. Try to populate the variables from the system state.
         try:
             key_to_evaluate = list(state.SQL_meta_infos.keys())[-1]
             target_SQL_meta_infos = state.SQL_meta_infos[key_to_evaluate]
         except Exception as e:
-            print(f"Error in UnitTestEvaluator: {e}")
-            return
-        if key_to_evaluate.startswith(self.tool_name):
+            print(f"Error in UnitTestEvaluator while getting target SQLs: {e}. Proceeding with empty list.")
+
+        # 3. Determine the ID for the new SQL entry.
+        if key_to_evaluate and key_to_evaluate.startswith(self.tool_name):
             id = int(key_to_evaluate[len(self.tool_name)+1:])
             self.SQL_id = self.tool_name + "_" + str(id+1)
         else:
-            self.SQL_id = self.tool_name + "_1"  
+            self.SQL_id = self.tool_name + "_1"
+        
         state.SQL_meta_infos[self.SQL_id] = []
-        request_list = []
+        
+        # 4. Now, safely handle the different cases based on the contents of target_SQL_meta_infos.
+        # This block now correctly handles the case where the try block failed.
         if len(target_SQL_meta_infos) == 0:
-            state.SQL_meta_infos[self.SQL_id].append("SELECT * FROM table_name")
+            placeholder_sql = SQLMetaInfo(SQL="SELECT * FROM table_name")
+            state.SQL_meta_infos[self.SQL_id].append(placeholder_sql)
             self.scores = [0]
             self.comparison_matrix = [[0]]
             return
+
         if len(target_SQL_meta_infos) == 1:
             state.SQL_meta_infos[self.SQL_id].append(target_SQL_meta_infos[0])
             self.scores = [1]
             self.comparison_matrix = [[1]]
             return
+
         if len(state.unit_tests["unit_test_generation"]) == 0:
             state.SQL_meta_infos[self.SQL_id].append(target_SQL_meta_infos[0])
             self.scores = [1]
             self.comparison_matrix = [[1]]
             return
+
+        # --- THE REST OF THE FUNCTION CONTINUES AS BEFORE ---
+        request_list = []
         candidates_clusters = self.execution_based_clustering(target_SQL_meta_infos)
         formatted_candidates = ""
         for index, candidate_query in enumerate(target_SQL_meta_infos):
@@ -84,21 +101,39 @@ class Evaluate(Tool):
                 engine=get_llm_chain(**self.engine_config),
                 parser=get_parser(self.parser_name),
                 request_list=request_list,
-                step=self.tool_name
+                step=self.tool_name,
+                # --- START OF FIX ---
+                engine_config=self.engine_config
+                # --- END OF FIX ---
             )
-            response = [r[0] for r in response]
+            response = [r[0] for r in response if r]
         except Exception as e:
             print(f"Error in Checker while getting response: {e}")
             response = []
+
+        # Add a check for an empty comparison_matrix to prevent crash
+        if not response:
+            # If LLM fails or returns nothing, fall back to picking the first candidate
+            state.SQL_meta_infos[self.SQL_id].append(target_SQL_meta_infos[0])
+            self.scores = [1] + [0] * (len(target_SQL_meta_infos) - 1)
+            self.comparison_matrix = [[1] + [0] * (len(target_SQL_meta_infos) - 1)]
+            return
+
         comparison_matrix = []
         for item in response:
-            # if self.test_case_filtering_based_on_inter_cluster_variance(candidates_clusters, item["scores"], target_SQL_meta_infos):
-            comparison_matrix.append(item["scores"])
-        # sum scores across all unit tests
+            if item and "scores" in item:
+                comparison_matrix.append(item["scores"])
+
+        # Add another check for an empty comparison_matrix
+        if not comparison_matrix or not comparison_matrix[0]:
+            state.SQL_meta_infos[self.SQL_id].append(target_SQL_meta_infos[0])
+            self.scores = [1] + [0] * (len(target_SQL_meta_infos) - 1)
+            self.comparison_matrix = [[1] + [0] * (len(target_SQL_meta_infos) - 1)]
+            return
+
         self.comparison_matrix = comparison_matrix  
         scores = [sum([score[index] for score in comparison_matrix]) for index in range(len(comparison_matrix[0]))]
         self.scores = scores
-        # find the best candidate
         best_candidate = self.pick_the_best_candidate(scores, target_SQL_meta_infos, candidates_clusters)
         state.SQL_meta_infos[self.SQL_id].append(best_candidate)
 

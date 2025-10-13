@@ -34,7 +34,7 @@ class VLLMManager:
                     raise ValueError("A model path must be provided to initialize vLLM batch mode.")
                 
                 logging.info(f"Initializing vLLM model: {model_path}...")
-                cls._model = LLM(model=model_path, tensor_parallel_size=tensor_parallel_size,gpu_memory_utilization=0.8,download_dir="/data/hdd1/vllm_models/",max_model_len=30000)
+                cls._model = LLM(model=model_path, tensor_parallel_size=tensor_parallel_size,gpu_memory_utilization=0.87,download_dir="/data/hdd1/vllm_models/",max_model_len=30000)
                 cls._initialized = True
                 logging.info("vLLM model initialized successfully.")
 

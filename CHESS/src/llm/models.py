@@ -196,23 +196,24 @@ def async_llm_chain_call(
     if num_workers_for_pool == 0: # Should be caught by the earlier `if not request_list:`
         logger.log(f"async_llm_chain_call for step {step}: call_list became empty unexpectedly. Returning empty.", "warning")
         return [[] for _ in range(len(request_list))] # Match expected output structure for empty
-
+    results_placeholder = [None] * len(call_list)
 
     try:
         with ThreadPoolExecutor(max_workers=num_workers_for_pool) as executor:
             future_to_id = {executor.submit(call['function'], **call['kwargs']): i for i, call in enumerate(call_list)}
+            # The line below was moved up
+            # results_placeholder = [None] * len(call_list) 
             for future in concurrent.futures.as_completed(future_to_id):
                 call_id = future_to_id[future]
                 try:
                     results_placeholder[call_id] = future.result()
                 except Exception as exc:
                     logger.log(f"async_llm_chain_call: Generated an exception for call_id {call_id}, step {step}: {exc}", "error", exc_info=True)
-                    results_placeholder[call_id] = None # Store None or a specific error marker
+                    results_placeholder[call_id] = None # This is now safe
     except Exception as pool_exc: # Catch errors from ThreadPoolExecutor itself
         logger.log(f"async_llm_chain_call: ThreadPoolExecutor error for step {step}: {pool_exc}", "error", exc_info=True)
-        # Fill results with None if the pool failed catastrophically
+        # This assignment is now also safe, though it might be redundant if the list is already initialized with Nones.
         results_placeholder = [None] * len(call_list)
-
 
     # Group results by sampling_count
     grouped_results = []

@@ -251,7 +251,7 @@ class sft_req(req):
 
 
 class VLLM_req(req):
-    def __init__(self, step, model_name="custom_vllm", api_url="http://localhost:5001/v1/chat/completions"):
+    def __init__(self, step, model_name="custom_vllm", api_url="http://localhost:5002/v1/chat/completions"):
         super().__init__(step, model_name)
         self.api_url = api_url
         # You might want to make api_url configurable via pipeline_setup if needed

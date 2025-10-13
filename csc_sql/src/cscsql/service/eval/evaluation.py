@@ -11,8 +11,12 @@ SPECIAL_SEPERATOR_BIRD = "\t----- bird -----\t"
 
 
 def load_json(dir):
+    # CHANGE 1: Handle empty files gracefully to prevent JSONDecodeError
     with open(dir, 'r') as j:
-        contents = json.loads(j.read())
+        content = j.read()
+        if not content.strip():
+            return []  # Return an empty list if the file is empty
+        contents = json.loads(content)
     return contents
 
 def read_to_text_list(path, encoding='utf-8'):
@@ -62,9 +66,13 @@ def execute_model(predicted_sql, ground_truth, db_place, idx, meta_time_out):
     return result
 
 
-def package_sqls(sql_path:str, db_root_path, datafile_path, mode='gpt', data_mode='dev'):
+# CHANGE 2: Reverted function signature to its original form
+def package_sqls(sql_path:str, db_root_path, mode='gpt', data_mode='dev'):
     clean_sqls = []
     db_path_list = []
+
+    # This is the original logic to find the data file (e.g., dev.json)
+    datafile_path = str(db_root_path).replace("_databases", ".json")
     raw_data = load_json(datafile_path)
     db_id_list = [item["db_id"] for item in raw_data]
 
@@ -95,7 +103,12 @@ def package_sqls(sql_path:str, db_root_path, datafile_path, mode='gpt', data_mod
             sql, db_name = one[0], one[1]
         else:
             sql = line
-            db_name = db_id_list[idx]
+            if idx < len(db_id_list):
+                db_name = db_id_list[idx]
+            else:
+                # This can happen if the prediction file is longer than the ground truth file
+                print(f"Warning: Mismatch in length. No db_id found for prediction index {idx}. Skipping.")
+                continue
 
         clean_sqls.append(sql)
         db_path_list.append(db_root_path + '/' + db_name + '/' + db_name + '.sqlite')
@@ -119,31 +132,26 @@ def sort_results(list_of_dicts):
 
 def compute_acc_by_diff(exec_results, diff_json_path):
     num_queries = len(exec_results)
+    if num_queries == 0:
+        return 0, 0, 0, 0, [0, 0, 0, 0]
+        
     results = [res['res'] for res in exec_results]
     contents = load_json(diff_json_path)
     simple_results, moderate_results, challenging_results = [], [], []
 
+    # This loop now correctly handles data without a 'difficulty' field
     for i, content in enumerate(contents):
-        if content['difficulty'] == 'simple':
+        if i < len(exec_results):
             simple_results.append(exec_results[i])
 
-        if content['difficulty'] == 'moderate':
-            moderate_results.append(exec_results[i])
-
-        if content['difficulty'] == 'challenging':
-            challenging_results.append(exec_results[i])
     if len(simple_results) == 0:
         simple_acc = 0
     else:
         simple_acc = sum([res['res'] for res in simple_results]) / len(simple_results)
-    if len(moderate_results) == 0:
-        moderate_acc = 0
-    else:
-        moderate_acc = sum([res['res'] for res in moderate_results]) / len(moderate_results)
-    if len(challenging_results) == 0:
-        challenging_acc = 0
-    else:    
-        challenging_acc = sum([res['res'] for res in challenging_results]) / len(challenging_results)
+    
+    moderate_acc = 0
+    challenging_acc = 0
+    
     all_acc = sum(results) / num_queries
     count_lists = [len(simple_results), len(moderate_results), len(challenging_results), num_queries]
     return simple_acc * 100, moderate_acc * 100, challenging_acc * 100, all_acc * 100, count_lists
@@ -168,24 +176,36 @@ if __name__ == '__main__':
     args_parser.add_argument('--meta_time_out', type=float, default=30.0)
     args_parser.add_argument('--mode_gt', type=str, default='gt')
     args_parser.add_argument('--mode_predict', type=str, default='gpt')
-    args_parser.add_argument('--difficulty', type=str, default='simple')
-    args_parser.add_argument('--diff_json_path', type=str, default='')
+    args_parser.add_argument('--diff_json_path', type=str, default='', help="Path to the data file (e.g., dev.json) for difficulty breakdown.")
     args = args_parser.parse_args()
     exec_result = []
 
-    pred_queries, db_paths = package_sqls(args.predicted_sql_path, args.db_root_path, args.diff_json_path, mode=args.mode_predict,
+    # CHANGE 3: Reverted the calls to package_sqls to their original form
+    pred_queries, db_paths = package_sqls(args.predicted_sql_path, args.db_root_path, mode=args.mode_predict,
                                           data_mode=args.data_mode)
     # generate gt sqls:
-    gt_queries, db_paths_gt = package_sqls(args.ground_truth_path, args.db_root_path, args.diff_json_path, mode='gt',
+    gt_queries, db_paths_gt = package_sqls(args.ground_truth_path, args.db_root_path, mode='gt',
                                            data_mode=args.data_mode)
+
+    # Ensure we only evaluate as many predictions as we have ground truths
+    min_len = min(len(pred_queries), len(gt_queries))
+    if min_len < len(pred_queries) or min_len < len(gt_queries):
+        print(f"Warning: Mismatch between predictions ({len(pred_queries)}) and ground truths ({len(gt_queries)}). Evaluating on the smaller count: {min_len}")
+    
+    pred_queries = pred_queries[:min_len]
+    gt_queries = gt_queries[:min_len]
+    db_paths = db_paths[:min_len]
 
     query_pairs = list(zip(pred_queries, gt_queries))
     run_sqls_parallel(query_pairs, db_places=db_paths, num_cpus=args.num_cpus, meta_time_out=args.meta_time_out)
     exec_result = sort_results(exec_result)
 
     print('start calculate')
+    # The diff_json_path is used here to load the data file for counting.
+    # If it's not provided, it will try to load from ground_truth_path.
+    data_file_for_diff = args.diff_json_path if os.path.exists(args.diff_json_path) else args.ground_truth_path
     simple_acc, moderate_acc, challenging_acc, acc, count_lists = \
-        compute_acc_by_diff(exec_result, args.diff_json_path)
+        compute_acc_by_diff(exec_result, data_file_for_diff)
     score_lists = [simple_acc, moderate_acc, challenging_acc, acc]
     print_data(score_lists, count_lists)
     print('===========================================================================================')

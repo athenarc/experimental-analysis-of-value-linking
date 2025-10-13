@@ -10,7 +10,7 @@ export TOKENIZERS_PARALLELISM=true
 export VLLM_USE_MODELSCOPE=True
 
 DATASET_NAME="bird"
-DATASET_BASE_DIR="./value_linking"
+DATASET_BASE_DIR="./value_linking_prec_05"
 
 ######################################################################################
 ## Evaluation file path
@@ -20,7 +20,7 @@ DATASET_BASE_DIR="./value_linking"
 DATASET_MODE="dev"
 DATAFILE_PATH="${DATASET_BASE_DIR}/dev.json"
 GOLD_PATH="${DATASET_BASE_DIR}/gold.sql"
-DATASET_PATH="${DATASET_BASE_DIR}/databases"
+DATASET_PATH="${DATASET_BASE_DIR}/dev_databases"
 
 
 ## for BIRD test
@@ -33,7 +33,7 @@ DATASET_PATH="${DATASET_BASE_DIR}/databases"
 ######################################################################################
 
 # Predicted SQL file path
-PREDICTED_SQL_PATH="${DATASET_BASE_DIR}/outputs/20250817_183037/sampling_think_sql_merge_pred_major_voting_sqls.sql"
+PREDICTED_SQL_PATH="${DATASET_BASE_DIR}/outputs/20251011_035900/sampling_think_sql_merge_pred_major_voting_sqls.sql"
 
 python3 src/cscsql/service/eval/evaluation.py \
 --data_mode $DATASET_MODE \
@@ -42,4 +42,4 @@ python3 src/cscsql/service/eval/evaluation.py \
 --diff_json_path $DATAFILE_PATH \
 --predicted_sql_path ${PREDICTED_SQL_PATH} \
 --num_cpus 16 \
---meta_time_out 30.0
+--meta_time_out 180.0

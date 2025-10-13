@@ -1,8 +1,8 @@
 # Define variables
 data_mode='dev' # Options: 'dev', 'train' 
 db_root_path=value_linking #root directory # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
-start=1346 #闭区间
-end=2020  #开区间
+start=0 #闭区间
+end=5  #开区间
 pipeline_nodes='generate_db_schema+extract_col_value+extract_query_noun+column_retrieve_and_other_info+candidate_generate+align_correct+vote+evaluation'
 # pipeline_nodes='column_retrieve_and_other_info'
 # pipeline指当前工作流的节点组合
@@ -24,7 +24,7 @@ AK='your_ak' #set your ak in src/llm/model.py
 #engine1='Qwen/Qwen2.5-Coder-32B-Instruct'
 #engine1='openai/gpt-oss-120b'
 #engine1='Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8'
-engine1='Qwen/Qwen2.5-Coder-32B-Instruct-GPTQ-Int8'
+engine1='Qwen/Qwen2.5-Coder-32B-Instruct'
 engine2='gpt-3.5-turbo-0125'
 engine3='gpt-4-turbo'
 engine4='claude-3-opus-20240229'

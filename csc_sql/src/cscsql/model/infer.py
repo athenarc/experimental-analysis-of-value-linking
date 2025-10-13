@@ -242,6 +242,8 @@ if __name__ == '__main__':
         parse_mode = 'table'
 
     raw_input_dataset = FileUtils.load_json(opt.input_file)
+    #keep only 5 queries for testing
+    #raw_input_dataset = raw_input_dataset[:5]
     raw_data = FileUtils.load_json(opt.original_data_json) if opt.original_data_json != "none" else FileUtils.load_json(str(opt.db_path).replace("_databases", ".json"))
 
     link_table_results = CommonUtils.read_link_table(link_table_files=opt.link_tables,

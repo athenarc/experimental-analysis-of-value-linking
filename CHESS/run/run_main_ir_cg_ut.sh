@@ -6,6 +6,6 @@ config="./run/configs/CHESS_IR_CG_UT.yaml"
 
 num_workers=3 # Number of workers to use for parallel processing, set to 1 for no parallel processing
 
-python3 -u ./src/main.py --data_mode dev --data_path ./data/value_linking/dev.json --config ./run/configs/CHESS_IR_CG_UT.yaml \
-        --num_workers 3 --pick_final_sql true 
+python3 -u ./src/main.py --data_mode dev --data_path ./data/value_linking_prec_001/dev.json --config ./run/configs/CHESS_IR_CG_UT.yaml \
+        --runner_mode "batch" --vllm_model_path "Qwen/Qwen2.5-Coder-32B-Instruct-GPTQ-Int8"
 

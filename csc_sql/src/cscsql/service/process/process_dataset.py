@@ -438,7 +438,7 @@ def obtain_db_details(db_info, data_source, sampled_db_values_dict, relavant_db_
                 if f"{table_name}.{column_name}".lower() in sampled_db_values_dict:
                     column_values.extend(sampled_db_values_dict[f"{table_name}.{column_name}".lower()])
                 column_values = list(dict.fromkeys(column_values))  # dedup (reserve order)
-                column_values = column_values[:6]
+                column_values = column_values[:2]   #originally 6 values
 
                 if data_source == "synthetic":
                     if random.random() < column_comment_prob:
@@ -585,11 +585,11 @@ if __name__ == "__main__":
     random.seed(42)
     assert opt.mode in ["train", "dev", "test"]
 
-    build_index_for_dataset(
-        dataset_name=opt.source,
-        db_path=opt.db_path,
-        save_index_path=opt.db_content_index_path
-    )
+    #build_index_for_dataset(
+    #    dataset_name=opt.source,
+    #    db_path=opt.db_path,
+    #    save_index_path=opt.db_content_index_path
+    #)
 
     dataset = load_json_file(opt.input_data_file)
 

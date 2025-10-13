@@ -66,12 +66,16 @@ class GenerateUnitTest(Tool):
             parser=get_parser(self.parser_name),
             request_list=[request_kwargs],
             step=self.tool_name,
-            sampling_count=self.sampling_count
+            sampling_count=self.sampling_count,
+            # --- START OF FIX ---
+            engine_config=self.engine_config
+            # --- END OF FIX ---
         )[0]
 
         state.unit_tests["unit_test_generation"] = []
         for response in responses:
-            state.unit_tests["unit_test_generation"].extend(response['unit_tests'])
+            if response and 'unit_tests' in response: # Add safety check
+                state.unit_tests["unit_test_generation"].extend(response['unit_tests'])
         state.unit_tests["unit_test_generation"].extend(HARD_CODES_TEST_CASES)
 
     def execution_based_clustering(self, candidate_queries: List[SQLMetaInfo]) -> list:

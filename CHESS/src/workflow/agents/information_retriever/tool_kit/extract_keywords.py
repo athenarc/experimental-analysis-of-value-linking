@@ -19,21 +19,30 @@ class ExtractKeywords(Tool):
         self.parser_name = parser_name
         
     def _run(self, state: SystemState):
-        request_kwargs = {
-            "QUESTION": state.task.question,
-            "HINT": state.task.evidence,
-        }
+        # --- START OF MODIFICATION ---
+        # BYPASS LLM CALL: Since values are in the question, we don't need to extract
+        # keywords. We'll use the full question and evidence strings as the basis for
+        # the context retrieval step that follows.
+        state.keywords = []
+        # --- END OF MODIFICATION ---
+
         
-        response = async_llm_chain_call(
-            prompt=get_prompt(template_name=self.template_name),
-            engine=get_llm_chain(**self.engine_config),
-            parser=get_parser(self.parser_name),
-            request_list=[request_kwargs],
-            step=self.tool_name,
-            sampling_count=1
-        )[0]
-        
-        state.keywords = response[0]
+        # --- OLD CODE TO BE REPLACED/COMMENTED OUT ---
+        # request_kwargs = {
+        #     "QUESTION": state.task.question,
+        #     "HINT": state.task.evidence,
+        # }
+        # 
+        # response = async_llm_chain_call(
+        #     prompt=get_prompt(template_name=self.template_name),
+        #     engine=get_llm_chain(**self.engine_config),
+        #     parser=get_parser(self.parser_name),
+        #     request_list=[request_kwargs],
+        #     step=self.tool_name,
+        #     sampling_count=1
+        # )[0]
+        # 
+        # state.keywords = response[0]
 
     def _get_updates(self, state: SystemState) -> Dict:
         return {"keywords": state.keywords}

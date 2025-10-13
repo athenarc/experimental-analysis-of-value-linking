@@ -206,34 +206,42 @@ class UnitTestEvaluationOutput(BaseOutputParser):
 
     def parse(self, output: str) -> Dict[str, str]:
         """
-        Parses the output to extract SQL content from markdown.
-
-        Args:
-            output (str): The output string containing SQL query.
-
-        Returns:
-            Dict[str, str]: A dictionary with the SQL query.
+        Parses the output to extract scores. Handles missing <Answer> tags.
         """
-        logging.debug(f"Parsing output with MarkDownOutputParser: {output}")
+        logging.debug(f"Parsing output with UnitTestEvaluationOutput: {output}")
+        
+        # --- START OF FIX ---
+        # Make tag extraction optional/more robust
         if "<Answer>" in output and "</Answer>" in output:
-            output = output.split("<Answer>")[1].split(
-            "</Answer>"
-            )[0].strip()
+            content = output.split("<Answer>")[1].split("</Answer>")[0].strip()
         else:
-            raise OutputParserException("Your answer is not in the correct format. Please make sure to include your answer in the format <Answer>...</Answer>")
+            # If tags are missing, assume the whole output is the content.
+            logging.warning("UnitTestEvaluationOutput: <Answer> tags not found. Parsing raw output.")
+            content = output.strip()
+        # --- END OF FIX ---
+
+        if not content:
+            logging.error("UnitTestEvaluationOutput: No content to parse after stripping tags.")
+            return {"scores": []} # Return empty list on no content
+
         scores = []
-        for line in output.split("\n"):
+        for line in content.split("\n"):
             if ":" in line:
                 try:
-                    key, value = line.split(":")
+                    key, value = line.split(":", 1) # Split only on the first colon
                     if "passed" in value.lower():
                         scores.append(1)
                     else:
                         scores.append(0)
                 except Exception as e:
-                    raise OutputParserException(f"Error parsing unit test evaluation: {e}, each line should be in the format 'unit test #n: Passed/Failed'")
+                    logging.error(f"Error parsing unit test evaluation line '{line}': {e}")
+                    # Don't raise an exception, just skip the malformed line
+                    continue
+        
+        if not scores and content:
+             logging.warning(f"Could not extract any scores from content: '{content}'")
+
         return {"scores": scores}
-    
 class TestCaseGenerationOutput(BaseOutputParser):
     def __init__(self, **kwargs: Any):
         super().__init__(**kwargs)

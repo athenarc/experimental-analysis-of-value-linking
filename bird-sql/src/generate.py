@@ -215,10 +215,11 @@ def main():
         model=args.model,
         dtype="bfloat16",
         trust_remote_code=True,
-        gpu_memory_utilization=0.78,
+        gpu_memory_utilization=0.85,
         max_model_len=16384,
         tensor_parallel_size=args.num_gpus,
         swap_space=0,
+        enable_prefix_caching=True
     )
     logging.info("Model and tokenizer initialized.")
 

@@ -68,16 +68,58 @@ class RetrieveEntity(Tool):
         
     def _run(self, state: SystemState):
         """
-        Executes the entity retrieval process.
-        
-        Args:
-            state (SystemState): The current system state.
+        Executes the entity retrieval process by fetching random values for ALL columns.
         """
+        # --- START OF MODIFICATION ---
+        # This tool no longer needs to find "similar columns" based on keywords.
+        state.similar_columns = {} 
         
-        state.similar_columns = self._get_similar_columns(keywords=state.keywords, question=state.task.question, hint=state.task.evidence)
-        
-        state.schema_with_examples = self._get_similar_entities(keywords=state.keywords)
+        # We will now fetch random examples for every column in the entire database.
+        state.schema_with_examples = self._get_random_examples_for_all_columns()
+        # --- END OF MODIFICATION ---
 
+    def _get_random_examples_for_all_columns(self) -> Dict[str, Dict[str, List[str]]]:
+        """
+        Fetches a few distinct sample values for every column in the database schema.
+        This is a 'brute-force' approach that ignores question context.
+        Values longer than 50 characters are excluded.
+
+        Returns:
+            Dict[str, Dict[str, List[str]]]: A dict in the format of `schema_with_examples`.
+        """
+        schema_with_examples = {}
+        db_manager = DatabaseManager()
+        
+        # Get the complete schema for the current database
+        full_schema = db_manager.get_db_schema()
+
+        for table_name, column_list in full_schema.items():
+            if table_name not in schema_with_examples:
+                schema_with_examples[table_name] = {}
+            
+            for column_name in column_list:
+                try:
+                    # The query still fetches up to 3 values, but we will filter them after.
+                    query = f"SELECT DISTINCT `{column_name}` FROM `{table_name}` WHERE `{column_name}` IS NOT NULL LIMIT 3"
+                    result = db_manager.execute_sql(sql=query, fetch="all")
+
+                    if result:
+                        # --- THIS IS THE MODIFIED LINE ---
+                        # Add a length check to the list comprehension to filter out long values.
+                        examples = [
+                            str(row[0]) for row in result 
+                            if row and row[0] is not None and len(str(row[0])) <= 50
+                        ]
+                        # --- END OF MODIFICATION ---
+                        
+                        if examples:
+                            schema_with_examples[table_name][column_name] = examples
+                except Exception as e:
+                    print(f"Could not fetch examples for {table_name}.{column_name}: {e}")
+                    continue
+        
+        return schema_with_examples
+        
     ### Column name similarity ###
     
     def _get_similar_columns(self, keywords: List[str], question: str, hint: str) -> Dict[str, List[str]]:
