@@ -10,6 +10,7 @@ from pipeline.align_correct import align_correct
 from pipeline.vote import vote
 from pipeline.evaluation import evaluation
 import logging
+from pipeline.simplified_info_gathering import simplified_info_gathering
 
 ### Graph State ###
 class GraphState(TypedDict):

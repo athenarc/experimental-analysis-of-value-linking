@@ -148,6 +148,9 @@ class db_agent:
 
     def get_db_des(self,sqllite_dir,db_dir,model):
         conn = sqlite3.connect(sqllite_dir)
+        # *** ADD THIS LINE TO FIX THE ENCODING ERROR ***
+        conn.text_factory = lambda x: str(x, 'utf-8', 'ignore')
+        # ***********************************************
         table_dir = os.path.join(db_dir, 'database_description')
         sql = "SELECT name FROM sqlite_master WHERE type='table';"
         cursor = conn.cursor()

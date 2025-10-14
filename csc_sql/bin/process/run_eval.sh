@@ -10,7 +10,7 @@ export TOKENIZERS_PARALLELISM=true
 export VLLM_USE_MODELSCOPE=True
 
 DATASET_NAME="bird"
-DATASET_BASE_DIR="./value_linking_prec_05"
+DATASET_BASE_DIR="./value_linking_prec_001"
 
 ######################################################################################
 ## Evaluation file path
@@ -33,7 +33,7 @@ DATASET_PATH="${DATASET_BASE_DIR}/dev_databases"
 ######################################################################################
 
 # Predicted SQL file path
-PREDICTED_SQL_PATH="${DATASET_BASE_DIR}/outputs/20251011_035900/sampling_think_sql_merge_pred_major_voting_sqls.sql"
+PREDICTED_SQL_PATH="${DATASET_BASE_DIR}/outputs/20251013_223146/sampling_think_sql_merge_pred_major_voting_sqls.sql"
 
 python3 src/cscsql/service/eval/evaluation.py \
 --data_mode $DATASET_MODE \

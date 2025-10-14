@@ -5,30 +5,27 @@ import json
 import re
 from runner.logger import Logger
 from llm.prompts import prompts_fewshot_parse
+
+try:
+    from vllm import LLM, SamplingParams
+except ImportError:
+    print("VLLM not installed. Please install with 'pip install vllm'")
+    LLM, SamplingParams = None, None
+
 def model_chose(step,model="gpt-4 32K"):
-    if model.startswith("gpt") or model.startswith("claude35_sonnet") or model.startswith("gemini"):
-        # This new condition ensures "gpt-oss" is NOT caught by the generic "gpt" check
-        if "gpt-oss" in model:
-            return VLLM_req(step, model_name=model)
+    if model.startswith("gpt") and "gpt-oss" not in model:
         return gpt_req(step,model)
-    elif "gpt-oss" in model:
-        return VLLM_req(step, model_name=model)
-    if model == "Qwen/Qwen2.5-Coder-32B-Instruct-GPTQ-Int8":
-        return VLLM_req(step, model_name=model)
-    if model == "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8":
-        return VLLM_req(step, model_name=model)
-    if model == "deepseek":
+    elif model.startswith("claude") or model.startswith("gemini"):
+        return gpt_req(step,model)
+    elif model.startswith("deepseek"):
         return deep_seek(model)
-    if model.startswith("qwen"):
+    elif model.startswith("qwen"):
         return qwenmax(model)
-    if model.startswith("sft"):
+    elif model.startswith("sft"):
         return sft_req()
-    if model == "kosbu/Llama-3.3-70B-Instruct-AWQ": # Add your model identifier
-        return VLLM_req(step, model_name=model)
-    if model == "Qwen/Qwen2.5-Coder-32B-Instruct":
-        return VLLM_req(step, model_name=model)
-    if model == "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8":
-        return VLLM_req(step, model_name=model)
+    else:
+        # Default to VLLM for other models like Qwen, Llama, gpt-oss etc.
+        return VLLM_Generator(step, model_name=model)
 
 
 class req:
@@ -47,7 +44,7 @@ class req:
         s = prompts_fewshot_parse().parse_fewshot.format(question=question,sql=sql)
         ext = self.get_ans(s)
         ext=ext.replace('```','').strip()
-        ext = ext.split("#SQL:")[0]# 防止没按格式生成 至少保留SQL
+        ext = ext.split("#SQL:")[0]
         ans = self.convert_table(ext, sql)
         return ans
     def convert_table(self, s, sql):
@@ -96,7 +93,6 @@ class gpt_req(req):
     def get_ans(self, messages, temperature=0.0, top_p=None,n=1,single=True,**k):
         count = 0
         while count < 50:
-            # print(messages) #保存prompt和答案
             try:
                 res = request(
                 url=
@@ -111,15 +107,13 @@ class gpt_req(req):
                     response_clean = res["choices"][0]["message"]["content"]
                 else:
                     response_clean = res["choices"]
-                # print(self.step)
                 if self.step!="prepare_train_queries":
-                    self.log_record(messages, response_clean)  # 记录对话内容
+                    self.log_record(messages, response_clean)
                 break
 
             except Exception as e:
                 count += 1
                 time.sleep(2)
-                # print(messages)
                 print(e, count, self.Cost,res)
 
         self.Cost += res["usage"]['prompt_tokens'] / 1000 * 0.042 + res[
@@ -144,7 +138,6 @@ class deep_seek(req):
                     ""
                 }
 
-                # 定义请求体
                 jsons = {
                     "model":
                     "deepseek-coder",
@@ -161,7 +154,6 @@ class deep_seek(req):
                     }]
                 }
 
-                # 发送POST请求
                 response = requests.post(url, headers=headers, json=jsons)
                 if debug:
                     print(response.json)
@@ -208,7 +200,6 @@ class sft_req(req):
             padding_side="right",
             use_fast=True)
         self.tokenizer.pad_token = self.tokenizer.eos_token = "<|EOT|>"
-        # drop device_map if running on CPU
         self.model = AutoModelForCausalLM.from_pretrained(
             "",
             torch_dtype=torch.bfloat16,
@@ -230,7 +221,6 @@ class sft_req(req):
         model_inputs = self.tokenizer([inputs],
                                       return_tensors="pt",
                                       max_length=8000).to("cuda")
-        # tokenizer.eos_token_id is the id of <|EOT|> token
         generated_ids = self.model.generate(
             model_inputs.input_ids,
             attention_mask=model_inputs["attention_mask"],
@@ -248,98 +238,51 @@ class sft_req(req):
         return response
 
 
+class VLLM_Generator(req):
+    _llm_instance = None
 
-
-class VLLM_req(req):
-    def __init__(self, step, model_name="custom_vllm", api_url="http://localhost:5002/v1/chat/completions"):
+    def __init__(self, step, model_name, **kwargs):
         super().__init__(step, model_name)
-        self.api_url = api_url
-        # You might want to make api_url configurable via pipeline_setup if needed
+        if LLM is None:
+            raise ImportError("VLLM is not installed. Please run 'pip install vllm'.")
+        
+        if VLLM_Generator._llm_instance is None:
+            print(f"Initializing VLLM model {model_name} for the first time.")
+            VLLM_Generator._llm_instance = LLM(model=model_name, tensor_parallel_size=2,gpu_memory_utilization=0.87,download_dir="/data/hdd1/vllm_models/",max_model_len=32768)
+        self.llm = VLLM_Generator._llm_instance
 
     def get_ans(self, messages, temperature=0.0, top_p=None, n=1, single=True, **kwargs):
-        count = 0
-        response_clean = None
-        res_json = None
-
-        headers = {
-            "Content-Type": "application/json",
-        }
-        payload_messages = [
-            {"role": "system", "content": "You are an SQL expert, skilled in handling various SQL-related issues."},
-            {"role": "user", "content": messages}
-        ]
-        max_tokens = kwargs.get("max_tokens", 800)
-
-        payload = {
-            "model": self.model,
-            "messages": payload_messages,
-            "temperature": temperature if temperature > 0 else 0.01,
-            "top_p": top_p if top_p is not None else 1.0,
-            "n": n,
-            "max_tokens": max_tokens,
-        }
-        if top_p is None:
-            del payload["top_p"]
+        prompt = messages
         
-        stop_sequences = kwargs.get("stop", None)
-        if stop_sequences:
-            payload["stop"] = stop_sequences
+        sampling_params = SamplingParams(
+            n=n,
+            temperature=temperature if temperature > 0.0 else 0.0,
+            top_p=top_p if top_p is not None else 1.0,
+            max_tokens=kwargs.get("max_tokens", 800),
+            stop=kwargs.get("stop", None)
+        )
+        
+        outputs = self.llm.generate([prompt], sampling_params)
+        
+        if single:
+            return outputs[0].outputs[0].text
+        else:
+            return [output.text for output in outputs[0].outputs]
 
-        while count < 5:
-            try:
-                http_response = requests.post(self.api_url, headers=headers, json=payload)
-                http_response.raise_for_status()
-                res_json = http_response.json()
-
-                if n == 1 and single:
-                    content_str = res_json["choices"][0]["message"]["content"]
-                    try:
-                        if content_str.strip().startswith('[') and content_str.strip().endswith(']'):
-                            parsed_content_list = json.loads(content_str)
-                            if isinstance(parsed_content_list, list) and parsed_content_list:
-                                response_clean = parsed_content_list[0]
-                            else:
-                                response_clean = content_str
-                        else:
-                            response_clean = content_str
-                    except json.JSONDecodeError:
-                        response_clean = content_str
-                else:
-                    temp_responses = []
-                    for choice in res_json["choices"]:
-                        choice_content_str = choice["message"]["content"]
-                        try:
-                            if choice_content_str.strip().startswith('[') and choice_content_str.strip().endswith(']'):
-                                parsed_list = json.loads(choice_content_str)
-                                if isinstance(parsed_list, list) and parsed_list:
-                                    temp_responses.append(parsed_list[0])
-                                else:
-                                    temp_responses.append(choice_content_str)
-                            else:
-                                temp_responses.append(choice_content_str)
-                        except json.JSONDecodeError:
-                            temp_responses.append(choice_content_str)
-                    response_clean = temp_responses
-
-                if self.step != "prepare_train_queries":
-                    self.log_record(messages, response_clean)
-                break
-            except requests.exceptions.RequestException as e:
-                print(f"vLLM request failed: {e}, count: {count+1}, payload: {json.dumps(payload)}")
-                count += 1
-                time.sleep(2)
-            except KeyError as e:
-                print(f"vLLM response format error: {e}, response: {res_json}, count: {count+1}")
-                count += 1
-                time.sleep(2)
-            except Exception as e:
-                print(f"An unexpected error occurred with vLLM: {e}, response: {res_json}, count: {count+1}")
-                count += 1
-                time.sleep(2)
-
-        if response_clean is None:
-            raise Exception(f"Failed to get a response from vLLM after multiple retries. Last response: {res_json}")
-
-        return response_clean
-    
-    
+    def batch_generate(self, prompts: list, temperature=0.0, top_p=None, n=1, **kwargs):
+        sampling_params = SamplingParams(
+            n=n,
+            temperature=temperature if temperature > 0.0 else 0.0,
+            top_p=top_p if top_p is not None else 1.0,
+            max_tokens=kwargs.get("max_tokens", 1024),
+            stop=kwargs.get("stop", None)
+        )
+        
+        outputs = self.llm.generate(prompts, sampling_params)
+        
+        results = []
+        for i, output in enumerate(outputs):
+            generated_texts = [o.text for o in output.outputs]
+            results.append(generated_texts)
+        
+        return results

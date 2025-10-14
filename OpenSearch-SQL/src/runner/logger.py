@@ -10,7 +10,7 @@ class Logger:
 
     def __new__(cls, db_id: str = None, question_id: str = None, result_directory: str = None):
         """
-        Ensures a singleton instance of Logger.
+        Ensures a singleton instance of Logger. Can be re-initialized with new parameters.
 
         Args:
             db_id (str, optional): The database ID.
@@ -21,13 +21,16 @@ class Logger:
             Logger: The singleton instance of the class.
 
         Raises:
-            ValueError: If the Logger instance has not been initialized.
+            ValueError: If the Logger instance is requested before being initialized.
         """
         with cls._lock:
-            if (db_id is not None) and (question_id is not None):
-                cls._instance = super(Logger, cls).__new__(cls)
+            if (db_id is not None) and (question_id is not None) and (result_directory is not None):
+                # This is an initialization or re-initialization call
+                if cls._instance is None:
+                    cls._instance = super(Logger, cls).__new__(cls)
                 cls._instance._init(db_id, question_id, result_directory)
             else:
+                # This is a getter call
                 if cls._instance is None:
                     raise ValueError("Logger instance has not been initialized.")
             return cls._instance

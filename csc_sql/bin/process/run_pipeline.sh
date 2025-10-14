@@ -10,7 +10,7 @@ export TOKENIZERS_PARALLELISM=true
 export VLLM_USE_MODELSCOPE=True
 
 DATASET_NAME="bird"
-DATASET_BASE_DIR="./value_linking_prec_01"
+DATASET_BASE_DIR="./value_linking_prec_001"
 DATASET_MODE="dev"
 DATAFILE_PATH="${DATASET_BASE_DIR}/dev_prompts.json"
 # GOLD文件路径，当无GOLD文件时，设置为none
