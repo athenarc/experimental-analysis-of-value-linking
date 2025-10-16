@@ -2,7 +2,7 @@ import string
 from typing import List
 
 import spacy
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import (
+from nlp_retrieval.user_query_processors.query_processor_abc import (
     BaseUserQueryProcessor,
 )
 from nltk import pos_tag, word_tokenize

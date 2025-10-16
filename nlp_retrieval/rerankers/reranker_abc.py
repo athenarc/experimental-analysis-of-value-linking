@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.core.models import RetrievalResult
 
 
 class BaseReranker(ABC):

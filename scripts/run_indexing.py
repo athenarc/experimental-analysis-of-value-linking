@@ -8,16 +8,16 @@ import wandb
 from darelabdb.nlp_retrieval.searcher import Searcher
 
 # --- Method-Specific Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_db_loader import ChessDBLoader
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_loader import BridgeLoader
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
+from retrievers.CHESS.chess_db_loader import ChessDBLoader
+from retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
+from retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
+from retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
+from retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
+from retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
+from retrievers.ValueNet.valuenet_loader import ValueNetLoader
+from retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
+from retrievers.BRIDGE.bridge_loader import BridgeLoader
+from retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 
 
 # --- Configuration ---

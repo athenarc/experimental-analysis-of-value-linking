@@ -2,14 +2,14 @@ import os
 from collections import defaultdict
 from typing import Dict, List, Optional
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
-from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
-from darelabdb.nlp_retrieval.user_query_processors.passthrough_processor import (
+from nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.rerankers.reranker_abc import BaseReranker
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.user_query_processors.passthrough_processor import (
     PassthroughQueryProcessor,
 )
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import (
+from nlp_retrieval.user_query_processors.query_processor_abc import (
     BaseUserQueryProcessor,
 )
 

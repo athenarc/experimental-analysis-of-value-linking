@@ -3,8 +3,8 @@ import pickle
 from typing import Any, Dict, List, Optional
 
 import torch
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 from pylate import indexes as pylate_indexes
 from pylate import models as pylate_models
 from pylate import retrieve as pylate_retrieve

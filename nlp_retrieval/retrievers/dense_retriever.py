@@ -6,8 +6,8 @@ from typing import Any, Dict, List, Optional
 import faiss
 import numpy as np
 import torch
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 
 # from infinity_emb import AsyncEngineArray, EngineArgs
 from sentence_transformers import SentenceTransformer

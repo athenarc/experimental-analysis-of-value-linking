@@ -3,7 +3,7 @@ import os
 import re
 from typing import Dict, List, Optional
 
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import (
+from nlp_retrieval.user_query_processors.query_processor_abc import (
     BaseUserQueryProcessor,
 )
 from tqdm.auto import tqdm

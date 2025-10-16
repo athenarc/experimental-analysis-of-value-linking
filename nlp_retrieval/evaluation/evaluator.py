@@ -2,8 +2,8 @@ import re
 from typing import Any, Dict, List, Set
 
 import pandas as pd
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.evaluation.eval_models import (
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.evaluation.eval_models import (
     EvaluationSummary,
     PerQueryMetrics,
 )

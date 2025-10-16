@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
 
 
 class BaseRetriever(ABC):

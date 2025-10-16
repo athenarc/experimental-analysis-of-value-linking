@@ -3,10 +3,10 @@ import time
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
-from darelabdb.nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
-from darelabdb.nlp_retrieval.searcher import Searcher
+from nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
+from nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.searcher import Searcher
 
 import wandb
 

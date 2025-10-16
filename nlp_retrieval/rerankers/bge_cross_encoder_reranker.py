@@ -1,8 +1,8 @@
 from typing import Dict, List, Union
 
 import torch
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
-from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
+from nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.rerankers.reranker_abc import BaseReranker
 from FlagEmbedding import FlagLLMReranker, FlagReranker
 from tqdm.auto import tqdm
 

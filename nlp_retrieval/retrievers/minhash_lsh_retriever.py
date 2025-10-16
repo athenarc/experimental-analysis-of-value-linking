@@ -2,8 +2,8 @@ import os
 import pickle
 from typing import Dict, List, Set
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 from datasketch import MinHash, MinHashLSHForest
 from tqdm import tqdm
 

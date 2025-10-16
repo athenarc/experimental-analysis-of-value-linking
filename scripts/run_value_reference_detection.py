@@ -14,34 +14,34 @@ from darelabdb.nlp_retrieval.evaluation.eval_models import (
 from darelabdb.nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
 from darelabdb.nlp_retrieval.searcher import Searcher
 # --- CHESS Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_db_loader import ChessDBLoader
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_query_processor import ChessQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_reranker import ChessSimilarityReranker
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
+from retrievers.CHESS.chess_db_loader import ChessDBLoader
+from retrievers.CHESS.chess_query_processor import ChessQueryProcessor
+from retrievers.CHESS.chess_reranker import ChessSimilarityReranker
+from retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
 
 # --- OmniSQL Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_query_processor import OmniSQLQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_reranker import OmniSQLReranker
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.codes_reranker import CodesReranker
+from retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
+from retrievers.OmniSQL.omnisql_query_processor import OmniSQLQueryProcessor
+from retrievers.OmniSQL.omnisql_reranker import OmniSQLReranker
+from retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
+from retrievers.OmniSQL.codes_reranker import CodesReranker
 
 # --- OpenSearch (Dense) Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_query_processor import OpenSearchQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
+from retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
+from retrievers.OpenSearch.opensearch_query_processor import OpenSearchQueryProcessor
+from retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
+from retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
 
 # --- ValueNet Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
+from retrievers.ValueNet.valuenet_loader import ValueNetLoader
+from retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
+from retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
+from retrievers.ValueNet.valuenet_reranker import ValueNetReranker
 
 # --- BRIDGE Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_reranker import BridgeReranker
+from retrievers.BRIDGE.bridge_retriever import BridgeRetriever
+from retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
+from retrievers.BRIDGE.bridge_reranker import BridgeReranker
 
 # --- Configuration ---
 BASE_PATH = "development/experimental_analysis_of_value_linking/assets"

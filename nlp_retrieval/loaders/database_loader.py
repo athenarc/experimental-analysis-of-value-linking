@@ -2,10 +2,9 @@ import hashlib
 from enum import Enum
 from typing import List, Union
 
-from darelabdb.nlp_retrieval.core.models import SearchableItem
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
-from darelabdb.utils_database_connector.core import Database
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
+from nlp_retrieval.core.models import SearchableItem
+from nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.sqlite_db import DatabaseSqlite
 from tqdm import tqdm
 
 
@@ -28,7 +27,7 @@ class DatabaseLoader(BaseLoader):
 
     def __init__(
         self,
-        db: Union[Database, DatabaseSqlite],
+        db: DatabaseSqlite,
         strategy: SerializationStrategy,
         table_separator: str = " <table> ",
         column_separator: str = " <col> ",
