@@ -12,7 +12,7 @@ This repository contains the code and resources associated with the paper **"Com
 ## Repo-setup
 Clone the repo and download the dev set of BIRD :
 
-    git clone https://github.com/apostolhskouk/experimental-analysis-of-value-inking.git
+    git clone 
     cd experimental-analysis-of-value-inking/
     wget https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
     unzip dev.zip
@@ -25,7 +25,6 @@ Clone the repo and download the dev set of BIRD :
 Download the pre-computed indexes for the BIRD dataset and configure the folder: 
 
     cd assets 
-    wget https://huggingface.co/datasets/ApostolosK/value_linking_indexes/resolve/main/indexes.zip
     unzip indexes.zip
     rm indexes.zip 
     cd ..
