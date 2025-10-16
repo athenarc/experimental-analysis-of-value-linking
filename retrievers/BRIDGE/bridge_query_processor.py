@@ -1,4 +1,4 @@
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import BaseUserQueryProcessor
+from nlp_retrieval.user_query_processors.query_processor_abc import BaseUserQueryProcessor
 from typing import List
 
 class BridgeQueryProcessor(BaseUserQueryProcessor):

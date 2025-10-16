@@ -3,8 +3,8 @@ import os
 import sqlite3
 from typing import Any, List
 
-from darelabdb.nlp_retrieval.core.models import SearchableItem
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.core.models import SearchableItem
+from nlp_retrieval.loaders.loader_abc import BaseLoader
 from tqdm import tqdm
 
 

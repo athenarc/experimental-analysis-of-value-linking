@@ -1,6 +1,6 @@
 from typing import List, Optional
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import BaseUserQueryProcessor
-from darelabdb.nlp_retrieval.user_query_processors.llm_keyword_extractor_query_processor import KeywordExtractorProcessor
+from nlp_retrieval.user_query_processors.query_processor_abc import BaseUserQueryProcessor
+from nlp_retrieval.user_query_processors.llm_keyword_extractor_query_processor import KeywordExtractorProcessor
 
 class OpenSearchQueryProcessor(BaseUserQueryProcessor):
     """

@@ -2,8 +2,8 @@ import difflib
 from typing import List, Tuple, Optional
 from rapidfuzz import fuzz
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
-from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
+from nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.rerankers.reranker_abc import BaseReranker
 from tqdm.auto import tqdm
 
 # Constants from the original script

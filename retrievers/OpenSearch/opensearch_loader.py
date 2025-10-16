@@ -1,8 +1,8 @@
 from typing import List
-from darelabdb.nlp_retrieval.core.models import SearchableItem
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
-from darelabdb.nlp_retrieval.loaders.database_loader import DatabaseLoader, SerializationStrategy
-from darelabdb.utils_database_connector.sqlite_db import DatabaseSqlite
+from nlp_retrieval.core.models import SearchableItem
+from nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.loaders.database_loader import DatabaseLoader, SerializationStrategy
+from nlp_retrieval.sqlite_db import DatabaseSqlite
 
 class OpenSearchValueLoader(BaseLoader):
     """

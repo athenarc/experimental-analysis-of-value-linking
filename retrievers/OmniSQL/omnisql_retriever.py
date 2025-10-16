@@ -4,8 +4,8 @@ import subprocess
 import tempfile
 from typing import Dict, List
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 from pyserini.search.lucene import LuceneSearcher
 from tqdm import tqdm
 

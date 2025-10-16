@@ -4,10 +4,10 @@ from typing import List, Dict, Any
 from nltk import ngrams
 from more_itertools import flatten
 
-from darelabdb.nlp_retrieval.user_query_processors.query_processor_abc import (
+from nlp_retrieval.user_query_processors.query_processor_abc import (
     BaseUserQueryProcessor,
 )
-from darelabdb.nlp_retrieval.user_query_processors.ner_query_processor import (
+from nlp_retrieval.user_query_processors.ner_query_processor import (
     NERQueryProcessor,
 )
 

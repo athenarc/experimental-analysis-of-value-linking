@@ -5,8 +5,8 @@ from typing import Any, List
 from func_timeout import func_set_timeout, FunctionTimedOut
 from tqdm import tqdm
 
-from darelabdb.nlp_retrieval.core.models import SearchableItem
-from darelabdb.nlp_retrieval.loaders.loader_abc import BaseLoader
+from nlp_retrieval.core.models import SearchableItem
+from nlp_retrieval.loaders.loader_abc import BaseLoader
 
 
 def _is_number(s: Any) -> bool:

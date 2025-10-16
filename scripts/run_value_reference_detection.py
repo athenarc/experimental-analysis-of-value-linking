@@ -51,7 +51,7 @@ BENCHMARK_FILE = os.path.join(BASE_PATH, "all_benchmarks_human/all_dump_good.jso
 MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = "your_entity"  # Replace with your W&B entity/team name
 WANDB_PROJECT = "value_linking"
 GROUP_NAME="value_reference_detection_experiments"
 
@@ -129,19 +129,19 @@ def get_query_processors() -> Dict[str, object]:
     """Initializes and returns a dictionary of all query processors."""
     print("Initializing all query processors...")
     processors = {
-        #"OmniSQL": OmniSQLQueryProcessor(n=8),
+        "OmniSQL": OmniSQLQueryProcessor(n=8),
         "Chess": ChessQueryProcessor(
             model_name_or_path=LLM_MODEL_PATH, 
             cache_folder="./cache/keywords_chess", 
             tensor_parallel_size=2, 
             gpu_memory_utilization=0.20
         ),
-        #"OpenSearch": OpenSearchQueryProcessor(
-        #    model_name_or_path=LLM_MODEL_PATH, 
-        #    cache_folder="./cache/keywords_open_search", 
-        #    tensor_parallel_size=2, 
-        #    gpu_memory_utilization=0.65
-        #),
+        "OpenSearch": OpenSearchQueryProcessor(
+            model_name_or_path=LLM_MODEL_PATH, 
+            cache_folder="./cache/keywords_open_search", 
+            tensor_parallel_size=2, 
+            gpu_memory_utilization=0.65
+        ),
         "ValueNet": ValueNetQueryProcessor(),
         "Bridge": BridgeQueryProcessor(),
     }
@@ -156,49 +156,49 @@ def get_system_backends() -> Dict[str, Dict]:
     """
     print("Defining all system backends (Retriever-Reranker pairs)...")
     backends = {
-        #"Chess": {
-        #    "retriever": ChessMinHashLshRetriever(threshold=0.30),
-        #    "reranker": ChessSimilarityReranker(
-        #        model_name=EMBEDDING_MODEL_PATH,
-        #        embedding_similarity_threshold=0.8
-        #    ),
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
-        #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-        #    }
-       # },
-        #"OmniSQL": {
-        #    "retriever": OmniSQLRetriever(),
-        #    "reranker": OmniSQLReranker(),
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        #    }
-        #},
-        #"OpenSearch": {
-        #    "retriever": OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH),
-        #    "reranker": OpenSearchRuleBasedReranker(),
-        #    "get_db_specifics": lambda db_id: {
-        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-        #    }
-        #},
-        #"ValueNet": {
-        #    "retriever": ValueNetRetriever(max_workers=4),
-        #    "reranker": ValueNetReranker(),
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": None, # ValueNet might not have a separate loader
-        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
-        #    }
-        #},
-        "Bridge": {
-            "retriever": BridgeRetriever(),
-            "reranker": BridgeReranker(),
+        "Chess": {
+            "retriever": ChessMinHashLshRetriever(threshold=0.30),
+            "reranker": ChessSimilarityReranker(
+                model_name=EMBEDDING_MODEL_PATH,
+                embedding_similarity_threshold=0.8
+            ),
             "get_db_specifics": lambda db_id: {
-                "loader": None, # Bridge might not have a separate loader
-                "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
+                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
             }
-        }
+        },
+        "OmniSQL": {
+            "retriever": OmniSQLRetriever(),
+            "reranker": OmniSQLReranker(),
+            "get_db_specifics": lambda db_id: {
+                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+            }
+        },
+        "OpenSearch": {
+            "retriever": OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH),
+            "reranker": OpenSearchRuleBasedReranker(),
+            "get_db_specifics": lambda db_id: {
+               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+            }
+        },
+        "ValueNet": {
+            "retriever": ValueNetRetriever(max_workers=4),
+            "reranker": ValueNetReranker(),
+            "get_db_specifics": lambda db_id: {
+                "loader": None, # ValueNet might not have a separate loader
+                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+            }
+        },
+        #"Bridge": {
+        #    "retriever": BridgeRetriever(),
+        #    "reranker": BridgeReranker(),
+        #    "get_db_specifics": lambda db_id: {
+        #        "loader": None, # Bridge might not have a separate loader
+        #        "index_path": os.path.join(INDEXES_ROOT, "bridge", db_id)
+        #    }
+        #}
     }
     print("All system backends defined.")
     return backends

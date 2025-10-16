@@ -5,8 +5,8 @@ from typing import Dict, List, Optional, Tuple
 from tqdm import tqdm
 import difflib
 from rapidfuzz import fuzz
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 
 _stopwords = {'who', 'ourselves', 'down', 'only', 'were', 'him', 'at', "weren't", 'has', 'few', "it's", 'm', 'again',
               'd', 'haven', 'been', 'other', 'we', 'an', 'own', 'doing', 'ma', 'hers', 'all', "haven't", 'in', 'but',

@@ -26,7 +26,7 @@ DATABASES_ROOT = os.path.join(BASE_PATH, "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "indexes")
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = "your_entity"  # Replace with your W&B entity/team name
 WANDB_PROJECT = "value_linking"
 WANDB_GROUP = "indexing"
 
@@ -55,15 +55,7 @@ SEARCHER_METHODS = [
         "loader_class": ValueNetLoader,
         "retriever_class": ValueNetRetriever,
         "index_subdir": "valuenet",
-    }
-]
-SEARCHER_METHODS = [
-    #{
-    #    "name": "CHESS",
-    #    "loader_class": ChessDBLoader,
-    #    "retriever_class": ChessMinHashLshRetriever,
-    #    "index_subdir": "chess",
-    #}
+    },
     {
         "name" : "BRIDGE",
         "loader_class": BridgeLoader,

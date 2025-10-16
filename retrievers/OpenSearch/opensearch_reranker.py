@@ -1,7 +1,7 @@
 import re
 from typing import List, Dict
-from darelabdb.nlp_retrieval.core.models import RetrievalResult
-from darelabdb.nlp_retrieval.rerankers.reranker_abc import BaseReranker
+from nlp_retrieval.core.models import RetrievalResult
+from nlp_retrieval.rerankers.reranker_abc import BaseReranker
 from tqdm.auto import tqdm  
 
 class OpenSearchRuleBasedReranker(BaseReranker):

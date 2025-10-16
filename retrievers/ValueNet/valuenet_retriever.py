@@ -7,8 +7,8 @@ from typing import List, Dict, Tuple
 from rapidfuzz.distance import DamerauLevenshtein
 from tqdm import tqdm
 
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.retrievers.retriever_abc import BaseRetriever
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.retrievers.retriever_abc import BaseRetriever
 
 
 class ValueNetRetriever(BaseRetriever):
