@@ -5,7 +5,7 @@ import pandas as pd
 import wandb
 
 # --- Core Framework Imports ---
-from darelabdb.nlp_retrieval.searcher import Searcher
+from nlp_retrieval.searcher import Searcher
 
 # --- Method-Specific Imports ---
 from retrievers.CHESS.chess_db_loader import ChessDBLoader

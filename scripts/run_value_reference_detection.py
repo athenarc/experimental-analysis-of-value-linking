@@ -6,13 +6,13 @@ from typing import Dict, List, Tuple
 
 import pandas as pd
 import wandb
-from darelabdb.nlp_retrieval.core.models import RetrievalResult, SearchableItem
-from darelabdb.nlp_retrieval.evaluation.eval_models import (
+from nlp_retrieval.core.models import RetrievalResult, SearchableItem
+from nlp_retrieval.evaluation.eval_models import (
     EvaluationSummary,
     PerQueryMetrics,
 )
-from darelabdb.nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
-from darelabdb.nlp_retrieval.searcher import Searcher
+from nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
+from nlp_retrieval.searcher import Searcher
 # --- CHESS Imports ---
 from retrievers.CHESS.chess_db_loader import ChessDBLoader
 from retrievers.CHESS.chess_query_processor import ChessQueryProcessor

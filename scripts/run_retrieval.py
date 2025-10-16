@@ -50,7 +50,7 @@ BENCHMARK_FILE = os.path.join(BASE_PATH, "all_benchmarks_human/all_dump_good.jso
 MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = "your_entity"    # Replace with your W&B entity/team name
 WANDB_PROJECT = "value_linking"
 GROUP_NAME="test_run"
 
