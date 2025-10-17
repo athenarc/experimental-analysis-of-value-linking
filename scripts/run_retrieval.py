@@ -43,7 +43,7 @@ from retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
 from retrievers.BRIDGE.bridge_reranker import BridgeReranker
 
 # --- Configuration ---
-BASE_PATH = "development/experimental_analysis_of_value_linking/assets"
+BASE_PATH = "assets"
 DATABASES_ROOT = os.path.join(BASE_PATH, "retrievers", "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "retrievers", "indexes")
 BENCHMARK_FILE = os.path.join(BASE_PATH, "all_benchmarks_human/all_dump_good.json")
@@ -186,14 +186,14 @@ def get_system_configs():
                "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
                "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
             }
-        }
+        },
         "ValueNet": {
             "searcher": value_net_searcher,
             "get_db_specifics": lambda db_id: {
                 "loader": None,
                 "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
             }
-        }
+        },
         "BRIDGE": {
             "searcher": bridge_searcher,
             "get_db_specifics": lambda db_id: {

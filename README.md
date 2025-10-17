@@ -20,16 +20,11 @@ cd experimental-analysis-of-value-linking/
 
 ```bash
 conda env create -f environment.yml
-conda activate value_linkking
+conda activate value_linking
+pip install -e .
 ```
 
-### 3. Install Java dependencies
-
-```bash
-conda install -c conda-forge openjdk=21 maven -y
-```
-
-### 4. Download required datasets and precomputed indexes
+### 3. Download required datasets and precomputed indexes
 
 ```bash
 hf download ValueLinking/value_linking_assets --repo-type dataset --local-dir ./

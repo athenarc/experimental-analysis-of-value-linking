@@ -14,36 +14,36 @@ from nlp_retrieval.evaluation.eval_models import (
 from nlp_retrieval.evaluation.evaluator import RetrievalEvaluator
 from nlp_retrieval.searcher import Searcher
 # --- CHESS Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_db_loader import ChessDBLoader
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_query_processor import ChessQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_reranker import ChessSimilarityReranker
-from development.experimental_analysis_of_value_linking.retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
+from retrievers.CHESS.chess_db_loader import ChessDBLoader
+from retrievers.CHESS.chess_query_processor import ChessQueryProcessor
+from retrievers.CHESS.chess_reranker import ChessSimilarityReranker
+from retrievers.CHESS.chess_retriever import ChessMinHashLshRetriever
 
 # --- OmniSQL Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_query_processor import OmniSQLQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_reranker import OmniSQLReranker
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
-from development.experimental_analysis_of_value_linking.retrievers.OmniSQL.codes_reranker import CodesReranker
+from retrievers.OmniSQL.omnisql_loader import OmniSQLLoader
+from retrievers.OmniSQL.omnisql_query_processor import OmniSQLQueryProcessor
+from retrievers.OmniSQL.omnisql_reranker import OmniSQLReranker
+from retrievers.OmniSQL.omnisql_retriever import OmniSQLRetriever
+from retrievers.OmniSQL.codes_reranker import CodesReranker
 
 # --- OpenSearch (Dense) Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_query_processor import OpenSearchQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
-from development.experimental_analysis_of_value_linking.retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
+from retrievers.OpenSearch.opensearch_loader import OpenSearchValueLoader
+from retrievers.OpenSearch.opensearch_query_processor import OpenSearchQueryProcessor
+from retrievers.OpenSearch.opensearch_reranker import OpenSearchRuleBasedReranker
+from retrievers.OpenSearch.opensearch_retriever import OpenSearchDenseValueRetriever
 
 # --- ValueNet Imports ---
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_loader import ValueNetLoader
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.ValueNet.valuenet_reranker import ValueNetReranker
+from retrievers.ValueNet.valuenet_loader import ValueNetLoader
+from retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
+from retrievers.ValueNet.valuenet_query_processor import ValueNetQueryProcessor
+from retrievers.ValueNet.valuenet_reranker import ValueNetReranker
 
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_retriever import BridgeRetriever
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
-from development.experimental_analysis_of_value_linking.retrievers.BRIDGE.bridge_reranker import BridgeReranker
+from retrievers.BRIDGE.bridge_retriever import BridgeRetriever
+from retrievers.BRIDGE.bridge_query_processor import BridgeQueryProcessor
+from retrievers.BRIDGE.bridge_reranker import BridgeReranker
 
 # --- Configuration ---
-BASE_PATH = "development/experimental_analysis_of_value_linking/assets"
+BASE_PATH = "assets"
 DATABASES_ROOT = os.path.join(BASE_PATH, "retrievers", "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "retrievers", "indexes")
 BENCHMARK_FILE = os.path.join(BASE_PATH, "all_benchmarks_human/all_dump_good.json")
@@ -137,29 +137,29 @@ def get_system_configs():
     print("Initializing all system searchers. This may take a moment...")
 
     # Pre-initialize all expensive components once
-    #chess_searcher = Searcher(
-    #    query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
-    #    retrievers=[ChessMinHashLshRetriever()],
-    #    reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0,edit_distance_threshold=0)
-    #)
+    chess_searcher = Searcher(
+        query_processor=ChessQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_chess", tensor_parallel_size=2, gpu_memory_utilization=0.20),
+        retrievers=[ChessMinHashLshRetriever()],
+        reranker=ChessSimilarityReranker(model_name=EMBEDDING_MODEL_PATH,embedding_similarity_threshold=0,edit_distance_threshold=0)
+    )
 
-    #omnisql_searcher = Searcher(
-    #    query_processor=OmniSQLQueryProcessor(n=8),
-    #    retrievers=[OmniSQLRetriever()],
-    #    reranker=OmniSQLReranker(score_threshold=0,top_k=50)
-    #)
+    omnisql_searcher = Searcher(
+        query_processor=OmniSQLQueryProcessor(n=8),
+        retrievers=[OmniSQLRetriever()],
+        reranker=OmniSQLReranker(score_threshold=0,top_k=50)
+    )
 
-    #opensearch_searcher = Searcher(
-    #    query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
-    #    retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
-    #    reranker=OpenSearchRuleBasedReranker(similarity_threshold=0,score_proximity_filter=1)
-    #)
+    opensearch_searcher = Searcher(
+        query_processor=OpenSearchQueryProcessor(model_name_or_path=LLM_MODEL_PATH, cache_folder="./cache/keywords_open_search", tensor_parallel_size=2, gpu_memory_utilization=0.65),
+        retrievers=[OpenSearchDenseValueRetriever(model_name_or_path=EMBEDDING_MODEL_PATH)],
+        reranker=OpenSearchRuleBasedReranker(similarity_threshold=0,score_proximity_filter=1)
+    )
 
-    #value_net_searcher = Searcher(
-    #    query_processor=ValueNetQueryProcessor(),
-    #    retrievers=[ValueNetRetriever(max_workers=4,similarity_threshold=0.5)],
-    #    reranker=ValueNetReranker()
-    #)
+    value_net_searcher = Searcher(
+        query_processor=ValueNetQueryProcessor(),
+        retrievers=[ValueNetRetriever(max_workers=4,similarity_threshold=0.5)],
+        reranker=ValueNetReranker()
+    )
 
     bridge_searcher = Searcher(
         query_processor=BridgeQueryProcessor(),
@@ -167,34 +167,34 @@ def get_system_configs():
         reranker=BridgeReranker()
     )
     configs = {
-        #"CHESS": {
-        #    "searcher": chess_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
-        #        "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
-        #    }
-        #},
-        #"OmniSQL": {
-        #    "searcher": omnisql_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #        "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
-        #    }
-        #},
-        #"OpenSearch": {
-        #    "searcher": opensearch_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #       "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
-        #       "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
-        #    }
-        #},
-        #"ValueNet": {
-        #    "searcher": value_net_searcher,
-        #    "get_db_specifics": lambda db_id: {
-        #        "loader": None,
-        #        "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
-        #    }
-        #},
+        "CHESS": {
+            "searcher": chess_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": ChessDBLoader(db_directory_path=os.path.join(DATABASES_ROOT, db_id)),
+                "index_path": os.path.join(INDEXES_ROOT, "chess", db_id)
+            }
+        },
+        "OmniSQL": {
+            "searcher": omnisql_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": OmniSQLLoader(db_file_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+                "index_path": os.path.join(INDEXES_ROOT, "omnisql", db_id)
+            }
+        },
+        "OpenSearch": {
+            "searcher": opensearch_searcher,
+            "get_db_specifics": lambda db_id: {
+               "loader": OpenSearchValueLoader(db_path=os.path.join(DATABASES_ROOT, db_id, f"{db_id}.sqlite")),
+               "index_path": os.path.join(INDEXES_ROOT, "opensearch", db_id)
+            }
+        },
+        "ValueNet": {
+            "searcher": value_net_searcher,
+            "get_db_specifics": lambda db_id: {
+                "loader": None,
+                "index_path": os.path.join(INDEXES_ROOT, "valuenet", db_id)
+            }
+        },
         "BRIDGE": {
             "searcher": bridge_searcher,
             "get_db_specifics": lambda db_id: {

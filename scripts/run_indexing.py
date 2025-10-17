@@ -21,12 +21,12 @@ from retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 
 
 # --- Configuration ---
-BASE_PATH = "development/experimental_analysis_of_value_linking/assets/retrievers"
+BASE_PATH = "assets/retrievers"
 DATABASES_ROOT = os.path.join(BASE_PATH, "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "indexes")
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "your_entity"  # Replace with your W&B entity/team name
+WANDB_ENTITY = "darelab"  # Replace with your W&B entity/team name
 WANDB_PROJECT = "value_linking"
 WANDB_GROUP = "indexing"
 
