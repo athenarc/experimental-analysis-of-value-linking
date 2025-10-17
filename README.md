@@ -1,103 +1,104 @@
 # Comparison and Analysis of Value Linking in Text-to-SQL Systems
+**[Experiments & Analysis]**
 
-**Experiment, Analysis & Benchmark**
-
----
-
-## Overview
-
-This repository contains the code and resources associated with the paper **"Comparison and Analysis of Value Linking in Text-to-SQL Systems"**. Here, you will find everything needed to reproduce the experiments, analysis, and benchmarks presented in the paper.
-
----
-## Repo-setup
-Clone the repo and download the dev set of BIRD :
-
-    git clone 
-    cd experimental-analysis-of-value-inking/
-    wget https://bird-bench.oss-cn-beijing.aliyuncs.com/dev.zip
-    unzip dev.zip
-    rm dev.zip
-    cd dev_20240627/
-    unzip dev_databases.zip
-    rm dev_databases.zip 
-    cd ..
-
-Download the pre-computed indexes for the BIRD dataset and configure the folder: 
-
-    cd assets 
-    unzip indexes.zip
-    rm indexes.zip 
-    cd ..
-    
-The experiment scripts will locate and use the indexes. If you skip this step, the scripts will first create the indexes before initiating the query process, which may take some time.
-
-## Environment Setup
-
-### 1. Create a Conda Environment
-
-Create and activate a new Conda environment with Python 3.10:
-
-    conda create -n value_linking python=3.10 -y
-    conda activate value_linking
-    
-### 2. Install JDK and Maven Dependencies
-
-Install the required JDK and Maven dependencies using Conda:
-
-    conda install -c conda-forge openjdk=21 maven -y
-
-### 3. Install Python Dependencies
-
-Install the necessary Python packages by running:
-
-    pip install -r requirements.txt
-    python -m spacy download en_core_web_sm
-
+This repository contains the code for the paper **_"Comparison and Analysis of Value Linking in Text-to-SQL systems [Experiments & Analysis]"_**.  
+Here, you will find everything needed to **reproduce the experiments, analysis, and benchmarks** presented in the paper.
 
 ---
 
-## Dataset Preparation
+## 🧩 Reproducing the Experiments
 
- can safely ignore this step since the dataset already exist in the assets folder. However you can try creating the datasets on tour own by executing:
+### 1. Clone the repository and set up the environment
 
-    python create_value_linking_dataset.py
+```bash
+wget https://anonymous.4open.science/api/repo/experimental-analysis-of-value-linking-36B3/zip -O experimental-analysis-of-value-linking.zip
+unzip experimental-analysis-of-value-linking.zip -d experimental-analysis-of-value-linking
+cd experimental-analysis-of-value-linking/
+```
 
-The assets folder also contains JSON files with golden value links, both with and without injected false positives, named accordingly. It also includes files with predicted value links for CodeS and CHESS. These files are used for text-to-SQL experiments.
+### 2. Create and activate the Conda environment
+
+```bash
+conda env create -f environment.yml
+conda activate value_linkking
+```
+
+### 3. Install Java dependencies
+
+```bash
+conda install -c conda-forge openjdk=21 maven -y
+```
+
+### 4. Download required datasets and precomputed indexes
+
+```bash
+hf download ValueLinking/value_linking_assets --repo-type dataset --local-dir ./
+```
+
+⚠️ **Note:** The HuggingFace account used to upload this data was created solely for the purpose of this paper and is completely anonymized. This command downloads the databases and all precomputed indexes required for running the experiments. The download may take some time. If you prefer, you can instead download only the database and compute the indexes manually using the provided scripts.
 
 ---
-## Value Reference Detection with LLM
 
-In order to run value reference detection locally with an LLM, you would typically need to configure Ollama. However, this repository already includes a precomputed file (stored in the `assets` directory) containing value references for each NLQ, generated using **Llama:3.1 70B**. Consequently, you do **not** need to perform any LLM inference when running the experiments. A dedicated class has been implemented and is utilized by the scripts to automatically handle the stored value references. If you still wish to run the LLM detection on-the-fly, update your Ollama configuration as in `LLMExtractor` and replace the `DictionaryExtractor` with `LLMExtractor` in the code. This will enable the real-time generation of value references through your local LLM setup.
+## 📊 Benchmark Creation
 
+To create our benchmark:
 
-## Running the Experiments
+**1. Data Exploration**
 
+We used `utils/data_explorer.py` to perform data exploration that generated LLM-based discrepancies.
+   - Raw discrepancies: `assets/data_exploration`
+   - After manual curation: `assets/data_exploration_human`
 
-This repository includes several scripts to run the experiments described in the paper. Use the following commands to execute each experiment:
+**2. Benchmark Generation**
 
-- **Baseline Experiments**  
-      
-      python run_baselines.py
-  
-- **Indexes Experiments**  
-      
-      python run_indexes_experiments.py
-  
-- **Value Reference Detection Experiments**  
-      
-      python run_value_reference_experiments.py
-  
-- **Filtering Experiments**  
-      
-      python run_filtering_experiments.py
-  
-- **Text-to-SQL experiments**  
-      
-      python run_text_to_sql.py 
+Using `scripts/run_alter_execute_verify.py`, we created the final benchmark:
+   - Category-specific benchmarks: `assets/all_benchmarks_human`
+   - Final deduplicated benchmark: `assets/all_benchmarks_human/all_dump_good.json`
+
 ---
 
-## Additional Information
+## ⚙️ Running the Experiments
 
-- Each experiment script generates console logs and a log file in the logs folder, recording key metrics for each run.
-- Each script is annotated with comments explaining its function and how it contributes to the overall analysis.
-- For detailed explanations of the experiments, please refer to the paper and the inline comments within the code.
+### 1. Indexing
+
+To evaluate the Value Linking component, first run the indexing:
+
+```bash
+python scripts/run_indexing.py
+```
+
+⏱ This may take some time, but you can skip it if you have downloaded the full assets from HuggingFace.
+
+### 2. Retrieval
+
+- Fill in your `wandb_entity` inside `scripts/run_retrieval.py` to log results to Weights & Biases:
+
+```bash
+python scripts/run_retrieval.py
+```
+
+- For retrieval at k:
+
+```bash
+python scripts/run_retrieval_k.py
+```
+
+### 3. Text-to-SQL Experiments
+
+Preprocessing and running Text-to-SQL experiments follow the original paper. Replace the dev file with our dev files as needed.
+
+### 4. Performance with Ideal Value Links and Noise
+
+We modified the original systems to exclude value linking, and included their code in this repository. Simply run the original system scripts, replacing the dev file each time with:
+
+```bash
+assets/augmented_dump_p*.json
+```
+
+where `*` corresponds to different precision values. All necessary preprocessing files are included in `assets`.
+
+### 5. Performance Impact of Detection and Mapping Methods
+
+```bash
+python scripts/run_value_reference_detection.py
+```
