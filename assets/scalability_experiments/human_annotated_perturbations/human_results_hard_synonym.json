@@ -1,0 +1,74 @@
+[
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Software engineering/Computer occupations",
+    "hard_synonym": "Software engineering/Computer jobs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Metallurgical processes/Flotation processes",
+    "hard_synonym": "Metallurgical procedures/Flotation procedures"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "emergency and critical care medicine",
+    "hard_synonym": "emergency and urgent care medicine"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "swe",
+    "hard_synonym": "swedish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "tur",
+    "hard_synonym": "turkish"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Digital Humanities and Cultural Heritage",
+    "hard_synonym": "Digital Humanities and Cultural Inheritance"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancer/Radiothérapie",
+    "hard_synonym": "Cancer/Radiotherapy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "World Literature Today",
+    "hard_synonym": "World Literature Now"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "National Bureau of Economic Research",
+    "hard_synonym": "National Bureau of Economic Studies"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Royal College of Psychiatrists",
+    "hard_synonym": "Royal College of Mental Health Professionals"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sustainability Issues in Textile and Apparel Supply Chains",
+    "hard_synonym": "Sustainability Concerns in Textile and Apparel Supply Chains"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Impact of Climate Change on Rice Production in Nepal",
+    "hard_synonym": "The Impact of Climate Change on Rice Yields in Nepal"
+  }
+]

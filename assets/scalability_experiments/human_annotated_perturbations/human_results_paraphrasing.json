@@ -1,0 +1,44 @@
+[
+  {
+    "table": "result",
+    "column": "country",
+    "original": "EC, ES",
+    "paraphrasing": "EC and ES"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Natural Hazards",
+    "paraphrasing": "Natural Disaster Risks"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Accounting History",
+    "paraphrasing": "History of Accounting"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ASME",
+    "paraphrasing": "American Society of Mechanical Engineers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SciPress Ltd",
+    "paraphrasing": "SciPress Limited"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Carbon sequestration",
+    "paraphrasing": "Sequestration of carbon"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Work Engagement",
+    "paraphrasing": "Engagement at work"
+  }
+]

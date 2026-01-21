@@ -1,0 +1,79 @@
+[
+  {
+    "table": "result",
+    "column": "country",
+    "original": "US, CY",
+    "punct_change": "US/ CY"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "TR, PT",
+    "punct_change": "TR/ PT"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Downward, George S",
+    "punct_change": "Downward. George S"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Soheil Zeraati-Rezaei",
+    "punct_change": "Soheil Zeraati/Rezaei,"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Spectroscopy/Infrared spectroscopy",
+    "punct_change": "Spectroscopy|Infrared spectroscopys"
+  },{
+    "table": "fos",
+    "column": "label",
+    "original": "Endodontics/Dentistry",
+    "punct_change": "Endodontics-Dentistry"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "ice/isl",
+    "punct_change": "ice-isl"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Groups, Complexity, Cryptology",
+    "punct_change": "Groups/ Complexity/ Cryptology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Physical Journal C: Particles and Fields",
+    "punct_change": "European Physical Journal C; Particles and Fields"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Nella Stamperia de S. Tommaso d' Aquino.,",
+    "punct_change": "Nella Stamperia de S. Tommaso d` Aquino,"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Tema. Journal of Land Use, Mobility and Environment",
+    "punct_change": "Tema. Journal of Land Use/ Mobility and Environment"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The past- present, and future of coral heat stress studies",
+    "punct_change": "The past- present- and future of coral heat stress studies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A study on a water-inrush incident at Laohutai coalmine",
+    "punct_change": "A study on a water/inrush incident at Laohutai coalmine"
+  }
+]

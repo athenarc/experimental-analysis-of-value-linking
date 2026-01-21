@@ -1,0 +1,98 @@
+[
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dh-ch",
+    "punct_removal": "dh ch"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "FI, NO",
+    "punct_removal": "FI NO"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "ES, ES, FR",
+    "punct_removal": "ES ES FR"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Victoria J. Williamson",
+    "punct_removal": "Victoria J Williamson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Beaubien, Stanley",
+    "punct_removal": "Beaubien Stanley"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Fuel cells/Hydrogen economy",
+    "punct_removal": "Fuel cells Hydrogen economy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "environmental & occupational health",
+    "punct_removal": "environmental occupational health"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "deu/ger",
+    "punct_removal": "deu ger"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Welcome to EnerMaps Gateway! Find the latest scientific data.",
+    "punct_removal": "Welcome to EnerMaps Gateway Find the latest scientific data"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "HAL - Université de Bourgogne (HAL-uB)",
+    "punct_removal": "HAL Université de Bourgogne (HAL-uB)"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geo: Geography and Environment",
+    "punct_removal": "Geo Geography and Environment"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SCITEPRESS - Science and Technology Publications",
+    "punct_removal": "SCITEPRESS Science and Technology Publications"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "F. Schoell",
+    "punct_removal": "F Schoell"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cooling the buildings  past, present and future",
+    "punct_removal": "Cooling the buildings  past present and future"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Scholarly Comm. Infrastructure",
+    "punct_removal": "Scholarly Comm Infrastructure"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Journal Aggregator/Publisher",
+    "punct_removal": "Journal Aggregator Publisher"
+  }
+]

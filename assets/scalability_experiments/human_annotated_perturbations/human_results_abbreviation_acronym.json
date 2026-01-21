@@ -1,0 +1,74 @@
+[
+    {
+    "table": "author",
+    "column": "fullname",
+    "original": "Karl Hermann Albert Oppermann",
+    "abbreviation_acronym": "Karl H. A. Oppermann"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Young Joo Kim",
+    "abbreviation_acronym": "Young J Kim"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "basic medicine",
+    "abbreviation_acronym": "basic med"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Natural language processing/Computational linguistics",
+    "abbreviation_acronym": "NLP/Computational linguistics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "medical and health sciences",
+    "abbreviation_acronym": "MED and Health Sciences"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "languages & linguistics",
+    "abbreviation_acronym": "lang & ling"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Information Technology and Libraries",
+    "abbreviation_acronym": "IT and Libraries"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of the Free State",
+    "abbreviation_acronym": "Uni of the Free State"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "McMaster University Library",
+    "abbreviation_acronym": "McMaster University Lib"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A Memoir of the ADVANCE Project",
+    "abbreviation_acronym": "A Memoir of the ADVANCE Proj"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Scholarly Comm. Infrastructure",
+    "abbreviation_acronym": "Scholarly Comm. Infra"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Publication Repository",
+    "abbreviation_acronym": "Publication Repo"
+  }
+]

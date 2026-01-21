@@ -1,0 +1,74 @@
+[
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "public",
+    "singular_plural_change": "publics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "clinical medicine",
+    "singular_plural_change": "clinical medicines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social sciences",
+    "singular_plural_change": "social science"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Transport Research",
+    "singular_plural_change": "Transport Researches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CHEST Journal",
+    "singular_plural_change": "CHEST Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Energy Technology",
+    "singular_plural_change": "Energy Technologies"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Annual Reviews",
+    "singular_plural_change": "Annual Review"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BMJ Group",
+    "singular_plural_change": "BMJ Groups"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Book reviews",
+    "singular_plural_change": "book review"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Micro-hydro power",
+    "singular_plural_change": "micro-hydro powers"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "dataset",
+    "singular_plural_change": "datasets"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "publication",
+    "singular_plural_change": "publications"
+  }
+]

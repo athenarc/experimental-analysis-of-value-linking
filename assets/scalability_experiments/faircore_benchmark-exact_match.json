@@ -1,0 +1,1445 @@
+[
+    {
+        "id": 1,
+        "question": "Find publications published by Wiley ordered by the number of citations",
+        "SQL": "select r.sk_id, r.title, count(*)\nfrom result as r\njoin result_citations as rc on r.sk_id = rc.sk_result_id_cited\nwhere r.publisher = 'Wiley'\nand r.type = 'publication'\ngroup by r.sk_id\norder by count(*) desc;",
+        "values_list": [
+            "result.publisher.Wiley"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publisher",
+                "value": "Wiley",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Find publications by Haibi about energy",
+        "SQL": "select r.*\nfrom result as r\njoin result_author as ra on r.sk_id = ra.sk_result_id\njoin author as a on a.sk_id = ra.sk_author_id\njoin result_fos as rf on rf.sk_result_id = r.sk_id\njoin fos as f on f.sk_id = rf.sk_fos_id\nwhere a.fullname = 'Hakim Saibi'\nand r.type = 'publication'\nand f.label = 'energy'",
+        "values_list": [
+            "fos.label.energy"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "energy",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Find papers written before 2010 related to statistics and bioinformatics",
+        "SQL": "select r.sk_id, r.title\nfrom result as r\njoin result_fos as rf on r.id = rf.result_id\njoin fos as f on f.id = rf.fos_id\nwhere r.type = 'publication'\n    and date_part('year', r.publication_date) < 2010\n    and f.label = 'statistics & probability'\n\nINTERSECT\n\nselect r.sk_id, r.title\nfrom result as r\njoin result_fos as rf on r.id = rf.result_id\njoin fos as f on f.id = rf.fos_id\nwhere r.type = 'publication'\n    and date_part('year', r.publication_date) < 2010\n    and f.label = 'bioinformatics';",
+        "values_list": [
+            "fos.label.bioinformatics"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "bioinformatics",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Find the publications on bioinformatics after 2017 and before 2020, with 2017 and 2020 excluded",
+        "SQL": "select *\nfrom result as r\njoin result_fos rf on r.id = rf.result_id\njoin fos f on rf.fos_id = f.id\nwhere type = 'publication'\n    and date_part('year', publication_date) between 2018 and 2019\n    and f.label = 'bioinformatics'",
+        "values_list": [
+            "fos.label.bioinformatics"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "bioinformatics",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Return me the non nano-technology publications by Majid Heravi",
+        "SQL": "WITH publications AS (SELECT r.sk_id, r.title, f.label\n                      FROM result AS r\n                               JOIN result_author AS ra ON ra.sk_result_id = r.sk_id\n                               JOIN author AS a ON a.sk_id = ra.sk_author_id\n                               JOIN result_fos AS rf ON CAST(rf.sk_result_id AS INT) = r.sk_id\n                               JOIN fos as F ON f.sk_id = rf.sk_fos_id\n                      WHERE a.fullname = 'Majid Heravi'\n                        AND r.type = 'publication')\nSELECT DISTINCT publications.title\nFROM publications\nWHERE\n    publications.sk_id NOT IN (SELECT publications.sk_id FROM publications WHERE publications.label = 'nano-technology')",
+        "values_list": [
+            "publications.label.nano-technology",
+            "author.fullname.Majid Heravi"
+        ],
+        "values": [
+            {
+                "table": "publications",
+                "column": "label",
+                "value": "nano-technology",
+                "condition": "="
+            },
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Majid Heravi",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Who is the publisher with the most publications in the Transport Research community?",
+        "SQL": "SELECT r.publisher, COUNT(*) AS publications_count\nFROM result r\n    JOIN result_community rc ON r.sk_id = rc.sk_result_id\n    JOIN community c ON rc.sk_community_id = c.sk_id\nWHERE\n    c.name = 'Transport Research'\nGROUP BY r.publisher\nORDER BY COUNT(*) DESC\nLIMIT 1;",
+        "values_list": [
+            "community.name.Transport Research"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "name",
+                "value": "Transport Research",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Find the number of publications on environmental sciences per year ordered by the publication date",
+        "SQL": "SELECT DATE_PART('year', r.publication_date) AS year, COUNT(*) AS publications_count\nFROM result as r\njoin result_fos rf on r.id = rf.result_id\njoin fos f on f.id = rf.fos_id\nWHERE f.label = 'environmental sciences'\nGROUP BY DATE_PART('year', r.publication_date)\nORDER BY year;",
+        "values_list": [
+            "fos.label.environmental sciences"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "environmental sciences",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Find me the publications that cited \"Saccadic eye movements in a high-speed bimanual stacking task: Changes of attentional control during learning and automatization\" and \"In what ways do eye movements contribute to everyday activities?\"",
+        "SQL": "(select r.sk_id, r.title\nfrom result as r\njoin result_citations as rc on rc.sk_result_id_cites = r.sk_id\njoin result as r1 on r1.sk_id = rc.sk_result_id_cited\nwhere r.type = 'publication' and r1.title = 'Saccadic eye movements in a high-speed bimanual stacking task: Changes of attentional control during learning and automatization')\nintersect\n(select r.sk_id, r.title\nfrom result as r\njoin result_citations as rc on rc.sk_result_id_cites = r.sk_id\njoin result as r1 on r1.sk_id = rc.sk_result_id_cited\nwhere r.type = 'publication' and r1.title = 'In what ways do eye movements contribute to everyday activities?');",
+        "values_list": [
+            "result.title.Saccadic eye movements in a high-speed bimanual stacking task: Changes of attentional control during learning and automatization",
+            "result.title.In what ways do eye movements contribute to everyday activities?"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "Saccadic eye movements in a high-speed bimanual stacking task: Changes of attentional control during learning and automatization",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "title",
+                "value": "In what ways do eye movements contribute to everyday activities?",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Who wrote \"BioBERT: a pre-trained biomedical language representation model for biomedical text mining\"?",
+        "SQL": "select a.fullname, r.title\nfrom author as a\njoin result_author as ra on a.sk_id = ra.sk_author_id\njoin result as r on ra.sk_result_id = r.sk_id\nwhere r.title like 'BioBERT: a pre-trained biomedical language representation model for biomedical text mining' and r.type = 'publication';",
+        "values_list": [
+            "result.title.BioBERT: a pre-trained biomedical language representation model for biomedical text mining"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining",
+                "condition": "LIKE"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Find the number of citations for Georgia Koutrika",
+        "SQL": "SELECT COUNT(rc.sk_result_id_cited) AS citation_count\nFROM author a\nJOIN result_author ra ON a.sk_id = ra.sk_author_id\nJOIN result r ON ra.sk_result_id = r.sk_id\nJOIN result_citations rc ON r.sk_id = rc.sk_result_id_cited\nWHERE a.fullname = 'Georgia Koutrika';",
+        "values_list": [
+            "author.fullname.Georgia Koutrika"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Georgia Koutrika",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Find publications related to medicine and energy",
+        "SQL": "SELECT r.sk_id, r.title, r.description, r.keywords\nFROM result r\nJOIN result_fos rf ON r.sk_id = rf.sk_result_id\nJOIN fos f ON f.sk_id = rf.sk_fos_id\nJOIN fos f2 ON f.sk_id = rf.sk_fos_id\nWHERE f.label = 'basic medicine'\nand f2.label = 'energy'\nand r.type = 'publication';",
+        "values_list": [
+            "fos.label.energy"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "energy",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Find the publications on gender studies after 2020",
+        "SQL": "select r.title\nfrom result as r\n    join result_fos as rf on rf.sk_result_id = r.sk_id\n    join fos as f on f.sk_id = rf.sk_fos_id\nwhere date_part('year', publication_date) > 2020\n    and type = 'publication'\n    and f.label = 'gender studies'",
+        "values_list": [
+            "fos.label.gender studies"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "gender studies",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Find the papers cited by the paper 'The AI trilemma: Saving the planet without ruining our jobs'",
+        "SQL": "select r2.title\nfrom result r\njoin result_citations on sk_result_id_cites = r.sk_id\njoin result r2 on sk_result_id_cited = r2.sk_id\nwhere r2.type = 'publication' and r.type = 'publication' and r.title='The AI trilemma: Saving the planet without ruining our jobs';",
+        "values_list": [
+            "result.title.The AI trilemma: Saving the planet without ruining our jobs"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "The AI trilemma: Saving the planet without ruining our jobs",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "Find papers related to History",
+        "SQL": "select *\nfrom result r\njoin result_fos rf on r.sk_id =rf.sk_result_id\njoin fos f on f.sk_id = rf.sk_fos_id\nwhere r.type='publication' and f.label='history'",
+        "values_list": [
+            "fos.label.history"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "history",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "Find the authors that have publications in ACL, ACM or IEEE",
+        "SQL": "select author.fullname\nfrom result\njoin result_author on result.sk_id = result_author.sk_result_id\njoin author on result_author.sk_author_id = author.sk_id\nwhere type = 'publication'\n  and (publisher = 'Association for Computational Linguistics (ACL)' or publisher = 'ACM' or publisher = 'IEEE');",
+        "values_list": [
+            "unknown_table.publisher.IEEE",
+            "unknown_table.publisher.ACM"
+        ],
+        "values": [
+            {
+                "table": "unknown_table",
+                "column": "publisher",
+                "value": "IEEE",
+                "condition": "="
+            },
+            {
+                "table": "unknown_table",
+                "column": "publisher",
+                "value": "ACM",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "question": "Find the publications that cited \"Influence of Light on Mating of Drosophila Melanogaster\" and were published in Elsevier",
+        "SQL": "select r2.title from result\n         join result_citations on result.sk_id = sk_result_id_cited\n         join result r2 on r2.sk_id = sk_result_id_cites\nwhere result.title = 'Influence of Light on Mating of Drosophila Melanogaster'\nand r2.type = 'publication' and r2.publisher='Elsevier BV';",
+        "values_list": [
+            "result.title.Influence of Light on Mating of Drosophila Melanogaster"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "Influence of Light on Mating of Drosophila Melanogaster",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "question": "Bring publications from eosc community, published by Elsevier after 2015 and their country origin is one of the FR, IT, GR, GB",
+        "SQL": "select result.title\nfrom result\njoin result_community on result.sk_id = result_community.sk_result_id\njoin community on result_community.sk_community_id = community.sk_id\nwhere result.type = 'publication'\nand community.name='EOSC'\nand publisher ilike '%elsevier%'\n  and date_part('year', publication_date) > 2015\nand country in ('FR','IT', 'GR','GB');",
+        "values_list": [
+            "unknown_table.country.FR",
+            "unknown_table.country.IT",
+            "unknown_table.country.GR",
+            "unknown_table.country.GB",
+            "community.name.EOSC"
+        ],
+        "values": [
+            {
+                "table": "unknown_table",
+                "column": "country",
+                "value": "FR",
+                "condition": "IN"
+            },
+            {
+                "table": "unknown_table",
+                "column": "country",
+                "value": "IT",
+                "condition": "IN"
+            },
+            {
+                "table": "unknown_table",
+                "column": "country",
+                "value": "GR",
+                "condition": "IN"
+            },
+            {
+                "table": "unknown_table",
+                "column": "country",
+                "value": "GB",
+                "condition": "IN"
+            },
+            {
+                "table": "community",
+                "column": "name",
+                "value": "EOSC",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "question": "Find publications on both environmental sciences and natural sciences",
+        "SQL": "select r.title\nfrom result r\njoin result_fos rf on r.sk_id=rf.sk_result_id\njoin fos f on f.sk_id=rf.sk_fos_id\nwhere type = 'publication' and f.label='environmental sciences'\n\nINTERSECT\n\nselect r.title\nfrom result r\njoin result_fos rf on r.sk_id=rf.sk_result_id\njoin fos f on f.sk_id=rf.sk_fos_id\nwhere type = 'publication' and f.label='natural sciences'",
+        "values_list": [
+            "fos.label.environmental sciences",
+            "fos.label.natural sciences"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "environmental sciences",
+                "condition": "="
+            },
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "natural sciences",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What percentage of publications are in english?",
+        "SQL": "select count(1) * 100.0 / (select count(1) from result where type = 'publication')\nfrom result\nwhere type = 'publication' and language = 'eng';",
+        "values_list": [
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "question": "Find the publications of Gianni Bernardi after GLEAM",
+        "SQL": "select r.title\nfrom result as r\n    join result_author as ra on r.sk_id = ra.sk_result_id\n    join author as a on a.sk_id = ra.sk_author_id\nwhere r.type = 'publication'\n    and a.fullname = 'Gianni Bernardi'\n    and r.publication_date is NOT NULL\n    and r.publication_date  > (select publication_date from result where title = 'GLEAM: The GaLactic and Extragalactic All-Sky MWA Survey')",
+        "values_list": [
+            "author.fullname.Gianni Bernardi"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Gianni Bernardi",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "question": "Show me the publications in US sorted by per publisher",
+        "SQL": "SELECT\n    r.publisher,\n    COUNT(r.sk_id) AS num_of_publications\nFROM\n    result r\nWHERE\n    r.country='US' AND r.type = 'publication'\nGROUP BY\n    r.publisher\nORDER BY\n    count(*) desc;",
+        "values_list": [
+            "result.country.US"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "country",
+                "value": "US",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "question": "Which publishers have scientific results in English?",
+        "SQL": "SELECT DISTINCT publisher FROM result WHERE language = 'eng';",
+        "values_list": [
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "question": "Show me the description for the community with acronym DARIAH EU",
+        "SQL": "SELECT description from community where acronym = 'dariah';",
+        "values_list": [
+            "community.acronym.dariah"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "dariah",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "question": "Show me the results that were published after 1/1/2010 and their authors.",
+        "SQL": "SELECT author.sk_id, author.fullname, result.sk_id, result.title\nFROM author\n    JOIN result_author ON author.sk_id = result_author.sk_author_id\n    JOIN result ON result_author.sk_result_id = result.sk_id\nWHERE result.publication_date >'1/1/2010'\nGROUP BY result.sk_id, result.title, author.sk_id, author.fullname;",
+        "values_list": [
+            "result.publication_date.1/1/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "1/1/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "question": "Show me results from  the US that were published after 1/1/2010 and their authors. Sort the results based on the publication date",
+        "SQL": "SELECT author.sk_id, author.fullname, result.sk_id, result.title\nFROM author\n    JOIN result_author ON author.sk_id = result_author.sk_author_id\n    JOIN result ON result_author.sk_result_id = result.sk_id\nWHERE result.country like '%US%' AND result.publication_date > '1/1/2010'\nGROUP BY author.sk_id, author.fullname, result.sk_id, result.title\nORDER BY result.publication_date;",
+        "values_list": [
+            "result.publication_date.1/1/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "1/1/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "question": "Show me publications from the DARIAH EU community",
+        "SQL": "SELECT result.sk_id, result.title\nFROM result\n    JOIN result_community ON result_community.sk_result_id = result.sk_id\n    JOIN community ON community.sk_id = result_community.sk_community_id\nWHERE community.name = 'DARIAH EU' AND result.type = 'publication';",
+        "values_list": [
+            "community.name.DARIAH EU"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "name",
+                "value": "DARIAH EU",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "question": "Count the publications from DARIAH EU community",
+        "SQL": "SELECT COUNT(result.sk_id)\nFROM result\n    JOIN result_community ON result_community.sk_result_id = result.sk_id\n    JOIN community ON community.sk_id = result_community.sk_community_id\nWHERE result.type = 'publication' AND community.name = 'DARIAH EU';",
+        "values_list": [
+            "community.name.DARIAH EU"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "name",
+                "value": "DARIAH EU",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "question": "Show me publications from the DARIAH EU community and sort them my their publication date",
+        "SQL": "SELECT result.sk_id, result.title, result.publication_date\nFROM result\n    JOIN result_community ON result_community.sk_result_id = result.sk_id\n    JOIN community ON community.sk_id = result_community.sk_community_id\nWHERE result.type = 'publication' AND community.name     = 'DARIAH EU' AND result.publication_date is NOT NULL\nORDER BY result.publication_date;",
+        "values_list": [
+            "community.name.DARIAH EU"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "name",
+                "value": "DARIAH EU",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "question": "Count the citations per publication from publications published after 01/01/2010",
+        "SQL": "SELECT result.sk_id, result.title, COUNT(result_citations.sk_result_id_cites)\nFROM result_citations\n    JOIN result ON result_citations.sk_result_id_cited = result.sk_id\n    JOIN result r2 ON r2.sk_id=result_citations.sk_result_id_cites\nWHERE r2.publication_date > '01/01/2010' AND result.type = 'publication' AND r2.type = 'publication'\nGROUP BY result.sk_id, result.title;",
+        "values_list": [
+            "result.publication_date.01/01/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "01/01/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "question": "Count the citations per publication from publications published on Elsevier after 01/01/2010",
+        "SQL": "SELECT result.sk_id, result.title, COUNT(result_citations.sk_result_id_cites)\nFROM result_citations\n    JOIN result ON result_citations.sk_result_id_cited = result.sk_id\n    JOIN result r2 ON r2.sk_id=result_citations.sk_result_id_cites\nWHERE r2.publisher = 'Elsevier BV'  AND r2.publication_date > '01/01/2010' AND result.type = 'publication' AND r2.type = 'publication'\nGROUP BY result.sk_id, result.title;",
+        "values_list": [
+            "result.publication_date.01/01/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "01/01/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "question": "Count the citations per publication from publications from US published on Elsevier after 01/01/2010",
+        "SQL": "SELECT result.sk_id, result.title, COUNT(result_citations.sk_result_id_cites)\nFROM result_citations\n    JOIN result ON result_citations.sk_result_id_cited = result.sk_id\n    JOIN result r2 ON r2.sk_id=result_citations.sk_result_id_cites\nWHERE r2.publisher = 'Elsevier BV'  AND r2.country ilike '%US%' AND r2.publication_date > '01/01/2010'  AND result.type = 'publication' AND r2.type = 'publication'\nGROUP BY result.sk_id, result.title;",
+        "values_list": [
+            "result.publication_date.01/01/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "01/01/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "question": "Count the citations per publication from publications from US published on Elsevier having at least 3 authors and there are published after 01/01/2010. Sort them by their publication date",
+        "SQL": "SELECT r1.sk_id, r1.title, COUNT(rc.result_id_cites), r1.publication_date\nFROM result_citations rc\n    JOIN result r1 ON rc.sk_result_id_cited = r1.sk_id\n    JOIN result r2 ON r2.sk_id=rc.sk_result_id_cites\nWHERE r2.sk_id = ANY ( SELECT r3.sk_id\n                        FROM result  r3\n                            JOIN result_author ON r3.sk_id = result_author.sk_result_id\n                        WHERE r3.type = 'publication' AND r3.country ilike '%US%' AND r3.publisher = 'Elsevier BV'  AND r3.publication_date > '01/01/2010'\n                        GROUP BY r3.sk_id\n                        HAVING COUNT(result_author.sk_author_id) >= 3\n                      )\n    AND r1.type = 'publication' AND r2.type = 'publication'\nGROUP BY r1.sk_id\nORDER BY r1.publication_date;",
+        "values_list": [
+            "result.publication_date.01/01/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "01/01/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "question": "Count the citations per publication from publications from US published on Elsevier having at least 3 authors and there are published after 01/01/2010",
+        "SQL": "SELECT r1.sk_id, r1.title, COUNT(rc.result_id_cites)\nFROM result_citations rc\n    JOIN result r1 ON rc.sk_result_id_cited = r1.sk_id\n    JOIN result r2 ON r2.sk_id=rc.sk_result_id_cites\nWHERE r2.sk_id = ANY ( SELECT r3.sk_id\n                        FROM result  r3\n                            JOIN result_author ON r3.sk_id = result_author.sk_result_id\n                        WHERE r3.type = 'publication' AND r3.country ilike '%US%' AND r3.publisher = 'Elsevier BV'  AND r3.publication_date > '01/01/2010'\n                        GROUP BY r3.sk_id\n                        HAVING COUNT(result_author.sk_author_id) >= 3\n                      )\n    AND r1.type = 'publication' AND r2.type = 'publication'\nGROUP BY r1.sk_id;",
+        "values_list": [
+            "result.publication_date.01/01/2010"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "publication_date",
+                "value": "01/01/2010",
+                "condition": ">"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "question": "Count all the publications after 2011 that are from enermaps community",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_community rc on rc.sk_result_id = r.sk_id\njoin community c on c.sk_id = rc.sk_community_id\nwhere r.type = 'publication' and c.acronym = 'enermaps' and DATE_PART('year', r.publication_date) > 2011",
+        "values_list": [
+            "community.acronym.enermaps"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "enermaps",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "question": "Find all results from community with acronym beopen and have at\u00a0least one german author",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_community rc on rc.sk_result_id=r.sk_id\njoin community c on rc.sk_community_id=c.sk_id\nwhere c.acronym='beopen' and r.country ilike '%DE%'",
+        "values_list": [
+            "community.acronym.beopen"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "beopen",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "question": "Find publications from community with acronym dariah  before 2017",
+        "SQL": "select r.sk_id, r.title, r.publication_date\nfrom result r\njoin result_community rc on rc.sk_result_id=r.sk_id\njoin community c on c.sk_id=rc.sk_community_id\nwhere r.type='publication' and c.acronym='dariah' and DATE_PART('year', r.publication_date) < 2017",
+        "values_list": [
+            "community.acronym.dariah"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "dariah",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "question": "Return all publications written in english from the beopen community",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_community rc on rc.sk_result_id=r.sk_id\njoin community c on c.sk_id=rc.sk_community_id\nwhere r.type='publication' and c.acronym='beopen' and r.language='eng'",
+        "values_list": [
+            "result.language.eng",
+            "community.acronym.beopen"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            },
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "beopen",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "question": "Return all journal datasources with name 'Journal of Terrorism Research'",
+        "SQL": "select d.sk_id, d.officialname, d.type\nfrom datasource d\nwhere d.type = 'Journal' and d.officialname='Journal of Terrorism Research'",
+        "values_list": [
+            "datasource.type.Journal",
+            "datasource.officialname.Journal of Terrorism Research"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            },
+            {
+                "table": "datasource",
+                "column": "officialname",
+                "value": "Journal of Terrorism Research",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "question": "Return all institutional repository datasources with different official and english name",
+        "SQL": "select d.sk_id, d.officialname, d.type\nfrom datasource d\nwhere d.officialname != d.english_name and d.type = 'Institutional Repository'",
+        "values_list": [
+            "datasource.type.Institutional Repository"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Institutional Repository",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "question": "Find all publications that have open access rights and refer to allergies",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_fos rf on r.sk_id=rf.sk_result_id\njoin fos f on f.sk_id=rf.sk_fos_id\nwhere r.type='publication' and r.accessright='OPEN' and f.label='allergy'",
+        "values_list": [
+            "result.accessright.OPEN"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "question": "Find all publications written by Gotay and have open access rights",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_author ra on ra.sk_result_id=r.sk_id\njoin author a on a.sk_id=ra.sk_author_id\nwhere a.fullname = 'Gotay' and r.accessright='OPEN'",
+        "values_list": [
+            "author.fullname.Gotay",
+            "result.accessright.OPEN"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Gotay",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "question": "Return all the papers by Richter that are written in english",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_author ra on ra.sk_result_id=r.sk_id\njoin author a on a.sk_id = ra.sk_author_id\nwhere a.fullname='Richter, Carl' and r.language='eng'",
+        "values_list": [
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "question": "Return all publications that are from journal datasources",
+        "SQL": "select r.sk_id, r.title\nfrom result r\njoin result_hostedby rhb on rhb.sk_result_id = r.sk_id\njoin datasource d on d.sk_id = rhb.sk_datasource_id\nwhere d.type='Journal' and r.type='publication'",
+        "values_list": [
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "question": "Count all datasources with other type",
+        "SQL": "select count(*)\nfrom datasource\nwhere type='Other'",
+        "values_list": [
+            "datasource.type.Other"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Other",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "question": "Find all publications that are either written in English or Spanish",
+        "SQL": "SELECT res.*\nFROM result res\nWHERE (res.language = 'eng' OR res.language = 'spa') AND res.type='publication';",
+        "values_list": [
+            "result.language.eng",
+            "result.language.spa"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "language",
+                "value": "spa",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "question": "Find all publications written in English and are hosted by Recolector de Ciencia Abierta",
+        "SQL": "SELECT DISTINCT r.*\nFROM result AS r\nINNER JOIN result_hostedby AS rb\n    ON r.sk_id = rb.sk_result_id\nINNER JOIN datasource AS d\n    ON rb.sk_datasource_id = d.sk_id\nWHERE r.language = 'eng'\n  AND d.officialname = 'Recolector de Ciencia Abierta, RECOLECTA'\n  AND r.type='publication';",
+        "values_list": [
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 47,
+        "question": "Find all publication with restricted access",
+        "SQL": "SELECT *\nFROM result\nWHERE accessright = 'RESTRICTED'\n  AND type='publication';",
+        "values_list": [
+            "result.accessright.RESTRICTED"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "RESTRICTED",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "question": "Find all publication where the rights are open",
+        "SQL": "SELECT *\nFROM result\nWHERE accessright = 'OPEN'\n  AND type='publication';",
+        "values_list": [
+            "result.accessright.OPEN"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "question": "Find all publications from dh-ch community",
+        "SQL": "SELECT r.*\nFROM result AS r\nINNER JOIN result_community AS rc\n    ON r.sk_id = rc.sk_result_id\nINNER JOIN community AS c\n    ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'dh-ch'\n    AND r.type='publication';",
+        "values_list": [
+            "community.acronym.dh-ch"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "dh-ch",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "question": "Find all open access publications in journals",
+        "SQL": "SELECT r.*\nFROM result AS r\nJOIN result_hostedby AS rhb ON r.sk_id = rhb.sk_result_id\nJOIN datasource AS ds ON rhb.sk_datasource_id = ds.sk_id\nWHERE r.accessright = 'OPEN'\n  AND ds.type = 'Journal'\n  AND r.type ='publication';",
+        "values_list": [
+            "result.accessright.OPEN",
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            },
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "question": "Identify datasources  that host more than 5 results in English",
+        "SQL": "SELECT\n  d.officialname,\n  COUNT(r.sk_id) AS total_results\nFROM result r\nJOIN result_hostedby rh ON r.sk_id = rh.sk_result_id\nJOIN datasource d ON rh.datasource_id = d.id\nWHERE r.language = 'eng'\nGROUP BY d.officialname\nHAVING COUNT(r.sk_id) > 5",
+        "values_list": [
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "question": "Show publications in English hosted by journals, along with their community acronyms",
+        "SQL": "SELECT r.title, d.officialname, c.acronym\nFROM result r\nJOIN result_hostedby rh ON r.sk_id = rh.sk_result_id\nJOIN datasource d ON rh.datasource_id = d.id\nLEFT JOIN result_community rc ON r.sk_id = rc.sk_result_id\nLEFT JOIN community c ON rc.sk_community_id = c.sk_id\nWHERE r.language = 'eng' AND d.type = 'Journal' and r.type = 'publication';",
+        "values_list": [
+            "result.language.eng",
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "="
+            },
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "question": "List datasources  that host results from both eosc and dariah communities",
+        "SQL": "SELECT ds.officialname\nFROM datasource AS ds\nJOIN result_hostedby AS rhb ON ds.sk_id = rhb.sk_datasource_id\nJOIN result_community AS rc ON rhb.sk_result_id = rc.sk_result_id\nJOIN community AS c ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'eosc'\n\nINTERSECT\n\nSELECT ds.officialname\nFROM datasource AS ds\nJOIN result_hostedby AS rhb ON ds.sk_id = rhb.sk_datasource_id\nJOIN result_community AS rc ON rhb.sk_result_id = rc.sk_result_id\nJOIN community AS c ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'dariah';",
+        "values_list": [
+            "community.acronym.eosc",
+            "community.acronym.dariah"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "eosc",
+                "condition": "="
+            },
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "dariah",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "question": "Show the most common access rights for results in dh-ch community",
+        "SQL": "SELECT r.accessright, COUNT(*) AS count\nFROM result AS r\nJOIN result_community AS rc ON r.sk_id = rc.sk_result_id\nJOIN community AS c ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'dh-ch'\nGROUP BY r.accessright\nORDER BY count DESC\nLIMIT 1;",
+        "values_list": [
+            "community.acronym.dh-ch"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "dh-ch",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "question": "Find authors who contributed to both beopen and Ener Maps communities",
+        "SQL": "SELECT a.fullname\nFROM author AS a\nJOIN result_author AS ra ON a.sk_id = ra.sk_author_id\nJOIN result AS r ON ra.sk_result_id = r.sk_id\nJOIN result_community AS rc ON r.sk_id = rc.sk_result_id\nJOIN community AS c ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'beopen'\n\nINTERSECT\n\nSELECT a.fullname\nFROM author AS a\nJOIN result_author AS ra ON a.sk_id = ra.sk_author_id\nJOIN result AS r ON ra.sk_result_id = r.sk_id\nJOIN result_community AS rc ON r.sk_id = rc.sk_result_id\nJOIN community AS c ON rc.sk_community_id = c.sk_id\nWHERE c.acronym = 'enermaps';",
+        "values_list": [
+            "community.acronym.beopen"
+        ],
+        "values": [
+            {
+                "table": "community",
+                "column": "acronym",
+                "value": "beopen",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 56,
+        "question": "Bring me the publications that are either in English or in Spanish.",
+        "SQL": "select *\nfrom result\nwhere language in ('eng', 'spa')\n\tand type = 'publication'",
+        "values_list": [
+            "result.language.eng",
+            "result.language.spa"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "IN"
+            },
+            {
+                "table": "result",
+                "column": "language",
+                "value": "spa",
+                "condition": "IN"
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "question": "Where is the publication \u2018The AI trilemma: Saving the planet without ruining our jobs\u2019 hosted?",
+        "SQL": "select * \nfrom datasource d\n\tjoin result_hostedby rh on rh.sk_datasource_id = d.sk_id\n\tjoin result r on r.sk_id = rh.sk_result_id\nwhere r.title = 'The AI trilemma: Saving the planet without ruining our jobs'\n\tand r.type = 'publication'",
+        "values_list": [
+            "result.title.The AI trilemma: Saving the planet without ruining our jobs"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "The AI trilemma: Saving the planet without ruining our jobs",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "question": "Give me the number of the open access publications from 2010 and after, per year.",
+        "SQL": "select count(*)\nfrom result\nwhere accessright = 'OPEN'\n\tand date_part('year', publication_date) > 2010\n\tand type = 'publication'",
+        "values_list": [
+            "result.accessright.OPEN"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "question": "What was the year with the most open access publications?",
+        "SQL": "select count(*) as publications_in_year, date_part('year', publication_date) as publication_year\nfrom result\nwhere accessright = 'OPEN' and type = 'publication'\ngroup by publication_year\norder by publications_in_year desc\nlimit 1",
+        "values_list": [
+            "result.accessright.OPEN"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "accessright",
+                "value": "OPEN",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "question": "What is the year of the older and the most recent dataset?",
+        "SQL": "select date_part('year', min(publication_date)), date_part('year', max(publication_date))\nfrom result\nwhere type = 'dataset'",
+        "values_list": [
+            "result.type.dataset"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "type",
+                "value": "dataset",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "question": "I want all the publications collected from journals",
+        "SQL": "select r.*\nfrom result r\n\tjoin result_collectedfrom rc on rc.sk_result_id = r.sk_id\n\tjoin datasource d on d.sk_id = rc.sk_datasource_id\nwhere d.type = 'Journal' and r.type = 'publication'",
+        "values_list": [
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 62,
+        "question": "I want all publications from the Journal of Nutritional Science",
+        "SQL": "select *\nfrom result r\n\tjoin result_collectedfrom rc on rc.sk_result_id = r.sk_id\n\tjoin datasource d on d.sk_id = rc.sk_datasource_id\nwhere r.type = 'publication' and d.officialname = 'Journal of Nutritional Science'",
+        "values_list": [
+            "datasource.officialname.Journal of Nutritional Science"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "officialname",
+                "value": "Journal of Nutritional Science",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "question": "From how many journals do the publications come?",
+        "SQL": "select count(distinct d.sk_id)\nfrom result r\n\tjoin result_collectedfrom rc on rc.sk_result_id = r.sk_id\n\tjoin datasource d on d.sk_id = rc.sk_datasource_id\nwhere d.type = 'Journal' and r.type = 'publication'",
+        "values_list": [
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "question": "What is the journal with the most total number of citations of its papers?",
+        "SQL": "SELECT d.officialname, COUNT(rc.id) AS total_citations\nFROM datasource d\n\tJOIN result_hostedby rh ON d.sk_id = rh.sk_datasource_id\n\tJOIN result r ON rh.sk_result_id = r.sk_id\n\tJOIN result_citations rc ON r.sk_id = rc.sk_result_id_cited\nWHERE r.type = 'publication' and d.type = 'Journal'\nGROUP BY d.sk_id, d.officialname\nORDER BY total_citations DESC\nLIMIT 1;",
+        "values_list": [
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "question": "What are the top 5 journals with the most publications in natural language processing?",
+        "SQL": "SELECT d.officialname AS journal_name, COUNT(r.id) AS publication_count\nFROM datasource d\nJOIN result_hostedby rh ON d.sk_id = rh.sk_datasource_id\nJOIN result r ON rh.sk_result_id = r.sk_id\nJOIN result_fos rf ON r.sk_id = rf.sk_result_id\nJOIN fos f ON rf.sk_fos_id = f.sk_id\nWHERE f.label = 'Natural language processing/Computational linguistics'\n\tAND r.type = 'publication' AND d.type = 'Journal'\nGROUP BY d.sk_id, d.officialname\nORDER BY publication_count DESC\nLIMIT 5;",
+        "values_list": [
+            "datasource.type.Journal"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "question": "What are the journals with other than English publications?",
+        "SQL": "SELECT DISTINCT d.sk_id, d.officialname\nFROM datasource d\nJOIN result_hostedby rh ON d.sk_id = rh.sk_datasource_id\nJOIN result r ON rh.sk_result_id = r.sk_id\nWHERE r.language != 'eng' AND r.type = 'publication'\n\tAND d.type = 'Journal'",
+        "values_list": [
+            "datasource.type.Journal",
+            "result.language.eng"
+        ],
+        "values": [
+            {
+                "table": "datasource",
+                "column": "type",
+                "value": "Journal",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "language",
+                "value": "eng",
+                "condition": "!="
+            }
+        ]
+    },
+    {
+        "id": 67,
+        "question": "Which authors are involved in applied mathematics publications?",
+        "SQL": "SELECT DISTINCT a.fullname\nFROM author AS a\n    JOIN result_author AS ra ON ra.sk_author_id = a.sk_id\n    JOIN result AS r ON r.sk_id = ra.sk_result_id\n    JOIN result_fos AS rf ON rf.sk_result_id = r.sk_id\n    JOIN fos AS f ON f.sk_id = rf.sk_fos_id\nWHERE r.type = 'publication' AND f.label = 'applied mathematics'",
+        "values_list": [
+            "fos.label.applied mathematics"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "applied mathematics",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "question": "Find the authors Alberto Cardona has published with",
+        "SQL": "select DISTINCT a2.fullname\nfrom result as r\njoin result_author as ra on ra.sk_result_id=r.sk_id\njoin author as a on a.sk_id=ra.sk_author_id\njoin result_author as ra2 on r.sk_id=ra2.sk_result_id\njoin author as a2 on a2.sk_id=ra2.sk_author_id\nwhere a.fullname='Alberto Cardona' and a2.sk_id != a.sk_id",
+        "values_list": [
+            "author.fullname.Alberto Cardona"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Alberto Cardona",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "question": "List who co-authored a software with Denis Pierrot, but did not co-author any publications with him",
+        "SQL": "SELECT DISTINCT a2.fullname\nFROM result AS r\n    JOIN result_author AS ra1 ON ra1.sk_result_id = r.sk_id\n    JOIN author AS a1 ON a1.sk_id = ra1.sk_author_id\n    JOIN result_author AS ra2 ON ra2.sk_result_id = r.sk_id\n    JOIN author AS a2 ON a2.sk_id = ra2.sk_author_id\nWHERE r.type = 'software'\n    AND a1.sk_id != a2.sk_id\n    AND a1.fullname = 'Denis Pierrot'\n\nEXCEPT\n\nSELECT DISTINCT a2.fullname\nFROM result AS r\n    JOIN result_author AS ra1 ON ra1.sk_result_id = r.sk_id\n    JOIN author AS a1 ON a1.sk_id = ra1.sk_author_id\n    JOIN result_author AS ra2 ON ra2.sk_result_id = r.sk_id\n    JOIN author AS a2 ON a2.sk_id = ra2.sk_author_id\nWHERE r.type = 'publication'\n    AND a1.sk_id != a2.sk_id\n    AND a1.fullname = 'Denis Pierrot'",
+        "values_list": [
+            "author.fullname.Denis Pierrot",
+            "author.fullname.Denis Pierrot",
+            "result.type.software"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Denis Pierrot",
+                "condition": "="
+            },
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Denis Pierrot",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "type",
+                "value": "software",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "question": "Which authors collaborate with Anne-Laure Daniau to create datasets?",
+        "SQL": "SELECT DISTINCT T2.fullname\nFROM result AS T1\nJOIN result_author AS T3 ON T1.sk_id = T3.sk_result_id\nJOIN author AS T4 ON T4.sk_id = T3.sk_author_id\nJOIN result_author AS T5 ON T1.sk_id = T5.sk_result_id\nJOIN author AS T2 ON T2.sk_id = T5.sk_author_id\nWHERE T4.fullname = 'Anne-Laure Daniau' AND T1.type = 'dataset' AND T2.sk_id != T4.sk_id",
+        "values_list": [
+            "author.fullname.Anne-Laure Daniau",
+            "result.type.dataset"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Anne-Laure Daniau",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "type",
+                "value": "dataset",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "question": "Find the publications from  Dan Roth",
+        "SQL": "SELECT DISTINCT T1.title\nFROM result AS T1\n    JOIN result_author AS T2 ON T1.sk_id = T2.sk_result_id\n    JOIN author AS T3 ON T2.sk_author_id = T3.sk_id\nWHERE T3.fullname = 'Dan Roth'\n    AND T1.type = 'publication'",
+        "values_list": [
+            "author.fullname.Dan Roth"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Dan Roth",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 72,
+        "question": "Find publications about architecture",
+        "SQL": "SELECT r.title\nFROM result AS r\n    JOIN result_fos AS rf ON rf.sk_result_id = r.sk_id\n    JOIN fos AS f ON f.sk_id = rf.sk_fos_id\nWHERE r.type = 'publication'\n    AND f.label = 'architecture'",
+        "values_list": [
+            "fos.label.architecture"
+        ],
+        "values": [
+            {
+                "table": "fos",
+                "column": "label",
+                "value": "architecture",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "question": "In which venues did Dan Roth publish?",
+        "SQL": "SELECT DISTINCT r.publisher\nFROM result AS r\nJOIN result_author AS ra ON r.sk_id = ra.sk_result_id\nJOIN author AS a ON ra.sk_author_id = a.sk_id\nWHERE a.fullname = 'Dan Roth' AND r.type = 'publication'",
+        "values_list": [
+            "author.fullname.Dan Roth"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Dan Roth",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 74,
+        "question": "How many communites does Annett Salzwedel belong to?",
+        "SQL": "SELECT COUNT(DISTINCT rc.sk_community_id)\nFROM result r\nJOIN result_author ra ON r.sk_id = ra.sk_result_id\nJOIN author a ON ra.sk_author_id = a.sk_id\nJOIN result_community rc ON r.sk_id = rc.sk_result_id\nWHERE a.fullname = 'Annett Salzwedel'",
+        "values_list": [
+            "author.fullname.Annett Salzwedel"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Annett Salzwedel",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 75,
+        "question": "Is Gunter Weiss the author of A Neutral Model of Transcriptome Evolution?",
+        "SQL": "SELECT CASE WHEN COUNT(*) > 0 THEN 'Yes' ELSE 'No' END AS answer\nFROM result r\nJOIN result_author ra ON r.sk_id = ra.sk_result_id\nJOIN author a ON ra.sk_author_id = a.sk_id\nWHERE a.fullname = 'Gunter Weiss' AND r.title = 'A Neutral Model of Transcriptome Evolution';",
+        "values_list": [
+            "author.fullname.Gunter Weiss",
+            "result.title.A Neutral Model of Transcriptome Evolution"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Gunter Weiss",
+                "condition": "="
+            },
+            {
+                "table": "result",
+                "column": "title",
+                "value": "A Neutral Model of Transcriptome Evolution",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 76,
+        "question": "Return the results whose type is software",
+        "SQL": "SELECT * FROM result AS r WHERE r.type = 'software'",
+        "values_list": [
+            "result.type.software"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "type",
+                "value": "software",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 77,
+        "question": "What is the title of the publications written by Sudeshna Ghosh in 2022?",
+        "SQL": "SELECT DISTINCT T3.title\nFROM author AS T1\n    JOIN result_author AS T2 ON T1.sk_id = T2.sk_author_id\n    JOIN result AS T3 ON T2.sk_result_id = T3.sk_id\nWHERE T1.fullname = 'Sudeshna Ghosh'\n    AND EXTRACT(YEAR FROM T3.publication_date) = 2022\n    AND type = 'publication'",
+        "values_list": [
+            "author.fullname.Sudeshna Ghosh"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Sudeshna Ghosh",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 78,
+        "question": "who are the authors that have most referenced Dan Roth?",
+        "SQL": "SELECT a1.fullname, COUNT(a1.sk_id)\nFROM author AS a1\nJOIN result_author AS ra1 ON a1.sk_id = ra1.sk_author_id\nJOIN result_citations AS rc ON ra1.sk_result_id = rc.sk_result_id_cites\nJOIN result_author AS ra2 ON ra2.sk_result_id = rc.sk_result_id_cited\nJOIN author AS a2 ON a2.sk_id = ra2.sk_author_id\nWHERE a2.fullname = 'Dan Roth'\nGROUP BY a1.sk_id\nORDER BY COUNT(a1.sk_id) DESC\nLIMIT 1",
+        "values_list": [
+            "author.fullname.Dan Roth"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Dan Roth",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 79,
+        "question": "Who is the author of \"A century of trends in adult human height\"",
+        "SQL": "SELECT a.fullname\n FROM result r\n     JOIN result_author ra ON r.sk_id = ra.sk_result_id \n     JOIN author a ON ra.sk_author_id = a.sk_id \n WHERE r.title = 'A century of trends in adult human height'",
+        "values_list": [
+            "result.title.A century of trends in adult human height"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "A century of trends in adult human height",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "question": "Who is the publisher of the publications named The Challenges for Online Deliberation Research",
+        "SQL": "SELECT publisher FROM result WHERE title = 'The Challenges for Online Deliberation Research'",
+        "values_list": [
+            "result.title.The Challenges for Online Deliberation Research"
+        ],
+        "values": [
+            {
+                "table": "result",
+                "column": "title",
+                "value": "The Challenges for Online Deliberation Research",
+                "condition": "="
+            }
+        ]
+    },
+    {
+        "id": 81,
+        "question": "Who is the publisher of the publications written by Sudeshna Ghosh in 2022?",
+        "SQL": "SELECT DISTINCT T3.publisher\nFROM author AS T1\n    JOIN result_author AS T2 ON T1.sk_id = T2.sk_author_id\n    JOIN result AS T3 ON T2.sk_result_id = T3.sk_id\nWHERE T1.fullname = 'Sudeshna Ghosh'\n    AND EXTRACT(YEAR FROM T3.publication_date) = 2022\n    AND type = 'publication'",
+        "values_list": [
+            "author.fullname.Sudeshna Ghosh"
+        ],
+        "values": [
+            {
+                "table": "author",
+                "column": "fullname",
+                "value": "Sudeshna Ghosh",
+                "condition": "="
+            }
+        ]
+    }
+]

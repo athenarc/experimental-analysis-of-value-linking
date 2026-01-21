@@ -1,0 +1,116 @@
+[
+  {
+    "distinct_columns": [
+      "accessright",
+      "label"
+    ]
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "history",
+    "negated_antonym": "not future"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "marketing",
+    "negated_antonym": "not non-marketing"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "horticulture",
+    "negated_antonym": "not agriculture"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "education",
+    "negated_antonym": "not non_education"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "economics",
+    "negated_antonym": "not non-economics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "accounting",
+    "negated_antonym": "not nonaccounting"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "allergy",
+    "negated_antonym": "not nonallergy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "rehabilitation",
+    "negated_antonym": "not recovery"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "classics",
+    "negated_antonym": "not modern"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "finance",
+    "negated_antonym": "not nonfinance"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "folklore",
+    "negated_antonym": "not fact"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "orthopedics",
+    "negated_antonym": "not pediatrics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "energy",
+    "negated_antonym": "not zero energy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "ecology",
+    "negated_antonym": "not anti ecology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Education",
+    "negated_antonym": "not non_education"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "CLOSED",
+    "negated_antonym": "not open"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "public",
+    "negated_antonym": "not private"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "RESTRICTED",
+    "negated_antonym": "not unrestricted"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "OPEN",
+    "word_addition": "Open access"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "RESTRICTED",
+    "word_addition": "Restricted Access"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dariah",
+    "word_addition": "The dariah"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jianzhi Wang",
+    "word_addition": "Mr. Jianzhi Wang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Peili Wu",
+    "word_addition": "Ms. Peili Wu"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "allergy",
+    "word_addition": "An allergy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Ligands/Chemical bonding",
+    "word_addition": "The Ligands/Chemical bonding"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Transport Research",
+    "word_addition": "The Transport Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archaeological Journal",
+    "word_addition": "The Archaeological Journal"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AI Publications",
+    "word_addition": "The AI Publications"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SMEITS",
+    "word_addition": "SMEITS Publisher"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Ionic-Liquid-Based CO",
+    "word_addition": "The Ionic-Liquid-Based CO"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "OpenFlow",
+    "word_addition": "The OpenFlow"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Instiutional CRIS",
+    "word_addition": "Instiutional of CRIS"
+  }
+]

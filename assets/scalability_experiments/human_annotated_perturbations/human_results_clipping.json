@@ -1,0 +1,38 @@
+[
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "general chemistry",
+    "clipping": "general chem"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "mathematics",
+    "clipping": "math"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Organization",
+    "clipping": "Org"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Griffith University",
+    "clipping": "Griffith Uni"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Green Development",
+    "clipping": "Green Dev"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "CRIS System",
+    "clipping": "CRIS Sys"
+  }
+]

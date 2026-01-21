@@ -1,0 +1,14 @@
+[
+{
+    "table": "result",
+    "column": "accessright",
+    "original": "public",
+    "negated_antonym": "not private"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "RESTRICTED",
+    "negated_antonym": "not unrestricted"
+  }
+]

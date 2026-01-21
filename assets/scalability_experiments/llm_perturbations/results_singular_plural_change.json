@@ -1,0 +1,2218 @@
+[
+  {
+    "distinct_columns": [
+      "accessright",
+      "country",
+      "fullname",
+      "label",
+      "language",
+      "name",
+      "officialname",
+      "publisher",
+      "title",
+      "type"
+    ]
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Annual Reviews",
+    "singular_plural_change": "Annual Review"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hipatia Press",
+    "singular_plural_change": "Hipatia Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Deterville,",
+    "singular_plural_change": "Deterville's"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Clarendon Press",
+    "singular_plural_change": "Clarendon Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ubiquity Press",
+    "singular_plural_change": "Ubiquity Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "UCL Press",
+    "singular_plural_change": "UCL Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Angle Orthod",
+    "singular_plural_change": "Angles Orthod"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BMJ Group",
+    "singular_plural_change": "BMJ Groups"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Gramota Publishing",
+    "singular_plural_change": "Gramota Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Springer London",
+    "singular_plural_change": "Springer Londons"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Quintessence Publishing",
+    "singular_plural_change": "Quintessence Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MacMillan",
+    "singular_plural_change": "MacMillans"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "NYU Press",
+    "singular_plural_change": "NYU Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universa Press",
+    "singular_plural_change": "Universa Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Excellent Publishers",
+    "singular_plural_change": "Excellent Publisher"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Karthala",
+    "singular_plural_change": "Karthalas"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Blackwell Publishing",
+    "singular_plural_change": "Blackwell Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Routledge",
+    "singular_plural_change": "Routledges"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MECS Publisher",
+    "singular_plural_change": "MECS Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hans Publishers",
+    "singular_plural_change": "Hans Publisher"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mendeley",
+    "singular_plural_change": "Mendeley's"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The University",
+    "singular_plural_change": "The Universities"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Cetus Publishing",
+    "singular_plural_change": "Cetus Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MDA",
+    "singular_plural_change": "MDAs"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Coquina Press",
+    "singular_plural_change": "Coquina Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Masson",
+    "singular_plural_change": "Massons"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "World Bank",
+    "singular_plural_change": "World Banks"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Scientific Societies",
+    "singular_plural_change": "Scientific Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kluwer",
+    "singular_plural_change": "Kluwer's"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Stallion Publication",
+    "singular_plural_change": "Stallion Publications"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Springer Medizin",
+    "singular_plural_change": "Springer Medizinen"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ASM Press",
+    "singular_plural_change": "ASM Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Maney Publishing",
+    "singular_plural_change": "Maney Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "RAND Corporation",
+    "singular_plural_change": "RAND Corporations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dustri",
+    "singular_plural_change": "Dustri's"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Apex Publishing",
+    "singular_plural_change": "Apex Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Bloomsbury Academic",
+    "singular_plural_change": "Bloomsbury Academics"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mycotaxon, Ltd.",
+    "singular_plural_change": "[MOT_VALID]"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Emerald",
+    "singular_plural_change": "Emeralds"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Windgather Press",
+    "singular_plural_change": "Windgather Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Brill",
+    "singular_plural_change": "Brills"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Springer Basel",
+    "singular_plural_change": "Springer Basels"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "UNIMAS Publisher",
+    "singular_plural_change": "UNIMAS Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Macmillan",
+    "singular_plural_change": "Macmillans"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AMO Publisher",
+    "singular_plural_change": "AMO Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MIT Press",
+    "singular_plural_change": "MIT Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ACS Publisher",
+    "singular_plural_change": "ACS Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Bioscientifica",
+    "singular_plural_change": "[BNOT_VALID]"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "College Publishing",
+    "singular_plural_change": "College Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Peeters Publishers",
+    "singular_plural_change": "Peeters Publisher"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AUS PUBLISHERS",
+    "singular_plural_change": "AUS PUBLISHER"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pensoft Publishers",
+    "singular_plural_change": "Pensoft Publisher"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Museums Victoria",
+    "singular_plural_change": "Museums Victorias"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kare Publishing",
+    "singular_plural_change": "Kare Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ICE Publishing",
+    "singular_plural_change": "ICE Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wiley",
+    "singular_plural_change": "Wiley's"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "figshare",
+    "singular_plural_change": "figshares"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "HEC Press",
+    "singular_plural_change": "HEC Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Fabula",
+    "singular_plural_change": "Fabulas"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AIJR Publisher",
+    "singular_plural_change": "AIJR Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "WFL Publisher",
+    "singular_plural_change": "WFL Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Inderscience Publishers",
+    "singular_plural_change": "Inderscience Publisher"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SLACK, Inc.",
+    "singular_plural_change": "SLACKs, Inc."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Author(s)",
+    "singular_plural_change": "Author"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Magnolia Press",
+    "singular_plural_change": "Magnolia Presses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mineralogical Society",
+    "singular_plural_change": "Mineralogical Societies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Machining/Machine tools",
+    "singular_plural_change": "Machine tools"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "sociology",
+    "singular_plural_change": "sociologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Ore deposits/Gold",
+    "singular_plural_change": "Ore deposits/Golds"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Geography/Cultural geography",
+    "singular_plural_change": "Geographies/Cultural geographies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Electric motors/Machines",
+    "singular_plural_change": "Electric motor/Machines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "fisheries",
+    "singular_plural_change": "fisher"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Parenting/Childhood",
+    "singular_plural_change": "Parenting/Children"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Soil/Natural materials",
+    "singular_plural_change": "Soils/Natural materials"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "basic medicine",
+    "singular_plural_change": "basic medicines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "experimental psychology",
+    "singular_plural_change": "experimental psychologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sensors/Particle detectors",
+    "singular_plural_change": "Sensor/Particle detectors"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "geriatrics",
+    "singular_plural_change": "geriatric"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Business cycle",
+    "singular_plural_change": "business cycles"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "veterinary sciences",
+    "singular_plural_change": "veterinary science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sensors/Biosensors",
+    "singular_plural_change": "Sensor/Biosensors"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "ecology",
+    "singular_plural_change": "ecologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "education",
+    "singular_plural_change": "educations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "physical sciences",
+    "singular_plural_change": "physical science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "mechanical engineering",
+    "singular_plural_change": "mechanical engineering's"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "economics",
+    "singular_plural_change": "economies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "organic chemistry",
+    "singular_plural_change": "organic chemisties"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "biological sciences",
+    "singular_plural_change": "biological science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Fuel cells",
+    "singular_plural_change": "fuel cell"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Vaccines",
+    "singular_plural_change": "vaccine"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "food science",
+    "singular_plural_change": "food sciences"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "microbiology",
+    "singular_plural_change": "microbiologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Biomarkers/Stool tests",
+    "singular_plural_change": "[BNOT_VALID]"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "gender studies",
+    "singular_plural_change": "gender study"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "health sciences",
+    "singular_plural_change": "health science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "zoology",
+    "singular_plural_change": "zoologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "political science",
+    "singular_plural_change": "political sciences"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Concrete/Building materials",
+    "singular_plural_change": "building materials"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social psychology",
+    "singular_plural_change": "social psychologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "international relations",
+    "singular_plural_change": "international relation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Robotics/Robots",
+    "singular_plural_change": "Robotic/Robots"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Glass compositions/Glass",
+    "singular_plural_change": "Glass compositions/Glasses"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Historical eras/Paleolithic",
+    "singular_plural_change": "Historical eras/Paleolithics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "human factors",
+    "singular_plural_change": "human factor"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Dairy farming/Milk",
+    "singular_plural_change": "Dairy farming/Milks"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "forestry",
+    "singular_plural_change": "forests"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Engines/Energy conversion",
+    "singular_plural_change": "Engines/Energy conversions"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "applied physics",
+    "singular_plural_change": "applied physicses"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "information systems",
+    "singular_plural_change": "information system"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "anthropology",
+    "singular_plural_change": "anthropologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "horticulture",
+    "singular_plural_change": "horticultures"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "geology",
+    "singular_plural_change": "geologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Behavior",
+    "singular_plural_change": "behaviors"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "allergy",
+    "singular_plural_change": "allergies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sustainable transport",
+    "singular_plural_change": "transportation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "archaeology",
+    "singular_plural_change": "archaeologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Education",
+    "singular_plural_change": "educations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "family studies",
+    "singular_plural_change": "family study"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "finance",
+    "singular_plural_change": "finances"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "distributed computing",
+    "singular_plural_change": "distributed computations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Radiology/Image segmentation",
+    "singular_plural_change": "Radiology/Image segmentations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Dentistry occupations/Dentistry",
+    "singular_plural_change": "Dentistry occupations/Dentistries"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Carbohydrate chemistry/Carbohydrates",
+    "singular_plural_change": "Carbohydrates chemistry/Carbohydrates"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "sport sciences",
+    "singular_plural_change": "sport science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "environmental sciences",
+    "singular_plural_change": "environmental science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "natural sciences",
+    "singular_plural_change": "natural science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Livestock/Animal feed",
+    "singular_plural_change": "Livestock/Animals feed"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "respiratory system",
+    "singular_plural_change": "respiratory systems"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Human–computer interaction",
+    "singular_plural_change": "human–computer interactions"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Social media",
+    "singular_plural_change": "social media platforms"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "geography",
+    "singular_plural_change": "geographies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "dentistry",
+    "singular_plural_change": "dentists"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mood disorders",
+    "singular_plural_change": "Mood disorder"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "surgery",
+    "singular_plural_change": "surgeries"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "biotechnology",
+    "singular_plural_change": "biotechnologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Transistor types",
+    "singular_plural_change": "Transistor type"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "clinical psychology",
+    "singular_plural_change": "clinical psychologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "general chemistry",
+    "singular_plural_change": "general chemistries"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "science studies",
+    "singular_plural_change": "science study"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "history",
+    "singular_plural_change": "histories"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Maintenance/Mechanical engineering",
+    "singular_plural_change": "Maintenance/Mechanical engineering's"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "development studies",
+    "singular_plural_change": "development study"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "materials",
+    "singular_plural_change": "material"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "chemical sciences",
+    "singular_plural_change": "chemical science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "law",
+    "singular_plural_change": "laws"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "biomedical engineering",
+    "singular_plural_change": "biomedical engineering's"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "nursing",
+    "singular_plural_change": "nurses"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social sciences",
+    "singular_plural_change": "social science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social work",
+    "singular_plural_change": "social works"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sonar",
+    "singular_plural_change": "Sonars"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "energy",
+    "singular_plural_change": "energies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "architecture",
+    "singular_plural_change": "architectures"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "public health",
+    "singular_plural_change": "public healths"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Building materials/Concrete",
+    "singular_plural_change": "Building materials/Concretes"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "clinical medicine",
+    "singular_plural_change": "clinical medicines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Livestock/Dairy farming",
+    "singular_plural_change": "Livestock/Dairy farms"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jessica Barabasch",
+    "singular_plural_change": "Jessica Barabaschs"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rachel Wood",
+    "singular_plural_change": "Rachel Woods"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michael Dove",
+    "singular_plural_change": "Michael Doves"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Madelena Martin",
+    "singular_plural_change": "[Madelena Martins]"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Robert Gifford",
+    "singular_plural_change": "Robert Giffords"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Davide Aloisio",
+    "singular_plural_change": "Davide Aloisios"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Roberto Chiesa",
+    "singular_plural_change": "Roberto Chiesas"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Transport Research",
+    "singular_plural_change": "Transport Researches"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Ultrawhite BaSO",
+    "singular_plural_change": "Ultrawhite BaSOs"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Book reviews",
+    "singular_plural_change": "book review"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "CD-ROM REVIEW",
+    "singular_plural_change": "CD-ROMS REVIEW"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Capitites ramulosa",
+    "singular_plural_change": "Capacities ramulosa"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Kostenmanagement",
+    "singular_plural_change": "Kostenmanagements"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Micro-hydro power",
+    "singular_plural_change": "micro-hydro powers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Mo",
+    "singular_plural_change": "Mo's"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Insect Antennae",
+    "singular_plural_change": "antennae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Customer support",
+    "singular_plural_change": "customersupport"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hemicelluloses",
+    "singular_plural_change": "hemicellulose"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Book review",
+    "singular_plural_change": "book reviews"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Strontium Malate.",
+    "singular_plural_change": "Strontium Malates."
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Co",
+    "singular_plural_change": "Co's"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Smart cities",
+    "singular_plural_change": "smart city"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Research Methods",
+    "singular_plural_change": "Research Method"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Family Belonidae.",
+    "singular_plural_change": "Family Belonidae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Energy costs",
+    "singular_plural_change": "Energy cost"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Family Scomberesocidae.",
+    "singular_plural_change": "Family Scomberesocidae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Der Produktentwicklungsprozess",
+    "singular_plural_change": "Der Produktentwicklungsprozesse"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Work Engagement",
+    "singular_plural_change": "Work Engagements"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "STUDENT",
+    "singular_plural_change": "students"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Animal agency",
+    "singular_plural_change": "Animal agencies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Stretchable Ti",
+    "singular_plural_change": "Stretchable Tis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Adult",
+    "singular_plural_change": "adults"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Customer Engagement",
+    "singular_plural_change": "customers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Vertically-aligned Co",
+    "singular_plural_change": "Vertically-aligned Co's"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Plant Defense",
+    "singular_plural_change": "Plant Defenses"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Gnathostome Fishes",
+    "singular_plural_change": "Gnathostome Fish"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Wind Power",
+    "singular_plural_change": "Wind Powers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Biodiesel Fuels",
+    "singular_plural_change": "biodiesel fuel"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Survey Questions",
+    "singular_plural_change": "Survey Question"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A SnO",
+    "singular_plural_change": "A SnOs"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Multimedia Journalism",
+    "singular_plural_change": "Multimedia Journalists"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "SEGMENTASI PASAR",
+    "singular_plural_change": "SEGMENTASI PASARAN"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Plate",
+    "singular_plural_change": "plates"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Porous SiO",
+    "singular_plural_change": "Porous SiO₂"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Antički Mljet",
+    "singular_plural_change": "Antički Mljeti"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Vehicle Routing",
+    "singular_plural_change": "vehicles"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Oceanic Anglerfishes",
+    "singular_plural_change": "Oceanic Anglerfish"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Distributed snapshots",
+    "singular_plural_change": "snapshots"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Tabula Sapiens_kidney",
+    "singular_plural_change": "Tabula Sapiens_kids"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Urban Geography",
+    "singular_plural_change": "Urban Geographies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Frogfishes",
+    "singular_plural_change": "Frogfish"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Utilitarian Bicycling",
+    "singular_plural_change": "Utilitarian Bicycles"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Wind Energy",
+    "singular_plural_change": "Wind Energies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Macro-project risk",
+    "singular_plural_change": "Macro-project risks"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A Novel",
+    "singular_plural_change": "A Novels"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Flight",
+    "singular_plural_change": "flights"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "lit",
+    "singular_plural_change": "liter"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "ukr",
+    "singular_plural_change": "ukrains"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "ara",
+    "singular_plural_change": "arab"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "swe",
+    "singular_plural_change": "swedish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "rus",
+    "singular_plural_change": "[rus]"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "fin",
+    "singular_plural_change": "finnish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "tur",
+    "singular_plural_change": "turkish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "pol",
+    "singular_plural_change": "polish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "hrv",
+    "singular_plural_change": "hrvs"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "spa",
+    "singular_plural_change": "spanish"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "cat",
+    "singular_plural_change": "cats"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "bul",
+    "singular_plural_change": "bulgarian"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "hun",
+    "singular_plural_change": "hungarian"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "ind",
+    "singular_plural_change": "indian"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "US, NL",
+    "singular_plural_change": "US, NLS"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "US, AU",
+    "singular_plural_change": "US, AUs"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Journal",
+    "singular_plural_change": "journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CHEST Journal",
+    "singular_plural_change": "CHEST Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Information Polity",
+    "singular_plural_change": "Information Polities"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ktisis",
+    "singular_plural_change": "Ktisises"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Environment",
+    "singular_plural_change": "European Environments"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "World Development",
+    "singular_plural_change": "World Development's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Physics Open",
+    "singular_plural_change": "Physics Open's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Ecology",
+    "singular_plural_change": "Human Ecologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Energy Technology",
+    "singular_plural_change": "Energy Technologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Property Management",
+    "singular_plural_change": "Property Managements"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Security Journal",
+    "singular_plural_change": "Security Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Land",
+    "singular_plural_change": "lands"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Surgery",
+    "singular_plural_change": "Surgeries"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Crystals",
+    "singular_plural_change": "crystal"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Harvard Dataverse",
+    "singular_plural_change": "Harvard Dataverses"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Water Supply",
+    "singular_plural_change": "Water Supplies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nano Select",
+    "singular_plural_change": "Nano Selects"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sociology",
+    "singular_plural_change": "Sociologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "FME Transactions",
+    "singular_plural_change": "FME Transaction"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cortex",
+    "singular_plural_change": "Cortexes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "FlatChem",
+    "singular_plural_change": "FlatChemies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Food Security",
+    "singular_plural_change": "Food Securitys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Collabra: Psychology",
+    "singular_plural_change": "Collabra: Psychologys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Economies",
+    "singular_plural_change": "economy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Coastal Management",
+    "singular_plural_change": "Coastal Management's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Technology",
+    "singular_plural_change": "Human Technologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Waste",
+    "singular_plural_change": "wastes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Economía",
+    "singular_plural_change": "Economías"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biology Open",
+    "singular_plural_change": "Biology Opens"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Genetics",
+    "singular_plural_change": "Genetics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Medicine",
+    "singular_plural_change": "BMC Medicines"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Nutrition",
+    "singular_plural_change": "BMC Nutritons"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EcoHealth",
+    "singular_plural_change": "EcoHealths"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Local Environment",
+    "singular_plural_change": "Local Environments"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fuel Cells",
+    "singular_plural_change": "Fuel Cell"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Circulation Journal",
+    "singular_plural_change": "Circulation Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "American Mineralogist",
+    "singular_plural_change": "American Mineralogists"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Personnel Review",
+    "singular_plural_change": "Personnel Reviews"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lipids",
+    "singular_plural_change": "lipid"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SIMULATION",
+    "singular_plural_change": "simulations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Organization",
+    "singular_plural_change": "Human Organizations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BI Open",
+    "singular_plural_change": "BI Opens"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Communication Research",
+    "singular_plural_change": "Communication Researches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "genesis",
+    "singular_plural_change": "generations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EcoMat",
+    "singular_plural_change": "EcoMats"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuroscience",
+    "singular_plural_change": "neurosciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Crustaceana",
+    "singular_plural_change": "Crustaceans"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MedEdPublish",
+    "singular_plural_change": "MedEdPublishes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sugar Tech",
+    "singular_plural_change": "Sugars Tech"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Evolution",
+    "singular_plural_change": "Human Evolutions"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Livestock Science",
+    "singular_plural_change": "Livestock Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Risk Management",
+    "singular_plural_change": "Risk Management's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "AIAA Journal",
+    "singular_plural_change": "AIAA Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Green",
+    "singular_plural_change": "Green's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Canada Research",
+    "singular_plural_change": "Canada Researches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomaterials Science",
+    "singular_plural_change": "Biomaterials Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Powder Metallurgy",
+    "singular_plural_change": "Powder Metallurgies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Blue Jay",
+    "singular_plural_change": "Blue Jays"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Circulation",
+    "singular_plural_change": "Circulations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "eTransportation",
+    "singular_plural_change": "eTransportations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Economic Policy",
+    "singular_plural_change": "Economic Policies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Giant",
+    "singular_plural_change": "Giants"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Taxon",
+    "singular_plural_change": "taxa"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Public Transport",
+    "singular_plural_change": "Public Transports"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Veterinary Research",
+    "singular_plural_change": "Veterinary Researches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Developmental Cell",
+    "singular_plural_change": "Developmental Cells"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BORDER CROSSING",
+    "singular_plural_change": "border crossings"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Small",
+    "singular_plural_change": "Smalls"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportation Science",
+    "singular_plural_change": "Transportation Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SIGSPATIAL Special",
+    "singular_plural_change": "SIGSPATIAL Specials"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Food Policy",
+    "singular_plural_change": "Food Policies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Heart",
+    "singular_plural_change": "Hearts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Radio Science",
+    "singular_plural_change": "Radio Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Amfiteatru Economic",
+    "singular_plural_change": "Amfiteatru Economice"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electricity",
+    "singular_plural_change": "Electricals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SLAS Discovery",
+    "singular_plural_change": "SLAS Discoveries"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Teaching Sociology",
+    "singular_plural_change": "Teaching Sociologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Physical Therapy",
+    "singular_plural_change": "Physical Therapies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Population Medicine",
+    "singular_plural_change": "Population Medicines"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Energy Systems",
+    "singular_plural_change": "Energy System"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psychiatry Journal",
+    "singular_plural_change": "Psychiatry Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pharmacia",
+    "singular_plural_change": "Pharmacies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Plants",
+    "singular_plural_change": "plant"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Child Development",
+    "singular_plural_change": "Children Development"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Human Studies",
+    "singular_plural_change": "Human Study"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Telecommunications Policy",
+    "singular_plural_change": "Telecommunications Policies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Man",
+    "singular_plural_change": "Men"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "The Cardiology",
+    "singular_plural_change": "The Cardiologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Forum Sociológico",
+    "singular_plural_change": "Forum Sociológicos"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SLEEP",
+    "singular_plural_change": "sleeps"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "microLife",
+    "singular_plural_change": "microLives"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Societies",
+    "singular_plural_change": "European Society"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "American Antiquity",
+    "singular_plural_change": "American Antiquities"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ZOOLOGICAL SCIENCE",
+    "singular_plural_change": "ZOOLOGICAL SCIENCES"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PCI Journal",
+    "singular_plural_change": "PCI Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Natural Hazards",
+    "singular_plural_change": "Natural Hazard"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oceans",
+    "singular_plural_change": "ocean"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aging Cell",
+    "singular_plural_change": "Aging Cells"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Araucaria",
+    "singular_plural_change": "[Araucarias]"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CAM Journal",
+    "singular_plural_change": "CAM Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Beverages",
+    "singular_plural_change": "Beverage"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "eScience",
+    "singular_plural_change": "eSciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Appetite",
+    "singular_plural_change": "Appetites"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Public Administration",
+    "singular_plural_change": "Public Administrations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Weed Science",
+    "singular_plural_change": "Weed Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MAB",
+    "singular_plural_change": "MABs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Medical Education",
+    "singular_plural_change": "Medical Educations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Script Journal",
+    "singular_plural_change": "Script Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Facies",
+    "singular_plural_change": "Facieses"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tourism Management",
+    "singular_plural_change": "Tourism Managements"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psych",
+    "singular_plural_change": "Psyches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zoology",
+    "singular_plural_change": "Zoologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Erdkunde",
+    "singular_plural_change": "Erdkundes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Health Security",
+    "singular_plural_change": "Health Securitys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sci",
+    "singular_plural_change": "Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportation Journal",
+    "singular_plural_change": "Transportation Journals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Weather",
+    "singular_plural_change": "Weather's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Galaxies",
+    "singular_plural_change": "galaxy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Climatic Change",
+    "singular_plural_change": "Climatic Changes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Behavior Therapy",
+    "singular_plural_change": "Behavior Therapies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Caries Research",
+    "singular_plural_change": "Caries Researches"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phyton",
+    "singular_plural_change": "Python"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "New Forests",
+    "singular_plural_change": "New Forest"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Biochemistry",
+    "singular_plural_change": "BMC Biochemistries"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Belgeo",
+    "singular_plural_change": "Belgeos"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vacuum",
+    "singular_plural_change": "vacuums"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancers",
+    "singular_plural_change": "cancer"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Blood",
+    "singular_plural_change": "Bloods"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adult Learning",
+    "singular_plural_change": "Adult Learning's"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biofuels",
+    "singular_plural_change": "biofuel"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Area",
+    "singular_plural_change": "Areas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Plant Reproduction",
+    "singular_plural_change": "Plant Reproductions"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "KULA",
+    "singular_plural_change": "Kulas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Minerals Engineering",
+    "singular_plural_change": "Minerals Engineers"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ceramics International",
+    "singular_plural_change": "Ceramics Internationals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Veterinary Record",
+    "singular_plural_change": "Veterinary Records"
+  },
+  {
+    "table": "result",
+    "column": "accessright",
+    "original": "public",
+    "singular_plural_change": "publics"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "publication",
+    "singular_plural_change": "publications"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "dataset",
+    "singular_plural_change": "datasets"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, NL",
+    "word_order_change": "NL, NO"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, FR",
+    "word_order_change": "FR, NO"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Casimerus Yudilastyantoro",
+    "word_order_change": "Yudilastyantoro Casimerus"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Penghao Guo",
+    "word_order_change": "Guo Penghao"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "international relations",
+    "word_order_change": "relations international"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "general mathematics",
+    "word_order_change": "mathematics general"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "DARIAH EU",
+    "word_order_change": "EU DARIAH"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Transport Research",
+    "word_order_change": "Research Transport"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ultrasonics Sonochemistry",
+    "word_order_change": "Sonochemistry Ultrasonics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dalton Transactions",
+    "word_order_change": "Transactions Dalton"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "G. Reimer,",
+    "word_order_change": "Reimer G."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Oxbow Books",
+    "word_order_change": "Books Oxbow"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Meriania Sw.",
+    "word_order_change": "Sw Meriania"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MXene Ti",
+    "word_order_change": "Ti MXene"
+  }
+]

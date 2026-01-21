@@ -1,0 +1,74 @@
+[
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "enermaps",
+    "typo_space_addition": "ener maps"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "beopen",
+    "typo_space_addition": "be open"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yupeng",
+    "typo_space_addition": "Yup eng"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "K.Kannan",
+    "typo_space_addition": "K. Kannan"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Radar/Navigation",
+    "typo_space_addition": "Radar /Navigation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "otorhinolaryngology",
+    "typo_space_addition": "otorhino laryngology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OceanRep",
+    "typo_space_addition": "Ocean Rep"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytopathology",
+    "typo_space_addition": "Phyto pathology"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioResources",
+    "typo_space_addition": "Bio Resources"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MobiMissions",
+    "typo_space_addition": "Mobi Missions"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "PressLight",
+    "typo_space_addition": "Press Light"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "dataset",
+    "typo_space_addition": "data set"
+  }
+]

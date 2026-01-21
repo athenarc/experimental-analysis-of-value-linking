@@ -1,0 +1,38 @@
+[
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dariah",
+    "typo_insertion": "dariaah"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ueli Maurer",
+    "typo_insertion": "Ueli Mauarer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Csuzdi, Csaba",
+    "typo_insertion": "Csuzdi, Csabba"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Breviora",
+    "typo_insertion": "Breviorra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Heart Journal Open",
+    "typo_insertion": "European Heart Journale Open"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wageningen Food & Biobased Research",
+    "typo_insertion": "Wagenningen Food & Biobased Research"
+  }
+]

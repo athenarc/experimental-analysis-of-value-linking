@@ -1,0 +1,44 @@
+[
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Syezlin Hasan",
+    "typo_substitution": "Syezlin Hasen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Karl Popper",
+    "typo_substitution": "Karl Poppor"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Antiviral drugs/Biocides",
+    "typo_substitution": "Antiviral drags/Biocides"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Enzyme",
+    "typo_substitution": "Enzime"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "GSC Online Press",
+    "typo_substitution": "GSC Online Priss"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Taylor & Francis",
+    "typo_substitution": "Taylor & Fransis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Finite Volume Method in Computational Fluid Dynamics",
+    "typo_substitution": "The Finito Volume Method in Computational Fluid Dynamics"
+  }
+]

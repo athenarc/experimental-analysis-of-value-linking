@@ -1,0 +1,62 @@
+[
+   {
+    "table": "fos",
+    "column": "label",
+    "original": "medical and health sciences",
+    "word_to_symbol_change": "medical & health sciences"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "economics and business",
+    "word_to_symbol_change": "economics & business"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Digital Humanities and Cultural Heritage",
+    "word_to_symbol_change": "Digital Humanities & Cultural Heritage"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Common Language Resources and Technology Infrastructure",
+    "word_to_symbol_change": "Common Language Resources & Technology Infrastructure"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Computational and Applied Mathematics",
+    "word_to_symbol_change": "Journal of Computational & Applied Mathematics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioresources and Bioprocessing",
+    "word_to_symbol_change": "Bioresources & Bioprocessing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The University of Texas at Austin",
+    "word_to_symbol_change": "The University of Texas @ Austin"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The North African Journal of Food and Nutrition Research (NAJFNR)",
+    "word_to_symbol_change": "The North African Journal of Food & Nutrition Research (NAJFNR)"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Wildcats, Domestic and Feral Cats",
+    "word_to_symbol_change": "Wildcats, Domestic & Feral Cats"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Travel and the Built Environment",
+    "word_to_symbol_change": "Travel & the Built Environment"
+  }
+]

@@ -1,0 +1,8121 @@
+[
+  {
+    "distinct_columns": [
+      "acronym",
+      "country",
+      "fullname",
+      "label",
+      "language",
+      "officialname",
+      "publisher",
+      "title",
+      "type"
+    ]
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioOne",
+    "typo_space_addition": "Bio One"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ICST",
+    "typo_space_addition": "IC ST"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hülsbusch",
+    "typo_space_addition": "Hüls busch"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ÜNAK",
+    "typo_space_addition": "Ü NAK"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kluwer",
+    "typo_space_addition": "Klu wer"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AFRICAJOURNALS",
+    "typo_space_addition": "AFRICA JOURNALS"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dustri",
+    "typo_space_addition": "Dust ri"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "VLIZ",
+    "typo_space_addition": "VL IZ"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Rovedar",
+    "typo_space_addition": "Rove dar"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "TAC",
+    "typo_space_addition": "T AC"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Erdkunde",
+    "typo_space_addition": "Erd kunde"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "OpenProceedings.org",
+    "typo_space_addition": "Open Proceedings.org"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Politehnium",
+    "typo_space_addition": "Politehn ium"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "JSTOR",
+    "typo_space_addition": "JST OR"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "RIVM",
+    "typo_space_addition": "RIV M"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AfricaJournals",
+    "typo_space_addition": "Africa Journals"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "OmniaScience",
+    "typo_space_addition": "Omnia Science"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Karthala",
+    "typo_space_addition": "Karth ala"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ulmer",
+    "typo_space_addition": "Ul mer"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioResources",
+    "typo_space_addition": "Bio Resources"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hindawi",
+    "typo_space_addition": "Hind awi"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SEANOE",
+    "typo_space_addition": "SEAN OE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IMarEST",
+    "typo_space_addition": "IMar EST"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "marcoELE",
+    "typo_space_addition": "marco ELE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "XMLink",
+    "typo_space_addition": "XML ink"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Sciyo",
+    "typo_space_addition": "Sci yo"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ashgate",
+    "typo_space_addition": "Ash gate"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EUSPICO",
+    "typo_space_addition": "EUS PICO"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Polity",
+    "typo_space_addition": "Pol ity"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Socidrogalcohol",
+    "typo_space_addition": "Soci drogalcohol"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "GBIF",
+    "typo_space_addition": "GB IF"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ScopeMed",
+    "typo_space_addition": "Scope Med"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IBPSA",
+    "typo_space_addition": "IBPS A"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Bioscientifica",
+    "typo_space_addition": "Bios cientifica"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AAPM",
+    "typo_space_addition": "AAP M"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Scholarpedia",
+    "typo_space_addition": "Scholar pedia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Scholarzest",
+    "typo_space_addition": "Scholar zest"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "PeerJ",
+    "typo_space_addition": "Peer J"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Cogitatio",
+    "typo_space_addition": "Cogita tio"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Episciences.org",
+    "typo_space_addition": "Episciences .org"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AIP",
+    "typo_space_addition": "A IP"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Arts",
+    "typo_space_addition": "Art s"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "OpenEdition",
+    "typo_space_addition": "Open Edition"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "INRA",
+    "typo_space_addition": "IN RA"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mendeley",
+    "typo_space_addition": "Mende ley"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ISCA",
+    "typo_space_addition": "IS CA"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EARLI",
+    "typo_space_addition": "EARL I"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MDA",
+    "typo_space_addition": "MD A"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dialética",
+    "typo_space_addition": "Dial ética"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EnviDat",
+    "typo_space_addition": "Envi Dat"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Briefland",
+    "typo_space_addition": "Brief land"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Schweizerbart",
+    "typo_space_addition": "Schweizer bart"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IUScholarWorks",
+    "typo_space_addition": "IUScholar Works"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Medknow",
+    "typo_space_addition": "Med know"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "episciences.org",
+    "typo_space_addition": "episciences .org"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IJTSRD",
+    "typo_space_addition": "IJTSR D"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IMAG",
+    "typo_space_addition": "IM AG"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Nusha",
+    "typo_space_addition": "Nush a"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Figshare",
+    "typo_space_addition": "Fig share"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Fabula",
+    "typo_space_addition": "Fab ula"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Electra",
+    "typo_space_addition": "Elect ra"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SPE",
+    "typo_space_addition": "S PE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "figshare",
+    "typo_space_addition": "fig share"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wijnands",
+    "typo_space_addition": "Wijnand s"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Stroymaterialy",
+    "typo_space_addition": "Stroym aterialy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "PANGAEA",
+    "typo_space_addition": "PANG AEA"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Castanea",
+    "typo_space_addition": "Castane a"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "FUNDACE",
+    "typo_space_addition": "FUND ACE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Barkhuis",
+    "typo_space_addition": "Bark huis"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "arXiv",
+    "typo_space_addition": "ar Xiv"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dryad",
+    "typo_space_addition": "Dry ad"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "InTech",
+    "typo_space_addition": "In Tech"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ASMEDC",
+    "typo_space_addition": "ASMED C"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ACTAPRESS",
+    "typo_space_addition": "ACTA PRESS"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SensePublishers",
+    "typo_space_addition": "Sense Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "WIP",
+    "typo_space_addition": "W IP"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "CentMA",
+    "typo_space_addition": "Cent MA"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "YJBM",
+    "typo_space_addition": "YJ BM"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "FAO",
+    "typo_space_addition": "F AO"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Gabler",
+    "typo_space_addition": "Gab ler"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "CABI",
+    "typo_space_addition": "CAB I"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioExcel",
+    "typo_space_addition": "Bio Excel"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SvedbergOpen",
+    "typo_space_addition": "Svedberg Open"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IntechOpen",
+    "typo_space_addition": "Intech Open"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EconJournals",
+    "typo_space_addition": "Econ Journals"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Begellhouse",
+    "typo_space_addition": "Begell house"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ICCAT",
+    "typo_space_addition": "IC CAT"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Masson",
+    "typo_space_addition": "Mass on"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ecocycles",
+    "typo_space_addition": "Ecoc ycles"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "CIMNE",
+    "typo_space_addition": "CIM NE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "CIRAC",
+    "typo_space_addition": "CIR AC"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Radar/Navigation",
+    "typo_space_addition": "Radar /Navigation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Climatology",
+    "typo_space_addition": "Climato logy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "ornithology",
+    "typo_space_addition": "ornith ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "otorhinolaryngology",
+    "typo_space_addition": "otorhino laryngology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "geriatrics",
+    "typo_space_addition": "geriat rics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "paleontology",
+    "typo_space_addition": "pale ontology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "gerontology",
+    "typo_space_addition": "geron tology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "pediatrics",
+    "typo_space_addition": "ped iatrics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "immunology",
+    "typo_space_addition": "immun ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "horticulture",
+    "typo_space_addition": "hortic ulture"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Metamaterials/Electromagnetism",
+    "typo_space_addition": "Metamaterials /Electromagnetism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "biophysics",
+    "typo_space_addition": "bio physics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Catalysis",
+    "typo_space_addition": "Catal ysis"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "polymers",
+    "typo_space_addition": "polym ers"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Agavoideae",
+    "typo_space_addition": "Agavo ideae"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Hematology/Coagulopathies",
+    "typo_space_addition": "Hematology /Coagulopathies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Forests/Trees",
+    "typo_space_addition": "Fore sts/Trees"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Biomarkers/Biotechnology",
+    "typo_space_addition": "Biomarkers /Biotechnology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bioethics",
+    "typo_space_addition": "Bio ethics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Rheumatology/Arthritis",
+    "typo_space_addition": "Rheumatology /Arthritis"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "dentistry",
+    "typo_space_addition": "dent istry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Enzymes/Metabolism",
+    "typo_space_addition": "Enzymes /Metabolism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "toxicology",
+    "typo_space_addition": "toxic ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "acoustics",
+    "typo_space_addition": "acoust ics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "bioinformatics",
+    "typo_space_addition": "bio informatics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Agronomy/Crops",
+    "typo_space_addition": "Agronomy /Crops"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "criminology",
+    "typo_space_addition": "crim inology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "microbiology",
+    "typo_space_addition": "micro biology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "entomology",
+    "typo_space_addition": "entom ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Holocene",
+    "typo_space_addition": "Holoc ene"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Geomagnetism/Ionosphere",
+    "typo_space_addition": "Geomagnet ism/Ionosphere"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "mathematics",
+    "typo_space_addition": "mathematic s"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Acetylcholine",
+    "typo_space_addition": "Acetyl choline"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "epidemiology",
+    "typo_space_addition": "epidemi ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Neurotrauma/Stroke",
+    "typo_space_addition": "Neuro trauma/Stroke"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Astrochemistry/Chemistry",
+    "typo_space_addition": "Astro chemistry/Chemistry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "folklore",
+    "typo_space_addition": "folk lore"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Forests/Habitats",
+    "typo_space_addition": "Fore sts/Habitats"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bacteriology/Bacteria",
+    "typo_space_addition": "Bacter iology/Bacteria"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "econometrics",
+    "typo_space_addition": "econ ometrics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mycology/Symbiosis",
+    "typo_space_addition": "Mycology /Symbiosis"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "anesthesiology",
+    "typo_space_addition": "anesthes iology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "sociology",
+    "typo_space_addition": "soci ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "anthropology",
+    "typo_space_addition": "anthrop ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "geology",
+    "typo_space_addition": "geol ogy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "oceanography",
+    "typo_space_addition": "ocean ography"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Redox",
+    "typo_space_addition": "Red ox"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Botany/Herbalism",
+    "typo_space_addition": "Botany/Herbal ism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "psychiatry",
+    "typo_space_addition": "psychiatr y"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "microscopy",
+    "typo_space_addition": "micro scopy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Vegetables/Crops",
+    "typo_space_addition": "Vegetables /Crops"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "psychoanalysis",
+    "typo_space_addition": "psycho analysis"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "archaeology",
+    "typo_space_addition": "archae ology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Proteins/Proteomics",
+    "typo_space_addition": "Prote ins/Proteomics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "orthopedics",
+    "typo_space_addition": "orthoped ics"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Henkens",
+    "typo_space_addition": "Henk ens"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Turchanin",
+    "typo_space_addition": "Turch anin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Termolino",
+    "typo_space_addition": "Termol ino"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gonçalves",
+    "typo_space_addition": "Gonçal ves"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Carmine",
+    "typo_space_addition": "Carm ine"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Banszerus",
+    "typo_space_addition": "Banszer us"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kaplas",
+    "typo_space_addition": "Kap las"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yupeng",
+    "typo_space_addition": "Yup eng"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Wissotski",
+    "typo_space_addition": "Wiss otski"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pollet",
+    "typo_space_addition": "Pol let"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "K.Kannan",
+    "typo_space_addition": "K. Kannan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Immunologie",
+    "typo_space_addition": "Immun ologie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Strupinski",
+    "typo_space_addition": "Strup inski"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Özkul",
+    "typo_space_addition": "Özk ul"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Saskia",
+    "typo_space_addition": "Sask ia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chalmandrier",
+    "typo_space_addition": "Chal mandrier"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "MichaelSeymour",
+    "typo_space_addition": "Michael Seymour"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Svirko",
+    "typo_space_addition": "Svir ko"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Balzergue",
+    "typo_space_addition": "Balz ergue"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Konecky",
+    "typo_space_addition": "Kone cky"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jacobsen",
+    "typo_space_addition": "Jacobs en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "MyronenkoO.V.",
+    "typo_space_addition": "Myronenko O.V."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lohe",
+    "typo_space_addition": "Lo he"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Axin",
+    "typo_space_addition": "Ax in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kichenin",
+    "typo_space_addition": "Kichen in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "WenminQin",
+    "typo_space_addition": "Wen minQin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brazelton",
+    "typo_space_addition": "Braz elton"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Morono",
+    "typo_space_addition": "Mor ono"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mortyn",
+    "typo_space_addition": "Mort yn"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G.h",
+    "typo_space_addition": "G .h"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alessia",
+    "typo_space_addition": "Aless ia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Qamruzzaman",
+    "typo_space_addition": "Qamruzz aman"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cariaso",
+    "typo_space_addition": "Cari aso"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bouzayen",
+    "typo_space_addition": "Bouzay en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chiho",
+    "typo_space_addition": "Chi ho"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "DominikaCsolleiova",
+    "typo_space_addition": "Dominika Csolleiova"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Abdullah",
+    "typo_space_addition": "Abdulla h"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ola",
+    "typo_space_addition": "O la"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "R.",
+    "typo_space_addition": "R ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Konsta",
+    "typo_space_addition": "Kon sta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mondher",
+    "typo_space_addition": "Mond her"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhuang",
+    "typo_space_addition": "Zhu ang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hiroyuki",
+    "typo_space_addition": "Hiroy uki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bhaw",
+    "typo_space_addition": "Bh aw"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Goebel",
+    "typo_space_addition": "Goeb el"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Paneva",
+    "typo_space_addition": "Pane va"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Oliveria",
+    "typo_space_addition": "Oliver ia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "daPonte",
+    "typo_space_addition": "da Ponte"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Musiani",
+    "typo_space_addition": "Musian i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fraschetti",
+    "typo_space_addition": "Frasch etti"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shibata",
+    "typo_space_addition": "Shib ata"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shusei",
+    "typo_space_addition": "Shu sei"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "GauslaaYngvar",
+    "typo_space_addition": "Gauslaa Yngvar"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Francesca",
+    "typo_space_addition": "Frances ca"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nawrat",
+    "typo_space_addition": "Naw rat"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Heidrun",
+    "typo_space_addition": "Heid run"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Traini",
+    "typo_space_addition": "Train i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Corinne",
+    "typo_space_addition": "Corin ne"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Widowati",
+    "typo_space_addition": "Wid owati"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Whattam",
+    "typo_space_addition": "What tam"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jianghan,Chen",
+    "typo_space_addition": "Jiang han,Chen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rajkumar",
+    "typo_space_addition": "Raj kumar"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Baraloto",
+    "typo_space_addition": "Baral oto"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Langhals",
+    "typo_space_addition": "Lang hals"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rnerem",
+    "typo_space_addition": "Rner em"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fajardo",
+    "typo_space_addition": "Faj ardo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Batko",
+    "typo_space_addition": "Bat ko"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M.",
+    "typo_space_addition": "M ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Henseler,Jörg",
+    "typo_space_addition": "Henseler ,Jörg"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Samsher",
+    "typo_space_addition": "Sam sher"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "J.",
+    "typo_space_addition": "J ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Babita",
+    "typo_space_addition": "Babi ta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Celbiologie",
+    "typo_space_addition": "Cel biologie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Markvollrath",
+    "typo_space_addition": "Mark vollrath"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhenjun",
+    "typo_space_addition": "Zhen jun"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ceburnis",
+    "typo_space_addition": "Ceburn is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Seungill",
+    "typo_space_addition": "Seung ill"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rybicki",
+    "typo_space_addition": "Ryb icki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chistyakov",
+    "typo_space_addition": "Chisty akov"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Marađekić",
+    "typo_space_addition": "Mara đekić"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Orozco",
+    "typo_space_addition": "Oroz co"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gagandeep",
+    "typo_space_addition": "Gagand eep"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Duškađukić",
+    "typo_space_addition": "Duška đukić"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Villaro",
+    "typo_space_addition": "Villar o"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Aarssen",
+    "typo_space_addition": "Aar ssen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brisaboa",
+    "typo_space_addition": "Bris aboa"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pandolfi",
+    "typo_space_addition": "Pandolf i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yebyo",
+    "typo_space_addition": "Yeby o"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "A.Bousia",
+    "typo_space_addition": "A. Bousia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yongbiao",
+    "typo_space_addition": "Yong biao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jungeun",
+    "typo_space_addition": "Junge un"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Carlucci",
+    "typo_space_addition": "Carlu cci"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Backes",
+    "typo_space_addition": "Back es"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Suwonj",
+    "typo_space_addition": "Suwon j"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Minkyu",
+    "typo_space_addition": "Minky u"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dasler",
+    "typo_space_addition": "Das ler"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gozzini",
+    "typo_space_addition": "Goz zini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ruffolo",
+    "typo_space_addition": "Ruff olo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lallawmsanga",
+    "typo_space_addition": "Lallawm sanga"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Farinha",
+    "typo_space_addition": "Far inha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Patane",
+    "typo_space_addition": "Pat ane"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Davide",
+    "typo_space_addition": "Dav ide"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G.",
+    "typo_space_addition": "G ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Laforsch",
+    "typo_space_addition": "Laf orsch"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jumakil",
+    "typo_space_addition": "Juma kil"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gianese",
+    "typo_space_addition": "Gian ese"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chamala",
+    "typo_space_addition": "Cham ala"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Patwayati",
+    "typo_space_addition": "Patway ati"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ciriminna",
+    "typo_space_addition": "Cirim inna"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vezzi",
+    "typo_space_addition": "Vez zi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Duesberg",
+    "typo_space_addition": "Dues berg"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Philippot",
+    "typo_space_addition": "Philipp ot"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Htike",
+    "typo_space_addition": "H tike"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jutzi",
+    "typo_space_addition": "Jut zi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Murgante",
+    "typo_space_addition": "Murg ante"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pianese",
+    "typo_space_addition": "Pian ese"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Romdhani",
+    "typo_space_addition": "Romdh ani"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rattenbury",
+    "typo_space_addition": "Ratten bury"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sandjaja",
+    "typo_space_addition": "Sandj aja"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "MacLeod",
+    "typo_space_addition": "Mac Leod"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Navascués",
+    "typo_space_addition": "Navas cués"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mamta",
+    "typo_space_addition": "Mam ta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gaikwad",
+    "typo_space_addition": "Gaik wad"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "GalettoLeonardo",
+    "typo_space_addition": "Galetto Leonardo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sicre",
+    "typo_space_addition": "Sic re"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hesselink",
+    "typo_space_addition": "Hessel ink"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Silin",
+    "typo_space_addition": "Sil in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Guoyong",
+    "typo_space_addition": "Guoy ong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tayyib",
+    "typo_space_addition": "Tay yib"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ljiljana",
+    "typo_space_addition": "Ljilj ana"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fuyou",
+    "typo_space_addition": "Fuy ou"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Abdelkader",
+    "typo_space_addition": "Abdel kader"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yadvika",
+    "typo_space_addition": "Yadv ika"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nolte",
+    "typo_space_addition": "Nol te"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Barbazuk",
+    "typo_space_addition": "Barbaz uk"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anupriya",
+    "typo_space_addition": "Anupri ya"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Elharam",
+    "typo_space_addition": "El haram"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kotkovskiy",
+    "typo_space_addition": "Kotkov skiy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "SanchisGúrpide,Pablo",
+    "typo_space_addition": "Sanchis Gúrpide,Pablo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Biroscak",
+    "typo_space_addition": "Biro scak"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sammartino",
+    "typo_space_addition": "Sammart ino"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Stephane",
+    "typo_space_addition": "Steph ane"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "MonederoJavier",
+    "typo_space_addition": "Monedero Javier"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Doreen",
+    "typo_space_addition": "Dore en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G?mez",
+    "typo_space_addition": "G ?mez"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hemmi",
+    "typo_space_addition": "Hem mi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Saruchi",
+    "typo_space_addition": "Sar uchi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Taioli",
+    "typo_space_addition": "Tai oli"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ormel,Hermen",
+    "typo_space_addition": "Ormel ,Hermen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Haspelmath",
+    "typo_space_addition": "Haspel math"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Muryanto",
+    "typo_space_addition": "Mury anto"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fantacci",
+    "typo_space_addition": "Fantac ci"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vandana",
+    "typo_space_addition": "Vand ana"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Beyer",
+    "typo_space_addition": "Bey er"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "hiwot",
+    "typo_space_addition": "hi wot"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pandit",
+    "typo_space_addition": "Pand it"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mohorianu",
+    "typo_space_addition": "Mohor ianu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Facchini",
+    "typo_space_addition": "Facch ini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "AgüeraE.",
+    "typo_space_addition": "Agüera E."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bogden",
+    "typo_space_addition": "Bog den"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Emilie",
+    "typo_space_addition": "Emil ie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rousseau",
+    "typo_space_addition": "Rousse au"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rozirwan",
+    "typo_space_addition": "Roz irwan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Barin",
+    "typo_space_addition": "Bar in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bilal",
+    "typo_space_addition": "Bil al"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Akshayveer",
+    "typo_space_addition": "Akshay veer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lapierre",
+    "typo_space_addition": "Lap ierre"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Moorter",
+    "typo_space_addition": "Moort er"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sangita",
+    "typo_space_addition": "Sang ita"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Albiero",
+    "typo_space_addition": "Albi ero"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Khurana",
+    "typo_space_addition": "Khur ana"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Marinou",
+    "typo_space_addition": "Marin ou"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Imtiwati",
+    "typo_space_addition": "Imti wati"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Schoof",
+    "typo_space_addition": "Scho of"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Albertson",
+    "typo_space_addition": "Albert son"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cunha",
+    "typo_space_addition": "Cun ha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "GowardTrevor",
+    "typo_space_addition": "Gow ardTrevor"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Afdhal",
+    "typo_space_addition": "Afd hal"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Klimont",
+    "typo_space_addition": "Klim ont"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Desalvo",
+    "typo_space_addition": "Desal vo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rotter",
+    "typo_space_addition": "Rot ter"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Liendo,Freddy",
+    "typo_space_addition": "Lien do,Freddy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Schwieterman",
+    "typo_space_addition": "Schwieter man"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Falcone",
+    "typo_space_addition": "Falcon e"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gianluca",
+    "typo_space_addition": "Gian luca"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rogers",
+    "typo_space_addition": "Rog ers"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cianciaruso",
+    "typo_space_addition": "Cianciar uso"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Larras",
+    "typo_space_addition": "Larra s"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Detter",
+    "typo_space_addition": "Det ter"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sedimentology",
+    "typo_space_addition": "Sediment ology"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Simard",
+    "typo_space_addition": "Sim ard"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Feron",
+    "typo_space_addition": "Fero n"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Emic",
+    "typo_space_addition": "Em ic"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Koskela",
+    "typo_space_addition": "Kosk ela"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "X.",
+    "typo_space_addition": "X ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Danlin",
+    "typo_space_addition": "Dan lin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mansur",
+    "typo_space_addition": "Mans ur"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Junhong",
+    "typo_space_addition": "Jun hong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bartali",
+    "typo_space_addition": "Bart ali"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mehndiratta",
+    "typo_space_addition": "Mehndi ratta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Coscetta",
+    "typo_space_addition": "Cosc etta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dalmay",
+    "typo_space_addition": "Dalm ay"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gelley",
+    "typo_space_addition": "Gel ley"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Siswanto",
+    "typo_space_addition": "Siswan to"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nizamuddin",
+    "typo_space_addition": "Niz amuddin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Borgesen",
+    "typo_space_addition": "Borg esen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Roderic",
+    "typo_space_addition": "Roder ic"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Treossi",
+    "typo_space_addition": "Tre ossi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dimosthenis",
+    "typo_space_addition": "Dimosthen is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jimenez",
+    "typo_space_addition": "Jimene z"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Linyong",
+    "typo_space_addition": "Liny ong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Minyun",
+    "typo_space_addition": "Min yun"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pezzino",
+    "typo_space_addition": "Pez zino"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yeom",
+    "typo_space_addition": "Ye om"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Faridah",
+    "typo_space_addition": "Farid ah"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Meskhidze",
+    "typo_space_addition": "Meskhid ze"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "JeMin",
+    "typo_space_addition": "Je Min"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sarder",
+    "typo_space_addition": "Sard er"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhonghua",
+    "typo_space_addition": "Zhong hua"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Morandi",
+    "typo_space_addition": "Morand i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "E.",
+    "typo_space_addition": "E ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Colquhoun",
+    "typo_space_addition": "Colqu houn"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Awadhesh",
+    "typo_space_addition": "Awadh esh"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Samor?",
+    "typo_space_addition": "Samor ?"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Thurston",
+    "typo_space_addition": "Thur ston"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lankhorst",
+    "typo_space_addition": "Lank horst"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Carriazo",
+    "typo_space_addition": "Carri azo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zamir",
+    "typo_space_addition": "Zami r"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Doil",
+    "typo_space_addition": "Do il"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kazatchkine",
+    "typo_space_addition": "Kazat chkine"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mounir",
+    "typo_space_addition": "Moun ir"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bakker",
+    "typo_space_addition": "Bak ker"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hallab",
+    "typo_space_addition": "Hall ab"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Orcutt",
+    "typo_space_addition": "Orc utt"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fantini",
+    "typo_space_addition": "Fantin i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nahdalina",
+    "typo_space_addition": "Nah dalina"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nunzio",
+    "typo_space_addition": "Nun zio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rinaldi",
+    "typo_space_addition": "Rinal di"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "GreenawayDavid",
+    "typo_space_addition": "Greenaway David"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Garc?a",
+    "typo_space_addition": "Garc? a"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mu?oz",
+    "typo_space_addition": "Mu? oz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cardoso,RS.",
+    "typo_space_addition": "Cardoso ,RS."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Balis",
+    "typo_space_addition": "Bali s"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Peltzer",
+    "typo_space_addition": "Pelt zer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Loiseau",
+    "typo_space_addition": "Loise au"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Farid",
+    "typo_space_addition": "Far id"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Strickler",
+    "typo_space_addition": "Strick ler"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Guoping",
+    "typo_space_addition": "Guo ping"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Abdulkarim,Muthanna",
+    "typo_space_addition": "Abdulkarim ,Muthanna"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mapoma",
+    "typo_space_addition": "Map oma"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alioto",
+    "typo_space_addition": "Ali oto"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vittal",
+    "typo_space_addition": "Vitt al"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chowdhury",
+    "typo_space_addition": "Chow dhury"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Widayat,",
+    "typo_space_addition": "Widay at,"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhangjun",
+    "typo_space_addition": "Zhang jun"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cigir",
+    "typo_space_addition": "Cigi r"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Wallin",
+    "typo_space_addition": "Wall in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Snaith",
+    "typo_space_addition": "Sna ith"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "VujanovicVladimir",
+    "typo_space_addition": "Vujanovic Vladimir"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hongshuang",
+    "typo_space_addition": "Hong shuang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "F.b",
+    "typo_space_addition": "F .b"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prentice",
+    "typo_space_addition": "Prent ice"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Santos",
+    "typo_space_addition": "Sant os"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Inc",
+    "typo_space_addition": "In c"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cavaliere",
+    "typo_space_addition": "Cava liere"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Suhendri",
+    "typo_space_addition": "Suhend ri"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fukuoka",
+    "typo_space_addition": "Fuku oka"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "H.J.",
+    "typo_space_addition": "H .J."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ruihua",
+    "typo_space_addition": "Rui hua"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hollman",
+    "typo_space_addition": "Holl man"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Miseikis",
+    "typo_space_addition": "Miseik is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Filippis",
+    "typo_space_addition": "Filipp is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Droege",
+    "typo_space_addition": "Droe ge"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fonseca",
+    "typo_space_addition": "Fon seca"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bajwa",
+    "typo_space_addition": "Baj wa"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sukhov",
+    "typo_space_addition": "Suk hov"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fabio",
+    "typo_space_addition": "Fab io"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "CD.",
+    "typo_space_addition": "C D."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "N.",
+    "typo_space_addition": "N ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sonjađorđević",
+    "typo_space_addition": "Sonja đorđević"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Colombo",
+    "typo_space_addition": "Col ombo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sundqvist",
+    "typo_space_addition": "Sund qvist"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Meisingset",
+    "typo_space_addition": "Meis ingset"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "D'Aless",
+    "typo_space_addition": "D' Aless"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "HubbardMichelle",
+    "typo_space_addition": "Hubbard Michelle"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Crema",
+    "typo_space_addition": "Cre ma"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Wegner",
+    "typo_space_addition": "Weg ner"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "NilsHeidenreich",
+    "typo_space_addition": "Nils Heidenreich"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "McQuinn",
+    "typo_space_addition": "Mc Quinn"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Guangcun",
+    "typo_space_addition": "Guang cun"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "YUSUF",
+    "typo_space_addition": "YUS UF"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Peinkofer",
+    "typo_space_addition": "Pein kofer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "AneIrazustabarrena",
+    "typo_space_addition": "Ane Irazustabarrena"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Righini",
+    "typo_space_addition": "Righ ini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ilkka",
+    "typo_space_addition": "Ilk ka"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Berneschi",
+    "typo_space_addition": "Bernes chi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Murray.",
+    "typo_space_addition": "Murray ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rekha",
+    "typo_space_addition": "Rek ha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gaetano",
+    "typo_space_addition": "Gaet ano"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hanski",
+    "typo_space_addition": "Hans ki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sobajic",
+    "typo_space_addition": "Soba jic"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jestin",
+    "typo_space_addition": "Jest in"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prabowo",
+    "typo_space_addition": "Prab owo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Enderlen,",
+    "typo_space_addition": "Ender len,"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Suparjan",
+    "typo_space_addition": "Supar jan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pasternak",
+    "typo_space_addition": "Pastern ak"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Martynov",
+    "typo_space_addition": "Martyn ov"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hongling",
+    "typo_space_addition": "Hong ling"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "P.",
+    "typo_space_addition": "P ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gleyzer",
+    "typo_space_addition": "Gley zer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gupta",
+    "typo_space_addition": "Gupt a"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ansmann",
+    "typo_space_addition": "Ansm ann"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sutardi",
+    "typo_space_addition": "Sutard i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Younis",
+    "typo_space_addition": "Youn is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "D.Ismoilova",
+    "typo_space_addition": "D. Ismoilova"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Abyu",
+    "typo_space_addition": "Aby u"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Trotta",
+    "typo_space_addition": "Trot ta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yoshimura",
+    "typo_space_addition": "Yoshim ura"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mancini",
+    "typo_space_addition": "Manc ini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zeshan",
+    "typo_space_addition": "Zesh an"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pugno",
+    "typo_space_addition": "Pug no"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Azpeitia",
+    "typo_space_addition": "Azpe itia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sunguya",
+    "typo_space_addition": "Sung uya"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Medl",
+    "typo_space_addition": "Med l"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fernandes",
+    "typo_space_addition": "Fern andes"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chirurgie",
+    "typo_space_addition": "Chir urgie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yanbo",
+    "typo_space_addition": "Yan bo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jianfeng",
+    "typo_space_addition": "Jian feng"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "EGGERTSSON,THRÁINN",
+    "typo_space_addition": "EGGERTS SON,THRÁINN"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pagliaro",
+    "typo_space_addition": "Pagli aro"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Puszkiel",
+    "typo_space_addition": "Puszki el"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kouki",
+    "typo_space_addition": "Kou ki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gaucherand",
+    "typo_space_addition": "Gauch erand"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vrebalov",
+    "typo_space_addition": "Vrebal ov"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Menda",
+    "typo_space_addition": "Mend a"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M.li",
+    "typo_space_addition": "M. li"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anupma",
+    "typo_space_addition": "Anup ma"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vautrin",
+    "typo_space_addition": "Vaut rin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "IshidaTakayuki",
+    "typo_space_addition": "Ishida Takayuki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pietrella",
+    "typo_space_addition": "Piet rella"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Karmilasari",
+    "typo_space_addition": "Karmila sari"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shengxiong",
+    "typo_space_addition": "Sheng xiong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chiappini",
+    "typo_space_addition": "Chiapp ini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Palosuo",
+    "typo_space_addition": "Palos uo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Khairani",
+    "typo_space_addition": "Khair ani"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kesavan",
+    "typo_space_addition": "Kes avan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dellong",
+    "typo_space_addition": "Dell ong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kamruzzaman",
+    "typo_space_addition": "Kamruzz aman"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Steffen",
+    "typo_space_addition": "Steff en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Varun",
+    "typo_space_addition": "Var un"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhibiao",
+    "typo_space_addition": "Zhi biao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Geomorfologie",
+    "typo_space_addition": "Geo morfologie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sumardi",
+    "typo_space_addition": "Sumard i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sjahrir",
+    "typo_space_addition": "Sjahr ir"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jepsen",
+    "typo_space_addition": "Jeps en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shivani",
+    "typo_space_addition": "Shiva ni"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anggakusuma",
+    "typo_space_addition": "Anggak usuma"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Proestakis",
+    "typo_space_addition": "Proest akis"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mignogna",
+    "typo_space_addition": "Mign ogna"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ercolano",
+    "typo_space_addition": "Erc olano"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "D.Mehta",
+    "typo_space_addition": "D. Mehta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tanksley",
+    "typo_space_addition": "Tanks ley"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Negoro",
+    "typo_space_addition": "Negor o"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lochbrunner",
+    "typo_space_addition": "Loch brunner"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rickard",
+    "typo_space_addition": "Rick ard"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bhaktha",
+    "typo_space_addition": "Bha ktha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Uricchio",
+    "typo_space_addition": "Uric chio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Snellenburg",
+    "typo_space_addition": "Snellen burg"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prudkovskiy",
+    "typo_space_addition": "Prudko vskiy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bianchi",
+    "typo_space_addition": "Bian chi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Singh",
+    "typo_space_addition": "Sing h"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gurazada",
+    "typo_space_addition": "Gura zada"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Poulton",
+    "typo_space_addition": "Poul ton"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tecle",
+    "typo_space_addition": "Tec le"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Qiao,Yanjiang",
+    "typo_space_addition": "Qiao ,Yanjiang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Budiharjo",
+    "typo_space_addition": "Budi harjo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Noirot",
+    "typo_space_addition": "Noi rot"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "AnaFernandez-Sainz",
+    "typo_space_addition": "Ana Fernandez-Sainz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rouméjon",
+    "typo_space_addition": "Rou méjon"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pavella",
+    "typo_space_addition": "Pav ella"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brewer",
+    "typo_space_addition": "Brew er"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sujitha.A",
+    "typo_space_addition": "Sujith a.A"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sumijan",
+    "typo_space_addition": "Sumi jan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ogola",
+    "typo_space_addition": "Ogo la"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Galafassi",
+    "typo_space_addition": "Galaf assi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kissen",
+    "typo_space_addition": "Kis sen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Menez",
+    "typo_space_addition": "Mene z"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vividha",
+    "typo_space_addition": "Vivid ha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yuanyuan",
+    "typo_space_addition": "Yuany uan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Suyoko",
+    "typo_space_addition": "Suy oko"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alessandro",
+    "typo_space_addition": "Aless andro"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ciesielski",
+    "typo_space_addition": "Ciesi elski"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Faridullah",
+    "typo_space_addition": "Farid ullah"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nabiev",
+    "typo_space_addition": "Nab iev"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tectonics",
+    "typo_space_addition": "Tect onics"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Galiotis",
+    "typo_space_addition": "Gali otis"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Liuhua",
+    "typo_space_addition": "Liuh ua"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Béland",
+    "typo_space_addition": "Bé land"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Conde,Ángeles",
+    "typo_space_addition": "Conde ,Ángeles"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pasquale",
+    "typo_space_addition": "Pasqu ale"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Matas",
+    "typo_space_addition": "Mat as"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Campanale",
+    "typo_space_addition": "Campan ale"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Halsall",
+    "typo_space_addition": "Hals all"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prat",
+    "typo_space_addition": "Pr at"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ellingsen",
+    "typo_space_addition": "Ellings en"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Miftahudin",
+    "typo_space_addition": "Miftah udin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Falkenstein",
+    "typo_space_addition": "Falk enstein"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rajni",
+    "typo_space_addition": "Raj ni"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Avino",
+    "typo_space_addition": "Av ino"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Breecummins",
+    "typo_space_addition": "Breec ummins"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Balakrishnan",
+    "typo_space_addition": "Balakrish nan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sjostr",
+    "typo_space_addition": "Sjo str"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "NogamiTakashi",
+    "typo_space_addition": "Nogami Takashi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shirasawa",
+    "typo_space_addition": "Shiras awa"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mikko",
+    "typo_space_addition": "Mik ko"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yasukazu",
+    "typo_space_addition": "Yasuk azu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "V.",
+    "typo_space_addition": "V ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Arora",
+    "typo_space_addition": "Ar ora"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cezard",
+    "typo_space_addition": "Cez ard"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Petrology",
+    "typo_space_addition": "Petro logy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Borjesson",
+    "typo_space_addition": "Bor jesson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hirakawa",
+    "typo_space_addition": "Hira kawa"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bryer",
+    "typo_space_addition": "Bry er"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pooja",
+    "typo_space_addition": "Poo ja"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yirsaw",
+    "typo_space_addition": "Yirs aw"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Takakazu",
+    "typo_space_addition": "Taka kazu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nikhaphone",
+    "typo_space_addition": "Nikhaph one"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "W.",
+    "typo_space_addition": "W ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ariando",
+    "typo_space_addition": "Ari ando"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lingenthiran",
+    "typo_space_addition": "Lingenth iran"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lipsanen",
+    "typo_space_addition": "Lips anen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sumaira",
+    "typo_space_addition": "Sumair a"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dokubo",
+    "typo_space_addition": "Dok ubo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dietrich",
+    "typo_space_addition": "Diet rich"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "F.",
+    "typo_space_addition": "F ."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Forti",
+    "typo_space_addition": "Fort i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hydrologie",
+    "typo_space_addition": "Hydro logie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Granell",
+    "typo_space_addition": "Gran ell"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nakashizuka",
+    "typo_space_addition": "Nakash izuka"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prins",
+    "typo_space_addition": "Pr ins"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bombarely",
+    "typo_space_addition": "Bombare ly"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yuanzhi",
+    "typo_space_addition": "Yuan zhi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Schijlen",
+    "typo_space_addition": "Schij len"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Parthenios",
+    "typo_space_addition": "Parthen ios"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Claudia",
+    "typo_space_addition": "Claud ia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "D.b",
+    "typo_space_addition": "D .b"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Giref",
+    "typo_space_addition": "Gire f"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rylander",
+    "typo_space_addition": "Ry lander"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Albort-Morant,Gema",
+    "typo_space_addition": "Albor t-Morant,Gema"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dunkel",
+    "typo_space_addition": "Dunk el"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "McCalley",
+    "typo_space_addition": "Mc Calley"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Egholm",
+    "typo_space_addition": "Egh olm"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kroemer",
+    "typo_space_addition": "Kro emer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Garrido",
+    "typo_space_addition": "Garr ido"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nolé",
+    "typo_space_addition": "Nol é"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ioccg",
+    "typo_space_addition": "Iocc g"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pettinau",
+    "typo_space_addition": "Pett inau"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bischof",
+    "typo_space_addition": "Bis chof"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Delalande",
+    "typo_space_addition": "Delaland e"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Manenti,Raoul",
+    "typo_space_addition": "Manenti ,Raoul"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mohapatra",
+    "typo_space_addition": "Mohapat ra"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zamioudis",
+    "typo_space_addition": "Zamiou dis"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "AndronickJune",
+    "typo_space_addition": "Andronick June"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vikrant",
+    "typo_space_addition": "Vik rant"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Raganati",
+    "typo_space_addition": "Ragan ati"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bonazza",
+    "typo_space_addition": "Bonaz za"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Violle",
+    "typo_space_addition": "Viol le"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yakimova",
+    "typo_space_addition": "Yaki mova"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Thamara",
+    "typo_space_addition": "Tham ara"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Indu",
+    "typo_space_addition": "Ind u"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Schu?",
+    "typo_space_addition": "Schu ?"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "LimJapheth",
+    "typo_space_addition": "Lim Japheth"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dieison",
+    "typo_space_addition": "Die ison"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tohru",
+    "typo_space_addition": "Toh ru"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Visser",
+    "typo_space_addition": "Vis ser"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Refice",
+    "typo_space_addition": "Ref ice"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Noviello",
+    "typo_space_addition": "Nov iello"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vitulo",
+    "typo_space_addition": "Vit ulo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Farizal",
+    "typo_space_addition": "Fariz al"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Faccenna",
+    "typo_space_addition": "Facc enna"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zavala",
+    "typo_space_addition": "Zav ala"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kishor",
+    "typo_space_addition": "Kish or"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Testi",
+    "typo_space_addition": "Test i"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bhutty",
+    "typo_space_addition": "Bh utty"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhiqi",
+    "typo_space_addition": "Zhi qi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Berges",
+    "typo_space_addition": "Berg es"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Deif",
+    "typo_space_addition": "De if"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Borrega",
+    "typo_space_addition": "Bor rega"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kuzishchin",
+    "typo_space_addition": "Kuzi shchin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Akinyemiju",
+    "typo_space_addition": "Akinyem iju"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Barrero",
+    "typo_space_addition": "Barr ero"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Perdinan",
+    "typo_space_addition": "Perdin an"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "L.Alonso",
+    "typo_space_addition": "L. Alonso"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Perrotta",
+    "typo_space_addition": "Perrot ta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lazdinis",
+    "typo_space_addition": "Lazdin is"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G.g",
+    "typo_space_addition": "G .g"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Golara",
+    "typo_space_addition": "Gol ara"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kathrin",
+    "typo_space_addition": "Kath rin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brenci",
+    "typo_space_addition": "Bre nci"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Govindjee",
+    "typo_space_addition": "Govind jee"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Behrmann",
+    "typo_space_addition": "Behrm ann"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "McGrath",
+    "typo_space_addition": "McGr ath"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "MIFTAHURAHMAN",
+    "typo_space_addition": "MIFTA HURAHMAN"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Paleomagnetism",
+    "typo_space_addition": "Paleo magnetism"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Giulio",
+    "typo_space_addition": "Giul io"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pigott",
+    "typo_space_addition": "Pig ott"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mariana",
+    "typo_space_addition": "Marian a"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Onomastus",
+    "typo_space_addition": "Onoma stus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MobiMissions",
+    "typo_space_addition": "Mobi Missions"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Streptomyces",
+    "typo_space_addition": "Strept omyces"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "METLIN",
+    "typo_space_addition": "MET LIN"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "FlexRAN",
+    "typo_space_addition": "Flex RAN"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "LISFS",
+    "typo_space_addition": "LIS FS"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "ALEA",
+    "typo_space_addition": "A LEA"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "PressLight",
+    "typo_space_addition": "Press Light"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Nudging:",
+    "typo_space_addition": "Nudging :"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Stenopodainae",
+    "typo_space_addition": "Stenopo dainae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "OpenFlow",
+    "typo_space_addition": "Open Flow"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Organisationssoziologie",
+    "typo_space_addition": "Organisations soziologie"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "SunCast",
+    "typo_space_addition": "Sun Cast"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Gigantactinidae",
+    "typo_space_addition": "Gigant actinidae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "ConText",
+    "typo_space_addition": "Con Text"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Desertification",
+    "typo_space_addition": "Desert ification"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Elektrophysiologie",
+    "typo_space_addition": "Elektrophysi ologie"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "STUDENT",
+    "typo_space_addition": "STU DENT"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Thymogethes",
+    "typo_space_addition": "Thymo gethes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "RuO",
+    "typo_space_addition": "Ru O"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cavitation",
+    "typo_space_addition": "Cav itation"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Bowmaniella",
+    "typo_space_addition": "Bowman iella"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "NLTK",
+    "typo_space_addition": "NL TK"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Diptera",
+    "typo_space_addition": "Dipt era"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Arabidopsis",
+    "typo_space_addition": "Arab idopsis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "TokenJoin",
+    "typo_space_addition": "Token Join"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "OutdoorSent",
+    "typo_space_addition": "Outdoor Sent"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Polyselenophenes",
+    "typo_space_addition": "Polyselen ophenes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Tiapride",
+    "typo_space_addition": "Tiap ride"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Austroplebeia",
+    "typo_space_addition": "Austro plebeia"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Euathlus",
+    "typo_space_addition": "Eu athlus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Ökodesign",
+    "typo_space_addition": "Öko design"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Referatenteil",
+    "typo_space_addition": "Referat enteil"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "GPSR",
+    "typo_space_addition": "GPS R"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Swoogle",
+    "typo_space_addition": "Swo ogle"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "FMCAT",
+    "typo_space_addition": "FMC AT"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hadrosauridae",
+    "typo_space_addition": "Hadrosa uridae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Proamblia",
+    "typo_space_addition": "Pro amblia"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Coifmanniella",
+    "typo_space_addition": "Coif manniella"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Anaphylaxis",
+    "typo_space_addition": "Anaphyl axis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MetaVelvet",
+    "typo_space_addition": "Meta Velvet"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Adipocytes",
+    "typo_space_addition": "Adipo cytes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "WordNet",
+    "typo_space_addition": "Word Net"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Femtochemistry",
+    "typo_space_addition": "Femto chemistry"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "NOX",
+    "typo_space_addition": "NO X"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "FlexMolds",
+    "typo_space_addition": "Flex Molds"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Bulgaria",
+    "typo_space_addition": "Bulg aria"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MiniCPS",
+    "typo_space_addition": "Mini CPS"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "HIMmaterial",
+    "typo_space_addition": "HIM material"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "GASTROFİZİK",
+    "typo_space_addition": "GASTRO FİZİK"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "DeepWalk",
+    "typo_space_addition": "Deep Walk"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "EWI",
+    "typo_space_addition": "EW I"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Telecommunications",
+    "typo_space_addition": "Telecom munications"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "iSnap",
+    "typo_space_addition": "i Snap"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Illite",
+    "typo_space_addition": "Ill ite"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Vulnerability",
+    "typo_space_addition": "Vulner ability"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Rockglaciers",
+    "typo_space_addition": "Rock glaciers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Frogfishes",
+    "typo_space_addition": "Frog fishes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Caloducs",
+    "typo_space_addition": "Calod ucs"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "WhereNext",
+    "typo_space_addition": "Where Next"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MLE+",
+    "typo_space_addition": "MLE +"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Wellbeing",
+    "typo_space_addition": "Well being"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cyanolichens",
+    "typo_space_addition": "Cyan olichens"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "SEAFLUX",
+    "typo_space_addition": "SEA FLUX"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "XGBoost",
+    "typo_space_addition": "XG Boost"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "GreenCastalia",
+    "typo_space_addition": "Green Castalia"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "SoftGrid",
+    "typo_space_addition": "Soft Grid"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Prosciara",
+    "typo_space_addition": "Prosci ara"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Abscondita",
+    "typo_space_addition": "Abscond ita"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Anmerkung",
+    "typo_space_addition": "An merkung"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Osteoarthritis",
+    "typo_space_addition": "Osteo arthritis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Dryocosmus",
+    "typo_space_addition": "Dryocos mus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "PRÓLOGO",
+    "typo_space_addition": "PRÓ LOGO"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "OpenRAN",
+    "typo_space_addition": "Open RAN"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Luxusmarken",
+    "typo_space_addition": "Luxus marken"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "ShieldBox",
+    "typo_space_addition": "Shield Box"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Correspondence",
+    "typo_space_addition": "Correspond ence"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Paleoproteomics",
+    "typo_space_addition": "Paleo proteomics"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Bioethanol",
+    "typo_space_addition": "Bio ethanol"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "LIBSVM",
+    "typo_space_addition": "LIB SVM"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "BeeAdHoc",
+    "typo_space_addition": "Bee AdHoc"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Gesundheitspolitik",
+    "typo_space_addition": "Gesundheits politik"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Onychomycosis",
+    "typo_space_addition": "Onychom ycosis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cinepoetry",
+    "typo_space_addition": "Cine poetry"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Epitetracnemus",
+    "typo_space_addition": "Epitetr acnemus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "MapReduce",
+    "typo_space_addition": "Map Reduce"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Berichtigungen",
+    "typo_space_addition": "Berichtigun gen"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "IX.REPORTS",
+    "typo_space_addition": "IX .REPORTS"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "RSEM",
+    "typo_space_addition": "RSE M"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Archeoguide",
+    "typo_space_addition": "Archeo guide"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Medaka",
+    "typo_space_addition": "Med aka"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "CLIL",
+    "typo_space_addition": "CL IL"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hydrachna",
+    "typo_space_addition": "Hydra chna"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Einleitung",
+    "typo_space_addition": "Ein leitung"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Palembangbenzoë",
+    "typo_space_addition": "Palembang benzoë"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "AutoStyle",
+    "typo_space_addition": "Auto Style"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Pflanzensoziologie",
+    "typo_space_addition": "Pflan zensoziologie"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Neyman",
+    "typo_space_addition": "Ney man"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "DynaPoMP",
+    "typo_space_addition": "Dyna PoMP"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "NbO",
+    "typo_space_addition": "Nb O"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Meriania",
+    "typo_space_addition": "Merian ia"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Fulgenta",
+    "typo_space_addition": "Ful genta"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Co(OH)",
+    "typo_space_addition": "Co (OH)"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cotithene",
+    "typo_space_addition": "Coti thene"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "SGXBOUNDS",
+    "typo_space_addition": "SGX BOUNDS"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Philoscirtus",
+    "typo_space_addition": "Phil oscirtus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Melanism",
+    "typo_space_addition": "Mel anism"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Necropolitics",
+    "typo_space_addition": "Necro politics"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hemicelluloses",
+    "typo_space_addition": "Hemicellul oses"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sentribute",
+    "typo_space_addition": "Sent ribute"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Therapie",
+    "typo_space_addition": "Ther apie"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Datathons",
+    "typo_space_addition": "Data thons"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "LearNext",
+    "typo_space_addition": "Lear Next"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Cladomorphinae",
+    "typo_space_addition": "Clado morphinae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Glomeris",
+    "typo_space_addition": "Glomer is"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Eupelmus",
+    "typo_space_addition": "Eup elmus"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Marketingmanagement",
+    "typo_space_addition": "Marketing management"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Everlast",
+    "typo_space_addition": "Ever last"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "swe",
+    "typo_space_addition": "sw e"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "rus",
+    "typo_space_addition": "r us"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "slv",
+    "typo_space_addition": "sl v"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "nob",
+    "typo_space_addition": "no b"
+  },
+  {
+    "table": "result",
+    "column": "language",
+    "original": "ara",
+    "typo_space_addition": "ar a"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "PA",
+    "typo_space_addition": "P A"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "JP",
+    "typo_space_addition": "J P"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CZ",
+    "typo_space_addition": "C Z"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "GR",
+    "typo_space_addition": "G R"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "QA",
+    "typo_space_addition": "Q A"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CA",
+    "typo_space_addition": "C A"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NL",
+    "typo_space_addition": "N L"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "QAT",
+    "typo_space_addition": "Q AT"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dariah",
+    "typo_space_addition": "daria h"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "enermaps",
+    "typo_space_addition": "ener maps"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "beopen",
+    "typo_space_addition": "be open"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "clarin",
+    "typo_space_addition": "clari n"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cardiology",
+    "typo_space_addition": "Cardi ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Linguistics",
+    "typo_space_addition": "Linguisti cs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EASY",
+    "typo_space_addition": "E ASY"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "mHealth",
+    "typo_space_addition": "m Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geoforum",
+    "typo_space_addition": "Geof orum"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Anglophonia",
+    "typo_space_addition": "Anglo phonia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kybernetes",
+    "typo_space_addition": "Kyber netes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hereditas",
+    "typo_space_addition": "Heredit as"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Osiris",
+    "typo_space_addition": "Os iris"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemPhotoChem",
+    "typo_space_addition": "ChemPhoto Chem"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "UnissResearch",
+    "typo_space_addition": "Uniss Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SADJ",
+    "typo_space_addition": "SAD J"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Historia",
+    "typo_space_addition": "Histor ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pollutants",
+    "typo_space_addition": "Pollut ants"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Agritrop",
+    "typo_space_addition": "Agrit rop"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ParadigmPlus",
+    "typo_space_addition": "Paradigm Plus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenAIRE",
+    "typo_space_addition": "Open AIRE"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "中国工程科学",
+    "typo_space_addition": "中国 工程科学"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EvoDevo",
+    "typo_space_addition": "Evo Devo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Maturitas",
+    "typo_space_addition": "Matur itas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archaeologies",
+    "typo_space_addition": "Archae ologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SportRxiv",
+    "typo_space_addition": "Sport Rxiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "VTechWorks",
+    "typo_space_addition": "VTech Works"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EcoHealth",
+    "typo_space_addition": "Eco Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mammalia",
+    "typo_space_addition": "Mamm alia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pensoft",
+    "typo_space_addition": "Pen soft"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "bioRxiv",
+    "typo_space_addition": "bio Rxiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Gerontology",
+    "typo_space_addition": "Ger ontology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Organometallics",
+    "typo_space_addition": "Organomet allics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Glycobiology",
+    "typo_space_addition": "Glyco biology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ecopsychology",
+    "typo_space_addition": "Ecops ychology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Brodogradnja",
+    "typo_space_addition": "Brodo gradnja"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Caleidoscopio",
+    "typo_space_addition": "Caleidos copio"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Economies",
+    "typo_space_addition": "Econo mies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Scholarship@Western",
+    "typo_space_addition": "Scholarship @Western"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Barataria",
+    "typo_space_addition": "Barat aria"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Emotion",
+    "typo_space_addition": "Em otion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ultramicroscopy",
+    "typo_space_addition": "Ultramicro scopy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Crystals",
+    "typo_space_addition": "Cr ystals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IUCrJ",
+    "typo_space_addition": "IUCr J"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kentron",
+    "typo_space_addition": "Kent ron"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oryx",
+    "typo_space_addition": "Ory x"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "aBIOTECH",
+    "typo_space_addition": "a BIOTECH"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EnergyChem",
+    "typo_space_addition": "Energy Chem"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Religions",
+    "typo_space_addition": "Relig ions"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geopolitics",
+    "typo_space_addition": "Geopol itics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Detritus",
+    "typo_space_addition": "Detrit us"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geobios",
+    "typo_space_addition": "Geob ios"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "eResearch@Ozyegin",
+    "typo_space_addition": "eResearch @Ozyegin"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Crustaceana",
+    "typo_space_addition": "Crust aceana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tecnura",
+    "typo_space_addition": "Tecn ura"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sedimentology",
+    "typo_space_addition": "Sediment ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioResources",
+    "typo_space_addition": "Bio Resources"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geomorphology",
+    "typo_space_addition": "Geo morphology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ultrasonics",
+    "typo_space_addition": "Ultrason ics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Innovation",
+    "typo_space_addition": "Inno vation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Carcinogenesis",
+    "typo_space_addition": "Carcinogen esis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Belgeo",
+    "typo_space_addition": "Bel geo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tsitologiya",
+    "typo_space_addition": "Tsit ologiya"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@ArtvinCoruh",
+    "typo_space_addition": "D Space@ArtvinCoruh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ARKIVOC",
+    "typo_space_addition": "ARK IVOC"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oncotarget",
+    "typo_space_addition": "Onc otarget"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancer/Radiothérapie",
+    "typo_space_addition": "Cancer /Radiothérapie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Comhar",
+    "typo_space_addition": "Com har"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@HKU",
+    "typo_space_addition": "D Space@HKU"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Reactions",
+    "typo_space_addition": "Re actions"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancers",
+    "typo_space_addition": "Cancer s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EchoGéo",
+    "typo_space_addition": "Echo Géo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ÉDUQ",
+    "typo_space_addition": "ÉDU Q"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Immunochemistry",
+    "typo_space_addition": "Immuno chemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Daedalus",
+    "typo_space_addition": "Daed alus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SpringerPlus",
+    "typo_space_addition": "Springer Plus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Norteamérica",
+    "typo_space_addition": "Nort eamérica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Intervirology",
+    "typo_space_addition": "Intervi rology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "InTech",
+    "typo_space_addition": "In Tech"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurocase",
+    "typo_space_addition": "Neuro case"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CMAJ",
+    "typo_space_addition": "CMA J"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OceanRep",
+    "typo_space_addition": "Ocean Rep"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SOIL",
+    "typo_space_addition": "SO IL"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "VBN",
+    "typo_space_addition": "V BN"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geoarchaeology",
+    "typo_space_addition": "Geo archaeology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "VASA",
+    "typo_space_addition": "VAS A"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioFactors",
+    "typo_space_addition": "Bio Factors"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Peptides",
+    "typo_space_addition": "Pept ides"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dermatology",
+    "typo_space_addition": "Derm atology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycosphere",
+    "typo_space_addition": "Myc osphere"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lirias",
+    "typo_space_addition": "Lir ias"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytopathology",
+    "typo_space_addition": "Phyto pathology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Retrovirology",
+    "typo_space_addition": "Retro virology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Agribusiness",
+    "typo_space_addition": "Agri business"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ostrich",
+    "typo_space_addition": "Ostr ich"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Palaios",
+    "typo_space_addition": "Pal aios"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archeion",
+    "typo_space_addition": "Arche ion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Particuology",
+    "typo_space_addition": "Partic uology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chemosensors",
+    "typo_space_addition": "Chemo sensors"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MetaArXiv",
+    "typo_space_addition": "Meta ArXiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Caryologia",
+    "typo_space_addition": "Cary ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BodoArXiv",
+    "typo_space_addition": "Bodo ArXiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Micromachines",
+    "typo_space_addition": "Micro machines"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Gels",
+    "typo_space_addition": "Gel s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Environmetrics",
+    "typo_space_addition": "Environ metrics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Luminescence",
+    "typo_space_addition": "Lum inescence"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "NanoEthics",
+    "typo_space_addition": "Nano Ethics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Emerita",
+    "typo_space_addition": "Emer ita"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hacquetia",
+    "typo_space_addition": "Hacquet ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioControl",
+    "typo_space_addition": "Bio Control"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Epidemiologia",
+    "typo_space_addition": "Epidemi ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Enfoqute",
+    "typo_space_addition": "Enfo qute"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Otolaryngology",
+    "typo_space_addition": "Oto laryngology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pedobiologia",
+    "typo_space_addition": "Pedo biologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pancreatology",
+    "typo_space_addition": "Pancreat ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geobiology",
+    "typo_space_addition": "Geo biology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Littératures",
+    "typo_space_addition": "Littér atures"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fibers",
+    "typo_space_addition": "Fib ers"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "NARCIS",
+    "typo_space_addition": "NARC IS"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Shedet",
+    "typo_space_addition": "Shede t"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Authorship",
+    "typo_space_addition": "Author ship"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemCatChem",
+    "typo_space_addition": "ChemCat Chem"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nanomedicine",
+    "typo_space_addition": "Nan omedicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PIKpublic",
+    "typo_space_addition": "PIK public"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenUCT",
+    "typo_space_addition": "Open UCT"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Breviora",
+    "typo_space_addition": "Brev iora"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tectonophysics",
+    "typo_space_addition": "Tectono physics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ProdInra",
+    "typo_space_addition": "Prod Inra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pharmacology",
+    "typo_space_addition": "Pharmac ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hippocampus",
+    "typo_space_addition": "Hipp ocampus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cryobiology",
+    "typo_space_addition": "Cry obiology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Synthesis",
+    "typo_space_addition": "Synthes is"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurosurgery",
+    "typo_space_addition": "Neuro surgery"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electrochemistry",
+    "typo_space_addition": "Electro chemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytotaxa",
+    "typo_space_addition": "Phyto taxa"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Atherosclerosis",
+    "typo_space_addition": "Atheroscler osis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biologicals",
+    "typo_space_addition": "Biological s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aquaculture",
+    "typo_space_addition": "Aquac ulture"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Morphologie",
+    "typo_space_addition": "Morph ologie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Spatium",
+    "typo_space_addition": "Spat ium"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@Kirklareli",
+    "typo_space_addition": "D Space@Kirklareli"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Andrologia",
+    "typo_space_addition": "Andro logia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Appetite",
+    "typo_space_addition": "Appet ite"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Palaeoworld",
+    "typo_space_addition": "Palaeo world"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Extremophiles",
+    "typo_space_addition": "Extremo philes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycoses",
+    "typo_space_addition": "Myc oses"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytologia",
+    "typo_space_addition": "Phyto logia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biologia",
+    "typo_space_addition": "Bio logia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Diagnostyka",
+    "typo_space_addition": "Diagno styka"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fitoterapia",
+    "typo_space_addition": "Fitoter apia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EcoMat",
+    "typo_space_addition": "Eco Mat"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ecocycles",
+    "typo_space_addition": "Ecoc ycles"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ePublications",
+    "typo_space_addition": "e Publications"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Arabixiv",
+    "typo_space_addition": "Arabix iv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Scholarpedia",
+    "typo_space_addition": "Scholar pedia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Funes",
+    "typo_space_addition": "Fune s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ScienceRise",
+    "typo_space_addition": "Science Rise"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PhytoKeys",
+    "typo_space_addition": "Phyto Keys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemEngineering",
+    "typo_space_addition": "Chem Engineering"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zitteliana",
+    "typo_space_addition": "Zit teliana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pedagogika",
+    "typo_space_addition": "Pedago gika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Catalysts",
+    "typo_space_addition": "Catal ysts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Thorax",
+    "typo_space_addition": "Thor ax"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuropeptides",
+    "typo_space_addition": "Neuro peptides"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ZENODO",
+    "typo_space_addition": "ZEN ODO"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EuroIntervention",
+    "typo_space_addition": "Euro Intervention"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BDJ",
+    "typo_space_addition": "BD J"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Folklore",
+    "typo_space_addition": "Folk lore"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Descentrada",
+    "typo_space_addition": "Descent rada"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Langmuir",
+    "typo_space_addition": "Langmu ir"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Representations",
+    "typo_space_addition": "Represent ations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Palaeoentomology",
+    "typo_space_addition": "Palaeo entomology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fermentation",
+    "typo_space_addition": "Fer mentation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Primatika",
+    "typo_space_addition": "Primat ika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cartography",
+    "typo_space_addition": "Cartogr aphy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Talanta",
+    "typo_space_addition": "Tal anta"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Herpetologica",
+    "typo_space_addition": "Herpet ologica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Seizure",
+    "typo_space_addition": "Seiz ure"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Rhizosphere",
+    "typo_space_addition": "Rhizo sphere"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Synfacts",
+    "typo_space_addition": "Syn facts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Interpretation",
+    "typo_space_addition": "Inter pretation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioinformation",
+    "typo_space_addition": "Bio information"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "netlibrary",
+    "typo_space_addition": "net library"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nematology",
+    "typo_space_addition": "Nema tology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemistryOpen",
+    "typo_space_addition": "Chemistry Open"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "AMBIO",
+    "typo_space_addition": "AMB IO"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioengineering",
+    "typo_space_addition": "Bio engineering"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Géocarrefour",
+    "typo_space_addition": "Géocar refour"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cytoskeleton",
+    "typo_space_addition": "Cyt oskeleton"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chemosphere",
+    "typo_space_addition": "Chemo sphere"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pedosphere",
+    "typo_space_addition": "Pedo sphere"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@MIT",
+    "typo_space_addition": "D Space@MIT"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Intermetallics",
+    "typo_space_addition": "Inter metallics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Rheumatology",
+    "typo_space_addition": "Rheuma tology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zephyrus",
+    "typo_space_addition": "Zephy rus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycology",
+    "typo_space_addition": "Myc ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lithos",
+    "typo_space_addition": "Lith os"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Endocrinology",
+    "typo_space_addition": "Endocrin ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cybernetics",
+    "typo_space_addition": "Cyber netics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytocoenologia",
+    "typo_space_addition": "Phyto coenologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "UCrea",
+    "typo_space_addition": "UC rea"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "RiuNet",
+    "typo_space_addition": "Riu Net"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pancreas",
+    "typo_space_addition": "Pancre as"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Conimbriga",
+    "typo_space_addition": "Conim briga"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Infrastructures",
+    "typo_space_addition": "Infra structures"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Spine",
+    "typo_space_addition": "Sp ine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geochemistry",
+    "typo_space_addition": "Geo chemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ainedidaktiikka",
+    "typo_space_addition": "Aine didaktiikka"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Eos",
+    "typo_space_addition": "E os"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "foresight",
+    "typo_space_addition": "fores ight"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vibration",
+    "typo_space_addition": "Vibr ation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Genes",
+    "typo_space_addition": "Gen es"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tuberculosis",
+    "typo_space_addition": "Tub erculosis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geodiversitas",
+    "typo_space_addition": "Geodivers itas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "medRxiv",
+    "typo_space_addition": "med Rxiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ScholarBank@NUS",
+    "typo_space_addition": "Scholar Bank@NUS"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vegetatio",
+    "typo_space_addition": "Veget atio"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Castanea",
+    "typo_space_addition": "Castane a"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ceramics",
+    "typo_space_addition": "Cer amics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Xenotransplantation",
+    "typo_space_addition": "Xeno transplantation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hepatogastroenterology",
+    "typo_space_addition": "Hepato gastroenterology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytomedicine",
+    "typo_space_addition": "Phyto medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hepatology",
+    "typo_space_addition": "Hep atology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Entomophaga",
+    "typo_space_addition": "Entom ophaga"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pituitary",
+    "typo_space_addition": "Pit uitary"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Herpetozoa",
+    "typo_space_addition": "Herpet ozoa"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Evergreen",
+    "typo_space_addition": "Ever green"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hydrology",
+    "typo_space_addition": "Hydro logy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BIOspektrum",
+    "typo_space_addition": "BIO spektrum"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Democratization",
+    "typo_space_addition": "Democrat ization"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Diglosia",
+    "typo_space_addition": "Diglo sia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "mSystems",
+    "typo_space_addition": "m Systems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Techne",
+    "typo_space_addition": "Tech ne"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Landscapes",
+    "typo_space_addition": "Land scapes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Comunicar",
+    "typo_space_addition": "Comunic ar"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "dspace@UABT",
+    "typo_space_addition": "d space@UABT"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Automatica",
+    "typo_space_addition": "Automatic a"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oikos",
+    "typo_space_addition": "Oiko s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Echocardiography",
+    "typo_space_addition": "Echocardi ography"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ardea",
+    "typo_space_addition": "Ar dea"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MediaTUM",
+    "typo_space_addition": "Media TUM"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ecosystems",
+    "typo_space_addition": "Eco systems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "FlatChem",
+    "typo_space_addition": "Flat Chem"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dysphagia",
+    "typo_space_addition": "Dys phagia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SusMat",
+    "typo_space_addition": "Sus Mat"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nuncius",
+    "typo_space_addition": "Nunc ius"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vikalpa",
+    "typo_space_addition": "Vikal pa"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuroscience",
+    "typo_space_addition": "Neuro science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuropediatrics",
+    "typo_space_addition": "Neurop ediatrics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycorrhiza",
+    "typo_space_addition": "Mycor rhiza"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OceanDocs",
+    "typo_space_addition": "Ocean Docs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Quaternary",
+    "typo_space_addition": "Quatern ary"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Photosynthetica",
+    "typo_space_addition": "Photo synthetica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Langages",
+    "typo_space_addition": "Lang ages"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fagarkivet",
+    "typo_space_addition": "Fag arkivet"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "iScience",
+    "typo_space_addition": "i Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DigitalCommons@USU",
+    "typo_space_addition": "Digital Commons@USU"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chemoecology",
+    "typo_space_addition": "Chemo ecology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioengineered",
+    "typo_space_addition": "Bio engineered"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Virology",
+    "typo_space_addition": "Viro logy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phytoprotection",
+    "typo_space_addition": "Phyto protection"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biometrika",
+    "typo_space_addition": "Biometri ka"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomedicines",
+    "typo_space_addition": "Biomed icines"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pallas",
+    "typo_space_addition": "Pall as"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioanalysis",
+    "typo_space_addition": "Bio analysis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Heterocycles",
+    "typo_space_addition": "Heter ocycles"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ALSUNIYAT",
+    "typo_space_addition": "ALS UNIYAT"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electroanalysis",
+    "typo_space_addition": "Electro analysis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Calphad",
+    "typo_space_addition": "Calpha d"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Palaeontology",
+    "typo_space_addition": "Palae ontology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pastoralism",
+    "typo_space_addition": "Pastoral ism"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biogeosciences",
+    "typo_space_addition": "Bioge osciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Crossroads",
+    "typo_space_addition": "Cross roads"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Immunology",
+    "typo_space_addition": "Immun ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DIGITAL.CSIC",
+    "typo_space_addition": "DIGITAL .CSIC"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Histopathology",
+    "typo_space_addition": "Histopath ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Allpanchis",
+    "typo_space_addition": "All panchis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Phycologia",
+    "typo_space_addition": "Phy cologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomolecules",
+    "typo_space_addition": "Biom olecules"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aphasiology",
+    "typo_space_addition": "Aphasi ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oncogene",
+    "typo_space_addition": "Onc ogene"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Episciences",
+    "typo_space_addition": "Episcien ces"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "figshare",
+    "typo_space_addition": "fig share"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Algorithms",
+    "typo_space_addition": "Algor ithms"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "FACETS",
+    "typo_space_addition": "FAC ETS"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Organicom",
+    "typo_space_addition": "Organic om"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Caucasiana",
+    "typo_space_addition": "Caucas iana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SocArXiv",
+    "typo_space_addition": "Soc ArXiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "GeoHealth",
+    "typo_space_addition": "Geo Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Econometrica",
+    "typo_space_addition": "Econ ometrica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Polímeros",
+    "typo_space_addition": "Polímer os"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Eurosurveillance",
+    "typo_space_addition": "Euro surveillance"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pharmacia",
+    "typo_space_addition": "Pharm acia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "KIVA",
+    "typo_space_addition": "K IVA"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioMetals",
+    "typo_space_addition": "Bio Metals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenEdition",
+    "typo_space_addition": "Open Edition"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psychometrika",
+    "typo_space_addition": "Psychometri ka"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tectonics",
+    "typo_space_addition": "Tect onics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Actuators",
+    "typo_space_addition": "Actu ators"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Membranes",
+    "typo_space_addition": "Membr anes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ZooKeys",
+    "typo_space_addition": "Zoo Keys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kalbotyra",
+    "typo_space_addition": "Kal botyra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Organizacija",
+    "typo_space_addition": "Organiz acija"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aestimatio",
+    "typo_space_addition": "Aestim atio"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sociology",
+    "typo_space_addition": "Soci ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Childhood",
+    "typo_space_addition": "Child hood"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EBioMedicine",
+    "typo_space_addition": "EBio Medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Микробиология",
+    "typo_space_addition": "Микро биология"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Uniciencia",
+    "typo_space_addition": "Unici encia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Heredity",
+    "typo_space_addition": "Hered ity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "TECCIENCIA",
+    "typo_space_addition": "TECC IENCIA"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@IZTECH",
+    "typo_space_addition": "D Space@IZTECH"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomimetics",
+    "typo_space_addition": "Biom imetics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nüsha",
+    "typo_space_addition": "Nü sha"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geoheritage",
+    "typo_space_addition": "Geo heritage"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Landslides",
+    "typo_space_addition": "Lands lides"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bauphysik",
+    "typo_space_addition": "Baup hysik"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Limnologica",
+    "typo_space_addition": "Limnolo gica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cells",
+    "typo_space_addition": "Cell s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Copeia",
+    "typo_space_addition": "Cope ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Agrekon",
+    "typo_space_addition": "Agre kon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurophotonics",
+    "typo_space_addition": "Neuro photonics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Globalizations",
+    "typo_space_addition": "Globalization s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "LUTPub",
+    "typo_space_addition": "LUT Pub"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archaeologia",
+    "typo_space_addition": "Archae ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Enunciación",
+    "typo_space_addition": "Enunci ación"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kybernetik",
+    "typo_space_addition": "Kyber netik"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportes",
+    "typo_space_addition": "Transport es"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Naturalis",
+    "typo_space_addition": "Natural is"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MycoKeys",
+    "typo_space_addition": "Myco Keys"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Anesthesiology",
+    "typo_space_addition": "Anesthes iology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tubercle",
+    "typo_space_addition": "Tub ercle"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Engevista",
+    "typo_space_addition": "Enge vista"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geosciences",
+    "typo_space_addition": "Geosci ences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adaptation",
+    "typo_space_addition": "Adapt ation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Separations",
+    "typo_space_addition": "Separ ations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Araucaria",
+    "typo_space_addition": "Arauc aria"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Eskiyeni",
+    "typo_space_addition": "Eskiy eni"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "microLife",
+    "typo_space_addition": "micro Life"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycotaxon",
+    "typo_space_addition": "Myc otaxon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Prostaglandins",
+    "typo_space_addition": "Prosta glandins"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Acoustics",
+    "typo_space_addition": "Acoust ics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Urbano",
+    "typo_space_addition": "Urb ano"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zebrafish",
+    "typo_space_addition": "Zebraf ish"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuropsychologia",
+    "typo_space_addition": "Neuropsych ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "NeoBiota",
+    "typo_space_addition": "Neo Biota"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CyberOrient",
+    "typo_space_addition": "Cyber Orient"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Exchanges",
+    "typo_space_addition": "Ex changes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DETUROPE",
+    "typo_space_addition": "DE TUROPE"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CoDesign",
+    "typo_space_addition": "Co Design"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archined",
+    "typo_space_addition": "Arch ined"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sarsia",
+    "typo_space_addition": "Sars ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Intereconomics",
+    "typo_space_addition": "Inter economics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Antiquity",
+    "typo_space_addition": "Antiqu ity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Respirology",
+    "typo_space_addition": "Respi rology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cureus",
+    "typo_space_addition": "Cure us"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Anaplastology",
+    "typo_space_addition": "Anap lastology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemInform",
+    "typo_space_addition": "Chem Inform"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bragantia",
+    "typo_space_addition": "Bragan tia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biosensors",
+    "typo_space_addition": "Bios ensors"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cladistics",
+    "typo_space_addition": "Clad istics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioethanol",
+    "typo_space_addition": "Bio ethanol"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Wetlands",
+    "typo_space_addition": "Wet lands"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Boreas",
+    "typo_space_addition": "Bore as"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CiencIPCA",
+    "typo_space_addition": "Cienc IPCA"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sadhana",
+    "typo_space_addition": "Sadh ana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psychiatry",
+    "typo_space_addition": "Psychiatr y"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioTechnologia",
+    "typo_space_addition": "Bio Technologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Envigogika",
+    "typo_space_addition": "Envigo gika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PharmacoEconomics",
+    "typo_space_addition": "Pharmaco Economics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioEssays",
+    "typo_space_addition": "Bio Essays"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Limnology",
+    "typo_space_addition": "Limn ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Osmia",
+    "typo_space_addition": "Osm ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Metrologia",
+    "typo_space_addition": "Metro logia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomass",
+    "typo_space_addition": "Biom ass"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adalya",
+    "typo_space_addition": "Adaly a"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Econometrics",
+    "typo_space_addition": "Econ ometrics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biofouling",
+    "typo_space_addition": "Bio fouling"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adipocyte",
+    "typo_space_addition": "Adipo cyte"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Xenobiotica",
+    "typo_space_addition": "Xeno biotica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IRBM",
+    "typo_space_addition": "IR BM"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kybernetika",
+    "typo_space_addition": "Kyber netika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Methane",
+    "typo_space_addition": "Meth ane"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ethnologies",
+    "typo_space_addition": "Ethn ologies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomicrofluidics",
+    "typo_space_addition": "Biomicro fluidics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MethodsX",
+    "typo_space_addition": "Methods X"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Magnetochemistry",
+    "typo_space_addition": "Magneto chemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transinformação",
+    "typo_space_addition": "Transin formação"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cytokine",
+    "typo_space_addition": "Cyt okine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Península",
+    "typo_space_addition": "Pen ínsula"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DDFV",
+    "typo_space_addition": "DD FV"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Leukemia",
+    "typo_space_addition": "Leuk emia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "eEarth",
+    "typo_space_addition": "e Earth"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ReDivia",
+    "typo_space_addition": "Re Divia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MLN",
+    "typo_space_addition": "ML N"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hydrometallurgy",
+    "typo_space_addition": "Hydro metallurgy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Plasmid",
+    "typo_space_addition": "Plas mid"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chirality",
+    "typo_space_addition": "Chira lity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemNanoMat",
+    "typo_space_addition": "Chem NanoMat"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kerntechnik",
+    "typo_space_addition": "Kernte chnik"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Fractals",
+    "typo_space_addition": "Fract als"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "univOAK",
+    "typo_space_addition": "univ OAK"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "VIRTA",
+    "typo_space_addition": "VIR TA"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Erdkunde",
+    "typo_space_addition": "Erd kunde"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SEANOE",
+    "typo_space_addition": "SEAN OE"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Radiocarbon",
+    "typo_space_addition": "Radio carbon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Gephyra",
+    "typo_space_addition": "Gephy ra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "M@n@gement",
+    "typo_space_addition": "M@n @gement"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Placenta",
+    "typo_space_addition": "Plac enta"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pharmacopsychiatry",
+    "typo_space_addition": "Pharmac opsychiatry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Toxins",
+    "typo_space_addition": "Tox ins"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurocomputing",
+    "typo_space_addition": "Neuro computing"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Politikon",
+    "typo_space_addition": "Polit ikon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Filomat",
+    "typo_space_addition": "Filoma t"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Graellsia",
+    "typo_space_addition": "Graell sia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aposta",
+    "typo_space_addition": "A posta"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Immunotechnology",
+    "typo_space_addition": "Immun otechnology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Theranostics",
+    "typo_space_addition": "Thera nostics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ecosistemas",
+    "typo_space_addition": "Ecos istemas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenAccess@IKU",
+    "typo_space_addition": "Open Access@IKU"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PathoGenetics",
+    "typo_space_addition": "Patho Genetics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenArchive@CBS",
+    "typo_space_addition": "Open Archive@CBS"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nutrafoods",
+    "typo_space_addition": "Nutra foods"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CLCWeb",
+    "typo_space_addition": "CLC Web"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace@TEDU",
+    "typo_space_addition": "D Space@TEDU"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SmartMat",
+    "typo_space_addition": "Smart Mat"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cognition",
+    "typo_space_addition": "Cogn ition"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioRisk",
+    "typo_space_addition": "Bio Risk"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "InterSedes",
+    "typo_space_addition": "Inter Sedes"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "MicrobiologyOpen",
+    "typo_space_addition": "Microbiology Open"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PeerJ",
+    "typo_space_addition": "Peer J"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Symmetry",
+    "typo_space_addition": "Symmetr y"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Joule",
+    "typo_space_addition": "Jou le"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Theseus",
+    "typo_space_addition": "These us"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Forests",
+    "typo_space_addition": "Forest s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "edoc",
+    "typo_space_addition": "ed oc"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psykhe",
+    "typo_space_addition": "Psy khe"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neonatology",
+    "typo_space_addition": "Neon atology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "NutriXiv",
+    "typo_space_addition": "Nutri Xiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pergamos",
+    "typo_space_addition": "Perg amos"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vaccine",
+    "typo_space_addition": "Vacc ine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geografie",
+    "typo_space_addition": "Geogra fie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hoehnea",
+    "typo_space_addition": "Hoeh nea"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Galáxia",
+    "typo_space_addition": "Galáxi a"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Antipode",
+    "typo_space_addition": "Antip ode"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "engrXiv",
+    "typo_space_addition": "engr Xiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biodiversity",
+    "typo_space_addition": "Biodiver sity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Acarologia",
+    "typo_space_addition": "Acar ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PsyArXiv",
+    "typo_space_addition": "Psy ArXiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zoosystema",
+    "typo_space_addition": "Zoos ystema"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Constellations",
+    "typo_space_addition": "Constell ations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Rangifer",
+    "typo_space_addition": "Rang ifer"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Brittonia",
+    "typo_space_addition": "Britton ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportmetrica",
+    "typo_space_addition": "Transport metrica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SciVie",
+    "typo_space_addition": "Sci Vie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Astrobiology",
+    "typo_space_addition": "Astro biology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Circulation",
+    "typo_space_addition": "Circ ulation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioDiscovery",
+    "typo_space_addition": "Bio Discovery"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ecohydrology",
+    "typo_space_addition": "Eco hydrology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Anthropocene",
+    "typo_space_addition": "Anthrop ocene"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Galaxies",
+    "typo_space_addition": "Gal axies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Heliyon",
+    "typo_space_addition": "Heli yon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioScience",
+    "typo_space_addition": "Bio Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Algorithmica",
+    "typo_space_addition": "Algo rithmica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Medžiagotyra",
+    "typo_space_addition": "Medžiag otyra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Holos",
+    "typo_space_addition": "Hol os"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "GeoInformatica",
+    "typo_space_addition": "Geo Informatica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Resgate",
+    "typo_space_addition": "Res gate"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biogeographia",
+    "typo_space_addition": "Biogeographi a"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nukleonika",
+    "typo_space_addition": "Nuk leonika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Behaviormetrika",
+    "typo_space_addition": "Behaviorm etrika"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lithosphere",
+    "typo_space_addition": "Lith osphere"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycoscience",
+    "typo_space_addition": "Myc oscience"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archaeometry",
+    "typo_space_addition": "Archaeomet ry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tourism",
+    "typo_space_addition": "Tour ism"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aerospace",
+    "typo_space_addition": "Aeros pace"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Scipedia",
+    "typo_space_addition": "Scip edia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bahastra",
+    "typo_space_addition": "Baha stra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Toxicon",
+    "typo_space_addition": "Tox icon"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ophelia",
+    "typo_space_addition": "Oph elia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Healthcare",
+    "typo_space_addition": "Health care"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuropharmacology",
+    "typo_space_addition": "Neuro pharmacology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Petrology",
+    "typo_space_addition": "Petro logy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biochimie",
+    "typo_space_addition": "Biochim ie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zoology",
+    "typo_space_addition": "Zo ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycopathologia",
+    "typo_space_addition": "Myc opathologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Spermatogenesis",
+    "typo_space_addition": "Sper matogenesis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "NeuroImage",
+    "typo_space_addition": "Neuro Image"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Economicus",
+    "typo_space_addition": "Economic us"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cytotherapy",
+    "typo_space_addition": "Cyto therapy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Beverages",
+    "typo_space_addition": "Bever ages"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Биофизика",
+    "typo_space_addition": "Биофиз ика"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biosystems",
+    "typo_space_addition": "Bios ystems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Midwifery",
+    "typo_space_addition": "Midwif ery"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurotherapeutics",
+    "typo_space_addition": "Neuro therapeutics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zootaxa",
+    "typo_space_addition": "Zoo taxa"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Arqueologia",
+    "typo_space_addition": "Arque ologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Kyklos",
+    "typo_space_addition": "Kyk los"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PolyPublie",
+    "typo_space_addition": "Poly Publie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Movebank",
+    "typo_space_addition": "Move bank"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ROBIS",
+    "typo_space_addition": "ROBI S"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zygote",
+    "typo_space_addition": "Zygo te"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Therapies",
+    "typo_space_addition": "Ther apies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Epidemiology",
+    "typo_space_addition": "Epidemi ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Histochemie",
+    "typo_space_addition": "Histo chemie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "eLife",
+    "typo_space_addition": "e Life"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Obesity",
+    "typo_space_addition": "Obes ity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lankesteriana",
+    "typo_space_addition": "Lankester iana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Docusalut",
+    "typo_space_addition": "Docus alut"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioelectrochemistry",
+    "typo_space_addition": "Bio electrochemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zoomorphology",
+    "typo_space_addition": "Zoomorph ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geofluids",
+    "typo_space_addition": "Geof luids"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Desalination",
+    "typo_space_addition": "Desal ination"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "OpenAgrar",
+    "typo_space_addition": "Open Agrar"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Stochastics",
+    "typo_space_addition": "Sto chastics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bonplandia",
+    "typo_space_addition": "Bonpland ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Signata",
+    "typo_space_addition": "Sign ata"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geomatics",
+    "typo_space_addition": "Geomatic s"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adansonia",
+    "typo_space_addition": "Adans onia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Петрология",
+    "typo_space_addition": "Петр ология"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuroinformatics",
+    "typo_space_addition": "Neuro informatics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Taxon",
+    "typo_space_addition": "Tax on"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Horticulturae",
+    "typo_space_addition": "Horti culturae"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Gayana",
+    "typo_space_addition": "Gay ana"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ICCD",
+    "typo_space_addition": "ICC D"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Theriogenology",
+    "typo_space_addition": "Theriogen ology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dendrochronologia",
+    "typo_space_addition": "Dendro chronologia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioelectromagnetics",
+    "typo_space_addition": "Bio electromagnetics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biolinguistics",
+    "typo_space_addition": "Biolinguis tics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Naturae",
+    "typo_space_addition": "Natur ae"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Adicciones",
+    "typo_space_addition": "Adic ciones"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lethaia",
+    "typo_space_addition": "Leth aia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geothermics",
+    "typo_space_addition": "Geo thermics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IASSpublic",
+    "typo_space_addition": "IASS public"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "RIUVic",
+    "typo_space_addition": "RIU Vic"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Epidemics",
+    "typo_space_addition": "Epid emics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "LawArXiv",
+    "typo_space_addition": "Law ArXiv"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hypertension",
+    "typo_space_addition": "Hypertens ion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Rodriguésia",
+    "typo_space_addition": "Rodrigués ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Babylonia",
+    "typo_space_addition": "Babylon ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Epilepsia",
+    "typo_space_addition": "Epileps ia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cybergeo",
+    "typo_space_addition": "Cyber geo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "CORD",
+    "typo_space_addition": "C ORD"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuroradiology",
+    "typo_space_addition": "Neuro radiology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Icarus",
+    "typo_space_addition": "Icar us"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Histochemistry",
+    "typo_space_addition": "Histo chemistry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "GigaScience",
+    "typo_space_addition": "Giga Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geochronometria",
+    "typo_space_addition": "Geo chronometria"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "udiMundus",
+    "typo_space_addition": "udi Mundus"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Géotechnique",
+    "typo_space_addition": "Gé otechnique"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geoderma",
+    "typo_space_addition": "Geoder ma"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "SibScript",
+    "typo_space_addition": "Sib Script"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lingua",
+    "typo_space_addition": "Ling ua"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Technovation",
+    "typo_space_addition": "Techn ovation"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lipids",
+    "typo_space_addition": "Lip ids"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurology",
+    "typo_space_addition": "Neuro logy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "InfoMat",
+    "typo_space_addition": "Info Mat"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PalZ",
+    "typo_space_addition": "Pal Z"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Holzforschung",
+    "typo_space_addition": "Holz forschung"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DepositOnce",
+    "typo_space_addition": "Deposit Once"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ChemMedChem",
+    "typo_space_addition": "ChemMed Chem"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mouvements",
+    "typo_space_addition": "Mou vements"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biomaterials",
+    "typo_space_addition": "Biom aterials"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Batteries",
+    "typo_space_addition": "Batter ies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sintaxis",
+    "typo_space_addition": "Sint axis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Gastroenterology",
+    "typo_space_addition": "Gastro enterology"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "dataset",
+    "typo_space_addition": "data set"
+  }
+]

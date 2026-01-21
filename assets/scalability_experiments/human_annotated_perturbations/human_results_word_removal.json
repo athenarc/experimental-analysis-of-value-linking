@@ -1,0 +1,86 @@
+[
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ana I Uhernik",
+    "word_removal": "Ana Uhernik"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michael A, Sayette",
+    "word_removal": "Michael Sayette"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "economics and business",
+    "word_removal": "economics business"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Pharmaceutical industry/Pharmacology",
+    "word_removal": "Pharmaceutical industry"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Welcome to EnerMaps Gateway! Find the latest scientific data.",
+    "word_removal": "Welcome to EnerMaps Gateway! Find latest scientific data."
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Digital Humanities and Cultural Heritage",
+    "word_removal": "Digital Humanities Cultural Heritage"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurologia Medico-Chirurgica",
+    "word_removal": "Neurologia Chirurgica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "The EuroBiotech Journal",
+    "word_removal": "EuroBiotech Journal"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Murcia : Universidad de Murcia, Servicio de Publicaciones",
+    "word_removal": "Universidad de Murcia, Servicio de Publicaciones"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dalla Stamperia Giuliari,",
+    "word_removal": "Dalla Giuliari"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Humanitarian logistics in disaster relief operations",
+    "word_removal": "logistics in disaster relief operations"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Yellow Eel",
+    "word_removal": "Yellow Eel"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Publication Repository Aggregator",
+    "word_removal": "Publication Repository"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Journal Aggregator/Publisher",
+    "word_removal": "Aggregator/Publisher"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "beopen",
+    "typo_transposition": "beoepn"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nannan Zhao",
+    "typo_transposition": "Nanann Zhao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Reshma R Parekar",
+    "typo_transposition": "Reshma R Paerkar"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "chemical physics",
+    "typo_transposition": "chemical phsyics"
+  },
+
+  {
+    "table": "community",
+    "column": "name",
+    "original": "DARIAH EU",
+    "typo_transposition": "DARIAH UE"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Polar Record",
+    "typo_transposition": "Polar Recrod"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of Kerbala",
+    "typo_transposition": "University of Kebrala"
+  }
+]

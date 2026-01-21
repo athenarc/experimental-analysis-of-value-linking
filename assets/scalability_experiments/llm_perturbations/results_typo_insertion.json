@@ -1,0 +1,4785 @@
+[
+  {
+    "distinct_columns": [
+      "acronym",
+      "country",
+      "fullname",
+      "label",
+      "name",
+      "officialname",
+      "publisher",
+      "title",
+      "type"
+    ]
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pakistan Medical Association",
+    "typo_insertion": "Pakistann Medical Association"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ainedidaktiikka-lehti",
+    "typo_insertion": "Ainedidaktiikka-lehiti"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Blackwell Publishing Ltd",
+    "typo_insertion": "Blackwell Puiblishing Ltd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Modestum Publishing Ltd",
+    "typo_insertion": "Modestum Puiblishing Ltd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Quintessence Publishing",
+    "typo_insertion": "Quintessence Puiblishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Lattice Science Publication (LSP)",
+    "typo_insertion": "Lattice Sciencte Publication (LSP)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Bio-Protocol, LLC",
+    "typo_insertion": "Bio-Protocoll, LLC"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Engineering Sciences Press",
+    "typo_insertion": "Engineering Scienctes Press"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Physical Society (APS)",
+    "typo_insertion": "American Physicall Society (APS)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Medical Informatics Association",
+    "typo_insertion": "American Medical Informatics Associaation"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mongolian Journals Online",
+    "typo_insertion": "Mongolian Journlals Online"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Czech Academy of Agricultural Sciences",
+    "typo_insertion": "Czech Academy of Agriculturaal Sciences"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "GTAP Working Paper",
+    "typo_insertion": "GTAP Working Papeer"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ISEAS Publishing",
+    "typo_insertion": "ISEAS Puiblishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Landscape Online",
+    "typo_insertion": "Landscape Onliine"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Grupo Compas",
+    "typo_insertion": "Grupo Comapas"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ommega Online Publishers",
+    "typo_insertion": "Ommega Onliene Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Archaeopress Publishing Ltd",
+    "typo_insertion": "Archaeopress Puiblishing Ltd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Asian Journal of Chemistry",
+    "typo_insertion": "Asian Journall of Chemistry"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Society for Agriculture and Arid Ecology Research",
+    "typo_insertion": "Society for Agriculture and Arid Ecology Researcch"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ORNL Environmental Sciences Division",
+    "typo_insertion": "ORNL Environmental Sciences Divisioon"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wageningen Food & Biobased Research",
+    "typo_insertion": "Wageningen Food & Biobased Researcch"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IMAPS - International Microelectronics Assembly and Packaging Society",
+    "typo_insertion": "IMAPSS - International Microelectronics Assembly and Packaging Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Korean Neurosurgical Society",
+    "typo_insertion": "Korean Neurosurgicaal Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Japanese Circulation Society",
+    "typo_insertion": "Japanese Circulatioon Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "European Respiratory Society (ERS)",
+    "typo_insertion": "European Respiratory Societey (ERS)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Korean Society of Clean Technology",
+    "typo_insertion": "The Korean Society of Clean Technologuy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "RAND Corporation",
+    "typo_insertion": "RAND Corportation"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Open Book Publishers",
+    "typo_insertion": "Open Boook Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Animal Hospital Association",
+    "typo_insertion": "American Animall Hospital Association"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Field Museum of Natural History,",
+    "typo_insertion": "Field Mueseum of Natural History,"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Applied Energy Innovation Institute (AEii)",
+    "typo_insertion": "Applied Energy Innovation Institute (AEiin)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Media Sphere Publishing Group",
+    "typo_insertion": "Media Spheere Publishing Group"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Seismological Society of America (SSA)",
+    "typo_insertion": "Seismological Society of Amerrica (SSA)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ABC Journals",
+    "typo_insertion": "ABC Journlals"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Associacao Portuguesa dos Recursos Hidricos (APRH)",
+    "typo_insertion": "Associacao Portuguesa dos Recursos Hidricos (APRHH)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universidad de Costa Rica",
+    "typo_insertion": "Universidad de Costa Ricia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Andover House Inc",
+    "typo_insertion": "Andover Housse Inc"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Maad Rayan Publishing Company",
+    "typo_insertion": "Maad Raayan Publishing Company"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Fundberichte aus Baden-Württemberg",
+    "typo_insertion": "Fundberichte aus Baden-Württemberbg"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Berghahn Books",
+    "typo_insertion": "Berghahn Boosks"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Indian Society for Education and Environment",
+    "typo_insertion": "Indian Society for Educations and Environment"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Observatoire des Abeilles",
+    "typo_insertion": "Observatoire des Abeillees"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Vacuum Society",
+    "typo_insertion": "American Vacuums Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Norwegian Medical Association",
+    "typo_insertion": "Norwegian Medicaal Association"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Thomas Telford Ltd.",
+    "typo_insertion": "Thomas Telford Ltdt."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IOSR Journals",
+    "typo_insertion": "IOSR Journales"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Instituto Colombiano de Antropologia e Historia (ICANH)",
+    "typo_insertion": "Instituto Colombiano de Antropologia e Historia (ICANHh)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Japan Atherosclerosis Society",
+    "typo_insertion": "Japan Atherosclerosis Societey"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Presses universitaires de Caen",
+    "typo_insertion": "Presses universitaires de Caeen"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institute of Archaeology",
+    "typo_insertion": "Institutue of Archaeology"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Marine Biological Association of India",
+    "typo_insertion": "Marine Biological Association of Indiia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Matrix Medical Communications",
+    "typo_insertion": "Matrix Medicaal Communications"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Equinox Publishing",
+    "typo_insertion": "Equinox Puiblishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Washington, DC: World Bank",
+    "typo_insertion": "Washington, DCC: World Bank"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Oekom Publishers GmbH",
+    "typo_insertion": "Oekom Publischers GmbH"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Computers, Materials and Continua (Tech Science Press)",
+    "typo_insertion": "Computers, Materials and Continua (Tech Science Presss)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universidad Complutense de Madrid (UCM)",
+    "typo_insertion": "Universidad Complutense de Madridd (UCM)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "World Bank",
+    "typo_insertion": "World Baank"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of Bath",
+    "typo_insertion": "University of Baath"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of Westminster Press",
+    "typo_insertion": "University of Westminsterr Press"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Korean Society of Epidemiology",
+    "typo_insertion": "Korean Society of Epideomiology"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Society of Agricultural and Biological Engineers (ASABE)",
+    "typo_insertion": "American Society of Agricultural and Biological Engineers (ASABEe)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Community of Spatial Planning and Sustainable Development",
+    "typo_insertion": "International Community of Spatial Planninng and Sustainable Development"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Association for Energy Economics (IAEE)",
+    "typo_insertion": "International Association for Energy Economics (IAEEE)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pakistan Journal of Agricultural Sciences",
+    "typo_insertion": "Pakistan Journaal of Agricultural Sciences"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Review of African Political Economy",
+    "typo_insertion": "Review of Africain Political Economy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ClinMed International Library",
+    "typo_insertion": "ClinMed Internationall Library"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Turkish Online Journal of Design, Art and Communication (TOJDAC)",
+    "typo_insertion": "Turkish Online Journal of Design, Art and Communication (TOJDACc)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Sociedad Espanola de Pedagogia",
+    "typo_insertion": "Sociedad Espanola de Pedagogiia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Clay Minerals Society",
+    "typo_insertion": "Clay Minerales Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Natural Areas Journal",
+    "typo_insertion": "Natural Areass Journal"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Coastal Education and Research Foundation",
+    "typo_insertion": "Coastal Educations and Research Foundation"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Royal Swedish Academy of Sciences",
+    "typo_insertion": "Royal Sweedish Academy of Sciences"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Cetus Publishing",
+    "typo_insertion": "Cetus Puiblishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "South African Medical Association NPC",
+    "typo_insertion": "South Africain Medical Association NPC"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universitas Airlangga",
+    "typo_insertion": "Universitas Airlanggga"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Heidelberg University Library",
+    "typo_insertion": "Heidelberg University Libraray"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Society for the Study of Evolution",
+    "typo_insertion": "The Society for the Study of Evolutioin"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institute for Fiscal Studies",
+    "typo_insertion": "Institute for Fiscal Stuidies"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Society for Horticultural Science",
+    "typo_insertion": "American Society for Horticultural Scieence"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Global University Network for Innovation (GUNI)",
+    "typo_insertion": "Global Univerisity Network for Innovation (GUNI)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "A N Marquis & Company",
+    "typo_insertion": "A N Marquis & Companny"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Association for the Advancement of Science (AAAS)",
+    "typo_insertion": "American Association for the Advancement of Sciencce (AAAS)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Research Alliance for Sustainable Development",
+    "typo_insertion": "International Researcgh Alliance for Sustainable Development"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "K. Gerold",
+    "typo_insertion": "K. Gereold"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Innovative Medical Sciences and Technologies (AIMSCI) Inc.",
+    "typo_insertion": "American Innovative Medical Sciences and Technologies (AIMSCIA) Inc."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Blackwell Publishing",
+    "typo_insertion": "Blackwell Puiblishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Oceanography Society",
+    "typo_insertion": "The Oceanography Societey"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wageningen University and Research",
+    "typo_insertion": "Wageningen University and Researcgh"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Tyumen Scientific Center of the SB RAS",
+    "typo_insertion": "Tyumen Scientific Centeer of the SB RAS"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Inter Research",
+    "typo_insertion": "Inter Researcch"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Transnational Press London",
+    "typo_insertion": "Transnational Press Londoon"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ENGG Journals Publications",
+    "typo_insertion": "ENGG Journlals Publications"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MedCrave Group, LLC",
+    "typo_insertion": "MedCrave Groupl, LLC"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SMEITS",
+    "typo_insertion": "SMEITTS"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Siberian State Automobile and Highway University (SibADI)",
+    "typo_insertion": "Siberian State Automobile and Highway University (SibADId)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Veterinary World",
+    "typo_insertion": "Veterinary Woorld"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "UNS Solo",
+    "typo_insertion": "UNSS Solo"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Procon, Ltd.",
+    "typo_insertion": "Procon, Lt.d."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Geological Society of America",
+    "typo_insertion": "Geological Society of Amaerica"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Geophysical Union (AGU)",
+    "typo_insertion": "American Geophysical Union (AGUA)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universidad Catolica San Pablo",
+    "typo_insertion": "Universidad Catolica San Pabllo"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "PANGAEA - Data Publisher for Earth & Environmental Science",
+    "typo_insertion": "PANGAEAA - Data Publisher for Earth & Environmental Science"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kaunas University of Technology (KTU)",
+    "typo_insertion": "Kaunas University of Technology (KTTU)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Union of Crystallography (IUCr)",
+    "typo_insertion": "International Union of Crystalllography (IUCr)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "LPPM Universitas Muhammadiyah Riau",
+    "typo_insertion": "LPPM Universitas Muhammadiyah Riaau"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "OAIMDD - EcoZone Publishing House",
+    "typo_insertion": "OAIMDD - EcoZone Publishing Houspe"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Society of Cytology",
+    "typo_insertion": "International Society of Cytolo gy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Editora de Livros IABS",
+    "typo_insertion": "Editora de Livros IABBS"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institute of Philosophy, Russian Academy of Sciences",
+    "typo_insertion": "Institute of Philosophya, Russian Academy of Sciences"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Korean Society for Biochemistry and Molecular Biology - BMB Reports",
+    "typo_insertion": "Korean Society for Biochemistry and Molecular Biology - BMB Reporsts"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Sciedu Press",
+    "typo_insertion": "Sciedu Preess"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Humboldt Field Research Institute",
+    "typo_insertion": "Humboldt Field Researcch Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kluwer Academic Publishers-Plenum Publishers",
+    "typo_insertion": "Kluwer Academic Publishers-Plenum Publisherrs"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Society of Plant Physiologists",
+    "typo_insertion": "American Society of Plant Physioloigists"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Physica-Verlag HD",
+    "typo_insertion": "Physica-Verlag HHD"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Acarological Studies, DergiPark",
+    "typo_insertion": "Acarological Studiess, DergiPark"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Portico",
+    "typo_insertion": "Porticco"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Korean Pharmacopuncture Institute",
+    "typo_insertion": "Korean Pharamacopuncture Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "HARD Publishing Company",
+    "typo_insertion": "HARD Publishing Companny"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Electra",
+    "typo_insertion": "Electtra"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioExcel",
+    "typo_insertion": "BioExceel"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "European Federation of Associations and Centres of Irish Studies (EFACIS)",
+    "typo_insertion": "European Federation of Associations and Centres of Irish Studies (EFACISS)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Jenny Stanford Publishing",
+    "typo_insertion": "Jenny Stanfords Publishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Canadian Institute of Forestry",
+    "typo_insertion": "Canadian Institute of Forrestry"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pensoft Publishers",
+    "typo_insertion": "Pensofth Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Korean Academy of Leadership",
+    "typo_insertion": "Korean Academya of Leadership"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Littman Library of Jewish Civilization",
+    "typo_insertion": "The Littman Libraray of Jewish Civilization"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institut d'Educacio Fisica de Catalunya (INEFC)",
+    "typo_insertion": "Institut d'Educacio Fisica de Catalunya (INEFCC)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Independent Journal of Management and Production",
+    "typo_insertion": "Independent Journal of Managemeent and Production"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Japan Academy",
+    "typo_insertion": "Japan Academey"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Austrian Computer Society (OCG)",
+    "typo_insertion": "Austrian Computerc Society (OCG)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Peter Lang, International Academic Publishers",
+    "typo_insertion": "Peter Lang, International Academic Publisheers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Corporacion Colombiana de Investigacion Agropecuaria (Corpoica)",
+    "typo_insertion": "Corporacion Colombiana de Investigacion Agropecuaria (Corpoicaa)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universidad Nacional de Costa Rica",
+    "typo_insertion": "Universidad Nacional de Costa Ricia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Electromagnetics Academy",
+    "typo_insertion": "The Electromagnetics Academay"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Dublin Institute of Technology",
+    "typo_insertion": "Dublin Institute of Technologuy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioMed Research Publishers",
+    "typo_insertion": "BioMed Researcch Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Serious Games Society",
+    "typo_insertion": "Serious Gamess Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mathematical Sciences Publishers",
+    "typo_insertion": "Mathematical Sciencess Publishers"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ACM Press",
+    "typo_insertion": "ACM Preess"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "ARKAT USA, Inc.",
+    "typo_insertion": "ARKAT USAA, Inc."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "De Boeck Supérieur",
+    "typo_insertion": "De Boeck Supeérieur"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Japan Institute of Heterocyclic Chemistry",
+    "typo_insertion": "The Japan Institute of Heterocyclic Chemistrny"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AfricaJournals",
+    "typo_insertion": "AfricaJournales"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wydawnictwo Naukowe Gabriel Borowski (WNGB)",
+    "typo_insertion": "Wydawnictwo Naukowe Gabriel Borowskii (WNGB)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pleiades Publishing Ltd",
+    "typo_insertion": "Pleiades Puiblishing Ltd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Design Society",
+    "typo_insertion": "The Design Societey"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Association Babylonia Switzerland",
+    "typo_insertion": "Association Babylonia Switzerlanfd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SE Dnipropetrovsk Medical Academy of Health Ministry of Ukraine",
+    "typo_insertion": "SE Dnipropetrovsk Medicaal Academy of Health Ministry of Ukraine"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EDP Sciences",
+    "typo_insertion": "EDP Sciencces"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pulp and Paper Research Institute",
+    "typo_insertion": "Pulp and Paper Researcch Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Nencki Institute of Experimental Biology, Polish Academy of Sciences",
+    "typo_insertion": "The Nencki Institute of Experimental Biology, Polish Academy of Scieneces"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Global IT Research Institute (GIRI)",
+    "typo_insertion": "Global IT Researcch Institute (GIRI)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Scientific Journals Publishing House",
+    "typo_insertion": "Scientific Journals Publishing Housse"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Zenodo",
+    "typo_insertion": "Zenoedo"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International Digital Organization for Scientific Information (IDOSI)",
+    "typo_insertion": "International Digital Organizatioin for Scientific Information (IDOSI)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Belgorod National Research University",
+    "typo_insertion": "Belgorod National Researcch University"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "IOS Press",
+    "typo_insertion": "IOSS Press"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institut Veolia",
+    "typo_insertion": "Institut Veolija"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Consilium Medicum",
+    "typo_insertion": "Consilium Medicaum"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Apollo - University of Cambridge Repository",
+    "typo_insertion": "Apollo - University of Cambridghe Repository"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Polish Society of Microbiologists",
+    "typo_insertion": "Polish Society of Microbioloegists"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Journal Press India",
+    "typo_insertion": "Journal Press Indiia"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Japan Society for Bioscience, Biotechnology, and Agrochemistry",
+    "typo_insertion": "Japan Society for Bioscience, Biotechnology, and Agrochemistray"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hindawi Limited",
+    "typo_insertion": "Hindawi Limiteed"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Annual Reviews",
+    "typo_insertion": "Annual Revieews"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Syncsci Publishing Pte., Ltd.",
+    "typo_insertion": "Syncscii Publishing Pte., Ltd."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "MIT Press",
+    "typo_insertion": "MIT Preess"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Environmental Research Institute, Chulalongkorn University",
+    "typo_insertion": "Environmental Research Institute, Chulalongkorn Universituy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Sociedade Entomologica do Brasil",
+    "typo_insertion": "Sociedade Entomologica do Brasiel"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Springer London",
+    "typo_insertion": "Springer Lonodon"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Foundation of Computer Science",
+    "typo_insertion": "Foundation of Computerc Science"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Society of Reclamation Sciences (ASRS)",
+    "typo_insertion": "American Society of Reclamation Scieneces (ASRS)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University Library J. C. Senckenberg",
+    "typo_insertion": "University Libraray J. C. Senckenberg"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "strategic, defence & security studies",
+    "typo_insertion": "strategic, defences & security studies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Analytic philosophy/Empiricism",
+    "typo_insertion": "Analytic phillosophy/Empiricism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "health sciences",
+    "typo_insertion": "health scienctes"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Carbohydrate chemistry/Carbohydrates",
+    "typo_insertion": "Carbohydrate chemeistry/Carbohydrates"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Prostate cancer/Male genital surgery",
+    "typo_insertion": "Prostaate cancer/Male genital surgery"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "information systems",
+    "typo_insertion": "information sysstems"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Pharmacokinetics/Life sciences industry",
+    "typo_insertion": "Pharmacokinetics/Life scienctes industry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "People in health professions/People working with animals",
+    "typo_insertion": "People in health professions/People working with animaels"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "international relations",
+    "typo_insertion": "international relatiions"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "legal & forensic medicine",
+    "typo_insertion": "legal & forensice medicine"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Pediatric cancers/Anatomical pathology",
+    "typo_insertion": "Pediatric canceers/Anatomical pathology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Social philosophy/Capitalism",
+    "typo_insertion": "Social phillosophy/Capitalism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sex crimes/Sexual abuse",
+    "typo_insertion": "Sex crimes/Sexuall abuse"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Holography/Black holes",
+    "typo_insertion": "Holographey/Black holes"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Growth hormones/Human female reproductive system",
+    "typo_insertion": "Growth hormoness/Human female reproductive system"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Temperature/Thermodynamics",
+    "typo_insertion": "Temperature/Thermodynamiocs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Oral mucosal pathology/Conditions of the mucous membranes",
+    "typo_insertion": "Oral mucosal pathologys/Conditions of the mucous membranes"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Transition metals/Cofactors",
+    "typo_insertion": "Transition metalls/Cofactors"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Amino acids/Chemical articles with multiple compound IDs",
+    "typo_insertion": "Amino aacids/Chemical articles with multiple compound IDs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Behavior",
+    "typo_insertion": "Behavioer"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Psychometrics/Quality management",
+    "typo_insertion": "Psychometrics/Quality managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Plasma physics/Astrophysics",
+    "typo_insertion": "Plasmas physics/Astrophysics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Discourse analysis/Semantics",
+    "typo_insertion": "Discourse analysiss/Semantics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "obstetrics & reproductive medicine",
+    "typo_insertion": "obstetricss & reproductive medicine"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bone fractures/Acute pain",
+    "typo_insertion": "Bone fracturess/Acute pain"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Dynamical systems/Complex systems theory",
+    "typo_insertion": "Dynamical systemss/Complex systems theory"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "operations research",
+    "typo_insertion": "operations researcgh"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "archaeology",
+    "typo_insertion": "archaeologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bariatrics/Digestive system surgery",
+    "typo_insertion": "Bariatrics/Digestive system surgerry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Ligands/Chemical bonding",
+    "typo_insertion": "Ligands/Chemical bondinng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Network performance/Road traffic management",
+    "typo_insertion": "Network performanace/Road traffic management"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Crewed spacecraft/Astrodynamics",
+    "typo_insertion": "Crewed spacetcraft/Astrodynamics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Crewed spacecraft/Embedded systems",
+    "typo_insertion": "Crewed spacecrafte/Embedded systems"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Childhood/Pediatrics",
+    "typo_insertion": "Childhood/Pediatriscs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Tourism/Hospitality management",
+    "typo_insertion": "Tourism/Hospitality managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "energy",
+    "typo_insertion": "energgy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sustainable urban planning/Urban planning",
+    "typo_insertion": "Sustainable urbaan planning/Urban planning"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Applications of computer vision/Computer vision/Image processing",
+    "typo_insertion": "Applications of computer vision/Computer vision/Image proceessing"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sexual acts/Interpersonal relationships",
+    "typo_insertion": "Sexual actss/Interpersonal relationships"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mechanical vibrations/Earthquake engineering",
+    "typo_insertion": "Mechanical vibrateions/Earthquake engineering"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nuclear physics/Star types",
+    "typo_insertion": "Nuclear physiscs/Star types"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "clinical psychology",
+    "typo_insertion": "clinical psychologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Livestock/Animal feed",
+    "typo_insertion": "Livestock/Animall feed"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Risk analysis/Actuarial science",
+    "typo_insertion": "Risk analysist/Actuarial science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Genomics/Bioinformatics",
+    "typo_insertion": "Genomics/Bioinformatiics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Applications of artificial intelligence/Assistive technology",
+    "typo_insertion": "Applications of artificial intelligence/Assistive technologuy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Petroleum production/Fossil fuels",
+    "typo_insertion": "Petroleum producition/Fossil fuels"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Energy policy/Renewable energy commercialization/Renewable energy",
+    "typo_insertion": "Energy policy/Renewable energy commercialization/Renewable eneergy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Audiology/Hearing",
+    "typo_insertion": "Audiology/Hearinng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "engineering and technology",
+    "typo_insertion": "engineering and technologuy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Audiology/Otology",
+    "typo_insertion": "Audiology/ Otology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Spectroscopy/Mechanical vibrations",
+    "typo_insertion": "Spectroscopoy/Mechanical vibrations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "News/Journalism",
+    "typo_insertion": "News/Journallism"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "anesthesiology",
+    "typo_insertion": "anesthesioloigy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Gambling and society/Online gambling",
+    "typo_insertion": "Gambling and society/Online gamblinng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Agronomy/Land management",
+    "typo_insertion": "Agronomy/Land managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mechanical power control/Auto parts",
+    "typo_insertion": "Mechanical power controll/Auto parts"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Parallel computing/Computer memory",
+    "typo_insertion": "Parallel computing/Computer memorry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "gender studies",
+    "typo_insertion": "gendear studies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Remote sensing/Imaging",
+    "typo_insertion": "Remote sensinfg/Imaging"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "surgery",
+    "typo_insertion": "surgerry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nuclear physics/Binding energy",
+    "typo_insertion": "Nuclear physiscs/Binding energy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Periodontal disorders/Inflammations",
+    "typo_insertion": "Periodontal disorders/Inflammatiions"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Hydraulic fracturing/Structural geology",
+    "typo_insertion": "Hydraulics fracturing/Structural geology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Hearing loss/Audiology",
+    "typo_insertion": "Hearing losss/Audiology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Heat transfer/Thermodynamics",
+    "typo_insertion": "Heat transfer/Thermodynamiics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sports injuries/Overuse injuries",
+    "typo_insertion": "Sports injurie s/Overuse injuries"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Food safety/Food science",
+    "typo_insertion": "Food saftety/Food science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "business & management",
+    "typo_insertion": "business & managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "microscopy",
+    "typo_insertion": "microscopiy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Rocket propulsion/Rocket engines",
+    "typo_insertion": "Rocket propeulsion/Rocket engines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Seeds/Plant reproduction",
+    "typo_insertion": "Seeds/Plaant reproduction"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "psychiatry",
+    "typo_insertion": "psychiatrty"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Organ transplantation/Diseases of liver",
+    "typo_insertion": "Organ transplanteation/Diseases of liver"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "urban & regional planning",
+    "typo_insertion": "urban & regional planninng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Ethical consumerism/Sustainable development",
+    "typo_insertion": "Ethical consuemerism/Sustainable development"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Renewable fuels/Biofuels technology",
+    "typo_insertion": "Renewable fuels/Biofuels technologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Biological pest control/Entomology",
+    "typo_insertion": "Biological pest control/Entomoloegy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Criminology/Psychopathy",
+    "typo_insertion": "Criminology/Psychopathoy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Soil/Natural materials",
+    "typo_insertion": "Soil/Natuaral materials"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Spectroscopy/Scientific techniques",
+    "typo_insertion": "Spectroscopiy/Scientific techniques"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "allergy",
+    "typo_insertion": "allergey"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Shoulder/Injuries of shoulder and upper arm",
+    "typo_insertion": "Shoulder/Injuriess of shoulder and upper arm"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Food safety/Foodborne illnesses",
+    "typo_insertion": "Food saftety/Foodborne illnesses"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Politics/Comparative politics",
+    "typo_insertion": "Politics/Comparative polictics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Remote sensing/Satellite imagery",
+    "typo_insertion": "Remote sensinng/Satellite imagery"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mass spectrometry/Chromatography",
+    "typo_insertion": "Mass spectrometery/Chromatography"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "econometrics",
+    "typo_insertion": "econometricts"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Systems engineering/Test equipment",
+    "typo_insertion": "Systems engineering/Test equippment"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "pediatrics",
+    "typo_insertion": "pediatriscs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Obesity/Bariatrics",
+    "typo_insertion": "Obesit/y/Bariatrics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Anesthesia/Anesthesiology",
+    "typo_insertion": "Anestheesia/Anesthesiology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Stem cells/Transplantation medicine",
+    "typo_insertion": "Stem cellss/Transplantation medicine"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "science studies",
+    "typo_insertion": "science stuidies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Numerical differential equations/Partial differential equations",
+    "typo_insertion": "Numerical differentiial equations/Partial differential equations"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "industrial relations",
+    "typo_insertion": "industrial relatiions"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nitrides/Optical diodes",
+    "typo_insertion": "Nitrides/Optical diodees"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Clay minerals group/Phyllosilicates",
+    "typo_insertion": "Clay minerales group/Phyllosilicates"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "gastroenterology & hepatology",
+    "typo_insertion": "gastroenterology & hepaatology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Breast cancer/Antineoplastic drugs",
+    "typo_insertion": "Breast cancerr/Antineoplastic drugs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Simple aromatic rings/Triazoles",
+    "typo_insertion": "Simple aromatic rings/Triazolles"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Operating system technology/Virtual machines",
+    "typo_insertion": "Operating system technology/Virtual machiines"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Biofuels/Biodegradable waste management",
+    "typo_insertion": "Biofuels/Biodegradable waste managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "neurology & neurosurgery",
+    "typo_insertion": "neurology & neurosurgerry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Livestock/Dairy farming",
+    "typo_insertion": "Livestock/Dairy farminng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Coal/Environmental impact of the coal industry",
+    "typo_insertion": "Coal/Environmental impact of the coalt industry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Solar System/Comets",
+    "typo_insertion": "Solar Systeem/Comets"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Paraphyletic groups/Coral reefs",
+    "typo_insertion": "Paraphyletic groups/Coral rreefs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "pharmacology & pharmacy",
+    "typo_insertion": "pharmacology & pharamacy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Educational practices/Oxbridge",
+    "typo_insertion": "Educational practicess/Oxbridge"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "genetics & heredity",
+    "typo_insertion": "genetics & hereditiy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Geometry",
+    "typo_insertion": "Geometrny"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Seismology/Seismology measurement",
+    "typo_insertion": "Seismology/Seismology meassurement"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "pathology",
+    "typo_insertion": "pathologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Intellectual disability/Neurodevelopmental disorders",
+    "typo_insertion": "Intellectuall disability/Neurodevelopmental disorders"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "drama & theater",
+    "typo_insertion": "drama & theather"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mathematics education/Educational psychology",
+    "typo_insertion": "Mathematics education/Educational psychologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Organ transplantation/Transplantation medicine",
+    "typo_insertion": "Organ transplanteation/Transplantation medicine"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Energy policy",
+    "typo_insertion": "Energy policiy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Electrical grid/Control theory",
+    "typo_insertion": "Electrical griid/Control theory"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social psychology",
+    "typo_insertion": "social psychologhy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Eyewitness/Memory",
+    "typo_insertion": "Eyewitness/Memoray"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Electroweak theory/Quantum field theory",
+    "typo_insertion": "Electroweak theorey/Quantum field theory"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "social sciences methods",
+    "typo_insertion": "social scienctes methods"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "nano-technology",
+    "typo_insertion": "nan-o-technology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Natural language processing/Computational linguistics",
+    "typo_insertion": "Natural language proceessing/Computational linguistics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sex positions/Sexual acts",
+    "typo_insertion": "Sex positionss/Sexual acts"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Autocorrelation/Signal processing",
+    "typo_insertion": "Autocorrelatioon/Signal processing"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Welfare economics/Government aid programs",
+    "typo_insertion": "Welfare economics/Government aid prograrms"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Computer memory/Emerging technologies",
+    "typo_insertion": "Computer memorry/Emerging technologies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "design practice & management",
+    "typo_insertion": "design practice & managemeent"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Mechanical vibrations/Applied mathematics",
+    "typo_insertion": "Mechanical vibrateions/Applied mathematics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "ophthalmology & optometry",
+    "typo_insertion": "ophthalmology & optometrry"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "agronomy & agriculture",
+    "typo_insertion": "agronomy & agri culture"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Science and technology studies/Technology in society",
+    "typo_insertion": "Science and technology studiess/Technology in society"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bioethics",
+    "typo_insertion": "Bioethcics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Domesticated animals/Livestock",
+    "typo_insertion": "Domesticated animaals/Livestock"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "family studies",
+    "typo_insertion": "family stuidies"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Apis (genus)/Beekeeping",
+    "typo_insertion": "Apis (genus)/Beekeepinng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Natural disasters/Disaster management",
+    "typo_insertion": "Natural disasterrs/Disaster management"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Pollination/Beekeeping",
+    "typo_insertion": "Pollination/Beekeepinng"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "statistics & probability",
+    "typo_insertion": "statistics & probabilitiy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Elmorsy, Ekramy",
+    "typo_insertion": "Elmorsyy, Ekramy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "O. Martinez-Ruby",
+    "typo_insertion": "O. Martinezz-Ruby"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jahnavi Gentela",
+    "typo_insertion": "Jahnavi Genetela"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Philip Woodall",
+    "typo_insertion": "Philipp Woodall"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ueli Maurer",
+    "typo_insertion": "Ueli Mauarer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Csuzdi, Csaba",
+    "typo_insertion": "Csuzdi, Csabba"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Leif Klemedtsson",
+    "typo_insertion": "Leif Klemedtssson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Angela Nediane dos Santos",
+    "typo_insertion": "Angela Nediane dos Sanatos"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shikha Jha",
+    "typo_insertion": "Shikha Jhha"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cristinziani, M",
+    "typo_insertion": "Cristinzianii, M"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ferdinand von Tüllenburg",
+    "typo_insertion": "Ferdinand von Tülleneburg"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Viajeng Purnama Putri",
+    "typo_insertion": "Viajengg Purnama Putri"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ata Ur Rahman",
+    "typo_insertion": "Ata Ur Rahmhan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hubert, Matthieu",
+    "typo_insertion": "Hubert, Matthiseu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gunnar Kvåle",
+    "typo_insertion": "Gunnar Kvåale"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Febriana Fiona Rizky",
+    "typo_insertion": "Febriana Fionna Rizky"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Doucet, Marcelo",
+    "typo_insertion": "Doucet, Marceelo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Xiuwen Zhou",
+    "typo_insertion": "Xiuwen Zhoou"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Laura Draetta",
+    "typo_insertion": "Laura Draettta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lei Zheng",
+    "typo_insertion": "Lei Zheing"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Changming Yue",
+    "typo_insertion": "Changmingg Yue"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Matthias A. Schnellmann",
+    "typo_insertion": "Matthias A. Schneellmann"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yusuke Yasui",
+    "typo_insertion": "Yusuke Yasuui"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ali M. Eltamaly",
+    "typo_insertion": "Ali M. Eltaamaly"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gabriel Blázquez",
+    "typo_insertion": "Gabriel Blázcquez"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alejandra Cantoral",
+    "typo_insertion": "Alejandrap Cantoral"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Minghao Yu",
+    "typo_insertion": "Minghaao Yu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Wen Han Chong",
+    "typo_insertion": "Wen Haan Chong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kwok-Sui Leung",
+    "typo_insertion": "Kwok-Sui Leuung"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Diaz-Chavez, Rocio",
+    "typo_insertion": "Diaz-Chaveze, Rocio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jeih-Jang Liou",
+    "typo_insertion": "Jeih-Jangg Liou"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Silvia",
+    "typo_insertion": "Silviia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Li Linkun",
+    "typo_insertion": "Li Linkeun"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "A. Di Girolamo",
+    "typo_insertion": "A. Di Girolammo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Junyu Guo",
+    "typo_insertion": "Junnyu Guo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kopecek, R.",
+    "typo_insertion": "Kopeceek, R."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anna Mularczyk",
+    "typo_insertion": "Anna Mularczyik"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Scott A. Rifkin",
+    "typo_insertion": "Scott A. Riffkin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Stella Kabageni",
+    "typo_insertion": "Stella Kaba geni"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Skantze, Gabriel",
+    "typo_insertion": "Skantze, Gabrieal"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gerhard Schiffner",
+    "typo_insertion": "Gerhard Schiffnner"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shu Jian Chen",
+    "typo_insertion": "Shu Jiaan Chen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anthony Masaka",
+    "typo_insertion": "Anthony Masakka"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anatoly Aleksandrov",
+    "typo_insertion": "Anatoly Alekssandrov"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alivisatos, A. P.",
+    "typo_insertion": "Alivisatoas, A. P."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M.W Church",
+    "typo_insertion": "M.W. Church"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nur Izzi Md Yusoff",
+    "typo_insertion": "Nur Izzi Md Yussoff"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M. Zachut",
+    "typo_insertion": "M. Zatchut"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kerry Barry",
+    "typo_insertion": "Kerry Barrry"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Suresh Kumar Gupta",
+    "typo_insertion": "Suresh Kumaar Gupta"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M. Sarasso",
+    "typo_insertion": "M. Sarassso"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Delahaye, Daniel",
+    "typo_insertion": "Delahayee, Daniel"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hadi Farabi-Asl",
+    "typo_insertion": "Hadi Farabii-Asl"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Isaksson, C",
+    "typo_insertion": "Isakssson, C"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ashis Kumar Chakraborty",
+    "typo_insertion": "Ashis Kumaar Chakraborty"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Erangu Purath Mohankumar Sajeev",
+    "typo_insertion": "Erangu Purath Mohankumarr Sajeev"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Liu, Tao",
+    "typo_insertion": "Liu, Taao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Patricia Alegria",
+    "typo_insertion": "Patriciia Alegria"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "William F. Jiemy",
+    "typo_insertion": "William F. Jieymy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Viyogi, Yogendra",
+    "typo_insertion": "Viyogii, Yogendra"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Felicity Williams",
+    "typo_insertion": "Felicity Williames"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Liangming Wei",
+    "typo_insertion": "Liangming Weei"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Abdul-Sammed Khan",
+    "typo_insertion": "Abdul-Sammedh Khan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Richard Hamilton",
+    "typo_insertion": "Richard Hamiltion"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mateusz Jakubiak",
+    "typo_insertion": "Mateusz Jakubiiak"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Youfan Hu",
+    "typo_insertion": "Youfand Hu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hörandel, J. R.",
+    "typo_insertion": "Hörandell, J. R."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hyeong Gon Yu",
+    "typo_insertion": "Hyeong Goon Yu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lucas de Assis Silva Andrade",
+    "typo_insertion": "Lucas de Assis Silvha Andrade"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zbigniew Darzynkiewicz",
+    "typo_insertion": "Zbigniew Darzynkiewiccz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michele Morgante",
+    "typo_insertion": "Michele Morganete"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Huy V. Nguyen",
+    "typo_insertion": "Huy V. Nguyean"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "S. P. M. J. Downey",
+    "typo_insertion": "S. P. M. J. Downeey"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "William P. Jencks",
+    "typo_insertion": "William P. Jenckcs"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Magnuson, M. L.",
+    "typo_insertion": "Magnusoon, M. L."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ranwez, Sylvie",
+    "typo_insertion": "Ranweez, Sylvie"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michael D. Giebelhausen",
+    "typo_insertion": "Michael D. Giebelhauseen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anagha Krishnan",
+    "typo_insertion": "Anagha Krishnaan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Todd P Adams",
+    "typo_insertion": "Todd P Addams"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "S. Gal-On",
+    "typo_insertion": "S. Ghal-On"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Chine DeJenga",
+    "typo_insertion": "Chine DeJengga"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bertacchini A.",
+    "typo_insertion": "Bertaccchini A."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Horimoto, Andrea R. V. Russo",
+    "typo_insertion": "Horimoto, Andraea R. V. Russo"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Huiping Tian",
+    "typo_insertion": "Huiping Tiaan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bruno Henrique Silva Dias",
+    "typo_insertion": "Bruno Henrique Silvaa Dias"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ke Fan",
+    "typo_insertion": "Ke Faan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Hemin Zhang",
+    "typo_insertion": "Hemin Zhaang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yao-Bing Huang",
+    "typo_insertion": "Yao-Bingg Huang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Henning Bundgaard",
+    "typo_insertion": "Henning Bundgaaard"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rafael A. Barros",
+    "typo_insertion": "Rafael A. Barroos"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Thierry Hoinville",
+    "typo_insertion": "Thierry Hoinvillle"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Masayuki Takahashi",
+    "typo_insertion": "Masayukii Takahashi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Greta Jordan",
+    "typo_insertion": "Gretta Jordan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yongjiang Shen",
+    "typo_insertion": "Yongjiangh Shen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Martin Wachs",
+    "typo_insertion": "Martin Wachcs"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Shehla Rasheed",
+    "typo_insertion": "Shehla Rasheeed"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ferreira, Catarina",
+    "typo_insertion": "Ferreirra, Catarina"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Soon Shik Shin",
+    "typo_insertion": "Sooon Shik Shin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jorge Monserrat",
+    "typo_insertion": "Jorge Monsserrat"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jiajun Lv",
+    "typo_insertion": "Jiajun Luv"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "J. W. Romein",
+    "typo_insertion": "J. W. Romiein"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "D Sharp",
+    "typo_insertion": "D Sharrp"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Glenn M. Schwartz",
+    "typo_insertion": "Glenn M. Schwaartz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nanqi Ren",
+    "typo_insertion": "Nanqii Ren"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "R.J. Arnold",
+    "typo_insertion": "R.J. Arnolld"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yinan Xu",
+    "typo_insertion": "Yinana Xu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Xujun, Liu",
+    "typo_insertion": "Xujjun, Liu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "K. Schwarz",
+    "typo_insertion": "K. Schwaarz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Popov, Peycho",
+    "typo_insertion": "Popov, Peeycho"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Siqi Fan",
+    "typo_insertion": "Siqii Fan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alexandra Jauhiainen",
+    "typo_insertion": "Alexandria Jauhiainen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Björn Nilsson",
+    "typo_insertion": "Björn Nilssson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Daoyong Zhuang",
+    "typo_insertion": "Daoyongg Zhuang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Subashi, Timothy",
+    "typo_insertion": "Subashii, Timothy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kavitha Ramadass",
+    "typo_insertion": "Kavitha Ramaddass"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yegane Davoodbeygi",
+    "typo_insertion": "Yegane Davoodbeyggi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M Mohammed, Riyadh",
+    "typo_insertion": "M MMohammed, Riyadh"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Giovanni G. Camici",
+    "typo_insertion": "Giovanni G. Camicci"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tong Wen",
+    "typo_insertion": "Tong Wwen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Xianghui Zhang",
+    "typo_insertion": "Xianghui Zhaang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anne Estreicher",
+    "typo_insertion": "Anne Estreichcer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Petros Isaakidis",
+    "typo_insertion": "Petros Isaaakidis"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Carlos Alexandre Rodrigues, Pereira",
+    "typo_insertion": "Carloso Alexandre Rodrigues, Pereira"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Paola Emanuela Poggio",
+    "typo_insertion": "Paola Emanuella Poggio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jodi Vanessa Dong",
+    "typo_insertion": "Jodi Vanessaa Dong"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Joseph Chris Hollinger",
+    "typo_insertion": "Joseph Chriss Hollinger"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "David R. G. Mitchell",
+    "typo_insertion": "David R. G. Mitcheell"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kevin Dadaczynski",
+    "typo_insertion": "Kevin Dadaczynsiki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "John S. Okasinski",
+    "typo_insertion": "John S. Okaasinski"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michelle Kelly",
+    "typo_insertion": "Michelle Kellly"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pierre N. Floriano",
+    "typo_insertion": "Pierre N. Florianao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Geng Qiao",
+    "typo_insertion": "Geng Qiaao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fikile R. Brushett",
+    "typo_insertion": "Fikile R. Brusheett"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gary W. Kraemer",
+    "typo_insertion": "Gary W. Kraemmer"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Youngshang Han",
+    "typo_insertion": "Youngshang Haan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nguyen, Hoang",
+    "typo_insertion": "Nguyeen, Hoang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ezra Cohen",
+    "typo_insertion": "Ezra Coheen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "H. Knudsen",
+    "typo_insertion": "H. Knudssen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ilaria Brambilla",
+    "typo_insertion": "Ilaria Brambillla"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Susie Q. Love",
+    "typo_insertion": "Susie Q. Louve"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Reshma R. Rao",
+    "typo_insertion": "Reshma R. Raao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "R. Eriksson",
+    "typo_insertion": "R. Erikksson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Silvia Gianoglio",
+    "typo_insertion": "Silvia Gianaoglio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Neville Nagarwalla",
+    "typo_insertion": "Neville Nagarrwalla"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhouhao Zhang",
+    "typo_insertion": "Zhouhao Zhaang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brondolin, Erica",
+    "typo_insertion": "Brondolinn, Erica"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Ayesha Ahmed",
+    "typo_insertion": "Ayesha Ahmehd"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Joe Grengs",
+    "typo_insertion": "Joes Grengs"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "P. GIOVANNINI",
+    "typo_insertion": "P. GIOVANNINNI"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhijun Li",
+    "typo_insertion": "Zhijjun Li"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anke Jacksohn",
+    "typo_insertion": "Anke Jackssohn"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Miller, Steven M.",
+    "typo_insertion": "Millers, Steven M."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Onursal Yakaboylu",
+    "typo_insertion": "Onursal Yakaaboylu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rudolf Ladenburg",
+    "typo_insertion": "Rudolf Ladenvburg"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zeyrek, Mehmet",
+    "typo_insertion": "Zeyrekk, Mehmet"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Declan W. Ali",
+    "typo_insertion": "Declan W. Aali"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Antonis A. Zorpas",
+    "typo_insertion": "Antonis A. Zorapas"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yazhou Zhang",
+    "typo_insertion": "Yazhou Zhaang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lorenzo, Pedro",
+    "typo_insertion": "Lorenzo, Pedrro"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jonathon Timothy Newton",
+    "typo_insertion": "Jonathon Timothey Newton"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gaozhong Shen",
+    "typo_insertion": "Gaozhongh Shen"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Juan Abel Barrio",
+    "typo_insertion": "Juan Abell Barrio"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Xiang, Xia",
+    "typo_insertion": "Xiang, Xxia"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "S.; Pellegrino",
+    "typo_insertion": "S.; Pellegrinno"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Guillaume Drouart",
+    "typo_insertion": "Guillaume Drouarft"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Saleh Khader",
+    "typo_insertion": "Saleh Khadder"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Takashi Sazuka",
+    "typo_insertion": "Takashii Sazuka"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Weerts, Albrecht",
+    "typo_insertion": "Weerts, Albrechct"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Michael J. Larson",
+    "typo_insertion": "Michael J. Larrson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Marc E. Pfetsch",
+    "typo_insertion": "Marc E. Pfeetsch"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Wensong Zhang",
+    "typo_insertion": "Wensong Zhaang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Alessandra Savini",
+    "typo_insertion": "Alessandrar Savini"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lingfeng Zhou",
+    "typo_insertion": "Lingfeng Zhoou"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zhenkan Wang",
+    "typo_insertion": "Zhenkkan Wang"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Prem Kumar Seelam",
+    "typo_insertion": "Prem Kumaar Seelam"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Yichen Tian",
+    "typo_insertion": "Yichen Tiaan"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Esteve-Perez Jeronimo",
+    "typo_insertion": "Esteve-Perez Jerronimo"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Transport Research",
+    "typo_insertion": "Transport Researcgh"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "Digital Humanities and Cultural Heritage",
+    "typo_insertion": "Digital Humanities and Cultural Heritadge"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Dynamics of aerosol coagulation and condensation",
+    "typo_insertion": "Dynamics of aeroosol coagulation and condensation"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Marital Conflict, Divorce and Single Parenthood as Predictors of Adolescents Antisocial Behaviour in Ibadan",
+    "typo_insertion": "Marital Conflictd, Divorce and Single Parenthood as Predictors of Adolescents Antisocial Behaviour in Ibadan"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Micro-encapsulated paraffin in phase-change slurries",
+    "typo_insertion": "Micro-encapsulated paraffin in phase-change slurryies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Numerical investigation of a simple solar still coupled to a compression heat pump",
+    "typo_insertion": "Numerical inverstigation of a simple solar still coupled to a compression heat pump"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Precipitation Controls on Soil Biogeochemical and Microbial Community Composition in Rainfed Agricultural Systems in Tropical Drylands",
+    "typo_insertion": "Precipitation Controles on Soil Biogeochemical and Microbial Community Composition in Rainfed Agricultural Systems in Tropical Drylands"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Long-term impacts of a coal phase-out in Germany as part of a greenhouse gas mitigation strategy",
+    "typo_insertion": "Long-term impacets of a coal phase-out in Germany as part of a greenhouse gas mitigation strategy"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Superconducting NbN thin films for use in superconducting radio frequency cavities",
+    "typo_insertion": "Superconducting NbN thin filmss for use in superconducting radio frequency cavities"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Recent developments in magnetocaloric materials",
+    "typo_insertion": "Recent developments in magnetocaloric materiails"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Mechanism of brittle fracture of rock",
+    "typo_insertion": "Mechanisim of brittle fracture of rock"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Computational tools and operational research for optimal design of co-generation systems",
+    "typo_insertion": "Computational toolss and operational research for optimal design of co-generation systems"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Numerical investigation on the transient gasliquid flow in the rapid switching process of pump turbine",
+    "typo_insertion": "Numerical inverstigation on the transient gasliquid flow in the rapid switching process of pump turbine"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Beyond Technology Adoption: Homeowner Satisfaction with Newly Adopted Residential Heating Systems",
+    "typo_insertion": "Beyond Technology Adopation: Homeowner Satisfaction with Newly Adopted Residential Heating Systems"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Where rivers jump course",
+    "typo_insertion": "Where rivers jumpp course"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Ethanol and caffeine consumption modulates the expression of miRNAs in the cerebellum and plasma of UChB rats",
+    "typo_insertion": "Ethanol and ccaffeine consumption modulates the expression of miRNAs in the cerebellum and plasma of UChB rats"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hikurangi margin tsunami earthquake generated by slow seismic rupture over a subducted seamount",
+    "typo_insertion": "Hikurangi margin tsunamii earthquake generated by slow seismic rupture over a subducted seamount"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Large Scale Crowdsourcing and Characterization of Twitter Abusive Behavior",
+    "typo_insertion": "Large Scale Crowdsourcinng and Characterization of Twitter Abusive Behavior"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sensitivity analysis of capital and energy production cost for off-grid building integrated photovoltaic systems",
+    "typo_insertion": "Sensitivitay analysis of capital and energy production cost for off-grid building integrated photovoltaic systems"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Nano energy system model and nanoscale effect of graphene battery in renewable energy electric vehicle",
+    "typo_insertion": "Nano eneergy system model and nanoscale effect of graphene battery in renewable energy electric vehicle"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The influence of additives in the stoichiometry of hybrid lead halide perovskites",
+    "typo_insertion": "The influence of additivess in the stoichiometry of hybrid lead halide perovskites"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Performance Analysis and Comparison on Energy Storage Devices for Smart Building Energy Management",
+    "typo_insertion": "Performance Analysis and Comparison on Energy Storage Devicess for Smart Building Energy Management"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Connecting material degradation and power loss of PV modules using advanced statistical methodology",
+    "typo_insertion": "Connecting material degradation and power loss of PV modulues using advanced statistical methodology"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Snapshots along an Enzymatic Reaction Coordinate: Analysis of a Retaining -Glycoside Hydrolase<sup>,</sup>",
+    "typo_insertion": "Snapshots along an Enzymatic Reaction Coordinate: Analysis of a Retaining -Glycoside Hydrolase<sup>,G</sup>"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Machine Learning Methods for Attack Detection in the Smart Grid",
+    "typo_insertion": "Machine Leaarning Methods for Attack Detection in the Smart Grid"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Economic analysis of small wind turbines in residential energy sector in Iran",
+    "typo_insertion": "Economic analysiss of small wind turbines in residential energy sector in Iran"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A Collaborative Decision Model for Electric Vehicle to Building Integration",
+    "typo_insertion": "A Collaborative Decisioan Model for Electric Vehicle to Building Integration"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Anticancer Activities of Hesperidin and Hesperetin In vivo and their Potentiality against Bladder Cancer",
+    "typo_insertion": "Anticancer Activities of Hesperidin and Hesperetin In vivo and their Potentiality against Bladder Canceer"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Thermal augmentation in circular tube with twisted tape and wire coil turbulators",
+    "typo_insertion": "Thermal augumentation in circular tube with twisted tape and wire coil turbulators"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Efficient planar heterojunction perovskite solar cells by vapour deposition",
+    "typo_insertion": "Efficient planar heterojunction perovskite solar cellss by vapour deposition"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Agent based model for dynamic ridesharing",
+    "typo_insertion": "Agent based modell for dynamic ridesharing"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Polarization control in optical-fiber gyroscopes",
+    "typo_insertion": "Polarization controll in optical-fiber gyroscopes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Fluorescent nanoparticles for sensing",
+    "typo_insertion": "Fluorescent nanoparticles for sensinng"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Optimal design and economic analysis of a PV system operating under Net Metering or Feed-In-Tariff support mechanisms: A case study in Poland",
+    "typo_insertion": "Optimal design and economic analysis of a PV system operating under Net Metering or Feed-In-Tariff support mechanisms: A case study in Polanod"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Symmetrical objects in Moro: Challengesandsolutions",
+    "typo_insertion": "Symmetrical objects in Moro: Challengesandsoolutions"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Chemosensory Ecology: Deceiving Drosophila",
+    "typo_insertion": "Chemosensory Ecologyy: Deceiving Drosophila"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Distant Neighbors and Interscalar Contiguities",
+    "typo_insertion": "Distant Neighbors and Interscalar Contiguitieis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Precession of Simulacra",
+    "typo_insertion": "The Precesstion of Simulacra"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Species conservation under future climate change: the case of Bombus bellicosus, a potentially threatened South American bumblebee species",
+    "typo_insertion": "Species conservatioin under future climate change: the case of Bombus bellicosus, a potentially threatened South American bumblebee species"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Asymmetric supercapacitors based on nickel decorated graphene and porous graphene electrodes",
+    "typo_insertion": "Asymmetric supercapacitors based on nickel decoratied graphene and porous graphene electrodes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Biochar-based nano-composites for the decontamination of wastewater: A review",
+    "typo_insertion": "Biochar-based nano-compositess for the decontamination of wastewater: A review"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Technoeconomic Design of a Micro Gas-turbine for a Solar Dish System",
+    "typo_insertion": "Technoeconomic Design of a Micro Gas-turbine for a Solar Dish Systeem"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Experimental optimization of Waste Cooking Oil ethanolysis for biodiesel production using Response Surface Methodology (RSM)",
+    "typo_insertion": "Experimental optimization of Waste Cooking Oil ethanolys is for biodiesel production using Response Surface Methodology (RSM)"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Psychology of Sustainable Seafood Consumption: A Comprehensive Approach",
+    "typo_insertion": "The Psychology of Sustainable Seafood Consumption: A Comprehensivew Approach"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Algal and aquatic plant carbon concentrating mechanisms in relation to environmental change",
+    "typo_insertion": "Algal and aqumatic plant carbon concentrating mechanisms in relation to environmental change"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Differential influences of environment and self-motion on place and grid cell firing",
+    "typo_insertion": "Differential influences of environment and self-motion on place and grid cell firinng"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "N. A. Cobb: New Nemic Genera and Species, with Taxonomic Notes",
+    "typo_insertion": "N. A. Cobba: New Nemic Genera and Species, with Taxonomic Notes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Current Trends and New Challenges in Marine Phycotoxins",
+    "typo_insertion": "Current Trendss and New Challenges in Marine Phycotoxins"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Bilevel economic operation of distribution networks with microgrid integration",
+    "typo_insertion": "Bilevel economic operation of distribution networks with microgrid integratioon"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A CeramicElectrolyte Glucose Fuel Cell for Implantable Electronics",
+    "typo_insertion": "A CeramicElectrolyte Glucose Fuel Cell for Implantable Electronices"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Analytical solution of heat and mass transfer process in internally cooled liquid desiccant dehumidifiers using refrigerant as cooling medium",
+    "typo_insertion": "Analytical solution of heat and mass transfer process in internally cooled liquid desiccant dehumidifiers using refrigerant as cooling mediuim"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Dioxin-like compound compositional profiles of furnace bottom ashes from household combustion in Poland and their possible associations with contamination status of agricultural soil and pine needles",
+    "typo_insertion": "Dioxin-like compound compositional profiles of furnace bottom ashes from household combustion in Poland and their possible associations with contamination status of agricultural soil and pine needlles"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Hepatitis C and Alcohol",
+    "typo_insertion": "Hepatitis C and Alcohoil"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Impact of Workload and Renewable Prediction on the Value of Geographical Workload Management",
+    "typo_insertion": "Impact of Workload and Renewable Prediction on the Value of Geographical Workload Managemeent"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sustainable Social and Individual Implications of Telework: A New Insight into the Romanian Labor Market",
+    "typo_insertion": "Sustainable Social and Individuall Implications of Telework: A New Insight into the Romanian Labor Market"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Chain Walking: A New Strategy to Control Polymer Topology",
+    "typo_insertion": "Chain Walkinng: A New Strategy to Control Polymer Topology"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "An Energy Management System of a Fuel Cell/Battery  Hybrid Boat",
+    "typo_insertion": "An Energy Management System of a Fuel Cell/Battery  Hybrid Boaat"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Upcoming Services Innovation for the Home Energy Management System in Korea",
+    "typo_insertion": "Upcoming Servicess Innovation for the Home Energy Management System in Korea"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Detailed balance limit for solar cell efficiency",
+    "typo_insertion": "Detailed balance limiit for solar cell efficiency"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Metabolically active microbial communities of yellow and grey colonizations on the walls of Altamira Cave, Spain",
+    "typo_insertion": "Metabolically active microbial communities of yellow and grey colonizations on the walls of Altamira Caves, Spain"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Investigation of a solar cooling installation in Tunisia",
+    "typo_insertion": "Investigation of a solar cooling installation in Tunisiya"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Subcooled flow boiling at high heat flux",
+    "typo_insertion": "Subcooled flow boiling at high heat flusx"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Chronic Obstructive Pulmonary Disease in Adults Exposed to Fine Particles from a Coal Mine Fire",
+    "typo_insertion": "Chronic Obstructive Pulmonar y Disease in Adults Exposed to Fine Particles from a Coal Mine Fire"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Exchange Bias in Nanostructures: An Update",
+    "typo_insertion": "Exchange Biass in Nanostructures: An Update"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Multidrug efflux pumps: structure, function and regulation",
+    "typo_insertion": "Multidrug efflux pumps: structure, functioan and regulation"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A new species of Aulacus (Hymenoptera, Aulacidae) from Hokkaido, Japan",
+    "typo_insertion": "A new species of Aulacucs (Hymenoptera, Aulacidae) from Hokkaido, Japan"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Single-unit and multi-unit auction framework for peer-to-peer transactions",
+    "typo_insertion": "Single-unit and multi-unit auction framework for peer-to-peer transactioins"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Neuroscience. Building the human brain.",
+    "typo_insertion": "Neurosciences. Building the human brain."
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Toward a common standard for data and specimen provenance in life sciences",
+    "typo_insertion": "Toward a common standard for data and specimen provenance in life sciencces"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Design sensitivity analysis: Overview and review",
+    "typo_insertion": "Design sensitivity analysiss: Overview and review"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Climate research priorities for policy-makers, practitioners, and scientists in Georgia, USA",
+    "typo_insertion": "Climate research priorities for policy-makers, practitioners, and scientists in Georgiua, USA"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Support Vector Machine Technique for the Short Term Prediction of Travel Time",
+    "typo_insertion": "Support Vector Macheine Technique for the Short Term Prediction of Travel Time"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Terahertz conductivity of heavy-fermion systems from time-resolved spectroscopy",
+    "typo_insertion": "Terahertz conductivity of heavy-fermion systems from time-resolved spectroscop y"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Graph-Based Semi-supervised Learning for Fault Detection and Classification in Solar Photovoltaic Arrays",
+    "typo_insertion": "Graph-Based Semi-supervised Learning for Fault Detection and Classificatioin in Solar Photovoltaic Arrays"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Review of grid connection requirements for generation assets in weak power grids",
+    "typo_insertion": "Review of gridd connection requirements for generation assets in weak power grids"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Nanomaterials for cancer therapy: current progress and perspectives",
+    "typo_insertion": "Nanomaterials for canceer therapy: current progress and perspectives"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Controlled natural ventilation for energy efficient buildings",
+    "typo_insertion": "Controlled natural ventillation for energy efficient buildings"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The broad footprint of climate change from genes to biomes to people",
+    "typo_insertion": "The broad footprinot of climate change from genes to biomes to people"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Energy consumption and efficiency in buildings: current status and future trends",
+    "typo_insertion": "Energy consumptioan and efficiency in buildings: current status and future trends"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "An uncertain life: Demography in random environments",
+    "typo_insertion": "An uncertain life: Demography in randoom environments"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Effects of prenatal alcohol exposure at school age. II. Attention and behavior",
+    "typo_insertion": "Effects of prenatal alcohol exposure at school age. II. Attention and behavioir"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Radio Sources Observed with the Culgoora Circular Array",
+    "typo_insertion": "Radio Sources Observed with the Culgoora Circular Arraay"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A research roadmap towards achieving scalability in model driven engineering",
+    "typo_insertion": "A research roadmapp towards achieving scalability in model driven engineering"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A Unified Theory of Underreaction, Momentum Trading, and Overreaction in Asset Markets",
+    "typo_insertion": "A Unified Theory of Underreaction, Momentum Trading, and Overreaction in Asset Markerts"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Probabilistic string interactions in hA and AB collisions",
+    "typo_insertion": "Probabilistic string interactions in hA and AB collisioins"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Achievable Rates for Pattern Recognition",
+    "typo_insertion": "Achievable Rrates for Pattern Recognition"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sustainable development goals as a challenge for national and global development",
+    "typo_insertion": "Sustainable development goaals as a challenge for national and global development"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Green energy investment, renewable energy consumption, and carbon neutrality in China",
+    "typo_insertion": "Green eneergy investment, renewable energy consumption, and carbon neutrality in China"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Assessing people travel behavior using GPS and open data to validate neighbourhoods characteristics",
+    "typo_insertion": "Assessing peopled travel behavior using GPS and open data to validate neighbourhoods characteristics"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Affective Video Content Analysis via Multimodal Deep Quality Embedding Network",
+    "typo_insertion": "Affective Video Content Analysist via Multimodal Deep Quality Embedding Network"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Beam and User Selection Technique in Millimeter Wave Communications",
+    "typo_insertion": "Beam and User Selectioin Technique in Millimeter Wave Communications"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Economic analysis and power management of a stand-alone wind/photovoltaic hybrid energy system using biogeography based optimization algorithm",
+    "typo_insertion": "Economic analysis and power management of a stand-alone wind/photovoltaic hybrid energy system using biogeography based optimization algorithym"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Environmental Education in Pre-Service Teacher Training: A Literature Review of Existing Evidence",
+    "typo_insertion": "Environmental Education in Pre-Service Teacher Training: A Literature Review of Exisiting Evidence"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The environmental impacts of charcoal production in tropical ecosystems of the world: A synthesis",
+    "typo_insertion": "The environmental impacets of charcoal production in tropical ecosystems of the world: A synthesis"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Preparation and Structural Properties of Bacterial Nanocellulose Obtained from Beetroot Peel Medium",
+    "typo_insertion": "Preparation and Structural Properties of Bacterial Nanocellulose Obtained from Beetroot Peel Mediuim"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Heterogeneity in Model Management: A Meta Modeling Approach",
+    "typo_insertion": "Heterogeneity in Model Managemeent: A Meta Modeling Approach"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "PROMINENCE PLASMA DIAGNOSTICS THROUGH EXTREME-ULTRAVIOLET ABSORPTION",
+    "typo_insertion": "PROMINENCE PLASMA DIAGNOSTICS THROUGH EXTREME-ULTRAVIOLET ABSORPTIOON"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Relations between Dieudonné displays and crystalline Dieudonné theory",
+    "typo_insertion": "Relations between Dieudonné displays and crystalline Dieudonné theoriy"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Logic models: a tool for telling your programs performance story",
+    "typo_insertion": "Logic modelss: a tool for telling your programs performance story"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Globalizing carbon lock-in",
+    "typo_insertion": "Globalizing carboan lock-in"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Investigation of finned heat sink performance with nano enhanced phase change material (NePCM)",
+    "typo_insertion": "Investigation of finned heat sink performance with nano enhanced phase change material (NePCMc)"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Eastern Boundary Circulation and Hydrography Off Angola: Building Angolan Oceanographic Capacities",
+    "typo_insertion": "Eastern Boundary Circulation and Hydrography Off Angolaa: Building Angolan Oceanographic Capacities"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Study of Downhole Shock Loads for Ultra-Deep Well Perforation and Optimization Measures",
+    "typo_insertion": "Study of Downhole Shock Loadss for Ultra-Deep Well Perforation and Optimization Measures"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Working memory performance in disordered gambling and gaming: A systematic review",
+    "typo_insertion": "Working memoriy performance in disordered gambling and gaming: A systematic review"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Encyclopedia of Industrial and Organizational Psychology",
+    "typo_insertion": "Encyclopedia of Industrial and Organizational Psychologhy"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "European clearinghouse: Contributing factors to incidents related to reactivity management",
+    "typo_insertion": "European clearinghouse: Contributing factors to incidents related to reactivity managemeent"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Radiative heat transfer modelling in a concentrated solar energy bubbling fluidized bed receiver using the Monte Carlo Method",
+    "typo_insertion": "Radiative heat transfer modelling in a concentrated solar energy bubbling fluidized bed receiver using the Monte Carlo Methoed"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Plant-derived anticancer agents",
+    "typo_insertion": "Plant-derived anticancer agenets"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Component parts of the World Heat Flow Data Collection",
+    "typo_insertion": "Component parts of the World Heat Flow Data Collectioin"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Lista das Plantas Vasculares de Catolés, Chapada Diamantina, Bahia, Brasil",
+    "typo_insertion": "Lista das Plantas Vasculares de Catolés, Chapada Diamantina, Bahia, Brasiil"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Socio-economic determinants of charcoal expenditures in Tanzania: Evidence from panel data",
+    "typo_insertion": "Socio-economic determinants of charcoal expenditures in Tanzanias: Evidence from panel data"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, NL",
+    "typo_insertion": "NOL, NL"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "AU, IT",
+    "typo_insertion": "AUC, IT"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "FR, FR, CH",
+    "typo_insertion": "FR, FR, FCH"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dariah",
+    "typo_insertion": "dariaah"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "CRIS System",
+    "typo_insertion": "CRIS Systeem"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Journal Aggregator/Publisher",
+    "typo_insertion": "Journal Aggregatopr/Publisher"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oncotarget",
+    "typo_insertion": "Oncotargert"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "The Journal of the Acoustical Society of America",
+    "typo_insertion": "The Journal of the Acoustical Society of Amaerica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Breviora",
+    "typo_insertion": "Breviorra"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Palynology",
+    "typo_insertion": "Palynologgy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Frontiers in Public Health",
+    "typo_insertion": "Frontiers in Publilc Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Geriatrics",
+    "typo_insertion": "BMC Geriatricts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "e-Neuroforum",
+    "typo_insertion": "e-Neuroforuim"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ACS Applied Polymer Materials",
+    "typo_insertion": "ACS Applied Polymter Materials"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Interdisciplinary Journal of Education Research",
+    "typo_insertion": "Interdisciplinary Journal of Educations Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Agroforestry Systems",
+    "typo_insertion": "Agroforestrty Systems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Transport & Health",
+    "typo_insertion": "Journal of Transporat & Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportation Research",
+    "typo_insertion": "Transportation Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Environmental Research Ecology",
+    "typo_insertion": "Environmental Researcch Ecology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Vascular Surgery and Medicine",
+    "typo_insertion": "International Journal of Vascular Surgeray and Medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Eating Behaviors",
+    "typo_insertion": "Eating Behavioers"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ocean & Coastal Management",
+    "typo_insertion": "Ocean & Coasteal Management"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archives Internationales de Physiologie",
+    "typo_insertion": "Archives Internationales de Physioloigie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Labelled Compounds and Radiopharmaceuticals",
+    "typo_insertion": "Journal of Labellled Compounds and Radiopharmaceuticals"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Veterinary World",
+    "typo_insertion": "Veterinary Woorld"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electronic Communications in Probability",
+    "typo_insertion": "Electronic Commmunications in Probability"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "The International Journal of Marine and Coastal Law",
+    "typo_insertion": "The International Journal of Marine and Coastal Laaw"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Orthoptera Research",
+    "typo_insertion": "Journal of Orthoptera Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chinese Physics Letters",
+    "typo_insertion": "Chinese Physics Lettters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Proceedings of The Nutrition Society",
+    "typo_insertion": "Proceedings of The Nutritioin Society"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Multi-Criteria Decision Analysis",
+    "typo_insertion": "Journal of Multi-Criteria Decisioan Analysis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Heart Journal Open",
+    "typo_insertion": "European Heart Journale Open"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Accident Analysis & Prevention",
+    "typo_insertion": "Accident Analysiss & Prevention"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Politics",
+    "typo_insertion": "International Polictics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Praehistorische Zeitschrift",
+    "typo_insertion": "Praehistorische Zeitschrifft"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Australian Forestry",
+    "typo_insertion": "Australian Forrestry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BioTechniques",
+    "typo_insertion": "BioTechniquees"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Journal of Immunology",
+    "typo_insertion": "European Journale of Immunology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Sustainable Mining",
+    "typo_insertion": "Journal of Sustaineable Mining"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Pure VTT Finland",
+    "typo_insertion": "Pure VTT Finlannd"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biotechnology Reports",
+    "typo_insertion": "Biotechnology Repor ts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Molecular Medicine",
+    "typo_insertion": "Journal of Moleculaar Medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IEEE/ACM Transactions on Networking",
+    "typo_insertion": "IEEE/ACM Transactioins on Networking"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ultramicroscopy",
+    "typo_insertion": "Ultramicroscopiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of the Arkansas Academy of Science",
+    "typo_insertion": "Journal of the Arkansas Academy of Scieence"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal for Educational Research Online",
+    "typo_insertion": "Journal for Educational Researcch Online"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ultrasound in Obstetrics and Gynecology",
+    "typo_insertion": "Ultrasound in Obstetricss and Gynecology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Learning and Individual Differences",
+    "typo_insertion": "Learning and Individuall Differences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Molecular Neurobiology",
+    "typo_insertion": "Molecular Neurobiologiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Brazilian Journal of Political Economy",
+    "typo_insertion": "Brazilian Journaal of Political Economy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Traffic Injury Prevention",
+    "typo_insertion": "Traffic Injuriy Prevention"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Underwater Technology The International Journal of the Society for Underwater",
+    "typo_insertion": "Underwateer Technology The International Journal of the Society for Underwater"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Environment Agriculture and Biotechnology",
+    "typo_insertion": "International Journal of Environment Agriaculture and Biotechnology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Hydraulic Research",
+    "typo_insertion": "Journal of Hydraulics Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Dairy Technology",
+    "typo_insertion": "International Journal of Dairy Technologuy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Political Science: Bulletin of Yerevan University",
+    "typo_insertion": "Journal of Political Science: Bulletpin of Yerevan University"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Transportation Research Procedia",
+    "typo_insertion": "Transportation Research Procediia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nonlinear Analysis Real World Applications",
+    "typo_insertion": "Nonlinear Analysiss Real World Applications"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IEEE Geoscience and Remote Sensing Letters",
+    "typo_insertion": "IEEE Geoscience and Remote Sensing Lett ers"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Proceedings of the Institution of Civil Engineers - Waste and Resource Management",
+    "typo_insertion": "Proceedings of the Institution of Civil Engineers - Waste and Resource Managemeent"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mathematical Systems Theory",
+    "typo_insertion": "Mathematical Systeems Theory"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Agricultural &amp; Environmental Letters",
+    "typo_insertion": "Agricultural &amp; Environmental Lettters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ichthyological Research",
+    "typo_insertion": "Ichthyological Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Advanced Science Letters",
+    "typo_insertion": "Advanced Sciencte Letters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Contemporary Economic Policy",
+    "typo_insertion": "Contemporaory Economic Policy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Cancer Research and Therapeutics",
+    "typo_insertion": "Journal of Canceer Research and Therapeutics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Wetlands Ecology and Management",
+    "typo_insertion": "Wetlandss Ecology and Management"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Administrative Science Quarterly",
+    "typo_insertion": "Administrative Sciencce Quarterly"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archiv für Tierernaehrung",
+    "typo_insertion": "Archiv fürr Tierernaehrung"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Algebra & Number Theory",
+    "typo_insertion": "Algebra & Number Theoray"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "DSpace at Tartu University Library",
+    "typo_insertion": "DSpace at Tartu University Libraray"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nutrition Reviews",
+    "typo_insertion": "Nutrition Revieews"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Endocrinology",
+    "typo_insertion": "Journal of Endocrinoloegy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Chirality",
+    "typo_insertion": "Chirallity"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Human Hypertension",
+    "typo_insertion": "Journal of Human Hypertensioin"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Applied Financial Economics Letters",
+    "typo_insertion": "Applied Financial Economics Lettters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Experimental Agriculture",
+    "typo_insertion": "Experimental Agriuculture"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Graduate Medical Education",
+    "typo_insertion": "Journal of Graduaate Medical Education"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IEEE Transactions on Industrial Electronics",
+    "typo_insertion": "IEEE Transactioins on Industrial Electronics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Degraded and Mining Lands Management",
+    "typo_insertion": "Journal of Degraded and Mining Lands Managemeent"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sociological Theory",
+    "typo_insertion": "Sociological Theoray"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dalton Transactions",
+    "typo_insertion": "Dalton Transactioins"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Moravian Geographical Reports",
+    "typo_insertion": "Moravian Geographical Reporats"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Environmental Systems Research",
+    "typo_insertion": "Environmental Systems Researcch"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Natural Gas Industry B",
+    "typo_insertion": "Natural Gaas Industry B"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Malaysian Journal of Science",
+    "typo_insertion": "Malaysian Journaal of Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ATZ worldwide",
+    "typo_insertion": "ATZ wworldwide"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electrochemical and Solid-State Letters",
+    "typo_insertion": "Electrochemical and Solid-State Lettters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Financial Theory and Practice",
+    "typo_insertion": "Financial Theoray and Practice"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psychiatry",
+    "typo_insertion": "Psychiatrty"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancer Letters",
+    "typo_insertion": "Cancer Lettters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Intelligent & Fuzzy Systems",
+    "typo_insertion": "Journal of Intelligent & Fuzzy Systeems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Insects as Food and Feed",
+    "typo_insertion": "Journal of Insectas as Food and Feed"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Accounting Research",
+    "typo_insertion": "Journal of Accounting Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Strategic Property Management",
+    "typo_insertion": "International Journal of Strateigic Property Management"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Macromolecules",
+    "typo_insertion": "Macromoleculles"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IEEE Transactions on Neural Networks",
+    "typo_insertion": "IEEE Transactioins on Neural Networks"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "African Crop Science Journal",
+    "typo_insertion": "African Cropt Science Journal"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Online Learning",
+    "typo_insertion": "Online Leaarning"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biological Research",
+    "typo_insertion": "Biological Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Inflammation Research",
+    "typo_insertion": "Journal of Inflammatiion Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ageing and Society",
+    "typo_insertion": "Ageing and Societey"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Photosynthesis Research",
+    "typo_insertion": "Photoysynthesis Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biology Bulletin Reviews",
+    "typo_insertion": "Biology Bulleitin Reviews"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Exposure Analysis and Environmental Epidemiology",
+    "typo_insertion": "Journal of Exposuure Analysis and Environmental Epidemiology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Landscape Online",
+    "typo_insertion": "Landscape Onliine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Electrochemical Energy Reviews",
+    "typo_insertion": "Electrochemical Energy Revieews"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Journal of Neurology",
+    "typo_insertion": "European Journale of Neurology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cell Reports",
+    "typo_insertion": "Cell Reporsts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Purchasing and Materials Management",
+    "typo_insertion": "Journal of Purchasing and Materials Managemeent"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Polymer Chemistry",
+    "typo_insertion": "Polymer Chemistrny"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Bioelectrochemistry",
+    "typo_insertion": "Bioelectrochemistrny"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archives of Iranian Medicine",
+    "typo_insertion": "Archives of Iraniann Medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nature Aging",
+    "typo_insertion": "Nature Aginng"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Urban Technology",
+    "typo_insertion": "Journal of Urban Technologuy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Current Protocols in Cytometry",
+    "typo_insertion": "Current Protocols in Cytometrty"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Procedia Structural Integrity",
+    "typo_insertion": "Procedia Structural Integritiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Oncology Reports",
+    "typo_insertion": "Oncology Repor ts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Medical Microbiology",
+    "typo_insertion": "International Journal of Medicaal Microbiology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Plant Cell Reports",
+    "typo_insertion": "Plant Cell Repor ts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Biological and Pharmaceutical Bulletin",
+    "typo_insertion": "Biological and Pharmaceuticall Bulletin"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Interactive Learning Environments",
+    "typo_insertion": "Interactive Learniing Environments"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Expert Review of Anticancer Therapy",
+    "typo_insertion": "Expert Review of Anticancer Therapty"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Proceedings of the Institution of Civil Engineers - Water Management",
+    "typo_insertion": "Proceedings of the Institution of Civil Engineers - Water Managemeent"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Physics Procedia",
+    "typo_insertion": "Physics Procediia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Managerial and Decision Economics",
+    "typo_insertion": "Managerial and Decisioin Economics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Solid State Electrochemistry",
+    "typo_insertion": "Journal of Solid State Electrochemistrny"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Industrial Management & Data Systems",
+    "typo_insertion": "Industrial Managemeent & Data Systems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Probability Theory and Related Fields",
+    "typo_insertion": "Probability Theoryy and Related Fields"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Statistics in Medicine",
+    "typo_insertion": "Statistics in Mediciene"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Advances in Difference Equations",
+    "typo_insertion": "Advances in Differencce Equations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Zoonoses and Public Health",
+    "typo_insertion": "Zoonoses and Publilc Health"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Egyptian Journal of Remote Sensing and Space Sciences",
+    "typo_insertion": "Egyptian Journale of Remote Sensing and Space Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Innate Immunity",
+    "typo_insertion": "Journal of Innate Immunitiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Evolving Systems",
+    "typo_insertion": "Evolving Systeems"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Nigerian Society of Physical Sciences",
+    "typo_insertion": "Journal of Nigerrian Society of Physical Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Archiv für Protistenkunde",
+    "typo_insertion": "Archiv fürr Protistenkunde"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Flow Turbulence and Combustion",
+    "typo_insertion": "Flow Turbulence and Com bustion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Salud Mental",
+    "typo_insertion": "Salud Mentaal"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Acta Pharmacologica Sinica",
+    "typo_insertion": "Acta Pharamacologica Sinica"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Nutrition Bulletin",
+    "typo_insertion": "Nutrition Bulleitin"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IRE Transactions on Antennas and Propagation",
+    "typo_insertion": "IRE Transactions on Antennas and Propagat ion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Central European Journal of Operations Research",
+    "typo_insertion": "Central European Journall of Operations Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of the Japan Institute of Energy",
+    "typo_insertion": "Journal of the Japana Institute of Energy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of English Language and Translation Studies",
+    "typo_insertion": "International Journal of English Language and Translatioin Studies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Academy of Management Proceedings",
+    "typo_insertion": "Academy of Managemeent Proceedings"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Obesity Research",
+    "typo_insertion": "Obesitay Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Études irlandaises",
+    "typo_insertion": "Étudess irlandaises"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Central European Geology",
+    "typo_insertion": "Central European Geolo gy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Health Psychology",
+    "typo_insertion": "Health Psychologhy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Protein Science",
+    "typo_insertion": "Proteiin Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Environmental Science & Technology",
+    "typo_insertion": "Environmental Sciencte & Technology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Animal Feed Science and Technology",
+    "typo_insertion": "Animal Feed Sciencte and Technology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Psychology",
+    "typo_insertion": "BMC Psychologhy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ambiente &amp; Sociedade",
+    "typo_insertion": "Ambiente &amp; Sociedaade"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Hydraulic Engineering",
+    "typo_insertion": "Journal of Hydraulice Engineering"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Public Health Reports",
+    "typo_insertion": "Public Health Repor ts"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Aerospace Science and Technology",
+    "typo_insertion": "Aerospace Sciencte and Technology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Law & Policy",
+    "typo_insertion": "Law & Policiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Scientific documents from the Saarland University",
+    "typo_insertion": "Scientific documentss from the Saarland University"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Animal Microbiome",
+    "typo_insertion": "Animal Microbiomme"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Educational Policy",
+    "typo_insertion": "Educational Policiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Apidologie",
+    "typo_insertion": "Apidiologie"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Engineering Geology",
+    "typo_insertion": "Engineering Geolo gy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IEEE Transactions on Multimedia",
+    "typo_insertion": "IEEE Transactioins on Multimedia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "IATSS Research",
+    "typo_insertion": "IATSS Researcch"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Otolaryngology",
+    "typo_insertion": "Otolaryngoloygy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Vibrational Spectroscopy",
+    "typo_insertion": "Vibrational Spectoroscopy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Education and Health Promotion",
+    "typo_insertion": "Journal of Educations and Health Promotion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Japanese journal of mathematics",
+    "typo_insertion": "Japanese journall of mathematics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Zoological Systematics & Evolutionary Research",
+    "typo_insertion": "Journal of Zoological Systematics & Evolutionary Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Iconarp International Journal of Architecture and Planning",
+    "typo_insertion": "Iconarp International Journaal of Architecture and Planning"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cancer Science & Research Open Access",
+    "typo_insertion": "Cancer Sciencte & Research Open Access"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Current Opinion in Pulmonary Medicine",
+    "typo_insertion": "Current Opinion in Pulmnonary Medicine"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Food Protection",
+    "typo_insertion": "Journal of Food Protectioin"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Revista Brasileira de Educação do Campo",
+    "typo_insertion": "Revista Brasileira de Educação do Caampo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of International Food & Agribusiness Marketing",
+    "typo_insertion": "Journal of International Food & Agribusiness Marketting"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Macromolecular Materials and Engineering",
+    "typo_insertion": "Macromolecular Materiales and Engineering"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Roczniki Panstwowego Zakladu Higieny",
+    "typo_insertion": "Rocznikii Panstwowego Zakladu Higieny"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Magnetochemistry",
+    "typo_insertion": "Magnetochemistrny"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Indonesian Journal of Forestry Research",
+    "typo_insertion": "Indonesian Journaal of Forestry Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Mycobiology",
+    "typo_insertion": "Mycobiologiy"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Neurologic Physical Therapy",
+    "typo_insertion": "Journal of Neurologic Physical Therapty"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Beliefs and Values",
+    "typo_insertion": "Journal of Beliefs and Valuies"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Earth System Science Data Discussions",
+    "typo_insertion": "Earth System Science Data Discusssions"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "The Lancet Psychiatry",
+    "typo_insertion": "The Lancaet Psychiatry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Communication Research",
+    "typo_insertion": "Communication Researcgh"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Modern Electronic Materials",
+    "typo_insertion": "Modern Electronic Materiails"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "M@n@gement",
+    "typo_insertion": "M@n@mgement"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "dariah",
+    "typo_deletion": "darih"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Roger Griffis",
+    "typo_deletion": "Roger Grifis"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Kentaro Teramura",
+    "typo_deletion": "Kentaro Teramua"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Tick-borne diseases/Ticks",
+    "typo_deletion": "Tick-borne diseases/Tiks"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "DARIAH EU",
+    "typo_deletion": "DARIAH U"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Field Methods",
+    "typo_deletion": "Field Methos"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of Oulu",
+    "typo_deletion": "University of Olu"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Research Information Ltd.",
+    "typo_deletion": "Research Information Lt."
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "DynaPoMP",
+    "typo_deletion": "DynaPoP"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "National multidiscplinary CRIS",
+    "typo_deletion": "National multidiscplinary CRS"
+  }
+]

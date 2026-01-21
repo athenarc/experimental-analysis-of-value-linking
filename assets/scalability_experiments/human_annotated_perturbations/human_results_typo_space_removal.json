@@ -1,0 +1,74 @@
+[
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tim Robertson",
+    "typo_space_removal": "TimRobertson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sujit Saha",
+    "typo_space_removal": "SujitSaha"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "general physics",
+    "typo_space_removal": "generalphysics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "physical sciences",
+    "typo_space_removal": "physicalsciences"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "DARIAH EU",
+    "typo_space_removal": "DARIAHEU"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Current Genomics",
+    "typo_space_removal": "CurrentGenomics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geoderma Regional",
+    "typo_space_removal": "GeodermaRegional"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Cumhuriyet University",
+    "typo_space_removal": "CumhuriyetUniversity"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "VCU Libraries",
+    "typo_space_removal": "VCULibraries"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Paraclius Loew",
+    "typo_space_removal": "ParacliusLoew"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Animal agency",
+    "typo_space_removal": "Animalagency"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "CRIS System",
+    "typo_space_removal": "CRISSystem"
+  }
+]

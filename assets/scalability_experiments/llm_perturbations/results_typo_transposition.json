@@ -1,0 +1,2061 @@
+[
+  {
+    "distinct_columns": [
+      "acronym",
+      "country",
+      "fullname",
+      "label",
+      "name",
+      "officialname",
+      "publisher",
+      "title",
+      "type"
+    ]
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "University of Kerbala",
+    "typo_transposition": "University of Kebrala"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Ryerson University",
+    "typo_transposition": "Ryerson Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Project Euclid",
+    "typo_transposition": "Project Eucild"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "BioResources",
+    "typo_transposition": "BioResourcse"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Yaroslav Mudryi National Law University",
+    "typo_transposition": "Yaroslav Mudryi National Law Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Copernicus Publications",
+    "typo_transposition": "Copernicus Publciations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Carnegie Mellon University",
+    "typo_transposition": "Carnegie Mellon Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Institut Informatika Indonesia Surabaya",
+    "typo_transposition": "Institut Informatika Indoneisa Surabaya"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "E.U. European Publishing",
+    "typo_transposition": "E.U. Eurpoean Publishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Polilog. Studia Neofilologiczne",
+    "typo_transposition": "Polilog. Stduia Neofilologiczne"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Griffith University",
+    "typo_transposition": "Griffith Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universitas Muhammadiyah Gorontalo",
+    "typo_transposition": "Univeristas Muhammadiyah Gorontalo"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pontificia Universidad Catolica de Valparaiso",
+    "typo_transposition": "Pontificia Univerisdad Catolica de Valparaiso"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Real Economy Publishing",
+    "typo_transposition": "Real Econmoy Publishing"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Vieweg+Teubner",
+    "typo_transposition": "Vieweg+Teubnre"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "European Southern Observatory (ESO)",
+    "typo_transposition": "European Southern Obseravtory (ESO)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "VLDB Endowment",
+    "typo_transposition": "VLDB Endowmnet"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Bastas Publications",
+    "typo_transposition": "Bastas Publciations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universa Press",
+    "typo_transposition": "Univeras Press"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Norwegian Society of Automatic Control",
+    "typo_transposition": "Norwegian Soceity of Automatic Control"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pontificia Universidad Católica del Perú",
+    "typo_transposition": "Pontificia Univerisdad Católica del Perú"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Thomas Telford Ltd.",
+    "typo_transposition": "Thomas Telford Lt.d"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "DE GRUYTER",
+    "typo_transposition": "DE GRUYTRE"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Medwell Publications",
+    "typo_transposition": "Medwell Publciations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "International College of Surgeons",
+    "typo_transposition": "International College of Surgenos"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Polish Botanical Society",
+    "typo_transposition": "Polish Botanical Soceity"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Oceanside Publications Inc.",
+    "typo_transposition": "Oceanside Publciations Inc."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SAGE Publications, Inc.",
+    "typo_transposition": "SAGE Publciations, Inc."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Linkoping University Electronic Press",
+    "typo_transposition": "Linkoping Univeristy Electronic Press"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Sakarya University Journal of Computer and Information Sciences",
+    "typo_transposition": "Sakarya Univeristy Journal of Computer and Information Sciences"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Technological University Dublin",
+    "typo_transposition": "Technological Univeristy Dublin"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Mycotaxon, Ltd.",
+    "typo_transposition": "Mycotaxon, Lt.d"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Journal of Rehabilitation Research & Development",
+    "typo_transposition": "Journal of Rehabilitatoin Research & Development"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Université d'Ottawa / University of Ottawa",
+    "typo_transposition": "Université d'Ottawa / Universtiy of Ottawa"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Open Humanities Press",
+    "typo_transposition": "Open Humanities Prses"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Yildiz Technical University",
+    "typo_transposition": "Yildiz Technical Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Turkish Society of Cardiology",
+    "typo_transposition": "Turkish Soceity of Cardiology"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Daugavpils University",
+    "typo_transposition": "Daugavpils Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Technical University of Denmark",
+    "typo_transposition": "Technical Univeristy of Denmark"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "RWTH Aachen University",
+    "typo_transposition": "RWTH Aachne University"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "SAGE Publications, Inc",
+    "typo_transposition": "SAGE Publciations, Inc"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Journal of Mechanical Ventilation",
+    "typo_transposition": "Journal of Mechanical Ventilatino"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universitas Pendidikan Indonesia (UPI)",
+    "typo_transposition": "Univeristas Pendidikan Indonesia (UPI)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Canadian Urological Association Journal",
+    "typo_transposition": "Canadian Urological Associatoin Journal"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Malaga University",
+    "typo_transposition": "Malaga Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Director, Zoological Survey of India,",
+    "typo_transposition": "Director, Zoological Survey of Indi,a"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "DKS Center",
+    "typo_transposition": "DKS Cenetr"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Brawijaya University",
+    "typo_transposition": "Brawijaya Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Physica-Verlag HD",
+    "typo_transposition": "Physica-Verlag DH"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "American Speech Language Hearing Association",
+    "typo_transposition": "American Speech Langauge Hearing Association"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "National Technical University Kharkiv Polytechnic Institute",
+    "typo_transposition": "National Technical Univeristy Kharkiv Polytechnic Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "World Bank",
+    "typo_transposition": "World Bnak"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Pleiades Publishing Ltd",
+    "typo_transposition": "Pleidaes Publishing Ltd"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Nihon University School of Dentistry",
+    "typo_transposition": "Nihon Univeristy School of Dentistry"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Guilford Publications",
+    "typo_transposition": "Guilford Publciations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "AEPress, s.r.o.",
+    "typo_transposition": "AEPrses, s.r.o."
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Wageningen University",
+    "typo_transposition": "Wageningen Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kasetsart University and Development Institute",
+    "typo_transposition": "Kasetsart Univeristy and Development Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Jyvaskyla University Open Science Centre",
+    "typo_transposition": "Jyvaskyla Univeristy Open Science Centre"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Murcia : Universidad de Murcia, Servicio de Publicaciones",
+    "typo_transposition": "Murcia : Universidad de Murcia, Servicio de Publciaciones"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universitas Muslim Indonesia",
+    "typo_transposition": "Universitas Muslim Indoneisa"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Universitas Bangka Belitung",
+    "typo_transposition": "Univeristas Bangka Belitung"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Utah State University",
+    "typo_transposition": "Utah State Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "The Korean Home Economics Association",
+    "typo_transposition": "The Korean Home Econoimcs Association"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Lattice Science Publication (LSP)",
+    "typo_transposition": "Lattice Science Publciation (LSP)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Informa Healthcare",
+    "typo_transposition": "Inforam Healthcare"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Japanese Circulation Society",
+    "typo_transposition": "Japanese Ciruclation Society"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Yerevan State University",
+    "typo_transposition": "Yerevan State Universtiy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Hylonome Publications",
+    "typo_transposition": "Hylonome Publciations"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "South African National Biodiversity Institute",
+    "typo_transposition": "South Africna National Biodiversity Institute"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Suleyman Demirel University",
+    "typo_transposition": "Suleyman Demirel Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Akadémiai Kiadó",
+    "typo_transposition": "Akadémiai Kidaó"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Centro de Investigaciones Sociologicas",
+    "typo_transposition": "Centro de Invesitgaciones Sociologicas"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "European Association for Machine Translation (EAMT)",
+    "typo_transposition": "Eurpoean Association for Machine Translation (EAMT)"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "WOT Natuur & Milieu",
+    "typo_transposition": "WOT Nautur & Milieu"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "EDITORA CRV",
+    "typo_transposition": "EDITORA RCV"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Kazimierz Wielki University",
+    "typo_transposition": "Kazimierz Wielki Univeristy"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "OmniaScience",
+    "typo_transposition": "OmniaSicence"
+  },
+  {
+    "table": "result",
+    "column": "publisher",
+    "original": "Canadian Center of Science and Education",
+    "typo_transposition": "Canadian Center of Scienec and Education"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Continuum mechanics/Thermodynamics",
+    "typo_transposition": "Continuum mechnaics/Thermodynamics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Design of experiments/Clinical research",
+    "typo_transposition": "Design of expeirments/Clinical research"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Fracture mechanics/Materials degradation",
+    "typo_transposition": "Fracture mechnaics/Materials degradation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Cellulose/Polysaccharides",
+    "typo_transposition": "Cellulose/Polysaccharidse"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Historical eras/Extinction events",
+    "typo_transposition": "Historical eras/Extinction evnets"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "general physics",
+    "typo_transposition": "general phsyics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Proteins/Proteomics",
+    "typo_transposition": "Proteins/Proteomcis"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Occupational therapy/Learning disabilities",
+    "typo_transposition": "Occupational threapy/Learning disabilities"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Accelerator physics/Laser applications",
+    "typo_transposition": "Accelerator phsyics/Laser applications"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Evidence-based practices/Information science",
+    "typo_transposition": "Evidence-based pracitces/Information science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Graphic design/Communication design",
+    "typo_transposition": "Graphic desing/Communication design"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Composite materials/Vehicle armour",
+    "typo_transposition": "Composite materials/Vehicel armour"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "chemical physics",
+    "typo_transposition": "chemical phsyics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Gifted education/Educational psychology",
+    "typo_transposition": "Gifted edcuation/Educational psychology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "gerontology",
+    "typo_transposition": "geronotlogy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Petroleum production/Underwater diving physics",
+    "typo_transposition": "Petroleum produciton/Underwater diving physics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Amino acids/Chemical articles with multiple compound IDs",
+    "typo_transposition": "Amino aicds/Chemical articles with multiple compound IDs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Plasma physics/Astrophysics",
+    "typo_transposition": "Plasma phsyics/Astrophysics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Maritime incidents/Ship collision",
+    "typo_transposition": "Maritime incidenst/Ship collision"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Crime by type/Criminology",
+    "typo_transposition": "Crime by tyep/Criminology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "health sciences",
+    "typo_transposition": "health scienecs"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nuclear physics/Binding energy",
+    "typo_transposition": "Nuclear phsyics/Binding energy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nutrition by type/Dietary supplements",
+    "typo_transposition": "Nutrition by tyep/Dietary supplements"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Joints/Upper limb anatomy",
+    "typo_transposition": "Joints/Upper limb anatmoy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Human eye anatomy/Blindness",
+    "typo_transposition": "Human eye anatmoy/Blindness"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Actuarial science/Environmental social science",
+    "typo_transposition": "Actuarial scienec/Environmental social science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "human factors",
+    "typo_transposition": "human factros"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "communication & media studies",
+    "typo_transposition": "communication & media stuides"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Construction/Building engineering",
+    "typo_transposition": "Construciton/Building engineering"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Polyphenols/Phytochemicals",
+    "typo_transposition": "Polyphenol/sPhytochemicals"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "automobile design & engineering",
+    "typo_transposition": "automobile desing & engineering"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Nuclear physics/Star types",
+    "typo_transposition": "Nuclear phsyics/Star types"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Solid mechanics/Deformation (mechanics)",
+    "typo_transposition": "Solid mechnaics/Deformation (mechanics)"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Dairy products/Milk",
+    "typo_transposition": "Dairy prodcuts/Milk"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Anatomy/Medical education",
+    "typo_transposition": "Anatomy/Medical edcuation"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "evolutionary biology",
+    "typo_transposition": "evolutioanry biology"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Scientific techniques/Diffraction",
+    "typo_transposition": "Scientific techinques/Diffraction"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Horse anatomy/Horse management",
+    "typo_transposition": "Horse anatmoy/Horse management"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "pediatrics",
+    "typo_transposition": "pediatrisc"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Pediatrics/Surgical specialties",
+    "typo_transposition": "Pediatrisc/Surgical specialties"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Food safety/Foodborne illnesses",
+    "typo_transposition": "Food saftey/Foodborne illnesses"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Bacteriology/Bacteria",
+    "typo_transposition": "Bacteriology/Bacteira"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "mathematical physics",
+    "typo_transposition": "mathematical phsyics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "statistics & probability",
+    "typo_transposition": "statistics & probabiltiy"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "dairy & animal science",
+    "typo_transposition": "dairy & anmial science"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Social concepts/Accountability",
+    "typo_transposition": "Social concpets/Accountability"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "science studies",
+    "typo_transposition": "science stuides"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Particle physics/Bosons",
+    "typo_transposition": "Particle phsyics/Bosons"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "family studies",
+    "typo_transposition": "family stuides"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Distributed computing/Computability theory",
+    "typo_transposition": "Distributed computing/Computabiltiy theory"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Operating system technology/Virtual machines",
+    "typo_transposition": "Operating system technology/Virtual machiens"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Sensors/Biosensors",
+    "typo_transposition": "Sensros/Biosensors"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Artificial intelligence/Computational fields of study",
+    "typo_transposition": "Artificial intelligenec/Computational fields of study"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "applied physics",
+    "typo_transposition": "applied phsyics"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "Electric motors/Machines",
+    "typo_transposition": "Electric motros/Machines"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Nannan Zhao",
+    "typo_transposition": "Nanann Zhao"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Vivien Cosandey",
+    "typo_transposition": "Vivien Csoandey"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Reshma R Parekar",
+    "typo_transposition": "Reshma R Paerkar"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Gilberto A. Romeiro",
+    "typo_transposition": "Gilberto A. Romiero"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jeffrey R. Key",
+    "typo_transposition": "Jeffrey R. Kye"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Anna K. Bytzek",
+    "typo_transposition": "Anna K. Byztek"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jutta Kister",
+    "typo_transposition": "Jutta Kistre"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Weltzin, Jake F.",
+    "typo_transposition": "Weltzin, Jkae F."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G, Sokhrannyi",
+    "typo_transposition": "G, Sokhranniy"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Oliver Lorenz",
+    "typo_transposition": "Oliver Lornez"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Watts, Joseph",
+    "typo_transposition": "Watts, Jospeh"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Corina Neagu",
+    "typo_transposition": "Corina Negau"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Takeshi Kurose",
+    "typo_transposition": "Takehsi Kurose"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "W A, Bowes",
+    "typo_transposition": "W A, Boews"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Stephen D. Tyerman",
+    "typo_transposition": "Stephne D. Tyerman"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Seth T. Scanlon",
+    "typo_transposition": "Seth T. Scanoln"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Milanović Miško",
+    "typo_transposition": "Milanović Mšiko"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Johann Fellner",
+    "typo_transposition": "Johann Fellenr"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Karin Groten",
+    "typo_transposition": "Karin Grotne"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Pelling, M.",
+    "typo_transposition": "Pellign, M."
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Jean Labrecque",
+    "typo_transposition": "Jean Labrecqeu"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Mulugeta Tesemma",
+    "typo_transposition": "Mulugeta Tseemma"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "K Okuyama",
+    "typo_transposition": "K Okyuama"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Zedias Chikwambi",
+    "typo_transposition": "Zedias Chikwamib"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Moses Richter",
+    "typo_transposition": "Moses Ricther"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Grazielli da Rocha",
+    "typo_transposition": "Grazielli da Rocah"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Joana Sá-Pessoa",
+    "typo_transposition": "Joana Sá-Pesosa"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Cristina Richichi",
+    "typo_transposition": "Cristina Rihcichi"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Thomas G. Meikle",
+    "typo_transposition": "Thomas G. Miekle"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Takahiro Saitho",
+    "typo_transposition": "Takahiro Saitoh"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bajramović, Mladen",
+    "typo_transposition": "Bajramović, Mladne"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "E. Guerrini",
+    "typo_transposition": "E. Guerriin"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Takesi Kato",
+    "typo_transposition": "Takeis Kato"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Thielscher, Axel",
+    "typo_transposition": "Thielschre, Axel"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Schempp, Werner",
+    "typo_transposition": "Schempp, Wernre"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Bernard Ravitz",
+    "typo_transposition": "Bernard Rvaitz"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "G Vert",
+    "typo_transposition": "G Vetr"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "James A. Raiford",
+    "typo_transposition": "James A. Riaford"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "P. Motiei",
+    "typo_transposition": "P. Moteii"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Tommy Andersson",
+    "typo_transposition": "Tommy Andresson"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Fiona Neylon",
+    "typo_transposition": "Fiona Nelyon"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Iolanda Cristina Silveira Duarte",
+    "typo_transposition": "Iolanda Crisitna Silveira Duarte"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M. Afzaal Malik",
+    "typo_transposition": "M. Afzaal Malki"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Boehler, M",
+    "typo_transposition": "Boelher, M"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Luciana Giardino",
+    "typo_transposition": "Luciana Giaridno"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Lopez, Oscar",
+    "typo_transposition": "Lopez, Ocsar"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "René Csuk",
+    "typo_transposition": "René Csku"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Brenner, Lyle",
+    "typo_transposition": "Brenner, Lyel"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Dimitrios Angelopoulos",
+    "typo_transposition": "Dimitrois Angelopoulos"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Rocio Diaz-Chavez",
+    "typo_transposition": "Rocio Diza-Chavez"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "M. I. SCHERZER",
+    "typo_transposition": "M. I. SCHREZER"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Klaus Krisch",
+    "typo_transposition": "Klaus Kirsch"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Catherine Goyet",
+    "typo_transposition": "Catherine Goeyt"
+  },
+  {
+    "table": "author",
+    "column": "fullname",
+    "original": "Sookuk Park",
+    "typo_transposition": "Sookuk Prak"
+  },
+  {
+    "table": "community",
+    "column": "name",
+    "original": "DARIAH EU",
+    "typo_transposition": "DARIAH UE"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Controlling Soot Formation with Filtered EGR for Diesel and Biodiesel Fuelled Engines",
+    "typo_transposition": "Controlling Soot Formation with Filtered EGR for Diesel and Biodiesel Fuelled Enginse"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Optimum coordination of centralized and distributed renewable power generation incorporating battery storage system into the electric distribution network",
+    "typo_transposition": "Optimum cooridnation of centralized and distributed renewable power generation incorporating battery storage system into the electric distribution network"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Application and Design Aspects of Ground Heat Exchangers",
+    "typo_transposition": "Application and Desing Aspects of Ground Heat Exchangers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Influence of cathode oxidation via the hole extraction layer in polymer:fullerene solar cells",
+    "typo_transposition": "Influence of cathode oxidation via the hole extraciton layer in polymer:fullerene solar cells"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Nitrogen enriched mesoporous carbon as a high capacity cathode in lithiumoxygen batteries",
+    "typo_transposition": "Nitrogen enriched mesoporous carbon as a high capacity cathode in lithiumoxygen battreies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Bidding problem of Combined Cooling, Heat, and Power systems to take advantage of their inherent flexibility in service restoration programs of distribution networks",
+    "typo_transposition": "Bidding prolbem of Combined Cooling, Heat, and Power systems to take advantage of their inherent flexibility in service restoration programs of distribution networks"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Social Media Literacy among Oil Palm Smallholders in East Malaysia and Association with Oil Palm Integration Practices",
+    "typo_transposition": "Social Meida Literacy among Oil Palm Smallholders in East Malaysia and Association with Oil Palm Integration Practices"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Risk Reduction and Sustainable Development of Shared Transportation: The Chinese Online Car-hailing Policy Evaluation in the Digitalization Era",
+    "typo_transposition": "The Risk Reduciton and Sustainable Development of Shared Transportation: The Chinese Online Car-hailing Policy Evaluation in the Digitalization Era"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Passtrans: An Improved Password Reuse Model Based on Transformer",
+    "typo_transposition": "Passtrnas: An Improved Password Reuse Model Based on Transformer"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Modelling guidelines for core exit temperature simulations with system codes",
+    "typo_transposition": "Modelling guidelines for core exit temperature simualtions with system codes"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The Order of Discourse",
+    "typo_transposition": "The Ordre of Discourse"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Pyrolysis characteristics and microstructure evolution of different coal types",
+    "typo_transposition": "Pyrolysis characteristics and microstrcuture evolution of different coal types"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Tech-Business Analytics in Tertiary Industry Sector",
+    "typo_transposition": "Tech-Business Analytisc in Tertiary Industry Sector"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Sustainability assessment of electricity production using a logic models approach",
+    "typo_transposition": "Sustainability assessmnet of electricity production using a logic models approach"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Innovation and the international diffusion of environmentally responsive technology",
+    "typo_transposition": "Innovatoin and the international diffusion of environmentally responsive technology"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Assessing the design of three carbon trading pilot programs in China",
+    "typo_transposition": "Assessing the desing of three carbon trading pilot programs in China"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Energy-Positive House: Performance Assessment through Simulation and Measurement",
+    "typo_transposition": "Energy-Positive House: Performance Assessmnet through Simulation and Measurement"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Oocyclus maluz",
+    "typo_transposition": "Oocylcus maluz"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Resilience: The emergence of a perspective for socialecological systems analyses",
+    "typo_transposition": "Resilience: The emergence of a perspective for soicalecological systems analyses"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Factors influencing the risk of falls in the construction industry: a review of the evidence",
+    "typo_transposition": "Factors influencing the risk of falls in the construciton industry: a review of the evidence"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Coupling interaction of cathodic reduction and microbial metabolism in aerobic biocathode of microbial fuel cell",
+    "typo_transposition": "Coupling interaciton of cathodic reduction and microbial metabolism in aerobic biocathode of microbial fuel cell"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Relation between Particle Coordination Number and Porosity in Nanoparticle Films: Implications to Dye-Sensitized Solar Cells",
+    "typo_transposition": "Relation between Particel Coordination Number and Porosity in Nanoparticle Films: Implications to Dye-Sensitized Solar Cells"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Climate adaptation approaches and key policy characteristics: Cases from South Asia",
+    "typo_transposition": "Climate adaptation approaches and key policy characteristics: Cases from South Aisa"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Teacher behavior as a mediator of the relationship between teacher judgment and students' motivation and emotion",
+    "typo_transposition": "Teacher behavoir as a mediator of the relationship between teacher judgment and students' motivation and emotion"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Signal estimation from modified short-time Fourier transform",
+    "typo_transposition": "Signal estiamtion from modified short-time Fourier transform"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "References for CIHR Planning and Dissemination application",
+    "typo_transposition": "References for CIHR Planning and Dissemination applicatino"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Revisiting the importance of appropriate parameter estimation based on sensitivity analysis for developing kinetic models",
+    "typo_transposition": "Revisiting the importance of appropraite parameter estimation based on sensitivity analysis for developing kinetic models"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Morphological and dietary responses of chipmunks to a century of climate change",
+    "typo_transposition": "Morphological and dietary responses of chimpunks to a century of climate change"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The coordination of movement: optimal feedback control and beyond",
+    "typo_transposition": "The coordination of movement: optmial feedback control and beyond"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The First Cosmic Structures and Their Effects",
+    "typo_transposition": "The First Cosmic Strucutres and Their Effects"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "PV Monitoring System for a Water Pumping Scheme with a Lithium-Ion Battery Using Free Open-Source Software and IoT Technologies",
+    "typo_transposition": "PV Monitroing System for a Water Pumping Scheme with a Lithium-Ion Battery Using Free Open-Source Software and IoT Technologies"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "A global study of NDVI difference among moderate-resolution satellite sensors",
+    "typo_transposition": "A global study of NVDI difference among moderate-resolution satellite sensors"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Preliminary evaluation of a novel solar bubble receiver for heating a gas",
+    "typo_transposition": "Preliminary evaluation of a novel solar bubble reciever for heating a gas"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Modeling and Control of a New Three-Input DCDC Boost Converter for Hybrid PV/FC/Battery Power System",
+    "typo_transposition": "Modeling and Contorl of a New Three-Input DCDC Boost Converter for Hybrid PV/FC/Battery Power System"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "ACC deaminase from Pseudomonas fluorescens mediated saline resistance in groundnut (Arachis hypogea) plants",
+    "typo_transposition": "ACC deaminase from Pseudomonas fluroescens mediated saline resistance in groundnut (Arachis hypogea) plants"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Heating-energy consumption in different plant operating conditions",
+    "typo_transposition": "Heating-enegry consumption in different plant operating conditions"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Structural and Functional Genes, and Highly Repetitive Sequences Commonly Used in the Phylogeny and Species Concept of the Phylum Cyanobacteria",
+    "typo_transposition": "Structural and Functional Genes, and Highly Repetitive Sequences Commonly Used in the Phylogeny and Species Concept of the Phylum Cyanobacteira"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Antibiotic Resistance Genes in drinking water of China: Occurrence, distribution and influencing factors",
+    "typo_transposition": "Antibiotic Resistanec Genes in drinking water of China: Occurrence, distribution and influencing factors"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Control Algorithms for Large-scale Single-axis Photovoltaic Trackers",
+    "typo_transposition": "Control Algorihtms for Large-scale Single-axis Photovoltaic Trackers"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Large-eddy simulation of a utility-scale wind farm in complex terrain",
+    "typo_transposition": "Large-eddy simualtion of a utility-scale wind farm in complex terrain"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The influence mechanism of effective stress, adsorption effect and Klinkenberg effect on coal seam permeability",
+    "typo_transposition": "The influence mechnaism of effective stress, adsorption effect and Klinkenberg effect on coal seam permeability"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Physical Oceanography of the Baltic Sea",
+    "typo_transposition": "Phyiscal Oceanography of the Baltic Sea"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Measuring and Explaining the Relative Efficiency of Container Terminals by Means of Bayesian Stochastic Frontier Models",
+    "typo_transposition": "Measuring and Explaining the Relative Efficiency of Contaienr Terminals by Means of Bayesian Stochastic Frontier Models"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Similarities in Attitudes and Norms and the Effect on Bicycle Commuting: Evidence from the Bicycle Cities Davis and Delft",
+    "typo_transposition": "Similarities in Attitueds and Norms and the Effect on Bicycle Commuting: Evidence from the Bicycle Cities Davis and Delft"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "High resistance to climatic variability in a dominant tundra shrub species",
+    "typo_transposition": "High resistanec to climatic variability in a dominant tundra shrub species"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Assessment of the Resource Potential of Baltic Sea Macroalgae",
+    "typo_transposition": "Assessment of the Resourc ePotential of Baltic Sea Macroalgae"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "The second natural gas hydrate production test in the South China Sea",
+    "typo_transposition": "The second nautral gas hydrate production test in the South China Sea"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Parabolic-trough solar collectors and their applications",
+    "typo_transposition": "Parabolic-trough solar collectros and their applications"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Effect of hydrogen on butanolbiodiesel blends in compression ignition engines",
+    "typo_transposition": "Effect of hydrogen on butanolbiodiesel blends in compression ignition enginse"
+  },
+  {
+    "table": "result",
+    "column": "title",
+    "original": "Plastic and evolutionary responses to climate change in fish",
+    "typo_transposition": "Plastic and evolutioanry responses to climate change in fish"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "BE, PT, NL, NL",
+    "typo_transposition": "BE, PT, NL, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "SI, IT, ES, IT",
+    "typo_transposition": "SI, IT, ES, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, LT",
+    "typo_transposition": "CH, TL"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "BE, NO, NL",
+    "typo_transposition": "BE, NO, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CA, CL",
+    "typo_transposition": "CA, LC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "HR, CH",
+    "typo_transposition": "HR, HC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NL, FR, CH, FR",
+    "typo_transposition": "NL, FR, CH, RF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, GB, GB",
+    "typo_transposition": "NO, GB, BG"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "PT, FR, PT",
+    "typo_transposition": "PT, FR, TP"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "IT, PT, IT",
+    "typo_transposition": "IT, PT, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "BE, IT, IT",
+    "typo_transposition": "BE, IT, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, NO",
+    "typo_transposition": "CH, ON"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "BE, CA, NL, FR, NL",
+    "typo_transposition": "BE, CA, NL, FR, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, NO, NL, DE, NL",
+    "typo_transposition": "CH, NO, NL, DE, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "GB, LT",
+    "typo_transposition": "GB, TL"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, FI",
+    "typo_transposition": "NO, IF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "SE, PT, PT",
+    "typo_transposition": "SE, PT, TP"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, CL",
+    "typo_transposition": "CH, LC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, DK, NO",
+    "typo_transposition": "NO, DK, ON"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "FR, DK, FR",
+    "typo_transposition": "FR, DK, RF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "FR, CH, FR",
+    "typo_transposition": "FR, CH, RF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NL, NL, PT",
+    "typo_transposition": "NL, NL, TP"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, IT, GB, CH",
+    "typo_transposition": "CH, IT, GB, HC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CZ, DK",
+    "typo_transposition": "CZ, KD"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "IT, GB, IT",
+    "typo_transposition": "IT, GB, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "IT, DK, IT",
+    "typo_transposition": "IT, DK, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, IT, CH",
+    "typo_transposition": "CH, IT, HC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "BE, CH, NL",
+    "typo_transposition": "BE, CH, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "GB, CH, DE, CH, GB",
+    "typo_transposition": "GB, CH, DE, HC, GB"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "GB, CL",
+    "typo_transposition": "GB, LC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NL, FR, ES, FR",
+    "typo_transposition": "NL, FR, ES, RF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "IT, IT, US, IT",
+    "typo_transposition": "IT, IT, US, TI"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CH, PT",
+    "typo_transposition": "CH, TP"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "CZ, FI",
+    "typo_transposition": "CZ, IF"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, BE, HR",
+    "typo_transposition": "NO, BE, RH"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NL, CH",
+    "typo_transposition": "NL, HC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "US, CH",
+    "typo_transposition": "US, HC"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "NO, NL, DK, NL",
+    "typo_transposition": "NO, NL, DK, LN"
+  },
+  {
+    "table": "result",
+    "column": "country",
+    "original": "ES, LT",
+    "typo_transposition": "ES, TL"
+  },
+  {
+    "table": "community",
+    "column": "acronym",
+    "original": "beopen",
+    "typo_transposition": "beoepn"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Publication Repository",
+    "typo_transposition": "Publicatino Repository"
+  },
+  {
+    "table": "datasource",
+    "column": "type",
+    "original": "Publication Repository Aggregator",
+    "typo_transposition": "Publication Repostiory Aggregator"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sakarya University Journal of Science",
+    "typo_transposition": "Sakarya Univeristy Journal of Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neuropsychiatric Disease and Treatment",
+    "typo_transposition": "Neuropsychiatric Disease and Treatmnet"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Marine Structures",
+    "typo_transposition": "Marine Strucutres"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "BMC Genetics",
+    "typo_transposition": "BMC Genetcis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Polar Record",
+    "typo_transposition": "Polar Recrod"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Onkologie",
+    "typo_transposition": "Onkoloige"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Journal of Combinatorics",
+    "typo_transposition": "Eurpoean Journal of Combinatorics"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Quarterly Journal of Studies on Alcohol",
+    "typo_transposition": "Quarterly Journla of Studies on Alcohol"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Motivation Science",
+    "typo_transposition": "Motivation Scinece"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Machines",
+    "typo_transposition": "Machinse"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Photochemistry and Photobiology C Photochemistry Reviews",
+    "typo_transposition": "Journal of Photochemsitry and Photobiology C Photochemistry Reviews"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "European Journal of Communication",
+    "typo_transposition": "Eurpoean Journal of Communication"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Sakarya University Journal of Computer and Information Sciences",
+    "typo_transposition": "Sakarya Univeristy Journal of Computer and Information Sciences"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Psychiatry Research",
+    "typo_transposition": "Psychiatry Researhc"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Geographical Journal",
+    "typo_transposition": "Geographical Journla"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Hasanuddin University Repository",
+    "typo_transposition": "Hasanuddin Univeristy Repository"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Organicom",
+    "typo_transposition": "Organicmo"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Micro and Nanostructures",
+    "typo_transposition": "Micro and Nanostrucutres"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Optical Materials",
+    "typo_transposition": "Optical Materails"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Future Cities and Environment",
+    "typo_transposition": "Future Ciites and Environment"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PEDIATRICS",
+    "typo_transposition": "PEDAITRICS"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "QSpace",
+    "typo_transposition": "QSpcae"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Diglosia",
+    "typo_transposition": "Dilgosia"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "ACS Nanoscience Au",
+    "typo_transposition": "ACS Nanoscienec Au"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Island Studies Journal",
+    "typo_transposition": "Island Stuides Journal"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Science China Earth Sciences",
+    "typo_transposition": "Science China Earth Scienecs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Metabarcoding and Metagenomics",
+    "typo_transposition": "Metabarcoding and Metagenomcis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Current Opinion in Solid State and Materials Science",
+    "typo_transposition": "Current Opinion in Solid State and Materails Science"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tropical Animal Health and Production",
+    "typo_transposition": "Tropical Anmial Health and Production"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Science Advances",
+    "typo_transposition": "Scienec Advances"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "EKE Repository of Publications",
+    "typo_transposition": "EKE Repository of Publciations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Computer-Aided Design",
+    "typo_transposition": "Computer-Aided Desing"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Ringing & Migration",
+    "typo_transposition": "Ringing & Migartion"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "TECNALIA Publications",
+    "typo_transposition": "TECNALIA Publciations"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Physical Review B",
+    "typo_transposition": "Phyiscal Review B"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Symmetry",
+    "typo_transposition": "Symmerty"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Environmental Systems Research",
+    "typo_transposition": "Environmental Systmes Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of the History of Medicine and Allied Sciences",
+    "typo_transposition": "Journal of the History of Medicine and Allied Scienecs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "PLoS Genetics",
+    "typo_transposition": "PLoS Genetcis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Behavioral Neuroscience",
+    "typo_transposition": "Behavioral Neuroscinece"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Lake and Reservoir Management",
+    "typo_transposition": "Lake and Reservior Management"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Vision",
+    "typo_transposition": "Journla of Vision"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Applied Stochastic Models in Business and Industry",
+    "typo_transposition": "Applied Stochastic Modles in Business and Industry"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Tutorials in Quantitative Methods for Psychology",
+    "typo_transposition": "Tutorials in Quantitative Methods for Psycholoyg"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Dental Materials",
+    "typo_transposition": "Dental Materails"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Neurological Sciences",
+    "typo_transposition": "Neurological Scienecs"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Maps",
+    "typo_transposition": "Journal of Mpas"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Enzyme and Microbial Technology",
+    "typo_transposition": "Enzyem and Microbial Technology"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Repositorio Institucional de AZTI",
+    "typo_transposition": "Repositorio Institucional de ZATI"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Science & Technology Studies",
+    "typo_transposition": "Science & Technology Stuides"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Migration Review",
+    "typo_transposition": "International Migraiton Review"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Metabolomics",
+    "typo_transposition": "Metabolomcis"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Surgery",
+    "typo_transposition": "International Journla of Surgery"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "International Journal of Educational Research",
+    "typo_transposition": "International Journla of Educational Research"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Econometrics Journal",
+    "typo_transposition": "Econometrisc Journal"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Unconventional Resources",
+    "typo_transposition": "Unconventioanl Resources"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Journal of Ultrasonography",
+    "typo_transposition": "Journla of Ultrasonography"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Cleaner Production Letters",
+    "typo_transposition": "Cleaner Produciton Letters"
+  },
+  {
+    "table": "datasource",
+    "column": "officialname",
+    "original": "Landscapes",
+    "typo_transposition": "Landscapse"
+  },
+  {
+    "table": "result",
+    "column": "type",
+    "original": "publication",
+    "typo_transposition": "publciation"
+  }
+]
