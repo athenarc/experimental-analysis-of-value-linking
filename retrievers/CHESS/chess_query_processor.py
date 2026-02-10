@@ -20,10 +20,10 @@ class ChessQueryProcessor(BaseUserQueryProcessor):
 
     def __init__(
         self,
-        model_name_or_path: str,
-        cache_folder: Optional[str] = None,
-        tensor_parallel_size: int = 1,
-        gpu_memory_utilization: float = 0.90,
+        model_name_or_path: str= "Qwen/Qwen3-4B-Instruct-2507",
+        cache_folder: str = "./assets/chess_keyword_cache",
+        tensor_parallel_size: int = 2,
+        gpu_memory_utilization: float = 0.45,
         cache_dir="/data/hdd1/vllm_models/",
         **kwargs,
     ):

@@ -10,5 +10,11 @@
     "column": "accessright",
     "original": "RESTRICTED",
     "negated_antonym": "not unrestricted"
+  },
+  {
+    "table": "fos",
+    "column": "label",
+    "original": "classics",
+    "negated_antonym": "not modern"
   }
 ]

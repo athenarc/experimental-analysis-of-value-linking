@@ -12,8 +12,8 @@ class OpenSearchQueryProcessor(BaseUserQueryProcessor):
     """
     def __init__(
         self,
-        model_name_or_path: str,
-        cache_folder: Optional[str] = None,
+        model_name_or_path: str = "Qwen/Qwen3-4B-Instruct-2507",
+        cache_folder: str = "./assets/opensearch_keyword_cache",
         **kwargs,
     ):
         """

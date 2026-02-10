@@ -17,59 +17,53 @@ DB_CONFIG = {
 }
 DB_SCHEMA = "fc4eosc_subset"
 
-def execute_sql_checks(ground_truth_sql, negative_check_sql, result_queue):
+def check_sql_validity(sql, result_queue):
     """
-    Executes validation checks in a separate process to handle timeouts.
+    Executes the SQL. Returns True if it returns > 0 rows.
     """
     conn = None
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         cursor = conn.cursor()
-        
-        # Set the schema search path
         cursor.execute(f"SET search_path TO {DB_SCHEMA}, public;")
 
-        # CHECK 1: Ground Truth Validity
-        # The original SQL must actually return data.
-        cursor.execute(ground_truth_sql)
+        cursor.execute(sql)
         results = cursor.fetchall()
 
-        if not results:
-            result_queue.put(False)
-            return
-
-        # CHECK 2: Perturbation Validity
-        # The SQL with the perturbed value should return NOTHING.
-        cursor.execute(negative_check_sql)
-        variation_results = cursor.fetchall()
-        
-        if not variation_results:
-            result_queue.put(True) # Success
+        if results:
+            result_queue.put(True)
         else:
-            result_queue.put(False) # Failure: Perturbed value exists in DB
+            # SQL ran but returned no data (The new entity might not exist in DB)
+            result_queue.put(False)
 
-    except (psycopg2.Error, Exception):
+    except Exception as e:
+        # SQL Syntax error or DB connection error
+        # print(f"\n[DB ERROR] {e}") 
         result_queue.put(False)
     finally:
-        if conn:
-            conn.close()
+        if conn: conn.close()
+
+def safe_replace(text, old_value, new_value):
+    """
+    Case-insensitive replacement of old_value with new_value in text.
+    """
+    pattern = re.escape(str(old_value))
+    new_text = re.sub(pattern, str(new_value), text, flags=re.IGNORECASE)
+    return new_text
 
 def generate_benchmark_variations(benchmark_json_path, variations_json_path, output_json_path):
-    """
-    Generates variations for Postgres benchmark, avoids duplicates, and returns the count.
-    """
     with open(benchmark_json_path, 'r', encoding='utf-8') as f:
         benchmark_data = json.load(f)
     with open(variations_json_path, 'r', encoding='utf-8') as f:
         variations_data = json.load(f)
 
     output_records = []
-    seen_questions = set()  # Set to track unique questions and prevent duplicates
+    seen_questions = set()
 
     if not variations_data:
         return 0
 
-    # Identify the dynamic perturbation key (e.g., "abbreviation_acronym")
+    # Identify the dynamic perturbation key
     sample_record = variations_data[0]
     standard_keys = {'table', 'column', 'original'}
     variation_keys = [k for k in sample_record.keys() if k not in standard_keys]
@@ -79,86 +73,70 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, out
         return 0
     
     variation_type_key = variation_keys[0]
-    keep_list = ['human_results_abbreviation_acronym.json','human_results_negated_antonym.json','human_results_typo_space_addition.json']
+
     for variation_record in tqdm(variations_data, desc=f"Processing {os.path.basename(variations_json_path)}", leave=False):
-    
         table_name = variation_record['table']
         column_name = variation_record['column']
-        original_value = variation_record['original']
-        perturbed_value = variation_record[variation_type_key]
+        
+        # The value we want to INJECT into the SQL (Clean)
+        target_clean_value = variation_record['original']
+        # The value we want to INJECT into the Question (Dirty/Perturbed)
+        target_perturbed_value = variation_record[variation_type_key]
 
-        if str(original_value).lower() == str(perturbed_value).lower():
+        if str(target_clean_value).lower() == str(target_perturbed_value).lower():
             continue
 
+        # Find a template in the benchmark that uses this Table/Column
         for benchmark_record in benchmark_data:
             
-            # 1. Match Table/Column/Value in Benchmark Metadata
-            match_found = False
+            template_match = False
+            template_value = None
+            
+            # Check if this benchmark record uses the target table/column
             for value_info in benchmark_record.get('values', []):
-                if (value_info['table'] == table_name and 
-                    value_info['column'].lower() == column_name.lower() and
-                    str(value_info['value']).lower() == str(original_value).lower()):
-                    match_found = True
+                if (value_info['table'].lower() == table_name.lower() and 
+                    value_info['column'].lower() == column_name.lower()):
+                    
+                    template_match = True
+                    template_value = value_info['value']
                     break
             
-            if not match_found:
+            if not template_match or not template_value:
                 continue
 
-            # 2. Match Value in Question Text
-            match_pattern = r'\b' + re.escape(str(original_value)) + r'\b'
-            if not re.search(match_pattern, benchmark_record['question'], re.IGNORECASE):
-                continue
-
+            # --- GENERATION LOGIC ---
+            
             original_sql = benchmark_record['SQL']
             original_question = benchmark_record['question']
 
-            # 3. Create Negative Check SQL (Inject Perturbation into SQL)
-            negative_sql = re.sub(
-                f"'{re.escape(str(original_value))}'",
-                f"'{str(perturbed_value)}'",
-                original_sql,
-                flags=re.IGNORECASE
-            )
-            if negative_sql == original_sql:
-                negative_sql = re.sub(
-                    f'"{re.escape(str(original_value))}"',
-                    f'"{str(perturbed_value)}"',
-                    original_sql,
-                    flags=re.IGNORECASE
-                )
-            if negative_sql == original_sql:
-                negative_sql = re.sub(
-                    r'=\s*' + match_pattern,
-                    f'= {str(perturbed_value)}',
-                    original_sql,
-                    flags=re.IGNORECASE
-                )
+            # 1. Generate New SQL (Ground Truth)
+            # Replace the Template Value (e.g., 'Majid Heravi') with the Variation Original (e.g., 'Gokgoz, Ali')
+            new_sql = safe_replace(original_sql, template_value, target_clean_value)
             
-            if negative_sql == original_sql:
+            if new_sql == original_sql:
                 continue
 
-            # 4. Create New Question
-            new_question = re.sub(
-                match_pattern, 
-                str(perturbed_value), 
-                original_question, 
-                count=1, 
-                flags=re.IGNORECASE
-            )
+            # 2. Generate New Question (Perturbed)
+            # Replace Template with Perturbed Value (e.g., 'Gokgoz, Ali.')
+            new_question = safe_replace(original_question, template_value, target_perturbed_value)
 
-            # --- DEDUPLICATION CHECK ---
-            # If we have already generated this exact question in this run, skip it.
+            # 3. Generate New Question (Clean) - NEW FIELD
+            # Replace Template with Clean Value (e.g., 'Gokgoz, Ali')
+            question_clean_value = safe_replace(original_question, template_value, target_clean_value)
+
+            # Deduplication
             if new_question in seen_questions:
                 continue
 
-            # 5. Validate via Multiprocessing (Timeout protection)
+            # 4. Validate via Multiprocessing
+            # Check if the NEW SQL (using the clean value) actually returns data
             result_queue = multiprocessing.Queue()
             p = multiprocessing.Process(
-                target=execute_sql_checks,
-                args=(original_sql, negative_sql, result_queue)
+                target=check_sql_validity,
+                args=(new_sql, result_queue)
             )
             p.start()
-            p.join(120) # 120 seconds timeout
+            p.join(120) # Timeout
 
             if p.is_alive():
                 p.terminate()
@@ -166,26 +144,34 @@ def generate_benchmark_variations(benchmark_json_path, variations_json_path, out
                 continue
 
             try:
-                checks_passed = result_queue.get_nowait()
+                is_valid = result_queue.get_nowait()
             except queue.Empty:
-                checks_passed = False
+                is_valid = False
 
-            if checks_passed:
+            if is_valid:
                 new_record = copy.deepcopy(benchmark_record)
-                new_record['original_question'] = original_question
-                new_record['question'] = new_question
-                new_record['SQL'] = original_sql 
-                new_record['original_SQL'] = original_sql
+                new_record['original_question'] = original_question # Template Question
+                new_record['question'] = new_question               # Perturbed Question
+                new_record['question_clean_value'] = question_clean_value # Clean Question (New Field)
+                new_record['SQL'] = new_sql
+                new_record['original_SQL'] = original_sql           # Template SQL
+                
+                # Update the 'values' metadata to reflect the new reality
+                for v in new_record['values']:
+                    if v['table'].lower() == table_name.lower() and v['column'].lower() == column_name.lower():
+                        v['value'] = target_clean_value
                 
                 new_record['changes_information'] = {
-                    'original_value': original_value,
-                    variation_type_key: perturbed_value
+                    'template_value': template_value,
+                    'new_clean_value': target_clean_value,
+                    'new_perturbed_value': target_perturbed_value,
+                    'perturbation_type': variation_type_key
                 }
                 
                 output_records.append(new_record)
-                seen_questions.add(new_question) # Mark this question as seen
+                seen_questions.add(new_question)
 
-    # Write output if records exist
+    # Write output
     if output_records:
         os.makedirs(os.path.dirname(output_json_path), exist_ok=True)
         with open(output_json_path, 'w', encoding='utf-8') as f:
@@ -204,7 +190,6 @@ if __name__ == "__main__":
 
     files = [f for f in os.listdir(perturbations_folder_path) if f.endswith('.json')]
     
-    # Statistics container
     generation_report = []
     total_variations = 0
 
@@ -223,7 +208,6 @@ if __name__ == "__main__":
         generation_report.append((file, count))
         total_variations += count
 
-    # --- FINAL REPORT ---
     print("\n" + "="*60)
     print(f"{'GENERATION REPORT':^60}")
     print("="*60)

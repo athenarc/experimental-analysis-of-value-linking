@@ -23,7 +23,7 @@ class ValueNetRetriever(BaseRetriever):
 
     INDEX_FILENAME = "values_index.jsonl"
 
-    def __init__(self, enable_tqdm: bool = True, max_workers: int = None,similarity_threshold: float = 0.75):
+    def __init__(self, enable_tqdm: bool = True, max_workers: int = 4,similarity_threshold: float = 0.75):
         """
         Initializes the retriever.
 
@@ -48,10 +48,16 @@ class ValueNetRetriever(BaseRetriever):
             output_path: The directory path to save the index file.
         """
         index_path = os.path.join(output_path, self.INDEX_FILENAME)
+        
+        # Initialize a counter
+        count = 0
+        
         with open(index_path, "w", encoding="utf-8") as f:
+            # Iterate through the generator (streaming)
             for item in items:
                 f.write(item.model_dump_json() + "\n")
-        print(f"ValueNet index created with {len(items)} items at {index_path}")
+                count += 1  # Increment counter
+        print(f"ValueNet index created with {count} items at {index_path}")
 
     @staticmethod
     def _compute_matches_for_candidate(

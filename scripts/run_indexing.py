@@ -19,7 +19,6 @@ from retrievers.ValueNet.valuenet_retriever import ValueNetRetriever
 from retrievers.BRIDGE.bridge_loader import BridgeLoader
 from retrievers.BRIDGE.bridge_retriever import BridgeRetriever
 
-
 # --- Configuration ---
 BASE_PATH = "assets/retrievers"
 DATABASES_ROOT = os.path.join(BASE_PATH, "databases")

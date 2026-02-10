@@ -10,16 +10,180 @@ from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
 from spellchecker import SpellChecker
 import string 
+import psycopg2
+from psycopg2 import sql
 
-LLM_MODEL_NAME_DEFAULT = "gaunernst/gemma-3-27b-it-int4-awq"
+LLM_MODEL_NAME_DEFAULT = "Qwen/Qwen3-4B-Instruct-2507"
 LLM_CACHE_DIR_DEFAULT = "/data/hdd1/vllm_models/"
 LLM_TENSOR_PARALLEL_SIZE_DEFAULT = 2
 LLM_QUANTIZATION_DEFAULT = None
-LLM_GPU_MEM_UTIL_DEFAULT = 0.80
+LLM_GPU_MEM_UTIL_DEFAULT = 0.85
 MAX_MODEL_LEN_DEFAULT = 2048
 NOT_VALID_TOKEN = "[NOT_VALID]"
 class DataExplorer:
+    @staticmethod
+    def _has_english_char(s):
+        """Checks if a string contains at least one English alphabet character."""
+        # Fast check assuming ASCII or compatible encoding
+        s_str = str(s) # Ensure it's a string first
+        for char in s_str:
+            # Check if character is in the ranges 'a'-'z' or 'A'-'Z'
+            if ('a' <= char <= 'z') or ('A' <= char <= 'Z'):
+                return True
+        return False
     
+    @staticmethod
+    def create_exact_match_dataset_from_excel(input_excel_path, output_json_path):
+        """
+        Reads an Excel file, filters for SQL queries containing exact text matches 
+        where the value explicitly appears in the natural language question.
+        Generates 'values_list' (string format) and 'values' (structured dictionary format).
+        """
+        import pandas as pd
+        import sqlglot
+        from sqlglot import exp
+
+        print(f"Reading input file: {input_excel_path}")
+        try:
+            df = pd.read_excel(input_excel_path)
+        except Exception as e:
+            print(f"Error reading Excel file: {e}")
+            return
+
+        filtered_records = []
+        
+        if 'nl_question' not in df.columns or 'sql_query' not in df.columns:
+            print("Error: Excel file must contain 'nl_question' and 'sql_query' columns.")
+            return
+
+        count_total = 0
+        count_kept = 0
+
+        # Map SQLGlot expression types to string operators
+        operator_map = {
+            exp.EQ: "=",
+            exp.NEQ: "!=",
+            exp.GT: ">",
+            exp.GTE: ">=",
+            exp.LT: "<",
+            exp.LTE: "<=",
+            exp.In: "IN",
+            exp.Like: "LIKE"
+        }
+
+        for index, row in df.iterrows():
+            count_total += 1
+            nl_question = str(row['nl_question']).strip()
+            sql_query = str(row['sql_query']).strip()
+            
+            if not sql_query or not nl_question:
+                continue
+
+            try:
+                parsed = sqlglot.parse_one(sql_query)
+            except:
+                continue
+
+            # --- Step 1: Build Alias Map ---
+            alias_map = {}
+            tables_in_query = []
+            
+            for table in parsed.find_all(exp.Table):
+                t_name = table.name
+                t_alias = table.alias
+                tables_in_query.append(t_name)
+                
+                if t_alias:
+                    alias_map[t_alias] = t_name
+                else:
+                    alias_map[t_name] = t_name
+
+            extracted_values_list = []
+            structured_values = []
+            valid_values_found = False
+
+            # --- Step 2: Find Conditions ---
+            # We look for all comparison types defined in our operator_map
+            for node in parsed.find_all(*operator_map.keys()):
+                
+                candidates = [] # List of (ColumnNode, ValueNode)
+                current_op = operator_map.get(type(node), "=")
+                
+                if isinstance(node, exp.Binary):
+                    # Structure: Column OP Value (e.g. age < 50)
+                    if isinstance(node.left, exp.Column) and isinstance(node.right, exp.Literal):
+                        candidates.append((node.left, node.right))
+                    # Structure: Value OP Column (Yoda condition: 50 > age)
+                    elif isinstance(node.right, exp.Column) and isinstance(node.left, exp.Literal):
+                        candidates.append((node.right, node.left))
+                        
+                elif isinstance(node, exp.In):
+                    # Structure: Column IN (Val1, Val2)
+                    if isinstance(node.this, exp.Column):
+                        for val in node.expressions:
+                            if isinstance(val, exp.Literal):
+                                candidates.append((node.this, val))
+
+                # --- Step 3: Process Candidates ---
+                for col_node, val_node in candidates:
+                    val_str = str(val_node.this)
+                    
+                    # Filter A: No Wildcards
+                    if "%" in val_str: continue
+                    
+                    # Filter B: EXACT MATCH IN QUESTION
+                    # Note: Removed English char and Digit filters to allow values like "50"
+                    if val_str.lower() not in nl_question.lower():
+                        continue
+                    
+                    if val_str.lower() == "publication":
+                        continue
+                    # --- Step 4: Resolve Table Name ---
+                    col_name = col_node.name
+                    tbl_ref = col_node.table
+                    
+                    real_table_name = "unknown_table"
+                    
+                    if tbl_ref:
+                        real_table_name = alias_map.get(tbl_ref, tbl_ref)
+                    else:
+                        if len(set(tables_in_query)) == 1:
+                            real_table_name = tables_in_query[0]
+                    
+                    # Construct the string: table.column.value
+                    formatted_str = f"{real_table_name}.{col_name}.{val_str}"
+                    extracted_values_list.append(formatted_str)
+
+                    # Construct the structured dictionary
+                    structured_values.append({
+                        "table": real_table_name,
+                        "column": col_name,
+                        "value": val_str,
+                        "condition": current_op
+                    })
+                    
+                    valid_values_found = True
+
+            # Only save record if we found valid exact matches
+            if valid_values_found:
+                record = {
+                    "id": count_kept + 1,
+                    "question": nl_question,
+                    "SQL": sql_query,
+                    "values_list": extracted_values_list,
+                    "values": structured_values
+                }
+                filtered_records.append(record)
+                count_kept += 1
+
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(filtered_records, f, indent=4)
+
+        print(f"Processing complete.")
+        print(f"Total rows scanned: {count_total}")
+        print(f"Records kept: {count_kept}")
+        print(f"Output saved to: {output_json_path}")
+        
     @staticmethod
     def pass_check(original_value: str, altered_value: str) -> bool:
         # check if not valid token is in the altered value
@@ -296,12 +460,13 @@ class DataExplorer:
             all_values = [row[0] for row in cursor.fetchall()]
             conn.close()
 
+            #eligible_values = [val for val in all_values if filter_fn(str(val), spell)]
+            #if len(eligible_values) > 10000:
+            #    sampled_values = random.sample(eligible_values, 10000)
+            #else:
+            #    sampled_values = eligible_values
             eligible_values = [val for val in all_values if filter_fn(str(val), spell)]
-            if len(eligible_values) > 10000:
-                sampled_values = random.sample(eligible_values, 10000)
-            else:
-                sampled_values = eligible_values
-
+            sampled_values = eligible_values
             for original_value in sampled_values:
                 key = (db_id, table_name, column_name, original_value)
                 if key not in unique_values:
@@ -2029,17 +2194,138 @@ class DataExplorer:
 
         )
         
-    
+    @staticmethod
+    def _get_postgres_values(table_name, column_name):
+        """Helper to fetch distinct values from the Postgres database."""
+        DB_CONFIG = {
+            "host": "",
+            "port": "",
+            "database": "",
+            "user": "",
+            "password": ""
+        }
+        SCHEMA = ""
+        
+        values = []
+        try:
+            conn = psycopg2.connect(**DB_CONFIG)
+            cur = conn.cursor()
+            query = sql.SQL("SELECT DISTINCT {} FROM {}.{}").format(
+                sql.Identifier(column_name),
+                sql.Identifier(SCHEMA),
+                sql.Identifier(table_name)
+            )
+            cur.execute(query)
+            values = [row[0] for row in cur.fetchall() if row[0] is not None]
+            cur.close()
+            conn.close()
+        except Exception as e:
+            print(f"Database error on {table_name}.{column_name}: {e}")
+        return values
+
+    @staticmethod
+    def run_all_perturbations(
+        input_json_path="assets/scalability_experiments/faircore_benchmark-exact_match.json",
+        output_base_path="assets/scalability_experiments/llm_perturbations/",
+        model_name=LLM_MODEL_NAME_DEFAULT
+    ):
+        """
+        Loads the model once and runs all 18 pipelines sequentially.
+        Excludes 'find_synonym_change'.
+        """
+        # 1. Initialize LLM and Tokenizer once
+        print(f"Loading model: {model_name}...")
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=LLM_CACHE_DIR_DEFAULT)
+        llm = LLM(
+            model=model_name,
+            tensor_parallel_size=LLM_TENSOR_PARALLEL_SIZE_DEFAULT,
+            trust_remote_code=True,
+            gpu_memory_utilization=LLM_GPU_MEM_UTIL_DEFAULT,
+            max_model_len=MAX_MODEL_LEN_DEFAULT
+        )
+        spell = SpellChecker()
+
+        # 2. Define the pipelines to run (Filter, PromptBuilder, FieldName, PostFilter)
+        # We exclude find_synonym_change as requested
+        pipelines = [
+            (DataExplorer._is_eligible_english_value, DataExplorer._build_synonym_prompt_messages, "hard_synonym", None),
+            (DataExplorer._is_eligible_english_value_over, DataExplorer._build_typo_substitution_prompt_messages, "typo_substitution", DataExplorer.check_valid_substitution),
+            (DataExplorer._is_eligible_english_value_over, DataExplorer._build_typo_insertion_prompt_messages, "typo_insertion", DataExplorer.check_valid_insertion),
+            (DataExplorer._is_eligible_english_value_over, DataExplorer._build_typo_deletion_prompt_messages, "typo_deletion", DataExplorer.check_valid_deletion),
+            (DataExplorer._is_eligible_english_value_over, DataExplorer._build_typo_transposition_prompt_messages, "typo_transposition", DataExplorer.check_valid_transposition),
+            (DataExplorer._is_eligible_english_value_without_space, DataExplorer._build_typo_space_addition_prompt_messages, "typo_space_addition", DataExplorer.check_valid_space_addition),
+            (DataExplorer._is_eligible_english_value_over_with_exactly_one_space, DataExplorer._build_typo_space_removal_prompt_messages, "typo_space_removal", DataExplorer.check_valid_space_removal),
+            (DataExplorer._is_eligible_english_value_over_with_space_more_than_one, DataExplorer._build_word_to_symbol_prompt_messages, "word_to_symbol_change", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value, DataExplorer._build_abbreviation_acronym_prompt_messages, "abbreviation_acronym", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_maximum_one_space, DataExplorer._build_clipping_prompt_messages, "clipping", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_maximum_three_spaces, DataExplorer._build_paraphrasing_prompt_messages, "paraphrasing", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_over_without_space, DataExplorer._build_negated_antonym_prompt_messages, "negated_antonym", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_over_with_space, DataExplorer._build_word_removal_prompt_messages, "word_removal", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_maximum_three_spaces, DataExplorer._build_word_addition_prompt_messages, "word_addition", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_with_punctuation, DataExplorer._build_typo_punctuation_removal_prompt_messages, "punct_removal", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_with_punctuation, DataExplorer._build_typo_punctuation_change_prompt_messages, "punct_change", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_over_with_exactly_one_space, DataExplorer._build_typo_word_order_variation_prompt_messages, "word_order_change", DataExplorer.pass_check),
+            (DataExplorer._is_eligible_english_value_maximum_one_space, DataExplorer._build_singular_plural_variation_prompt_messages, "singular_plural_change", DataExplorer.pass_check),
+        ]
+        pipelines =[
+            (DataExplorer._is_eligible_english_value, DataExplorer._build_abbreviation_acronym_prompt_messages, "abbreviation_acronym", DataExplorer.pass_check),
+        ]
+        # 3. Load input data and cache database values to avoid redundant Postgres queries
+        with open(input_json_path, 'r', encoding='utf-8') as f:
+            input_data = json.load(f)
+
+        db_cache = {} # (table, col) -> list of values
+        for record in input_data:
+            for val_entry in record.get('values', []):
+                t, c = val_entry['table'], val_entry['column']
+                if (t, c) not in db_cache:
+                    print(f"Fetching values for {t}.{c}...")
+                    db_cache[(t, c)] = DataExplorer._get_postgres_values(t, c)
+
+        # 4. Run each pipeline sequentially
+        sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=100)
+
+        for filter_fn, prompt_fn, field_name, post_fn in pipelines:
+            print(f"\n>>> Starting Pipeline: {field_name}")
+            prompts = []
+            batch_info = []
+            
+            for (t, c), all_values in db_cache.items():
+                eligible = [v for v in all_values if filter_fn(str(v), spell)]
+                #sampled = random.sample(eligible, min(len(eligible), 1000)) # Sample to keep it scalable
+                sampled = eligible  # Use all eligible values
+                for val in sampled:
+                    messages = prompt_fn(str(val), "fc4eosc", t, c)
+                    prompt_text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+                    prompts.append(prompt_text)
+                    batch_info.append({'table': t, 'column': c, 'orig': val})
+
+            if not prompts:
+                continue
+
+            outputs = llm.generate(prompts, sampling_params)
+            
+            results = []
+            for i, out in enumerate(outputs):
+                parsed = DataExplorer.parse_qwen3_output(out.outputs[0].text)
+                info = batch_info[i]
+                if parsed and parsed != NOT_VALID_TOKEN and parsed.lower() != str(info['orig']).lower():
+                    if post_fn is None or post_fn(str(info['orig']), parsed):
+                        results.append({
+                            "table": info['table'],
+                            "column": info['column'],
+                            "original": info['orig'],
+                            field_name: parsed
+                        })
+
+            # Save individual pipeline results
+            os.makedirs(output_base_path, exist_ok=True)
+            out_file = os.path.join(output_base_path, f"results_{field_name}.json")
+            with open(out_file, 'w') as f:
+                json.dump(results, f, indent=2)
+            print(f"Completed {field_name}. Generated {len(results)} variants.")
+
+        print("\nAll pipelines completed successfully.")
         
 if __name__ == "__main__":
-    output_dir = "assets/data_exploration"
-    sqlite_folders_path = "CHESS/data/value_linking/dev_databases"
-    input_json_path = "assets/value_linking_valid_values_exact_no_bird_train.json"
-
-    output_filename = "word_order_change.json"
-    output_json_path = os.path.join(output_dir, output_filename)
-    DataExplorer.find_word_order_change(
-        input_json_path=input_json_path,
-        sqlite_folders_path=sqlite_folders_path,
-        output_json_path=output_json_path
-    )
+    DataExplorer.run_all_perturbations()

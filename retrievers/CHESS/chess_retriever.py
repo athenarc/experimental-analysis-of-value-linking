@@ -72,18 +72,25 @@ class ChessMinHashLshRetriever(BaseRetriever):
 
         lsh = MinHashLSH(threshold=self.threshold, num_perm=self.num_perm)
         item_id_to_minhash_map: Dict[str, MinHash] = {}
+        
+        stored_items = [] 
 
         pbar_desc = "Creating CHESS MinHash Signatures"
         for item in tqdm(items, desc=pbar_desc, disable=not self.enable_tqdm):
+            stored_items.append(item)
+            
             minhash = self._create_minhash(item.content)
             item_id_to_minhash_map[item.item_id] = minhash
             lsh.insert(item.item_id, minhash)
+
+        if not stored_items:
+            return
 
         with open(lsh_index_path, "wb") as f:
             pickle.dump((lsh, item_id_to_minhash_map), f)
 
         with open(items_path, "wb") as f:
-            pickle.dump(items, f)
+            pickle.dump(stored_items, f)
 
     def _load_index_and_items(
         self, output_path: str
