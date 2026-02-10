@@ -18,7 +18,7 @@ MODEL_ID = "openai/gpt-5.2"
 SITE_URL = "https://wandb.ai"
 APP_NAME = "SQL-Eval-Script"
 
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = ""
 WANDB_PROJECT = "value_linking_prop_llms"
 
 # Pricing (Per 1M tokens)

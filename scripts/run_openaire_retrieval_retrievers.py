@@ -47,7 +47,6 @@ from retrievers.BRIDGE.bridge_reranker import BridgeReranker
 # --- Configuration ---
 BASE_PATH = "assets/retrievers_openaire"
 INDEXES_ROOT = os.path.join(BASE_PATH, "indexes")
-# Ensure this JSON file has entries with "db_id": "fc4eosc"
 BENCHMARK_FILE = "assets/scalability_experiments/openaire_perturbed.json"
 MISSED_ITEMS_FILE = os.path.join(BASE_PATH, "temp/missed_items.json")
 PREDICTED_VALUES_FILE = os.path.join(BASE_PATH, "predicted_values.json")
@@ -60,10 +59,10 @@ DB_CONFIG = {
     "user": "",
     "password": ""
 }
-SCHEMA_NAME = "fc4eosc_subset"
+SCHEMA_NAME = ""
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = ""
 WANDB_PROJECT = "value_linking_openaire"
 GROUP_NAME = "retrieval_test"
 
@@ -94,7 +93,7 @@ def load_and_group_benchmark_data(
     default_db_id = DB_CONFIG["dbname"] 
 
     for task in all_tasks:
-        # 1. FIX: Default to 'fc4eosc' if db_id is missing in JSON
+        # 1. FIX: Default to '' if db_id is missing in JSON
         db_id = task.get("db_id", default_db_id)
         
         query = task.get("question") 

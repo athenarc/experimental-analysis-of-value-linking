@@ -28,7 +28,7 @@ DB_CONFIG = {
 }
 
 OUTPUT_ROOT = "assets/scalability_experiments"
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = ""
 WANDB_PROJECT = "value_linking_scalability"
 
 SLICES = [

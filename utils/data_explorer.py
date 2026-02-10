@@ -2225,7 +2225,7 @@ class DataExplorer:
 
     @staticmethod
     def run_all_perturbations(
-        input_json_path="assets/scalability_experiments/faircore_benchmark-exact_match.json",
+        input_json_path="assets/scalability_experiments/openaire_benchmark-exact_match.json",
         output_base_path="assets/scalability_experiments/llm_perturbations/",
         model_name=LLM_MODEL_NAME_DEFAULT
     ):

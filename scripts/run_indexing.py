@@ -25,7 +25,7 @@ DATABASES_ROOT = os.path.join(BASE_PATH, "databases")
 INDEXES_ROOT = os.path.join(BASE_PATH, "indexes")
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"  # Replace with your W&B entity/team name
+WANDB_ENTITY = ""  # Replace with your W&B entity/team name
 WANDB_PROJECT = "value_linking"
 WANDB_GROUP = "indexing"
 

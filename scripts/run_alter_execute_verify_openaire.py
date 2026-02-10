@@ -9,13 +9,13 @@ from tqdm import tqdm
 
 # Database Configuration
 DB_CONFIG = {
-    "host": "train.darelab.athenarc.gr",
-    "port": "5555",
-    "database": "fc4eosc",
-    "user": "postgres",
-    "password": "postgres"
+    "host": "",
+    "port": "",
+    "database": "",
+    "user": "",
+    "password": ""
 }
-DB_SCHEMA = "fc4eosc_subset"
+DB_SCHEMA = ""
 
 def check_sql_validity(sql, result_queue):
     """

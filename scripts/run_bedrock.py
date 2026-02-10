@@ -16,7 +16,7 @@ AWS_SECRET_ACCESS_KEY = "" #INSERT YOUR AWS SECRET ACCESS KEY
 REGION_NAME = "" 
 
 
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = ""
 WANDB_PROJECT = "value_linking_prop_llms"
 
 bedrock_client = boto3.client(

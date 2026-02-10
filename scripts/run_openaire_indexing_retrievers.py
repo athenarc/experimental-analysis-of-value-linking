@@ -26,10 +26,10 @@ DB_CONFIG = { #INSERT YOUR POSTGRESQL CONNECTION DETAILS
     "user": "",
     "password": ""
 }
-SCHEMA_NAME = "fc4eosc_subset"
+SCHEMA_NAME = ""
 
 # Weights & Biases Configuration
-WANDB_ENTITY = "darelab"
+WANDB_ENTITY = ""
 WANDB_PROJECT = "value_linking_openaire"
 WANDB_GROUP = "indexing"
 
